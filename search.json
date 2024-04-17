@@ -1,0 +1,605 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Python 2024",
+    "section": "",
+    "text": "Bienvenida\n¡Bienvenidos al Curso Completo de Python, analizaremos desde los fundamentos hasta aplicaciones prácticas!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#qué-es-este-curso",
+    "href": "index.html#qué-es-este-curso",
+    "title": "Python 2024",
+    "section": "¿Qué es este Curso?",
+    "text": "¿Qué es este Curso?\n\n\n\n\n\nEste curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#a-quién-está-dirigido",
+    "href": "index.html#a-quién-está-dirigido",
+    "title": "Python 2024",
+    "section": "¿A quién está dirigido?",
+    "text": "¿A quién está dirigido?\n\n\n\n\n\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#cómo-contribuir",
+    "href": "index.html#cómo-contribuir",
+    "title": "Python 2024",
+    "section": "¿Cómo contribuir?",
+    "text": "¿Cómo contribuir?\n\n\n\n\n\nValoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.\n¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html",
+    "href": "unidades/unidad1/1_git_y_github.html",
+    "title": "Git y GitHub 🕹️",
+    "section": "",
+    "text": "¿Qué es Git y GitHub? 🕹️\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#quiénes-utilizan-git",
+    "href": "unidades/unidad1/1_git_y_github.html#quiénes-utilizan-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Quiénes utilizan Git? 🌍",
+    "text": "¿Quiénes utilizan Git? 🌍",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#cómo-se-utiliza-git",
+    "href": "unidades/unidad1/1_git_y_github.html#cómo-se-utiliza-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Cómo se utiliza Git? 💻",
+    "text": "¿Cómo se utiliza Git? 💻\n\n\n\nGit en Terminal\n\n\nSe utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario. Proporciona comandos para realizar operaciones como:\n\nInicializar un repositorio,\nRealizar cambios,\nRevisar historial,\nFusionar ramas,\nEntre otros.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#para-qué-sirve-git",
+    "href": "unidades/unidad1/1_git_y_github.html#para-qué-sirve-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Para qué sirve Git? 📝",
+    "text": "¿Para qué sirve Git? 📝\n\n\n\n\nSeguimiento de Cambios con Git\n\n\n\nSirve para realizar un seguimiento de los cambios en el código fuente, coordinar el trabajo entre varios desarrolladores, revertir cambios no deseados y mantener un historial completo de todas las modificaciones realizadas en un proyecto.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#por-qué-utilizar-git",
+    "href": "unidades/unidad1/1_git_y_github.html#por-qué-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Por qué utilizar Git? 🤔",
+    "text": "¿Por qué utilizar Git? 🤔\n\n\n\n\nVentajas de Git\n\n\n\nOfrece varias ventajas, como:\n\nLa capacidad de trabajar de forma distribuida\nLa gestión eficiente de ramas para desarrollar nuevas funcionalidades\nCorregir errores sin afectar la rama principal\nLa posibilidad de colaborar de forma efectiva con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "href": "unidades/unidad1/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Dónde puedo utilizar Git? 🌐",
+    "text": "¿Dónde puedo utilizar Git? 🌐\n\n\n\n\nGit en Diferentes Sistemas Operativos\n\n\n\nPuede ser utilizado en cualquier sistema operativo, incluyendo Windows, macOS y Linux. Además, es compatible con una amplia variedad de plataformas de alojamiento de repositorios, siendo GitHub una de las más populares.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#pasos-básicos",
+    "href": "unidades/unidad1/1_git_y_github.html#pasos-básicos",
+    "title": "Git y GitHub 🕹️",
+    "section": "Pasos Básicos 📝",
+    "text": "Pasos Básicos 📝",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#instalación-de-visual-studio-code",
+    "href": "unidades/unidad1/1_git_y_github.html#instalación-de-visual-studio-code",
+    "title": "Git y GitHub 🕹️",
+    "section": "Instalación de Visual Studio Code 📥",
+    "text": "Instalación de Visual Studio Code 📥\n\n\n\nVisual Studio Code",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#introducción",
+    "href": "unidades/unidad1/1_git_y_github.html#introducción",
+    "title": "Git y GitHub 🕹️",
+    "section": "Introducción",
+    "text": "Introducción",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "href": "unidades/unidad1/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 1: Modificar Archivos en el Repositorio",
+    "text": "Sección 1: Modificar Archivos en el Repositorio\nEn esta sección, aprenderemos cómo realizar cambios en nuestros archivos y reflejarlos en Git.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "href": "unidades/unidad1/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Local a Staging:",
+    "text": "Mover Cambios de Local a Staging:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nModifica el mensaje de bienvenida a “Bienvenido” en lugar de “Bienvenio”.\nGuarda los cambios y abre una terminal en Visual Studio Code.\n\nHemos corregido un error en nuestro archivo y queremos reflejarlo en Git.\ndef welcome_message():\n    name = input(\"Ingrese su nombre: \")\n    print(\"Bienvenido,\", name, \"al curso de Django y React!\")\n\nif __name__ == \"__main__\":\n    welcome_message()",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "href": "unidades/unidad1/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Agregar Cambios de Local a Staging:",
+    "text": "Agregar Cambios de Local a Staging:\ngit add hello_world.py\nHemos añadido los cambios al área de preparación y están listos para ser confirmados en el próximo commit.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "href": "unidades/unidad1/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 2: Confirmar Cambios en un Commit",
+    "text": "Sección 2: Confirmar Cambios en un Commit\nEn esta sección, aprenderemos cómo confirmar los cambios en un commit y guardarlos de manera permanente en nuestro repositorio.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "href": "unidades/unidad1/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Staging a Commit:",
+    "text": "Mover Cambios de Staging a Commit:\ngit commit -m \"Corregir mensaje de bienvenida\"\nHemos confirmado los cambios en un commit con un mensaje descriptivo.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "href": "unidades/unidad1/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 3: Creación y Fusión de Ramas",
+    "text": "Sección 3: Creación y Fusión de Ramas\nEn esta sección, aprenderemos cómo crear y fusionar ramas en Git para desarrollar nuevas funcionalidades de forma aislada.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#crear-una-nueva-rama",
+    "href": "unidades/unidad1/1_git_y_github.html#crear-una-nueva-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Crear una Nueva Rama:",
+    "text": "Crear una Nueva Rama:\ngit branch feature\nHemos creado una nueva rama llamada “feature” para desarrollar una nueva funcionalidad.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "href": "unidades/unidad1/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Implementar Funcionalidades en la Rama:",
+    "text": "Implementar Funcionalidades en la Rama:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nAñade una nueva función para mostrar un mensaje de despedida.\nGuarda los cambios y abre una terminal en Visual Studio Code.\nAñade los cambios al área de preparación y confírmalos en un commit.\nCambia a la rama principal con git checkout main.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "href": "unidades/unidad1/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "title": "Git y GitHub 🕹️",
+    "section": "Fusionar Ramas con la Rama Principal:",
+    "text": "Fusionar Ramas con la Rama Principal:\ngit merge feature\nHemos fusionado la rama “feature” con la rama principal y añadido la nueva funcionalidad al proyecto.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad1/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 4: Revertir Cambios en un Archivo",
+    "text": "Sección 4: Revertir Cambios en un Archivo\nEn esta sección, aprenderemos cómo revertir cambios en un archivo y deshacerlos en Git.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad1/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Revertir Cambios en un Archivo:",
+    "text": "Revertir Cambios en un Archivo:\ngit reset hello_world.py\nHemos revertido los cambios en el archivo hello_world.py y deshecho las modificaciones realizadas.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_git_y_github.html#conclusión",
+    "href": "unidades/unidad1/1_git_y_github.html#conclusión",
+    "title": "Git y GitHub 🕹️",
+    "section": "Conclusión",
+    "text": "Conclusión\nEn este tutorial, hemos aprendido a gestionar cambios en nuestro proyecto y moverlos entre diferentes estados en Git. Estos conceptos son fundamentales para trabajar de forma eficiente en proyectos de software y colaborar con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/2_github_classroom.html",
+    "href": "unidades/unidad1/2_github_classroom.html",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "¿Qué es GitHub Classroom? 🤔",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/2_github_classroom.html#qué-es-github-classroom",
+    "href": "unidades/unidad1/2_github_classroom.html#qué-es-github-classroom",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "Github Classroom Windows\n\n\n\n\nGitHub Classroom es una extensión de GitHub que permite a los profesores crear y gestionar asignaciones utilizando repositorios de GitHub. Proporciona una forma organizada y eficiente de distribuir tareas a los estudiantes, recopilar y revisar su trabajo, y proporcionar retroalimentación.\n\n\nFuncionalidades Principales ⚙️\n\nCreación de Asignaciones: Los profesores pueden crear tareas y asignaciones directamente desde GitHub Classroom, proporcionando instrucciones detalladas y estableciendo criterios de evaluación.\nDistribución Automatizada: Una vez que se crea una asignación, GitHub Classroom genera automáticamente repositorios privados para cada estudiante o equipo, basándose en una plantilla predefinida.\nSeguimiento de Progreso: Los profesores pueden realizar un seguimiento del progreso de los estudiantes y revisar sus contribuciones a través de solicitudes de extracción (pull requests) y comentarios en el código.\nRevisión y Retroalimentación: Los estudiantes envían sus trabajos a través de solicitudes de extracción, lo que permite a los profesores revisar y proporcionar retroalimentación específica sobre su código.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/2_github_classroom.html#ejemplo-práctico",
+    "href": "unidades/unidad1/2_github_classroom.html#ejemplo-práctico",
+    "title": "GitHub Classroom 📒",
+    "section": "Ejemplo Práctico",
+    "text": "Ejemplo Práctico\n\nCreación de una Asignación en GitHub Classroom 📒\n\nIniciar Sesión: Ingresa a GitHub Classroom con tu cuenta de GitHub y selecciona la opción para crear una nueva asignación.\n\n\n\n\n\nDefinir la Tarea: Proporciona instrucciones claras y detalladas sobre la tarea, incluyendo cualquier código base o recursos necesarios. Establece los criterios de evaluación para guiar a los estudiantes.\n\n\n\n\n\nConfigurar la Plantilla: Selecciona una plantilla de repositorio existente o crea una nueva plantilla que servirá como base para los repositorios de los estudiantes.\n\n\n\n\n\nDistribuir la Asignación: Una vez configurada la asignación, comparte el enlace generado con tus estudiantes para que puedan acceder a sus repositorios privados.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "href": "unidades/unidad1/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "title": "GitHub Classroom 📒",
+    "section": "Trabajo de los Estudiantes 🧑‍💻",
+    "text": "Trabajo de los Estudiantes 🧑‍💻\n\nAceptar la Asignación: Los estudiantes reciben el enlace de la asignación y aceptan la tarea, lo que les permite crear un repositorio privado basado en la plantilla proporcionada.\n\n\n\n\n\nActualizar el Navegador: Los estudiantes actualizan su navegador para ver el nuevo repositorio creado en su cuenta de GitHub.\n\n\n\n\n\nClonar el Repositorio: Los estudiantes clonan el repositorio asignado en su computadora local utilizando el enlace proporcionado.\n\n\n\n\n\nUtilizar el comando git clone: Aplique el comando git clone para clonar el repositorio en su computadora local.\ngit clone &lt;enlace-del-repositorio&gt;\n\n\n\n\n\nDesarrollar la Tarea: Los estudiantes trabajan en la tarea, realizando los cambios necesarios y realizando commits de manera regular para mantener un historial de su trabajo.\n\n\n\n\n\n\nTip\n\n\n\nPuedes probar el test incorporado con el comando pytest en la terminal, para verificar que el código cumple con los requerimientos\n\n\npytest\nUna vez desarrollado el código de acuerdo a la asignación en local deberían pasar el o los test\n\n\n\n\n\nEnviar la Solicitud de Extracción: Una vez completada la tarea, los estudiantes envían una solicitud de extracción desde su rama hacia la rama principal del repositorio, solicitando la revisión del profesor.\n\n\n\n\n\nUna vez realizado el push se envía al respositorio principal y se ejecutan los test en Github\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\n\n\n\n\nEste Action lo que hace es evaluar los cambios realizados\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\nRevisión y Retroalimentación: Los profesores revisan las solicitudes de extracción, proporcionan comentarios sobre el código y evalúan el trabajo de los estudiantes según los criterios establecidos.\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nGitHub Classroom ofrece una manera eficiente y organizada de administrar tareas y asignaciones en entornos educativos, fomentando la colaboración, el aprendizaje y la retroalimentación efectiva entre profesores y estudiantes.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html",
+    "href": "unidades/unidad1/3_docker.html",
+    "title": "Docker 🐋",
+    "section": "",
+    "text": "Conceptos Básicos de Docker 📒",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#imagen",
+    "href": "unidades/unidad1/3_docker.html#imagen",
+    "title": "Docker 🐋",
+    "section": "Imagen",
+    "text": "Imagen\ndocker pull python:3.9-slim\n\nUna imagen de Docker es un paquete de software ligero y portátil que incluye todo lo necesario para ejecutar una aplicación, incluidos el código, las bibliotecas y las dependencias. Las imágenes se utilizan como plantillas para crear contenedores.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#contenedor",
+    "href": "unidades/unidad1/3_docker.html#contenedor",
+    "title": "Docker 🐋",
+    "section": "Contenedor 📦",
+    "text": "Contenedor 📦\ndocker run -d -p 5000:5000 myapp\n\nUn contenedor de Docker es una instancia en tiempo de ejecución de una imagen de Docker. Los contenedores son entornos aislados que ejecutan aplicaciones de forma independiente y comparten recursos del sistema operativo subyacente. Cada contenedor está aislado del entorno de host y otros contenedores, lo que garantiza la consistencia y la portabilidad de las aplicaciones.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#dockerfile",
+    "href": "unidades/unidad1/3_docker.html#dockerfile",
+    "title": "Docker 🐋",
+    "section": "Dockerfile 📘",
+    "text": "Dockerfile 📘\n# Dockerfile\n# Define la imagen base\nFROM python:3.9-slim\n\n# Instala las dependencias necesarias\nRUN apt-get update && apt-get install -y \\\n    build-essential \\\n    libpq-dev \\\n    libffi-dev \\\n    && rm -rf /var/lib/apt/lists/*\n\n# Establece el directorio de trabajo\nWORKDIR /app\n\n# Copia los archivos de la aplicación al contenedor\nCOPY . .\n\n# Instala las dependencias de Python\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Establece el comando por defecto para ejecutar la aplicación\nCMD [\"python\", \"app.py\"]\n\nUn Dockerfile es un archivo de texto que contiene instrucciones para construir una imagen de Docker. Especifica qué software se instalará en la imagen y cómo configurar el entorno de ejecución. Los Dockerfiles permiten a los desarrolladores definir de manera reproducible el entorno de ejecución de sus aplicaciones y automatizar el proceso de construcción de imágenes.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#docker-compose",
+    "href": "unidades/unidad1/3_docker.html#docker-compose",
+    "title": "Docker 🐋",
+    "section": "Docker Compose 📙",
+    "text": "Docker Compose 📙\n# docker-compose.yml\nversion: '3'\nservices:\n  web:\n    build: .\n    ports:\n      - \"5000:5000\"\n    volumes:\n      - .:/app\n    environment:\n      FLASK_ENV: development\n\nDocker Compose es una herramienta que permite definir y ejecutar aplicaciones Docker multi-contenedor. Permite gestionar la configuración de varios contenedores como un solo servicio, lo que facilita el despliegue y la gestión de aplicaciones complejas que constan de múltiples componentes.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#definir-un-dockerfile",
+    "href": "unidades/unidad1/3_docker.html#definir-un-dockerfile",
+    "title": "Docker 🐋",
+    "section": "Definir un Dockerfile 📘",
+    "text": "Definir un Dockerfile 📘\n# Dockerfile\n# Define la imagen base\nFROM python:3.9-slim\n\n# Instala las dependencias necesarias\nRUN apt-get update && apt-get install -y \\\n    build-essential \\\n    libpq-dev \\\n    libffi-dev \\\n    && rm -rf /var/lib/apt/lists/*\n\n# Establece el directorio de trabajo\nWORKDIR /app\n\n# Copia los archivos de la aplicación al contenedor\nCOPY . .\n\n# Instala las dependencias de Python\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Establece el comando por defecto para ejecutar la aplicación\nCMD [\"python\", \"app.py\"]\n\nPara utilizar Docker, primero se crea un Dockerfile que especifica cómo construir la imagen de Docker, incluidas las dependencias y la configuración del entorno. El Dockerfile define las capas de la imagen y las instrucciones para configurar el entorno de ejecución de la aplicación.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#construir-la-imagen",
+    "href": "unidades/unidad1/3_docker.html#construir-la-imagen",
+    "title": "Docker 🐋",
+    "section": "Construir la Imagen 💿",
+    "text": "Construir la Imagen 💿\ndocker build -t myapp .\n\nUna vez que se tiene el Dockerfile, se utiliza el comando docker build para construir la imagen de Docker a partir del Dockerfile. Este comando lee las instrucciones del Dockerfile y crea una imagen en función de esas instrucciones. La imagen resultante se puede utilizar para crear y ejecutar contenedores.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#ejecutar-un-contenedor",
+    "href": "unidades/unidad1/3_docker.html#ejecutar-un-contenedor",
+    "title": "Docker 🐋",
+    "section": "Ejecutar un Contenedor 🖥️",
+    "text": "Ejecutar un Contenedor 🖥️\ndocker run -d -p 5000:5000 myapp\n\nDespués de construir la imagen, se ejecuta un contenedor utilizando el comando docker run, especificando la imagen que se utilizará y cualquier configuración adicional necesaria, como puertos expuestos, variables de entorno y volúmenes montados. El contenedor se ejecuta en un entorno aislado y se puede acceder a través de la red local o de Internet, según la configuración.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#gestionar-contenedores",
+    "href": "unidades/unidad1/3_docker.html#gestionar-contenedores",
+    "title": "Docker 🐋",
+    "section": "Gestionar Contenedores 📦",
+    "text": "Gestionar Contenedores 📦\ndocker ps\ndocker stop &lt;container_id&gt;\ndocker rm &lt;container_id&gt;\n\nDocker proporciona varios comandos para gestionar contenedores, como docker ps para ver contenedores en ejecución, docker stop para detener un contenedor y docker rm para eliminar un contenedor. Estos comandos permiten a los usuarios administrar y controlar el ciclo de vida de los contenedores de manera eficiente.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/3_docker.html#docker-compose-1",
+    "href": "unidades/unidad1/3_docker.html#docker-compose-1",
+    "title": "Docker 🐋",
+    "section": "Docker Compose 📙",
+    "text": "Docker Compose 📙\n# docker-compose.yml\nversion: '3'\nservices:\n  web:\n    build: .\n    ports:\n      - \"5000:5000\"\n    volumes:\n      - .:/app\n    environment:\n      FLASK_ENV: development\n\nPara aplicaciones más complejas que requieren múltiples contenedores, se utiliza Docker Compose para definir y gestionar la configuración de los contenedores en un archivo YAML. Luego, se utiliza el comando docker-compose para gestionar los servicios definidos en el archivo YAML, lo que simplifica el despliegue y la gestión de aplicaciones multi-contenedor.",
+    "crumbs": [
+      "Unidad 1: Introducción a Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker 🐋</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "href": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "title": "Ejercicios de Git y Github",
+    "section": "",
+    "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
+    "href": "unidades/ejercicios/ejercicios_python-001.html",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html",
+    "href": "unidades/ejercicios/ejercicios_python-002.html",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  }
+]
