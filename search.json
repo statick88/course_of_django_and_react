@@ -2,41 +2,41 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Python 2024",
+    "title": "Django y React 2024",
     "section": "",
-    "text": "Bienvenida\n¡Bienvenidos al Curso Completo de Python, analizaremos desde los fundamentos hasta aplicaciones prácticas!",
+    "text": "Bienvenido\n¡Bienvenido al Curso Completo de Django y React! En este curso, exploraremos todo, desde los fundamentos hasta las aplicaciones prácticas.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
-    "objectID": "index.html#qué-es-este-curso",
-    "href": "index.html#qué-es-este-curso",
-    "title": "Python 2024",
-    "section": "¿Qué es este Curso?",
-    "text": "¿Qué es este Curso?\n\n\n\n\n\nEste curso exhaustivo te llevará desde los fundamentos básicos de la programación hasta la creación de aplicaciones prácticas utilizando el lenguaje de programación Python. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales de la programación y avanzarás hacia la construcción de proyectos reales. Desde la instalación de herramientas hasta la creación de una API con Django Rest Framework, este curso te proporcionará una comprensión sólida y práctica de Python y su aplicación en el mundo real.",
+    "objectID": "index.html#de-qué-trata-este-curso",
+    "href": "index.html#de-qué-trata-este-curso",
+    "title": "Django y React 2024",
+    "section": "¿De qué trata este curso?",
+    "text": "¿De qué trata este curso?\n\n\n\n\n\nEste curso completo te llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y React. A través de una combinación de teoría y ejercicios prácticos, te sumergirás en los conceptos esenciales del desarrollo web y avanzarás hacia la creación de proyectos del mundo real. Desde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso te proporcionará una comprensión sólida y experiencia práctica con Django y React.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
-    "objectID": "index.html#a-quién-está-dirigido",
-    "href": "index.html#a-quién-está-dirigido",
-    "title": "Python 2024",
-    "section": "¿A quién está dirigido?",
-    "text": "¿A quién está dirigido?\n\n\n\n\n\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. No importa si eres un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que desea aprender a programar: este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo de la programación a través de Python.",
+    "objectID": "index.html#para-quién-es-este-curso",
+    "href": "index.html#para-quién-es-este-curso",
+    "title": "Django y React 2024",
+    "section": "¿Para quién es este curso?",
+    "text": "¿Para quién es este curso?\n\n\n\n\n\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación. Ya seas un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para ti. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
     "objectID": "index.html#cómo-contribuir",
     "href": "index.html#cómo-contribuir",
-    "title": "Python 2024",
+    "title": "Django y React 2024",
     "section": "¿Cómo contribuir?",
-    "text": "¿Cómo contribuir?\n\n\n\n\n\nValoramos tu participación en este curso. Si encuentras errores, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría escucharte! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de brindar acceso gratuito y universal al conocimiento. Estará disponible en línea para que cualquiera, sin importar su ubicación o circunstancias, pueda acceder y aprender a su propio ritmo.\n¡Esperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo de la programación con Python!",
+    "text": "¿Cómo contribuir?\n\n\n\n\n\nValoramos tu contribución a este curso. Si encuentras algún error, deseas sugerir mejoras o agregar contenido adicional, ¡nos encantaría saber de ti! Puedes contribuir a través de nuestra plataforma en línea, donde puedes compartir tus comentarios y sugerencias. Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste libro ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento. Estará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nEsperamos que disfrutes este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenida</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
