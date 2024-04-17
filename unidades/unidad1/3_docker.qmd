@@ -1,0 +1,179 @@
+# Docker 🐋
+
+::: center
+![Docker](../../images/docker-logo.png){fig-align="center" width="100"}
+:::
+
+::: justify
+
+Docker es una plataforma de código abierto que permite a los desarrolladores empaquetar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que incluyen todo lo necesario para ejecutar una aplicación de forma consistente en cualquier entorno.
+
+:::
+
+# Conceptos Básicos de Docker 📒
+
+## Imagen
+
+``` bash
+docker pull python:3.9-slim
+```
+::: justify
+
+Una imagen de Docker es un paquete de software ligero y portátil que incluye todo lo necesario para ejecutar una aplicación, incluidos el código, las bibliotecas y las dependencias. Las imágenes se utilizan como plantillas para crear contenedores.
+
+:::
+
+## Contenedor 📦
+  
+``` bash
+docker run -d -p 5000:5000 myapp
+```
+::: justify
+
+Un contenedor de Docker es una instancia en tiempo de ejecución de una imagen de Docker. Los contenedores son entornos aislados que ejecutan aplicaciones de forma independiente y comparten recursos del sistema operativo subyacente. Cada contenedor está aislado del entorno de host y otros contenedores, lo que garantiza la consistencia y la portabilidad de las aplicaciones.
+
+:::
+
+## Dockerfile 📘
+
+``` Dockerfile
+# Dockerfile
+# Define la imagen base
+FROM python:3.9-slim
+
+# Instala las dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    libffi-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos de la aplicación al contenedor
+COPY . .
+
+# Instala las dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Establece el comando por defecto para ejecutar la aplicación
+CMD ["python", "app.py"]
+```
+::: justify
+
+Un Dockerfile es un archivo de texto que contiene instrucciones para construir una imagen de Docker. Especifica qué software se instalará en la imagen y cómo configurar el entorno de ejecución. Los Dockerfiles permiten a los desarrolladores definir de manera reproducible el entorno de ejecución de sus aplicaciones y automatizar el proceso de construcción de imágenes.
+
+:::
+
+## Docker Compose 📙
+
+``` yaml
+# docker-compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_ENV: development
+```
+::: justify
+
+Docker Compose es una herramienta que permite definir y ejecutar aplicaciones Docker multi-contenedor. Permite gestionar la configuración de varios contenedores como un solo servicio, lo que facilita el despliegue y la gestión de aplicaciones complejas que constan de múltiples componentes.
+
+:::
+
+# Uso de Docker 🐋
+
+## Definir un Dockerfile 📘
+
+``` Dockerfile
+# Dockerfile
+# Define la imagen base
+FROM python:3.9-slim
+
+# Instala las dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    libffi-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos de la aplicación al contenedor
+COPY . .
+
+# Instala las dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Establece el comando por defecto para ejecutar la aplicación
+CMD ["python", "app.py"]
+```
+::: justify
+
+Para utilizar Docker, primero se crea un Dockerfile que especifica cómo construir la imagen de Docker, incluidas las dependencias y la configuración del entorno. El Dockerfile define las capas de la imagen y las instrucciones para configurar el entorno de ejecución de la aplicación.
+
+:::
+
+## Construir la Imagen 💿
+
+``` bash
+docker build -t myapp .
+```
+
+::: justify
+
+Una vez que se tiene el Dockerfile, se utiliza el comando docker build para construir la imagen de Docker a partir del Dockerfile. Este comando lee las instrucciones del Dockerfile y crea una imagen en función de esas instrucciones. La imagen resultante se puede utilizar para crear y ejecutar contenedores.
+
+:::
+
+## Ejecutar un Contenedor 🖥️
+
+``` bash
+docker run -d -p 5000:5000 myapp
+```
+::: justify
+
+Después de construir la imagen, se ejecuta un contenedor utilizando el comando docker run, especificando la imagen que se utilizará y cualquier configuración adicional necesaria, como puertos expuestos, variables de entorno y volúmenes montados. El contenedor se ejecuta en un entorno aislado y se puede acceder a través de la red local o de Internet, según la configuración.
+
+:::
+
+## Gestionar Contenedores 📦
+
+``` bash
+docker ps
+docker stop <container_id>
+docker rm <container_id>
+```
+::: justify
+
+Docker proporciona varios comandos para gestionar contenedores, como docker ps para ver contenedores en ejecución, docker stop para detener un contenedor y docker rm para eliminar un contenedor. Estos comandos permiten a los usuarios administrar y controlar el ciclo de vida de los contenedores de manera eficiente.
+
+:::
+
+## Docker Compose 📙
+
+``` yaml
+# docker-compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_ENV: development
+```
+::: justify
+
+Para aplicaciones más complejas que requieren múltiples contenedores, se utiliza Docker Compose para definir y gestionar la configuración de los contenedores en un archivo YAML. Luego, se utiliza el comando docker-compose para gestionar los servicios definidos en el archivo YAML, lo que simplifica el despliegue y la gestión de aplicaciones multi-contenedor.
+
+:::

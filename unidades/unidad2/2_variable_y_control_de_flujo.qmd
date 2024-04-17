@@ -1,0 +1,700 @@
+# Sintaxis Básica
+
+En python la sintaxis es muy sencilla, se basa en la indentación, es decir, en la forma en que se escriben los bloques de código.
+
+```python
+if 5 > 2:
+  print("Cinco es mayor que dos") # <1>
+```
+
+1. En el ejemplo anterior, la instrucción `print` está indentada, es decir, tiene un espacio al principio de la línea. Esto es necesario para que el código funcione correctamente.
+
+Además de la indentación, en python se utilizan los dos puntos `:` para indicar que se va a escribir un bloque de código.
+
+```python
+if 5 > 2: # <1>
+  print("Cinco es mayor que dos") # <1>
+```
+1. En este caso, el `:` indica que se va a escribir un bloque de código, en este caso, el bloque de código que se ejecutará si la condición es verdadera.
+
+# Comentarios
+
+Los comentarios en python se escriben con el símbolo `#`.
+
+```python
+# Este es un comentario
+print("Hola Mundo") # <1>
+```
+
+1. En este caso, el comentario está al final de la línea de código.
+
+# Variables y Tipos de Datos
+
+::: {.callout-tip}
+Existe la forma de declarar variables de python con su tipo de dato
+
+Ejemplo:
+
+```python
+x: int = 5 # <1>
+y: str = "Hola Mundo" # <2>
+```
+1. En este caso, la variable `x` es de tipo entero.
+2. En este caso, la variable `y` es de tipo cadena de texto.
+:::
+
+En python, las variables se definen de la siguiente manera:
+
+```python
+x = 5 # <1>
+y = "Hola Mundo" # <2>
+```
+
+1. En este caso, la variable `x` es de tipo entero.
+2. En este caso, la variable `y` es de tipo cadena de texto.
+
+# Tipos de Datos
+
+En python, los tipos de datos más comunes son:
+
+- `int`: Entero
+
+Ejemplo:
+
+```python
+x = 5 # <1>
+```
+
+1. La variable `x` es de tipo entero.
+
+- `float`: Flotante
+
+Ejemplo:
+
+```python
+y = 5.0 # <1>
+```
+
+1. La variable `y` es de tipo flotante.
+
+- `str`: Cadena de texto
+
+Ejemplo:
+
+```python
+z = "Hola Mundo" # <1>
+```
+
+- `bool`: Booleano
+
+Ejemplo:
+
+```python
+a = True # <1>
+```
+
+1. La variable `a` es de tipo booleano.
+
+- `list`: Lista
+
+Ejemplo:
+
+```python
+b = [1, 2, 3] # <1>
+```
+- `tuple`: Tupla
+
+Ejemplo:
+
+```python
+c = (1, 2, 3) # <1>
+```
+
+- `dict`: Diccionario
+
+Ejemplo:
+
+```python
+d = {"nombre": "Juan", "edad": 25} # <1>
+```
+
+- `set`: Conjunto
+
+Ejemplo:
+
+```python
+e = {1, 2, 3} # <1>
+```
+
+1. La variable `e` es de tipo conjunto.
+
+- `None`: Nulo
+
+Ejemplo:
+
+```python
+f = None # <1>
+```
+
+1. La variable `f` es de tipo `None`.
+
+# Operadores
+
+En python, los operadores más comunes son:
+
+- `+`: Suma
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+z = x + y # <1>
+```
+1. La variable `z` es igual a la suma de `x` y `y`.
+
+- `-`: Resta
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+a = x - y # <1>
+```
+
+1. La variable `a` es igual a la resta de `x` y `y`.
+
+- `*`: Multiplicación
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+b = x * y # <1>
+```
+
+1. La variable `b` es igual a la multiplicación de `x` y `y`.
+
+- `/`: División
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+c = x / y # <1>
+```
+
+1. La variable `c` es igual a la división de `x` y `y`.
+ 
+- `//`: División entera
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+d = x // y # <1>
+```
+
+1. La variable `d` es igual a la división entera de `x` y `y`.
+
+- `%`: Módulo
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+e = x % y # <1>
+```
+
+1. La variable `e` es igual al módulo de `x` y `y`.
+
+- `**`: Potencia
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+f = x ** y # <1>
+```
+
+1. La variable `f` es igual a la potencia de `x` y `y`.
+
+- `==`: Igualdad
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+g = x == y # <1>
+```
+
+1. La variable `g` es igual a la comparación de igualdad entre `x` y `y`.
+
+- `!=`: Diferente
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+h = x != y # <1>
+```
+
+1. La variable `h` es igual a la comparación de diferencia entre `x` y `y`.
+
+- `>`: Mayor que
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+i = x > y # <1>
+```
+
+- `<`: Menor que
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+j = x < y # <1>
+```
+
+1. La variable `j` es igual a la comparación de menor que entre `x` y `y`.
+
+- `>=`: Mayor
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+k = x >= y # <1>
+```
+
+1. La variable `k` es igual a la comparación de mayor o igual que entre `x` y `y`.
+
+- `<=`: Menor
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+l = x <= y # <1>
+```
+
+1. La variable `l` es igual a la comparación de menor o igual que entre `x` y `y`.
+
+- `and`: Y
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+m = x and y # <1>
+```
+- `or`: O
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+n = x or y # <1>
+```
+
+1. La variable `n` es igual a la comparación lógica `or` entre `x` y `y`.
+
+- `not`: Negación
+
+Ejemplo:
+
+```python
+x = 5
+o = not x # <1>
+```
+
+1. La variable `o` es igual a la negación de `x`.
+
+# Estructura de Control
+
+En python, las estructuras de control más comunes son:
+
+- `if`: Si
+
+Ejemplo:
+
+```python
+if 5 > 2: # <1>
+  print("Cinco es mayor que dos") # <2>
+```
+
+1. En este caso, se evalúa si 5 es mayor que 2.
+2. Si la condición es verdadera, se imprime el mensaje "Cinco es mayor que dos".
+
+- `elif`: Si no
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+if x > y: # <1>
+  print("X es mayor que Y") # <2>
+elif x < y: # <3>
+  print("X es menor que Y") # <4>
+```
+
+1. En este caso, se evalúa si `x` es mayor que `y`.
+2. Si la condición es verdadera, se imprime el mensaje "X es mayor que Y".
+3. Si la condición anterior es falsa, se evalúa si `x` es menor que `y`.
+4. Si la condición es verdadera, se imprime el mensaje "X es menor que Y".
+
+- `else`: Si no
+
+Ejemplo:
+
+```python
+x = 5
+y = 2
+if x > y: # <1>
+  print("X es mayor que Y") # <2>
+elif x < y: # <3>
+  print("X es menor que Y") # <4>
+else: # <5>
+  print("X es igual a Y") # <6>
+```
+
+1. En este caso, se evalúa si `x` es mayor que `y`.
+2. Si la condición es verdadera, se imprime el mensaje "X es mayor que Y".
+3. Si la condición anterior es falsa, se evalúa si `x` es menor que `y`.
+4. Si la condición es verdadera, se imprime el mensaje "X es menor que Y".
+5. Si las condiciones anteriores son falsas, se ejecuta el bloque de código del `else`.
+6. En este caso, se imprime el mensaje "X es igual a Y".
+   
+- `for`: Para
+
+Ejemplo:
+
+```python
+for x in range(5): # <1>
+  print(x) # <2>
+```
+
+1. En este caso, se recorre un rango de 0 a 5.
+2. En cada iteración, se imprime el valor de `x`.
+
+- `while`: Mientras
+
+Ejemplo:
+
+```python
+x = 0
+while x < 5: # <1>
+  print(x) # <2>
+  x += 1 # <3>
+```
+
+1. En este caso, se evalúa si `x` es menor que 5.
+2. En cada iteración, se imprime el valor de `x`.
+3. En cada iteración, se incrementa el valor de `x`.
+
+- `break`: Romper
+
+Ejemplo:
+
+```python
+x = 0
+while x < 5: # <1>
+  print(x) # <2>
+  x += 1 # <3>
+  if x == 3: # <4>
+    break # <5>
+```
+
+1. En este caso, se evalúa si `x` es menor que 5.
+2. En cada iteración, se imprime el valor de `x`.
+3. En cada iteración, se incrementa el valor de `x`.
+4. En cada iteración, se evalúa si `x` es igual a 3.
+5. Si la condición es verdadera, se rompe el ciclo.
+
+- `continue`: Continuar
+
+Ejemplo:
+
+```python
+x = 0
+while x < 5: # <1>
+  x += 1 # <2>
+  if x == 3: # <3>
+    continue # <4>
+  print(x) # <5>
+```
+
+1. En este caso, se evalúa si `x` es menor que 5.
+2. En cada iteración, se incrementa el valor de `x`.
+3. En cada iteración, se evalúa si `x` es igual a 3.
+4. Si la condición es verdadera, se continúa con la siguiente iteración.
+5. En cada iteración, se imprime el valor de `x`.
+   
+- `pass`: Pasar
+
+Ejemplo:
+
+```python
+x = 0
+if x == 0: # <1>
+  pass # <2>
+```
+
+1. En este caso, se evalúa si `x` es igual a 0.
+2. Si la condición es verdadera, no se hace nada.
+
+- `return`: Retornar
+
+Ejemplo:
+
+```python
+def suma(x, y): # <1>
+  return x + y # <2>
+```
+
+1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
+2. La función retorna la suma de `x` y `y`.
+
+- `def`: Definir
+
+Ejemplo:
+
+```python
+def suma(x, y): # <1>
+  return x + y # <2>
+```
+
+1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
+2. La función retorna la suma de `x` y `y.
+
+- `lambda`: Función anónima
+
+Ejemplo:
+
+```python
+f = lambda x, y: x + y # <1>
+```
+
+1. En este caso, se define una función anónima que recibe dos parámetros `x` y `y` y retorna la suma de `x` y `y`.
+
+- `class`: Clase
+
+Ejemplo:
+
+```python
+class Persona: # <1>
+  def __init__(self, nombre, edad): # <2>
+    self.nombre = nombre # <3>
+    self.edad = edad # <4>
+```
+
+1. En este caso, se define una clase llamada `Persona`.
+2. La clase tiene un método llamado `__init__` que recibe tres parámetros: `self`, `nombre` y `edad`.
+3. El método `__init__` asigna el valor del parámetro `nombre` a la propiedad `nombre` de la clase.
+4. El método `__init__` asigna el valor del parámetro `edad` a la propiedad `edad` de la clase.
+
+- `try`: Intentar
+
+Ejemplo:
+
+```python
+try: # <1>
+  print(x) # <2>
+except: # <3>
+  print("Ocurrió un error") # <4>
+```
+
+1. En este caso, se intenta ejecutar el bloque de código.
+2. Si ocurre un error, se ejecuta el bloque de código del `except`.
+3. En este caso, se imprime el mensaje "Ocurrió un error".
+4. Si no ocurre un error, se continúa con la ejecución del código.
+
+- `except`: Excepto
+
+Ejemplo:
+
+```python
+try: # <1>
+  print(x) # <2>
+except: # <3>
+  print("Ocurrió un error") # <4>
+```
+
+1. En este caso, se intenta ejecutar el bloque de código.
+2. Si ocurre un error, se ejecuta el bloque de código del `except`.
+3. En este caso, se imprime el mensaje "Ocurrió un error".
+4. Si no ocurre un error, se continúa con la ejecución del código.
+
+- `finally`: Finalmente
+
+Ejemplo:
+
+```python
+try: # <1>
+  print(x) # <2>
+except: # <3>
+  print("Ocurrió un error") # <4>
+finally: # <5>
+  print("Finalizó la ejecución") # <6>
+```
+
+1. En este caso, se intenta ejecutar el bloque de código.
+2. Si ocurre un error, se ejecuta el bloque de código del `except`.
+3. En este caso, se imprime el mensaje "Ocurrió un error".
+4. Si no ocurre un error, se continúa con la ejecución del código.
+5. Al finalizar la ejecución del bloque de código, se ejecuta el bloque de código del `finally`.
+6. En este caso, se imprime el mensaje "Finalizó la ejecución".
+
+- `raise`: Lanzar
+
+Ejemplo:
+
+```python
+if x < 0: # <1>
+  raise Exception("El número no puede ser negativo") # <2>
+```
+
+1. En este caso, se evalúa si `x` es menor que 0.
+2. Si la condición es verdadera, se lanza una excepción con el mensaje "El número no puede ser negativo".
+
+- `assert`: Afirmar
+
+Ejemplo:
+
+```python
+assert x > 0, "El número no puede ser negativo" # <1>
+```
+
+1. En este caso, se evalúa si `x` es mayor que 0.
+
+- `import`: Importar
+
+Ejemplo:
+
+```python
+import math # <1>
+```
+
+1. En este caso, se importa el módulo `math`.
+
+- `from`: Desde
+
+Ejemplo:
+
+```python
+from math import sqrt # <1>
+```
+
+1. En este caso, se importa la función `sqrt` del módulo `math`.
+
+- `as`: Como
+
+Ejemplo:
+
+```python
+import math as m # <1>
+```
+
+1. En este caso, se importa el módulo `math` como `m`.
+
+# Funciones
+
+En python, las funciones se definen de la siguiente manera:
+
+```python
+def suma(x, y): # <1>
+  return x + y # <2>
+```
+
+1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
+2. La función retorna la suma de `x` y `y`.
+
+# Llamada a Funciones
+
+En python, las funciones se llaman de la siguiente manera:
+
+```python
+z = suma(5, 2) # <1>
+```
+
+1. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+
+# Parámetros y Argumentos
+
+En python, los parámetros y argumentos se definen de la siguiente manera:
+
+```python
+def suma(x, y): # <1>
+  return x + y # <2>
+
+z = suma(5, 2) # <3>
+```
+
+1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
+2. La función retorna la suma de `x` y `y`.
+3. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+
+# Retorno
+
+En python, el retorno se realiza de la siguiente manera:
+
+```python
+def suma(x, y): # <1>
+  return x + y # <2>
+
+z = suma(5, 2) # <3>
+```
+
+1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
+2. La función retorna la suma de `x` y `y`.
+3. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+
+# Asignación
+
+A continuación se sugiere realiza 
+
+[Ejercicios Python Básico](https://classroom.github.com/a/IcerIhRU)
+
+## Objetivo
+
+El objetivo de este repositorio es proporcionar una serie de ejercicios de Python básico para que los principiantes en Python puedan practicar y adquirir experiencia en la sintaxis y estructura de Python.
+
+## ¿Qué debes hacer?
+
+Debes Completar cada uno de los ejercicios propuetos a continuación cada uno en su respectivo archivo, el objetivo es adquirir práctica en la sintaxis y estructura de Python.
+Ejercicios
+
+-   **Imprimir Nombre:** Un programa simple que imprime tu nombre en la pantalla.
+-   **Suma de los Números del 1 al 10:** Un programa que calcula la suma de los números del 1 al 10.
+-   **Datos Personales:** Un programa que almacena tu edad, nombre y estatura en variables y las imprime en pantalla.
+-   **Par o Impar:** Un programa que determina si un número ingresado por el usuario es par o impar.
+-   **Área de un Círculo:** Una función que calcula el área de un círculo dado su radio.
+-   **Suma de Dos Números:** Una función que recibe dos números como argumentos y devuelve su suma.
+-   **Área de un Círculo con Parámetro:** Modificación de la función de área de un círculo para recibir el radio como parámetro.
+-   **Conversión de Temperatura:** Un programa que convierte grados Celsius a Fahrenheit y viceversa.
+
+## Pruebas
+
+Cada ejercicio tiene su archivo de prueba en el que se utilizan las aserciones de pytest para verificar su correcto funcionamiento. Si por ejemplo quiero aplicar el test del primer ejercicio debo completar el primer ejercicio y comentar los demás, luego ejecutar el comando pytest test_1.py para verificar que el programa funciona correctamente, luego continuar con cada uno de ellos e ir aplicando los test, hasta que al final todos los test pasen y completar la tarea
+
+## Ejecución
+
+Para ejecutar cada programa, simplemente ejecute el archivo **programa.py**. Los archivos de prueba se pueden ejecutar con el comando **pytest**.
