@@ -92,7 +92,7 @@ print("Hola Mundo") # <1>
 
 Para ejecutar el programa, haga clic en el botón "Run" en la barra de herramientas. Esto ejecutará el programa y mostrará "Hola Mundo" en la consola.
 
-![](images/paste-9.png){fig-align="center"}
+![](images/paste-9.png)print
 
 ::: {.text-center}
 ¡Felicidades! 

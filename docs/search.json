@@ -432,7 +432,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -601,5 +601,71 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html",
+    "href": "unidades/unidad2/2_variable_y_control_de_flujo.html",
+    "title": "Sintaxis Básica",
+    "section": "",
+    "text": "Comentarios\nLos comentarios en python se escriben con el símbolo #.",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sintaxis Básica</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html#objetivo",
+    "href": "unidades/unidad2/2_variable_y_control_de_flujo.html#objetivo",
+    "title": "Sintaxis Básica",
+    "section": "Objetivo",
+    "text": "Objetivo\nEl objetivo de este repositorio es proporcionar una serie de ejercicios de Python básico para que los principiantes en Python puedan practicar y adquirir experiencia en la sintaxis y estructura de Python.",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sintaxis Básica</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html#qué-debes-hacer",
+    "href": "unidades/unidad2/2_variable_y_control_de_flujo.html#qué-debes-hacer",
+    "title": "Sintaxis Básica",
+    "section": "¿Qué debes hacer?",
+    "text": "¿Qué debes hacer?\nDebes Completar cada uno de los ejercicios propuetos a continuación cada uno en su respectivo archivo, el objetivo es adquirir práctica en la sintaxis y estructura de Python. Ejercicios\n\nImprimir Nombre: Un programa simple que imprime tu nombre en la pantalla.\nSuma de los Números del 1 al 10: Un programa que calcula la suma de los números del 1 al 10.\nDatos Personales: Un programa que almacena tu edad, nombre y estatura en variables y las imprime en pantalla.\nPar o Impar: Un programa que determina si un número ingresado por el usuario es par o impar.\nÁrea de un Círculo: Una función que calcula el área de un círculo dado su radio.\nSuma de Dos Números: Una función que recibe dos números como argumentos y devuelve su suma.\nÁrea de un Círculo con Parámetro: Modificación de la función de área de un círculo para recibir el radio como parámetro.\nConversión de Temperatura: Un programa que convierte grados Celsius a Fahrenheit y viceversa.",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sintaxis Básica</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html#pruebas",
+    "href": "unidades/unidad2/2_variable_y_control_de_flujo.html#pruebas",
+    "title": "Sintaxis Básica",
+    "section": "Pruebas",
+    "text": "Pruebas\nCada ejercicio tiene su archivo de prueba en el que se utilizan las aserciones de pytest para verificar su correcto funcionamiento. Si por ejemplo quiero aplicar el test del primer ejercicio debo completar el primer ejercicio y comentar los demás, luego ejecutar el comando pytest test_1.py para verificar que el programa funciona correctamente, luego continuar con cada uno de ellos e ir aplicando los test, hasta que al final todos los test pasen y completar la tarea",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sintaxis Básica</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html#ejecución",
+    "href": "unidades/unidad2/2_variable_y_control_de_flujo.html#ejecución",
+    "title": "Sintaxis Básica",
+    "section": "Ejecución",
+    "text": "Ejecución\nPara ejecutar cada programa, simplemente ejecute el archivo programa.py. Los archivos de prueba se pueden ejecutar con el comando pytest.",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sintaxis Básica</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_introduccion.html",
+    "href": "unidades/unidad2/1_introduccion.html",
+    "title": "Hola Mundo en Python",
+    "section": "",
+    "text": "Introdución 🫥\n\nEn este tutorial aprenderemos los conceptos básicos necesarios para configurar nuestro entorno de desarrollo y escribir código en Python. Comenzaremos con la instalación de Python en Windows y luego veremos cómo escribir y ejecutar nuestro primer programa en Python utilizando Visual Studio Code como nuestro editor de texto.\n\n\nPaso 1: Instalación de Python 🐍\nPara poder escribir y ejecutar programas en Python, primero necesitamos instalar Python en nuestra computadora. Python es un lenguaje de programación de alto nivel que es ampliamente utilizado en el desarrollo de aplicaciones web, desarrollo de software, análisis de datos, inteligencia artificial, etc.\n\n\n\n\n\n\nNote\n\n\n\nPython se puede instalar en Windows, Mac y Linux. En este tutorial, veremos cómo instalar Python en Windows.\n\n\n\n\nPaso 2: Instalación de Python en Windows 🪟\n\nDescargar Python\n\nPara instalar Python en Windows, primero necesitamos descargar el instalador de Python desde el sitio web oficial de Python. Para hacer esto, abra su navegador web y vaya a la página de descargas de Python en el siguiente enlace:\n\nhttps://www.python.org/downloads/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para la última versión de Python. En el momento de escribir este tutorial, la última versión de Python es 3.12.1\n\n\n\n\n\nExcelente, ahora que hemos descargado el instalador de Python, podemos continuar con la instalación de Python en Windows.\n\nInstalar Python\n\nUna vez que el instalador de Python se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Asegúrese de marcar la casilla que dice “Add Python 3.12 to PATH” antes de hacer clic en el botón “Install Now”.\n\n\n\n\n\nAhora que hemos instalado Python en nuestra computadora, podemos continuar con la configuración de nuestro entorno de desarrollo para escribir y ejecutar programas en Python.\n\nComprobar que tenemos instalado Python\n\nPara comprobar que Python se ha instalado correctamente en nuestra computadora, abra una ventana de comandos y escriba el siguiente comando:\npython --version\n\n\nEste comando imprimirá la versión de Python que está instalada en su computadora. En mi caso, la versión de Python es 3.12.1.\n\n\n\n\n\n\n\nPaso 3: Crear nuestro primer “Hola Mundo” en Python 🗺️.\nAhora que hemos instalado Python en nuestra computadora, podemos comenzar a escribir y ejecutar programas en Python. Para hacer esto, necesitamos un editor de texto para escribir nuestro código y un intérprete de Python para ejecutar nuestro código.\nEn este tutorial, usaremos Visual Studio Code como nuestro editor de texto y el intérprete de Python que instalamos en el paso anterior.\n\nInstalar Visual Studio Code\n\nPara instalar Visual Studio Code, vaya al sitio web oficial de Visual Studio Code en el siguiente enlace:\n\nhttps://code.visualstudio.com/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para su sistema operativo. En el momento de escribir este tutorial, la última versión de Visual Studio Code es 1.85.2.\nUna vez que el instalador de Visual Studio Code se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Siga las instrucciones en pantalla para completar la instalación.\n\n\n\n\n\n\nCrear un nuevo archivo de Python\n\nPara crear un nuevo archivo de Python en Visual Studio Code, abra Visual Studio Code y haga clic en el botón “New File” en la barra de herramientas. Luego, escriba el siguiente código en el archivo:\nprint(\"Hola Mundo\")\n\n\n\n\n\n\n\n\nEjecutar el programa\n\nPara ejecutar el programa, haga clic en el botón “Run” en la barra de herramientas. Esto ejecutará el programa y mostrará “Hola Mundo” en la consola.\n\n\n\n\n\n\n¡Felicidades!\nAcabas de escribir y ejecutar tu primer programa en Python. Ahora que has configurado tu entorno de desarrollo y has escrito tu primer programa en Python, puedes comenzar a explorar el lenguaje de programación Python y aprender a escribir programas más complejos.",
+    "crumbs": [
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Hola Mundo en Python</span>"
+    ]
   }
 ]

@@ -2,7 +2,6 @@
 
 ::: center
 ![Git and Github](../../images/git_and_github.png){fig-align="center" width="600"}
-
 :::
 
 ## ¿Qué es Git y GitHub? 🕹️

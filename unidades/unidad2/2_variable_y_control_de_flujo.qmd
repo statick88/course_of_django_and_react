@@ -1,25 +1,27 @@
 # Sintaxis Básica
 
-En python la sintaxis es muy sencilla, se basa en la indentación, es decir, en la forma en que se escriben los bloques de código.
+::: center
+![Python](../../images/python-logo.png){fig-align="center" width="200" text-align="center"} 
+:::
 
 ```python
 if 5 > 2:
   print("Cinco es mayor que dos") # <1>
 ```
 
-1. En el ejemplo anterior, la instrucción `print` está indentada, es decir, tiene un espacio al principio de la línea. Esto es necesario para que el código funcione correctamente.
+1. En el ejemplo anterior, la instrucción **print** está indentada, es decir, tiene un espacio al principio de la línea. Esto es necesario para que el código funcione correctamente.
 
-Además de la indentación, en python se utilizan los dos puntos `:` para indicar que se va a escribir un bloque de código.
+Además de la indentación, en python se utilizan los dos puntos **:** para indicar que se va a escribir un bloque de código.
 
 ```python
 if 5 > 2: # <1>
   print("Cinco es mayor que dos") # <1>
 ```
-1. En este caso, el `:` indica que se va a escribir un bloque de código, en este caso, el bloque de código que se ejecutará si la condición es verdadera.
+1. En este caso, el **:** indica que se va a escribir un bloque de código, el bloque de código que se ejecutará si la condición es verdadera.
 
 # Comentarios
 
-Los comentarios en python se escriben con el símbolo `#`.
+Los comentarios en python se escriben con el símbolo **#**.
 
 ```python
 # Este es un comentario
@@ -39,8 +41,8 @@ Ejemplo:
 x: int = 5 # <1>
 y: str = "Hola Mundo" # <2>
 ```
-1. En este caso, la variable `x` es de tipo entero.
-2. En este caso, la variable `y` es de tipo cadena de texto.
+1. En este caso, la variable **x** es de tipo entero.
+2. En este caso, la variable **y** es de tipo cadena de texto.
 :::
 
 En python, las variables se definen de la siguiente manera:
@@ -50,14 +52,14 @@ x = 5 # <1>
 y = "Hola Mundo" # <2>
 ```
 
-1. En este caso, la variable `x` es de tipo entero.
-2. En este caso, la variable `y` es de tipo cadena de texto.
+1. En este caso, la variable **x** es de tipo entero.
+2. En este caso, la variable **y** es de tipo cadena de texto.
 
 # Tipos de Datos
 
 En python, los tipos de datos más comunes son:
 
-- `int`: Entero
+- **int**: Entero
 
 Ejemplo:
 
@@ -65,9 +67,9 @@ Ejemplo:
 x = 5 # <1>
 ```
 
-1. La variable `x` es de tipo entero.
+1. La variable **x** es de tipo entero.
 
-- `float`: Flotante
+- **float**: Flotante
 
 Ejemplo:
 
@@ -75,9 +77,9 @@ Ejemplo:
 y = 5.0 # <1>
 ```
 
-1. La variable `y` es de tipo flotante.
+1. La variable **y** es de tipo flotante.
 
-- `str`: Cadena de texto
+- **str**: Cadena de texto
 
 Ejemplo:
 
@@ -85,7 +87,7 @@ Ejemplo:
 z = "Hola Mundo" # <1>
 ```
 
-- `bool`: Booleano
+- **bool**: Booleano
 
 Ejemplo:
 
@@ -93,16 +95,16 @@ Ejemplo:
 a = True # <1>
 ```
 
-1. La variable `a` es de tipo booleano.
+1. La variable **a** es de tipo booleano.
 
-- `list`: Lista
+- **list**: Lista
 
 Ejemplo:
 
 ```python
 b = [1, 2, 3] # <1>
 ```
-- `tuple`: Tupla
+- **tuple**: Tupla
 
 Ejemplo:
 
@@ -110,7 +112,7 @@ Ejemplo:
 c = (1, 2, 3) # <1>
 ```
 
-- `dict`: Diccionario
+- **dict**: Diccionario
 
 Ejemplo:
 
@@ -118,7 +120,7 @@ Ejemplo:
 d = {"nombre": "Juan", "edad": 25} # <1>
 ```
 
-- `set`: Conjunto
+- **set**: Conjunto
 
 Ejemplo:
 
@@ -126,9 +128,9 @@ Ejemplo:
 e = {1, 2, 3} # <1>
 ```
 
-1. La variable `e` es de tipo conjunto.
+1. La variable **e** es de tipo conjunto.
 
-- `None`: Nulo
+- **None**: Nulo
 
 Ejemplo:
 
@@ -136,13 +138,13 @@ Ejemplo:
 f = None # <1>
 ```
 
-1. La variable `f` es de tipo `None`.
+1. La variable **f** es de tipo **None**.
 
 # Operadores
 
 En python, los operadores más comunes son:
 
-- `+`: Suma
+- **+**: Suma
 
 Ejemplo:
 
@@ -151,9 +153,9 @@ x = 5
 y = 2
 z = x + y # <1>
 ```
-1. La variable `z` es igual a la suma de `x` y `y`.
+1. La variable **z** es igual a la suma de **x** y **y**.
 
-- `-`: Resta
+- **-**: Resta
 
 Ejemplo:
 
@@ -163,9 +165,9 @@ y = 2
 a = x - y # <1>
 ```
 
-1. La variable `a` es igual a la resta de `x` y `y`.
+1. La variable **a** es igual a la resta de **x** y **y**.
 
-- `*`: Multiplicación
+- **"*"**: Multiplicación
 
 Ejemplo:
 
@@ -175,9 +177,9 @@ y = 2
 b = x * y # <1>
 ```
 
-1. La variable `b` es igual a la multiplicación de `x` y `y`.
+1. La variable **b** es igual a la multiplicación de **x** y **y**.
 
-- `/`: División
+- **/**: División
 
 Ejemplo:
 
@@ -187,9 +189,9 @@ y = 2
 c = x / y # <1>
 ```
 
-1. La variable `c` es igual a la división de `x` y `y`.
+1. La variable **c** es igual a la división de **x** y **y**.
  
-- `//`: División entera
+- **//**: División entera
 
 Ejemplo:
 
@@ -199,9 +201,9 @@ y = 2
 d = x // y # <1>
 ```
 
-1. La variable `d` es igual a la división entera de `x` y `y`.
+1. La variable **d** es igual a la división entera de **x** y **y**.
 
-- `%`: Módulo
+- **%**: Módulo
 
 Ejemplo:
 
@@ -211,9 +213,9 @@ y = 2
 e = x % y # <1>
 ```
 
-1. La variable `e` es igual al módulo de `x` y `y`.
+1. La variable **e** es igual al módulo de **x** y **y**.
 
-- `**`: Potencia
+- **"**"**: Potencia
 
 Ejemplo:
 
@@ -223,9 +225,9 @@ y = 2
 f = x ** y # <1>
 ```
 
-1. La variable `f` es igual a la potencia de `x` y `y`.
+1. La variable **f** es igual a la potencia de **x** y **y**.
 
-- `==`: Igualdad
+- **==**: Igualdad
 
 Ejemplo:
 
@@ -235,9 +237,9 @@ y = 2
 g = x == y # <1>
 ```
 
-1. La variable `g` es igual a la comparación de igualdad entre `x` y `y`.
+1. La variable **g** es igual a la comparación de igualdad entre **x** y **y**.
 
-- `!=`: Diferente
+- **!=**: Diferente
 
 Ejemplo:
 
@@ -247,9 +249,9 @@ y = 2
 h = x != y # <1>
 ```
 
-1. La variable `h` es igual a la comparación de diferencia entre `x` y `y`.
+1. La variable **h** es igual a la comparación de diferencia entre **x** y **y**.
 
-- `>`: Mayor que
+- **>**: Mayor que
 
 Ejemplo:
 
@@ -259,7 +261,7 @@ y = 2
 i = x > y # <1>
 ```
 
-- `<`: Menor que
+- **<**: Menor que
 
 Ejemplo:
 
@@ -269,9 +271,9 @@ y = 2
 j = x < y # <1>
 ```
 
-1. La variable `j` es igual a la comparación de menor que entre `x` y `y`.
+1. La variable **j** es igual a la comparación de menor que entre **x** y **y**.
 
-- `>=`: Mayor
+- **>=**: Mayor
 
 Ejemplo:
 
@@ -281,9 +283,9 @@ y = 2
 k = x >= y # <1>
 ```
 
-1. La variable `k` es igual a la comparación de mayor o igual que entre `x` y `y`.
+1. La variable **k** es igual a la comparación de mayor o igual que entre **x** y **y**.
 
-- `<=`: Menor
+- **<=**: Menor
 
 Ejemplo:
 
@@ -293,9 +295,9 @@ y = 2
 l = x <= y # <1>
 ```
 
-1. La variable `l` es igual a la comparación de menor o igual que entre `x` y `y`.
+1. La variable **l** es igual a la comparación de menor o igual que entre **x** y **y**.
 
-- `and`: Y
+- **and**: Y
 
 Ejemplo:
 
@@ -304,7 +306,7 @@ x = 5
 y = 2
 m = x and y # <1>
 ```
-- `or`: O
+- **or**: O
 
 Ejemplo:
 
@@ -314,9 +316,9 @@ y = 2
 n = x or y # <1>
 ```
 
-1. La variable `n` es igual a la comparación lógica `or` entre `x` y `y`.
+1. La variable **n** es igual a la comparación lógica **or** entre **x** y **y**.
 
-- `not`: Negación
+- **not**: Negación
 
 Ejemplo:
 
@@ -325,13 +327,13 @@ x = 5
 o = not x # <1>
 ```
 
-1. La variable `o` es igual a la negación de `x`.
+1. La variable **o** es igual a la negación de **x**.
 
 # Estructura de Control
 
 En python, las estructuras de control más comunes son:
 
-- `if`: Si
+- **if**: Si
 
 Ejemplo:
 
@@ -343,7 +345,7 @@ if 5 > 2: # <1>
 1. En este caso, se evalúa si 5 es mayor que 2.
 2. Si la condición es verdadera, se imprime el mensaje "Cinco es mayor que dos".
 
-- `elif`: Si no
+- **elif**: Si no
 
 Ejemplo:
 
@@ -356,12 +358,12 @@ elif x < y: # <3>
   print("X es menor que Y") # <4>
 ```
 
-1. En este caso, se evalúa si `x` es mayor que `y`.
+1. En este caso, se evalúa si **x** es mayor que **y**.
 2. Si la condición es verdadera, se imprime el mensaje "X es mayor que Y".
-3. Si la condición anterior es falsa, se evalúa si `x` es menor que `y`.
+3. Si la condición anterior es falsa, se evalúa si **x** es menor que **y**.
 4. Si la condición es verdadera, se imprime el mensaje "X es menor que Y".
 
-- `else`: Si no
+- **else**: Si no
 
 Ejemplo:
 
@@ -376,14 +378,14 @@ else: # <5>
   print("X es igual a Y") # <6>
 ```
 
-1. En este caso, se evalúa si `x` es mayor que `y`.
+1. En este caso, se evalúa si **x** es mayor que **y**.
 2. Si la condición es verdadera, se imprime el mensaje "X es mayor que Y".
-3. Si la condición anterior es falsa, se evalúa si `x` es menor que `y`.
+3. Si la condición anterior es falsa, se evalúa si **x** es menor que **y**.
 4. Si la condición es verdadera, se imprime el mensaje "X es menor que Y".
-5. Si las condiciones anteriores son falsas, se ejecuta el bloque de código del `else`.
+5. Si las condiciones anteriores son falsas, se ejecuta el bloque de código del **else**.
 6. En este caso, se imprime el mensaje "X es igual a Y".
    
-- `for`: Para
+- **for**: Para
 
 Ejemplo:
 
@@ -393,9 +395,9 @@ for x in range(5): # <1>
 ```
 
 1. En este caso, se recorre un rango de 0 a 5.
-2. En cada iteración, se imprime el valor de `x`.
+2. En cada iteración, se imprime el valor de **x**.
 
-- `while`: Mientras
+- **while**: Mientras
 
 Ejemplo:
 
@@ -406,11 +408,11 @@ while x < 5: # <1>
   x += 1 # <3>
 ```
 
-1. En este caso, se evalúa si `x` es menor que 5.
-2. En cada iteración, se imprime el valor de `x`.
-3. En cada iteración, se incrementa el valor de `x`.
+1. En este caso, se evalúa si **x** es menor que 5.
+2. En cada iteración, se imprime el valor de **x**.
+3. En cada iteración, se incrementa el valor de **x**.
 
-- `break`: Romper
+- **break**: Romper
 
 Ejemplo:
 
@@ -423,13 +425,13 @@ while x < 5: # <1>
     break # <5>
 ```
 
-1. En este caso, se evalúa si `x` es menor que 5.
-2. En cada iteración, se imprime el valor de `x`.
-3. En cada iteración, se incrementa el valor de `x`.
-4. En cada iteración, se evalúa si `x` es igual a 3.
+1. En este caso, se evalúa si **x** es menor que 5.
+2. En cada iteración, se imprime el valor de **x**.
+3. En cada iteración, se incrementa el valor de **x**.
+4. En cada iteración, se evalúa si **x** es igual a 3.
 5. Si la condición es verdadera, se rompe el ciclo.
 
-- `continue`: Continuar
+- **continue**: Continuar
 
 Ejemplo:
 
@@ -442,13 +444,13 @@ while x < 5: # <1>
   print(x) # <5>
 ```
 
-1. En este caso, se evalúa si `x` es menor que 5.
-2. En cada iteración, se incrementa el valor de `x`.
-3. En cada iteración, se evalúa si `x` es igual a 3.
+1. En este caso, se evalúa si **x** es menor que 5.
+2. En cada iteración, se incrementa el valor de **x**.
+3. En cada iteración, se evalúa si **x** es igual a 3.
 4. Si la condición es verdadera, se continúa con la siguiente iteración.
-5. En cada iteración, se imprime el valor de `x`.
+5. En cada iteración, se imprime el valor de **x**.
    
-- `pass`: Pasar
+- **pass**: Pasar
 
 Ejemplo:
 
@@ -458,10 +460,10 @@ if x == 0: # <1>
   pass # <2>
 ```
 
-1. En este caso, se evalúa si `x` es igual a 0.
+1. En este caso, se evalúa si **x** es igual a 0.
 2. Si la condición es verdadera, no se hace nada.
 
-- `return`: Retornar
+- **return**: Retornar
 
 Ejemplo:
 
@@ -470,10 +472,10 @@ def suma(x, y): # <1>
   return x + y # <2>
 ```
 
-1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
-2. La función retorna la suma de `x` y `y`.
+1. En este caso, se define una función llamada **suma** que recibe dos parámetros **x** y **y**.
+2. La función retorna la suma de **x** y **y**.
 
-- `def`: Definir
+- **def**: Definir
 
 Ejemplo:
 
@@ -482,36 +484,10 @@ def suma(x, y): # <1>
   return x + y # <2>
 ```
 
-1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
-2. La función retorna la suma de `x` y `y.
+1. En este caso, se define una función llamada **suma** que recibe dos parámetros **x** y **y**.
+2. La función retorna la suma de **x** y **y**.
 
-- `lambda`: Función anónima
-
-Ejemplo:
-
-```python
-f = lambda x, y: x + y # <1>
-```
-
-1. En este caso, se define una función anónima que recibe dos parámetros `x` y `y` y retorna la suma de `x` y `y`.
-
-- `class`: Clase
-
-Ejemplo:
-
-```python
-class Persona: # <1>
-  def __init__(self, nombre, edad): # <2>
-    self.nombre = nombre # <3>
-    self.edad = edad # <4>
-```
-
-1. En este caso, se define una clase llamada `Persona`.
-2. La clase tiene un método llamado `__init__` que recibe tres parámetros: `self`, `nombre` y `edad`.
-3. El método `__init__` asigna el valor del parámetro `nombre` a la propiedad `nombre` de la clase.
-4. El método `__init__` asigna el valor del parámetro `edad` a la propiedad `edad` de la clase.
-
-- `try`: Intentar
+- **try**: Intentar
 
 Ejemplo:
 
@@ -523,11 +499,11 @@ except: # <3>
 ```
 
 1. En este caso, se intenta ejecutar el bloque de código.
-2. Si ocurre un error, se ejecuta el bloque de código del `except`.
+2. Si ocurre un error, se ejecuta el bloque de código del **except**.
 3. En este caso, se imprime el mensaje "Ocurrió un error".
 4. Si no ocurre un error, se continúa con la ejecución del código.
 
-- `except`: Excepto
+- **except**: Excepto
 
 Ejemplo:
 
@@ -539,11 +515,11 @@ except: # <3>
 ```
 
 1. En este caso, se intenta ejecutar el bloque de código.
-2. Si ocurre un error, se ejecuta el bloque de código del `except`.
+2. Si ocurre un error, se ejecuta el bloque de código del **except**.
 3. En este caso, se imprime el mensaje "Ocurrió un error".
 4. Si no ocurre un error, se continúa con la ejecución del código.
 
-- `finally`: Finalmente
+- **finally**: Finalmente
 
 Ejemplo:
 
@@ -563,7 +539,7 @@ finally: # <5>
 5. Al finalizar la ejecución del bloque de código, se ejecuta el bloque de código del `finally`.
 6. En este caso, se imprime el mensaje "Finalizó la ejecución".
 
-- `raise`: Lanzar
+- **raise**: Lanzar
 
 Ejemplo:
 
@@ -575,7 +551,7 @@ if x < 0: # <1>
 1. En este caso, se evalúa si `x` es menor que 0.
 2. Si la condición es verdadera, se lanza una excepción con el mensaje "El número no puede ser negativo".
 
-- `assert`: Afirmar
+- **assert**: Afirmar
 
 Ejemplo:
 
@@ -585,7 +561,7 @@ assert x > 0, "El número no puede ser negativo" # <1>
 
 1. En este caso, se evalúa si `x` es mayor que 0.
 
-- `import`: Importar
+- **import**: Importar
 
 Ejemplo:
 
@@ -593,9 +569,9 @@ Ejemplo:
 import math # <1>
 ```
 
-1. En este caso, se importa el módulo `math`.
+1. En este caso, se importa el módulo **math**.
 
-- `from`: Desde
+- **from**: Desde
 
 Ejemplo:
 
@@ -603,9 +579,9 @@ Ejemplo:
 from math import sqrt # <1>
 ```
 
-1. En este caso, se importa la función `sqrt` del módulo `math`.
+1. En este caso, se importa la función **sqrt** del módulo **math**.
 
-- `as`: Como
+- **as**: Como
 
 Ejemplo:
 
@@ -613,7 +589,7 @@ Ejemplo:
 import math as m # <1>
 ```
 
-1. En este caso, se importa el módulo `math` como `m`.
+1. En este caso, se importa el módulo **math** como **m**.
 
 # Funciones
 
@@ -624,8 +600,8 @@ def suma(x, y): # <1>
   return x + y # <2>
 ```
 
-1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
-2. La función retorna la suma de `x` y `y`.
+1. En este caso, se define una función llamada **suma** que recibe dos parámetros **x** y **y**.
+2. La función retorna la suma de **x** y **y**.
 
 # Llamada a Funciones
 
@@ -635,7 +611,7 @@ En python, las funciones se llaman de la siguiente manera:
 z = suma(5, 2) # <1>
 ```
 
-1. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+1. En este caso, se llama a la función **suma** con los argumentos **5** y **2**.
 
 # Parámetros y Argumentos
 
@@ -648,9 +624,9 @@ def suma(x, y): # <1>
 z = suma(5, 2) # <3>
 ```
 
-1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
-2. La función retorna la suma de `x` y `y`.
-3. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+1. En este caso, se define una función llamada **suma** que recibe dos parámetros **x** y **y**.
+2. La función retorna la suma de **x** y **y**.
+3. En este caso, se llama a la función **suma** con los argumentos **5** y **2**.
 
 # Retorno
 
@@ -663,13 +639,70 @@ def suma(x, y): # <1>
 z = suma(5, 2) # <3>
 ```
 
-1. En este caso, se define una función llamada `suma` que recibe dos parámetros `x` y `y`.
-2. La función retorna la suma de `x` y `y`.
-3. En este caso, se llama a la función `suma` con los argumentos `5` y `2`.
+1. En este caso, se define una función llamada **suma** que recibe dos parámetros **x** y **y**.
+2. La función retorna la suma de **x** y **y**.
+3. En este caso, se llama a la función **suma** con los argumentos **5** y **2**.
+
+# Ejemplo
+
+El programa **Calculadora de propinas** es un ejemplo práctico que permite calcular la propina a dejar en un restaurante. 
+
+El funcionamiento del programa es el siguiente:
+
+1. El usuario ingresa el monto total de la cuenta del restaurante.
+2. Luego, el usuario selecciona el porcentaje de propina que desea dejar. Por ejemplo, puede elegir un 10%, 15% o 20%.
+3. El programa calcula la cantidad de propina a partir del monto total de la cuenta y el porcentaje seleccionado.
+4. Finalmente, el programa muestra al usuario el monto total de la cuenta, la cantidad de propina a dejar y el monto total a pagar (suma del monto total de la cuenta y la propina).
+
+Este programa es útil para aquellos que deseen calcular rápidamente la cantidad de propina a dejar en un restaurante, sin tener que hacer los cálculos manualmente. Además, puede ser una buena práctica para familiarizarse con el uso de variables y el control de flujo en la programación.
+
+<details>
+<summary>Ver Código</summary>
+
+```python
+# Ejemplo práctico: Calculadora de propinas
+
+def calcular_propina(total, porcentaje): # <1>
+    propina = total * (porcentaje / 100) # <2>
+    return propina # <3>
+
+def calcular_total_con_propina(total, porcentaje):
+    propina = calcular_propina(total, porcentaje)
+    total_con_propina = total + propina
+    return total_con_propina
+
+def main(): # <4>
+    print("Bienvenido a la calculadora de propinas") # <5>
+    total = float(input("Ingrese el total de la cuenta: ")) # <6>
+    porcentaje = float(input("Ingrese el porcentaje de propina que desea dejar: ")) # <7>
+    
+    propina = calcular_propina(total, porcentaje) # <8>
+    total_con_propina = calcular_total_con_propina(total, porcentaje) # <9>
+    
+    print(f"La propina a dejar es: {propina}") # <10>
+    print(f"El total con propina es: {total_con_propina}") # <11>
+
+if __name__ == "__main__": # <12>
+    main() # <13>
+```
+
+1. En este caso, se define una función llamada **calcular_propina** que recibe dos parámetros **total** y **porcentaje**.
+2. La función calcula la propina a partir del total y el porcentaje.
+3. La función retorna la propina.
+4. En este caso, se define una función llamada **main**.
+5. Se imprime un mensaje de bienvenida.
+6. Se solicita al usuario que ingrese el total de la cuenta.
+7. Se solicita al usuario que ingrese el porcentaje de propina que desea dejar.
+8. Se calcula la propina a partir del total y el porcentaje.
+9. Se calcula el total con propina.
+10. Se imprime la propina a dejar.
+11. Se imprime el total con propina.
+
+</details>
 
 # Asignación
 
-A continuación se sugiere realiza 
+A continuación se sugiere realizar los siguientes ejercicios para practicar la sintaxis y estructura de Python.
 
 [Ejercicios Python Básico](https://classroom.github.com/a/IcerIhRU)
 

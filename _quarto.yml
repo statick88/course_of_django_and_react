@@ -38,6 +38,11 @@ book:
         - unidades/unidad1/2_github_classroom.qmd
         - unidades/unidad1/3_docker.qmd
 
+    - part: "Unidad 2: Python Básico"
+      chapters: 
+        - unidades/unidad2/1_introduccion.qmd
+        - unidades/unidad2/2_variable_y_control_de_flujo.qmd
+
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/ejercicios_git_github-000.qmd
