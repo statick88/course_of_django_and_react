@@ -1,0 +1,262 @@
+# Listas
+
+Las listas son un tipo de dato que nos permite almacenar diferentes valores, en una sola variable. 
+
+- Las listas **son mutables**, es decir, podemos modificar su contenido. 
+
+Ejemplo:
+
+```python
+mi_lista = [1, 2, 3, 4, 5]
+```
+
+Ejercicio:
+
+Crear una lista con los números del 1 al 10, y mostrarla en pantalla.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  mi_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  print(mi_lista)
+  ```
+</details>
+
+# Tuplas
+
+Las tuplas son un tipo de dato que nos permite almacenar diferentes valores, en una sola variable.
+
+- Las tuplas **son inmutables**, es decir, no podemos modificar su contenido.
+
+Ejemplo:
+
+```python
+mi_tupla = (1, 2, 3, 4, 5)
+```
+
+Ejercicio:
+
+Crear una tupla con los números del 1 al 10, y mostrarla en pantalla.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  mi_tupla = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  print(mi_tupla)
+  ```
+</details>
+
+# Manipulación de Listas y Tuplas
+
+Para modificar una **lista** se puede realizar diferentes operaciones, como agregar, eliminar, modificar, y acceder a los elementos de la lista o tupla.
+
+Ejemplo:
+
+```python
+mi_lista = [1, 2, 3, 4, 5] #<1>
+mi_lista.append(6) #<2>
+mi_lista.remove(3) #<3>
+mi_lista[0] = 10 #<4>
+print(mi_lista) #<5>
+```
+
+1. Creamos una lista con los números del 1 al 5.
+2. Agregamos el número 6 al final de la lista.
+3. Eliminamos el número 3 de la lista.
+4. Modificamos el primer elemento de la lista por el número 10.
+5. Mostramos la lista en pantalla.
+
+Ejercicio:
+
+Crear una lista con los números del 1 al 10, y mostrarla en pantalla. Luego, agregar el número 11 al final de la lista, y mostrarla en pantalla. Finalmente, eliminar el número 5 de la lista, y mostrarla en pantalla.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  mi_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  print(mi_lista)
+  mi_lista.append(11)
+  print(mi_lista)
+  mi_lista.remove(5)
+  print(mi_lista)
+  ```
+</details>
+
+::: {.callout-tip}
+La caracteristica principal de las tuplas es que son inmutables, por lo que no se pueden modificar.
+:::
+
+# Funciones ingegradas para Listas y Tuplas
+
+Python cuenta con funciones integradas que nos permiten realizar diferentes operaciones con listas y tuplas.
+
+Ejemplo:
+
+```python
+mi_lista = [1, 2, 3, 4, 5]
+mi_tupla = (1, 2, 3, 4, 5)
+
+print(len(mi_lista)) #<1>
+print(len(mi_tupla)) #<2>
+print(max(mi_lista)) #<3>
+print(max(mi_tupla)) #<4>
+print(min(mi_lista)) #<5>
+print(min(mi_tupla)) #<6>
+print(sum(mi_lista)) #<7>
+```
+
+1. Mostramos la longitud de la lista.
+2. Mostramos la longitud de la tupla.
+3. Mostramos el número mayor de la lista.
+4. Mostramos el número mayor de la tupla.
+5. Mostramos el número menor de la lista.
+6. Mostramos el número menor de la tupla.
+7. Mostramos la suma de los elementos de la lista.
+
+Ejercicio:
+
+Crear una lista con los números del 1 al 10, y mostrar la longitud de la lista. Luego, mostrar el número mayor y menor de la lista, y finalmente mostrar la suma de los elementos de la lista.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  mi_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  print(len(mi_lista))
+  print(max(mi_lista))
+  print(min(mi_lista))
+  print(sum(mi_lista))
+  ```
+</details>
+
+# Listas Anidadas
+
+Las listas anidadas son listas que contienen otras listas.
+
+Ejemplo:
+
+```python
+mi_lista = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(mi_lista)
+```
+
+Ejercicio:
+
+Crear una lista anidada con los números del 1 al 9, y mostrarla en pantalla.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  mi_lista = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  print(mi_lista)
+  ```
+</details>
+
+# Listas y Tuplas como Argumentos de Funciones
+
+Las listas y tuplas pueden ser utilizadas como argumentos de funciones.
+
+Ejemplo:
+
+```python
+def mostrar_lista(lista):
+    for elemento in lista:
+        print(elemento)
+
+mi_lista = [1, 2, 3, 4, 5]
+mostrar_lista(mi_lista)
+```
+Ejercicio:
+
+Crear una función que reciba una lista como argumento, y muestre en pantalla los elementos de la lista.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  def mostrar_lista(lista):
+      for elemento in lista:
+          print(elemento)
+
+  mi_lista = [1, 2, 3, 4, 5]
+  mostrar_lista(mi_lista)
+  ```
+</details>
+
+# Listas y Tuplas como Retorno de Funciones
+
+Las listas y tuplas pueden ser utilizadas como retorno de funciones.
+
+Ejemplo:
+
+```python
+def crear_lista():
+    return [1, 2, 3, 4, 5]
+
+mi_lista = crear_lista()
+print(mi_lista)
+```
+
+Ejercicio:
+
+Crear una función que retorne una lista con los números del 1 al 10, y mostrarla en pantalla.
+
+<details>
+  <summary>Solución</summary>
+  
+  ```python
+  def crear_lista():
+      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+  mi_lista = crear_lista()
+  print(mi_lista)
+  ```
+</details>
+
+# Asignación
+
+[https://classroom.github.com/a/207M40z1](https://classroom.github.com/a/207M40z1)
+
+Este repositorio contiene una asignación para el curso de programación en Python. La asignación es sobre la manipulación de listas y tuplas en Python.
+
+## Descripción de la Asignación
+
+El archivo ejercicio.py contiene un script que pide al usuario que ingrese una lista de compras. El usuario debe ingresar los elementos de la lista separados por comas. El script luego imprime la lista de compras.
+
+Además, el script contiene una función llamada convertir_lista_a_tupla() que está destinada a convertir la lista de compras en una tupla. Esta función aún no está completa.
+
+## Tarea Pendiente:
+
+-   Completar la función convertir_lista_a_tupla() para que convierta la lista de compras en una tupla.
+
+## Cómo Ejecutar el Código
+
+Para ejecutar el test puedes utilizar el siguiente comando en tu terminal:
+
+```bash
+pytest -s
+```
+
+Pytest es una biblioteca que facilita la escritura de pruebas en Python. El parámetro -s se utiliza para mostrar la salida de la prueba en la terminal.
+
+## Ejemplo de salida:
+
+```bash
+$ pytest -s
+================================================= test session starts =================================================
+platform linux -- Python 3.8.10, pytest-6.2.4, pluggy-0.13.1
+rootdir: /home/user/Documentos/Python/Asignacion_Lista_Compras
+collected 1 item
+
+test_ejercicio.py Lista de Compras: [manzanas, peras, plátanos, uvas]
+
+================================================== 1 passed in 0.01s ==================================================
+```
+
+::: {.callout-tip}
+Se sugiere que practique la sección **Ejercicios Python - Nivel 3 **para reforzar los conocimientos adquiridos.
+:::

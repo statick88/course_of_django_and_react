@@ -1,42 +1,57 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Django y React 2024",
+    "objectID": "unidades/unidad3/3_listas_tuplas.html",
+    "href": "unidades/unidad3/3_listas_tuplas.html",
+    "title": "Listas",
     "section": "",
-    "text": "Bienvenido",
+    "text": "Tuplas\nLas tuplas son un tipo de dato que nos permite almacenar diferentes valores, en una sola variable.\nEjemplo:\nEjercicio:\nCrear una tupla con los números del 1 al 10, y mostrarla en pantalla.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
     ]
   },
   {
-    "objectID": "index.html#de-qué-trata-este-curso",
-    "href": "index.html#de-qué-trata-este-curso",
-    "title": "Django y React 2024",
-    "section": "¿De qué trata este curso?",
-    "text": "¿De qué trata este curso?\nEste curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React.\nA través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real.\nDesde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.",
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
+    "href": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
+    "title": "Listas",
+    "section": "Descripción de la Asignación",
+    "text": "Descripción de la Asignación\nEl archivo ejercicio.py contiene un script que pide al usuario que ingrese una lista de compras. El usuario debe ingresar los elementos de la lista separados por comas. El script luego imprime la lista de compras.\nAdemás, el script contiene una función llamada convertir_lista_a_tupla() que está destinada a convertir la lista de compras en una tupla. Esta función aún no está completa.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
     ]
   },
   {
-    "objectID": "index.html#para-quién-es-este-curso",
-    "href": "index.html#para-quién-es-este-curso",
-    "title": "Django y React 2024",
-    "section": "¿Para quién es este curso?",
-    "text": "¿Para quién es este curso?\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.\nYa sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.",
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
+    "href": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
+    "title": "Listas",
+    "section": "Tarea Pendiente:",
+    "text": "Tarea Pendiente:\n\nCompletar la función convertir_lista_a_tupla() para que convierta la lista de compras en una tupla.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
     ]
   },
   {
-    "objectID": "index.html#cómo-contribuir",
-    "href": "index.html#cómo-contribuir",
-    "title": "Django y React 2024",
-    "section": "¿Cómo contribuir?",
-    "text": "¿Cómo contribuir?\nValoramos su contribución a este curso. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!",
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
+    "href": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
+    "title": "Listas",
+    "section": "Cómo Ejecutar el Código",
+    "text": "Cómo Ejecutar el Código\nPara ejecutar el test puedes utilizar el siguiente comando en tu terminal:\npytest -s\nPytest es una biblioteca que facilita la escritura de pruebas en Python. El parámetro -s se utiliza para mostrar la salida de la prueba en la terminal.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
+    "href": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
+    "title": "Listas",
+    "section": "Ejemplo de salida:",
+    "text": "Ejemplo de salida:\n$ pytest -s\n================================================= test session starts =================================================\nplatform linux -- Python 3.8.10, pytest-6.2.4, pluggy-0.13.1\nrootdir: /home/user/Documentos/Python/Asignacion_Lista_Compras\ncollected 1 item\n\ntest_ejercicio.py Lista de Compras: [manzanas, peras, plátanos, uvas]\n\n================================================== 1 passed in 0.01s ==================================================\n\n\n\n\n\n\nTip\n\n\n\nSe sugiere que practique la sección Ejercicios Python - Nivel 3 para reforzar los conocimientos adquiridos.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
     ]
   },
   {
@@ -425,182 +440,15 @@
     ]
   },
   {
-    "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
-    "href": "unidades/ejercicios/ejercicios_git_github-000.html",
-    "title": "Ejercicios de Git y Github",
+    "objectID": "unidades/unidad2/1_introduccion.html",
+    "href": "unidades/unidad2/1_introduccion.html",
+    "title": "Hola Mundo en Python",
     "section": "",
-    "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
+    "text": "Introdución 🫥\n\nEn este tutorial aprenderemos los conceptos básicos necesarios para configurar nuestro entorno de desarrollo y escribir código en Python. Comenzaremos con la instalación de Python en Windows y luego veremos cómo escribir y ejecutar nuestro primer programa en Python utilizando Visual Studio Code como nuestro editor de texto.\n\n\nPaso 1: Instalación de Python 🐍\nPara poder escribir y ejecutar programas en Python, primero necesitamos instalar Python en nuestra computadora. Python es un lenguaje de programación de alto nivel que es ampliamente utilizado en el desarrollo de aplicaciones web, desarrollo de software, análisis de datos, inteligencia artificial, etc.\n\n\n\n\n\n\nNote\n\n\n\nPython se puede instalar en Windows, Mac y Linux. En este tutorial, veremos cómo instalar Python en Windows.\n\n\n\n\nPaso 2: Instalación de Python en Windows 🪟\n\nDescargar Python\n\nPara instalar Python en Windows, primero necesitamos descargar el instalador de Python desde el sitio web oficial de Python. Para hacer esto, abra su navegador web y vaya a la página de descargas de Python en el siguiente enlace:\n\nhttps://www.python.org/downloads/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para la última versión de Python. En el momento de escribir este tutorial, la última versión de Python es 3.12.1\n\n\n\n\n\nExcelente, ahora que hemos descargado el instalador de Python, podemos continuar con la instalación de Python en Windows.\n\nInstalar Python\n\nUna vez que el instalador de Python se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Asegúrese de marcar la casilla que dice “Add Python 3.12 to PATH” antes de hacer clic en el botón “Install Now”.\n\n\n\n\n\nAhora que hemos instalado Python en nuestra computadora, podemos continuar con la configuración de nuestro entorno de desarrollo para escribir y ejecutar programas en Python.\n\nComprobar que tenemos instalado Python\n\nPara comprobar que Python se ha instalado correctamente en nuestra computadora, abra una ventana de comandos y escriba el siguiente comando:\npython --version\n\n\nEste comando imprimirá la versión de Python que está instalada en su computadora. En mi caso, la versión de Python es 3.12.1.\n\n\n\n\n\n\n\nPaso 3: Crear nuestro primer “Hola Mundo” en Python 🗺️.\nAhora que hemos instalado Python en nuestra computadora, podemos comenzar a escribir y ejecutar programas en Python. Para hacer esto, necesitamos un editor de texto para escribir nuestro código y un intérprete de Python para ejecutar nuestro código.\nEn este tutorial, usaremos Visual Studio Code como nuestro editor de texto y el intérprete de Python que instalamos en el paso anterior.\n\nInstalar Visual Studio Code\n\nPara instalar Visual Studio Code, vaya al sitio web oficial de Visual Studio Code en el siguiente enlace:\n\nhttps://code.visualstudio.com/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para su sistema operativo. En el momento de escribir este tutorial, la última versión de Visual Studio Code es 1.85.2.\nUna vez que el instalador de Visual Studio Code se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Siga las instrucciones en pantalla para completar la instalación.\n\n\n\n\n\n\nCrear un nuevo archivo de Python\n\nPara crear un nuevo archivo de Python en Visual Studio Code, abra Visual Studio Code y haga clic en el botón “New File” en la barra de herramientas. Luego, escriba el siguiente código en el archivo:\nprint(\"Hola Mundo\")\n\n\n\n\n\n\n\n\nEjecutar el programa\n\nPara ejecutar el programa, haga clic en el botón “Run” en la barra de herramientas. Esto ejecutará el programa y mostrará “Hola Mundo” en la consola.\nprint\n\n¡Felicidades!\nAcabas de escribir y ejecutar tu primer programa en Python. Ahora que has configurado tu entorno de desarrollo y has escrito tu primer programa en Python, puedes comenzar a explorar el lenguaje de programación Python y aprender a escribir programas más complejos.",
     "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "Unidad 2: Python Básico",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Hola Mundo en Python</span>"
     ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
-    "href": "unidades/ejercicios/ejercicios_python-001.html",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "",
-    "text": "Ejercicio 1",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "",
-    "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html",
-    "href": "unidades/ejercicios/ejercicios_python-002.html",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "",
-    "text": "Ejercicio 1",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "",
-    "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
     "objectID": "unidades/unidad2/2_variable_y_control_de_flujo.html",
@@ -658,14 +506,346 @@
     ]
   },
   {
-    "objectID": "unidades/unidad2/1_introduccion.html",
-    "href": "unidades/unidad2/1_introduccion.html",
-    "title": "Hola Mundo en Python",
+    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html",
+    "href": "unidades/unidad3/4_conjuntos_diccionarios.html",
+    "title": "Diccionarios",
     "section": "",
-    "text": "Introdución 🫥\n\nEn este tutorial aprenderemos los conceptos básicos necesarios para configurar nuestro entorno de desarrollo y escribir código en Python. Comenzaremos con la instalación de Python en Windows y luego veremos cómo escribir y ejecutar nuestro primer programa en Python utilizando Visual Studio Code como nuestro editor de texto.\n\n\nPaso 1: Instalación de Python 🐍\nPara poder escribir y ejecutar programas en Python, primero necesitamos instalar Python en nuestra computadora. Python es un lenguaje de programación de alto nivel que es ampliamente utilizado en el desarrollo de aplicaciones web, desarrollo de software, análisis de datos, inteligencia artificial, etc.\n\n\n\n\n\n\nNote\n\n\n\nPython se puede instalar en Windows, Mac y Linux. En este tutorial, veremos cómo instalar Python en Windows.\n\n\n\n\nPaso 2: Instalación de Python en Windows 🪟\n\nDescargar Python\n\nPara instalar Python en Windows, primero necesitamos descargar el instalador de Python desde el sitio web oficial de Python. Para hacer esto, abra su navegador web y vaya a la página de descargas de Python en el siguiente enlace:\n\nhttps://www.python.org/downloads/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para la última versión de Python. En el momento de escribir este tutorial, la última versión de Python es 3.12.1\n\n\n\n\n\nExcelente, ahora que hemos descargado el instalador de Python, podemos continuar con la instalación de Python en Windows.\n\nInstalar Python\n\nUna vez que el instalador de Python se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Asegúrese de marcar la casilla que dice “Add Python 3.12 to PATH” antes de hacer clic en el botón “Install Now”.\n\n\n\n\n\nAhora que hemos instalado Python en nuestra computadora, podemos continuar con la configuración de nuestro entorno de desarrollo para escribir y ejecutar programas en Python.\n\nComprobar que tenemos instalado Python\n\nPara comprobar que Python se ha instalado correctamente en nuestra computadora, abra una ventana de comandos y escriba el siguiente comando:\npython --version\n\n\nEste comando imprimirá la versión de Python que está instalada en su computadora. En mi caso, la versión de Python es 3.12.1.\n\n\n\n\n\n\n\nPaso 3: Crear nuestro primer “Hola Mundo” en Python 🗺️.\nAhora que hemos instalado Python en nuestra computadora, podemos comenzar a escribir y ejecutar programas en Python. Para hacer esto, necesitamos un editor de texto para escribir nuestro código y un intérprete de Python para ejecutar nuestro código.\nEn este tutorial, usaremos Visual Studio Code como nuestro editor de texto y el intérprete de Python que instalamos en el paso anterior.\n\nInstalar Visual Studio Code\n\nPara instalar Visual Studio Code, vaya al sitio web oficial de Visual Studio Code en el siguiente enlace:\n\nhttps://code.visualstudio.com/\n\n\n\n\n\n\nEn la página de descargas, haga clic en el botón de descarga para su sistema operativo. En el momento de escribir este tutorial, la última versión de Visual Studio Code es 1.85.2.\nUna vez que el instalador de Visual Studio Code se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Siga las instrucciones en pantalla para completar la instalación.\n\n\n\n\n\n\nCrear un nuevo archivo de Python\n\nPara crear un nuevo archivo de Python en Visual Studio Code, abra Visual Studio Code y haga clic en el botón “New File” en la barra de herramientas. Luego, escriba el siguiente código en el archivo:\nprint(\"Hola Mundo\")\n\n\n\n\n\n\n\n\nEjecutar el programa\n\nPara ejecutar el programa, haga clic en el botón “Run” en la barra de herramientas. Esto ejecutará el programa y mostrará “Hola Mundo” en la consola.\n\n\n\n\n\n\n¡Felicidades!\nAcabas de escribir y ejecutar tu primer programa en Python. Ahora que has configurado tu entorno de desarrollo y has escrito tu primer programa en Python, puedes comenzar a explorar el lenguaje de programación Python y aprender a escribir programas más complejos.",
+    "text": "Conjuntos\n\n\nOperaciones con Diccionarios y Conjuntos\n\n\nEjercicios",
     "crumbs": [
-      "Unidad 2: Python Básico",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Hola Mundo en Python</span>"
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "href": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "title": "Ejercicios de Git y Github",
+    "section": "",
+    "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
+    "href": "unidades/ejercicios/ejercicios_python-001.html",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html",
+    "href": "unidades/ejercicios/ejercicios_python-002.html",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html",
+    "href": "unidades/ejercicios/ejercicios_python-003.html",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "",
+    "text": "Ejercicio 1:",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "",
+    "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 2:",
+    "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 3:",
+    "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 4:",
+    "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 5:",
+    "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
+    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
+    "title": "Diccionarios",
+    "section": "Descripción",
+    "text": "Descripción\nEsta asignación consiste en corregir y ejecutar un test unitario para un diccionario de frutas. Instrucciones\n\nAbre el archivo ejercicio.py.\nCorrige el diccionario frutas para que tenga las siguientes parejas clave-valor:\n\n\"manzana\" - \"roja\"\n\"banana\" - \"amarilla\"\n\"pera\" - \"verde\"\n\"naranja\" - \"naranja\"\n\nGuarda y cierra el archivo ejercicio.py.\nEjecuta el test unitario test_ejercicio en tu terminal con el comando:\n\npython -m unittest test_ejercicio.py\n\nSi el test unitario se ejecuta sin errores, habrás completado la asignación.\nSi el test unitario arroja errores, corrige el diccionario frutas en ejercicio.py y vuelve a ejecutar el test unitario.\nRepite los pasos 4 a 6 hasta que el test unitario se ejecute sin errores.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
+    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
+    "title": "Diccionarios",
+    "section": "Criterios de Evaluación",
+    "text": "Criterios de Evaluación\n\nEl diccionario frutas en ejercicio.py tiene las parejas clave-valor correctas.\nEl test unitario test_frutas en test_ejercicio.py se ejecuta sin errores.\n\n:::{.callout-tip} Se sugiere revisar la sección de Ejercicios Python - Nivel 4 para poder reforzar los conocimientos necesarios para completar esta sección.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html",
+    "href": "unidades/ejercicios/ejercicios_python-004.html",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "",
+    "text": "Ejercicio 1:",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "",
+    "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 2:",
+    "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 3:",
+    "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 4:",
+    "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 5:",
+    "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   }
 ]

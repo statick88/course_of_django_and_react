@@ -1,0 +1,551 @@
+# Diccionarios
+
+Los diccionarios son una estructura de datos que nos permite almacenar información en pares clave-valor. La clave es un identificador único que nos permite acceder al valor asociado a ella. Los diccionarios son mutables, es decir, podemos modificar su contenido.
+
+Para crear un diccionario, utilizamos llaves **{}** y separamos cada par clave-valor con dos puntos **:**. Las claves y los valores pueden ser de cualquier tipo de dato.
+
+Ejemplo:
+
+```python
+mi_diccionario = {
+    "nombre": "Juan",
+    "edad": 25,
+    "ciudad": "Bogotá"
+}
+```
+Ejercicio:
+
+- Crear un diccionario con las siguientes claves y valores:
+    - "nombre": "Juan"
+    - "edad": 25
+    - "ciudad": "Bogotá"
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_diccionario = {
+    "nombre": "Juan",
+    "edad": 25,
+    "ciudad": "Bogotá"
+}
+```
+</details>
+
+Para acceder a un valor de un diccionario, utilizamos la clave correspondiente entre corchetes **[]**.
+
+Ejemplo:
+
+```python
+print(mi_diccionario["nombre"])  # Juan
+
+nombre = mi_diccionario["nombre"]
+print(nombre)  # Juan
+```
+
+Ejercicio:
+
+- Imprimir el valor de la clave "edad" del diccionario **mi_diccionario**.
+- Guardar el valor de la clave "ciudad" del diccionario **mi_diccionario** en una variable llamada **ciudad**.
+- Imprimir la variable **ciudad**.
+- Imprimir el valor de la clave "nombre" del diccionario **mi_diccionario**.
+- Guardar el valor de la clave "edad" del diccionario **mi_diccionario** en una variable llamada **edad**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+print(mi_diccionario["edad"])  # 25
+
+ciudad = mi_diccionario["ciudad"]
+
+print(ciudad)  # Bogotá
+
+print(mi_diccionario["nombre"])  # Juan
+
+edad = mi_diccionario["edad"]
+
+print(edad)  # 25
+```
+
+</details>
+
+Para modificar un valor de un diccionario, utilizamos la clave correspondiente entre corchetes **[]** y le asignamos el nuevo valor.
+
+Ejemplo:
+
+```python
+mi_diccionario["edad"] = 30
+print(mi_diccionario)  # {'nombre': 'Juan', 'edad': 30, 'ciudad': 'Bogotá'}
+```
+
+Ejercicio:
+
+- Modificar el valor de la clave "edad" del diccionario **mi_diccionario** a 30.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_diccionario["edad"] = 30
+print(mi_diccionario)  # {'nombre': 'Juan', 'edad': 30, 'ciudad': 'Bogotá'}
+```
+
+</details>
+
+Para agregar un nuevo par clave-valor a un diccionario, utilizamos la clave correspondiente entre corchetes **[]** y le asignamos el nuevo valor.
+
+Ejemplo:
+
+```python
+mi_diccionario["profesion"] = "Ingeniero"
+print(mi_diccionario)  # {'nombre': 'Juan', 'edad': 30, 'ciudad': 'Bogotá', 'profesion': 'Ingeniero'}
+```
+
+Ejercicio:
+
+- Agregar un nuevo par clave-valor al diccionario **mi_diccionario** con la clave "profesion" y el valor "Ingeniero".
+- Imprimir el diccionario **mi_diccionario**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_diccionario["profesion"] = "Ingeniero"
+print(mi_diccionario)  # {'nombre': 'Juan', 'edad': 30, 'ciudad': 'Bogotá', 'profesion': 'Ingeniero'}
+```
+
+</details>
+<sumary>Respuesta</summary>
+
+```python
+mi_diccionario["profesion"] = "Ingeniero"
+print(mi_diccionario)  # {'nombre': 'Juan', 'edad': 30, 'ciudad': 'Bogotá', 'profesion': 'Ingeniero'}
+```
+
+</details>
+
+Para eliminar un par clave-valor de un diccionario, utilizamos la palabra reservada **del** seguida de la clave correspondiente entre corchetes **[]**.
+
+Ejemplo:
+
+```python
+del mi_diccionario["edad"]
+print(mi_diccionario)  # {'nombre': 'Juan', 'ciudad': 'Bogotá', 'profesion': 'Ingeniero'}
+```
+
+Ejercicio:
+
+- Eliminar la clave "edad" del diccionario **mi_diccionario**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+del mi_diccionario["edad"]
+print(mi_diccionario)  # {'nombre': 'Juan', 'ciudad': 'Bogotá', 'profesion': 'Ingeniero'}
+```
+
+</details>
+
+Para recorrer un diccionario, podemos utilizar un ciclo **for** que recorra las claves del diccionario.
+
+Ejemplo:
+
+```python
+for clave in mi_diccionario:
+    print(clave)
+
+# nombre
+# ciudad
+# profesion
+```
+
+Ejercicio:
+
+- Recorrer el diccionario **mi_diccionario** e imprimir las claves.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+for clave in mi_diccionario:
+    print(clave)
+
+# nombre
+# ciudad
+# profesion
+```
+
+</details>
+
+Para recorrer un diccionario y obtener tanto las claves como los valores, podemos utilizar el método **items()**.
+
+Ejemplo:
+
+```python
+for clave, valor in mi_diccionario.items():
+    print(clave, valor)
+
+# nombre Juan
+# ciudad Bogotá
+# profesion Ingeniero
+```
+
+Ejercicio:
+
+- Recorrer el diccionario **mi_diccionario** e imprimir las claves y los valores.
+- Imprimir el valor de la clave "nombre" del diccionario **mi_diccionario**.
+- Imprimir el valor de la clave "ciudad" del diccionario **mi_diccionario**.
+- Imprimir el valor de la clave "profesion" del diccionario **mi_diccionario**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+for clave, valor in mi_diccionario.items():
+    print(clave, valor)
+
+# nombre Juan
+# ciudad Bogotá
+# profesion Ingeniero
+
+print(mi_diccionario["nombre"])  # Juan
+print(mi_diccionario["ciudad"])  # Bogotá
+print(mi_diccionario["profesion"])  # Ingeniero
+```
+
+</details>
+
+Para verificar si una clave se encuentra en un diccionario, podemos utilizar la palabra reservada **in**.
+
+Ejemplo:
+
+```python
+if "nombre" in mi_diccionario:
+    print("La clave 'nombre' se encuentra en el diccionario")
+
+if "apellido" not in mi_diccionario:
+    print("La clave 'apellido' no se encuentra en el diccionario")
+```
+
+Ejercicio:
+
+- Verificar si la clave "nombre" se encuentra en el diccionario **mi_diccionario**.
+- Verificar si la clave "apellido" no se encuentra en el diccionario **mi_diccionario**.
+- Verificar si la clave "ciudad" se encuentra en el diccionario **mi_diccionario**.
+- Verificar si la clave "profesion" no se encuentra en el diccionario **mi_diccionario**.
+- Verificar si la clave "edad" se encuentra en el diccionario **mi_diccionario**.
+- Verificar si la clave "telefono" no se encuentra en el diccionario **mi_diccionario**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+if "nombre" in mi_diccionario:
+    print("La clave 'nombre' se encuentra en el diccionario")
+
+if "apellido" not in mi_diccionario:
+    print("La clave 'apellido' no se encuentra en el diccionario")
+
+if "ciudad" in mi_diccionario:
+    print("La clave 'ciudad' se encuentra en el diccionario")
+
+if "profesion" not in mi_diccionario:
+    print("La clave 'profesion' no se encuentra en el diccionario")
+
+if "edad" in mi_diccionario:
+    print("La clave 'edad' se encuentra en el diccionario")
+else:
+    print("La clave 'edad' no se encuentra en el diccionario")
+
+if "telefono" not in mi_diccionario:
+    print("La clave 'telefono' no se encuentra en el diccionario")
+else:
+    print("La clave 'telefono' se encuentra en el diccionario")
+```
+
+</details>
+
+# Conjuntos
+
+Los conjuntos son una estructura de datos que nos permite almacenar elementos únicos. Los conjuntos son mutables, es decir, podemos modificar su contenido.
+
+Para crear un conjunto, utilizamos llaves **{}** y separamos cada elemento con comas **,**.
+
+Ejemplo:
+
+```python
+mi_conjunto = {1, 2, 3, 4, 5}
+```
+
+Ejercicio:
+
+- Crear un conjunto con los siguientes elementos:
+1, 2, 3, 4, 5, 6
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_conjunto = {1, 2, 3, 4, 5, 6}
+```
+
+</details>
+
+Para agregar un elemento a un conjunto, utilizamos el método **add()**.
+
+Ejemplo:
+
+```python
+mi_conjunto.add(7)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7}
+```
+
+Ejercicio:
+
+- Agregar el número 8 al conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+- Agregar el número 9 al conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+- Agregar el número 10 al conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+- Agregar el número 11 al conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+- Agregar el número 12 al conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_conjunto.add(8)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8}
+
+mi_conjunto.add(9)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+mi_conjunto.add(10)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+mi_conjunto.add(11)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+
+mi_conjunto.add(12)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+```
+
+</details>
+
+Para eliminar un elemento de un conjunto, utilizamos el método **remove()**.
+
+Ejemplo:
+
+```python
+mi_conjunto.remove(7)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6}
+```
+
+Ejercicio:
+
+- Eliminar el número 12 del conjunto **mi_conjunto**.
+- Imprimir el conjunto **mi_conjunto**.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_conjunto.remove(12)
+print(mi_conjunto)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+```
+
+</details>
+
+Para recorrer un conjunto, podemos utilizar un ciclo **for**.
+
+Ejemplo:
+
+```python
+for elemento in mi_conjunto:
+    print(elemento)
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# 11
+```
+
+Ejercicio:
+
+- Recorrer el conjunto mi_conjunto e imprimir los elementos.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+for elemento in mi_conjunto:
+    print(elemento)
+```
+</details>
+
+Para verificar si un elemento se encuentra en un conjunto, podemos utilizar la palabra reservada **in**.
+
+Ejemplo:
+
+```python
+if 1 in mi_conjunto:
+    print("El número 1 se encuentra en el conjunto")
+
+if 7 not in mi_conjunto:
+    print("El número 7 no se encuentra en el conjunto")
+
+if 10 in mi_conjunto:
+    print("El número 10 se encuentra en el conjunto")
+
+if 15 not in mi_conjunto:
+    print("El número 15 no se encuentra en el conjunto")
+
+if 20 in mi_conjunto:
+    print("El número 20 se encuentra en el conjunto")
+
+if 25 not in mi_conjunto:
+    print("El número 25 no se encuentra en el conjunto")
+```
+
+Ejercicio:
+
+- Verificar si el número 30 se encuentra en el conjunto mi_conjunto.
+- Verificar si el número 35 no se encuentra en el conjunto mi_conjunto.
+- Verificar si el número 40 se encuentra en el conjunto mi_conjunto.
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+if 30 in mi_conjunto:
+    print("El número 30 se encuentra en el conjunto")
+else:
+    print("El número 30 no se encuentra en el conjunto")
+
+if 35 not in mi_conjunto:
+    print("El número 35 no se encuentra en el conjunto")
+else:
+    print("El número 35 se encuentra en el conjunto")
+
+if 40 in mi_conjunto:
+    print("El número 40 se encuentra en el conjunto")
+else:
+    print("El número 40 no se encuentra en el conjunto")
+```
+
+</details>
+
+# Operaciones con Diccionarios y Conjuntos
+
+Para realizar operaciones con diccionarios y conjuntos, podemos utilizar los métodos y funciones que nos proporciona Python.
+
+Ejercicio:
+
+- Crear un diccionario con las siguientes claves y valores:
+    - "nombre": "Diego"
+    - "edad": 36
+    - "ciudad": "Quito"
+    - "profesion": "Ingeniero"
+    - "telefono": "1234567890"
+    - "email": "dsaavedra88@gmail.com"
+    - "direccion": "Calle 123 # 45-67"
+    - "pais": "Ecuador"
+  - Crear un conjunto con los siguientes elementos:
+    - 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_diccionario = {
+    "nombre": "Diego",
+    "edad": 36,
+    "ciudad": "Quito",
+    "profesion": "Ingeniero",
+    "telefono": "1234567890",
+    "email": "
+    "direccion": "Calle 123 # 45-67",
+    "pais": "Ecuador"
+}
+
+mi_conjunto = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+```
+
+</details>
+
+Otra operación que podemos realizar con diccionarios y conjuntos es la unión. Para unir dos diccionarios, utilizamos el método **update()**. Para unir dos conjuntos, utilizamos el método **union()**.
+
+Ejercicio:
+
+- Crear un diccionario con las siguientes claves y valores:
+    - "apellido": "Saavedra"
+    - "genero": "Masculino"
+    - "estado_civil": "Soltero"
+    - "hijos": 0
+    - "mascotas": 1
+  - Crear un conjunto con los siguientes elementos:
+    - 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
+
+<details>
+<summary>Respuesta</summary>
+
+```python
+mi_diccionario.update({
+    "apellido": "Saavedra",
+    "genero": "Masculino",
+    "estado_civil": "Soltero",
+    "hijos": 0,
+    "mascotas": 1
+})
+
+mi_conjunto.union({12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22})
+```
+
+</details>
+
+# Asignación
+
+[https://classroom.github.com/a/93tJXiLB](https://classroom.github.com/a/93tJXiLB)
+
+## Descripción
+
+Esta asignación consiste en corregir y ejecutar un test unitario para un diccionario de frutas.
+Instrucciones
+
+1. Abre el archivo **ejercicio.py**.
+2. Corrige el diccionario frutas para que tenga las siguientes parejas **clave-valor**:
+```python
+"manzana" - "roja"
+"banana" - "amarilla"
+"pera" - "verde"
+"naranja" - "naranja"
+```
+3. Guarda y cierra el archivo **ejercicio.py**.
+4. Ejecuta el test unitario test_ejercicio en tu terminal con el comando:
+
+```bash
+python -m unittest test_ejercicio.py
+```
+5. Si el **test unitario** se ejecuta sin errores, habrás **completado la asignación**.
+6. Si el **test unitario** arroja errores, **corrige** el **diccionario frutas** en **ejercicio.py** y **vuelve** a **ejecutar el test unitario**.
+7. Repite los pasos 4 a 6 hasta que el test unitario se ejecute sin errores.
+
+## Criterios de Evaluación
+
+- El diccionario frutas en **ejercicio.py** tiene las parejas clave-valor correctas.
+- El test unitario test_frutas en **test_ejercicio.py** se ejecuta sin errores.
+
+:::{.callout-tip}
+Se sugiere revisar la sección de **Ejercicios Python - Nivel 4** para poder reforzar los conocimientos necesarios para completar esta sección.
