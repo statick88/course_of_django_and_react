@@ -1,16 +1,10 @@
 # Proyecto de Sistema de Gestión de Inventarios con Python
 
-::: {.center}
 ![Sistema de Gestión de Inventario](/images/sistema-gestion-inventario.png){width=20%, align=center}
-:::
 
 En este tutorial, aprenderás a desarrollar un proyecto de **Sistema de Gestión de Inventarios** utilizando el lenguaje de programación Python. 
 
 Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.
-
-Durante este tutorial, te guiaré a través de los pasos necesarios para crear un sistema de gestión de inventarios funcional utilizando Python. 
-
-Aprenderás a utilizar diferentes conceptos y técnicas de programación para implementar las funcionalidades clave de este sistema.
 
 Algunas de las funcionalidades que implementaremos incluyen:
 
