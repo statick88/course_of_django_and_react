@@ -568,6 +568,215 @@
     ]
   },
   {
+    "objectID": "unidades/unidad4/5_programacion_oo.html",
+    "href": "unidades/unidad4/5_programacion_oo.html",
+    "title": "Programación Orientada a Objetos",
+    "section": "",
+    "text": "Asignación\nhttps://classroom.github.com/a/LVvqQCln\nEn esta asignación, aprenderás sobre los conceptos básicos de Programación Orientada a Objetos (POO) mediante la implementación de clases en Python.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#instrucciones",
+    "href": "unidades/unidad4/5_programacion_oo.html#instrucciones",
+    "title": "Programación Orientada a Objetos",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nLee cuidadosamente el contenido de este repositorio.\nImplementa las clases solicitadas en el archivo main.py.\nRealiza los commits y push necesarios para subir tus cambios a este repositorio.\nVerifica que tus cambios pasen todas las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#contenido-del-repositorio",
+    "href": "unidades/unidad4/5_programacion_oo.html#contenido-del-repositorio",
+    "title": "Programación Orientada a Objetos",
+    "section": "Contenido del Repositorio",
+    "text": "Contenido del Repositorio\n\nmain.py: Archivo principal donde implementarás tus clases.\ntest_main.py: Archivo de pruebas unitarias.\nREADME.md: Este archivo con las instrucciones de la asignación.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#cómo-ejecutar-las-pruebas",
+    "href": "unidades/unidad4/5_programacion_oo.html#cómo-ejecutar-las-pruebas",
+    "title": "Programación Orientada a Objetos",
+    "section": "Cómo Ejecutar las Pruebas",
+    "text": "Cómo Ejecutar las Pruebas\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nEjecuta python -m unittest para correr las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html",
+    "href": "unidades/unidad4/6_modulos.html",
+    "title": "Módulos",
+    "section": "",
+    "text": "Paquetes\nUn paquete es un conjunto de módulos organizados en un directorio. Un paquete debe contener un archivo llamado init.py. Este archivo puede estar vacío o contener código de inicialización del paquete.\nEjemplo:\nEjercicio:\nCrear un paquete llamado operaciones que contenga los módulos suma.py, resta.py, multiplicacion.py y division.py. Cada módulo debe contener una función que realice la operación correspondiente.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#creación-de-módulos",
+    "href": "unidades/unidad4/6_modulos.html#creación-de-módulos",
+    "title": "Módulos",
+    "section": "Creación de Módulos",
+    "text": "Creación de Módulos\nPara crear un módulo, simplemente se crea un archivo con extensión .py y se definen las funciones y variables que se desean exportar.\nEjemplo:\n# modulo.py\ndef saludar():\n    print(\"Hola, bienvenido a Python\")",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#uso-de-módulos",
+    "href": "unidades/unidad4/6_modulos.html#uso-de-módulos",
+    "title": "Módulos",
+    "section": "Uso de Módulos",
+    "text": "Uso de Módulos\nPara usar un módulo, se utiliza la palabra reservada import seguida del nombre del módulo.\nEjemplo:\n# programa.py\nimport modulo\n\nmodulo.saludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-funciones-específicas",
+    "href": "unidades/unidad4/6_modulos.html#importar-funciones-específicas",
+    "title": "Módulos",
+    "section": "Importar Funciones Específicas",
+    "text": "Importar Funciones Específicas\nTambién es posible importar funciones específicas de un módulo.\nEjemplo:\n# programa.py\nfrom modulo import saludar\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-con-alias",
+    "href": "unidades/unidad4/6_modulos.html#importar-con-alias",
+    "title": "Módulos",
+    "section": "Importar con Alias",
+    "text": "Importar con Alias\nEs posible importar un módulo o función con un alias.\nEjemplo:\n# programa.py\n\nimport modulo as m\n\nm.saludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones",
+    "href": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones",
+    "title": "Módulos",
+    "section": "Importar Todas las Funciones",
+    "text": "Importar Todas las Funciones\nTambién es posible importar todas las funciones de un módulo.\nEjemplo:\n# programa.py\n\nfrom modulo import *\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#creación-de-paquetes",
+    "href": "unidades/unidad4/6_modulos.html#creación-de-paquetes",
+    "title": "Módulos",
+    "section": "Creación de Paquetes",
+    "text": "Creación de Paquetes\nPara crear un paquete, se crea un directorio con el nombre del paquete y se agregan los módulos necesarios. Además, se debe crear un archivo init.py en el directorio del paquete.\nEjemplo:\npaquete/\n    __init__.py\n    modulo1.py\n    modulo2.py",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#uso-de-paquetes",
+    "href": "unidades/unidad4/6_modulos.html#uso-de-paquetes",
+    "title": "Módulos",
+    "section": "Uso de Paquetes",
+    "text": "Uso de Paquetes\nPara usar un paquete, se utiliza la palabra reservada import seguida del nombre del paquete y el nombre del módulo.\nEjemplo:\n# programa.py\n\nfrom paquete import modulo1, modulo2\n\nmodulo1.saludar()\nmodulo2.despedir()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-con-alias-1",
+    "href": "unidades/unidad4/6_modulos.html#importar-con-alias-1",
+    "title": "Módulos",
+    "section": "Importar con Alias",
+    "text": "Importar con Alias\nEs posible importar un paquete o módulo con un alias.\nEjemplo:\n\nfrom paquete import modulo1 as m1, modulo2 as m2\n\nm1.saludar()\nm2.despedir()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones-1",
+    "href": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones-1",
+    "title": "Módulos",
+    "section": "Importar Todas las Funciones",
+    "text": "Importar Todas las Funciones\nTambién es posible importar todas las funciones de un módulo.\nEjemplo:\n# programa.py\n\nfrom paquete.modulo1 import *\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#instrucciones",
+    "href": "unidades/unidad4/6_modulos.html#instrucciones",
+    "title": "Módulos",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nLee cuidadosamente el contenido de este repositorio.\nImplementa las funciones solicitadas en el archivo operaciones.py.\nCompleta el programa principal en el archivo programa.py.\nRealiza los commits y push necesarios para subir tus cambios a este repositorio.\nVerifica que tus cambios funcionen correctamente.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#contenido-del-repositorio",
+    "href": "unidades/unidad4/6_modulos.html#contenido-del-repositorio",
+    "title": "Módulos",
+    "section": "Contenido del Repositorio",
+    "text": "Contenido del Repositorio\n\noperaciones.py: Archivo de módulo que contiene las funciones para realizar operaciones matemáticas.\nprograma.py: Archivo principal donde se utiliza el módulo operaciones.py.\ntest_operaciones.py: Archivo de pruebas unitarias para verificar las funciones del módulo operaciones.py.\n.gitignore: Archivo que indica a Git qué archivos y directorios debe ignorar al rastrear los cambios en el repositorio.\nrequirements.txt: Archivo que especifica las dependencias del proyecto.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#ejercicio",
+    "href": "unidades/unidad4/6_modulos.html#ejercicio",
+    "title": "Módulos",
+    "section": "Ejercicio",
+    "text": "Ejercicio\nCrear un módulo llamado operaciones.py que contenga las siguientes funciones:\n\nsuma(a, b): Retorna la suma de a y b.\nresta(a, b): Retorna la resta de a y b.\nmultiplicacion(a, b): Retorna la multiplicación de a y b.\ndivision(a, b): Retorna la división de a y b. Si b es cero, retorna un mensaje de error.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#cómo-ejecutar-el-programa",
+    "href": "unidades/unidad4/6_modulos.html#cómo-ejecutar-el-programa",
+    "title": "Módulos",
+    "section": "Cómo Ejecutar el Programa",
+    "text": "Cómo Ejecutar el Programa\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nInstala las dependencias ejecutando pip install -r requirements.txt.\nEjecuta python programa.py para ver los resultados de las operaciones.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#cómo-ejecutar-las-pruebas",
+    "href": "unidades/unidad4/6_modulos.html#cómo-ejecutar-las-pruebas",
+    "title": "Módulos",
+    "section": "Cómo Ejecutar las Pruebas",
+    "text": "Cómo Ejecutar las Pruebas\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nEjecuta python -m unittest para correr las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
     "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
     "href": "unidades/ejercicios/ejercicios_git_github-000.html",
     "title": "Ejercicios de Git y Github",
@@ -575,7 +784,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -586,7 +795,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -597,7 +806,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -608,7 +817,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -619,7 +828,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -630,7 +839,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -641,7 +850,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -652,7 +861,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -663,7 +872,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -674,7 +883,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -685,7 +894,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -696,7 +905,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -707,7 +916,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -718,7 +927,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -729,7 +938,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -740,7 +949,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -751,7 +960,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -762,7 +971,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -773,7 +982,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -784,7 +993,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -795,7 +1004,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -806,7 +1015,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -817,7 +1026,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -828,7 +1037,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -839,7 +1048,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
