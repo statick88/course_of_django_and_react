@@ -1173,5 +1173,93 @@
       "Unidad 4: Python Avanzado",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
     ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html",
+    "href": "unidades/unidad4/proyecto.html",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "",
+    "text": "Paso 1: Diseño del Modelo de Datos\nEste código crea una tabla llamada productos con los campos id, nombre, precio y existencias.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-1-diseño-del-modelo-de-datos",
+    "href": "unidades/unidad4/proyecto.html#paso-1-diseño-del-modelo-de-datos",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "",
+    "text": "Abre tu editor de texto o IDE favorito y crea un archivo llamado inventario.sql.\nDefine la estructura de la base de datos SQLite. Agrega el siguiente código:\n\n    -- Crear la tabla 'productos' para almacenar la información de los productos\n    CREATE TABLE productos (\n        id INTEGER PRIMARY KEY,\n        nombre TEXT NOT NULL,\n        precio REAL NOT NULL,\n        existencias INTEGER NOT NULL\n    );",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-2-desarrollo-de-la-lógica-del-negocio",
+    "href": "unidades/unidad4/proyecto.html#paso-2-desarrollo-de-la-lógica-del-negocio",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 2: Desarrollo de la Lógica del Negocio",
+    "text": "Paso 2: Desarrollo de la Lógica del Negocio\n\nCrea un archivo llamado logica.py para escribir la lógica del negocio.\nDefine las funciones necesarias para agregar productos, actualizar existencias, registrar ventas y generar informes.\nAgrega el siguiente código:\n\nimport sqlite3\n\ndef conectar():\n    # Función para establecer conexión a la base de datos\n    conn = sqlite3.connect('inventario.db')\n    return conn\n\ndef agregar_producto(nombre, precio, existencias):\n    # Función para agregar un nuevo producto a la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"INSERT INTO productos (nombre, precio, existencias) VALUES (?, ?, ?)\", (nombre, precio, existencias))\n    conn.commit()\n    conn.close()\n\ndef actualizar_existencias(id_producto, nuevas_existencias):\n    # Función para actualizar las existencias de un producto en la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"UPDATE productos SET existencias = ? WHERE id = ?\", (nuevas_existencias, id_producto))\n    conn.commit()\n    conn.close()\n\ndef registrar_venta(id_producto, cantidad_vendida):\n    # Función para registrar una venta y actualizar las existencias en la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"SELECT existencias FROM productos WHERE id = ?\", (id_producto,))\n    existencias_actuales = cursor.fetchone()[0]\n    nuevas_existencias = existencias_actuales - cantidad_vendida\n    actualizar_existencias(id_producto, nuevas_existencias)\n    conn.close()\n\ndef generar_informe():\n    # Función para generar un informe de inventario\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"SELECT * FROM productos\")\n    productos = cursor.fetchall()\n    conn.close()\n    return productos",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-3-interfaz-de-línea-de-comandos-cli",
+    "href": "unidades/unidad4/proyecto.html#paso-3-interfaz-de-línea-de-comandos-cli",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 3: Interfaz de Línea de Comandos (CLI)",
+    "text": "Paso 3: Interfaz de Línea de Comandos (CLI)\n\nCrea un archivo llamado cli.py para desarrollar la interfaz de línea de comandos.\nUtiliza la biblioteca argparse para crear una interfaz fácil de usar.\nAgrega el siguiente código:\n\nimport argparse\nimport logica\n\ndef agregar_producto(args):\n    logica.agregar_producto(args.nombre, args.precio, args.existencias)\n    print(\"Producto agregado con éxito.\")\n\ndef actualizar_existencias(args):\n    logica.actualizar_existencias(args.id, args.existencias)\n    print(\"Existencias actualizadas.\")\n\ndef registrar_venta(args):\n    logica.registrar_venta(args.id, args.cantidad)\n    print(\"Venta registrada.\")\n\ndef generar_informe(args):\n    productos = logica.generar_informe()\n    print(\"Informe de inventario:\")\n    for producto in productos:\n        print(producto)\n\ndef main():\n    parser = argparse.ArgumentParser(description='Sistema de Gestión de Inventarios')\n    subparsers = parser.add_subparsers(title='Acciones', dest='accion')\n\n    # Comando para agregar un producto\n    parser_agregar = subparsers.add_parser('agregar', help='Agregar un nuevo producto')\n    parser_agregar.add_argument('nombre', type=str, help='Nombre del producto')\n    parser_agregar.add_argument('precio', type=float, help='Precio del producto')\n    parser_agregar.add_argument('existencias', type=int, help='Existencias iniciales del producto')\n    parser_agregar.set_defaults(func=agregar_producto)\n\n    # Comando para actualizar existencias\n    parser_actualizar = subparsers.add_parser('actualizar', help='Actualizar existencias de un producto')\n    parser_actualizar.add_argument('id', type=int, help='ID del producto a actualizar')\n    parser_actualizar.add_argument('existencias', type=int, help='Nuevas existencias del producto')\n    parser_actualizar.set_defaults(func=actualizar_existencias)\n\n    # Comando para registrar una venta\n    parser_venta = subparsers.add_parser('venta', help='Registrar una venta')\n    parser_venta.add_argument('id', type=int, help='ID del producto vendido')\n    parser_venta.add_argument('cantidad', type=int, help='Cantidad vendida del producto')\n    parser_venta.set_defaults(func=registrar_venta)\n\n    # Comando para generar un informe\n    parser_informe = subparsers.add_parser('informe', help='Generar un informe de inventario')\n    parser_informe.set_defaults(func=generar_informe)\n\n    args = parser.parse_args()\n    if 'func' in args:\n        args.func(args)\n\nif __name__ == '__main__':\n    main()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-4-integración-con-la-base-de-datos-sqlite",
+    "href": "unidades/unidad4/proyecto.html#paso-4-integración-con-la-base-de-datos-sqlite",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 4: Integración con la Base de Datos SQLite",
+    "text": "Paso 4: Integración con la Base de Datos SQLite\n\nAsegúrate de tener instalado SQLite en tu sistema. Puedes descargarlo desde SQLite Download Page.\nEjecuta el archivo inventario.sql para crear la base de datos y la tabla productos.\n\nsqlite3 inventario.db &lt; inventario.sql",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-5-prueba-del-sistema",
+    "href": "unidades/unidad4/proyecto.html#paso-5-prueba-del-sistema",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 5: Prueba del Sistema",
+    "text": "Paso 5: Prueba del Sistema\n\nUtiliza la interfaz de línea de comandos para probar el sistema. A continuación, algunos ejemplos de comandos:\nAgregar un producto:\n\npython cli.py agregar \"Producto1\" 10.99 100\nEl comando anterior, se agrega un producto llamado “Producto1” con un precio de 10.99 y 100 existencias.\n\nActualizar existencias de un producto:\n\npython cli.py actualizar 1 50\nEl comando anterior, se actualizan las existencias del producto con ID 1 a 50.\n\nRegistrar una venta:\n\npython cli.py venta 1 20\nEl comando anterior, se registra una venta de 20 unidades del producto con ID 1.\n\nGenerar un informe de inventario:\n\npython cli.py informe\nEl comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-extra-agregar-archivos-adicionales",
+    "href": "unidades/unidad4/proyecto.html#paso-extra-agregar-archivos-adicionales",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso Extra: Agregar archivos adicionales",
+    "text": "Paso Extra: Agregar archivos adicionales\n\nCrea un archivo llamado requirements.txt y agrega las dependencias necesarias para tu proyecto. En este caso, solo necesitamos la biblioteca sqlite3.\nCrea un archivo llamado .gitignore para evitar que ciertos archivos y directorios se incluyan en el repositorio de Git.\n\n# Archivos y directorios generados por Python\n__pycache__/\n*.pyc\n\n# Archivos de base de datos\n*.db\n\nCrea un archivo Readme.md que proporcione una descripción del proyecto y una guía para su configuración e instalación.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/proyecto.html#paso-6-agregar-archivos-al-repositorio",
+    "href": "unidades/unidad4/proyecto.html#paso-6-agregar-archivos-al-repositorio",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 6: Agregar archivos al repositorio",
+    "text": "Paso 6: Agregar archivos al repositorio\nAgrega los archivos al repositorio Git:\ngit add requirements.txt .gitignore Readme.md\ngit commit -m \"Agregado requirements.txt, .gitignore y Readme.md\"\ngit push",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
   }
 ]
