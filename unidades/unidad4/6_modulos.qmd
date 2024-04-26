@@ -1,0 +1,319 @@
+# Módulos
+Un módulo es un archivo que contiene definiciones y declaraciones de Python. El archivo debe tener una extensión .py. Las definiciones de un módulo pueden ser importadas a otros módulos o al programa principal.
+
+Ejemplo:
+
+```python
+# modulo.py
+def saludar():
+    print("Hola, bienvenido a Python")
+```
+
+```python
+# programa.py
+import modulo
+
+modulo.saludar()
+```
+
+Ejercicio:
+
+Crear un módulo llamado operaciones.py que contenga las siguientes funciones:
+
+- suma(a, b): Retorna la suma de a y b
+- resta(a, b): Retorna la resta de a y b
+- multiplicacion(a, b): Retorna la multiplicación de a y b
+- division(a, b): Retorna la división de a y b
+
+<details>
+  <summary>Ver respuesta</summary>
+
+operaciones.py
+```python
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+def multiplicacion(a, b):
+    return a * b
+
+def division(a, b):
+    return a / b
+```
+
+programa.py
+```python
+
+import operaciones
+
+a = 10
+b = 5
+
+print(operaciones.suma(a, b))
+print(operaciones.resta(a, b))
+print(operaciones.multiplicacion(a, b))
+print(operaciones.division(a, b))
+```
+</details>
+
+# Paquetes
+
+Un paquete es un conjunto de módulos organizados en un directorio. Un paquete debe contener un archivo llamado __init__.py. Este archivo puede estar vacío o contener código de inicialización del paquete.
+
+Ejemplo:
+
+```
+paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+```
+
+```python
+# modulo1.py
+def saludar():
+    print("Hola, bienvenido a Python")
+```
+
+```python
+# modulo2.py
+def despedir():
+    print("Adiós, hasta luego")
+```
+
+```python
+# programa.py
+from paquete import modulo1, modulo2
+
+modulo1.saludar()
+modulo2.despedir()
+```
+
+Ejercicio:
+
+Crear un paquete llamado operaciones que contenga los módulos suma.py, resta.py, multiplicacion.py y division.py. Cada módulo debe contener una función que realice la operación correspondiente.
+
+<details>
+  <summary>Ver respuesta</summary>
+
+operaciones/
+    __init__.py
+    suma.py
+    resta.py
+    multiplicacion.py
+    division.py
+
+suma.py
+```python
+def suma(a, b):
+    return a + b
+```
+
+resta.py
+```python
+def resta(a, b):
+    return a - b
+```
+
+multiplicacion.py
+```python
+def multiplicacion(a, b):
+    return a * b
+```
+
+division.py
+```python
+def division(a, b):
+    return a / b
+```
+
+programa.py
+```python
+from operaciones import suma, resta, multiplicacion, division
+
+a = 10
+b = 5
+
+print(suma.suma(a, b))
+print(resta.resta(a, b))
+print(multiplicacion.multiplicacion(a, b))
+print(division.division(a, b))
+```
+</details>
+
+# Creación y Uso de Módulos
+
+:::{.callout-tip}
+La diferencia principal entre paquetes y módulos es que los paquetes son directorios que contienen módulos y un archivo __init__.py, mientras que los módulos son archivos individuales que contienen funciones y variables.
+:::
+
+## Creación de Módulos
+
+Para crear un módulo, simplemente se crea un archivo con extensión .py y se definen las funciones y variables que se desean exportar.
+
+Ejemplo:
+
+```python
+# modulo.py
+def saludar():
+    print("Hola, bienvenido a Python")
+```
+
+## Uso de Módulos
+
+Para usar un módulo, se utiliza la palabra reservada import seguida del nombre del módulo.
+
+Ejemplo:
+
+```python
+# programa.py
+import modulo
+
+modulo.saludar()
+```
+
+## Importar Funciones Específicas
+
+También es posible importar funciones específicas de un módulo.
+
+Ejemplo:
+
+```python
+# programa.py
+from modulo import saludar
+
+saludar()
+```
+
+## Importar con Alias
+
+Es posible importar un módulo o función con un alias.
+
+Ejemplo:
+
+```python
+# programa.py
+
+import modulo as m
+
+m.saludar()
+```
+
+## Importar Todas las Funciones
+
+También es posible importar todas las funciones de un módulo.
+
+Ejemplo:
+
+```python
+# programa.py
+
+from modulo import *
+
+saludar()
+```
+
+# Creación y Uso de Paquetes
+
+## Creación de Paquetes
+
+Para crear un paquete, se crea un directorio con el nombre del paquete y se agregan los módulos necesarios. Además, se debe crear un archivo __init__.py en el directorio del paquete.
+
+Ejemplo:
+
+```
+paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+```
+
+## Uso de Paquetes
+
+Para usar un paquete, se utiliza la palabra reservada import seguida del nombre del paquete y el nombre del módulo.
+
+Ejemplo:
+
+```python
+# programa.py
+
+from paquete import modulo1, modulo2
+
+modulo1.saludar()
+modulo2.despedir()
+```
+
+## Importar con Alias
+
+Es posible importar un paquete o módulo con un alias.
+
+Ejemplo:
+
+```python
+
+from paquete import modulo1 as m1, modulo2 as m2
+
+m1.saludar()
+m2.despedir()
+```
+
+## Importar Todas las Funciones
+
+También es posible importar todas las funciones de un módulo.
+
+Ejemplo:
+
+```python
+# programa.py
+
+from paquete.modulo1 import *
+
+saludar()
+```
+
+# Asignación Calculadora Pythonica
+ 
+[https://classroom.github.com/a/Kyffdibl](https://classroom.github.com/a/Kyffdibl)
+
+
+En esta asignación, aprenderás sobre la creación y uso de módulos y paquetes en Python.
+
+## Instrucciones
+
+1. Lee cuidadosamente el contenido de este repositorio.
+2. Implementa las funciones solicitadas en el archivo **operaciones.py**.
+3. Completa el programa principal en el archivo **programa.py**.
+4. Realiza los commits y push necesarios para subir tus cambios a este repositorio.
+5. Verifica que tus cambios funcionen correctamente.
+
+## Contenido del Repositorio
+
+-   **operaciones.py**: Archivo de módulo que contiene las funciones para realizar operaciones matemáticas.
+-   **programa.py**: Archivo principal donde se utiliza el módulo operaciones.py.
+-   **test_operaciones.py**: Archivo de pruebas unitarias para verificar las funciones del módulo **operaciones.py**.
+-   **.gitignore**: Archivo que indica a Git qué archivos y directorios debe ignorar al rastrear los cambios en el repositorio.
+-   **requirements.txt**: Archivo que especifica las dependencias del proyecto.
+
+## Ejercicio
+
+Crear un módulo llamado operaciones.py que contenga las siguientes funciones:
+
+1. **suma(a, b):** Retorna la **suma** de **a** y **b**.
+2. **resta(a, b):** Retorna la **resta** de **a** y **b**.
+3. **multiplicacion(a, b):** Retorna la **multiplicación** de **a** y **b**.
+4. **division(a, b):** Retorna la **división** de **a** y **b**. Si **b** es **cero**, **retorna** un **mensaje de error**.
+
+## Cómo Ejecutar el Programa
+
+-   Asegúrate de tener Python instalado en tu sistema.
+-   Abre una terminal y navega hasta la ubicación de este repositorio.
+-   Instala las dependencias ejecutando pip install -r requirements.txt.
+-   Ejecuta python programa.py para ver los resultados de las operaciones.
+
+## Cómo Ejecutar las Pruebas
+
+-   Asegúrate de tener Python instalado en tu sistema.
+-   Abre una terminal y navega hasta la ubicación de este repositorio.
+-   Ejecuta **python -m unittest** para correr las pruebas.

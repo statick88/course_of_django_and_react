@@ -48,6 +48,13 @@ book:
         - unidades/unidad3/3_listas_tuplas.qmd
         - unidades/unidad3/4_conjuntos_diccionarios.qmd
 
+    - part: "Unidad 4: Python Avanzado"
+      chapters: 
+        - unidades/unidad4/5_programacion_oo.qmd
+        - unidades/unidad4/6_modulos.qmd
+        - unidades/unidad4/7_proyecto.qmd
+
+
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/ejercicios_git_github-000.qmd

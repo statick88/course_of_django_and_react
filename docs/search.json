@@ -1,57 +1,42 @@
 [
   {
-    "objectID": "unidades/unidad3/3_listas_tuplas.html",
-    "href": "unidades/unidad3/3_listas_tuplas.html",
-    "title": "Listas",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Django y React 2024",
     "section": "",
-    "text": "Tuplas\nLas tuplas son un tipo de dato que nos permite almacenar diferentes valores, en una sola variable.\nEjemplo:\nEjercicio:\nCrear una tupla con los números del 1 al 10, y mostrarla en pantalla.",
+    "text": "Bienvenido",
     "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
-    "href": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
-    "title": "Listas",
-    "section": "Descripción de la Asignación",
-    "text": "Descripción de la Asignación\nEl archivo ejercicio.py contiene un script que pide al usuario que ingrese una lista de compras. El usuario debe ingresar los elementos de la lista separados por comas. El script luego imprime la lista de compras.\nAdemás, el script contiene una función llamada convertir_lista_a_tupla() que está destinada a convertir la lista de compras en una tupla. Esta función aún no está completa.",
+    "objectID": "index.html#de-qué-trata-este-curso",
+    "href": "index.html#de-qué-trata-este-curso",
+    "title": "Django y React 2024",
+    "section": "¿De qué trata este curso?",
+    "text": "¿De qué trata este curso?\nEste curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React.\nA través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real.\nDesde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.",
     "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
-    "href": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
-    "title": "Listas",
-    "section": "Tarea Pendiente:",
-    "text": "Tarea Pendiente:\n\nCompletar la función convertir_lista_a_tupla() para que convierta la lista de compras en una tupla.",
+    "objectID": "index.html#para-quién-es-este-curso",
+    "href": "index.html#para-quién-es-este-curso",
+    "title": "Django y React 2024",
+    "section": "¿Para quién es este curso?",
+    "text": "¿Para quién es este curso?\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.\nYa sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.",
     "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
-    "href": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
-    "title": "Listas",
-    "section": "Cómo Ejecutar el Código",
-    "text": "Cómo Ejecutar el Código\nPara ejecutar el test puedes utilizar el siguiente comando en tu terminal:\npytest -s\nPytest es una biblioteca que facilita la escritura de pruebas en Python. El parámetro -s se utiliza para mostrar la salida de la prueba en la terminal.",
+    "objectID": "index.html#cómo-contribuir",
+    "href": "index.html#cómo-contribuir",
+    "title": "Django y React 2024",
+    "section": "¿Cómo contribuir?",
+    "text": "¿Cómo contribuir?\nValoramos su contribución a este curso. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!",
     "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
-    "href": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
-    "title": "Listas",
-    "section": "Ejemplo de salida:",
-    "text": "Ejemplo de salida:\n$ pytest -s\n================================================= test session starts =================================================\nplatform linux -- Python 3.8.10, pytest-6.2.4, pluggy-0.13.1\nrootdir: /home/user/Documentos/Python/Asignacion_Lista_Compras\ncollected 1 item\n\ntest_ejercicio.py Lista de Compras: [manzanas, peras, plátanos, uvas]\n\n================================================== 1 passed in 0.01s ==================================================\n\n\n\n\n\n\nTip\n\n\n\nSe sugiere que practique la sección Ejercicios Python - Nivel 3 para reforzar los conocimientos adquiridos.",
-    "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
   {
@@ -506,11 +491,77 @@
     ]
   },
   {
-    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html",
-    "href": "unidades/unidad3/4_conjuntos_diccionarios.html",
-    "title": "Diccionarios",
+    "objectID": "unidades/unidad3/3_listas_tuplas.html",
+    "href": "unidades/unidad3/3_listas_tuplas.html",
+    "title": "Listas",
     "section": "",
-    "text": "Conjuntos\n\n\nOperaciones con Diccionarios y Conjuntos\n\n\nEjercicios",
+    "text": "Tuplas\nLas tuplas son un tipo de dato que nos permite almacenar diferentes valores, en una sola variable.\nEjemplo:\nEjercicio:\nCrear una tupla con los números del 1 al 10, y mostrarla en pantalla.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
+    "href": "unidades/unidad3/3_listas_tuplas.html#descripción-de-la-asignación",
+    "title": "Listas",
+    "section": "Descripción de la Asignación",
+    "text": "Descripción de la Asignación\nEl archivo ejercicio.py contiene un script que pide al usuario que ingrese una lista de compras. El usuario debe ingresar los elementos de la lista separados por comas. El script luego imprime la lista de compras.\nAdemás, el script contiene una función llamada convertir_lista_a_tupla() que está destinada a convertir la lista de compras en una tupla. Esta función aún no está completa.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
+    "href": "unidades/unidad3/3_listas_tuplas.html#tarea-pendiente",
+    "title": "Listas",
+    "section": "Tarea Pendiente:",
+    "text": "Tarea Pendiente:\n\nCompletar la función convertir_lista_a_tupla() para que convierta la lista de compras en una tupla.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
+    "href": "unidades/unidad3/3_listas_tuplas.html#cómo-ejecutar-el-código",
+    "title": "Listas",
+    "section": "Cómo Ejecutar el Código",
+    "text": "Cómo Ejecutar el Código\nPara ejecutar el test puedes utilizar el siguiente comando en tu terminal:\npytest -s\nPytest es una biblioteca que facilita la escritura de pruebas en Python. El parámetro -s se utiliza para mostrar la salida de la prueba en la terminal.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
+    "href": "unidades/unidad3/3_listas_tuplas.html#ejemplo-de-salida",
+    "title": "Listas",
+    "section": "Ejemplo de salida:",
+    "text": "Ejemplo de salida:\n$ pytest -s\n================================================= test session starts =================================================\nplatform linux -- Python 3.8.10, pytest-6.2.4, pluggy-0.13.1\nrootdir: /home/user/Documentos/Python/Asignacion_Lista_Compras\ncollected 1 item\n\ntest_ejercicio.py Lista de Compras: [manzanas, peras, plátanos, uvas]\n\n================================================== 1 passed in 0.01s ==================================================\n\n\n\n\n\n\nTip\n\n\n\nSe sugiere que practique la sección Ejercicios Python - Nivel 3 para reforzar los conocimientos adquiridos.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
+    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
+    "title": "Diccionarios",
+    "section": "Descripción",
+    "text": "Descripción\nEsta asignación consiste en corregir y ejecutar un test unitario para un diccionario de frutas. Instrucciones\n\nAbre el archivo ejercicio.py.\nCorrige el diccionario frutas para que tenga las siguientes parejas clave-valor:\n\n\"manzana\" - \"roja\"\n\"banana\" - \"amarilla\"\n\"pera\" - \"verde\"\n\"naranja\" - \"naranja\"\n\nGuarda y cierra el archivo ejercicio.py.\nEjecuta el test unitario test_ejercicio en tu terminal con el comando:\n\npython -m unittest test_ejercicio.py\n\nSi el test unitario se ejecuta sin errores, habrás completado la asignación.\nSi el test unitario arroja errores, corrige el diccionario frutas en ejercicio.py y vuelve a ejecutar el test unitario.\nRepite los pasos 4 a 6 hasta que el test unitario se ejecute sin errores.",
+    "crumbs": [
+      "Unidad 3: Python Intermedio",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
+    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
+    "title": "Diccionarios",
+    "section": "Criterios de Evaluación",
+    "text": "Criterios de Evaluación\n\nEl diccionario frutas en ejercicio.py tiene las parejas clave-valor correctas.\nEl test unitario test_frutas en test_ejercicio.py se ejecuta sin errores.\n\n:::{.callout-tip} Se sugiere revisar la sección de Ejercicios Python - Nivel 4 para poder reforzar los conocimientos necesarios para completar esta sección.",
     "crumbs": [
       "Unidad 3: Python Intermedio",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
@@ -524,7 +575,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -660,41 +711,6 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
     "objectID": "unidades/ejercicios/ejercicios_python-003.html",
     "href": "unidades/ejercicios/ejercicios_python-003.html",
     "title": "Ejercicios Python - Nivel 3",
@@ -761,28 +777,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
-    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#descripción",
-    "title": "Diccionarios",
-    "section": "Descripción",
-    "text": "Descripción\nEsta asignación consiste en corregir y ejecutar un test unitario para un diccionario de frutas. Instrucciones\n\nAbre el archivo ejercicio.py.\nCorrige el diccionario frutas para que tenga las siguientes parejas clave-valor:\n\n\"manzana\" - \"roja\"\n\"banana\" - \"amarilla\"\n\"pera\" - \"verde\"\n\"naranja\" - \"naranja\"\n\nGuarda y cierra el archivo ejercicio.py.\nEjecuta el test unitario test_ejercicio en tu terminal con el comando:\n\npython -m unittest test_ejercicio.py\n\nSi el test unitario se ejecuta sin errores, habrás completado la asignación.\nSi el test unitario arroja errores, corrige el diccionario frutas en ejercicio.py y vuelve a ejecutar el test unitario.\nRepite los pasos 4 a 6 hasta que el test unitario se ejecute sin errores.",
-    "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
-    "href": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
-    "title": "Diccionarios",
-    "section": "Criterios de Evaluación",
-    "text": "Criterios de Evaluación\n\nEl diccionario frutas en ejercicio.py tiene las parejas clave-valor correctas.\nEl test unitario test_frutas en test_ejercicio.py se ejecuta sin errores.\n\n:::{.callout-tip} Se sugiere revisar la sección de Ejercicios Python - Nivel 4 para poder reforzar los conocimientos necesarios para completar esta sección.",
-    "crumbs": [
-      "Unidad 3: Python Intermedio",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
-    ]
-  },
-  {
     "objectID": "unidades/ejercicios/ejercicios_python-004.html",
     "href": "unidades/ejercicios/ejercicios_python-004.html",
     "title": "Ejercicios Python - Nivel 4",
@@ -846,6 +840,415 @@
     "crumbs": [
       "Ejercicios",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html",
+    "href": "unidades/unidad4/6_modulos.html",
+    "title": "Módulos",
+    "section": "",
+    "text": "Paquetes\nUn paquete es un conjunto de módulos organizados en un directorio. Un paquete debe contener un archivo llamado init.py. Este archivo puede estar vacío o contener código de inicialización del paquete.\nEjemplo:\nEjercicio:\nCrear un paquete llamado operaciones que contenga los módulos suma.py, resta.py, multiplicacion.py y division.py. Cada módulo debe contener una función que realice la operación correspondiente.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/programacion_orientada_a_objetos.html",
+    "href": "unidades/unidad4/programacion_orientada_a_objetos.html",
+    "title": "Django y React 2024",
+    "section": "",
+    "text": "#Prueba",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>programacion_orientada_a_objetos.html</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html",
+    "href": "unidades/unidad4/5_programacion_oo.html",
+    "title": "Programación Orientada a Objetos",
+    "section": "",
+    "text": "Asignación\nhttps://classroom.github.com/a/LVvqQCln\nEn esta asignación, aprenderás sobre los conceptos básicos de Programación Orientada a Objetos (POO) mediante la implementación de clases en Python.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#creación-de-módulos",
+    "href": "unidades/unidad4/6_modulos.html#creación-de-módulos",
+    "title": "Módulos",
+    "section": "Creación de Módulos",
+    "text": "Creación de Módulos\nPara crear un módulo, simplemente se crea un archivo con extensión .py y se definen las funciones y variables que se desean exportar.\nEjemplo:\n# modulo.py\ndef saludar():\n    print(\"Hola, bienvenido a Python\")",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#uso-de-módulos",
+    "href": "unidades/unidad4/6_modulos.html#uso-de-módulos",
+    "title": "Módulos",
+    "section": "Uso de Módulos",
+    "text": "Uso de Módulos\nPara usar un módulo, se utiliza la palabra reservada import seguida del nombre del módulo.\nEjemplo:\n# programa.py\nimport modulo\n\nmodulo.saludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-funciones-específicas",
+    "href": "unidades/unidad4/6_modulos.html#importar-funciones-específicas",
+    "title": "Módulos",
+    "section": "Importar Funciones Específicas",
+    "text": "Importar Funciones Específicas\nTambién es posible importar funciones específicas de un módulo.\nEjemplo:\n# programa.py\nfrom modulo import saludar\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-con-alias",
+    "href": "unidades/unidad4/6_modulos.html#importar-con-alias",
+    "title": "Módulos",
+    "section": "Importar con Alias",
+    "text": "Importar con Alias\nEs posible importar un módulo o función con un alias.\nEjemplo:\n# programa.py\n\nimport modulo as m\n\nm.saludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones",
+    "href": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones",
+    "title": "Módulos",
+    "section": "Importar Todas las Funciones",
+    "text": "Importar Todas las Funciones\nTambién es posible importar todas las funciones de un módulo.\nEjemplo:\n# programa.py\n\nfrom modulo import *\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#creación-de-paquetes",
+    "href": "unidades/unidad4/6_modulos.html#creación-de-paquetes",
+    "title": "Módulos",
+    "section": "Creación de Paquetes",
+    "text": "Creación de Paquetes\nPara crear un paquete, se crea un directorio con el nombre del paquete y se agregan los módulos necesarios. Además, se debe crear un archivo init.py en el directorio del paquete.\nEjemplo:\npaquete/\n    __init__.py\n    modulo1.py\n    modulo2.py",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#uso-de-paquetes",
+    "href": "unidades/unidad4/6_modulos.html#uso-de-paquetes",
+    "title": "Módulos",
+    "section": "Uso de Paquetes",
+    "text": "Uso de Paquetes\nPara usar un paquete, se utiliza la palabra reservada import seguida del nombre del paquete y el nombre del módulo.\nEjemplo:\n# programa.py\n\nfrom paquete import modulo1, modulo2\n\nmodulo1.saludar()\nmodulo2.despedir()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-con-alias-1",
+    "href": "unidades/unidad4/6_modulos.html#importar-con-alias-1",
+    "title": "Módulos",
+    "section": "Importar con Alias",
+    "text": "Importar con Alias\nEs posible importar un paquete o módulo con un alias.\nEjemplo:\n\nfrom paquete import modulo1 as m1, modulo2 as m2\n\nm1.saludar()\nm2.despedir()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones-1",
+    "href": "unidades/unidad4/6_modulos.html#importar-todas-las-funciones-1",
+    "title": "Módulos",
+    "section": "Importar Todas las Funciones",
+    "text": "Importar Todas las Funciones\nTambién es posible importar todas las funciones de un módulo.\nEjemplo:\n# programa.py\n\nfrom paquete.modulo1 import *\n\nsaludar()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#instrucciones",
+    "href": "unidades/unidad4/5_programacion_oo.html#instrucciones",
+    "title": "Programación Orientada a Objetos",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nLee cuidadosamente el contenido de este repositorio.\nImplementa las clases solicitadas en el archivo main.py.\nRealiza los commits y push necesarios para subir tus cambios a este repositorio.\nVerifica que tus cambios pasen todas las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#contenido-del-repositorio",
+    "href": "unidades/unidad4/5_programacion_oo.html#contenido-del-repositorio",
+    "title": "Programación Orientada a Objetos",
+    "section": "Contenido del Repositorio",
+    "text": "Contenido del Repositorio\n\nmain.py: Archivo principal donde implementarás tus clases.\ntest_main.py: Archivo de pruebas unitarias.\nREADME.md: Este archivo con las instrucciones de la asignación.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/5_programacion_oo.html#cómo-ejecutar-las-pruebas",
+    "href": "unidades/unidad4/5_programacion_oo.html#cómo-ejecutar-las-pruebas",
+    "title": "Programación Orientada a Objetos",
+    "section": "Cómo Ejecutar las Pruebas",
+    "text": "Cómo Ejecutar las Pruebas\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nEjecuta python -m unittest para correr las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programación Orientada a Objetos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#instrucciones",
+    "href": "unidades/unidad4/6_modulos.html#instrucciones",
+    "title": "Módulos",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nLee cuidadosamente el contenido de este repositorio.\nImplementa las funciones solicitadas en el archivo operaciones.py.\nCompleta el programa principal en el archivo programa.py.\nRealiza los commits y push necesarios para subir tus cambios a este repositorio.\nVerifica que tus cambios funcionen correctamente.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#contenido-del-repositorio",
+    "href": "unidades/unidad4/6_modulos.html#contenido-del-repositorio",
+    "title": "Módulos",
+    "section": "Contenido del Repositorio",
+    "text": "Contenido del Repositorio\n\noperaciones.py: Archivo de módulo que contiene las funciones para realizar operaciones matemáticas.\nprograma.py: Archivo principal donde se utiliza el módulo operaciones.py.\ntest_operaciones.py: Archivo de pruebas unitarias para verificar las funciones del módulo operaciones.py.\n.gitignore: Archivo que indica a Git qué archivos y directorios debe ignorar al rastrear los cambios en el repositorio.\nrequirements.txt: Archivo que especifica las dependencias del proyecto.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#ejercicio",
+    "href": "unidades/unidad4/6_modulos.html#ejercicio",
+    "title": "Módulos",
+    "section": "Ejercicio",
+    "text": "Ejercicio\nCrear un módulo llamado operaciones.py que contenga las siguientes funciones:\n\nsuma(a, b): Retorna la suma de a y b.\nresta(a, b): Retorna la resta de a y b.\nmultiplicacion(a, b): Retorna la multiplicación de a y b.\ndivision(a, b): Retorna la división de a y b. Si b es cero, retorna un mensaje de error.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#cómo-ejecutar-el-programa",
+    "href": "unidades/unidad4/6_modulos.html#cómo-ejecutar-el-programa",
+    "title": "Módulos",
+    "section": "Cómo Ejecutar el Programa",
+    "text": "Cómo Ejecutar el Programa\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nInstala las dependencias ejecutando pip install -r requirements.txt.\nEjecuta python programa.py para ver los resultados de las operaciones.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/6_modulos.html#cómo-ejecutar-las-pruebas",
+    "href": "unidades/unidad4/6_modulos.html#cómo-ejecutar-las-pruebas",
+    "title": "Módulos",
+    "section": "Cómo Ejecutar las Pruebas",
+    "text": "Cómo Ejecutar las Pruebas\n\nAsegúrate de tener Python instalado en tu sistema.\nAbre una terminal y navega hasta la ubicación de este repositorio.\nEjecuta python -m unittest para correr las pruebas.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html",
+    "href": "unidades/unidad4/7_proyecto.html",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "",
+    "text": "Paso 1: Diseño del Modelo de Datos\nEste código crea una tabla llamada productos con los campos id, nombre, precio y existencias.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-1-diseño-del-modelo-de-datos",
+    "href": "unidades/unidad4/7_proyecto.html#paso-1-diseño-del-modelo-de-datos",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "",
+    "text": "Abre tu editor de texto o IDE favorito y crea un archivo llamado inventario.sql.\nDefine la estructura de la base de datos SQLite. Agrega el siguiente código:\n\n    -- Crear la tabla 'productos' para almacenar la información de los productos\n    CREATE TABLE productos (\n        id INTEGER PRIMARY KEY,\n        nombre TEXT NOT NULL,\n        precio REAL NOT NULL,\n        existencias INTEGER NOT NULL\n    );\n\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda instalar el Plugin SQLite Viewer en Visual Studio Code para poder visualizar la base de datos SQLite.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-2-desarrollo-de-la-lógica-del-negocio",
+    "href": "unidades/unidad4/7_proyecto.html#paso-2-desarrollo-de-la-lógica-del-negocio",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 2: Desarrollo de la Lógica del Negocio",
+    "text": "Paso 2: Desarrollo de la Lógica del Negocio\n\nCrea un archivo llamado logica.py para escribir la lógica del negocio.\nDefine las funciones necesarias para agregar productos, actualizar existencias, registrar ventas y generar informes.\nAgrega el siguiente código:\n\nimport sqlite3\n\ndef conectar():\n    # Función para establecer conexión a la base de datos\n    conn = sqlite3.connect('inventario.db')\n    return conn\n\ndef agregar_producto(nombre, precio, existencias):\n    # Función para agregar un nuevo producto a la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"INSERT INTO productos (nombre, precio, existencias) VALUES (?, ?, ?)\", (nombre, precio, existencias))\n    conn.commit()\n    conn.close()\n\ndef actualizar_existencias(id_producto, nuevas_existencias):\n    # Función para actualizar las existencias de un producto en la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"UPDATE productos SET existencias = ? WHERE id = ?\", (nuevas_existencias, id_producto))\n    conn.commit()\n    conn.close()\n\ndef registrar_venta(id_producto, cantidad_vendida):\n    # Función para registrar una venta y actualizar las existencias en la base de datos\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"SELECT existencias FROM productos WHERE id = ?\", (id_producto,))\n    existencias_actuales = cursor.fetchone()[0]\n    nuevas_existencias = existencias_actuales - cantidad_vendida\n    actualizar_existencias(id_producto, nuevas_existencias)\n    conn.close()\n\ndef generar_informe():\n    # Función para generar un informe de inventario\n    conn = conectar()\n    cursor = conn.cursor()\n    cursor.execute(\"SELECT * FROM productos\")\n    productos = cursor.fetchall()\n    conn.close()\n    return productos",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-3-interfaz-de-línea-de-comandos-cli",
+    "href": "unidades/unidad4/7_proyecto.html#paso-3-interfaz-de-línea-de-comandos-cli",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 3: Interfaz de Línea de Comandos (CLI)",
+    "text": "Paso 3: Interfaz de Línea de Comandos (CLI)\n\nCrea un archivo llamado cli.py para desarrollar la interfaz de línea de comandos.\nUtiliza la biblioteca argparse para crear una interfaz fácil de usar.\nAgrega el siguiente código:\n\nimport argparse\nimport logica\n\ndef agregar_producto(args):\n    logica.agregar_producto(args.nombre, args.precio, args.existencias)\n    print(\"Producto agregado con éxito.\")\n\ndef actualizar_existencias(args):\n    logica.actualizar_existencias(args.id, args.existencias)\n    print(\"Existencias actualizadas.\")\n\ndef registrar_venta(args):\n    logica.registrar_venta(args.id, args.cantidad)\n    print(\"Venta registrada.\")\n\ndef generar_informe(args):\n    productos = logica.generar_informe()\n    print(\"Informe de inventario:\")\n    for producto in productos:\n        print(producto)\n\ndef main():\n    parser = argparse.ArgumentParser(description='Sistema de Gestión de Inventarios')\n    subparsers = parser.add_subparsers(title='Acciones', dest='accion')\n\n    # Comando para agregar un producto\n    parser_agregar = subparsers.add_parser('agregar', help='Agregar un nuevo producto')\n    parser_agregar.add_argument('nombre', type=str, help='Nombre del producto')\n    parser_agregar.add_argument('precio', type=float, help='Precio del producto')\n    parser_agregar.add_argument('existencias', type=int, help='Existencias iniciales del producto')\n    parser_agregar.set_defaults(func=agregar_producto)\n\n    # Comando para actualizar existencias\n    parser_actualizar = subparsers.add_parser('actualizar', help='Actualizar existencias de un producto')\n    parser_actualizar.add_argument('id', type=int, help='ID del producto a actualizar')\n    parser_actualizar.add_argument('existencias', type=int, help='Nuevas existencias del producto')\n    parser_actualizar.set_defaults(func=actualizar_existencias)\n\n    # Comando para registrar una venta\n    parser_venta = subparsers.add_parser('venta', help='Registrar una venta')\n    parser_venta.add_argument('id', type=int, help='ID del producto vendido')\n    parser_venta.add_argument('cantidad', type=int, help='Cantidad vendida del producto')\n    parser_venta.set_defaults(func=registrar_venta)\n\n    # Comando para generar un informe\n    parser_informe = subparsers.add_parser('informe', help='Generar un informe de inventario')\n    parser_informe.set_defaults(func=generar_informe)\n\n    args = parser.parse_args()\n    if 'func' in args:\n        args.func(args)\n\nif __name__ == '__main__':\n    main()",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-4-integración-con-la-base-de-datos-sqlite",
+    "href": "unidades/unidad4/7_proyecto.html#paso-4-integración-con-la-base-de-datos-sqlite",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 4: Integración con la Base de Datos SQLite",
+    "text": "Paso 4: Integración con la Base de Datos SQLite\n\nAsegúrate de tener instalado SQLite en tu sistema. Puedes descargarlo desde SQLite Download Page.\nEjecuta el archivo inventario.sql para crear la base de datos y la tabla productos.\n\nsqlite3 inventario.db &lt; inventario.sql",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-5-prueba-del-sistema",
+    "href": "unidades/unidad4/7_proyecto.html#paso-5-prueba-del-sistema",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 5: Prueba del Sistema",
+    "text": "Paso 5: Prueba del Sistema\n\nUtiliza la interfaz de línea de comandos para probar el sistema. A continuación, algunos ejemplos de comandos:\nAgregar un producto:\n\npython cli.py agregar \"Producto1\" 10.99 100\nEl comando anterior, se agrega un producto llamado “Producto1” con un precio de 10.99 y 100 existencias.\n\nActualizar existencias de un producto:\n\npython cli.py actualizar 1 50\nEl comando anterior, se actualizan las existencias del producto con ID 1 a 50.\n\nRegistrar una venta:\n\npython cli.py venta 1 20\nEl comando anterior, se registra una venta de 20 unidades del producto con ID 1.\n\nGenerar un informe de inventario:\n\npython cli.py informe\nEl comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.\n\n¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-extra-agregar-archivos-adicionales",
+    "href": "unidades/unidad4/7_proyecto.html#paso-extra-agregar-archivos-adicionales",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso Extra: Agregar archivos adicionales",
+    "text": "Paso Extra: Agregar archivos adicionales\n\nCrea un archivo llamado requirements.txt y agrega las dependencias necesarias para tu proyecto. En este caso, solo necesitamos la biblioteca sqlite3.\nCrea un archivo llamado .gitignore para evitar que ciertos archivos y directorios se incluyan en el repositorio de Git.\n\n# Archivos y directorios generados por Python\n__pycache__/\n*.pyc\n\n# Archivos de base de datos\n*.db\n\nCrea un archivo Readme.md que proporcione una descripción del proyecto y una guía para su configuración e instalación.\n\nPuedes usar el siguiente ejemplo como base:\n# Sistema de Gestión de Inventarios con Python\n\nEste proyecto es un sistema de gestión de inventarios desarrollado en Python utilizando SQLite como base de datos.\n\n## Instalación\n\n1. Clona este repositorio en tu máquina local:\n\nbash\ngit clone https://github.com/tu_usuario/inventario-python.git\n\n\n2. Instala las dependencias utilizando pip:\n\nbash\npip install -r requirements.txt\n\n3. Ejecuta el script inventario.sql para crear la base de datos y la tabla de productos:\n\nbash\nsqlite3 inventario.db &lt; inventario.sql\n\n## Uso\n\nEl sistema se puede utilizar a través de una interfaz de línea de comandos (CLI). A continuación, algunos ejemplos de comandos:\n\n## Agregar un producto:\n\nbash\npython cli.py agregar \"Producto1\" 10.99 100\n\n\n## Actualizar existencias de un producto:\n\nbash\npython cli.py actualizar 1 50\n\n## Registrar una venta:\n\nbash\npython cli.py venta 1 20\n\n## Generar un informe de inventario:\n\nbash\npython cli.py informe\n\n# Contribuir\n\n¡Siéntete libre de contribuir a este proyecto! Si encuentras algún problema o tienes alguna mejora, por favor abre un issue o una pull request.\n\n## Licencia\n\nEste proyecto está bajo la licencia MIT.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#uso",
+    "href": "unidades/unidad4/7_proyecto.html#uso",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Uso",
+    "text": "Uso\nEl sistema se puede utilizar a través de una interfaz de línea de comandos (CLI). A continuación, algunos ejemplos de comandos:",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#agregar-un-producto",
+    "href": "unidades/unidad4/7_proyecto.html#agregar-un-producto",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Agregar un producto:",
+    "text": "Agregar un producto:\npython cli.py agregar \"Producto1\" 10.99 100",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#actualizar-existencias-de-un-producto",
+    "href": "unidades/unidad4/7_proyecto.html#actualizar-existencias-de-un-producto",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Actualizar existencias de un producto:",
+    "text": "Actualizar existencias de un producto:\npython cli.py actualizar 1 50",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#registrar-una-venta",
+    "href": "unidades/unidad4/7_proyecto.html#registrar-una-venta",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Registrar una venta:",
+    "text": "Registrar una venta:\npython cli.py venta 1 20",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#generar-un-informe-de-inventario",
+    "href": "unidades/unidad4/7_proyecto.html#generar-un-informe-de-inventario",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Generar un informe de inventario:",
+    "text": "Generar un informe de inventario:\npython cli.py informe",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#licencia",
+    "href": "unidades/unidad4/7_proyecto.html#licencia",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Licencia",
+    "text": "Licencia\nEste proyecto está bajo la licencia MIT.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/7_proyecto.html#paso-6-agregar-archivos-al-repositorio",
+    "href": "unidades/unidad4/7_proyecto.html#paso-6-agregar-archivos-al-repositorio",
+    "title": "Proyecto de Sistema de Gestión de Inventarios con Python",
+    "section": "Paso 6: Agregar archivos al repositorio",
+    "text": "Paso 6: Agregar archivos al repositorio\nAgrega los archivos al repositorio Git:\ngit add requirements.txt .gitignore Readme.md\ngit commit -m \"Agregado requirements.txt, .gitignore y Readme.md\"\ngit push",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Proyecto de Sistema de Gestión de Inventarios con Python</span>"
     ]
   }
 ]

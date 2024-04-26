@@ -1,0 +1,321 @@
+# Programación Orientada a Objetos
+
+La programación orientada a objetos (POO) es un paradigma de programación que usa "objetos" para diseñar aplicaciones y programas informáticos.
+
+Un objeto es una entidad que agrupa un estado (atributos) y un comportamiento (métodos). Por ejemplo, un objeto podría representar a una persona con atributos como nombre, edad, género, etc., y comportamientos como caminar, hablar, respirar, etc.
+
+La programación orientada a objetos se basa en varios conceptos fundamentales:
+
+- Clases
+- Objetos
+- Atributos
+- Métodos
+- Herencia
+- Polimorfismo
+- Abstracción
+- Encapsulamiento
+
+Estos conceptos se explican a continuación.
+
+- Clases: Una clase es un plano para los objetos. Es un diseño que define un objeto. Una clase puede contener atributos y métodos. Por ejemplo, la clase "Perro" puede tener atributos como raza, color, edad, y métodos como ladrar, comer, dormir, etc.
+
+Ejemlo:
+
+```python
+class Perro:
+    def __init__(self, raza, color, edad):
+        self.raza = raza
+        self.color = color
+        self.edad = edad
+
+    def ladrar(self):
+        print("Guau! Guau!")
+```
+
+Ejericio:
+
+Crear una clase llamada "Persona" con los atributos "nombre", "edad" y "género". La clase debe tener un método llamado "hablar" que imprime "Hola, mi nombre es [nombre]".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+class Persona:
+    def __init__(self, nombre, edad, genero):
+        self.nombre = nombre
+        self.edad = edad
+        self.genero = genero
+
+    def hablar(self):
+        print(f"Hola, mi nombre es {self.nombre}")
+```
+</details>
+
+- Objetos: Un objeto es una instancia de una clase. Cuando se crea un objeto, se reserva memoria para el objeto y se inicializa. Un objeto puede tener atributos y métodos. Por ejemplo, si "Perro" es una clase, entonces "Perro Labrador" es un objeto de la clase "Perro".
+
+Ejemplo:
+
+```python
+perro1 = Perro("Labrador", "Dorado", 5)
+perro2 = Perro("Bulldog", "Blanco", 3)
+```
+
+Ejercicio:
+
+Crear un objeto de la clase "Persona" con nombre "Juan", edad 25 y género "Masculino".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+juan = Persona("Juan", 25, "Masculino")
+```
+</details>
+
+- Atributos: Los atributos son variables que pertenecen a un objeto. Los atributos definen las características de un objeto. Por ejemplo, "raza", "color" y "edad" son atributos de la clase "Perro".
+
+Ejemplo:
+
+```python
+print(perro1.raza)  # Labrador
+print(perro2.color)  # Blanco
+```
+
+Ejericio:
+
+Imprimir el nombre de la persona "Juan".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+print(juan.nombre)  # Juan
+```
+</details>
+
+- Métodos: Los métodos son funciones que pertenecen a un objeto. Los métodos definen el comportamiento de un objeto. Por ejemplo, "ladrar" y "comer" son métodos de la clase "Perro".
+
+Ejemplo:
+
+```python
+perro1.ladrar()  # Guau! Guau!
+```
+
+Ejercicio:
+
+Llamar al método "hablar" del objeto "juan".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+juan.hablar()  # Hola, mi nombre es Juan
+```
+</details>
+
+- Herencia: La herencia es un mecanismo en el que una clase adquiere las propiedades y el comportamiento de otra clase. La clase que hereda se llama clase derivada o subclase, y la clase de la que se hereda se llama clase base o superclase. La herencia permite la reutilización del código y la creación de una jerarquía de clases.
+
+Ejemplo:
+
+```python
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def comer(self):
+        print("Comiendo...")
+
+class Perro(Animal):
+    def ladrar(self):
+        print("Guau! Guau!")
+
+perro = Perro("Firulais")
+perro.comer()  # Comiendo...
+perro.ladrar()  # Guau! Guau!
+```
+
+Ejercicio:
+
+Crear una clase "Estudiante" que herede de la clase "Persona". La clase "Estudiante" debe tener un atributo adicional llamado "carrera" y un método llamado "estudiar" que imprime "Estudiando...".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, genero, carrera):
+        super().__init__(nombre, edad, genero)
+        self.carrera = carrera
+
+    def estudiar(self):
+        print("Estudiando...")
+```
+</details>
+
+- Polimorfismo: El polimorfismo es la capacidad de un objeto para tomar muchas formas. En Python, el polimorfismo se logra mediante el uso de métodos con el mismo nombre en diferentes clases. El polimorfismo permite que un objeto se comporte de diferentes maneras según el contexto.
+
+Ejemplo:
+
+```python
+class Animal:
+    def hablar(self):
+        pass
+
+class Perro(Animal):
+    def hablar(self):
+        print("Guau! Guau!")
+
+class Gato(Animal):
+    def hablar(self):
+        print("Miau! Miau!")
+
+animales = [Perro(), Gato()]
+
+for animal in animales:
+    animal.hablar()
+```
+
+Ejercicio:
+
+Crear una clase "Profesor" con un método "enseñar" que imprime "Enseñando...". Luego, crear una lista de objetos que contenga un objeto de la clase "Estudiante" y un objeto de la clase "Profesor". Llamar al método "hablar" de cada objeto en la lista.
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+class Profesor:
+    def enseñar(self):
+        print("Enseñando...")
+
+profesor = Profesor()
+estudiante = Estudiante("Ana", 20, "Femenino", "Ingeniería")
+
+personas = [profesor, estudiante]
+
+for persona in personas:
+    persona.hablar()
+```
+</details>
+
+- Abstracción: La abstracción es el proceso de ocultar los detalles de implementación y mostrar solo la funcionalidad al usuario. En Python, la abstracción se logra mediante el uso de clases y métodos. Los usuarios pueden interactuar con los objetos sin conocer los detalles internos de cómo funcionan.
+
+Ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def arrancar(self):
+        print("Arrancando...")
+```
+
+Ejercicio:
+
+Crear una clase "Círculo" con un atributo "radio" y un método "calcular_area" que imprime el área del círculo. Luego, crear un objeto de la clase "Círculo" con radio 5 y llamar al método "calcular_area".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+import math
+
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        area = math.pi * self.radio ** 2
+        print(f"El área del círculo es {area}")
+
+circulo = Circulo(5)
+circulo.calcular_area()
+```
+</details>
+
+- Encapsulamiento: El encapsulamiento es el proceso de ocultar los detalles de implementación de un objeto y restringir el acceso a ciertos componentes. En Python, el encapsulamiento se logra mediante el uso de métodos y atributos privados. Los métodos y atributos privados no se pueden acceder directamente desde fuera de la clase.
+
+Ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.__velocidad = 0
+
+    def acelerar(self):
+        self.__velocidad += 10
+
+    def frenar(self):
+        self.__velocidad -= 10
+
+    def get_velocidad(self):
+        return self.__velocidad
+
+coche = Coche("Toyota", "Corolla")
+coche.acelerar()
+print(coche.get_velocidad())  # 10
+coche.frenar()
+
+# Intentar acceder al atributo privado directamente
+# print(coche.__velocidad)  # Error
+```
+
+Ejercicio:
+
+Modificar la clase "Círculo" para que el atributo "radio" sea privado. Agregar métodos "get_radio" y "set_radio" para obtener y establecer el valor del radio. Luego, crear un objeto de la clase "Círculo" con radio 5, cambiar el radio a 10 y llamar al método "calcular_area".
+
+<details>
+<summary>Ver respuesta</summary>
+
+```python
+import math
+
+class Circulo:
+    def __init__(self, radio):
+        self.__radio = radio
+
+    def calcular_area(self):
+        area = math.pi * self.__radio ** 2
+        print(f"El área del círculo es {area}")
+
+    def get_radio(self):
+        return self.__radio
+
+    def set_radio(self, radio):
+        self.__radio = radio
+        
+circulo = Circulo(5)
+circulo.set_radio(10)
+circulo.calcular_area()
+```
+</details>
+
+La programación orientada a objetos es un concepto fundamental en Python y en muchos otros lenguajes de programación. Al comprender los conceptos de clases, objetos, atributos, métodos, herencia, polimorfismo, abstracción y encapsulamiento, puedes diseñar y desarrollar aplicaciones y programas más eficientes y reutilizables.
+
+## Asignación
+
+[https://classroom.github.com/a/LVvqQCln](https://classroom.github.com/a/LVvqQCln)
+
+En esta asignación, aprenderás sobre los conceptos básicos de **Programación Orientada a Objetos (POO)** mediante la implementación de clases en Python.
+
+## Instrucciones
+
+1. Lee cuidadosamente el contenido de este repositorio.
+2. Implementa las clases solicitadas en el archivo main.py.
+3. Realiza los commits y push necesarios para subir tus cambios a este repositorio.
+4. Verifica que tus cambios pasen todas las pruebas.
+
+## Contenido del Repositorio
+
+-   **main.py**: Archivo principal donde implementarás tus clases.
+-   **test_main.py**: Archivo de pruebas unitarias.
+-   **README.md**: Este archivo con las instrucciones de la asignación.
+
+## Cómo Ejecutar las Pruebas
+
+-   Asegúrate de tener Python instalado en tu sistema.
+-   Abre una terminal y navega hasta la ubicación de este repositorio.
+-   Ejecuta **python -m unittest** para correr las pruebas.
