@@ -54,7 +54,6 @@ book:
         - unidades/unidad4/6_modulos.qmd
         - unidades/unidad4/7_proyecto.qmd
 
-
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/ejercicios_git_github-000.qmd

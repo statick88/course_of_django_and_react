@@ -1,6 +1,6 @@
 # Proyecto de Sistema de Gestión de Inventarios con Python
 
-::: center
+::: {.center}
 ![Sistema de Gestión de Inventario](/images/sistema-gestion-inventario.png){width=20%, align=center}
 :::
 
@@ -30,6 +30,7 @@ A medida que avancemos en el tutorial, también aprenderás buenas prácticas de
 ¡Prepárate para sumergirte en el emocionante mundo de la programación y desarrollar tu propio Sistema de Gestión de Inventarios con Python!
 :::
 
+:::{.justify}
 ## Paso 1: Diseño del Modelo de Datos
 
 1. Abre tu editor de texto o IDE favorito y crea un archivo llamado **inventario.sql**.
@@ -47,11 +48,13 @@ A medida que avancemos en el tutorial, también aprenderás buenas prácticas de
 ```
 
 Este código crea una tabla llamada productos con los campos id, nombre, precio y existencias.
+:::
 
 :::{.callout-tip}
 Se recomienda instalar el Plugin [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer) en **Visual Studio Code** para poder visualizar la base de datos SQLite.
 :::
 
+:::{.justify}
 ## Paso 2: Desarrollo de la Lógica del Negocio
 
 1. Crea un archivo llamado **logica.py** para escribir la lógica del negocio.
@@ -103,6 +106,9 @@ def generar_informe():
     conn.close()
     return productos
 ```
+:::
+
+:::{.justify}
 ## Paso 3: Interfaz de Línea de Comandos (CLI)
 
 1. Crea un archivo llamado **cli.py** para desarrollar la interfaz de línea de comandos.
@@ -167,6 +173,9 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+:::
+
+:::{.justify}
 ## Paso 4: Integración con la Base de Datos SQLite
 
 1.  Asegúrate de tener instalado SQLite en tu sistema. Puedes descargarlo desde SQLite Download Page.
@@ -207,11 +216,11 @@ El comando anterior, se registra una venta de 20 unidades del producto con ID 1.
 python cli.py informe
 ```
 El comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.
+:::
 
 :::{.center}
 ¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.
 :::
-
 ---
 
 ## Paso Extra: Agregar archivos adicionales
@@ -231,64 +240,6 @@ __pycache__/
 
 -   Crea un archivo **Readme.md** que proporcione una descripción del proyecto y una guía para su configuración e instalación. 
 
-Puedes usar el siguiente ejemplo como base:
-
-``` markdown
-# Sistema de Gestión de Inventarios con Python
-
-Este proyecto es un sistema de gestión de inventarios desarrollado en Python utilizando SQLite como base de datos.
-
-## Instalación
-
-1. Clona este repositorio en tu máquina local:
-
-bash
-git clone https://github.com/tu_usuario/inventario-python.git
-
-
-2. Instala las dependencias utilizando pip:
-
-bash
-pip install -r requirements.txt
-
-3. Ejecuta el script inventario.sql para crear la base de datos y la tabla de productos:
-
-bash
-sqlite3 inventario.db < inventario.sql
-
-## Uso
-
-El sistema se puede utilizar a través de una interfaz de línea de comandos (CLI). A continuación, algunos ejemplos de comandos:
-
-## Agregar un producto:
-
-bash
-python cli.py agregar "Producto1" 10.99 100
-
-
-## Actualizar existencias de un producto:
-
-bash
-python cli.py actualizar 1 50
-
-## Registrar una venta:
-
-bash
-python cli.py venta 1 20
-
-## Generar un informe de inventario:
-
-bash
-python cli.py informe
-
-# Contribuir
-
-¡Siéntete libre de contribuir a este proyecto! Si encuentras algún problema o tienes alguna mejora, por favor abre un issue o una pull request.
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT.
-```
 ## Paso 6: Agregar archivos al repositorio
 
 Agrega los archivos al repositorio Git:

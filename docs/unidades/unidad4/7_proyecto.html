@@ -333,8 +333,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#paso-1-diseño-del-modelo-de-datos" id="toc-paso-1-diseño-del-modelo-de-datos" class="nav-link active" data-scroll-target="#paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</a></li>
   <li><a href="#paso-2-desarrollo-de-la-lógica-del-negocio" id="toc-paso-2-desarrollo-de-la-lógica-del-negocio" class="nav-link" data-scroll-target="#paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</a></li>
   <li><a href="#paso-3-interfaz-de-línea-de-comandos-cli" id="toc-paso-3-interfaz-de-línea-de-comandos-cli" class="nav-link" data-scroll-target="#paso-3-interfaz-de-línea-de-comandos-cli">Paso 3: Interfaz de Línea de Comandos (CLI)</a></li>
-  <li><a href="#paso-4-integración-con-la-base-de-datos-sqlite" id="toc-paso-4-integración-con-la-base-de-datos-sqlite" class="nav-link" data-scroll-target="#paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</a></li>
-  <li><a href="#paso-5-prueba-del-sistema" id="toc-paso-5-prueba-del-sistema" class="nav-link" data-scroll-target="#paso-5-prueba-del-sistema">Paso 5: Prueba del Sistema</a></li>
   <li><a href="#paso-extra-agregar-archivos-adicionales" id="toc-paso-extra-agregar-archivos-adicionales" class="nav-link" data-scroll-target="#paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</a></li>
   <li><a href="#paso-6-agregar-archivos-al-repositorio" id="toc-paso-6-agregar-archivos-al-repositorio" class="nav-link" data-scroll-target="#paso-6-agregar-archivos-al-repositorio">Paso 6: Agregar archivos al repositorio</a></li>
   </ul>
@@ -387,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <p>¡Prepárate para sumergirte en el emocionante mundo de la programación y desarrollar tu propio Sistema de Gestión de Inventarios con Python!</p>
 </div>
-<section id="paso-1-diseño-del-modelo-de-datos" class="level2">
+<section id="paso-1-diseño-del-modelo-de-datos" class="level2 justify">
 <h2 class="anchored" data-anchor-id="paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</h2>
 <ol type="1">
 <li><p>Abre tu editor de texto o IDE favorito y crea un archivo llamado <strong>inventario.sql</strong>.</p></li>
@@ -401,6 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        existencias <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Este código crea una tabla llamada productos con los campos id, nombre, precio y existencias.</p>
+</section>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -414,8 +413,7 @@ Tip
 <p>Se recomienda instalar el Plugin <a href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer">SQLite Viewer</a> en <strong>Visual Studio Code</strong> para poder visualizar la base de datos SQLite.</p>
 </div>
 </div>
-</section>
-<section id="paso-2-desarrollo-de-la-lógica-del-negocio" class="level2">
+<section id="paso-2-desarrollo-de-la-lógica-del-negocio" class="level2 justify">
 <h2 class="anchored" data-anchor-id="paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</h2>
 <ol type="1">
 <li><p>Crea un archivo llamado <strong>logica.py</strong> para escribir la lógica del negocio.</p></li>
@@ -464,7 +462,7 @@ Tip
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> productos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="paso-3-interfaz-de-línea-de-comandos-cli" class="level2">
+<section id="paso-3-interfaz-de-línea-de-comandos-cli" class="level2 justify">
 <h2 class="anchored" data-anchor-id="paso-3-interfaz-de-línea-de-comandos-cli">Paso 3: Interfaz de Línea de Comandos (CLI)</h2>
 <ol type="1">
 <li><p>Crea un archivo llamado <strong>cli.py</strong> para desarrollar la interfaz de línea de comandos.</p></li>
@@ -526,6 +524,7 @@ Tip
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<div class="justify">
 <section id="paso-4-integración-con-la-base-de-datos-sqlite" class="level2">
 <h2 class="anchored" data-anchor-id="paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</h2>
 <ol type="1">
@@ -557,11 +556,12 @@ Tip
 </ol>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py informe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.</p>
+</section>
+</div>
 <div class="center">
 <p>¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.</p>
 </div>
 <hr>
-</section>
 <section id="paso-extra-agregar-archivos-adicionales" class="level2">
 <h2 class="anchored" data-anchor-id="paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</h2>
 <ul>
@@ -577,68 +577,13 @@ __pycache__/
 <ul>
 <li>Crea un archivo <strong>Readme.md</strong> que proporcione una descripción del proyecto y una guía para su configuración e instalación.</li>
 </ul>
-<p>Puedes usar el siguiente ejemplo como base:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Sistema de Gestión de Inventarios con Python</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Este proyecto es un sistema de gestión de inventarios desarrollado en Python utilizando SQLite como base de datos.</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalación</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Clona este repositorio en tu máquina local:</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>git clone https://github.com/tu_usuario/inventario-python.git</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Instala las dependencias utilizando pip:</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>pip install -r requirements.txt</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Ejecuta el script inventario.sql para crear la base de datos y la tabla de productos:</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>sqlite3 inventario.db &lt; inventario.sql</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Uso</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>El sistema se puede utilizar a través de una interfaz de línea de comandos (CLI). A continuación, algunos ejemplos de comandos:</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Agregar un producto:</span></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>python cli.py agregar "Producto1" 10.99 100</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Actualizar existencias de un producto:</span></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>python cli.py actualizar 1 50</span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Registrar una venta:</span></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>python cli.py venta 1 20</span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generar un informe de inventario:</span></span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>bash</span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>python cli.py informe</span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="fu"># Contribuir</span></span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>¡Siéntete libre de contribuir a este proyecto! Si encuentras algún problema o tienes alguna mejora, por favor abre un issue o una pull request.</span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Licencia</span></span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>Este proyecto está bajo la licencia MIT.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="paso-6-agregar-archivos-al-repositorio" class="level2">
 <h2 class="anchored" data-anchor-id="paso-6-agregar-archivos-al-repositorio">Paso 6: Agregar archivos al repositorio</h2>
 <p>Agrega los archivos al repositorio Git:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add requirements.txt .gitignore Readme.md</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agregado requirements.txt, .gitignore y Readme.md"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add requirements.txt .gitignore Readme.md</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agregado requirements.txt, .gitignore y Readme.md"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
