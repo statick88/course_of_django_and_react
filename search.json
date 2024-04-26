@@ -777,6 +777,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad4/project001.html",
+    "href": "unidades/unidad4/project001.html",
+    "title": "Sistema de Gestión de Inventarios",
+    "section": "",
+    "text": "Asignación\nhttps://classroom.github.com/a/S9EkZXRf\nAprenderás a desarrollar un proyecto de utilizando el lenguaje de programación Python.\nUn sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.\nAprenderás a utilizar diferentes conceptos y técnicas de programación para implementar las funcionalidades clave de este sistema.\nAlgunas de las funcionalidades que implementaremos incluyen:\nAprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.\nTe enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.\nAprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas transacciones.\nTe mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sistema de Gestión de Inventarios</span>"
+    ]
+  },
+  {
     "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
     "href": "unidades/ejercicios/ejercicios_git_github-000.html",
     "title": "Ejercicios de Git y Github",
