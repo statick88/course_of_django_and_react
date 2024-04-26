@@ -52,7 +52,7 @@ book:
       chapters: 
         - unidades/unidad4/5_programacion_oo.qmd
         - unidades/unidad4/6_modulos.qmd
-        - unidades/unidad4/proyecto.qmd
+        - unidades/unidad4/project001.qmd
 
     - part: "Ejercicios"
       chapters: 
