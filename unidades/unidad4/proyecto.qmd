@@ -4,7 +4,6 @@
 ![Sistema de Gestión de Inventario](/images/sistema-gestion-inventario.png){width=20%, align=center}
 :::
 
-:::{.justify}
 En este tutorial, aprenderás a desarrollar un proyecto de **Sistema de Gestión de Inventarios** utilizando el lenguaje de programación Python. 
 
 Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.
@@ -24,13 +23,11 @@ Algunas de las funcionalidades que implementaremos incluyen:
 4. **Generación de informes:** Te mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.
 
 A medida que avancemos en el tutorial, también aprenderás buenas prácticas de programación, como la modularidad, la reutilización de código y la implementación de pruebas unitarias para garantizar la calidad y robustez de tu sistema de gestión de inventarios.
-:::
 
 :::{.center}
 ¡Prepárate para sumergirte en el emocionante mundo de la programación y desarrollar tu propio Sistema de Gestión de Inventarios con Python!
 :::
 
-:::{.justify}
 ## Paso 1: Diseño del Modelo de Datos
 
 1. Abre tu editor de texto o IDE favorito y crea un archivo llamado **inventario.sql**.
@@ -48,13 +45,11 @@ A medida que avancemos en el tutorial, también aprenderás buenas prácticas de
 ```
 
 Este código crea una tabla llamada productos con los campos id, nombre, precio y existencias.
-:::
 
 :::{.callout-tip}
 Se recomienda instalar el Plugin [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer) en **Visual Studio Code** para poder visualizar la base de datos SQLite.
 :::
 
-:::{.justify}
 ## Paso 2: Desarrollo de la Lógica del Negocio
 
 1. Crea un archivo llamado **logica.py** para escribir la lógica del negocio.
@@ -106,7 +101,6 @@ def generar_informe():
     conn.close()
     return productos
 ```
-:::
 
 :::{.justify}
 ## Paso 3: Interfaz de Línea de Comandos (CLI)
@@ -173,9 +167,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-:::
 
-:::{.justify}
 ## Paso 4: Integración con la Base de Datos SQLite
 
 1.  Asegúrate de tener instalado SQLite en tu sistema. Puedes descargarlo desde SQLite Download Page.
@@ -216,11 +208,11 @@ El comando anterior, se registra una venta de 20 unidades del producto con ID 1.
 python cli.py informe
 ```
 El comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.
-:::
 
 :::{.center}
 ¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.
 :::
+
 ---
 
 ## Paso Extra: Agregar archivos adicionales

@@ -332,7 +332,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#paso-1-diseño-del-modelo-de-datos" id="toc-paso-1-diseño-del-modelo-de-datos" class="nav-link active" data-scroll-target="#paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</a></li>
   <li><a href="#paso-2-desarrollo-de-la-lógica-del-negocio" id="toc-paso-2-desarrollo-de-la-lógica-del-negocio" class="nav-link" data-scroll-target="#paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</a></li>
-  <li><a href="#paso-3-interfaz-de-línea-de-comandos-cli" id="toc-paso-3-interfaz-de-línea-de-comandos-cli" class="nav-link" data-scroll-target="#paso-3-interfaz-de-línea-de-comandos-cli">Paso 3: Interfaz de Línea de Comandos (CLI)</a></li>
+  <li><a href="#paso-4-integración-con-la-base-de-datos-sqlite" id="toc-paso-4-integración-con-la-base-de-datos-sqlite" class="nav-link" data-scroll-target="#paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</a></li>
+  <li><a href="#paso-5-prueba-del-sistema" id="toc-paso-5-prueba-del-sistema" class="nav-link" data-scroll-target="#paso-5-prueba-del-sistema">Paso 5: Prueba del Sistema</a></li>
   <li><a href="#paso-extra-agregar-archivos-adicionales" id="toc-paso-extra-agregar-archivos-adicionales" class="nav-link" data-scroll-target="#paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</a></li>
   <li><a href="#paso-6-agregar-archivos-al-repositorio" id="toc-paso-6-agregar-archivos-al-repositorio" class="nav-link" data-scroll-target="#paso-6-agregar-archivos-al-repositorio">Paso 6: Agregar archivos al repositorio</a></li>
   </ul>
@@ -368,7 +369,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="justify">
 <p>En este tutorial, aprenderás a desarrollar un proyecto de <strong>Sistema de Gestión de Inventarios</strong> utilizando el lenguaje de programación Python.</p>
 <p>Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.</p>
 <p>Durante este tutorial, te guiaré a través de los pasos necesarios para crear un sistema de gestión de inventarios funcional utilizando Python.</p>
@@ -381,11 +381,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Generación de informes:</strong> Te mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.</p></li>
 </ol>
 <p>A medida que avancemos en el tutorial, también aprenderás buenas prácticas de programación, como la modularidad, la reutilización de código y la implementación de pruebas unitarias para garantizar la calidad y robustez de tu sistema de gestión de inventarios.</p>
-</div>
 <div class="center">
 <p>¡Prepárate para sumergirte en el emocionante mundo de la programación y desarrollar tu propio Sistema de Gestión de Inventarios con Python!</p>
 </div>
-<section id="paso-1-diseño-del-modelo-de-datos" class="level2 justify">
+<section id="paso-1-diseño-del-modelo-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</h2>
 <ol type="1">
 <li><p>Abre tu editor de texto o IDE favorito y crea un archivo llamado <strong>inventario.sql</strong>.</p></li>
@@ -399,7 +398,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        existencias <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Este código crea una tabla llamada productos con los campos id, nombre, precio y existencias.</p>
-</section>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -413,7 +411,8 @@ Tip
 <p>Se recomienda instalar el Plugin <a href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer">SQLite Viewer</a> en <strong>Visual Studio Code</strong> para poder visualizar la base de datos SQLite.</p>
 </div>
 </div>
-<section id="paso-2-desarrollo-de-la-lógica-del-negocio" class="level2 justify">
+</section>
+<section id="paso-2-desarrollo-de-la-lógica-del-negocio" class="level2">
 <h2 class="anchored" data-anchor-id="paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</h2>
 <ol type="1">
 <li><p>Crea un archivo llamado <strong>logica.py</strong> para escribir la lógica del negocio.</p></li>
@@ -461,9 +460,7 @@ Tip
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    productos <span class="op">=</span> cursor.fetchall()</span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> productos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="paso-3-interfaz-de-línea-de-comandos-cli" class="level2 justify">
-<h2 class="anchored" data-anchor-id="paso-3-interfaz-de-línea-de-comandos-cli">Paso 3: Interfaz de Línea de Comandos (CLI)</h2>
+<p>:::{.justify} ## Paso 3: Interfaz de Línea de Comandos (CLI)</p>
 <ol type="1">
 <li><p>Crea un archivo llamado <strong>cli.py</strong> para desarrollar la interfaz de línea de comandos.</p></li>
 <li><p>Utiliza la biblioteca argparse para crear una interfaz fácil de usar.</p></li>
@@ -524,7 +521,6 @@ Tip
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<div class="justify">
 <section id="paso-4-integración-con-la-base-de-datos-sqlite" class="level2">
 <h2 class="anchored" data-anchor-id="paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</h2>
 <ol type="1">
@@ -556,12 +552,11 @@ Tip
 </ol>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py informe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.</p>
-</section>
-</div>
 <div class="center">
 <p>¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.</p>
 </div>
 <hr>
+</section>
 <section id="paso-extra-agregar-archivos-adicionales" class="level2">
 <h2 class="anchored" data-anchor-id="paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</h2>
 <ul>
