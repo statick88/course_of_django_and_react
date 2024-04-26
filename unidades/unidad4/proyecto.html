@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Django y React 2024 - Programación Orientada a Objetos</title>
+<title>Django y React 2024 - Proyecto de Sistema de Gestión de Inventarios con Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad4/6_modulos.html" rel="next">
-<link href="../../unidades/unidad3/4_conjuntos_diccionarios.html" rel="prev">
+<link href="../../unidades/ejercicios/ejercicios_git_github-000.html" rel="next">
+<link href="../../unidades/unidad4/6_modulos.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html"><span class="chapter-title">Programación Orientada a Objetos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/proyecto.html"><span class="chapter-title">Proyecto de Sistema de Gestión de Inventarios con Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/5_programacion_oo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Programación Orientada a Objetos</span></a>
+  <a href="../../unidades/unidad4/5_programacion_oo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Orientada a Objetos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/project001.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">test</span></a>
+  <a href="../../unidades/unidad4/proyecto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Proyecto de Sistema de Gestión de Inventarios con Python</span></a>
   </div>
 </li>
       </ul>
@@ -330,19 +330,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#asignación" id="toc-asignación" class="nav-link active" data-scroll-target="#asignación">Asignación</a></li>
-  <li><a href="#instrucciones" id="toc-instrucciones" class="nav-link" data-scroll-target="#instrucciones">Instrucciones</a></li>
-  <li><a href="#contenido-del-repositorio" id="toc-contenido-del-repositorio" class="nav-link" data-scroll-target="#contenido-del-repositorio">Contenido del Repositorio</a></li>
-  <li><a href="#cómo-ejecutar-las-pruebas" id="toc-cómo-ejecutar-las-pruebas" class="nav-link" data-scroll-target="#cómo-ejecutar-las-pruebas">Cómo Ejecutar las Pruebas</a></li>
+  <li><a href="#paso-1-diseño-del-modelo-de-datos" id="toc-paso-1-diseño-del-modelo-de-datos" class="nav-link active" data-scroll-target="#paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</a></li>
+  <li><a href="#paso-2-desarrollo-de-la-lógica-del-negocio" id="toc-paso-2-desarrollo-de-la-lógica-del-negocio" class="nav-link" data-scroll-target="#paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</a></li>
+  <li><a href="#paso-4-integración-con-la-base-de-datos-sqlite" id="toc-paso-4-integración-con-la-base-de-datos-sqlite" class="nav-link" data-scroll-target="#paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</a></li>
+  <li><a href="#paso-5-prueba-del-sistema" id="toc-paso-5-prueba-del-sistema" class="nav-link" data-scroll-target="#paso-5-prueba-del-sistema">Paso 5: Prueba del Sistema</a></li>
+  <li><a href="#paso-extra-agregar-archivos-adicionales" id="toc-paso-extra-agregar-archivos-adicionales" class="nav-link" data-scroll-target="#paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</a></li>
+  <li><a href="#paso-6-agregar-archivos-al-repositorio" id="toc-paso-6-agregar-archivos-al-repositorio" class="nav-link" data-scroll-target="#paso-6-agregar-archivos-al-repositorio">Paso 6: Agregar archivos al repositorio</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html"><span class="chapter-title">Programación Orientada a Objetos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/proyecto.html"><span class="chapter-title">Proyecto de Sistema de Gestión de Inventarios con Python</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Programación Orientada a Objetos</span></h1>
+<h1 class="title"><span class="chapter-title">Proyecto de Sistema de Gestión de Inventarios con Python</span></h1>
 </div>
 
 
@@ -359,270 +361,220 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>La programación orientada a objetos (POO) es un paradigma de programación que usa “objetos” para diseñar aplicaciones y programas informáticos.</p>
-<p>Un objeto es una entidad que agrupa un estado (atributos) y un comportamiento (métodos). Por ejemplo, un objeto podría representar a una persona con atributos como nombre, edad, género, etc., y comportamientos como caminar, hablar, respirar, etc.</p>
-<p>La programación orientada a objetos se basa en varios conceptos fundamentales:</p>
-<ul>
-<li>Clases</li>
-<li>Objetos</li>
-<li>Atributos</li>
-<li>Métodos</li>
-<li>Herencia</li>
-<li>Polimorfismo</li>
-<li>Abstracción</li>
-<li>Encapsulamiento</li>
-</ul>
-<p>Estos conceptos se explican a continuación.</p>
-<ul>
-<li>Clases: Una clase es un plano para los objetos. Es un diseño que define un objeto. Una clase puede contener atributos y métodos. Por ejemplo, la clase “Perro” puede tener atributos como raza, color, edad, y métodos como ladrar, comer, dormir, etc.</li>
-</ul>
-<p>Ejemlo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, raza, color, edad):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.raza <span class="op">=</span> raza</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ladrar(<span class="va">self</span>):</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Guau! Guau!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejericio:</p>
-<p>Crear una clase llamada “Persona” con los atributos “nombre”, “edad” y “género”. La clase debe tener un método llamado “hablar” que imprime “Hola, mi nombre es [nombre]”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad, genero):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.genero <span class="op">=</span> genero</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hablar(<span class="va">self</span>):</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Hola, mi nombre es </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Objetos: Un objeto es una instancia de una clase. Cuando se crea un objeto, se reserva memoria para el objeto y se inicializa. Un objeto puede tener atributos y métodos. Por ejemplo, si “Perro” es una clase, entonces “Perro Labrador” es un objeto de la clase “Perro”.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>perro1 <span class="op">=</span> Perro(<span class="st">"Labrador"</span>, <span class="st">"Dorado"</span>, <span class="dv">5</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>perro2 <span class="op">=</span> Perro(<span class="st">"Bulldog"</span>, <span class="st">"Blanco"</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Crear un objeto de la clase “Persona” con nombre “Juan”, edad 25 y género “Masculino”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>juan <span class="op">=</span> Persona(<span class="st">"Juan"</span>, <span class="dv">25</span>, <span class="st">"Masculino"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Atributos: Los atributos son variables que pertenecen a un objeto. Los atributos definen las características de un objeto. Por ejemplo, “raza”, “color” y “edad” son atributos de la clase “Perro”.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(perro1.raza)  <span class="co"># Labrador</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(perro2.color)  <span class="co"># Blanco</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejericio:</p>
-<p>Imprimir el nombre de la persona “Juan”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(juan.nombre)  <span class="co"># Juan</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Métodos: Los métodos son funciones que pertenecen a un objeto. Los métodos definen el comportamiento de un objeto. Por ejemplo, “ladrar” y “comer” son métodos de la clase “Perro”.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>perro1.ladrar()  <span class="co"># Guau! Guau!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Llamar al método “hablar” del objeto “juan”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>juan.hablar()  <span class="co"># Hola, mi nombre es Juan</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Herencia: La herencia es un mecanismo en el que una clase adquiere las propiedades y el comportamiento de otra clase. La clase que hereda se llama clase derivada o subclase, y la clase de la que se hereda se llama clase base o superclase. La herencia permite la reutilización del código y la creación de una jerarquía de clases.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> comer(<span class="va">self</span>):</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Comiendo..."</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro(Animal):</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ladrar(<span class="va">self</span>):</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Guau! Guau!"</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>perro <span class="op">=</span> Perro(<span class="st">"Firulais"</span>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>perro.comer()  <span class="co"># Comiendo...</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>perro.ladrar()  <span class="co"># Guau! Guau!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Crear una clase “Estudiante” que herede de la clase “Persona”. La clase “Estudiante” debe tener un atributo adicional llamado “carrera” y un método llamado “estudiar” que imprime “Estudiando…”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Estudiante(Persona):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad, genero, carrera):</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(nombre, edad, genero)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.carrera <span class="op">=</span> carrera</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> estudiar(<span class="va">self</span>):</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Estudiando..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Polimorfismo: El polimorfismo es la capacidad de un objeto para tomar muchas formas. En Python, el polimorfismo se logra mediante el uso de métodos con el mismo nombre en diferentes clases. El polimorfismo permite que un objeto se comporte de diferentes maneras según el contexto.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hablar(<span class="va">self</span>):</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro(Animal):</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hablar(<span class="va">self</span>):</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Guau! Guau!"</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Gato(Animal):</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hablar(<span class="va">self</span>):</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Miau! Miau!"</span>)</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>animales <span class="op">=</span> [Perro(), Gato()]</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animales:</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    animal.hablar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Crear una clase “Profesor” con un método “enseñar” que imprime “Enseñando…”. Luego, crear una lista de objetos que contenga un objeto de la clase “Estudiante” y un objeto de la clase “Profesor”. Llamar al método “hablar” de cada objeto en la lista.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Profesor:</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> enseñar(<span class="va">self</span>):</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Enseñando..."</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>profesor <span class="op">=</span> Profesor()</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>estudiante <span class="op">=</span> Estudiante(<span class="st">"Ana"</span>, <span class="dv">20</span>, <span class="st">"Femenino"</span>, <span class="st">"Ingeniería"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>personas <span class="op">=</span> [profesor, estudiante]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> persona <span class="kw">in</span> personas:</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    persona.hablar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Abstracción: La abstracción es el proceso de ocultar los detalles de implementación y mostrar solo la funcionalidad al usuario. En Python, la abstracción se logra mediante el uso de clases y métodos. Los usuarios pueden interactuar con los objetos sin conocer los detalles internos de cómo funcionan.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> arrancar(<span class="va">self</span>):</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Arrancando..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Crear una clase “Círculo” con un atributo “radio” y un método “calcular_area” que imprime el área del círculo. Luego, crear un objeto de la clase “Círculo” con radio 5 y llamar al método “calcular_area”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circulo:</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radio):</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.radio <span class="op">=</span> radio</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        area <span class="op">=</span> math.pi <span class="op">*</span> <span class="va">self</span>.radio <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"El área del círculo es </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>circulo <span class="op">=</span> Circulo(<span class="dv">5</span>)</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>circulo.calcular_area()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<ul>
-<li>Encapsulamiento: El encapsulamiento es el proceso de ocultar los detalles de implementación de un objeto y restringir el acceso a ciertos componentes. En Python, el encapsulamiento se logra mediante el uso de métodos y atributos privados. Los métodos y atributos privados no se pueden acceder directamente desde fuera de la clase.</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca, modelo):</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.marca <span class="op">=</span> marca</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.modelo <span class="op">=</span> modelo</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__velocidad <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> acelerar(<span class="va">self</span>):</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__velocidad <span class="op">+=</span> <span class="dv">10</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> frenar(<span class="va">self</span>):</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__velocidad <span class="op">-=</span> <span class="dv">10</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_velocidad(<span class="va">self</span>):</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__velocidad</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>coche <span class="op">=</span> Coche(<span class="st">"Toyota"</span>, <span class="st">"Corolla"</span>)</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>coche.acelerar()</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(coche.get_velocidad())  <span class="co"># 10</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>coche.frenar()</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Intentar acceder al atributo privado directamente</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print(coche.__velocidad)  # Error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ejercicio:</p>
-<p>Modificar la clase “Círculo” para que el atributo “radio” sea privado. Agregar métodos “get_radio” y “set_radio” para obtener y establecer el valor del radio. Luego, crear un objeto de la clase “Círculo” con radio 5, cambiar el radio a 10 y llamar al método “calcular_area”.</p>
-<details>
-<summary>
-Ver respuesta
-</summary>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circulo:</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radio):</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__radio <span class="op">=</span> radio</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calcular_area(<span class="va">self</span>):</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        area <span class="op">=</span> math.pi <span class="op">*</span> <span class="va">self</span>.__radio <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"El área del círculo es </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_radio(<span class="va">self</span>):</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__radio</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_radio(<span class="va">self</span>, radio):</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__radio <span class="op">=</span> radio</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>circulo <span class="op">=</span> Circulo(<span class="dv">5</span>)</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>circulo.set_radio(<span class="dv">10</span>)</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>circulo.calcular_area()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<p>La programación orientada a objetos es un concepto fundamental en Python y en muchos otros lenguajes de programación. Al comprender los conceptos de clases, objetos, atributos, métodos, herencia, polimorfismo, abstracción y encapsulamiento, puedes diseñar y desarrollar aplicaciones y programas más eficientes y reutilizables.</p>
-<section id="asignación" class="level2">
-<h2 class="anchored" data-anchor-id="asignación">Asignación</h2>
-<p><a href="https://classroom.github.com/a/LVvqQCln">https://classroom.github.com/a/LVvqQCln</a></p>
-<p>En esta asignación, aprenderás sobre los conceptos básicos de <strong>Programación Orientada a Objetos (POO)</strong> mediante la implementación de clases en Python.</p>
-</section>
-<section id="instrucciones" class="level2">
-<h2 class="anchored" data-anchor-id="instrucciones">Instrucciones</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/sistema-gestion-inventario.png" class="img-fluid figure-img" data-align="center"></p>
+<figcaption>Sistema de Gestión de Inventario</figcaption>
+</figure>
+</div>
+<p>En este tutorial, aprenderás a desarrollar un proyecto de <strong>Sistema de Gestión de Inventarios</strong> utilizando el lenguaje de programación Python.</p>
+<p>Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.</p>
+<p>Algunas de las funcionalidades que implementaremos incluyen:</p>
 <ol type="1">
-<li>Lee cuidadosamente el contenido de este repositorio.</li>
-<li>Implementa las clases solicitadas en el archivo main.py.</li>
-<li>Realiza los commits y push necesarios para subir tus cambios a este repositorio.</li>
-<li>Verifica que tus cambios pasen todas las pruebas.</li>
+<li><p><strong>Registro de productos:</strong> Aprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.</p></li>
+<li><p><strong>Búsqueda y filtrado de productos:</strong> Te enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.</p></li>
+<li><p><strong>Actualización de inventario:</strong> Aprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas transacciones.</p></li>
+<li><p><strong>Generación de informes:</strong> Te mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.</p></li>
 </ol>
+<p>A medida que avancemos en el tutorial, también aprenderás buenas prácticas de programación, como la modularidad, la reutilización de código y la implementación de pruebas unitarias para garantizar la calidad y robustez de tu sistema de gestión de inventarios.</p>
+<div class="center">
+<p>¡Prepárate para sumergirte en el emocionante mundo de la programación y desarrollar tu propio Sistema de Gestión de Inventarios con Python!</p>
+</div>
+<section id="paso-1-diseño-del-modelo-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="paso-1-diseño-del-modelo-de-datos">Paso 1: Diseño del Modelo de Datos</h2>
+<ol type="1">
+<li><p>Abre tu editor de texto o IDE favorito y crea un archivo llamado <strong>inventario.sql</strong>.</p></li>
+<li><p>Define la estructura de la <strong>base de datos SQLite</strong>. Agrega el siguiente código:</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- Crear la tabla 'productos' para almacenar la información de los productos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">CREATE</span> <span class="kw">TABLE</span> productos (</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        nombre TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        precio <span class="dt">REAL</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        existencias <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este código crea una tabla llamada productos con los campos id, nombre, precio y existencias.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se recomienda instalar el Plugin <a href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer">SQLite Viewer</a> en <strong>Visual Studio Code</strong> para poder visualizar la base de datos SQLite.</p>
+</div>
+</div>
 </section>
-<section id="contenido-del-repositorio" class="level2">
-<h2 class="anchored" data-anchor-id="contenido-del-repositorio">Contenido del Repositorio</h2>
+<section id="paso-2-desarrollo-de-la-lógica-del-negocio" class="level2">
+<h2 class="anchored" data-anchor-id="paso-2-desarrollo-de-la-lógica-del-negocio">Paso 2: Desarrollo de la Lógica del Negocio</h2>
+<ol type="1">
+<li><p>Crea un archivo llamado <strong>logica.py</strong> para escribir la lógica del negocio.</p></li>
+<li><p>Define las funciones necesarias para <strong>agregar productos</strong>, <strong>actualizar existencias</strong>, <strong>registrar ventas</strong> y <strong>generar informes</strong>.</p></li>
+<li><p>Agrega el siguiente código:</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> conectar():</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Función para establecer conexión a la base de datos</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'inventario.db'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conn</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_producto(nombre, precio, existencias):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Función para agregar un nuevo producto a la base de datos</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> conectar()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"INSERT INTO productos (nombre, precio, existencias) VALUES (?, ?, ?)"</span>, (nombre, precio, existencias))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizar_existencias(id_producto, nuevas_existencias):</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Función para actualizar las existencias de un producto en la base de datos</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> conectar()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"UPDATE productos SET existencias = ? WHERE id = ?"</span>, (nuevas_existencias, id_producto))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> registrar_venta(id_producto, cantidad_vendida):</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Función para registrar una venta y actualizar las existencias en la base de datos</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> conectar()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"SELECT existencias FROM productos WHERE id = ?"</span>, (id_producto,))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    existencias_actuales <span class="op">=</span> cursor.fetchone()[<span class="dv">0</span>]</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    nuevas_existencias <span class="op">=</span> existencias_actuales <span class="op">-</span> cantidad_vendida</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    actualizar_existencias(id_producto, nuevas_existencias)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generar_informe():</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Función para generar un informe de inventario</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> conectar()</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">"SELECT * FROM productos"</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    productos <span class="op">=</span> cursor.fetchall()</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> productos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::{.justify} ## Paso 3: Interfaz de Línea de Comandos (CLI)</p>
+<ol type="1">
+<li><p>Crea un archivo llamado <strong>cli.py</strong> para desarrollar la interfaz de línea de comandos.</p></li>
+<li><p>Utiliza la biblioteca argparse para crear una interfaz fácil de usar.</p></li>
+<li><p>Agrega el siguiente código:</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logica</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_producto(args):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    logica.agregar_producto(args.nombre, args.precio, args.existencias)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Producto agregado con éxito."</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizar_existencias(args):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    logica.actualizar_existencias(args.<span class="bu">id</span>, args.existencias)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Existencias actualizadas."</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> registrar_venta(args):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    logica.registrar_venta(args.<span class="bu">id</span>, args.cantidad)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Venta registrada."</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generar_informe(args):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    productos <span class="op">=</span> logica.generar_informe()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Informe de inventario:"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> producto <span class="kw">in</span> productos:</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(producto)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'Sistema de Gestión de Inventarios'</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    subparsers <span class="op">=</span> parser.add_subparsers(title<span class="op">=</span><span class="st">'Acciones'</span>, dest<span class="op">=</span><span class="st">'accion'</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Comando para agregar un producto</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    parser_agregar <span class="op">=</span> subparsers.add_parser(<span class="st">'agregar'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Agregar un nuevo producto'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    parser_agregar.add_argument(<span class="st">'nombre'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Nombre del producto'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    parser_agregar.add_argument(<span class="st">'precio'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">float</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Precio del producto'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    parser_agregar.add_argument(<span class="st">'existencias'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Existencias iniciales del producto'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    parser_agregar.set_defaults(func<span class="op">=</span>agregar_producto)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Comando para actualizar existencias</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    parser_actualizar <span class="op">=</span> subparsers.add_parser(<span class="st">'actualizar'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Actualizar existencias de un producto'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    parser_actualizar.add_argument(<span class="st">'id'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'ID del producto a actualizar'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    parser_actualizar.add_argument(<span class="st">'existencias'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Nuevas existencias del producto'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    parser_actualizar.set_defaults(func<span class="op">=</span>actualizar_existencias)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Comando para registrar una venta</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    parser_venta <span class="op">=</span> subparsers.add_parser(<span class="st">'venta'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Registrar una venta'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    parser_venta.add_argument(<span class="st">'id'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'ID del producto vendido'</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    parser_venta.add_argument(<span class="st">'cantidad'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Cantidad vendida del producto'</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    parser_venta.set_defaults(func<span class="op">=</span>registrar_venta)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Comando para generar un informe</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    parser_informe <span class="op">=</span> subparsers.add_parser(<span class="st">'informe'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Generar un informe de inventario'</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    parser_informe.set_defaults(func<span class="op">=</span>generar_informe)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'func'</span> <span class="kw">in</span> args:</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>        args.func(args)</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="paso-4-integración-con-la-base-de-datos-sqlite" class="level2">
+<h2 class="anchored" data-anchor-id="paso-4-integración-con-la-base-de-datos-sqlite">Paso 4: Integración con la Base de Datos SQLite</h2>
+<ol type="1">
+<li><p>Asegúrate de tener instalado SQLite en tu sistema. Puedes descargarlo desde SQLite Download Page.</p></li>
+<li><p>Ejecuta el archivo inventario.sql para crear la base de datos y la tabla productos.</p></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> inventario.db <span class="op">&lt;</span> inventario.sql</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="paso-5-prueba-del-sistema" class="level2">
+<h2 class="anchored" data-anchor-id="paso-5-prueba-del-sistema">Paso 5: Prueba del Sistema</h2>
+<ol type="1">
+<li><p>Utiliza la interfaz de línea de comandos para probar el sistema. A continuación, algunos ejemplos de comandos:</p></li>
+<li><p><strong>Agregar un producto</strong>:</p></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py agregar <span class="st">"Producto1"</span> 10.99 100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior, se agrega un producto llamado “Producto1” con un precio de 10.99 y 100 existencias.</p>
+<ol start="2" type="1">
+<li><strong>Actualizar existencias de un producto</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py actualizar 1 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior, se actualizan las existencias del producto con ID 1 a 50.</p>
+<ol start="3" type="1">
+<li><strong>Registrar una venta</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py venta 1 20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior, se registra una venta de 20 unidades del producto con ID 1.</p>
+<ol start="4" type="1">
+<li><strong>Generar un informe de inventario</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> cli.py informe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior genera un informe de inventario con todos los productos almacenados en la base de datos.</p>
+<div class="center">
+<p>¡Y eso es todo! Has desarrollado con éxito un Sistema de Gestión de Inventarios con Python utilizando SQLite y una interfaz de línea de comandos.</p>
+</div>
+<hr>
+</section>
+<section id="paso-extra-agregar-archivos-adicionales" class="level2">
+<h2 class="anchored" data-anchor-id="paso-extra-agregar-archivos-adicionales">Paso Extra: Agregar archivos adicionales</h2>
 <ul>
-<li><strong>main.py</strong>: Archivo principal donde implementarás tus clases.</li>
-<li><strong>test_main.py</strong>: Archivo de pruebas unitarias.</li>
-<li><strong>README.md</strong>: Este archivo con las instrucciones de la asignación.</li>
+<li><p>Crea un archivo llamado <strong>requirements.txt</strong> y agrega las dependencias necesarias para tu proyecto. En este caso, solo necesitamos la biblioteca sqlite3.</p></li>
+<li><p>Crea un archivo llamado <strong>.gitignore</strong> para evitar que ciertos archivos y directorios se incluyan en el repositorio de Git.</p></li>
+</ul>
+<pre class="plaintext"><code># Archivos y directorios generados por Python
+__pycache__/
+*.pyc
+
+# Archivos de base de datos
+*.db</code></pre>
+<ul>
+<li>Crea un archivo <strong>Readme.md</strong> que proporcione una descripción del proyecto y una guía para su configuración e instalación.</li>
 </ul>
 </section>
-<section id="cómo-ejecutar-las-pruebas" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-ejecutar-las-pruebas">Cómo Ejecutar las Pruebas</h2>
-<ul>
-<li>Asegúrate de tener Python instalado en tu sistema.</li>
-<li>Abre una terminal y navega hasta la ubicación de este repositorio.</li>
-<li>Ejecuta <strong>python -m unittest</strong> para correr las pruebas.</li>
-</ul>
+<section id="paso-6-agregar-archivos-al-repositorio" class="level2">
+<h2 class="anchored" data-anchor-id="paso-6-agregar-archivos-al-repositorio">Paso 6: Agregar archivos al repositorio</h2>
+<p>Agrega los archivos al repositorio Git:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add requirements.txt .gitignore Readme.md</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agregado requirements.txt, .gitignore y Readme.md"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1190,13 +1142,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad3/4_conjuntos_diccionarios.html" class="pagination-link" aria-label="Diccionarios">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Diccionarios</span></span>
+      <a href="../../unidades/unidad4/6_modulos.html" class="pagination-link" aria-label="Módulos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Módulos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad4/6_modulos.html" class="pagination-link" aria-label="Módulos">
-        <span class="nav-page-text"><span class="chapter-title">Módulos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="pagination-link" aria-label="Ejercicios de Git y Github">
+        <span class="nav-page-text"><span class="chapter-title">Ejercicios de Git y Github</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
