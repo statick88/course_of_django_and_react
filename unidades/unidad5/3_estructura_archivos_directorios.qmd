@@ -1,0 +1,223 @@
+# Estructura de archivos y carpetas
+
+Django tiene una estructura de archivos y carpetas que se debe seguir para que el proyecto funcione correctamente. A continuación se muestra la estructura de archivos y carpetas de un proyecto Django:
+
+```
+myproject/ #<1>
+    manage.py #<2>
+    myproject/ #<3>
+        __init__.py #<4>
+        settings.py #<5>
+        urls.py #<6>
+        wsgi.py #<7>
+```
+
+1. La carpeta raíz del proyecto.
+2. Archivo que se utiliza para interactuar con el proyecto.
+3. Carpeta que contiene el proyecto.
+4. Archivo que indica que la carpeta es un paquete de Python.
+5. Archivo de configuración del proyecto.
+6. Archivo que contiene las rutas del proyecto.
+7. Archivo que contiene la configuración del servidor web.
+
+# Creación de un proyecto Django
+
+Para crear un proyecto Django se debe ejecutar el siguiente comando:
+
+```bash
+django-admin startproject myproject . #<1>
+```
+
+1. El punto al final del comando indica que el proyecto se creará en la carpeta actual.
+
+# Creación de una aplicación Django
+
+Para crear una aplicación Django se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py startapp myapp #<1>
+```
+
+1. Nombre de la aplicación.
+
+# Configuración de la base de datos
+
+Para configurar la base de datos se debe modificar el archivo `settings.py` del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', #<1>
+        'NAME': BASE_DIR / 'db.sqlite3', #<2>
+    }
+}
+```
+
+1. Motor de base de datos.
+2. Ruta del archivo de la base de datos.
+
+Ejemplo
+
+En este ejemplo crearemos una aplicación que muestre un mensaje en la página principal. Para ello, se deben seguir los siguientes pasos:
+
+1. Crear un proyecto Django.
+2. Crear una aplicación Django.
+3. Configurar la base de datos.
+4. Crear una vista.
+5. Crear una plantilla.
+6. Configurar las rutas.
+
+# Crear un proyecto Django
+
+Para crear un proyecto Django se debe ejecutar el siguiente comando:
+
+```bash
+django-admin startproject myproject .
+```
+
+# Crear una aplicación Django
+
+Para crear una aplicación Django se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py startapp myapp
+```
+
+# Configurar la base de datos
+
+Para configurar la base de datos se debe modificar el archivo `settings.py` del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+# Crear una vista
+
+Para crear una vista se debe modificar el archivo `views.py` de la aplicación. A continuación se muestra un ejemplo de vista:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world!")
+```
+
+# Crear una plantilla
+
+Para crear una plantilla se debe crear una carpeta llamada `templates` en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyApp</title>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+</body>
+</html>
+```
+
+# Configurar las rutas
+
+Para configurar las rutas se debe modificar el archivo `urls.py` de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+
+# Ejecutar el servidor
+
+Para ejecutar el servidor se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py runserver
+```
+
+# Acceder a la aplicación
+
+Para acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:
+
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+# Correr el servidor de desarrollo
+
+Para correr el servidor de desarrollo se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py runserver
+```
+
+Posiblemente sea necesario preparar las migraciones y aplicarlas a la base de datos:
+
+```bash
+python manage.py makemigrations #<1>
+python manage.py migrate #<2>
+```
+
+1. Prepara las migraciones.
+2. Aplica las migraciones a la base de datos.
+
+# Crear una vista
+
+Para crear una vista se debe modificar el archivo `views.py` de la aplicación. A continuación se muestra un ejemplo de vista:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world!")
+```
+
+# Crear una plantilla
+
+Para crear una plantilla se debe crear una carpeta llamada `templates` en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyApp</title>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+</body>
+</html>
+```
+
+# Configurar las rutas
+
+Para configurar las rutas se debe modificar el archivo `urls.py` de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:
+
+```python
+from django.urls import path #<1>
+from . import views #<2>
+
+urlpatterns = [
+    path('', views.index, name='index'), #<3>
+]
+```
+
+1. Importa la función `path`.
+2. Importa las vistas de la aplicación.
+3. Configura la ruta principal de la aplicación.
+
+# Acceder a la aplicación
+
+Para acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:
+
+[http://127.0.0.0.1:8000/](http://127.0.0.1:8000/)
+
+Muy bien hecho! Has creado tu primera aplicación Django. Ahora puedes seguir explorando la documentación oficial de Django para aprender más sobre el framework.
+
+# Asignación

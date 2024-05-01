@@ -1,0 +1,77 @@
+# Introducción a Django
+
+Django es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Diseñado por desarrolladores experimentados, Django se encarga de gran parte de la molestia del desarrollo web, por lo que puedes concentrarte en escribir tu aplicación sin necesidad de reinventar la rueda. Es gratuito y de código abierto, tiene una comunidad activa y amigable, y es utilizado por algunas de las mayores empresas del mundo.
+
+## Conceptos Importantes
+
+::: callout-tip
+Antes de iniciar con Django es necesario conocer el concepto de Entornos Virtuales.
+:::
+
+### Entornos Virtuales
+
+Un entorno virtual es un entorno de desarrollo aislado que permite instalar paquetes de Python sin afectar al sistema global. Los entornos virtuales son útiles para gestionar las dependencias de un proyecto y para evitar conflictos entre diferentes versiones de los paquetes.
+
+#### Crear un entorno virtual
+
+Para crear un entorno virtual, se puede utilizar la herramienta **venv** de Python.
+
+``` bash
+python -m venv env
+```
+
+Este comando creará un directorio llamado **env** en el directorio actual con el entorno virtual.
+
+::: callout-tip
+Tambien se puede utilizar [virtualenv](https://pypi.org/project/virtualenv/) para crear entornos virtuales.
+:::
+
+### Modelo Vista Controlador (MVC)
+
+Django sigue el patrón de diseño Modelo Vista Controlador (MVC). Este patrón de diseño separa la lógica de la aplicación en tres componentes principales: Modelo, Vista y Controlador.
+
+-   **Modelo**: Es la representación de los datos de la aplicación y las reglas para manipular esos datos. Django utiliza un ORM (Object-Relational Mapping) para interactuar con la base de datos.
+
+-   **Vista**: Es la capa de presentación de la aplicación. Se encarga de mostrar los datos al usuario y de interpretar las acciones del usuario.
+
+-   **Controlador**: Es el intermediario entre el Modelo y la Vista. Se encarga de procesar las peticiones del usuario y de comunicarse con el Modelo para obtener los datos necesarios.
+
+### URL Dispatcher
+
+La URL Dispatcher es una característica de Django que permite mapear las URLs de la aplicación a las vistas correspondientes. Django utiliza expresiones regulares para definir las URLs y las vistas asociadas a esas URLs.
+
+### Plantillas
+
+Las plantillas son archivos HTML que permiten separar la lógica de presentación de la lógica de la aplicación. Django utiliza el motor de plantillas Jinja2 para renderizar las plantillas.
+
+### Formularios
+
+Los formularios son una parte importante de cualquier aplicación web. Django proporciona una forma sencilla de crear y procesar formularios en las vistas.
+
+### Administrador de Django
+
+El administrador de Django es una interfaz de administración que permite gestionar los datos de la aplicación de forma sencilla. Django genera automáticamente una interfaz de administración basada en los modelos de la aplicación.
+
+### Middleware
+
+El middleware es una capa de procesamiento que se ejecuta antes y después de cada petición HTTP. Django proporciona un conjunto de middlewares que se pueden utilizar para añadir funcionalidades a la aplicación.
+
+### Autenticación y Autorización
+
+Django proporciona un sistema de autenticación y autorización que permite gestionar los usuarios y los permisos de la aplicación de forma sencilla.
+
+### Internacionalización
+
+Django proporciona soporte para la internacionalización de la aplicación. Permite traducir la aplicación a diferentes idiomas y gestionar las traducciones de forma sencilla.
+
+### Seguridad
+
+Django proporciona un conjunto de medidas de seguridad para proteger la aplicación contra ataques comunes, como la inyección de SQL, la falsificación de solicitudes entre sitios (CSRF) y la inyección de código.
+
+### Testing
+
+Django proporciona un conjunto de herramientas para realizar pruebas unitarias y de integración en la aplicación. Permite probar la lógica de la aplicación y asegurarse de que funciona correctamente.
+
+### Despliegue
+
+Django proporciona un conjunto de herramientas para desplegar la aplicación en un servidor de producción. Permite configurar el entorno de producción y gestionar las actualizaciones de la aplicación de forma sencilla.

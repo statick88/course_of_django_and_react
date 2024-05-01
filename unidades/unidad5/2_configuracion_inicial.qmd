@@ -1,0 +1,278 @@
+# Configuración inicial de un proyecto.
+
+## 1. Crear un entorno virtual
+
+::: {.center}
+![Creación de entorno Virtual](/images/creacion_entorno_virtual.png){.center}
+:::
+
+```bash
+python3 -m venv env
+```
+El comando anterior creará un directorio llamado **env** en el directorio actual, que contendrá un entorno virtual de Python.
+
+## 2. Activar el entorno virtual
+
+::: {.center}
+![Activación de entorno Virtual](/images/activacion_entorno_virtual.png){.center}
+:::
+
+```bash
+source env/bin/activate
+```
+El comando anterior activará el entorno virtual en sistemas Unix. En Windows, el comando es:
+
+```bash
+env\Scripts\activate
+```
+
+Este comando tambien se puede dividir en 2 partes:
+
+```bash
+cd env/Scripts/
+activate
+```
+
+Para desactivar el entorno virtual, simplemente ejecute:
+
+```bash
+deactivate
+```
+
+## 3. Instalar Django
+
+::: {.center}
+![Instalación de Django](/images/instalacion_django.png){.center}
+:::
+
+```bash
+pip install django==4.2
+```
+
+El comando anterior instalará la última versión de Django en el entorno virtual.
+
+## 4. Crear un proyecto de Django
+
+::: {.center}
+![Creación de un Proyecto en Django](/images/creacion_project_django.png){.center}
+:::
+
+```bash
+django-admin startproject helloWorld .
+```
+
+El comando anterior creará un nuevo directorio llamado **helloWorld** en el directorio actual, que contendrá un proyecto de Django.
+
+## 5. Crear una aplicación de Django
+
+::: {.center}
+![Creación de una App en Django](/images/creacion_app_django.png){.center}
+:::
+
+```bash
+python manage.py startapp hello
+```
+
+El comando anterior creará un nuevo directorio llamado **hello** en el directorio actual, que contendrá una aplicación de Django.
+
+:::{.callout-tip}
+Recerda que puedes abrir el editor de código Visual Studio Code con el comando **code .** 
+:::
+
+## 6. Crear una vista
+
+::: {.center}
+![Vistas en Django](/images/views_hello.png){.center}
+:::
+
+```python
+# hello/views.py
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, World!")
+```
+
+## 7. Crear una URL
+
+::: {.center}
+![URLs del Proyecto en Django](/images/urls_django.png){.center}
+:::
+
+```python
+# helloWorld/urls.py
+
+from django.urls import path
+
+from hello import views
+
+urlpatterns = [
+    path("", views.index),
+]
+```
+
+## 8. Configurar las URL
+
+::: {.center}
+![URLs de la App en Django](/images/urls_app_django.png){.center}
+:::
+
+```python
+# helloWorld/urls.py
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path("", include("hello.urls")),
+    path("admin/", admin.site.urls),
+]
+```
+
+## 9. Ejecutar el servidor de desarrollo
+
+::: {.center}
+![Servidor de Desarrollo en Django](/images/servidor_desarrollo_django.png){.center}
+:::
+
+```bash
+python manage.py runserver
+```
+
+El comando anterior ejecutará el servidor de desarrollo de Django. Para acceder al servidor, abra un navegador web y vaya a la dirección **[http://0.0.0.0:8000/](http://0.0.0.0:8000/)**.
+
+::: {.center}
+![Visualizar el servidor corriendo desde el navegador](/images/navegador_django.png){.center}
+:::
+
+:::{.callout-tip}
+Para detener el servidor de desarrollo, presione **Ctrl + C** en la terminal.
+:::
+
+## 10. Crear una migración
+
+::: {.center}
+![Preparación de las Migraciones en Django](/images/preparacion_migraciones_django.png){.center}
+:::
+
+```bash
+python manage.py makemigrations
+```
+
+El comando anterior creará una migración para los cambios en los modelos de la base de datos.
+
+## 11. Aplicar una migración
+
+::: {.center}
+![Aplicación de las Migraciones en Django](/images/aplicacion_migraciones_django){.center}
+:::
+
+```bash
+python manage.py migrate
+```
+
+El comando anterior aplicará la migración a la base de datos.
+
+## 12. Crear un superusuario
+
+::: {.center}
+![Creación de un Superusuario en Django](/images/creacion_superusuario_django.png){.center}
+:::
+
+```bash
+python manage.py createsuperuser
+```
+
+El comando anterior creará un superusuario para acceder al panel de administración de Django.
+
+## 13. Acceder al panel de administración
+
+::: {.center}
+![Login Admin en Django](/images/login_admin_django.png){.center}
+:::
+
+Para acceder al panel de administración de Django, abra un navegador web y vaya a la dirección **[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)**. Inicie sesión con el superusuario creado en el paso anterior.
+
+::: {.center}
+![Admin en Django](/images/admin_django.png){.center}
+:::
+
+# Ejercicio
+
+Crear un proyecto de Django llamado **helloWorld** con una aplicación llamada **hello** que muestre un mensaje de bienvenida en la página de inicio.
+
+<details>
+  <summary>Ver solución</summary>
+
+```bash
+python3 -m venv env #<1>
+source env/bin/activate #<2>
+pip install django==4.2 #<3>
+django-admin startproject helloWorld . #<4>
+python manage.py startapp hello #<5>
+```
+
+1. Crear un entorno virtual.
+2. Activar el entorno virtual.
+3. Instalar Django.
+4. Crear un proyecto de Django.
+5. Crear una aplicación de Django.
+
+```python
+# hello/views.py
+
+from django.http import HttpResponse #<1>
+
+def index(request): #<2>
+    return HttpResponse("Hello, World!") #<3>
+```
+
+1. Importar la clase **HttpResponse** de **django.http**.
+2. Crear una vista llamada **index**.
+3. Devolver un mensaje de bienvenida.
+
+```python
+# helloWorld/urls.py
+
+from django.urls import path #<1>
+from hello import views #<2>
+
+urlpatterns = [ #<3>
+    path("", views.index), #<4>
+]
+```
+
+1. Importar la función **path** de **django.urls**.
+2. Importar el módulo **views** de la aplicación **hello**.
+3. Crear una lista de rutas.
+4. Asociar la ruta raíz con la vista **index**.
+
+```python
+# helloWorld/urls.py
+
+from django.contrib import admin #<1>
+from django.urls import include, path #<2>
+
+urlpatterns = [ #<3>
+    path("", include("hello.urls")), #<4>
+    path("admin/", admin.site.urls), #<5>
+]
+```
+
+1. Importar el módulo **admin** de **django.contrib**.
+2. Importar la función **include** y la clase **path** de **django.urls**.
+3. Crear una lista de rutas.
+4. Incluir las rutas de la aplicación **hello**.
+5. Incluir las rutas del panel de administración.
+
+```bash
+python manage.py runserver #<1>
+```
+
+1. Ejecutar el servidor de desarrollo.
+
+</details>
+
+# Asignación
+

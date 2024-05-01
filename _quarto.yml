@@ -54,6 +54,13 @@ book:
         - unidades/unidad4/6_modulos.qmd
         - unidades/unidad4/project001.qmd
 
+    - part: "Unidad 5: Django Fundamentos"
+      chapters: 
+        - unidades/unidad5/1_django_fundamentos.qmd
+        - unidades/unidad5/2_configuracion_inicial.qmd
+        - unidades/unidad5/3_estructura_archivos_directorios.qmd
+        - unidades/unidad5/4_modelos_vistas_plantillas.qmd
+
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/ejercicios_git_github-000.qmd

@@ -777,6 +777,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad4/project001.html",
+    "href": "unidades/unidad4/project001.html",
+    "title": "Sistema de Gestión de Inventarios",
+    "section": "",
+    "text": "Asignación\nhttps://classroom.github.com/a/S9EkZXRf\nAprenderás a desarrollar un proyecto de utilizando el lenguaje de programación Python.\nUn sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.\nAprenderás a utilizar diferentes conceptos y técnicas de programación para implementar las funcionalidades clave de este sistema.\nAlgunas de las funcionalidades que implementaremos incluyen:\nAprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.\nTe enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.\nAprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas transacciones.\nTe mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sistema de Gestión de Inventarios</span>"
+    ]
+  },
+  {
     "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
     "href": "unidades/ejercicios/ejercicios_git_github-000.html",
     "title": "Ejercicios de Git y Github",
@@ -784,7 +795,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -1085,5 +1096,390 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad5/1_django_fundamentos.html",
+    "href": "unidades/unidad5/1_django_fundamentos.html",
+    "title": "Introducción a Django",
+    "section": "",
+    "text": "Conceptos Importantes",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Introducción a Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/1_django_fundamentos.html#conceptos-importantes",
+    "href": "unidades/unidad5/1_django_fundamentos.html#conceptos-importantes",
+    "title": "Introducción a Django",
+    "section": "",
+    "text": "Tip\n\n\n\nAntes de iniciar con Django es necesario conocer el concepto de Entornos Virtuales.\n\n\n\nEntornos Virtuales\nUn entorno virtual es un entorno de desarrollo aislado que permite instalar paquetes de Python sin afectar al sistema global. Los entornos virtuales son útiles para gestionar las dependencias de un proyecto y para evitar conflictos entre diferentes versiones de los paquetes.\n\nCrear un entorno virtual\nPara crear un entorno virtual, se puede utilizar la herramienta venv de Python.\npython -m venv env\nEste comando creará un directorio llamado env en el directorio actual con el entorno virtual.\n\n\n\n\n\n\nTip\n\n\n\nTambien se puede utilizar virtualenv para crear entornos virtuales.\n\n\n\n\n\nModelo Vista Controlador (MVC)\nDjango sigue el patrón de diseño Modelo Vista Controlador (MVC). Este patrón de diseño separa la lógica de la aplicación en tres componentes principales: Modelo, Vista y Controlador.\n\nModelo: Es la representación de los datos de la aplicación y las reglas para manipular esos datos. Django utiliza un ORM (Object-Relational Mapping) para interactuar con la base de datos.\nVista: Es la capa de presentación de la aplicación. Se encarga de mostrar los datos al usuario y de interpretar las acciones del usuario.\nControlador: Es el intermediario entre el Modelo y la Vista. Se encarga de procesar las peticiones del usuario y de comunicarse con el Modelo para obtener los datos necesarios.\n\n\n\nURL Dispatcher\nLa URL Dispatcher es una característica de Django que permite mapear las URLs de la aplicación a las vistas correspondientes. Django utiliza expresiones regulares para definir las URLs y las vistas asociadas a esas URLs.\n\n\nPlantillas\nLas plantillas son archivos HTML que permiten separar la lógica de presentación de la lógica de la aplicación. Django utiliza el motor de plantillas Jinja2 para renderizar las plantillas.\n\n\nFormularios\nLos formularios son una parte importante de cualquier aplicación web. Django proporciona una forma sencilla de crear y procesar formularios en las vistas.\n\n\nAdministrador de Django\nEl administrador de Django es una interfaz de administración que permite gestionar los datos de la aplicación de forma sencilla. Django genera automáticamente una interfaz de administración basada en los modelos de la aplicación.\n\n\nMiddleware\nEl middleware es una capa de procesamiento que se ejecuta antes y después de cada petición HTTP. Django proporciona un conjunto de middlewares que se pueden utilizar para añadir funcionalidades a la aplicación.\n\n\nAutenticación y Autorización\nDjango proporciona un sistema de autenticación y autorización que permite gestionar los usuarios y los permisos de la aplicación de forma sencilla.\n\n\nInternacionalización\nDjango proporciona soporte para la internacionalización de la aplicación. Permite traducir la aplicación a diferentes idiomas y gestionar las traducciones de forma sencilla.\n\n\nSeguridad\nDjango proporciona un conjunto de medidas de seguridad para proteger la aplicación contra ataques comunes, como la inyección de SQL, la falsificación de solicitudes entre sitios (CSRF) y la inyección de código.\n\n\nTesting\nDjango proporciona un conjunto de herramientas para realizar pruebas unitarias y de integración en la aplicación. Permite probar la lógica de la aplicación y asegurarse de que funciona correctamente.\n\n\nDespliegue\nDjango proporciona un conjunto de herramientas para desplegar la aplicación en un servidor de producción. Permite configurar el entorno de producción y gestionar las actualizaciones de la aplicación de forma sencilla.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Introducción a Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html",
+    "href": "unidades/unidad5/2_configuracion_inicial.html",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "",
+    "text": "1. Crear un entorno virtual\nEl comando anterior creará un directorio llamado env en el directorio actual, que contendrá un entorno virtual de Python.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-un-entorno-virtual",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-un-entorno-virtual",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "",
+    "text": "Creación de entorno Virtual\n\n\n\npython3 -m venv env",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#activar-el-entorno-virtual",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#activar-el-entorno-virtual",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "2. Activar el entorno virtual",
+    "text": "2. Activar el entorno virtual\n\n\n\n\nActivación de entorno Virtual\n\n\n\nsource env/bin/activate\nEl comando anterior activará el entorno virtual en sistemas Unix. En Windows, el comando es:\nenv\\Scripts\\activate\nEste comando tambien se puede dividir en 2 partes:\ncd env/Scripts/\nactivate\nPara desactivar el entorno virtual, simplemente ejecute:\ndeactivate",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#instalar-django",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#instalar-django",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "3. Instalar Django",
+    "text": "3. Instalar Django\n\n\n\n\nInstalación de Django\n\n\n\npip install django==4.2\nEl comando anterior instalará la última versión de Django en el entorno virtual.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-un-proyecto-de-django",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-un-proyecto-de-django",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "4. Crear un proyecto de Django",
+    "text": "4. Crear un proyecto de Django\n\n\n\n\nCreación de un Proyecto en Django\n\n\n\ndjango-admin startproject helloWorld .\nEl comando anterior creará un nuevo directorio llamado helloWorld en el directorio actual, que contendrá un proyecto de Django.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-aplicación-de-django",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-aplicación-de-django",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "5. Crear una aplicación de Django",
+    "text": "5. Crear una aplicación de Django\n\n\n\n\nCreación de una App en Django\n\n\n\npython manage.py startapp hello\nEl comando anterior creará un nuevo directorio llamado hello en el directorio actual, que contendrá una aplicación de Django.\n\n\n\n\n\n\nTip\n\n\n\nRecerda que puedes abrir el editor de código Visual Studio Code con el comando code .",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-vista",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-vista",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "6. Crear una vista",
+    "text": "6. Crear una vista\n\n\n\n\nVistas en Django\n\n\n\n# hello/views.py\n\nfrom django.http import HttpResponse\n\ndef index(request):\n    return HttpResponse(\"Hello, World!\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-url",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-url",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "7. Crear una URL",
+    "text": "7. Crear una URL\n\n\n\n\nURLs del Proyecto en Django\n\n\n\n# helloWorld/urls.py\n\nfrom django.urls import path\n\nfrom hello import views\n\nurlpatterns = [\n    path(\"\", views.index),\n]",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#configurar-las-url",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#configurar-las-url",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "8. Configurar las URL",
+    "text": "8. Configurar las URL\n\n\n\n\nURLs de la App en Django\n\n\n\n# helloWorld/urls.py\n\nfrom django.contrib import admin\nfrom django.urls import include, path\n\nurlpatterns = [\n    path(\"\", include(\"hello.urls\")),\n    path(\"admin/\", admin.site.urls),\n]",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#ejecutar-el-servidor-de-desarrollo",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#ejecutar-el-servidor-de-desarrollo",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "9. Ejecutar el servidor de desarrollo",
+    "text": "9. Ejecutar el servidor de desarrollo\n\n\n\n\nServidor de Desarrollo en Django\n\n\n\npython manage.py runserver\nEl comando anterior ejecutará el servidor de desarrollo de Django. Para acceder al servidor, abra un navegador web y vaya a la dirección http://0.0.0.0:8000/.\n\n\n\n\nVisualizar el servidor corriendo desde el navegador\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara detener el servidor de desarrollo, presione Ctrl + C en la terminal.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-migración",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-migración",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "10. Crear una migración",
+    "text": "10. Crear una migración\n\n\n\n\nPreparación de las Migraciones en Django\n\n\n\npython manage.py makemigrations\nEl comando anterior creará una migración para los cambios en los modelos de la base de datos.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#aplicar-una-migración",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#aplicar-una-migración",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "11. Aplicar una migración",
+    "text": "11. Aplicar una migración\n\n\n\n\nAplicación de las Migraciones en Django\n\n\n\npython manage.py migrate\nEl comando anterior aplicará la migración a la base de datos.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-un-superusuario",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-un-superusuario",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "12. Crear un superusuario",
+    "text": "12. Crear un superusuario\n\n\n\n\nCreación de un Superusuario en Django\n\n\n\npython manage.py createsuperuser\nEl comando anterior creará un superusuario para acceder al panel de administración de Django.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_configuracion_inicial.html#acceder-al-panel-de-administración",
+    "href": "unidades/unidad5/2_configuracion_inicial.html#acceder-al-panel-de-administración",
+    "title": "Configuración inicial de un proyecto.",
+    "section": "13. Acceder al panel de administración",
+    "text": "13. Acceder al panel de administración\n\n\n\n\nLogin Admin en Django\n\n\n\nPara acceder al panel de administración de Django, abra un navegador web y vaya a la dirección http://127.0.0.1:8000/admin/. Inicie sesión con el superusuario creado en el paso anterior.\n\n\n\n\nAdmin en Django",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/3_estructura_archivos_directorios.html",
+    "href": "unidades/unidad5/3_estructura_archivos_directorios.html",
+    "title": "Estructura de archivos y carpetas",
+    "section": "",
+    "text": "Django tiene una estructura de archivos y carpetas que se debe seguir para que el proyecto funcione correctamente. A continuación se muestra la estructura de archivos y carpetas de un proyecto Django:\nmyproject/\n    manage.py\n    myproject/\n        __init__.py\n        settings.py\n        urls.py\n        wsgi.py\n\n1\n\nLa carpeta raíz del proyecto.\n\n2\n\nArchivo que se utiliza para interactuar con el proyecto.\n\n3\n\nCarpeta que contiene el proyecto.\n\n4\n\nArchivo que indica que la carpeta es un paquete de Python.\n\n5\n\nArchivo de configuración del proyecto.\n\n6\n\nArchivo que contiene las rutas del proyecto.\n\n7\n\nArchivo que contiene la configuración del servidor web.\n\n\n\nCreación de un proyecto Django\nPara crear un proyecto Django se debe ejecutar el siguiente comando:\n1django-admin startproject myproject .\n\n1\n\nEl punto al final del comando indica que el proyecto se creará en la carpeta actual.\n\n\n\n\nCreación de una aplicación Django\nPara crear una aplicación Django se debe ejecutar el siguiente comando:\n1python manage.py startapp myapp\n\n1\n\nNombre de la aplicación.\n\n\n\n\nConfiguración de la base de datos\nPara configurar la base de datos se debe modificar el archivo settings.py del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:\nDATABASES = {\n    'default': {\n1        'ENGINE': 'django.db.backends.sqlite3',\n2        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n\n1\n\nMotor de base de datos.\n\n2\n\nRuta del archivo de la base de datos.\n\n\nEjemplo\nEn este ejemplo crearemos una aplicación que muestre un mensaje en la página principal. Para ello, se deben seguir los siguientes pasos:\n\nCrear un proyecto Django.\nCrear una aplicación Django.\nConfigurar la base de datos.\nCrear una vista.\nCrear una plantilla.\nConfigurar las rutas.\n\n\n\nCrear un proyecto Django\nPara crear un proyecto Django se debe ejecutar el siguiente comando:\ndjango-admin startproject myproject .\n\n\nCrear una aplicación Django\nPara crear una aplicación Django se debe ejecutar el siguiente comando:\npython manage.py startapp myapp\n\n\nConfigurar la base de datos\nPara configurar la base de datos se debe modificar el archivo settings.py del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n\n\nCrear una vista\nPara crear una vista se debe modificar el archivo views.py de la aplicación. A continuación se muestra un ejemplo de vista:\nfrom django.http import HttpResponse\n\ndef index(request):\n    return HttpResponse(\"Hello, world!\")\n\n\nCrear una plantilla\nPara crear una plantilla se debe crear una carpeta llamada templates en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;MyApp&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello, world!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\nConfigurar las rutas\nPara configurar las rutas se debe modificar el archivo urls.py de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\n\n\nEjecutar el servidor\nPara ejecutar el servidor se debe ejecutar el siguiente comando:\npython manage.py runserver\n\n\nAcceder a la aplicación\nPara acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:\nhttp://127.0.0.1:8000/\n\n\nCorrer el servidor de desarrollo\nPara correr el servidor de desarrollo se debe ejecutar el siguiente comando:\npython manage.py runserver\nPosiblemente sea necesario preparar las migraciones y aplicarlas a la base de datos:\n1python manage.py makemigrations\n2python manage.py migrate\n\n1\n\nPrepara las migraciones.\n\n2\n\nAplica las migraciones a la base de datos.\n\n\n\n\nCrear una vista\nPara crear una vista se debe modificar el archivo views.py de la aplicación. A continuación se muestra un ejemplo de vista:\nfrom django.http import HttpResponse\n\ndef index(request):\n    return HttpResponse(\"Hello, world!\")\n\n\nCrear una plantilla\nPara crear una plantilla se debe crear una carpeta llamada templates en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;MyApp&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello, world!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\nConfigurar las rutas\nPara configurar las rutas se debe modificar el archivo urls.py de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:\n1from django.urls import path\n2from . import views\n\nurlpatterns = [\n3    path('', views.index, name='index'),\n]\n\n1\n\nImporta la función path.\n\n2\n\nImporta las vistas de la aplicación.\n\n3\n\nConfigura la ruta principal de la aplicación.\n\n\n\n\nAcceder a la aplicación\nPara acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:\nhttp://127.0.0.0.1:8000/\nMuy bien hecho! Has creado tu primera aplicación Django. Ahora puedes seguir explorando la documentación oficial de Django para aprender más sobre el framework.\n\n\nAsignación",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Estructura de archivos y carpetas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html",
+    "title": "Modelos",
+    "section": "",
+    "text": "Vistas en Django\nAhora crearemos las vistas de nuestro sistema en Django. Para ello, crearemos una función para cada vista que renderizará una plantilla HTML.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar-productos",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar-productos",
+    "title": "Modelos",
+    "section": "Listar productos",
+    "text": "Listar productos\nPara listar los productos en inventario, crearemos una función listar_productos que renderizará la plantilla listar.html con la lista de productos.\nfrom django.shortcuts import render\nfrom .models import Producto\n\nproductos = []\n\ndef listar_productos(request):\n    return render(request, \"listar.html\", {\"productos\": productos})",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar-producto",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar-producto",
+    "title": "Modelos",
+    "section": "Buscar producto",
+    "text": "Buscar producto\nPara buscar un producto en el inventario, crearemos una función buscar_producto que recibe el nombre del producto a buscar y renderiza la plantilla buscar.html con el producto encontrado.\nfrom django.shortcuts import render\nfrom .models import Producto\n\nproductos = []\n\ndef buscar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        for producto in productos:\n            if producto.nombre == nombre:\n                return render(request, \"buscar.html\", {\"producto\": producto})\n        return render(request, \"buscar.html\", {\"producto\": None})\n    return render(request, \"buscar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar-producto",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar-producto",
+    "title": "Modelos",
+    "section": "Agregar producto",
+    "text": "Agregar producto\nPara agregar un producto al inventario, crearemos una función agregar_producto que recibe los datos del producto a agregar y lo agrega a la lista de productos.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef agregar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        precio = float(request.POST[\"precio\"])\n        cantidad = int(request.POST[\"cantidad\"])\n        producto = Producto(nombre, precio, cantidad)\n        productos.append(producto)\n        return redirect(\"listar_productos\")\n    return render(request, \"agregar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar-producto",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar-producto",
+    "title": "Modelos",
+    "section": "Actualizar producto",
+    "text": "Actualizar producto\nPara actualizar un producto en el inventario, crearemos una función actualizar_producto que recibe los datos del producto a actualizar y actualiza el precio y la cantidad del producto.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef actualizar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        precio = float(request.POST[\"precio\"])\n        cantidad = int(request.POST[\"cantidad\"])\n        for producto in productos:\n            if producto.nombre == nombre:\n                producto.precio = precio\n                producto.cantidad = cantidad\n                break\n        return redirect(\"listar_productos\")\n    return render(request, \"actualizar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar-producto",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar-producto",
+    "title": "Modelos",
+    "section": "Eliminar producto",
+    "text": "Eliminar producto\nPara eliminar un producto del inventario, crearemos una función eliminar_producto que recibe el nombre del producto a eliminar y lo elimina de la lista de productos.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef eliminar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        for producto in productos:\n            if producto.nombre == nombre:\n                productos.remove(producto)\n                break\n        return redirect(\"listar_productos\")\n    return render(request, \"eliminar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#base",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#base",
+    "title": "Modelos",
+    "section": "Base",
+    "text": "Base\nCrearemos un archivo base.html que contendrá la estructura base de todas las páginas de nuestro sistema.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;{% block title %}Inventario{% endblock %}&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css\"&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div class=\"container\"&gt;\n        {% block content %}\n        {% endblock %}\n    &lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar",
+    "title": "Modelos",
+    "section": "Listar",
+    "text": "Listar\nCrearemos un archivo listar.html que contendrá la lista de productos en inventario.\n{% extends \"base.html\" %}\n\n{% block title %}Listar productos{% endblock %}\n\n{% block content %}\n&lt;h1&gt;Listar productos&lt;/h1&gt;\n&lt;ul class=\"list-group\"&gt;\n    {% for producto in productos %}\n    &lt;li class=\"list-group\n    -item\"&gt;{{ producto.nombre }} - ${{ producto.precio }} - {{ producto.cantidad }} unidades&lt;/li&gt;\n    {% endfor %}\n&lt;/ul&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar",
+    "title": "Modelos",
+    "section": "Agregar",
+    "text": "Agregar\nCrearemos un archivo agregar.html que contendrá un formulario para agregar un producto al inventario.\n{% extends \"base.html\" %}\n\n{% block title %}Agregar producto{% endblock %}\n\n{% block content %}\n&lt;h1&gt;Agregar producto&lt;/h1&gt;\n\n&lt;form action=\"/agregar\" method=\"post\"&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"nombre\" class=\"form-label\"&gt;Nombre&lt;/label&gt;\n        &lt;input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\"&gt;\n    &lt;/div&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"precio\" class=\"form-label\"&gt;Precio&lt;/label&gt;\n        &lt;input type=\"number\" class=\"form-control\" id=\"precio\" name=\"precio\"&gt;\n    &lt;/div&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"cantidad\" class=\"form-label\"&gt;Cantidad&lt;/label&gt;\n        &lt;input type=\"number\" class=\"form-control\" id=\"cantidad\" name=\"cantidad\"&gt;\n    &lt;/div&gt;\n    &lt;button type=\"submit\" class=\"btn btn-primary\"&gt;Agregar&lt;/button&gt;\n&lt;/form&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar",
+    "title": "Modelos",
+    "section": "Actualizar",
+    "text": "Actualizar\nCrearemos un archivo actualizar.html que contendrá un formulario para actualizar un producto en el inventario.\n{% extends \"base.html\" %}\n\n{% block title %}Actualizar producto{% endblock %}\n\n{% block content %}\n&lt;h1&gt;Actualizar producto&lt;/h1&gt;\n&lt;form action=\"/actualizar\" method=\"post\"&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"nombre\" class=\"form-label\"&gt;Nombre&lt;/label&gt;\n        &lt;input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\"&gt;\n    &lt;/div&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"precio\" class=\"form-label\"&gt;Precio&lt;/label&gt;\n        &lt;input type=\"number\" class=\"form-control\" id=\"precio\" name=\"precio\"&gt;\n    &lt;/div&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"cantidad\" class=\"form-label\"&gt;Cantidad&lt;/label&gt;\n        &lt;input type=\"number\" class=\"form-control\" id=\"cantidad\" name=\"cantidad\"&gt;\n    &lt;/div&gt;\n    &lt;button type=\"submit\" class=\"btn btn-primary\"&gt;Actualizar&lt;/button&gt;\n&lt;/form&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar",
+    "title": "Modelos",
+    "section": "Eliminar",
+    "text": "Eliminar\nCrearemos un archivo eliminar.html que contendrá un formulario para eliminar un producto del inventario.\n{% extends \"base.html\" %}\n\n{% block title %}Eliminar producto{% endblock %}\n\n{% block content %}\n&lt;h1&gt;Eliminar producto&lt;/h1&gt;\n&lt;form action=\"/eliminar\" method=\"post\"&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"nombre\" class=\"form-label\"&gt;Nombre&lt;/label&gt;\n        &lt;input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\"&gt;\n    &lt;/div&gt;\n    &lt;button type=\"submit\" class=\"btn btn-primary\"&gt;Eliminar&lt;/button&gt;\n&lt;/form&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar",
+    "title": "Modelos",
+    "section": "Buscar",
+    "text": "Buscar\nCrearemos un archivo buscar.html que contendrá un formulario para buscar un producto en el inventario.\n{% extends \"base.html\" %}\n\n{% block title %}Buscar producto{% endblock %}\n\n{% block content %}\n&lt;h1&gt;Buscar producto&lt;/h1&gt;\n&lt;form action=\"/buscar\" method=\"post\"&gt;\n    &lt;div class=\"mb-3\"&gt;\n        &lt;label for=\"nombre\" class=\"form-label\"&gt;Nombre&lt;/label&gt;\n        &lt;input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\"&gt;\n    &lt;/div&gt;\n    &lt;button type=\"submit\" class=\"btn btn-primary\"&gt;Buscar&lt;/button&gt;\n&lt;/form&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#urls-en-la-aplicación-y-el-proyecto",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#urls-en-la-aplicación-y-el-proyecto",
+    "title": "Modelos",
+    "section": "URLs en la aplicación y el proyecto",
+    "text": "URLs en la aplicación y el proyecto\nEn el archivo urls.py de la aplicación productos definiremos las URLs de las vistas de nuestro sistema.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path(\"\", views.listar_productos, name=\"listar_productos\"),\n    path(\"agregar\", views.agregar_producto, name=\"agregar_producto\"),\n    path(\"actualizar\", views.actualizar_producto, name=\"actualizar_producto\"),\n    path(\"eliminar\", views.eliminar_producto, name=\"eliminar_producto\"),\n    path(\"buscar\", views.buscar_producto, name=\"buscar_producto\"),\n]\nEn el archivo urls.py del proyecto inventario incluiremos las URLs de la aplicación productos.\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"productos.urls\")),\n]",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar-productos-1",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar-productos-1",
+    "title": "Modelos",
+    "section": "Listar productos",
+    "text": "Listar productos\nPara listar los productos en inventario, crearemos una función listar_productos que renderizará la plantilla listar.html con la lista de productos.\nfrom django.shortcuts import render\nfrom .models import Producto\n\nproductos = []\n\ndef listar_productos(request):\n    return render(request, \"listar.html\", {\"productos\": productos})",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar-producto-1",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#agregar-producto-1",
+    "title": "Modelos",
+    "section": "Agregar producto",
+    "text": "Agregar producto\nPara agregar un producto al inventario, crearemos una función agregar_producto que recibe los datos del producto a agregar y lo agrega a la lista de productos.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef agregar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        precio = float(request.POST[\"precio\"])\n        cantidad = int(request.POST[\"cantidad\"])\n        producto = Producto(nombre, precio, cantidad)\n        productos.append(producto)\n        return redirect(\"listar_productos\")\n    return render(request, \"agregar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar-producto-1",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#actualizar-producto-1",
+    "title": "Modelos",
+    "section": "Actualizar producto",
+    "text": "Actualizar producto\nPara actualizar un producto en el inventario, crearemos una función actualizar_producto que recibe los datos del producto a actualizar y actualiza el precio y la cantidad del producto.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef actualizar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        precio = float(request.POST[\"precio\"])\n        cantidad = int(request.POST[\"cantidad\"])\n        for producto in productos:\n            if producto.nombre == nombre:\n                producto.precio = precio\n                producto.cantidad = cantidad\n                break\n        return redirect(\"listar_productos\")\n    return render(request, \"actualizar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar-producto-1",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#eliminar-producto-1",
+    "title": "Modelos",
+    "section": "Eliminar producto",
+    "text": "Eliminar producto\nPara eliminar un producto del inventario, crearemos una función eliminar_producto que recibe el nombre del producto a eliminar y lo elimina de la lista de productos.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\n\nproductos = []\n\ndef eliminar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        for producto in productos:\n            if producto.nombre == nombre:\n                productos.remove(producto)\n                break\n        return redirect(\"listar_productos\")\n    return render(request, \"eliminar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar-producto-1",
+    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#buscar-producto-1",
+    "title": "Modelos",
+    "section": "Buscar producto",
+    "text": "Buscar producto\nPara buscar un producto en el inventario, crearemos una función buscar_producto que recibe el nombre del producto a buscar y renderiza la plantilla buscar.html con el producto encontrado.\nfrom django.shortcuts import render\nfrom .models import Producto\n\nproductos = []\n\ndef buscar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST[\"nombre\"]\n        for producto in productos:\n            if producto.nombre == nombre:\n                return render(request, \"buscar.html\", {\"producto\": producto})\n        return render(request, \"buscar.html\", {\"producto\": None})\n    return render(request, \"buscar.html\")",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
+    ]
   }
 ]

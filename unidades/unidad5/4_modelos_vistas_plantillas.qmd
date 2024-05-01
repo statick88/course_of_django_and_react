@@ -1,0 +1,341 @@
+# Modelos
+
+Para entender este tema crearemos un sistema de gestión de inventario de productos. Para ello, crearemos una clase **Producto** que representará un producto en el inventario. Cada producto tendrá un nombre, un precio y una cantidad en inventario.
+
+Empezaremos creando un entorno virtual e instalando Django.
+
+```bash
+python -m venv env
+source env/bin/activate
+pip install django==4.2.0
+```
+
+Ahora crearemos un proyecto de Django llamado **inventario**
+
+```bash
+django-admin startproject inventario .
+```
+
+Luego crearemos una aplicación llamada **productos**
+
+```bash
+python manage.py startapp productos
+```
+Ahora crearemos la clase **Producto** en el archivo **models.py** de la aplicación **productos**.
+
+```python
+class Producto:
+    def __init__(self, nombre, precio, cantidad):
+        self.nombre = nombre
+        self.precio = precio
+        self.cantidad = cantidad
+
+    def __str__(self):
+        return f"{self.nombre} - ${self.precio} - {self.cantidad} unidades"
+```
+
+# Vistas en Django
+
+Ahora crearemos las vistas de nuestro sistema en Django. Para ello, crearemos una función para cada vista que renderizará una plantilla HTML.
+
+## Listar productos
+
+Para listar los productos en inventario, crearemos una función **listar_productos** que renderizará la plantilla **listar.html** con la lista de productos.
+
+```python
+from django.shortcuts import render
+from .models import Producto
+
+productos = []
+
+def listar_productos(request):
+    return render(request, "listar.html", {"productos": productos})
+```
+
+## Agregar producto
+
+Para agregar un producto al inventario, crearemos una función **agregar_producto** que recibe los datos del producto a agregar y lo agrega a la lista de productos.
+
+```python
+from django.shortcuts import render, redirect
+from .models import Producto
+
+productos = []
+
+def agregar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST["nombre"]
+        precio = float(request.POST["precio"])
+        cantidad = int(request.POST["cantidad"])
+        producto = Producto(nombre, precio, cantidad)
+        productos.append(producto)
+        return redirect("listar_productos")
+    return render(request, "agregar.html")
+```
+
+## Actualizar producto
+
+Para actualizar un producto en el inventario, crearemos una función **actualizar_producto** que recibe los datos del producto a actualizar y actualiza el precio y la cantidad del producto.
+
+```python
+from django.shortcuts import render, redirect
+from .models import Producto
+
+productos = []
+
+def actualizar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST["nombre"]
+        precio = float(request.POST["precio"])
+        cantidad = int(request.POST["cantidad"])
+        for producto in productos:
+            if producto.nombre == nombre:
+                producto.precio = precio
+                producto.cantidad = cantidad
+                break
+        return redirect("listar_productos")
+    return render(request, "actualizar.html")
+```
+
+## Eliminar producto
+
+Para eliminar un producto del inventario, crearemos una función **eliminar_producto** que recibe el nombre del producto a eliminar y lo elimina de la lista de productos.
+
+```python
+from django.shortcuts import render, redirect
+from .models import Producto
+
+productos = []
+
+def eliminar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST["nombre"]
+        for producto in productos:
+            if producto.nombre == nombre:
+                productos.remove(producto)
+                break
+        return redirect("listar_productos")
+    return render(request, "eliminar.html")
+```
+
+## Buscar producto
+
+Para buscar un producto en el inventario, crearemos una función **buscar_producto** que recibe el nombre del producto a buscar y renderiza la plantilla **buscar.html** con el producto encontrado.
+
+```python
+from django.shortcuts import render
+from .models import Producto
+
+productos = []
+
+def buscar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST["nombre"]
+        for producto in productos:
+            if producto.nombre == nombre:
+                return render(request, "buscar.html", {"producto": producto})
+        return render(request, "buscar.html", {"producto": None})
+    return render(request, "buscar.html")
+```
+
+# Templates
+
+Django utiliza un sistema de herencia de plantillas llamado Jinja2. Adicional a ello uilizaremos un framework de CSS llamado Bootstrap.
+
+## Base
+
+Crearemos un archivo **base.html** que contendrá la estructura base de todas las páginas de nuestro sistema.
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Inventario{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+```
+
+## Listar
+
+Crearemos un archivo **listar.html** que contendrá la lista de productos en inventario.
+
+```html
+{% extends "base.html" %}
+
+{% block title %}Listar productos{% endblock %}
+
+{% block content %}
+<h1>Listar productos</h1>
+<ul class="list-group">
+    {% for producto in productos %}
+    <li class="list-group
+    -item">{{ producto.nombre }} - ${{ producto.precio }} - {{ producto.cantidad }} unidades</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+```
+
+## Agregar
+
+Crearemos un archivo **agregar.html** que contendrá un formulario para agregar un producto al inventario.
+
+```html
+{% extends "base.html" %}
+
+{% block title %}Agregar producto{% endblock %}
+
+{% block content %}
+<h1>Agregar producto</h1>
+
+<form action="/agregar" method="post">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" name="precio">
+    </div>
+    <div class="mb-3">
+        <label for="cantidad" class="form-label">Cantidad</label>
+        <input type="number" class="form-control" id="cantidad" name="cantidad">
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+{% endblock %}
+```
+
+## Actualizar
+
+Crearemos un archivo **actualizar.html** que contendrá un formulario para actualizar un producto en el inventario.
+
+```html
+{% extends "base.html" %}
+
+{% block title %}Actualizar producto{% endblock %}
+
+{% block content %}
+<h1>Actualizar producto</h1>
+<form action="/actualizar" method="post">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" name="precio">
+    </div>
+    <div class="mb-3">
+        <label for="cantidad" class="form-label">Cantidad</label>
+        <input type="number" class="form-control" id="cantidad" name="cantidad">
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}
+```
+
+## Eliminar
+
+Crearemos un archivo **eliminar.html** que contendrá un formulario para eliminar un producto del inventario.
+
+```html
+{% extends "base.html" %}
+
+{% block title %}Eliminar producto{% endblock %}
+
+{% block content %}
+<h1>Eliminar producto</h1>
+<form action="/eliminar" method="post">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+    </div>
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>
+{% endblock %}
+```
+
+## Buscar
+
+Crearemos un archivo **buscar.html** que contendrá un formulario para buscar un producto en el inventario.
+
+```html
+{% extends "base.html" %}
+
+{% block title %}Buscar producto{% endblock %}
+
+{% block content %}
+<h1>Buscar producto</h1>
+<form action="/buscar" method="post">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+{% endblock %}
+```
+
+# URLs
+
+Para que nuestro sistema funcione, necesitamos definir las URLs que se utilizarán para acceder a las diferentes vistas.
+
+## URLs en la aplicación y el proyecto
+
+En el archivo **urls.py** de la aplicación **productos** definiremos las URLs de las vistas de nuestro sistema.
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.listar_productos, name="listar_productos"),
+    path("agregar", views.agregar_producto, name="agregar_producto"),
+    path("actualizar", views.actualizar_producto, name="actualizar_producto"),
+    path("eliminar", views.eliminar_producto, name="eliminar_producto"),
+    path("buscar", views.buscar_producto, name="buscar_producto"),
+]
+```
+
+En el archivo **urls.py** del proyecto **inventario** incluiremos las URLs de la aplicación **productos**.
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("productos.urls")),
+]
+```
+
+# Registro de la aplicación en settings
+
+Para que Django reconozca la aplicación **productos**, debemos registrarla en el archivo **settings.py** del proyecto **inventario**.
+
+```python
+INSTALLED_APPS = [
+    ...
+    "productos",
+]
+```
+
+# Ejecutar el servidor
+
+Para ejecutar el servidor de desarrollo de Django, utilizaremos el siguiente comando.
+
+```bash
+python manage.py runserver
+```
+
+Con esto hemos creado un sistema de gestión de inventario de productos con Django. Ahora podemos listar, agregar, actualizar, eliminar y buscar productos en el inventario y hemos utilizado el sistema de plantillas de Django para crear las vistas de nuestro sistema. Adicional a ello tambien hemos utilizado el framework de CSS Bootstrap para darle estilo a nuestro sistema.
