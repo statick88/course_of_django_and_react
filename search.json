@@ -887,22 +887,11 @@
     ]
   },
   {
-    "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-url",
-    "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-url",
-    "title": "Configuración inicial de un proyecto.",
-    "section": "7. Crear una URL",
-    "text": "7. Crear una URL\n\n\n\n\nURLs del Proyecto en Django\n\n\n\n# helloWorld/urls.py\n\nfrom django.urls import path\n\nfrom hello import views\n\nurlpatterns = [\n    path(\"\", views.index),\n]",
-    "crumbs": [
-      "Unidad 5: Django Fundamentos",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad5/2_configuracion_inicial.html#configurar-las-url",
     "href": "unidades/unidad5/2_configuracion_inicial.html#configurar-las-url",
     "title": "Configuración inicial de un proyecto.",
-    "section": "8. Configurar las URL",
-    "text": "8. Configurar las URL\n\n\n\n\nURLs de la App en Django\n\n\n\n# helloWorld/urls.py\n\nfrom django.contrib import admin\nfrom django.urls import include, path\n\nurlpatterns = [\n    path(\"\", include(\"hello.urls\")),\n    path(\"admin/\", admin.site.urls),\n]",
+    "section": "7. Configurar las URL",
+    "text": "7. Configurar las URL\n\n\n\n\nURLs de la App en Django\n\n\n\n# helloWorld/urls.py\n\nfrom django.contrib import admin\nfrom django.urls import include, path\n\nurlpatterns = [\n    path(\"\", include(\"hello.urls\")),\n    path(\"admin/\", admin.site.urls),\n]",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
@@ -912,8 +901,8 @@
     "objectID": "unidades/unidad5/2_configuracion_inicial.html#ejecutar-el-servidor-de-desarrollo",
     "href": "unidades/unidad5/2_configuracion_inicial.html#ejecutar-el-servidor-de-desarrollo",
     "title": "Configuración inicial de un proyecto.",
-    "section": "9. Ejecutar el servidor de desarrollo",
-    "text": "9. Ejecutar el servidor de desarrollo\n\n\n\n\nServidor de Desarrollo en Django\n\n\n\npython manage.py runserver\nEl comando anterior ejecutará el servidor de desarrollo de Django. Para acceder al servidor, abra un navegador web y vaya a la dirección http://0.0.0.0:8000/.\n\n\n\n\nVisualizar el servidor corriendo desde el navegador\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara detener el servidor de desarrollo, presione Ctrl + C en la terminal.",
+    "section": "8. Ejecutar el servidor de desarrollo",
+    "text": "8. Ejecutar el servidor de desarrollo\n\n\n\n\nServidor de Desarrollo en Django\n\n\n\npython manage.py runserver\nEl comando anterior ejecutará el servidor de desarrollo de Django. Para acceder al servidor, abra un navegador web y vaya a la dirección http://0.0.0.0:8000/.\n\n\n\n\nVisualizar el servidor corriendo desde el navegador\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara detener el servidor de desarrollo, presione Ctrl + C en la terminal.",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
@@ -923,8 +912,8 @@
     "objectID": "unidades/unidad5/2_configuracion_inicial.html#crear-una-migración",
     "href": "unidades/unidad5/2_configuracion_inicial.html#crear-una-migración",
     "title": "Configuración inicial de un proyecto.",
-    "section": "10. Crear una migración",
-    "text": "10. Crear una migración\n\n\n\n\nPreparación de las Migraciones en Django\n\n\n\npython manage.py makemigrations\nEl comando anterior creará una migración para los cambios en los modelos de la base de datos.",
+    "section": "9. Crear una migración",
+    "text": "9. Crear una migración\n\n\n\n\nPreparación de las Migraciones en Django\n\n\n\npython manage.py makemigrations\nEl comando anterior creará una migración para los cambios en los modelos de la base de datos.",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
@@ -934,8 +923,8 @@
     "objectID": "unidades/unidad5/2_configuracion_inicial.html#aplicar-una-migración",
     "href": "unidades/unidad5/2_configuracion_inicial.html#aplicar-una-migración",
     "title": "Configuración inicial de un proyecto.",
-    "section": "11. Aplicar una migración",
-    "text": "11. Aplicar una migración\n\npython manage.py migrate\nEl comando anterior aplicará la migración a la base de datos.",
+    "section": "10. Aplicar una migración",
+    "text": "10. Aplicar una migración\n\n\n\n\nPreparación de las Migraciones en Django\n\n\n\npython manage.py migrate\nEl comando anterior aplicará la migración a la base de datos.",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Configuración inicial de un proyecto.</span>"
