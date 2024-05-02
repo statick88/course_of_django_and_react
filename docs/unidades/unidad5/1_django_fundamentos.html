@@ -364,9 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conceptos-importantes" id="toc-conceptos-importantes" class="nav-link active" data-scroll-target="#conceptos-importantes">Conceptos Importantes</a>
   <ul class="collapse">
   <li><a href="#entornos-virtuales" id="toc-entornos-virtuales" class="nav-link" data-scroll-target="#entornos-virtuales">Entornos Virtuales</a></li>
-  <li><a href="#modelo-vista-controlador-mvc" id="toc-modelo-vista-controlador-mvc" class="nav-link" data-scroll-target="#modelo-vista-controlador-mvc">Modelo Vista Controlador (MVC)</a></li>
-  <li><a href="#url-dispatcher" id="toc-url-dispatcher" class="nav-link" data-scroll-target="#url-dispatcher">URL Dispatcher</a></li>
-  <li><a href="#plantillas" id="toc-plantillas" class="nav-link" data-scroll-target="#plantillas">Plantillas</a></li>
+  <li><a href="#modelo-template-view-mtv" id="toc-modelo-template-view-mtv" class="nav-link" data-scroll-target="#modelo-template-view-mtv">Modelo Template View (MTV)</a></li>
   <li><a href="#formularios" id="toc-formularios" class="nav-link" data-scroll-target="#formularios">Formularios</a></li>
   <li><a href="#administrador-de-django" id="toc-administrador-de-django" class="nav-link" data-scroll-target="#administrador-de-django">Administrador de Django</a></li>
   <li><a href="#middleware" id="toc-middleware" class="nav-link" data-scroll-target="#middleware">Middleware</a></li>
@@ -401,7 +399,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/django-logo.png" class="center img-fluid figure-img" width="200"></p>
+<figcaption>Django Framework</figcaption>
+</figure>
+</div>
+</div>
+<div class="justify">
 <p>Django es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Diseñado por desarrolladores experimentados, Django se encarga de gran parte de la molestia del desarrollo web, por lo que puedes concentrarte en escribir tu aplicación sin necesidad de reinventar la rueda. Es gratuito y de código abierto, tiene una comunidad activa y amigable, y es utilizado por algunas de las mayores empresas del mundo.</p>
+</div>
 <section id="conceptos-importantes" class="level2">
 <h2 class="anchored" data-anchor-id="conceptos-importantes">Conceptos Importantes</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -414,12 +422,20 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Antes de iniciar con Django es necesario conocer el concepto de Entornos Virtuales.</p>
+<p>Antes de iniciar con Django es necesario conocer el concepto de <strong>Entornos Virtuales</strong>.</p>
 </div>
 </div>
 <section id="entornos-virtuales" class="level3">
 <h3 class="anchored" data-anchor-id="entornos-virtuales">Entornos Virtuales</h3>
-<p>Un entorno virtual es un entorno de desarrollo aislado que permite instalar paquetes de Python sin afectar al sistema global. Los entornos virtuales son útiles para gestionar las dependencias de un proyecto y para evitar conflictos entre diferentes versiones de los paquetes.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/python-venv.png" class="center img-fluid figure-img" width="400"></p>
+<figcaption>Virtual Enviroment</figcaption>
+</figure>
+</div>
+</div>
+<p>Un entorno virtual es un <strong>entorno de desarrollo aislado </strong>que permite <strong>instalar paquetes de Python sin afectar al sistema global</strong>. Los entornos virtuales son útiles para gestionar las dependencias de un proyecto y para evitar conflictos entre diferentes versiones de los paquetes.</p>
 <section id="crear-un-entorno-virtual" class="level4">
 <h4 class="anchored" data-anchor-id="crear-un-entorno-virtual">Crear un entorno virtual</h4>
 <p>Para crear un entorno virtual, se puede utilizar la herramienta <strong>venv</strong> de Python.</p>
@@ -440,29 +456,66 @@ Tip
 </div>
 </section>
 </section>
-<section id="modelo-vista-controlador-mvc" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-vista-controlador-mvc">Modelo Vista Controlador (MVC)</h3>
-<p>Django sigue el patrón de diseño Modelo Vista Controlador (MVC). Este patrón de diseño separa la lógica de la aplicación en tres componentes principales: Modelo, Vista y Controlador.</p>
+<section id="modelo-template-view-mtv" class="level3">
+<h3 class="anchored" data-anchor-id="modelo-template-view-mtv">Modelo Template View (MTV)</h3>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/model-view-controller.png" class="center img-fluid figure-img" width="400"></p>
+<figcaption>Model View Controller</figcaption>
+</figure>
+</div>
+</div>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/model-template-view.png" class="center img-fluid figure-img" width="400"></p>
+<figcaption>Model View Template</figcaption>
+</figure>
+</div>
+</div>
+<p>Django sigue el patrón de diseño Modelo Vista Template (MVT). Este patrón de diseño separa la lógica de la aplicación en tres componentes principales: Modelo, Vista y Template.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El archivo URLs.py es el encargado de mapear las URLs de la aplicación a las vistas correspondientes.</p>
+</div>
+</div>
 <ul>
 <li><p><strong>Modelo</strong>: Es la representación de los datos de la aplicación y las reglas para manipular esos datos. Django utiliza un ORM (Object-Relational Mapping) para interactuar con la base de datos.</p></li>
 <li><p><strong>Vista</strong>: Es la capa de presentación de la aplicación. Se encarga de mostrar los datos al usuario y de interpretar las acciones del usuario.</p></li>
-<li><p><strong>Controlador</strong>: Es el intermediario entre el Modelo y la Vista. Se encarga de procesar las peticiones del usuario y de comunicarse con el Modelo para obtener los datos necesarios.</p></li>
+<li><p><strong>Template</strong>: Es la capa de presentación de la aplicación. Define cómo se muestra la información al usuario. Django utiliza el motor de plantillas Jinja2 para renderizar los templates.</p></li>
 </ul>
-</section>
-<section id="url-dispatcher" class="level3">
-<h3 class="anchored" data-anchor-id="url-dispatcher">URL Dispatcher</h3>
-<p>La URL Dispatcher es una característica de Django que permite mapear las URLs de la aplicación a las vistas correspondientes. Django utiliza expresiones regulares para definir las URLs y las vistas asociadas a esas URLs.</p>
-</section>
-<section id="plantillas" class="level3">
-<h3 class="anchored" data-anchor-id="plantillas">Plantillas</h3>
-<p>Las plantillas son archivos HTML que permiten separar la lógica de presentación de la lógica de la aplicación. Django utiliza el motor de plantillas Jinja2 para renderizar las plantillas.</p>
 </section>
 <section id="formularios" class="level3">
 <h3 class="anchored" data-anchor-id="formularios">Formularios</h3>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/python-form.png" class="center img-fluid figure-img"></p>
+<figcaption>Django Forms</figcaption>
+</figure>
+</div>
+</div>
 <p>Los formularios son una parte importante de cualquier aplicación web. Django proporciona una forma sencilla de crear y procesar formularios en las vistas.</p>
 </section>
 <section id="administrador-de-django" class="level3">
 <h3 class="anchored" data-anchor-id="administrador-de-django">Administrador de Django</h3>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/django-admin.png" class="center img-fluid figure-img"></p>
+<figcaption>Django Admin</figcaption>
+</figure>
+</div>
+</div>
 <p>El administrador de Django es una interfaz de administración que permite gestionar los datos de la aplicación de forma sencilla. Django genera automáticamente una interfaz de administración basada en los modelos de la aplicación.</p>
 </section>
 <section id="middleware" class="level3">
