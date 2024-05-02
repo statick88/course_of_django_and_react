@@ -94,25 +94,8 @@ def index(request):
     return HttpResponse("Hello, World!")
 ```
 
-## 7. Crear una URL
 
-::: {.center}
-![URLs del Proyecto en Django](/images/urls_django.png){.center}
-:::
-
-```python
-# helloWorld/urls.py
-
-from django.urls import path
-
-from hello import views
-
-urlpatterns = [
-    path("", views.index),
-]
-```
-
-## 8. Configurar las URL
+## 7. Configurar las URL
 
 ::: {.center}
 ![URLs de la App en Django](/images/urls_app_django.png){.center}
@@ -130,7 +113,7 @@ urlpatterns = [
 ]
 ```
 
-## 9. Ejecutar el servidor de desarrollo
+## 8. Ejecutar el servidor de desarrollo
 
 ::: {.center}
 ![Servidor de Desarrollo en Django](/images/servidor_desarrollo_django.png){.center}
@@ -150,7 +133,7 @@ El comando anterior ejecutará el servidor de desarrollo de Django. Para acceder
 Para detener el servidor de desarrollo, presione **Ctrl + C** en la terminal.
 :::
 
-## 10. Crear una migración
+## 9. Crear una migración
 
 ::: {.center}
 ![Preparación de las Migraciones en Django](/images/preparacion_migraciones_django.png){.center}
@@ -162,10 +145,10 @@ python manage.py makemigrations
 
 El comando anterior creará una migración para los cambios en los modelos de la base de datos.
 
-## 11. Aplicar una migración
+## 10. Aplicar una migración
 
 ::: {.center}
-![Aplicación de las Migraciones en Django](/images/aplicacion_migraciones_django){.center}
+![Preparación de las Migraciones en Django](/images/migraciones_django.png){.center}
 :::
 
 ```bash
