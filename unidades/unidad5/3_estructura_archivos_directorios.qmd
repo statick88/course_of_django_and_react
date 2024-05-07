@@ -2,33 +2,55 @@
 
 Django tiene una estructura de archivos y carpetas que se debe seguir para que el proyecto funcione correctamente. A continuación se muestra la estructura de archivos y carpetas de un proyecto Django:
 
-```
-myproject/ #<1>
-    manage.py #<2>
-    myproject/ #<3>
-        __init__.py #<4>
-        settings.py #<5>
-        urls.py #<6>
-        wsgi.py #<7>
-```
-
-1. La carpeta raíz del proyecto.
-2. Archivo que se utiliza para interactuar con el proyecto.
-3. Carpeta que contiene el proyecto.
-4. Archivo que indica que la carpeta es un paquete de Python.
-5. Archivo de configuración del proyecto.
-6. Archivo que contiene las rutas del proyecto.
-7. Archivo que contiene la configuración del servidor web.
-
-# Creación de un proyecto Django
-
-Para crear un proyecto Django se debe ejecutar el siguiente comando:
+:::{.callout-tip}
+Recuerda crear el entorno virtual y activarlo antes de ejecutar el comando.
 
 ```bash
-django-admin startproject myproject . #<1>
+python -m venv venv
+source venv/bin/activate
+```
+Creamos un directorio con el siguiente comando:
+
+```bash
+mkdir myproject
+cd myproject
 ```
 
-1. El punto al final del comando indica que el proyecto se creará en la carpeta actual.
+Instalamos Django con el siguiente comando:
+
+```bash
+pip install django==4.2.0
+```
+
+Creamos el proyecto con el siguiente comando:
+
+```bash
+django-admin startproject myproject .
+```
+:::
+
+```
+├── manage.py #<1>
+└── myproject #<2>
+    ├── asgi.py #<3>
+    ├── __init__.py #<4>
+    ├── settings.py #<5>
+    ├── urls.py #<6>
+    └── wsgi.py #<7>
+```
+1.- Archivo de gestión del proyecto.
+
+2.- Carpeta del proyecto.
+
+3.- Archivo de configuración de ASGI.
+
+4.- Archivo de inicialización del proyecto.
+
+5.- Archivo de configuración del proyecto.
+
+6.- Archivo de configuración de las rutas del proyecto.
+
+7.- Archivo de configuración de WSGI.
 
 # Creación de una aplicación Django
 
@@ -56,49 +78,18 @@ DATABASES = {
 1. Motor de base de datos.
 2. Ruta del archivo de la base de datos.
 
-Ejemplo
+**Ejemplo**
 
 En este ejemplo crearemos una aplicación que muestre un mensaje en la página principal. Para ello, se deben seguir los siguientes pasos:
 
-1. Crear un proyecto Django.
-2. Crear una aplicación Django.
-3. Configurar la base de datos.
-4. Crear una vista.
-5. Crear una plantilla.
-6. Configurar las rutas.
 
-# Crear un proyecto Django
-
-Para crear un proyecto Django se debe ejecutar el siguiente comando:
-
-```bash
-django-admin startproject myproject .
-```
-
-# Crear una aplicación Django
-
-Para crear una aplicación Django se debe ejecutar el siguiente comando:
-
-```bash
-python manage.py startapp myapp
-```
-
-# Configurar la base de datos
-
-Para configurar la base de datos se debe modificar el archivo `settings.py` del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-```
+1. Crear una vista.
+2. Crear una plantilla.
+3. Configurar las rutas.
 
 # Crear una vista
 
-Para crear una vista se debe modificar el archivo `views.py` de la aplicación. A continuación se muestra un ejemplo de vista:
+Para crear una vista se debe modificar el archivo **views.py** de la aplicación. A continuación se muestra un ejemplo de vista:
 
 ```python
 from django.http import HttpResponse
@@ -109,7 +100,7 @@ def index(request):
 
 # Crear una plantilla
 
-Para crear una plantilla se debe crear una carpeta llamada `templates` en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:
+Para crear una plantilla se debe crear una carpeta llamada **templates** en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:
 
 ```html
 <!DOCTYPE html>
@@ -122,10 +113,35 @@ Para crear una plantilla se debe crear una carpeta llamada `templates` en la car
 </body>
 </html>
 ```
+:::{.callout-info}
+Para que Django pueda encontrar la plantilla, se debe configurar la ruta de la plantilla en el archivo **settings.py** del proyecto. A continuación se muestra un ejemplo de configuración de la ruta de la plantilla:
+
+```python
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'], #<1>
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+1. Ruta de la plantilla.
+:::
+
 
 # Configurar las rutas
 
-Para configurar las rutas se debe modificar el archivo `urls.py` de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:
+Para configurar las rutas se debe modificar el archivo **urls.py** de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:
 
 ```python
 from django.urls import path
@@ -136,9 +152,9 @@ urlpatterns = [
 ]
 ```
 
-# Ejecutar el servidor
+# Correr el servidor de desarrollo
 
-Para ejecutar el servidor se debe ejecutar el siguiente comando:
+Para correr el servidor de desarrollo se debe ejecutar el siguiente comando:
 
 ```bash
 python manage.py runserver
@@ -150,14 +166,6 @@ Para acceder a la aplicación se debe abrir un navegador web y escribir la sigui
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-# Correr el servidor de desarrollo
-
-Para correr el servidor de desarrollo se debe ejecutar el siguiente comando:
-
-```bash
-python manage.py runserver
-```
-
 Posiblemente sea necesario preparar las migraciones y aplicarlas a la base de datos:
 
 ```bash
@@ -168,50 +176,6 @@ python manage.py migrate #<2>
 1. Prepara las migraciones.
 2. Aplica las migraciones a la base de datos.
 
-# Crear una vista
-
-Para crear una vista se debe modificar el archivo `views.py` de la aplicación. A continuación se muestra un ejemplo de vista:
-
-```python
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Hello, world!")
-```
-
-# Crear una plantilla
-
-Para crear una plantilla se debe crear una carpeta llamada `templates` en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>MyApp</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-</body>
-</html>
-```
-
-# Configurar las rutas
-
-Para configurar las rutas se debe modificar el archivo `urls.py` de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:
-
-```python
-from django.urls import path #<1>
-from . import views #<2>
-
-urlpatterns = [
-    path('', views.index, name='index'), #<3>
-]
-```
-
-1. Importa la función `path`.
-2. Importa las vistas de la aplicación.
-3. Configura la ruta principal de la aplicación.
-
 # Acceder a la aplicación
 
 Para acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:
@@ -221,3 +185,92 @@ Para acceder a la aplicación se debe abrir un navegador web y escribir la sigui
 Muy bien hecho! Has creado tu primera aplicación Django. Ahora puedes seguir explorando la documentación oficial de Django para aprender más sobre el framework.
 
 # Asignación
+
+Seguir cada uno de los pasos de esta sección para crear una aplicación Django que muestre un mensaje en la página principal. La aplicación debe tener los siguientes archivos y carpetas:
+
+```
+├── manage.py #<1>
+├── myproject #<2>
+│   ├── asgi.py #<3>
+│   ├── __init__.py #<4>
+│   ├── settings.py #<5>
+│   ├── urls.py #<6>
+│   └── wsgi.py #<7>
+└── myapp #<8>
+    ├── __init__.py #<9>
+    ├── admin.py #<10>
+    ├── apps.py #<11>
+    ├── migrations #<12>
+    │   └── __init__.py #<13>
+    ├── models.py #<14>
+    ├── tests.py #<15>
+    ├── views.py #<16>
+    └── templates #<17>
+        └── index.html #<18>
+```
+
+1.- Archivo de gestión del proyecto.
+
+2.- Carpeta del proyecto.
+
+3.- Archivo de configuración de ASGI.
+
+4.- Archivo de inicialización del proyecto.
+
+5.- Archivo de configuración del proyecto.
+
+6.- Archivo de configuración de las rutas del proyecto.
+
+7.- Archivo de configuración de WSGI.
+
+8.- Carpeta de la aplicación.
+
+9.- Archivo de inicialización de la aplicación.
+
+10.- Archivo de configuración del administrador de Django.
+
+11.- Archivo de configuración de la aplicación.
+
+12.- Carpeta de migraciones de la aplicación.
+
+13.- Archivo de inicialización de las migraciones.
+
+14.- Archivo de configuración de los modelos de la aplicación.
+
+15.- Archivo de pruebas de la aplicación.
+
+16.- Archivo de configuración de las vistas de la aplicación.
+
+17.- Carpeta de plantillas de la aplicación.
+
+18.- Archivo de la plantilla de la aplicación.
+
+:::{.callout-info}
+Recuerda que para que Django pueda encontrar la plantilla, se debe configurar la ruta de la plantilla en el archivo **settings.py** del proyecto. A continuación se muestra un ejemplo de configuración de la ruta de la plantilla:
+
+```python
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'], #<1>
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+1. Ruta de la plantilla.
+:::
+
+# Referencias
+
+- [Django](https://www.djangoproject)
+

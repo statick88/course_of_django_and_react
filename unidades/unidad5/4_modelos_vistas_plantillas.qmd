@@ -7,6 +7,8 @@ Empezaremos creando un entorno virtual e instalando Django.
 ```bash
 python -m venv env
 source env/bin/activate
+mkdir inventario
+cd inventario
 pip install django==4.2.0
 ```
 
@@ -21,6 +23,20 @@ Luego crearemos una aplicación llamada **productos**
 ```bash
 python manage.py startapp productos
 ```
+
+::: {.callout-info}
+**Info:** En Django, un proyecto es un conjunto de aplicaciones web y un proyecto puede contener múltiples aplicaciones.
+
+Para que la app productos funcione, debemos registrarla en el archivo **settings.py** del proyecto **inventario**.
+
+```python
+INSTALLED_APPS = [
+    ...
+    "productos",
+]
+```
+:::
+
 Ahora crearemos la clase **Producto** en el archivo **models.py** de la aplicación **productos**.
 
 ```python
@@ -34,9 +50,38 @@ class Producto:
         return f"{self.nombre} - ${self.precio} - {self.cantidad} unidades"
 ```
 
+::: {.callout-tip}
+**Tip:** La función **\_\_str\_\_** es una función especial que se llama cuando se convierte un objeto a una cadena de texto.
+:::
+
+# Registramos la aplicacion en admin.py
+
+Para que Django reconozca la clase **Producto**, debemos registrarla en el archivo **admin.py** de la aplicación **productos**.
+
+```python
+from django.contrib import admin
+from .models import Producto #<1>
+
+admin.site.register(Producto) #<2>
+```
+
+1. Importamos la clase **Producto**.
+2. Registramos la clase **Producto** en el panel de administración de Django.
+
+
 # Vistas en Django
 
 Ahora crearemos las vistas de nuestro sistema en Django. Para ello, crearemos una función para cada vista que renderizará una plantilla HTML.
+
+::: {.callout-tip}
+En Django, una vista es una función que recibe una petición HTTP y devuelve una respuesta HTTP.
+:::
+
+::: {.callout-tip}
+**¿Qué es un CRUD?**
+
+Un CRUD es un acrónimo que significa **Crear**, **Leer**, **Actualizar** y **Eliminar**. Es un conjunto de operaciones básicas que se pueden realizar en una base de datos o en un sistema de gestión de datos.
+:::
 
 ## Listar productos
 
@@ -141,6 +186,14 @@ def buscar_producto(request):
 # Templates
 
 Django utiliza un sistema de herencia de plantillas llamado Jinja2. Adicional a ello uilizaremos un framework de CSS llamado Bootstrap.
+
+::: {.callout-tip}
+**Jinja2** es un motor de plantillas para Python que se utiliza en Django para renderizar plantillas HTML.
+:::
+
+::: {.callout-tip}
+**Bootstrap** es un framework de CSS que se utiliza para crear sitios web y aplicaciones web responsivos y móviles.
+:::
 
 ## Base
 
@@ -337,5 +390,25 @@ Para ejecutar el servidor de desarrollo de Django, utilizaremos el siguiente com
 ```bash
 python manage.py runserver
 ```
+
+::: {.callout-tip}
+**Tip:** Para acceder al panel de administración de Django, debemos crear un superusuario con el siguiente comando.
+
+```bash
+python manage.py createsuperuser
+```
+:::
+
+::: {.callout-tip}
+Si realizamos modificaciones en el modelo de datos, debemos aplicar las migraciones con el siguiente comando.
+
+```bash
+python manage.py makemigrations #<1>
+python manage.py migrate #<2>
+```
+
+1. Crea las migraciones.
+2. Aplica las migraciones.
+:::
 
 Con esto hemos creado un sistema de gestión de inventario de productos con Django. Ahora podemos listar, agregar, actualizar, eliminar y buscar productos en el inventario y hemos utilizado el sistema de plantillas de Django para crear las vistas de nuestro sistema. Adicional a ello tambien hemos utilizado el framework de CSS Bootstrap para darle estilo a nuestro sistema.

@@ -361,23 +361,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#creación-de-un-proyecto-django" id="toc-creación-de-un-proyecto-django" class="nav-link active" data-scroll-target="#creación-de-un-proyecto-django">Creación de un proyecto Django</a></li>
-  <li><a href="#creación-de-una-aplicación-django" id="toc-creación-de-una-aplicación-django" class="nav-link" data-scroll-target="#creación-de-una-aplicación-django">Creación de una aplicación Django</a></li>
+  <li><a href="#creación-de-una-aplicación-django" id="toc-creación-de-una-aplicación-django" class="nav-link active" data-scroll-target="#creación-de-una-aplicación-django">Creación de una aplicación Django</a></li>
   <li><a href="#configuración-de-la-base-de-datos" id="toc-configuración-de-la-base-de-datos" class="nav-link" data-scroll-target="#configuración-de-la-base-de-datos">Configuración de la base de datos</a></li>
-  <li><a href="#crear-un-proyecto-django" id="toc-crear-un-proyecto-django" class="nav-link" data-scroll-target="#crear-un-proyecto-django">Crear un proyecto Django</a></li>
-  <li><a href="#crear-una-aplicación-django" id="toc-crear-una-aplicación-django" class="nav-link" data-scroll-target="#crear-una-aplicación-django">Crear una aplicación Django</a></li>
-  <li><a href="#configurar-la-base-de-datos" id="toc-configurar-la-base-de-datos" class="nav-link" data-scroll-target="#configurar-la-base-de-datos">Configurar la base de datos</a></li>
   <li><a href="#crear-una-vista" id="toc-crear-una-vista" class="nav-link" data-scroll-target="#crear-una-vista">Crear una vista</a></li>
   <li><a href="#crear-una-plantilla" id="toc-crear-una-plantilla" class="nav-link" data-scroll-target="#crear-una-plantilla">Crear una plantilla</a></li>
   <li><a href="#configurar-las-rutas" id="toc-configurar-las-rutas" class="nav-link" data-scroll-target="#configurar-las-rutas">Configurar las rutas</a></li>
-  <li><a href="#ejecutar-el-servidor" id="toc-ejecutar-el-servidor" class="nav-link" data-scroll-target="#ejecutar-el-servidor">Ejecutar el servidor</a></li>
-  <li><a href="#acceder-a-la-aplicación" id="toc-acceder-a-la-aplicación" class="nav-link" data-scroll-target="#acceder-a-la-aplicación">Acceder a la aplicación</a></li>
   <li><a href="#correr-el-servidor-de-desarrollo" id="toc-correr-el-servidor-de-desarrollo" class="nav-link" data-scroll-target="#correr-el-servidor-de-desarrollo">Correr el servidor de desarrollo</a></li>
-  <li><a href="#crear-una-vista-1" id="toc-crear-una-vista-1" class="nav-link" data-scroll-target="#crear-una-vista-1">Crear una vista</a></li>
-  <li><a href="#crear-una-plantilla-1" id="toc-crear-una-plantilla-1" class="nav-link" data-scroll-target="#crear-una-plantilla-1">Crear una plantilla</a></li>
-  <li><a href="#configurar-las-rutas-1" id="toc-configurar-las-rutas-1" class="nav-link" data-scroll-target="#configurar-las-rutas-1">Configurar las rutas</a></li>
+  <li><a href="#acceder-a-la-aplicación" id="toc-acceder-a-la-aplicación" class="nav-link" data-scroll-target="#acceder-a-la-aplicación">Acceder a la aplicación</a></li>
   <li><a href="#acceder-a-la-aplicación-1" id="toc-acceder-a-la-aplicación-1" class="nav-link" data-scroll-target="#acceder-a-la-aplicación-1">Acceder a la aplicación</a></li>
   <li><a href="#asignación" id="toc-asignación" class="nav-link" data-scroll-target="#asignación">Asignación</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -404,216 +397,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Django tiene una estructura de archivos y carpetas que se debe seguir para que el proyecto funcione correctamente. A continuación se muestra la estructura de archivos y carpetas de un proyecto Django:</p>
-<pre id="annotated-cell-1" class="code-annotation-code"><code>myproject/
-    manage.py
-    myproject/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py</code></pre>
-<dl>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">La carpeta raíz del proyecto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Archivo que se utiliza para interactuar con el proyecto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="3">Carpeta que contiene el proyecto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="4">Archivo que indica que la carpeta es un paquete de Python.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="5" data-code-annotation="5">Archivo de configuración del proyecto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="6">Archivo que contiene las rutas del proyecto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="7">Archivo que contiene la configuración del servidor web.</span>
-</dd>
-</dl>
-<section id="creación-de-un-proyecto-django" class="level1">
-<h1>Creación de un proyecto Django</h1>
-<p>Para crear un proyecto Django se debe ejecutar el siguiente comando:</p>
-<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">django-admin</span> startproject myproject .</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">El punto al final del comando indica que el proyecto se creará en la carpeta actual.</span>
-</dd>
-</dl>
-</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recuerda crear el entorno virtual y activarlo antes de ejecutar el comando.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> venv/bin/activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Creamos un directorio con el siguiente comando:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> myproject</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> myproject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Instalamos Django con el siguiente comando:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install django==4.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Creamos el proyecto con el siguiente comando:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">django-admin</span> startproject myproject .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<pre id="annotated-cell-1" class="code-annotation-code"><code>├── manage.py
+└── myproject
+    ├── asgi.py
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py</code></pre>
+<p>1.- Archivo de gestión del proyecto.</p>
+<p>2.- Carpeta del proyecto.</p>
+<p>3.- Archivo de configuración de ASGI.</p>
+<p>4.- Archivo de inicialización del proyecto.</p>
+<p>5.- Archivo de configuración del proyecto.</p>
+<p>6.- Archivo de configuración de las rutas del proyecto.</p>
+<p>7.- Archivo de configuración de WSGI.</p>
 <section id="creación-de-una-aplicación-django" class="level1">
 <h1>Creación de una aplicación Django</h1>
 <p>Para crear una aplicación Django se debe ejecutar el siguiente comando:</p>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py startapp myapp</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py startapp myapp</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Nombre de la aplicación.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Nombre de la aplicación.</span>
 </dd>
 </dl>
 </section>
 <section id="configuración-de-la-base-de-datos" class="level1">
 <h1>Configuración de la base de datos</h1>
 <p>Para configurar la base de datos se debe modificar el archivo <code>settings.py</code> del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:</p>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>DATABASES <span class="op">=</span> {</span>
-<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'default'</span>: {</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ENGINE'</span>: <span class="st">'django.db.backends.sqlite3'</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'NAME'</span>: BASE_DIR <span class="op">/</span> <span class="st">'db.sqlite3'</span>,</span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>DATABASES <span class="op">=</span> {</span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'default'</span>: {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ENGINE'</span>: <span class="st">'django.db.backends.sqlite3'</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'NAME'</span>: BASE_DIR <span class="op">/</span> <span class="st">'db.sqlite3'</span>,</span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1">Motor de base de datos.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Motor de base de datos.</span>
 </dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="2">Ruta del archivo de la base de datos.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">Ruta del archivo de la base de datos.</span>
 </dd>
 </dl>
-<p>Ejemplo</p>
+<p><strong>Ejemplo</strong></p>
 <p>En este ejemplo crearemos una aplicación que muestre un mensaje en la página principal. Para ello, se deben seguir los siguientes pasos:</p>
 <ol type="1">
-<li>Crear un proyecto Django.</li>
-<li>Crear una aplicación Django.</li>
-<li>Configurar la base de datos.</li>
 <li>Crear una vista.</li>
 <li>Crear una plantilla.</li>
 <li>Configurar las rutas.</li>
 </ol>
 </section>
-<section id="crear-un-proyecto-django" class="level1">
-<h1>Crear un proyecto Django</h1>
-<p>Para crear un proyecto Django se debe ejecutar el siguiente comando:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">django-admin</span> startproject myproject .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="crear-una-aplicación-django" class="level1">
-<h1>Crear una aplicación Django</h1>
-<p>Para crear una aplicación Django se debe ejecutar el siguiente comando:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py startapp myapp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="configurar-la-base-de-datos" class="level1">
-<h1>Configurar la base de datos</h1>
-<p>Para configurar la base de datos se debe modificar el archivo <code>settings.py</code> del proyecto. A continuación se muestra un ejemplo de configuración de la base de datos:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>DATABASES <span class="op">=</span> {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'default'</span>: {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ENGINE'</span>: <span class="st">'django.db.backends.sqlite3'</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'NAME'</span>: BASE_DIR <span class="op">/</span> <span class="st">'db.sqlite3'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="crear-una-vista" class="level1">
 <h1>Crear una vista</h1>
-<p>Para crear una vista se debe modificar el archivo <code>views.py</code> de la aplicación. A continuación se muestra un ejemplo de vista:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.http <span class="im">import</span> HttpResponse</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index(request):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> HttpResponse(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para crear una vista se debe modificar el archivo <strong>views.py</strong> de la aplicación. A continuación se muestra un ejemplo de vista:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.http <span class="im">import</span> HttpResponse</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index(request):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> HttpResponse(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="crear-una-plantilla" class="level1">
 <h1>Crear una plantilla</h1>
-<p>Para crear una plantilla se debe crear una carpeta llamada <code>templates</code> en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>MyApp<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Hello, world!<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para crear una plantilla se debe crear una carpeta llamada <strong>templates</strong> en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>MyApp<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Hello, world!<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-info">
+<p>Para que Django pueda encontrar la plantilla, se debe configurar la ruta de la plantilla en el archivo <strong>settings.py</strong> del proyecto. A continuación se muestra un ejemplo de configuración de la ruta de la plantilla:</p>
+<div class="sourceCode" id="annotated-cell-14"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a>TEMPLATES <span class="op">=</span> [</span>
+<span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="annotated-cell-14-4"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'BACKEND'</span>: <span class="st">'django.template.backends.django.DjangoTemplates'</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-5" class="code-annotation-target"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'DIRS'</span>: [BASE_DIR <span class="op">/</span> <span class="st">'templates'</span>],</span>
+<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'APP_DIRS'</span>: <span class="va">True</span>,</span>
+<span id="annotated-cell-14-7"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'OPTIONS'</span>: {</span>
+<span id="annotated-cell-14-8"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'context_processors'</span>: [</span>
+<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.template.context_processors.debug'</span>,</span>
+<span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.template.context_processors.request'</span>,</span>
+<span id="annotated-cell-14-11"><a href="#annotated-cell-14-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.contrib.auth.context_processors.auth'</span>,</span>
+<span id="annotated-cell-14-12"><a href="#annotated-cell-14-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.contrib.messages.context_processors.messages'</span>,</span>
+<span id="annotated-cell-14-13"><a href="#annotated-cell-14-13" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="annotated-cell-14-14"><a href="#annotated-cell-14-14" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="annotated-cell-14-15"><a href="#annotated-cell-14-15" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="annotated-cell-14-16"><a href="#annotated-cell-14-16" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-14" data-code-lines="5" data-code-annotation="1">Ruta de la plantilla.</span>
+</dd>
+</dl>
+</div>
 </section>
 <section id="configurar-las-rutas" class="level1">
 <h1>Configurar las rutas</h1>
-<p>Para configurar las rutas se debe modificar el archivo <code>urls.py</code> de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, views.index, name<span class="op">=</span><span class="st">'index'</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="ejecutar-el-servidor" class="level1">
-<h1>Ejecutar el servidor</h1>
-<p>Para ejecutar el servidor se debe ejecutar el siguiente comando:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="acceder-a-la-aplicación" class="level1">
-<h1>Acceder a la aplicación</h1>
-<p>Para acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:</p>
-<p><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>Para configurar las rutas se debe modificar el archivo <strong>urls.py</strong> de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, views.index, name<span class="op">=</span><span class="st">'index'</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="correr-el-servidor-de-desarrollo" class="level1">
 <h1>Correr el servidor de desarrollo</h1>
 <p>Para correr el servidor de desarrollo se debe ejecutar el siguiente comando:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="acceder-a-la-aplicación" class="level1">
+<h1>Acceder a la aplicación</h1>
+<p>Para acceder a la aplicación se debe abrir un navegador web y escribir la siguiente URL:</p>
+<p><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
 <p>Posiblemente sea necesario preparar las migraciones y aplicarlas a la base de datos:</p>
-<div class="sourceCode" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py makemigrations</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-13-2" class="code-annotation-target"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py migrate</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py makemigrations</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py migrate</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-13" data-code-lines="1" data-code-annotation="1">Prepara las migraciones.</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1">Prepara las migraciones.</span>
 </dd>
-<dt data-target-cell="annotated-cell-13" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-13" data-code-lines="2" data-code-annotation="2">Aplica las migraciones a la base de datos.</span>
-</dd>
-</dl>
-</section>
-<section id="crear-una-vista-1" class="level1">
-<h1>Crear una vista</h1>
-<p>Para crear una vista se debe modificar el archivo <code>views.py</code> de la aplicación. A continuación se muestra un ejemplo de vista:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.http <span class="im">import</span> HttpResponse</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index(request):</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> HttpResponse(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="crear-una-plantilla-1" class="level1">
-<h1>Crear una plantilla</h1>
-<p>Para crear una plantilla se debe crear una carpeta llamada <code>templates</code> en la carpeta de la aplicación. A continuación se muestra un ejemplo de plantilla:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>MyApp<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Hello, world!<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="configurar-las-rutas-1" class="level1">
-<h1>Configurar las rutas</h1>
-<p>Para configurar las rutas se debe modificar el archivo <code>urls.py</code> de la aplicación. A continuación se muestra un ejemplo de configuración de las rutas:</p>
-<div class="sourceCode" id="annotated-cell-16"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-16-1" class="code-annotation-target"><a href="#annotated-cell-16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-16-2" class="code-annotation-target"><a href="#annotated-cell-16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
-<span id="annotated-cell-16-3"><a href="#annotated-cell-16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-16-4"><a href="#annotated-cell-16-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-16-5" class="code-annotation-target"><a href="#annotated-cell-16-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, views.index, name<span class="op">=</span><span class="st">'index'</span>),</span>
-<span id="annotated-cell-16-6"><a href="#annotated-cell-16-6" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-16" data-code-lines="1" data-code-annotation="1">Importa la función <code>path</code>.</span>
-</dd>
-<dt data-target-cell="annotated-cell-16" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-16" data-code-lines="2" data-code-annotation="2">Importa las vistas de la aplicación.</span>
-</dd>
-<dt data-target-cell="annotated-cell-16" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-16" data-code-lines="5" data-code-annotation="3">Configura la ruta principal de la aplicación.</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="2">Aplica las migraciones a la base de datos.</span>
 </dd>
 </dl>
 </section>
@@ -625,6 +558,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="asignación" class="level1">
 <h1>Asignación</h1>
+<p>Seguir cada uno de los pasos de esta sección para crear una aplicación Django que muestre un mensaje en la página principal. La aplicación debe tener los siguientes archivos y carpetas:</p>
+<pre id="annotated-cell-9" class="code-annotation-code"><code>├── manage.py
+├── myproject
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── myapp
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── migrations
+    │   └── __init__.py
+    ├── models.py
+    ├── tests.py
+    ├── views.py
+    └── templates
+        └── index.html</code></pre>
+<p>1.- Archivo de gestión del proyecto.</p>
+<p>2.- Carpeta del proyecto.</p>
+<p>3.- Archivo de configuración de ASGI.</p>
+<p>4.- Archivo de inicialización del proyecto.</p>
+<p>5.- Archivo de configuración del proyecto.</p>
+<p>6.- Archivo de configuración de las rutas del proyecto.</p>
+<p>7.- Archivo de configuración de WSGI.</p>
+<p>8.- Carpeta de la aplicación.</p>
+<p>9.- Archivo de inicialización de la aplicación.</p>
+<p>10.- Archivo de configuración del administrador de Django.</p>
+<p>11.- Archivo de configuración de la aplicación.</p>
+<p>12.- Carpeta de migraciones de la aplicación.</p>
+<p>13.- Archivo de inicialización de las migraciones.</p>
+<p>14.- Archivo de configuración de los modelos de la aplicación.</p>
+<p>15.- Archivo de pruebas de la aplicación.</p>
+<p>16.- Archivo de configuración de las vistas de la aplicación.</p>
+<p>17.- Carpeta de plantillas de la aplicación.</p>
+<p>18.- Archivo de la plantilla de la aplicación.</p>
+<div class="callout-info">
+<p>Recuerda que para que Django pueda encontrar la plantilla, se debe configurar la ruta de la plantilla en el archivo <strong>settings.py</strong> del proyecto. A continuación se muestra un ejemplo de configuración de la ruta de la plantilla:</p>
+<div class="sourceCode" id="annotated-cell-15"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-15-2"><a href="#annotated-cell-15-2" aria-hidden="true" tabindex="-1"></a>TEMPLATES <span class="op">=</span> [</span>
+<span id="annotated-cell-15-3"><a href="#annotated-cell-15-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="annotated-cell-15-4"><a href="#annotated-cell-15-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'BACKEND'</span>: <span class="st">'django.template.backends.django.DjangoTemplates'</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-15-5" class="code-annotation-target"><a href="#annotated-cell-15-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'DIRS'</span>: [BASE_DIR <span class="op">/</span> <span class="st">'templates'</span>],</span>
+<span id="annotated-cell-15-6"><a href="#annotated-cell-15-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'APP_DIRS'</span>: <span class="va">True</span>,</span>
+<span id="annotated-cell-15-7"><a href="#annotated-cell-15-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'OPTIONS'</span>: {</span>
+<span id="annotated-cell-15-8"><a href="#annotated-cell-15-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'context_processors'</span>: [</span>
+<span id="annotated-cell-15-9"><a href="#annotated-cell-15-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.template.context_processors.debug'</span>,</span>
+<span id="annotated-cell-15-10"><a href="#annotated-cell-15-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.template.context_processors.request'</span>,</span>
+<span id="annotated-cell-15-11"><a href="#annotated-cell-15-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.contrib.auth.context_processors.auth'</span>,</span>
+<span id="annotated-cell-15-12"><a href="#annotated-cell-15-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">'django.contrib.messages.context_processors.messages'</span>,</span>
+<span id="annotated-cell-15-13"><a href="#annotated-cell-15-13" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="annotated-cell-15-14"><a href="#annotated-cell-15-14" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="annotated-cell-15-15"><a href="#annotated-cell-15-15" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="annotated-cell-15-16"><a href="#annotated-cell-15-16" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-15" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-15" data-code-lines="5" data-code-annotation="1">Ruta de la plantilla.</span>
+</dd>
+</dl>
+</div>
+</section>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
+<ul>
+<li><a href="https://www.djangoproject">Django</a></li>
+</ul>
 
 
 </section>
