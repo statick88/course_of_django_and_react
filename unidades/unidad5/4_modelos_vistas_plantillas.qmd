@@ -40,14 +40,15 @@ INSTALLED_APPS = [
 Ahora crearemos la clase **Producto** en el archivo **models.py** de la aplicación **productos**.
 
 ```python
-class Producto:
-    def __init__(self, nombre, precio, cantidad):
-        self.nombre = nombre
-        self.precio = precio
-        self.cantidad = cantidad
+from django.db import models
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    cantidad = models.IntegerField()
 
     def __str__(self):
-        return f"{self.nombre} - ${self.precio} - {self.cantidad} unidades"
+        return self.nombre
 ```
 
 ::: {.callout-tip}
@@ -88,9 +89,10 @@ Un CRUD es un acrónimo que significa **Crear**, **Leer**, **Actualizar** y **El
 Para listar los productos en inventario, crearemos una función **listar_productos** que renderizará la plantilla **listar.html** con la lista de productos.
 
 ```python
-from django.shortcuts import render, redirect
+from pyexpat.errors import messages
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
-from django.contrib import messages 
+from django.urls import reverse 
 
 productos = []
 
@@ -355,13 +357,16 @@ En el archivo **urls.py** de la aplicación **productos** definiremos las URLs d
 from django.urls import path
 from . import views
 
+app_name = 'productos'
+
 urlpatterns = [
     path('', views.listar_productos, name='listar_productos'),
     path('agregar/', views.agregar_producto, name='agregar_producto'),
-    path('actualizar/', views.actualizar_producto, name='actualizar_producto'),
+    path('actualizar/<int:id>/', views.actualizar_producto, name='actualizar_producto'),
     path('eliminar/', views.eliminar_producto, name='eliminar_producto'),
     path('buscar/', views.buscar_producto, name='buscar_producto'),
 ]
+
 ```
 
 En el archivo **urls.py** del proyecto **inventario** incluiremos las URLs de la aplicación **productos**.
@@ -371,28 +376,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("productos.urls")),
+    path('admin/', admin.site.urls),
+    path('', include('productos.urls')),
 ]
-```
-
-# Registro de la aplicación en settings
-
-Para que Django reconozca la aplicación **productos**, debemos registrarla en el archivo **settings.py** del proyecto **inventario**.
-
-```python
-INSTALLED_APPS = [
-    ...
-    "productos",
-]
-```
-
-# Ejecutar el servidor
-
-Para ejecutar el servidor de desarrollo de Django, utilizaremos el siguiente comando.
-
-```bash
-python manage.py runserver
 ```
 
 ::: {.callout-tip}
@@ -415,4 +401,12 @@ python manage.py migrate #<2>
 2. Aplica las migraciones.
 :::
 
+
+# Ejecutar el servidor
+
+Para ejecutar el servidor de desarrollo de Django, utilizaremos el siguiente comando.
+
+```bash
+python manage.py runserver
+```
 Con esto hemos creado un sistema de gestión de inventario de productos con Django. Ahora podemos listar, agregar, actualizar, eliminar y buscar productos en el inventario y hemos utilizado el sistema de plantillas de Django para crear las vistas de nuestro sistema. Adicional a ello tambien hemos utilizado el framework de CSS Bootstrap para darle estilo a nuestro sistema.
