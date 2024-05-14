@@ -516,20 +516,13 @@ Tip
 <h2 class="anchored" data-anchor-id="agregar-producto">Agregar producto</h2>
 <p>Para agregar un producto al inventario, crearemos una función <strong>agregar_producto</strong> que recibe los datos del producto a agregar y lo agrega a la lista de productos.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_producto(request):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">'nombre'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        precio <span class="op">=</span> request.POST.get(<span class="st">'precio'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        cantidad <span class="op">=</span> request.POST.get(<span class="st">'cantidad'</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        producto_nuevo <span class="op">=</span> Producto(nombre<span class="op">=</span>nombre, precio<span class="op">=</span>precio, cantidad<span class="op">=</span>cantidad)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        producto_nuevo.save()</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Agregamos el mensaje de éxito</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        messages.success(request, <span class="st">'Producto agregado exitosamente.'</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(<span class="st">'listar_productos'</span>)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'agregar.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">"POST"</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">"nombre"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        precio <span class="op">=</span> request.POST.get(<span class="st">"precio"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        cantidad <span class="op">=</span> request.POST.get(<span class="st">"cantidad"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        Producto.objects.create(nombre<span class="op">=</span>nombre, precio<span class="op">=</span>precio, cantidad<span class="op">=</span>cantidad) </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(<span class="st">'productos:listar_productos'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">"agregar.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="actualizar-producto" class="level2">
 <h2 class="anchored" data-anchor-id="actualizar-producto">Actualizar producto</h2>
@@ -661,7 +654,7 @@ Tip
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Agregar producto<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"{% url 'agregar_producto' %}"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"{% url 'productos:agregar_producto' %}"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    {% csrf_token %}</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"mb-3"</span><span class="dt">&gt;</span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"nombre"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form-label"</span><span class="dt">&gt;</span>Nombre<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
@@ -677,15 +670,7 @@ Tip
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"btn btn-primary"</span><span class="dt">&gt;</span>Agregar<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Mostrar mensaje si existe --&gt;</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>{% if messages %}</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Mostrar el primer mensaje de éxito</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">alert</span>(<span class="st">"{{ messages.success.0 }}"</span>)<span class="op">;</span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>{% endif %}</span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>{% endblock %}{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="actualizar" class="level2">
 <h2 class="anchored" data-anchor-id="actualizar">Actualizar</h2>
