@@ -105,20 +105,13 @@ Para agregar un producto al inventario, crearemos una función **agregar_product
 
 ```python
 def agregar_producto(request):
-    if request.method == 'POST':
-        nombre = request.POST.get('nombre')
-        precio = request.POST.get('precio')
-        cantidad = request.POST.get('cantidad')
-        
-        producto_nuevo = Producto(nombre=nombre, precio=precio, cantidad=cantidad)
-        producto_nuevo.save()
-
-        # Agregamos el mensaje de éxito
-        messages.success(request, 'Producto agregado exitosamente.')
-
-        return redirect('listar_productos')
-
-    return render(request, 'agregar.html')
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        precio = request.POST.get("precio")
+        cantidad = request.POST.get("cantidad")
+        Producto.objects.create(nombre=nombre, precio=precio, cantidad=cantidad) 
+        return redirect('productos:listar_productos')
+    return render(request, "agregar.html")
 ```
 
 ## Actualizar producto
@@ -250,7 +243,7 @@ Crearemos un archivo **agregar.html** que contendrá un formulario para agregar 
 {% block content %}
 <h1>Agregar producto</h1>
 
-<form action="{% url 'agregar_producto' %}" method="post">
+<form action="{% url 'productos:agregar_producto' %}" method="post">
     {% csrf_token %}
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
@@ -266,15 +259,7 @@ Crearemos un archivo **agregar.html** que contendrá un formulario para agregar 
     </div>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
-
-<!-- Mostrar mensaje si existe -->
-{% if messages %}
-    <script>
-        // Mostrar el primer mensaje de éxito
-        alert("{{ messages.success.0 }}");
-    </script>
-{% endif %}
-{% endblock %}{% endblock %}
+{% endblock %}
 ```
 
 ## Actualizar
