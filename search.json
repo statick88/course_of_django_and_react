@@ -1107,6 +1107,83 @@
     ]
   },
   {
+    "objectID": "unidades/unidad5/5_drf.html",
+    "href": "unidades/unidad5/5_drf.html",
+    "title": "Django Rest Framework",
+    "section": "",
+    "text": "Actualizar el archivo requirements.txt",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#serializers",
+    "href": "unidades/unidad5/5_drf.html#serializers",
+    "title": "Django Rest Framework",
+    "section": "Serializers",
+    "text": "Serializers\nLos serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.\nPara crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import serializers\nfrom .models import Producto\n\nclass ProductoSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Producto\n        fields = '__all__'\nEn este caso, hemos creado un serializador para el modelo Task que hemos definido anteriormente. Hemos utilizado la clase ModelSerializer de Django Rest Framework para crear el serializador.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#views",
+    "href": "unidades/unidad5/5_drf.html#views",
+    "title": "Django Rest Framework",
+    "section": "Views",
+    "text": "Views\nLas vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.\nPara crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom django.shortcuts import render, redirect, get_object_or_404\nfrom rest_framework import viewsets, status\nfrom rest_framework.response import Response\nfrom .models import Producto\nfrom .serializers import ProductoSerializer\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer\n\ndef listar_productos(request):\n    productos = Producto.objects.all()\n    return render(request, 'listar.html', {'productos': productos})\n\ndef agregar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        precio = request.POST.get(\"precio\")\n        cantidad = request.POST.get(\"cantidad\")\n        Producto.objects.create(nombre=nombre, precio=precio, cantidad=cantidad) \n        return redirect('productos:listar_productos')\n    return render(request, \"agregar.html\")\n\ndef actualizar_producto(request, id):\n    producto = get_object_or_404(Producto, pk=id)\n    if request.method == 'POST':\n        nombre = request.POST.get('nombre')\n        precio = request.POST.get('precio')\n        cantidad = request.POST.get('cantidad')\n        \n        # Actualiza los campos del producto\n        producto.nombre = nombre\n        producto.precio = precio\n        producto.cantidad = cantidad\n        producto.save()\n        \n        return redirect('productos:listar_productos')\n    else:\n        return render(request, 'actualizar.html', {'producto': producto})\n\ndef eliminar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        try:\n            producto = Producto.objects.get(nombre=nombre)\n            producto.delete()\n        except Producto.DoesNotExist:\n            pass\n        \n        return redirect('productos:listar_productos')\n    return render(request, \"eliminar.html\")\n\ndef buscar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        try:\n            producto = Producto.objects.get(nombre=nombre)\n            return render(request, \"buscar.html\", {\"producto\": producto})\n        except Producto.DoesNotExist:\n            return render(request, \"buscar.html\", {\"producto\": None})\n    return render(request, \"buscar.html\")\nEn este caso, hemos creado una vista basada en conjuntos utilizando la clase ModelViewSet de Django Rest Framework. Hemos definido el queryset como todos los objetos de la clase Task y el serializer_class como el serializador que hemos creado anteriormente.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#urls-de-la-aplicación",
+    "href": "unidades/unidad5/5_drf.html#urls-de-la-aplicación",
+    "title": "Django Rest Framework",
+    "section": "URLs de la Aplicación",
+    "text": "URLs de la Aplicación\nPara conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom django.urls import path\nfrom . import views\n\napp_name = 'productos'\n\nurlpatterns = [\n    path('', views.listar_productos, name='listar_productos'),\n    path('agregar/', views.agregar_producto, name='agregar_producto'),\n    path('actualizar/&lt;int:id&gt;/', views.actualizar_producto, name='actualizar_producto'),\n    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),\n    path('buscar/', views.buscar_producto, name='buscar_producto'),\n\n    # URL para el API\n    path('api/productos/', views.ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),\n    path('api/productos/&lt;int:pk&gt;/', views.ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),\n]\nEn este caso, hemos utilizado el DefaultRouter de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista TaskViewSet con la ruta ‘tasks’.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#configuración-urls-del-proyecto",
+    "href": "unidades/unidad5/5_drf.html#configuración-urls-del-proyecto",
+    "title": "Django Rest Framework",
+    "section": "Configuración URLs del Proyecto",
+    "text": "Configuración URLs del Proyecto\nPara configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import routers\nfrom productos.views import ProductoViewSet\n\n# Creamos un enrutador para las vistas de Django REST Framework\nrouter = routers.DefaultRouter()\nrouter.register(r'productos', ProductoViewSet)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),  # URLs de la aplicación 'productos'\n    path('api/', include(router.urls)),  # URLs de Django REST Framework\n]\nEn este caso, hemos añadido la ruta ‘api/’ a las URLs del proyecto e incluido las URLs de nuestra aplicación tasks.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#migraciones",
+    "href": "unidades/unidad5/5_drf.html#migraciones",
+    "title": "Django Rest Framework",
+    "section": "Migraciones",
+    "text": "Migraciones\nAntes de utilizar nuestra API REST, debemos aplicar las migraciones necesarias para crear las tablas en la base de datos:\npython manage.py makemigrations\npython manage.py migrate",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#ejecución",
+    "href": "unidades/unidad5/5_drf.html#ejecución",
+    "title": "Django Rest Framework",
+    "section": "Ejecución",
+    "text": "Ejecución\nUna vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:\npython manage.py runserver\nEn este caso, la API estará disponible en la ruta ‘http://127.0.0.1:8000/api/tasks/’.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
     "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
     "href": "unidades/ejercicios/ejercicios_git_github-000.html",
     "title": "Ejercicios de Git y Github",
@@ -1114,7 +1191,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -1125,7 +1202,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1136,7 +1213,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1147,7 +1224,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1158,7 +1235,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1169,7 +1246,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1180,7 +1257,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -1191,7 +1268,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1202,7 +1279,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1213,7 +1290,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1224,7 +1301,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1235,7 +1312,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1246,7 +1323,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -1257,7 +1334,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1268,7 +1345,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1279,7 +1356,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1290,7 +1367,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1301,7 +1378,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1312,7 +1389,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -1323,7 +1400,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -1334,7 +1411,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -1345,7 +1422,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -1356,7 +1433,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -1367,7 +1444,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -1378,7 +1455,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {

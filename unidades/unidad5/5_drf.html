@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Django y React 2024 - Introducción a Django</title>
+<title>Django y React 2024 - Django Rest Framework</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad5/2_configuracion_inicial.html" rel="next">
-<link href="../../unidades/unidad4/project001.html" rel="prev">
+<link href="../../unidades/ejercicios/ejercicios_git_github-000.html" rel="next">
+<link href="../../unidades/unidad5/4_modelos_vistas_plantillas.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html"><span class="chapter-title">Introducción a Django</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/5_drf.html"><span class="chapter-title">Django Rest Framework</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -295,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/1_django_fundamentos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a Django</span></a>
+  <a href="../../unidades/unidad5/1_django_fundamentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -315,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/5_drf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Django Rest Framework</span></a>
+  <a href="../../unidades/unidad5/5_drf.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Django Rest Framework</span></a>
   </div>
 </li>
       </ul>
@@ -366,28 +366,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conceptos-importantes" id="toc-conceptos-importantes" class="nav-link active" data-scroll-target="#conceptos-importantes">Conceptos Importantes</a>
+  <li><a href="#actualizar-el-archivo-requirements.txt" id="toc-actualizar-el-archivo-requirements.txt" class="nav-link active" data-scroll-target="#actualizar-el-archivo-requirements.txt">Actualizar el archivo requirements.txt</a>
   <ul class="collapse">
-  <li><a href="#entornos-virtuales" id="toc-entornos-virtuales" class="nav-link" data-scroll-target="#entornos-virtuales">Entornos Virtuales</a></li>
-  <li><a href="#modelo-template-view-mtv" id="toc-modelo-template-view-mtv" class="nav-link" data-scroll-target="#modelo-template-view-mtv">Modelo Template View (MTV)</a></li>
-  <li><a href="#formularios" id="toc-formularios" class="nav-link" data-scroll-target="#formularios">Formularios</a></li>
-  <li><a href="#administrador-de-django" id="toc-administrador-de-django" class="nav-link" data-scroll-target="#administrador-de-django">Administrador de Django</a></li>
-  <li><a href="#middleware" id="toc-middleware" class="nav-link" data-scroll-target="#middleware">Middleware</a></li>
-  <li><a href="#autenticación-y-autorización" id="toc-autenticación-y-autorización" class="nav-link" data-scroll-target="#autenticación-y-autorización">Autenticación y Autorización</a></li>
-  <li><a href="#internacionalización" id="toc-internacionalización" class="nav-link" data-scroll-target="#internacionalización">Internacionalización</a></li>
-  <li><a href="#seguridad" id="toc-seguridad" class="nav-link" data-scroll-target="#seguridad">Seguridad</a></li>
-  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
-  <li><a href="#despliegue" id="toc-despliegue" class="nav-link" data-scroll-target="#despliegue">Despliegue</a></li>
+  <li><a href="#serializers" id="toc-serializers" class="nav-link" data-scroll-target="#serializers">Serializers</a></li>
+  <li><a href="#views" id="toc-views" class="nav-link" data-scroll-target="#views">Views</a></li>
+  <li><a href="#urls-de-la-aplicación" id="toc-urls-de-la-aplicación" class="nav-link" data-scroll-target="#urls-de-la-aplicación">URLs de la Aplicación</a></li>
+  <li><a href="#configuración-urls-del-proyecto" id="toc-configuración-urls-del-proyecto" class="nav-link" data-scroll-target="#configuración-urls-del-proyecto">Configuración URLs del Proyecto</a></li>
+  <li><a href="#migraciones" id="toc-migraciones" class="nav-link" data-scroll-target="#migraciones">Migraciones</a></li>
+  <li><a href="#ejecución" id="toc-ejecución" class="nav-link" data-scroll-target="#ejecución">Ejecución</a></li>
   </ul></li>
+  <li><a href="#extra-documentación-de-la-api" id="toc-extra-documentación-de-la-api" class="nav-link" data-scroll-target="#extra-documentación-de-la-api">Extra, Documentación de la API</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html"><span class="chapter-title">Introducción a Django</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/5_drf.html"><span class="chapter-title">Django Rest Framework</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introducción a Django</span></h1>
+<h1 class="title"><span class="chapter-title">Django Rest Framework</span></h1>
 </div>
 
 
@@ -404,19 +401,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/django-logo.png" class="center img-fluid figure-img" width="200"></p>
-<figcaption>Django Framework</figcaption>
-</figure>
-</div>
-</div>
-<div class="justify">
-<p>Django es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Es un framework web de alto nivel que fomenta el desarrollo rápido y limpio. Diseñado por desarrolladores experimentados, Django se encarga de gran parte de la molestia del desarrollo web, por lo que puedes concentrarte en escribir tu aplicación sin necesidad de reinventar la rueda. Es gratuito y de código abierto, tiene una comunidad activa y amigable, y es utilizado por algunas de las mayores empresas del mundo.</p>
-</div>
-<section id="conceptos-importantes" class="level2">
-<h2 class="anchored" data-anchor-id="conceptos-importantes">Conceptos Importantes</h2>
+<p>Django Rest Framework es una librería que nos permite crear APIs REST de una forma sencilla y rápida.</p>
+<p>En el proyecto que hemos iniciado vamos a utilizar Django Rest Framework para crear una API REST que nos permita gestionar los datos de nuestra aplicación.</p>
+<p>Para instalar Django Rest Framework, ejecutamos el siguiente comando:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install djangorestframework</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez instalado, añadimos <strong>‘rest_framework’</strong> a la lista de aplicaciones instaladas en el archivo <strong>settings.py</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rest_framework'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="actualizar-el-archivo-requirements.txt" class="level1">
+<h1>Actualizar el archivo requirements.txt</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -427,128 +422,187 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Antes de iniciar con Django es necesario conocer el concepto de <strong>Entornos Virtuales</strong>.</p>
+<p>Es necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando</p>
 </div>
 </div>
-<section id="entornos-virtuales" class="level3">
-<h3 class="anchored" data-anchor-id="entornos-virtuales">Entornos Virtuales</h3>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/python-venv.png" class="center img-fluid figure-img" width="400"></p>
-<figcaption>Virtual Enviroment</figcaption>
-</figure>
-</div>
-</div>
-<p>Un entorno virtual es un <strong>entorno de desarrollo aislado </strong>que permite <strong>instalar paquetes de Python sin afectar al sistema global</strong>. Los entornos virtuales son útiles para gestionar las dependencias de un proyecto y para evitar conflictos entre diferentes versiones de los paquetes.</p>
-<section id="crear-un-entorno-virtual" class="level4">
-<h4 class="anchored" data-anchor-id="crear-un-entorno-virtual">Crear un entorno virtual</h4>
-<p>Para crear un entorno virtual, se puede utilizar la herramienta <strong>venv</strong> de Python.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este comando creará un directorio llamado <strong>env</strong> en el directorio actual con el entorno virtual.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Tambien se puede utilizar <a href="https://pypi.org/project/virtualenv/">virtualenv</a> para crear entornos virtuales.</p>
-</div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="serializers" class="level2">
+<h2 class="anchored" data-anchor-id="serializers">Serializers</h2>
+<p>Los serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.</p>
+<p>Para crear un serializador, creamos un archivo <strong>serializers.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Producto</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProductoSerializer(serializers.ModelSerializer):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Producto</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> <span class="st">'__all__'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, hemos creado un serializador para el modelo <strong>Task</strong> que hemos definido anteriormente. Hemos utilizado la clase <strong>ModelSerializer</strong> de Django Rest Framework para crear el serializador.</p>
+</section>
+<section id="views" class="level2">
+<h2 class="anchored" data-anchor-id="views">Views</h2>
+<p>Las vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.</p>
+<p>Para crear una vista, creamos un archivo <strong>views.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render, redirect, get_object_or_404</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> viewsets, status</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.response <span class="im">import</span> Response</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Producto</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> ProductoSerializer</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProductoViewSet(viewsets.ModelViewSet):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Producto.objects.<span class="bu">all</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> ProductoSerializer</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> listar_productos(request):</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    productos <span class="op">=</span> Producto.objects.<span class="bu">all</span>()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'listar.html'</span>, {<span class="st">'productos'</span>: productos})</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_producto(request):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">"POST"</span>:</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">"nombre"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        precio <span class="op">=</span> request.POST.get(<span class="st">"precio"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        cantidad <span class="op">=</span> request.POST.get(<span class="st">"cantidad"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        Producto.objects.create(nombre<span class="op">=</span>nombre, precio<span class="op">=</span>precio, cantidad<span class="op">=</span>cantidad) </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(<span class="st">'productos:listar_productos'</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">"agregar.html"</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizar_producto(request, <span class="bu">id</span>):</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    producto <span class="op">=</span> get_object_or_404(Producto, pk<span class="op">=</span><span class="bu">id</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">'nombre'</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        precio <span class="op">=</span> request.POST.get(<span class="st">'precio'</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        cantidad <span class="op">=</span> request.POST.get(<span class="st">'cantidad'</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Actualiza los campos del producto</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        producto.nombre <span class="op">=</span> nombre</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        producto.precio <span class="op">=</span> precio</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        producto.cantidad <span class="op">=</span> cantidad</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        producto.save()</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(<span class="st">'productos:listar_productos'</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'actualizar.html'</span>, {<span class="st">'producto'</span>: producto})</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eliminar_producto(request):</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">"POST"</span>:</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">"nombre"</span>)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>            producto <span class="op">=</span> Producto.objects.get(nombre<span class="op">=</span>nombre)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>            producto.delete()</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> Producto.DoesNotExist:</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(<span class="st">'productos:listar_productos'</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">"eliminar.html"</span>)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_producto(request):</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">"POST"</span>:</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>        nombre <span class="op">=</span> request.POST.get(<span class="st">"nombre"</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>            producto <span class="op">=</span> Producto.objects.get(nombre<span class="op">=</span>nombre)</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> render(request, <span class="st">"buscar.html"</span>, {<span class="st">"producto"</span>: producto})</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> Producto.DoesNotExist:</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> render(request, <span class="st">"buscar.html"</span>, {<span class="st">"producto"</span>: <span class="va">None</span>})</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">"buscar.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, hemos creado una vista basada en conjuntos utilizando la clase <strong>ModelViewSet</strong> de Django Rest Framework. Hemos definido el <strong>queryset</strong> como todos los objetos de la clase <strong>Task</strong> y el <strong>serializer_class</strong> como el serializador que hemos creado anteriormente.</p>
+</section>
+<section id="urls-de-la-aplicación" class="level2">
+<h2 class="anchored" data-anchor-id="urls-de-la-aplicación">URLs de la Aplicación</h2>
+<p>Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo <strong>urls.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>app_name <span class="op">=</span> <span class="st">'productos'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, views.listar_productos, name<span class="op">=</span><span class="st">'listar_productos'</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'agregar/'</span>, views.agregar_producto, name<span class="op">=</span><span class="st">'agregar_producto'</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'actualizar/&lt;int:id&gt;/'</span>, views.actualizar_producto, name<span class="op">=</span><span class="st">'actualizar_producto'</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'eliminar/'</span>, views.eliminar_producto, name<span class="op">=</span><span class="st">'eliminar_producto'</span>),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'buscar/'</span>, views.buscar_producto, name<span class="op">=</span><span class="st">'buscar_producto'</span>),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># URL para el API</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/'</span>, views.ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'list'</span>, <span class="st">'post'</span>: <span class="st">'create'</span>}), name<span class="op">=</span><span class="st">'api-productos'</span>),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/&lt;int:pk&gt;/'</span>, views.ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'retrieve'</span>, <span class="st">'put'</span>: <span class="st">'update'</span>, <span class="st">'delete'</span>: <span class="st">'destroy'</span>}), name<span class="op">=</span><span class="st">'api-producto-detail'</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, hemos utilizado el <strong>DefaultRouter</strong> de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista <strong>TaskViewSet</strong> con la ruta <strong>‘tasks’</strong>.</p>
+</section>
+<section id="configuración-urls-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="configuración-urls-del-proyecto">Configuración URLs del Proyecto</h2>
+<p>Para configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo <strong>urls.py</strong> de la carpeta del proyecto:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.contrib <span class="im">import</span> admin</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path, include</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> routers</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> productos.views <span class="im">import</span> ProductoViewSet</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos un enrutador para las vistas de Django REST Framework</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> routers.DefaultRouter()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'productos'</span>, ProductoViewSet)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'admin/'</span>, admin.site.urls),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, include(<span class="st">'productos.urls'</span>)),  <span class="co"># URLs de la aplicación 'productos'</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/'</span>, include(router.urls)),  <span class="co"># URLs de Django REST Framework</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, hemos añadido la ruta <strong>‘api/’</strong> a las URLs del proyecto e incluido las URLs de nuestra aplicación <strong>tasks</strong>.</p>
+</section>
+<section id="migraciones" class="level2">
+<h2 class="anchored" data-anchor-id="migraciones">Migraciones</h2>
+<p>Antes de utilizar nuestra API REST, debemos aplicar las migraciones necesarias para crear las tablas en la base de datos:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py makemigrations</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py migrate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ejecución" class="level2">
+<h2 class="anchored" data-anchor-id="ejecución">Ejecución</h2>
+<p>Una vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, la API estará disponible en la ruta <strong>‘http://127.0.0.1:8000/api/tasks/’</strong>.</p>
 </section>
 </section>
-<section id="modelo-template-view-mtv" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-template-view-mtv">Modelo Template View (MTV)</h3>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/model-view-controller.png" class="center img-fluid figure-img" width="400"></p>
-<figcaption>Model View Controller</figcaption>
-</figure>
-</div>
-</div>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/model-template-view.png" class="center img-fluid figure-img" width="400"></p>
-<figcaption>Model View Template</figcaption>
-</figure>
-</div>
-</div>
-<p>Django sigue el patrón de diseño Modelo Vista Template (MVT). Este patrón de diseño separa la lógica de la aplicación en tres componentes principales: Modelo, Vista y Template.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>El archivo URLs.py es el encargado de mapear las URLs de la aplicación a las vistas correspondientes.</p>
-</div>
-</div>
-<ul>
-<li><p><strong>Modelo</strong>: Es la representación de los datos de la aplicación y las reglas para manipular esos datos. Django utiliza un ORM (Object-Relational Mapping) para interactuar con la base de datos.</p></li>
-<li><p><strong>Vista</strong>: Es la capa de presentación de la aplicación. Se encarga de mostrar los datos al usuario y de interpretar las acciones del usuario.</p></li>
-<li><p><strong>Template</strong>: Es la capa de presentación de la aplicación. Define cómo se muestra la información al usuario. Django utiliza el motor de plantillas Jinja2 para renderizar los templates.</p></li>
-</ul>
-</section>
-<section id="formularios" class="level3">
-<h3 class="anchored" data-anchor-id="formularios">Formularios</h3>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/python-form.png" class="center img-fluid figure-img"></p>
-<figcaption>Django Forms</figcaption>
-</figure>
-</div>
-</div>
-<p>Los formularios son una parte importante de cualquier aplicación web. Django proporciona una forma sencilla de crear y procesar formularios en las vistas.</p>
-</section>
-<section id="administrador-de-django" class="level3">
-<h3 class="anchored" data-anchor-id="administrador-de-django">Administrador de Django</h3>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/django-admin.png" class="center img-fluid figure-img"></p>
-<figcaption>Django Admin</figcaption>
-</figure>
-</div>
-</div>
-<p>El administrador de Django es una interfaz de administración que permite gestionar los datos de la aplicación de forma sencilla. Django genera automáticamente una interfaz de administración basada en los modelos de la aplicación.</p>
-</section>
-<section id="middleware" class="level3">
-<h3 class="anchored" data-anchor-id="middleware">Middleware</h3>
-<p>El middleware es una capa de procesamiento que se ejecuta antes y después de cada petición HTTP. Django proporciona un conjunto de middlewares que se pueden utilizar para añadir funcionalidades a la aplicación.</p>
-</section>
-<section id="autenticación-y-autorización" class="level3">
-<h3 class="anchored" data-anchor-id="autenticación-y-autorización">Autenticación y Autorización</h3>
-<p>Django proporciona un sistema de autenticación y autorización que permite gestionar los usuarios y los permisos de la aplicación de forma sencilla.</p>
-</section>
-<section id="internacionalización" class="level3">
-<h3 class="anchored" data-anchor-id="internacionalización">Internacionalización</h3>
-<p>Django proporciona soporte para la internacionalización de la aplicación. Permite traducir la aplicación a diferentes idiomas y gestionar las traducciones de forma sencilla.</p>
-</section>
-<section id="seguridad" class="level3">
-<h3 class="anchored" data-anchor-id="seguridad">Seguridad</h3>
-<p>Django proporciona un conjunto de medidas de seguridad para proteger la aplicación contra ataques comunes, como la inyección de SQL, la falsificación de solicitudes entre sitios (CSRF) y la inyección de código.</p>
-</section>
-<section id="testing" class="level3">
-<h3 class="anchored" data-anchor-id="testing">Testing</h3>
-<p>Django proporciona un conjunto de herramientas para realizar pruebas unitarias y de integración en la aplicación. Permite probar la lógica de la aplicación y asegurarse de que funciona correctamente.</p>
-</section>
-<section id="despliegue" class="level3">
-<h3 class="anchored" data-anchor-id="despliegue">Despliegue</h3>
-<p>Django proporciona un conjunto de herramientas para desplegar la aplicación en un servidor de producción. Permite configurar el entorno de producción y gestionar las actualizaciones de la aplicación de forma sencilla.</p>
+<section id="extra-documentación-de-la-api" class="level1">
+<h1>Extra, Documentación de la API</h1>
+<p>Primero instalamos el paquete de documentación de la API</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install drf-yasg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego, añadimos <strong>‘drf_yasg’</strong> a la lista de aplicaciones instaladas en el archivo <strong>settings.py</strong>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'drf_yasg'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Añadimos las URLs de la documentación de la API a las URLs del proyecto en el archivo <strong>urls.py</strong> de la carpeta del proyecto:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path, include</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> routers</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> ProductoViewSet</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.permissions <span class="im">import</span> AllowAny</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg.views <span class="im">import</span> get_schema_view</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg <span class="im">import</span> openapi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego crea una instancia de Django Rest Framework para registrar las vistas de la API:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> routers.DefaultRouter()</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'productos'</span>, ProductoViewSet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Después, crea una instancia de get_schema_view para configurar la documentación:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>schema_view <span class="op">=</span> get_schema_view(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   openapi.Info(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">"API de Productos"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      default_version<span class="op">=</span><span class="st">'v1'</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      description<span class="op">=</span><span class="st">"Documentación de la API de Productos"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      terms_of_service<span class="op">=</span><span class="st">"https://www.google.com/policies/terms/"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      contact<span class="op">=</span>openapi.Contact(email<span class="op">=</span><span class="st">"contact@example.com"</span>),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>      license<span class="op">=</span>openapi.License(name<span class="op">=</span><span class="st">"BSD License"</span>),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>   ),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>   public<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>   permission_classes<span class="op">=</span>(AllowAny,),</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Definimos las URLs de la documentación de la API:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, include(router.urls)),  <span class="co"># URLs de la API</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'swagger/'</span>, schema_view.with_ui(<span class="st">'swagger'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-swagger-ui'</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'redoc/'</span>, schema_view.with_ui(<span class="st">'redoc'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-redoc'</span>),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finalmente instalamos el paquete <strong>setuptools</strong> para poder instalar el paquete de documentación de la API:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install setuptools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez configurada la documentación de la API, podemos ejecutar el servidor de desarrollo de Django y acceder a la documentación de la API a través de un navegador:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1114,13 +1168,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad4/project001.html" class="pagination-link" aria-label="Sistema de Gestión de Inventarios">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sistema de Gestión de Inventarios</span></span>
+      <a href="../../unidades/unidad5/4_modelos_vistas_plantillas.html" class="pagination-link" aria-label="Modelos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Modelos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad5/2_configuracion_inicial.html" class="pagination-link" aria-label="Configuración inicial de un proyecto.">
-        <span class="nav-page-text"><span class="chapter-title">Configuración inicial de un proyecto.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="pagination-link" aria-label="Ejercicios de Git y Github">
+        <span class="nav-page-text"><span class="chapter-title">Ejercicios de Git y Github</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
