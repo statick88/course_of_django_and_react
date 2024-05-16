@@ -55,67 +55,12 @@ Las vistas en Django Rest Framework son similares a las vistas en Django. Sin em
 Para crear una vista, creamos un archivo **views.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
 
 ```python
-from django.shortcuts import render, redirect, get_object_or_404
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-from .models import Producto
+from rest_framework import viewsets
 from .serializers import ProductoSerializer
 
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
-
-def listar_productos(request):
-    productos = Producto.objects.all()
-    return render(request, 'listar.html', {'productos': productos})
-
-def agregar_producto(request):
-    if request.method == "POST":
-        nombre = request.POST.get("nombre")
-        precio = request.POST.get("precio")
-        cantidad = request.POST.get("cantidad")
-        Producto.objects.create(nombre=nombre, precio=precio, cantidad=cantidad) 
-        return redirect('productos:listar_productos')
-    return render(request, "agregar.html")
-
-def actualizar_producto(request, id):
-    producto = get_object_or_404(Producto, pk=id)
-    if request.method == 'POST':
-        nombre = request.POST.get('nombre')
-        precio = request.POST.get('precio')
-        cantidad = request.POST.get('cantidad')
-        
-        # Actualiza los campos del producto
-        producto.nombre = nombre
-        producto.precio = precio
-        producto.cantidad = cantidad
-        producto.save()
-        
-        return redirect('productos:listar_productos')
-    else:
-        return render(request, 'actualizar.html', {'producto': producto})
-
-def eliminar_producto(request):
-    if request.method == "POST":
-        nombre = request.POST.get("nombre")
-        try:
-            producto = Producto.objects.get(nombre=nombre)
-            producto.delete()
-        except Producto.DoesNotExist:
-            pass
-        
-        return redirect('productos:listar_productos')
-    return render(request, "eliminar.html")
-
-def buscar_producto(request):
-    if request.method == "POST":
-        nombre = request.POST.get("nombre")
-        try:
-            producto = Producto.objects.get(nombre=nombre)
-            return render(request, "buscar.html", {"producto": producto})
-        except Producto.DoesNotExist:
-            return render(request, "buscar.html", {"producto": None})
-    return render(request, "buscar.html")
 ```
 
 En este caso, hemos creado una vista basada en conjuntos utilizando la clase **ModelViewSet** de Django Rest Framework. Hemos definido el **queryset** como todos los objetos de la clase **Task** y el **serializer_class** como el serializador que hemos creado anteriormente.
@@ -125,18 +70,8 @@ En este caso, hemos creado una vista basada en conjuntos utilizando la clase **M
 Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo **urls.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
 
 ```python
-from django.urls import path
-from . import views
 
-app_name = 'productos'
-
-urlpatterns = [
-    path('', views.listar_productos, name='listar_productos'),
-    path('agregar/', views.agregar_producto, name='agregar_producto'),
-    path('actualizar/<int:id>/', views.actualizar_producto, name='actualizar_producto'),
-    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),
-    path('buscar/', views.buscar_producto, name='buscar_producto'),
-
+...
     # URL para el API
     path('api/productos/', views.ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),
     path('api/productos/<int:pk>/', views.ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),
@@ -161,8 +96,8 @@ router.register(r'productos', ProductoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('productos.urls')),  # URLs de la aplicación 'productos'
-    path('api/', include(router.urls)),  # URLs de Django REST Framework
+    path('', include('productos.urls')),
+    path('api/', include(router.urls)),
 ]
 ```
 
@@ -201,6 +136,7 @@ Luego, añadimos **'drf_yasg'** a la lista de aplicaciones instaladas en el arch
 INSTALLED_APPS = [
     ...
     'drf_yasg',
+    ...
 ]
 ```
 
@@ -243,7 +179,7 @@ Definimos las URLs de la documentación de la API:
 
 ```python
 urlpatterns = [
-    path('', include(router.urls)),  # URLs de la API
+    ...
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
