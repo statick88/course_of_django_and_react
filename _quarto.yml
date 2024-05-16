@@ -60,6 +60,7 @@ book:
         - unidades/unidad5/2_configuracion_inicial.qmd
         - unidades/unidad5/3_estructura_archivos_directorios.qmd
         - unidades/unidad5/4_modelos_vistas_plantillas.qmd
+        - unidades/unidad5/5_drf.qmd
 
     - part: "Ejercicios"
       chapters: 

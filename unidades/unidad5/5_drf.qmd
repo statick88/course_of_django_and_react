@@ -1,0 +1,263 @@
+# Django Rest Framework
+
+Django Rest Framework es una librería que nos permite crear APIs REST de una forma sencilla y rápida.
+
+En el proyecto que hemos iniciado vamos a utilizar Django Rest Framework para crear una API REST que nos permita gestionar los datos de nuestra aplicación.
+
+Para instalar Django Rest Framework, ejecutamos el siguiente comando:
+
+```bash
+pip install djangorestframework
+```
+
+Una vez instalado, añadimos **'rest_framework'** a la lista de aplicaciones instaladas en el archivo **settings.py**:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+```
+
+# Actualizar el archivo requirements.txt
+
+
+:::{.callout-tip}
+Es necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando
+:::
+
+```bash
+pip freeze > requirements.txt
+```
+
+## Serializers
+
+Los serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.
+
+Para crear un serializador, creamos un archivo **serializers.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
+
+```python
+from rest_framework import serializers
+from .models import Producto
+
+class ProductoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Producto
+        fields = '__all__'
+```
+
+En este caso, hemos creado un serializador para el modelo **Task** que hemos definido anteriormente. Hemos utilizado la clase **ModelSerializer** de Django Rest Framework para crear el serializador.
+
+## Views
+
+Las vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.
+
+Para crear una vista, creamos un archivo **views.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
+
+```python
+from django.shortcuts import render, redirect, get_object_or_404
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from .models import Producto
+from .serializers import ProductoSerializer
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+def listar_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'listar.html', {'productos': productos})
+
+def agregar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        precio = request.POST.get("precio")
+        cantidad = request.POST.get("cantidad")
+        Producto.objects.create(nombre=nombre, precio=precio, cantidad=cantidad) 
+        return redirect('productos:listar_productos')
+    return render(request, "agregar.html")
+
+def actualizar_producto(request, id):
+    producto = get_object_or_404(Producto, pk=id)
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        precio = request.POST.get('precio')
+        cantidad = request.POST.get('cantidad')
+        
+        # Actualiza los campos del producto
+        producto.nombre = nombre
+        producto.precio = precio
+        producto.cantidad = cantidad
+        producto.save()
+        
+        return redirect('productos:listar_productos')
+    else:
+        return render(request, 'actualizar.html', {'producto': producto})
+
+def eliminar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        try:
+            producto = Producto.objects.get(nombre=nombre)
+            producto.delete()
+        except Producto.DoesNotExist:
+            pass
+        
+        return redirect('productos:listar_productos')
+    return render(request, "eliminar.html")
+
+def buscar_producto(request):
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        try:
+            producto = Producto.objects.get(nombre=nombre)
+            return render(request, "buscar.html", {"producto": producto})
+        except Producto.DoesNotExist:
+            return render(request, "buscar.html", {"producto": None})
+    return render(request, "buscar.html")
+```
+
+En este caso, hemos creado una vista basada en conjuntos utilizando la clase **ModelViewSet** de Django Rest Framework. Hemos definido el **queryset** como todos los objetos de la clase **Task** y el **serializer_class** como el serializador que hemos creado anteriormente.
+
+## URLs de la Aplicación
+
+Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo **urls.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
+
+```python
+from django.urls import path
+from . import views
+
+app_name = 'productos'
+
+urlpatterns = [
+    path('', views.listar_productos, name='listar_productos'),
+    path('agregar/', views.agregar_producto, name='agregar_producto'),
+    path('actualizar/<int:id>/', views.actualizar_producto, name='actualizar_producto'),
+    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),
+    path('buscar/', views.buscar_producto, name='buscar_producto'),
+
+    # URL para el API
+    path('api/productos/', views.ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),
+    path('api/productos/<int:pk>/', views.ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),
+]
+```
+
+En este caso, hemos utilizado el **DefaultRouter** de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista **TaskViewSet** con la ruta **'tasks'**.
+
+## Configuración URLs del Proyecto
+
+Para configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo **urls.py** de la carpeta del proyecto:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import routers
+from productos.views import ProductoViewSet
+
+# Creamos un enrutador para las vistas de Django REST Framework
+router = routers.DefaultRouter()
+router.register(r'productos', ProductoViewSet)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('productos.urls')),  # URLs de la aplicación 'productos'
+    path('api/', include(router.urls)),  # URLs de Django REST Framework
+]
+```
+
+En este caso, hemos añadido la ruta **'api/'** a las URLs del proyecto e incluido las URLs de nuestra aplicación **tasks**.
+
+## Migraciones
+
+Antes de utilizar nuestra API REST, debemos aplicar las migraciones necesarias para crear las tablas en la base de datos:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+## Ejecución
+
+Una vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:
+
+```bash
+python manage.py runserver
+```
+
+En este caso, la API estará disponible en la ruta **'http://127.0.0.1:8000/api/tasks/'**.
+
+# Extra, Documentación de la API
+
+Primero instalamos el paquete de documentación de la API
+
+```bash
+pip install drf-yasg
+```
+
+Luego, añadimos **'drf_yasg'** a la lista de aplicaciones instaladas en el archivo **settings.py**:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'drf_yasg',
+]
+```
+
+Añadimos las URLs de la documentación de la API a las URLs del proyecto en el archivo **urls.py** de la carpeta del proyecto:
+
+```python
+from django.urls import path, include
+from rest_framework import routers
+from .views import ProductoViewSet
+from rest_framework.permissions import AllowAny
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+```
+
+Luego crea una instancia de Django Rest Framework para registrar las vistas de la API:
+
+```python
+router = routers.DefaultRouter()
+router.register(r'productos', ProductoViewSet)
+```
+
+Después, crea una instancia de get_schema_view para configurar la documentación:
+
+```python
+schema_view = get_schema_view(
+   openapi.Info(
+      title="API de Productos",
+      default_version='v1',
+      description="Documentación de la API de Productos",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="contact@example.com"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+   permission_classes=(AllowAny,),
+)
+```
+
+Definimos las URLs de la documentación de la API:
+
+```python
+urlpatterns = [
+    path('', include(router.urls)),  # URLs de la API
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+```
+Finalmente instalamos el paquete **setuptools** para poder instalar el paquete de documentación de la API:
+
+```bash
+pip install setuptools
+```
+
+Una vez configurada la documentación de la API, podemos ejecutar el servidor de desarrollo de Django y acceder a la documentación de la API a través de un navegador:
+
+```bash
+python manage.py runserver
+```
+
+

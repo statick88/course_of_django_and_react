@@ -979,7 +979,7 @@
     "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#listar-productos",
     "title": "Modelos",
     "section": "Listar productos",
-    "text": "Listar productos\nPara listar los productos en inventario, crearemos una función listar_productos que renderizará la plantilla listar.html con la lista de productos.\nfrom django.shortcuts import render, redirect\nfrom .models import Producto\nfrom django.contrib import messages \n\nproductos = []\n\ndef listar_productos(request):\n    productos = Producto.objects.all()\n    return render(request, 'listar.html', {'productos': productos})",
+    "text": "Listar productos\nPara listar los productos en inventario, crearemos una función listar_productos que renderizará la plantilla listar.html con la lista de productos.\nfrom pyexpat.errors import messages\nfrom django.shortcuts import render, redirect, get_object_or_404\nfrom .models import Producto\nfrom django.urls import reverse \n\nproductos = []\n\ndef listar_productos(request):\n    productos = Producto.objects.all()\n    return render(request, 'listar.html', {'productos': productos})",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
@@ -1100,7 +1100,7 @@
     "href": "unidades/unidad5/4_modelos_vistas_plantillas.html#urls-en-la-aplicación-y-el-proyecto",
     "title": "Modelos",
     "section": "URLs en la aplicación y el proyecto",
-    "text": "URLs en la aplicación y el proyecto\nEn el archivo urls.py de la aplicación productos definiremos las URLs de las vistas de nuestro sistema.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.listar_productos, name='listar_productos'),\n    path('agregar/', views.agregar_producto, name='agregar_producto'),\n    path('actualizar/', views.actualizar_producto, name='actualizar_producto'),\n    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),\n    path('buscar/', views.buscar_producto, name='buscar_producto'),\n]\nEn el archivo urls.py del proyecto inventario incluiremos las URLs de la aplicación productos.\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"productos.urls\")),\n]",
+    "text": "URLs en la aplicación y el proyecto\nEn el archivo urls.py de la aplicación productos definiremos las URLs de las vistas de nuestro sistema.\nfrom django.urls import path\nfrom . import views\n\napp_name = 'productos'\n\nurlpatterns = [\n    path('', views.listar_productos, name='listar_productos'),\n    path('agregar/', views.agregar_producto, name='agregar_producto'),\n    path('actualizar/&lt;int:id&gt;/', views.actualizar_producto, name='actualizar_producto'),\n    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),\n    path('buscar/', views.buscar_producto, name='buscar_producto'),\n]\nEn el archivo urls.py del proyecto inventario incluiremos las URLs de la aplicación productos.\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),\n]\n\n\n\n\n\n\nTip\n\n\n\nTip: Para acceder al panel de administración de Django, debemos crear un superusuario con el siguiente comando.\npython manage.py createsuperuser\n\n\n\n\n\n\n\n\nTip\n\n\n\nSi realizamos modificaciones en el modelo de datos, debemos aplicar las migraciones con el siguiente comando.\n1python manage.py makemigrations\n2python manage.py migrate\n\n1\n\nCrea las migraciones.\n\n2\n\nAplica las migraciones.",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Modelos</span>"
@@ -1114,7 +1114,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -1415,5 +1415,104 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html",
+    "href": "unidades/unidad5/5_drf.html",
+    "title": "Django Rest Framework",
+    "section": "",
+    "text": "Actualizar el archivo requirements.txt",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#serializers",
+    "href": "unidades/unidad5/5_drf.html#serializers",
+    "title": "Django Rest Framework",
+    "section": "Serializers",
+    "text": "Serializers\nLos serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.\nPara crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import serializers\nfrom .models import Producto\n\nclass ProductoSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Producto\n        fields = '__all__'\nEn este caso, hemos creado un serializador para el modelo Task que hemos definido anteriormente. Hemos utilizado la clase ModelSerializer de Django Rest Framework para crear el serializador.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#views",
+    "href": "unidades/unidad5/5_drf.html#views",
+    "title": "Django Rest Framework",
+    "section": "Views",
+    "text": "Views\nLas vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.\nPara crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom django.shortcuts import render, redirect, get_object_or_404\nfrom rest_framework import viewsets, status\nfrom rest_framework.response import Response\nfrom .models import Producto\nfrom .serializers import ProductoSerializer\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer\n\ndef listar_productos(request):\n    productos = Producto.objects.all()\n    return render(request, 'listar.html', {'productos': productos})\n\ndef agregar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        precio = request.POST.get(\"precio\")\n        cantidad = request.POST.get(\"cantidad\")\n        Producto.objects.create(nombre=nombre, precio=precio, cantidad=cantidad) \n        return redirect('productos:listar_productos')\n    return render(request, \"agregar.html\")\n\ndef actualizar_producto(request, id):\n    producto = get_object_or_404(Producto, pk=id)\n    if request.method == 'POST':\n        nombre = request.POST.get('nombre')\n        precio = request.POST.get('precio')\n        cantidad = request.POST.get('cantidad')\n        \n        # Actualiza los campos del producto\n        producto.nombre = nombre\n        producto.precio = precio\n        producto.cantidad = cantidad\n        producto.save()\n        \n        return redirect('productos:listar_productos')\n    else:\n        return render(request, 'actualizar.html', {'producto': producto})\n\ndef eliminar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        try:\n            producto = Producto.objects.get(nombre=nombre)\n            producto.delete()\n        except Producto.DoesNotExist:\n            pass\n        \n        return redirect('productos:listar_productos')\n    return render(request, \"eliminar.html\")\n\ndef buscar_producto(request):\n    if request.method == \"POST\":\n        nombre = request.POST.get(\"nombre\")\n        try:\n            producto = Producto.objects.get(nombre=nombre)\n            return render(request, \"buscar.html\", {\"producto\": producto})\n        except Producto.DoesNotExist:\n            return render(request, \"buscar.html\", {\"producto\": None})\n    return render(request, \"buscar.html\")\nEn este caso, hemos creado una vista basada en conjuntos utilizando la clase ModelViewSet de Django Rest Framework. Hemos definido el queryset como todos los objetos de la clase Task y el serializer_class como el serializador que hemos creado anteriormente.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#urls",
+    "href": "unidades/unidad5/5_drf.html#urls",
+    "title": "Django Rest Framework",
+    "section": "URLs",
+    "text": "URLs\nPara conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom . import views, ProductosViewSet\n\nfrom rest_framework.routers import DefaultRouter\n\nrouter = DefaultRouter()\nrouter.register(r'productos', ProductosViewSet)\n\nurlpatterns = router.urls\nEn este caso, hemos utilizado el DefaultRouter de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista TaskViewSet con la ruta ‘tasks’.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#configuración",
+    "href": "unidades/unidad5/5_drf.html#configuración",
+    "title": "Django Rest Framework",
+    "section": "Configuración",
+    "text": "Configuración\nPara configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),\n    path('api/', include('productos.urls')),\n]\nEn este caso, hemos añadido la ruta ‘api/’ a las URLs del proyecto e incluido las URLs de nuestra aplicación tasks.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#migraciones",
+    "href": "unidades/unidad5/5_drf.html#migraciones",
+    "title": "Django Rest Framework",
+    "section": "Migraciones",
+    "text": "Migraciones\nAntes de utilizar nuestra API REST, debemos aplicar las migraciones necesarias para crear las tablas en la base de datos:\npython manage.py makemigrations\npython manage.py migrate",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#ejecución",
+    "href": "unidades/unidad5/5_drf.html#ejecución",
+    "title": "Django Rest Framework",
+    "section": "Ejecución",
+    "text": "Ejecución\nUna vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:\npython manage.py runserver\nEn este caso, la API estará disponible en la ruta ‘http://127.0.0.1:8000/api/tasks/’.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#urls-de-la-aplicación",
+    "href": "unidades/unidad5/5_drf.html#urls-de-la-aplicación",
+    "title": "Django Rest Framework",
+    "section": "URLs de la Aplicación",
+    "text": "URLs de la Aplicación\nPara conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom django.urls import path\nfrom . import views\n\napp_name = 'productos'\n\nurlpatterns = [\n    path('', views.listar_productos, name='listar_productos'),\n    path('agregar/', views.agregar_producto, name='agregar_producto'),\n    path('actualizar/&lt;int:id&gt;/', views.actualizar_producto, name='actualizar_producto'),\n    path('eliminar/', views.eliminar_producto, name='eliminar_producto'),\n    path('buscar/', views.buscar_producto, name='buscar_producto'),\n\n    # URL para el API\n    path('api/productos/', views.ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),\n    path('api/productos/&lt;int:pk&gt;/', views.ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),\n]\nEn este caso, hemos utilizado el DefaultRouter de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista TaskViewSet con la ruta ‘tasks’.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#configuración-urls-del-proyecto",
+    "href": "unidades/unidad5/5_drf.html#configuración-urls-del-proyecto",
+    "title": "Django Rest Framework",
+    "section": "Configuración URLs del Proyecto",
+    "text": "Configuración URLs del Proyecto\nPara configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import routers\nfrom productos.views import ProductoViewSet\n\n# Creamos un enrutador para las vistas de Django REST Framework\nrouter = routers.DefaultRouter()\nrouter.register(r'productos', ProductoViewSet)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),  # URLs de la aplicación 'productos'\n    path('api/', include(router.urls)),  # URLs de Django REST Framework\n]\nEn este caso, hemos añadido la ruta ‘api/’ a las URLs del proyecto e incluido las URLs de nuestra aplicación tasks.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
   }
 ]
