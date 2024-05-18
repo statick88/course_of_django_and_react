@@ -1111,7 +1111,7 @@
     "href": "unidades/unidad5/5_drf.html",
     "title": "Django Rest Framework",
     "section": "",
-    "text": "Actualizar el archivo requirements.txt",
+    "text": "Instalación\nPara instalar Django Rest Framework, ejecutamos el siguiente comando:\nUna vez instalado, añadimos ‘rest_framework’ a la lista de aplicaciones instaladas en el archivo settings.py:",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1122,7 +1122,7 @@
     "href": "unidades/unidad5/5_drf.html#serializers",
     "title": "Django Rest Framework",
     "section": "Serializers",
-    "text": "Serializers\nLos serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.\nPara crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import serializers\nfrom .models import Producto\n\nclass ProductoSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Producto\n        fields = '__all__'\nEn este caso, hemos creado un serializador para el modelo Task que hemos definido anteriormente. Hemos utilizado la clase ModelSerializer de Django Rest Framework para crear el serializador.",
+    "text": "Serializers\nLos serializadores nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.\nPara crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import serializers\nfrom .models import Producto\n\nclass ProductoSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Producto\n        fields = '__all__'",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1133,7 +1133,7 @@
     "href": "unidades/unidad5/5_drf.html#views",
     "title": "Django Rest Framework",
     "section": "Views",
-    "text": "Views\nLas vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.\nPara crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import viewsets\nfrom .serializers import ProductoSerializer\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer\nEn este caso, hemos creado una vista basada en conjuntos utilizando la clase ModelViewSet de Django Rest Framework. Hemos definido el queryset como todos los objetos de la clase Task y el serializer_class como el serializador que hemos creado anteriormente.",
+    "text": "Views\nLas vistas en Django Rest Framework son similares a las vistas en Django. En lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.\nPara crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom rest_framework import viewsets\nfrom .serializers import ProductoSerializer\nfrom .models import Producto\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1144,7 +1144,7 @@
     "href": "unidades/unidad5/5_drf.html#urls-de-la-aplicación",
     "title": "Django Rest Framework",
     "section": "URLs de la Aplicación",
-    "text": "URLs de la Aplicación\nPara conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\n\n...\n    # URL para el API\n    path('api/productos/', views.ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),\n    path('api/productos/&lt;int:pk&gt;/', views.ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),\n]\nEn este caso, hemos utilizado el DefaultRouter de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista TaskViewSet con la ruta ‘tasks’.",
+    "text": "URLs de la Aplicación\nPara conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:\nfrom django.urls import path\nfrom .views import ProductoViewSet\n\nurlpatterns = [\n    path('api/productos/', ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),\n    path('api/productos/&lt;int:pk&gt;/', ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),\n]",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1155,7 +1155,7 @@
     "href": "unidades/unidad5/5_drf.html#configuración-urls-del-proyecto",
     "title": "Django Rest Framework",
     "section": "Configuración URLs del Proyecto",
-    "text": "Configuración URLs del Proyecto\nPara configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import routers\nfrom productos.views import ProductoViewSet\n\n# Creamos un enrutador para las vistas de Django REST Framework\nrouter = routers.DefaultRouter()\nrouter.register(r'productos', ProductoViewSet)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),\n    path('api/', include(router.urls)),\n]\nEn este caso, hemos añadido la ruta ‘api/’ a las URLs del proyecto e incluido las URLs de nuestra aplicación tasks.",
+    "text": "Configuración URLs del Proyecto\nPara configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import routers\nfrom productos.views import ProductoViewSet\n\n# Creamos un enrutador para las vistas de Django REST Framework\nrouter = routers.DefaultRouter()\nrouter.register(r'productos', ProductoViewSet)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('productos.urls')),\n    path('api/', include(router.urls)),\n]",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1177,7 +1177,7 @@
     "href": "unidades/unidad5/5_drf.html#ejecución",
     "title": "Django Rest Framework",
     "section": "Ejecución",
-    "text": "Ejecución\nUna vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:\npython manage.py runserver\nEn este caso, la API estará disponible en la ruta ‘http://127.0.0.1:8000/api/tasks/’.",
+    "text": "Ejecución\nUna vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:\npython manage.py runserver\nEn este caso, la API estará disponible en la ruta ‘http://127.0.0.1:8000/api/productos/’.",
     "crumbs": [
       "Unidad 5: Django Fundamentos",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
@@ -1191,7 +1191,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -1492,5 +1492,192 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#instalación",
+    "href": "unidades/unidad5/5_drf.html#instalación",
+    "title": "Django Rest Framework",
+    "section": "",
+    "text": "pip install djangorestframework\n\nINSTALLED_APPS = [\n    ...\n    'rest_framework',\n]",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#actualizar-el-archivo-requirements.txt",
+    "href": "unidades/unidad5/5_drf.html#actualizar-el-archivo-requirements.txt",
+    "title": "Django Rest Framework",
+    "section": "Actualizar el archivo requirements.txt",
+    "text": "Actualizar el archivo requirements.txt\nEs necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando:\npip freeze &gt; requirements.txt",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_drf.html#primero-instalamos-coreapi",
+    "href": "unidades/unidad5/5_drf.html#primero-instalamos-coreapi",
+    "title": "Django Rest Framework",
+    "section": "Primero instalamos CoreAPI:",
+    "text": "Primero instalamos CoreAPI:\npip install coreapi\nPara generar la documentación automáticamente, agregamos la configuración en settings.py:\nREST_FRAMEWORK = {\n    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'\n}\nLuego, añadimos la vista de esquema en el archivo urls.py de la carpeta del proyecto:\nfrom rest_framework.schemas import get_schema_view\n\nschema_view = get_schema_view(title='API de Productos')\n\nurlpatterns += [\n    path('docs/', schema_view, name='api-docs'),\n]\nAhora podemos ejecutar el servidor de desarrollo y acceder a la documentación generada por CoreAPI en la ruta ‘/docs/’:\npython manage.py runserver\nCon estos pasos, hemos integrado Django Rest Framework, documentado nuestra API con drf-yasg y CoreAPI.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html",
+    "href": "unidades/unidad5/6_testing.html",
+    "title": "Testing",
+    "section": "",
+    "text": "Archivo pytest.ini:\nEn este archivo, se configuran las opciones para ejecutar pruebas con pytest.\nLa línea DJANGO_SETTINGS_MODULE = test_setting.py establece el módulo de configuración de Django que se utilizará durante las pruebas.\nLa línea python_files = test.py test_.py _test.py especifica los patrones de nombres de archivos que pytest buscará para ejecutar las pruebas.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#escribir-tests-para-las-vistas-de-la-api",
+    "href": "unidades/unidad5/6_testing.html#escribir-tests-para-las-vistas-de-la-api",
+    "title": "Testing",
+    "section": "2. Escribir Tests para las Vistas de la API",
+    "text": "2. Escribir Tests para las Vistas de la API\nEn el archivo test_views.py, añadimos los siguientes imports y configuramos los tests:\nfrom django.urls import reverse\nfrom rest_framework import status\nfrom rest_framework.test import APITestCase\nfrom .models import Producto\n\nclass ProductoTests(APITestCase):\n\n    def setUp(self):\n        # Crear algunos productos iniciales para las pruebas\n        self.producto1 = Producto.objects.create(nombre=\"Producto 1\", precio=10.0, descripcion=\"Descripción del Producto 1\")\n        self.producto2 = Producto.objects.create(nombre=\"Producto 2\", precio=20.0, descripcion=\"Descripción del Producto 2\")\n\n    def test_listar_productos(self):\n        \"\"\"\n        Prueba para listar todos los productos.\n        \"\"\"\n        url = reverse('api-productos')\n        response = self.client.get(url)\n        self.assertEqual(response.status_code, status.HTTP_200_OK)\n        self.assertEqual(len(response.data), 2)\n\n    def test_crear_producto(self):\n        \"\"\"\n        Prueba para crear un nuevo producto.\n        \"\"\"\n        url = reverse('api-productos')\n        data = {\n            'nombre': 'Producto 3',\n            'precio': 30.0,\n            'descripcion': 'Descripción del Producto 3'\n        }\n        response = self.client.post(url, data, format='json')\n        self.assertEqual(response.status_code, status.HTTP_201_CREATED)\n        self.assertEqual(Producto.objects.count(), 3)\n        self.assertEqual(Producto.objects.get(id=3).nombre, 'Producto 3')\n\n    def test_obtener_detalle_producto(self):\n        \"\"\"\n        Prueba para obtener el detalle de un producto.\n        \"\"\"\n        url = reverse('api-producto-detail', kwargs={'pk': self.producto1.pk})\n        response = self.client.get(url)\n        self.assertEqual(response.status_code, status.HTTP_200_OK)\n        self.assertEqual(response.data['nombre'], self.producto1.nombre)\n\n    def test_actualizar_producto(self):\n        \"\"\"\n        Prueba para actualizar un producto existente.\n        \"\"\"\n        url = reverse('api-producto-detail', kwargs={'pk': self.producto1.pk})\n        data = {\n            'nombre': 'Producto 1 Actualizado',\n            'precio': 15.0,\n            'descripcion': 'Descripción Actualizada del Producto 1'\n        }\n        response = self.client.put(url, data, format='json')\n        self.assertEqual(response.status_code, status.HTTP_200_OK)\n        self.producto1.refresh_from_db()\n        self.assertEqual(self.producto1.nombre, 'Producto 1 Actualizado')\n\n    def test_eliminar_producto(self):\n        \"\"\"\n        Prueba para eliminar un producto.\n        \"\"\"\n        url = reverse('api-producto-detail', kwargs={'pk': self.producto1.pk})\n        response = self.client.delete(url)\n        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)\n        self.assertEqual(Producto.objects.count(), 1)",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#ejecutar-los-tests",
+    "href": "unidades/unidad5/6_testing.html#ejecutar-los-tests",
+    "title": "Testing",
+    "section": "3. Ejecutar los Tests",
+    "text": "3. Ejecutar los Tests\nPara ejecutar los tests, utilizamos el siguiente comando:\npython manage.py test productos\nEsto ejecutará todos los tests definidos en la carpeta productos, incluyendo los tests que hemos definido en test_views.py.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#configurar-las-pruebas-de-autenticación-opcional",
+    "href": "unidades/unidad5/6_testing.html#configurar-las-pruebas-de-autenticación-opcional",
+    "title": "Testing",
+    "section": "4. Configurar las Pruebas de Autenticación (Opcional)",
+    "text": "4. Configurar las Pruebas de Autenticación (Opcional)\nSi tu API requiere autenticación, puedes configurar tus tests para manejar tokens o sesiones de usuario. Aquí hay un ejemplo de cómo hacerlo utilizando tokens de autenticación:\nfrom rest_framework.authtoken.models import Token\nfrom django.contrib.auth.models import User\n\nclass ProductoTests(APITestCase):\n\n    def setUp(self):\n        self.user = User.objects.create_user(username='testuser', password='testpassword')\n        self.token = Token.objects.create(user=self.user)\n        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)\n        self.producto1 = Producto.objects.create(nombre=\"Producto 1\", precio=10.0, descripcion=\"Descripción del Producto 1\")\n        self.producto2 = Producto.objects.create(nombre=\"Producto 2\", precio=20.0, descripcion=\"Descripción del Producto 2\")\n\n    # (los otros tests se mantienen igual)\nEn este caso, los tests usarán un token de autenticación para hacer las solicitudes a la API.\nCon estos pasos, hemos configurado y ejecutado tests para nuestra API de productos utilizando Django Rest Framework.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_correccion_test.html",
+    "href": "unidades/unidad5/7_correccion_test.html",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "",
+    "text": "Introducción\nEn este documento se describen los pasos necesarios para corregir los tests de Django Rest Framework.\nActualmente tenemos el siguiente error en los tests:",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_correccion_test.html#introducción",
+    "href": "unidades/unidad5/7_correccion_test.html#introducción",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "",
+    "text": "================================================== test session starts ===================================================\nplatform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0\nrootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django\ncollected 0 items / 1 error                                                                                              \n\n========================================================= ERRORS =========================================================\n________________________________________ ERROR collecting productos/test_views.py ________________________________________\nImportError while importing test module '/home/statick/workspaces/Curso_django_and_react/inventario_django/productos/test_views.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib64/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\nproductos/test_views.py:1: in &lt;module&gt;\n    from django.urls import reverse\nE   ModuleNotFoundError: No module named 'django'\n================================================ short test summary info =================================================\nERROR productos/test_views.py\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n==================================================== 1 error in 0.07s ====================================================",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_correccion_test.html#pasos",
+    "href": "unidades/unidad5/7_correccion_test.html#pasos",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Pasos",
+    "text": "Pasos\n\n1. Crear un entorno virtual\npython3 -m venv venv\n\n\n2. Activar el entorno virtual\nsource venv/bin/activate\n\n\n3. Instalar las dependencias\npip install -r requirements.txt\n\n\n4. Correr los tests\npytest\n\n\n5. Corregir los tests\nPara corregir los tests, se debe modificar el archivo productos/test_views.py y corregir el error de importación.\n\n\n6. Correr los tests nuevamente\npytest\n\n\n7. Desactivar el entorno virtual\ndeactivate",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#test-para-listar-productos",
+    "href": "unidades/unidad5/6_testing.html#test-para-listar-productos",
+    "title": "Testing",
+    "section": "",
+    "text": "Código del Test\nPrimero, creamos el archivo test_views.py si no existe, y añadimos el siguiente código:\nfrom django.urls import reverse\nfrom rest_framework import status\nfrom rest_framework.test import APITestCase\nfrom .models import Producto\n\nclass ProductoTests(APITestCase):\n\n    def setUp(self):\n        # Crear algunos productos iniciales para las pruebas\n        self.producto1 = Producto.objects.create(nombre=\"Producto 1\", precio=10.0, cantidad = 10)\n        self.producto2 = Producto.objects.create(nombre=\"Producto 2\", precio=20.0, cantidad = 2 )\n\n    def test_listar_productos(self):\n        \"\"\"\n        Prueba para listar todos los productos.\n        \"\"\"\n        url = reverse('api-productos')\n        response = self.client.get(url)\n        self.assertEqual(response.status_code, status.HTTP_200_OK)\n        self.assertEqual(len(response.data), 2)\n\n\nExplicación\nImports Necesarios:\nfrom django.urls import reverse\nfrom rest_framework import status\nfrom rest_framework.test import APITestCase\nfrom .models import Producto\nImportamos las herramientas necesarias de Django y Django Rest Framework para crear y ejecutar los tests.\nClase de Pruebas:\nclass ProductoTests(APITestCase):\nDefinimos una clase que hereda de APITestCase, la cual proporciona métodos y herramientas para testear APIs.\nMétodo setUp:\ndef setUp(self):\n    self.producto1 = Producto.objects.create(nombre=\"Producto 1\", precio=10.0, descripcion=\"Descripción del Producto 1\")\n    self.producto2 = Producto.objects.create(nombre=\"Producto 2\", precio=20.0, descripcion=\"Descripción del Producto 2\")\nEl método setUp se ejecuta antes de cada test. Aquí creamos dos productos en la base de datos que se usarán en los tests.\nTest para Listar Productos:\n    def test_listar_productos(self):\n        url = reverse('api-productos')\n        response = self.client.get(url)\n        self.assertEqual(response.status_code, status.HTTP_200_OK)\n        self.assertEqual(len(response.data), 2)\nURL: Utilizamos reverse(‘api-productos’) para obtener la URL de la vista de la API que lista los productos. Petición: Hacemos una petición GET a esa URL. **Asserts: self.assertEqual(response.status_code, status.HTTP_200_OK): Verificamos que la respuesta tenga un status 200 OK. self.assertEqual(len(response.data), 2): Verificamos que la longitud de los datos en la respuesta sea 2 (los productos que creamos en setUp).",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#ejecutar-el-test",
+    "href": "unidades/unidad5/6_testing.html#ejecutar-el-test",
+    "title": "Testing",
+    "section": "Ejecutar el Test",
+    "text": "Ejecutar el Test\nPara ejecutar este test, utilizamos el siguiente comando en la terminal:\npython manage.py test productos\nSi el test es exitoso, deberíamos ver una salida indicando que el test pasó correctamente.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_correccion_test.html#conclusión",
+    "href": "unidades/unidad5/7_correccion_test.html#conclusión",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Conclusión",
+    "text": "Conclusión\nUna vez corregidos los tests, se debe hacer un pull request al repositorio original.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_correccion_test.html#referencias",
+    "href": "unidades/unidad5/7_correccion_test.html#referencias",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Referencias",
+    "text": "Referencias\n\nDjango Rest Framework\nDjango\npytest\nVirtualenv\nPython\nGit\nGitHub\nMarkdown\nPip",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#archivo-pytest.ini",
+    "href": "unidades/unidad5/6_testing.html#archivo-pytest.ini",
+    "title": "Testing",
+    "section": "",
+    "text": "[pytest]\n\nDJANGO_SETTINGS_MODULE = test_setting\n\npython_files = test.py test_*.py *_test.py",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#creación-del-directorio-test",
+    "href": "unidades/unidad5/6_testing.html#creación-del-directorio-test",
+    "title": "Testing",
+    "section": "Creación del directorio test:",
+    "text": "Creación del directorio test:\nDebes crear un directorio llamado test dentro del directorio de tu aplicación (en este caso, la aplicación se llama “productos”).\nEste directorio contendrá tus archivos de prueba.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_testing.html#archivo-productos_test.py",
+    "href": "unidades/unidad5/6_testing.html#archivo-productos_test.py",
+    "title": "Testing",
+    "section": "Archivo productos_test.py:",
+    "text": "Archivo productos_test.py:\nEn este archivo, se definen las pruebas para la clase Producto del modelo.\nLas pruebas se ejecutan en una base de datos de prueba ((pytest.mark.django_db?)).\nLas dos funciones de prueba son:\ntest_producto(): Crea un objeto Producto y verifica que sus atributos sean correctos.\ntest_producto_str(): Verifica que el método str del modelo Producto devuelva el nombre correcto.",
+    "crumbs": [
+      "Unidad 5: Django Fundamentos",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Testing</span>"
+    ]
   }
 ]

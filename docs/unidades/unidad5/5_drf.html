@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/ejercicios/ejercicios_git_github-000.html" rel="next">
+<link href="../../unidades/unidad5/6_testing.html" rel="next">
 <link href="../../unidades/unidad5/4_modelos_vistas_plantillas.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -318,6 +318,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../unidades/unidad5/5_drf.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Django Rest Framework</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/6_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6_testing.html</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -366,16 +371,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#actualizar-el-archivo-requirements.txt" id="toc-actualizar-el-archivo-requirements.txt" class="nav-link active" data-scroll-target="#actualizar-el-archivo-requirements.txt">Actualizar el archivo requirements.txt</a>
-  <ul class="collapse">
+  <li><a href="#instalación" id="toc-instalación" class="nav-link active" data-scroll-target="#instalación">Instalación</a></li>
+  <li><a href="#actualizar-el-archivo-requirements.txt" id="toc-actualizar-el-archivo-requirements.txt" class="nav-link" data-scroll-target="#actualizar-el-archivo-requirements.txt">Actualizar el archivo requirements.txt</a></li>
   <li><a href="#serializers" id="toc-serializers" class="nav-link" data-scroll-target="#serializers">Serializers</a></li>
   <li><a href="#views" id="toc-views" class="nav-link" data-scroll-target="#views">Views</a></li>
   <li><a href="#urls-de-la-aplicación" id="toc-urls-de-la-aplicación" class="nav-link" data-scroll-target="#urls-de-la-aplicación">URLs de la Aplicación</a></li>
   <li><a href="#configuración-urls-del-proyecto" id="toc-configuración-urls-del-proyecto" class="nav-link" data-scroll-target="#configuración-urls-del-proyecto">Configuración URLs del Proyecto</a></li>
   <li><a href="#migraciones" id="toc-migraciones" class="nav-link" data-scroll-target="#migraciones">Migraciones</a></li>
   <li><a href="#ejecución" id="toc-ejecución" class="nav-link" data-scroll-target="#ejecución">Ejecución</a></li>
+  <li><a href="#documentación-de-la-api-con-drf-yasg" id="toc-documentación-de-la-api-con-drf-yasg" class="nav-link" data-scroll-target="#documentación-de-la-api-con-drf-yasg">Documentación de la API con drf-yasg</a></li>
+  <li><a href="#documentación-de-la-api-con-coreapi" id="toc-documentación-de-la-api-con-coreapi" class="nav-link" data-scroll-target="#documentación-de-la-api-con-coreapi">Documentación de la API con CoreAPI</a>
+  <ul class="collapse">
+  <li><a href="#primero-instalamos-coreapi" id="toc-primero-instalamos-coreapi" class="nav-link" data-scroll-target="#primero-instalamos-coreapi">Primero instalamos CoreAPI:</a></li>
   </ul></li>
-  <li><a href="#extra-documentación-de-la-api" id="toc-extra-documentación-de-la-api" class="nav-link" data-scroll-target="#extra-documentación-de-la-api">Extra, Documentación de la API</a></li>
   </ul>
 </nav>
     </div>
@@ -403,33 +411,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Django Rest Framework es una librería que nos permite crear APIs REST de una forma sencilla y rápida.</p>
 <p>En el proyecto que hemos iniciado vamos a utilizar Django Rest Framework para crear una API REST que nos permita gestionar los datos de nuestra aplicación.</p>
+<section id="instalación" class="level2">
+<h2 class="anchored" data-anchor-id="instalación">Instalación</h2>
 <p>Para instalar Django Rest Framework, ejecutamos el siguiente comando:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install djangorestframework</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Una vez instalado, añadimos <strong>‘rest_framework’</strong> a la lista de aplicaciones instaladas en el archivo <strong>settings.py</strong>:</p>
+<p>Una vez instalado, añadimos <strong>‘rest_framework’</strong> a la lista de aplicaciones instaladas en el archivo settings.py:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rest_framework'</span>,</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="actualizar-el-archivo-requirements.txt" class="level1">
-<h1>Actualizar el archivo requirements.txt</h1>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando</p>
-</div>
-</div>
+</section>
+<section id="actualizar-el-archivo-requirements.txt" class="level2">
+<h2 class="anchored" data-anchor-id="actualizar-el-archivo-requirements.txt">Actualizar el archivo requirements.txt</h2>
+<p>Es necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="serializers" class="level2">
 <h2 class="anchored" data-anchor-id="serializers">Serializers</h2>
-<p>Los serializadores son una parte fundamental de Django Rest Framework. Nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.</p>
-<p>Para crear un serializador, creamos un archivo <strong>serializers.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<p>Los serializadores nos permiten convertir los datos de nuestro modelo en un formato que pueda ser fácilmente consumido por una API REST.</p>
+<p>Para crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Producto</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -437,34 +437,33 @@ Tip
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Producto</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> <span class="st">'__all__'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, hemos creado un serializador para el modelo <strong>Task</strong> que hemos definido anteriormente. Hemos utilizado la clase <strong>ModelSerializer</strong> de Django Rest Framework para crear el serializador.</p>
 </section>
 <section id="views" class="level2">
 <h2 class="anchored" data-anchor-id="views">Views</h2>
-<p>Las vistas en Django Rest Framework son similares a las vistas en Django. Sin embargo, en lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.</p>
-<p>Para crear una vista, creamos un archivo <strong>views.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<p>Las vistas en Django Rest Framework son similares a las vistas en Django. En lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.</p>
+<p>Para crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> viewsets</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> ProductoSerializer</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProductoViewSet(viewsets.ModelViewSet):</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Producto.objects.<span class="bu">all</span>()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> ProductoSerializer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, hemos creado una vista basada en conjuntos utilizando la clase <strong>ModelViewSet</strong> de Django Rest Framework. Hemos definido el <strong>queryset</strong> como todos los objetos de la clase <strong>Task</strong> y el <strong>serializer_class</strong> como el serializador que hemos creado anteriormente.</p>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Producto</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProductoViewSet(viewsets.ModelViewSet):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    queryset <span class="op">=</span> Producto.objects.<span class="bu">all</span>()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    serializer_class <span class="op">=</span> ProductoSerializer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="urls-de-la-aplicación" class="level2">
 <h2 class="anchored" data-anchor-id="urls-de-la-aplicación">URLs de la Aplicación</h2>
-<p>Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo <strong>urls.py</strong> en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># URL para el API</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/'</span>, views.ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'list'</span>, <span class="st">'post'</span>: <span class="st">'create'</span>}), name<span class="op">=</span><span class="st">'api-productos'</span>),</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/&lt;int:pk&gt;/'</span>, views.ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'retrieve'</span>, <span class="st">'put'</span>: <span class="st">'update'</span>, <span class="st">'delete'</span>: <span class="st">'destroy'</span>}), name<span class="op">=</span><span class="st">'api-producto-detail'</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, hemos utilizado el <strong>DefaultRouter</strong> de Django Rest Framework para crear las URLs de nuestra API. Hemos registrado la vista <strong>TaskViewSet</strong> con la ruta <strong>‘tasks’</strong>.</p>
+<p>Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un archivo urls.py en la carpeta de nuestra aplicación y añadimos el siguiente código:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> ProductoViewSet</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/'</span>, ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'list'</span>, <span class="st">'post'</span>: <span class="st">'create'</span>}), name<span class="op">=</span><span class="st">'api-productos'</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/productos/&lt;int:pk&gt;/'</span>, ProductoViewSet.as_view({<span class="st">'get'</span>: <span class="st">'retrieve'</span>, <span class="st">'put'</span>: <span class="st">'update'</span>, <span class="st">'delete'</span>: <span class="st">'destroy'</span>}), name<span class="op">=</span><span class="st">'api-producto-detail'</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="configuración-urls-del-proyecto" class="level2">
 <h2 class="anchored" data-anchor-id="configuración-urls-del-proyecto">Configuración URLs del Proyecto</h2>
-<p>Para configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo <strong>urls.py</strong> de la carpeta del proyecto:</p>
+<p>Para configurar nuestra API REST, añadimos las URLs de nuestra aplicación a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.contrib <span class="im">import</span> admin</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path, include</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> routers</span>
@@ -479,7 +478,6 @@ Tip
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, include(<span class="st">'productos.urls'</span>)),</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/'</span>, include(router.urls)),</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, hemos añadido la ruta <strong>‘api/’</strong> a las URLs del proyecto e incluido las URLs de nuestra aplicación <strong>tasks</strong>.</p>
 </section>
 <section id="migraciones" class="level2">
 <h2 class="anchored" data-anchor-id="migraciones">Migraciones</h2>
@@ -491,54 +489,75 @@ Tip
 <h2 class="anchored" data-anchor-id="ejecución">Ejecución</h2>
 <p>Una vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, la API estará disponible en la ruta <strong>‘http://127.0.0.1:8000/api/tasks/’</strong>.</p>
+<p>En este caso, la API estará disponible en la ruta ‘http://127.0.0.1:8000/api/productos/’.</p>
 </section>
-</section>
-<section id="extra-documentación-de-la-api" class="level1">
-<h1>Extra, Documentación de la API</h1>
-<p>Primero instalamos el paquete de documentación de la API</p>
+<section id="documentación-de-la-api-con-drf-yasg" class="level1">
+<h1>Documentación de la API con drf-yasg</h1>
+<p>Primero instalamos el paquete de documentación de la API:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install drf-yasg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego, añadimos <strong>‘drf_yasg’</strong> a la lista de aplicaciones instaladas en el archivo <strong>settings.py</strong>:</p>
+<p>Luego, añadimos ‘drf_yasg’ a la lista de aplicaciones instaladas en el archivo settings.py:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'drf_yasg'</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Añadimos las URLs de la documentación de la API a las URLs del proyecto en el archivo <strong>urls.py</strong> de la carpeta del proyecto:</p>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Añadimos las URLs de la documentación de la API a las URLs del proyecto en el archivo urls.py de la carpeta del proyecto:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path, include</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> routers</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> ProductoViewSet</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> productos.views <span class="im">import</span> ProductoViewSet</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.permissions <span class="im">import</span> AllowAny</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg.views <span class="im">import</span> get_schema_view</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg <span class="im">import</span> openapi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego crea una instancia de Django Rest Framework para registrar las vistas de la API:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> routers.DefaultRouter()</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'productos'</span>, ProductoViewSet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Después, crea una instancia de get_schema_view para configurar la documentación:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>schema_view <span class="op">=</span> get_schema_view(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   openapi.Info(</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">"API de Productos"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      default_version<span class="op">=</span><span class="st">'v1'</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      description<span class="op">=</span><span class="st">"Documentación de la API de Productos"</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      terms_of_service<span class="op">=</span><span class="st">"https://www.google.com/policies/terms/"</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      contact<span class="op">=</span>openapi.Contact(email<span class="op">=</span><span class="st">"contact@example.com"</span>),</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>      license<span class="op">=</span>openapi.License(name<span class="op">=</span><span class="st">"BSD License"</span>),</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>   ),</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>   public<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>   permission_classes<span class="op">=</span>(AllowAny,),</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Definimos las URLs de la documentación de la API:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'swagger/'</span>, schema_view.with_ui(<span class="st">'swagger'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-swagger-ui'</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'redoc/'</span>, schema_view.with_ui(<span class="st">'redoc'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-redoc'</span>),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finalmente instalamos el paquete <strong>setuptools</strong> para poder instalar el paquete de documentación de la API:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install setuptools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg <span class="im">import</span> openapi</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>router <span class="op">=</span> routers.DefaultRouter()</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>router.register(<span class="vs">r'productos'</span>, ProductoViewSet)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>schema_view <span class="op">=</span> get_schema_view(</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>   openapi.Info(</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">"API de Productos"</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      default_version<span class="op">=</span><span class="st">'v1'</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      description<span class="op">=</span><span class="st">"Documentación de la API de Productos"</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      terms_of_service<span class="op">=</span><span class="st">"https://www.google.com/policies/terms/"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      contact<span class="op">=</span>openapi.Contact(email<span class="op">=</span><span class="st">"contact@example.com"</span>),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      license<span class="op">=</span>openapi.License(name<span class="op">=</span><span class="st">"BSD License"</span>),</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>   ),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>   public<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>   permission_classes<span class="op">=</span>(AllowAny,),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'admin/'</span>, admin.site.urls),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, include(<span class="st">'productos.urls'</span>)),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/'</span>, include(router.urls)),</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'swagger/'</span>, schema_view.with_ui(<span class="st">'swagger'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-swagger-ui'</span>),</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'redoc/'</span>, schema_view.with_ui(<span class="st">'redoc'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-redoc'</span>),</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Una vez configurada la documentación de la API, podemos ejecutar el servidor de desarrollo de Django y acceder a la documentación de la API a través de un navegador:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="documentación-de-la-api-con-coreapi" class="level1">
+<h1>Documentación de la API con CoreAPI</h1>
+<p>CoreAPI es una biblioteca que facilita la creación y el consumo de APIs.</p>
+<section id="primero-instalamos-coreapi" class="level2">
+<h2 class="anchored" data-anchor-id="primero-instalamos-coreapi">Primero instalamos CoreAPI:</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install coreapi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para generar la documentación automáticamente, agregamos la configuración en settings.py:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>REST_FRAMEWORK <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DEFAULT_SCHEMA_CLASS'</span>: <span class="st">'rest_framework.schemas.coreapi.AutoSchema'</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego, añadimos la vista de esquema en el archivo urls.py de la carpeta del proyecto:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.schemas <span class="im">import</span> get_schema_view</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>schema_view <span class="op">=</span> get_schema_view(title<span class="op">=</span><span class="st">'API de Productos'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">+=</span> [</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'docs/'</span>, schema_view, name<span class="op">=</span><span class="st">'api-docs'</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora podemos ejecutar el servidor de desarrollo y acceder a la documentación generada por CoreAPI en la ruta ‘/docs/’:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con estos pasos, hemos integrado Django Rest Framework, documentado nuestra API con drf-yasg y CoreAPI.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1109,8 +1128,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="pagination-link" aria-label="Ejercicios de Git y Github">
-        <span class="nav-page-text"><span class="chapter-title">Ejercicios de Git y Github</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad5/6_testing.html" class="pagination-link" aria-label="6_testing.html">
+        <span class="nav-page-text"><span class="chapter-title">6_testing.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Django y React 2024 - Ejercicios de Git y Github</title>
+<title>Django y React 2024 - Corrección de tests en Django Rest Framework</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/ejercicios/ejercicios_python-001.html" rel="next">
-<link href="../../unidades/unidad5/7_correccion_test.html" rel="prev">
+<link href="../../unidades/ejercicios/ejercicios_git_github-000.html" rel="next">
+<link href="../../unidades/unidad5/6_testing.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/ejercicios/ejercicios_git_github-000.html">Ejercicios</a></li><li class="breadcrumb-item"><a href="../../unidades/ejercicios/ejercicios_git_github-000.html"><span class="chapter-title">Ejercicios de Git y Github</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -286,13 +252,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Unidad 5: Django Fundamentos</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad5/1_django_fundamentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
@@ -325,23 +291,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
+  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Ejercicios</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Ejercicios de Git y Github</span></a>
+  <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios de Git y Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -376,20 +342,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
-  <li><a href="#ejercicio-5" id="toc-ejercicio-5" class="nav-link" data-scroll-target="#ejercicio-5">Ejercicio 5</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#pasos" id="toc-pasos" class="nav-link" data-scroll-target="#pasos">Pasos</a>
+  <ul class="collapse">
+  <li><a href="#crear-un-entorno-virtual" id="toc-crear-un-entorno-virtual" class="nav-link" data-scroll-target="#crear-un-entorno-virtual">1. Crear un entorno virtual</a></li>
+  <li><a href="#activar-el-entorno-virtual" id="toc-activar-el-entorno-virtual" class="nav-link" data-scroll-target="#activar-el-entorno-virtual">2. Activar el entorno virtual</a></li>
+  <li><a href="#instalar-las-dependencias" id="toc-instalar-las-dependencias" class="nav-link" data-scroll-target="#instalar-las-dependencias">3. Instalar las dependencias</a></li>
+  <li><a href="#correr-los-tests" id="toc-correr-los-tests" class="nav-link" data-scroll-target="#correr-los-tests">4. Correr los tests</a></li>
+  <li><a href="#corregir-los-tests" id="toc-corregir-los-tests" class="nav-link" data-scroll-target="#corregir-los-tests">5. Corregir los tests</a></li>
+  <li><a href="#correr-los-tests-nuevamente" id="toc-correr-los-tests-nuevamente" class="nav-link" data-scroll-target="#correr-los-tests-nuevamente">6. Correr los tests nuevamente</a></li>
+  <li><a href="#desactivar-el-entorno-virtual" id="toc-desactivar-el-entorno-virtual" class="nav-link" data-scroll-target="#desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</a></li>
+  </ul></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/ejercicios/ejercicios_git_github-000.html">Ejercicios</a></li><li class="breadcrumb-item"><a href="../../unidades/ejercicios/ejercicios_git_github-000.html"><span class="chapter-title">Ejercicios de Git y Github</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django Fundamentos</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Ejercicios de Git y Github</span></h1>
+<h1 class="title"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></h1>
 </div>
 
 
@@ -406,111 +380,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="ejercicio-1" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
-<ol type="1">
-<li>Crear un repositorio en Github</li>
-<li>Clonar el repositorio en tu computadora</li>
-<li>Crear un archivo de texto con tu nombre y subirlo al repositorio</li>
-<li>Hacer un commit con el mensaje “Agrego mi nombre”</li>
-<li>Hacer un push al repositorio</li>
-</ol>
-<details>
-<summary>
-Respuesta:
-</summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone [url del repositorio]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [nombre del repositorio]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Mi nombre es: [Tu nombre]"</span> <span class="op">&gt;</span> nombre.txt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add nombre.txt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agrego mi nombre"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>En este documento se describen los pasos necesarios para corregir los tests de Django Rest Framework.</p>
+<p>Actualmente tenemos el siguiente error en los tests:</p>
+<pre class="shell"><code>================================================== test session starts ===================================================
+platform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0
+rootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django
+collected 0 items / 1 error                                                                                              
+
+========================================================= ERRORS =========================================================
+________________________________________ ERROR collecting productos/test_views.py ________________________________________
+ImportError while importing test module '/home/statick/workspaces/Curso_django_and_react/inventario_django/productos/test_views.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+productos/test_views.py:1: in &lt;module&gt;
+    from django.urls import reverse
+E   ModuleNotFoundError: No module named 'django'
+================================================ short test summary info =================================================
+ERROR productos/test_views.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+==================================================== 1 error in 0.07s ====================================================</code></pre>
 </section>
-<section id="ejercicio-2" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
-<ol type="1">
-<li>Crear un repositorio en Github</li>
-<li>Clonar el repositorio en tu computadora</li>
-<li>Crear un archivo de python que imprima tu nombre</li>
-<li>Hacer un commit con el mensaje “Agrego archivo de python”</li>
-<li>Hacer un push al repositorio</li>
-</ol>
-<details>
-<summary>
-Respuesta:
-</summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone [url del repositorio]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [nombre del repositorio]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"print('Mi nombre es: [Tu nombre]')"</span> <span class="op">&gt;</span> nombre.py</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add nombre.py</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agrego archivo de python"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="pasos" class="level2">
+<h2 class="anchored" data-anchor-id="pasos">Pasos</h2>
+<section id="crear-un-entorno-virtual" class="level3">
+<h3 class="anchored" data-anchor-id="crear-un-entorno-virtual">1. Crear un entorno virtual</h3>
+<pre class="shell"><code>python3 -m venv venv</code></pre>
 </section>
-<section id="ejercicio-3" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
-<ol type="1">
-<li>Crear un repositorio en Github</li>
-<li>Clonar el repositorio en tu computadora</li>
-<li>Crear un archivo de python que imprima un saludo de bienvenida</li>
-<li>Hacer un commit con el mensaje “Agrego saludo de bienvenida”</li>
-<li>Hacer un push al repositorio</li>
-</ol>
-<details>
-<summary>
-Respuesta:
-</summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone [url del repositorio]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [nombre del repositorio]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"print('Hola, bienvenido')"</span> <span class="op">&gt;</span> saludo.py</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add saludo.py</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agrego saludo de bienvenida"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="activar-el-entorno-virtual" class="level3">
+<h3 class="anchored" data-anchor-id="activar-el-entorno-virtual">2. Activar el entorno virtual</h3>
+<pre class="shell"><code>source venv/bin/activate</code></pre>
 </section>
-<section id="ejercicio-4" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
-<ol type="1">
-<li>Crear un repositorio en Github</li>
-<li>Clonar el repositorio en tu computadora</li>
-<li>Crear un archivo de python que imprima un saludo de despedida</li>
-<li>Hacer un commit con el mensaje “Agrego saludo de despedida”</li>
-<li>Hacer un push al repositorio</li>
-</ol>
-<details>
-<summary>
-Respuesta:
-</summary>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone [url del repositorio]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [nombre del repositorio]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"print('Adios, hasta luego')"</span> <span class="op">&gt;</span> despedida.py</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add despedida.py</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agrego saludo de despedida"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="instalar-las-dependencias" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-las-dependencias">3. Instalar las dependencias</h3>
+<pre class="shell"><code>pip install -r requirements.txt</code></pre>
 </section>
-<section id="ejercicio-5" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h3>
-<ol type="1">
-<li>Crear un repositorio en Github</li>
-<li>Clonar el repositorio en tu computadora</li>
-<li>Crear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida</li>
-<li>Hacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”</li>
-<li>Hacer un push al repositorio</li>
-</ol>
-<details>
-<summary>
-Respuesta:
-</summary>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone [url del repositorio]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [nombre del repositorio]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"print('Hola, bienvenido')"</span> <span class="op">&gt;</span> saludo.py</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"print('Adios, hasta luego')"</span> <span class="op">&gt;</span> despedida.py</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add saludo.py despedida.py</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Agrego saludo de bienvenida y despedida"</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="correr-los-tests" class="level3">
+<h3 class="anchored" data-anchor-id="correr-los-tests">4. Correr los tests</h3>
+<pre class="shell"><code>pytest</code></pre>
+</section>
+<section id="corregir-los-tests" class="level3">
+<h3 class="anchored" data-anchor-id="corregir-los-tests">5. Corregir los tests</h3>
+<p>Para corregir los tests, se debe modificar el archivo <code>productos/test_views.py</code> y corregir el error de importación.</p>
+</section>
+<section id="correr-los-tests-nuevamente" class="level3">
+<h3 class="anchored" data-anchor-id="correr-los-tests-nuevamente">6. Correr los tests nuevamente</h3>
+<pre class="shell"><code>pytest</code></pre>
+</section>
+<section id="desactivar-el-entorno-virtual" class="level3">
+<h3 class="anchored" data-anchor-id="desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</h3>
+<pre class="shell"><code>deactivate</code></pre>
+</section>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
+<p>Una vez corregidos los tests, se debe hacer un pull request al repositorio original.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://www.django-rest-framework.org/">Django Rest Framework</a></li>
+<li><a href="https://www.djangoproject.com/">Django</a></li>
+<li><a href="https://docs.pytest.org/en/latest/">pytest</a></li>
+<li><a href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a></li>
+<li><a href="https://www.python.org/">Python</a></li>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://www.github.com/">GitHub</a></li>
+<li><a href="https://www.markdownguide.org/">Markdown</a></li>
+<li><a href="https://pypi.org/project/pip/">Pip</a></li>
+</ul>
 
 
 </section>
@@ -1078,13 +1019,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad5/7_correccion_test.html" class="pagination-link" aria-label="Corrección de tests en Django Rest Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></span>
+      <a href="../../unidades/unidad5/6_testing.html" class="pagination-link" aria-label="Testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/ejercicios/ejercicios_python-001.html" class="pagination-link" aria-label="Ejercicios Python - Nivel 1">
-        <span class="nav-page-text"><span class="chapter-title">Ejercicios Python - Nivel 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="pagination-link" aria-label="Ejercicios de Git y Github">
+        <span class="nav-page-text"><span class="chapter-title">Ejercicios de Git y Github</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
