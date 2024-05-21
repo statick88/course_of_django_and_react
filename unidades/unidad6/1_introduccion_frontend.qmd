@@ -31,11 +31,11 @@ Un documento HTML tiene una estructura básica que debe seguir. Esta estructura 
 
 A continuación se describen las partes de un documento HTML:
 
-- **<!DOCTYPE html>**: Define la versión de HTML que se está utilizando. En este caso, HTML 5.
-- **<html>**: Es el elemento raíz de un documento HTML.
-- **<head>**: Contiene información sobre el documento, como su título.
-- **<title>**: Define el título de la página, que se muestra en la pestaña del navegador.
-- **<body>**: Contiene el contenido de la página, como texto, imágenes, videos, etc.
+- **!DOCTYPE html**: Define la versión de HTML que se está utilizando. En este caso, HTML 5.
+- **html**: Es el elemento raíz de un documento HTML.
+- **head**: Contiene información sobre el documento, como su título.
+- **title**: Define el título de la página, que se muestra en la pestaña del navegador.
+- **body**: Contiene el contenido de la página, como texto, imágenes, videos, etc.
 
 ## Etiquetas HTML
 
