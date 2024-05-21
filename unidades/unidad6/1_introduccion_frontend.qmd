@@ -1,0 +1,111 @@
+# Introducción a HTML
+
+HTML es un lenguaje de marcado que se utiliza para el desarrollo de páginas de internet. Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros. Es un estándar a cargo del W3C, organización dedicada a la estandarización de casi todas las tecnologías ligadas a la web, sobre todo en lo referente a su escritura e interpretación. Se considera el lenguaje más importante en el desarrollo de páginas web.
+
+HTML se escribe en forma de "etiquetas", rodeadas por corchetes angulares (<,>). HTML también puede describir, hasta un cierto punto, la apariencia de un documento, y puede incluir un script (por ejemplo JavaScript), el cual puede afectar el comportamiento de navegadores web y otros procesadores de HTML.
+
+HTML se ha desarrollado en diferentes versiones, llamadas "versiones de HTML". Sin embargo, su núcleo es siempre el mismo: definir la estructura de una página web. Las versiones de HTML son:
+
+- HTML 2
+- HTML 3
+- HTML 4
+- HTML 5
+
+HTML 5 es la última versión de HTML, y es la que se utiliza actualmente.
+
+## Estructura básica de un documento HTML
+
+Un documento HTML tiene una estructura básica que debe seguir. Esta estructura es la siguiente:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Título de la página</title>
+    </head>
+    <body>
+        <!-- Contenido de la página -->
+    </body>
+</html>
+```
+
+A continuación se describen las partes de un documento HTML:
+
+- **<!DOCTYPE html>**: Define la versión de HTML que se está utilizando. En este caso, HTML 5.
+- **<html>**: Es el elemento raíz de un documento HTML.
+- **<head>**: Contiene información sobre el documento, como su título.
+- **<title>**: Define el título de la página, que se muestra en la pestaña del navegador.
+- **<body>**: Contiene el contenido de la página, como texto, imágenes, videos, etc.
+
+## Etiquetas HTML
+
+Las etiquetas HTML son los bloques de construcción de un documento HTML. Las etiquetas se utilizan para definir la estructura y el contenido de la página. Cada etiqueta tiene un propósito específico y puede contener otros elementos HTML.
+
+A continuación se muestran algunas etiquetas HTML comunes:
+
+- **<h1> a <h6>**: Define encabezados de diferentes tamaños.
+- **<p>**: Define un párrafo de texto.
+- **<a>**: Define un enlace a otra página.
+- **<img>**: Define una imagen.
+- **<ul>**: Define una lista desordenada.
+- **<ol>**: Define una lista ordenada.
+- **<li>**: Define un elemento de lista.
+- **<table>**: Define una tabla.
+- **<tr>**: Define una fila en una tabla.
+- **<td>**: Define una celda en una tabla.
+- **<div>**: Define una sección genérica de una página.
+- **<span>**: Define una sección en línea de una página.
+
+## Atributos HTML
+
+Los atributos HTML proporcionan información adicional sobre los elementos HTML. Los atributos se especifican en la etiqueta de inicio y se utilizan para modificar el comportamiento o la apariencia del elemento.
+
+A continuación se muestran algunos atributos HTML comunes:
+
+- **href**: Especifica la URL de destino de un enlace.
+- **src**: Especifica la URL de origen de una imagen.
+- **alt**: Especifica un texto alternativo para una imagen.
+- **width**: Especifica el ancho de un elemento.
+- **height**: Especifica la altura de un elemento.
+- **style**: Especifica estilos CSS para un elemento.
+
+## Ejemplo de un documento HTML
+
+A continuación se muestra un ejemplo de un documento HTML básico que contiene un encabezado, un párrafo de texto y una imagen:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo de HTML</title>
+    </head>
+    <body>
+        <h1>Este es un encabezado</h1>
+        <p>Este es un párrafo de texto.</p>
+        <img src="imagen.jpg" alt="Una imagen">
+    </body>
+</html>
+```
+
+En este ejemplo, se define un encabezado de nivel 1 con el texto "Este es un encabezado", un párrafo de texto con el texto "Este es un párrafo de texto" y una imagen con la URL "imagen.jpg" y el texto alternativo "Una imagen".
+
+## Recursos adicionales
+
+- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
+- [Mozilla Developer Network HTML Guide](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [HTML Reference](https://htmlreference.io/)
+- [HTML Cheat Sheet](https://htmlcheatsheet.com/)
+
+## Ejercicios
+
+1. Crea un documento HTML que contenga un encabezado de nivel 1 con el texto "Hola, mundo!" y un párrafo de texto con el texto "Este es un ejemplo de un documento HTML básico".
+
+2. Crea un documento HTML que contenga una lista desordenada con tres elementos de lista. Los elementos de lista deben contener los siguientes textos: "Elemento 1", "Elemento 2" y "Elemento 3".
+
+3. Crea un documento HTML que contenga una tabla con tres filas y tres columnas. En cada celda de la tabla, coloca un número del 1 al 9.
+
+4. Crea un documento HTML que contenga un enlace a la página de Google. El enlace debe tener el texto "Ir a Google" y debe abrirse en una nueva pestaña del navegador.
+
+5. Crea un documento HTML que contenga una imagen de tu elección. La imagen debe tener un ancho de 200 píxeles y un alto de 200 píxeles.
+
+

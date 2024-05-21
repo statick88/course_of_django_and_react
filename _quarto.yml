@@ -54,7 +54,7 @@ book:
         - unidades/unidad4/6_modulos.qmd
         - unidades/unidad4/project001.qmd
 
-    - part: "Unidad 5: Django Fundamentos"
+    - part: "Unidad 5: Django"
       chapters: 
         - unidades/unidad5/1_django_fundamentos.qmd
         - unidades/unidad5/2_configuracion_inicial.qmd
@@ -63,6 +63,11 @@ book:
         - unidades/unidad5/5_drf.qmd
         - unidades/unidad5/6_testing.qmd
         - unidades/unidad5/7_correccion_test.qmd
+
+    - part: "Unidad 6: Frontend"
+      chapters:
+        - unidades/unidad6/1_introduccion_frontend.qmd
+        - unidades/unidad6/2_introduccion_css.qmd
 
     - part: "Ejercicios"
       chapters: 

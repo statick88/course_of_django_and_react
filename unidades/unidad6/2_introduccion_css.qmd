@@ -1,0 +1,444 @@
+# Introducción a CSS
+
+## ¿Qué es CSS?
+
+CSS es un lenguaje que describe el estilo de un documento HTML. CSS describe cómo se mostrarán los elementos HTML en la pantalla, en papel o en otros medios. CSS ahorra mucho trabajo. Puede controlar el diseño de varias páginas web a la vez.
+
+## ¿Cómo funciona CSS?
+
+Cuando un navegador lee un documento HTML, construye un modelo de objeto de documento (DOM) basado en el contenido del documento. El navegador luego aplica CSS al DOM para determinar cómo se deben mostrar los elementos HTML en la pantalla.
+
+## ¿Cómo se aplica CSS a un documento HTML?
+
+Hay tres formas de aplicar CSS a un documento HTML:
+
+- **CSS externo**: El CSS externo se define en un archivo .css separado y se aplica a un documento HTML con la etiqueta `<link>`.
+
+- **CSS interno**: El CSS interno se define en la sección `<style>` de un documento HTML y se aplica a ese documento HTML.
+
+- **CSS en línea**: El CSS en línea se define en el atributo `style` de un elemento HTML.
+
+## Sintaxis de CSS
+
+Un archivo CSS consta de un conjunto de reglas CSS. Cada regla CSS consta de un selector y un bloque de declaración.
+
+```css
+selector {
+  propiedad: valor;
+}
+```
+
+- **Selector**: Un selector es un nombre que identifica un elemento HTML al que se aplicará un estilo.
+
+- **Propiedad**: Una propiedad es un atributo de un elemento HTML que se puede cambiar con CSS.
+
+- **Valor**: Un valor es el valor que se asigna a una propiedad.
+
+## Ejemplo de CSS
+
+```css
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+p {
+  color: red;
+  font-size: 16px;
+}
+```
+
+En este ejemplo, el selector `h1` selecciona todos los elementos `<h1>` en el documento HTML y les aplica un color azul y un tamaño de fuente de 24 píxeles. El selector `p` selecciona todos los elementos `<p>` en el documento HTML y les aplica un color rojo y un tamaño de fuente de 16 píxeles.
+
+## Comentarios en CSS
+
+Los comentarios en CSS se pueden agregar entre `/*` y `*/`.
+
+```css
+/* Este es un comentario en CSS */
+```
+
+## Selectores CSS
+
+Los selectores CSS se utilizan para seleccionar los elementos HTML a los que se aplicará un estilo. Hay varios tipos de selectores CSS:
+
+- **Selector de tipo**: Selecciona todos los elementos de un tipo específico.
+
+```css
+h1 {
+  color: blue;
+}
+```
+
+- **Selector de clase**: Selecciona todos los elementos que tienen un atributo `class` específico.
+
+```css
+.blue-text {
+  color: blue;
+}
+```
+
+- **Selector de ID**: Selecciona un elemento que tiene un atributo `id` específico.
+
+```css
+#blue-text {
+  color: blue;
+}
+```
+
+- **Selector de atributo**: Selecciona elementos con un atributo específico.
+
+```css
+[title] {
+  color: blue;
+}
+```
+
+- **Selector de combinación**: Selecciona elementos que coinciden con varios selectores.
+
+```css
+h1, p {
+  color: blue;
+}
+```
+
+- **Selector descendente**: Selecciona elementos que son descendientes de otro elemento.
+
+```css
+div p {
+  color: blue;
+}
+```
+
+- **Selector de hijo**: Selecciona elementos que son hijos directos de otro elemento.
+
+```css
+div > p {
+  color: blue;
+}
+```
+
+- **Selector de hermano adyacente**: Selecciona elementos que son hermanos adyacentes de otro elemento.
+
+```css
+p + p {
+  color: blue;
+}
+```
+
+- **Selector de hermano general**: Selecciona elementos que son hermanos de otro elemento.
+
+```css
+p ~ p {
+  color: blue;
+}
+```
+
+## Propiedades CSS
+
+Las propiedades CSS se utilizan para cambiar el aspecto de los elementos HTML. Hay muchas propiedades CSS que se pueden utilizar para cambiar el aspecto de los elementos HTML. Algunas de las propiedades CSS más comunes son:
+
+- **color**: Establece el color del texto.
+
+```css
+h1 {
+  color: blue;
+}
+```
+
+- **font-size**: Establece el tamaño de la fuente.
+
+```css
+h1 {
+  font-size: 24px;
+}
+```
+
+- **font-family**: Establece la fuente del texto.
+
+```css
+h1 {
+  font-family: Arial, sans-serif;
+}
+```
+
+- **text-align**: Establece la alineación del texto.
+
+```css
+h1 {
+  text-align: center;
+}
+```
+
+- **background-color**: Establece el color de fondo.
+
+```css
+body {
+  background-color: lightgray;
+}
+```
+
+- **border**: Establece el borde de un elemento.
+
+```css
+div {
+  border: 1px solid black;
+}
+```
+
+- **margin**: Establece el margen de un elemento.
+
+```css
+div {
+  margin: 10px;
+}
+```
+
+- **padding**: Establece el relleno de un elemento.
+
+```css
+div {
+  padding: 10px;
+}
+```
+
+- **width**: Establece el ancho de un elemento.
+
+```css
+div {
+  width: 100px;
+}
+```
+
+- **height**: Establece la altura de un elemento.
+
+```css
+div {
+  height: 100px;
+}
+```
+
+- **display**: Establece cómo se mostrará un elemento.
+
+```css
+div {
+  display: block;
+}
+
+span {
+  display: inline;
+}
+```
+
+- **position**: Establece la posición de un elemento.
+
+```css
+div {
+  position: relative;
+}
+```
+
+- **top**: Establece la posición superior de un elemento.
+
+```css
+div {
+  top: 10px;
+}
+```
+
+- **right**: Establece la posición derecha de un elemento.
+
+```css
+div {
+  right: 10px;
+}
+```
+
+- **bottom**: Establece la posición inferior de un elemento.
+
+```css
+div {
+  bottom: 10px;
+}
+```
+
+- **left**: Establece la posición izquierda de un elemento.
+
+```css
+div {
+  left: 10px;
+}
+```
+
+- **float**: Establece si un elemento flotará a la izquierda, a la derecha o no flotará.
+
+```css
+img {
+  float: left;
+}
+```
+
+- **clear**: Establece si un elemento debe estar al lado de los elementos flotantes o no.
+
+```css
+div {
+  clear: both;
+}
+```
+
+- **z-index**: Establece la pila de elementos.
+
+```css
+div {
+  z-index: 1;
+}
+```
+
+- **opacity**: Establece la opacidad de un elemento.
+
+```css
+div {
+  opacity: 0.5;
+}
+```
+
+- **visibility**: Establece si un elemento es visible o no.
+
+```css
+div {
+  visibility: hidden;
+}
+```
+
+- **overflow**: Establece cómo se manejará el desbordamiento de un elemento.
+
+```css
+div {
+  overflow: hidden;
+}
+```
+
+- **cursor**: Establece el cursor del ratón cuando se coloca sobre un elemento.
+
+```css
+a {
+  cursor: pointer;
+}
+```
+
+- **list-style-type**: Establece el tipo de marcador de una lista.
+
+```css
+ul {
+  list-style-type: square;
+}
+```
+
+- **text-decoration**: Establece la decoración del texto.
+
+```css
+a {
+  text-decoration: none;
+}
+```
+
+- **text-transform**: Establece cómo se transformará el texto.
+
+```css
+h1 {
+  text-transform: uppercase;
+}
+```
+
+- **text-shadow**: Establece la sombra del texto.
+
+```css
+h1 {
+  text-shadow: 2px 2px 5px red;
+}
+```
+
+- **box-shadow**: Establece la sombra de un cuadro.
+
+```css
+div {
+  box-shadow: 2px 2px 5px gray;
+}
+```
+
+- **border-radius**: Establece el radio de los bordes de un elemento.
+
+```css
+div {
+  border-radius: 10px;
+}
+```
+
+- **transition
+
+```css
+div {
+  transition: width 2s, height 2s;
+}
+```
+
+- **animation
+
+```css
+div {
+  animation: example 5s infinite;
+}
+```
+
+## Unidades CSS
+
+Las unidades CSS se utilizan para especificar longitudes y tamaños. Hay varias unidades CSS que se pueden utilizar para especificar longitudes y tamaños. Algunas de las unidades CSS más comunes son:
+
+- **px**: Píxeles.
+
+```css
+h1 {
+  font-size: 24px;
+}
+```
+
+- **em**: Relativo al tamaño de la fuente del elemento.
+
+```css
+h1 {
+  font-size: 2em;
+}
+```
+
+- **rem**: Relativo al tamaño de la fuente del elemento raíz.
+
+```css
+h1 {
+  font-size: 2rem;
+}
+```
+
+- **%**: Porcentaje del tamaño del contenedor.
+
+```css
+div {
+  width: 50%;
+}
+
+img {
+  width: 100%;
+}
+```
+
+- **vw**: Porcentaje del ancho de la ventana gráfica.
+
+```css
+div {
+  width: 50vw;
+}
+
+img {
+  width: 100vw;
+}
+```
+
