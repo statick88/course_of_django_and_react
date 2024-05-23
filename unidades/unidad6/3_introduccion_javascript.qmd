@@ -1,0 +1,675 @@
+# JavaScript
+
+Para empezar a aprender JavaScript es necesario tener conocimientos básicos de HTML y CSS. JavaScript es un lenguaje de programación que se utiliza para crear páginas web interactivas. Es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
+
+JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es un lenguaje de programación que se utiliza para crear páginas web interactivas. JavaScript es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
+
+## ¿Qué es JavaScript?
+
+JavaScript es un lenguaje de programación que se utiliza para crear páginas web interactivas. Es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
+
+## ¿Dónde puedo aprender JavaScript?
+
+Hay muchos recursos en línea que puedes utilizar para aprender JavaScript. Algunos de los recursos más populares incluyen:
+
+-   [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [W3Schools](https://www.w3schools.com/js/default.asp)
+
+## ¿Qué puedo hacer con JavaScript?
+
+JavaScript se utiliza para crear páginas web interactivas. Algunas de las cosas que puedes hacer con JavaScript incluyen:
+
+-   Validar formularios
+-   Crear animaciones
+-   Crear juegos
+-   Crear aplicaciones web
+
+## ¿Qué es un script de JavaScript?
+
+Un script de JavaScript es un archivo de texto que contiene código JavaScript. Los scripts de JavaScript se pueden incrustar en una página web utilizando la etiqueta **script**. Los scripts de JavaScript se utilizan para agregar interactividad a una página web.
+
+## ¿Dónde puedo ejecutar JavaScript?
+
+JavaScript se puede ejecutar en cualquier navegador web moderno. Algunos de los navegadores web más populares que admiten JavaScript incluyen:
+
+-   Google Chrome
+-   Mozilla Firefox
+-   Microsoft Edge
+-   Safari
+
+Sin embargo tambien es posible ejecutar JavaScript en el servidor utilizando Node.js.
+
+## ¿Qué es Node.js?
+
+Node.js es un entorno de ejecución de JavaScript del lado del servidor que permite a los desarrolladores crear aplicaciones web utilizando JavaScript. Node.js se basa en el motor de JavaScript V8 de Google Chrome y proporciona una forma de ejecutar JavaScript en el servidor.
+
+## ¿Dónde puedo aprender Node.js?
+
+Hay muchos recursos en línea que puedes utilizar para aprender Node.js. Algunos de los recursos más populares incluyen:
+
+-   [Node.js](https://nodejs.org/en/docs/)
+-   [W3Schools](https://www.w3schools.com/nodejs/default.asp)
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodejs)
+
+## ¿Qué puedo hacer con Node.js?
+
+Node.js se utiliza para crear aplicaciones web del lado del servidor. Algunas de las cosas que puedes hacer con Node.js incluyen:
+
+-   Crear servidores web
+-   Crear aplicaciones web en tiempo real
+-   Crear aplicaciones de línea de comandos
+-   Crear aplicaciones de red
+
+# Primeros pasos con JavaScript
+
+Para empezar a aprender JavaScript, necesitas tener un editor de texto y un navegador web. Puedes utilizar cualquier editor de texto para escribir código JavaScript, en este caso vamos a utilizar Visual Studio Code.
+
+Se sugiere utilizar la siguiente lista de plugins para Visual Studio Code:
+
+-   [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+-   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+-   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+Antes de comenzar la parte práctica de JavaScript, es importante tener en cuenta algunos temas como:  Ecmascript 6, Motor V8, Asincronismo, Programación Orientada a Objetos, Programación Funcional, en JavaScript.
+
+## Ecmascript 6
+
+ECMAScript 6 (también conocido como ES6 o ECMAScript 2015) es la sexta versión de ECMAScript, el estándar subyacente de JavaScript. ECMAScript 6 fue lanzado en junio de 2015 y trajo muchas nuevas características y mejoras al lenguaje JavaScript.
+
+Algunas de las características más importantes de ECMAScript 6 incluyen:
+
+-   **let y const**: Declaración de variables con let y const.
+-   **Arrow functions**: Funciones de flecha.
+-   **Template literals**: Literales de plantilla.
+-   **Destructuring**: Desestructuración de objetos y arreglos.
+-   **Spread operator**: Operador de propagación.
+-   **Classes**: Clases.
+-   **Promises**: Promesas.
+-   **Async/Await**: Async/Await.
+
+## Motor V8
+
+V8 es el motor de JavaScript de código abierto de Google que se utiliza en Google Chrome y en Node.js. V8 es un motor de JavaScript de alto rendimiento que compila el código JavaScript en código de máquina nativo antes de ejecutarlo.
+
+V8 utiliza una técnica de compilación just-in-time (JIT) para compilar el código JavaScript en tiempo de ejecución y optimizar su rendimiento. V8 es uno de los motores de JavaScript más rápidos y eficientes disponibles en la actualidad.
+
+## Asincronismo
+
+El asincronismo en JavaScript se utiliza para manejar operaciones asincrónicas, como la lectura de archivos, las solicitudes de red y las interacciones del usuario. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puede ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal.
+
+Para manejar operaciones asincrónicas en JavaScript, puedes utilizar callbacks, promesas o async/await. Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan cuando se completa una operación asincrónica. Las promesas son objetos que representan el resultado de una operación asincrónica y se pueden encadenar para manejar múltiples operaciones asincrónicas. Async/await es una forma más moderna de manejar operaciones asincrónicas en JavaScript y se basa en promesas.
+
+## Programación Orientada a Objetos
+
+La programación orientada a objetos (POO) en JavaScript se utiliza para crear objetos y clases que encapsulan datos y funciones relacionadas. JavaScript es un lenguaje de programación orientado a objetos, lo que significa que puedes crear objetos y clases para representar entidades del mundo real.
+
+Para crear una clase en JavaScript, utiliza la palabra clave **class** seguida del nombre de la clase y define las propiedades y métodos de la clase. Para crear un objeto en JavaScript, utiliza la palabra clave **new** seguida del nombre de la clase y los parámetros de la clase.
+
+## Programación Funcional
+
+La programación funcional en JavaScript se utiliza para crear funciones que se pueden pasar como argumentos a otras funciones y se pueden utilizar para realizar operaciones en datos. JavaScript es un lenguaje de programación funcional, lo que significa que puedes crear funciones de primera clase y funciones de orden superior.
+
+Para crear una función en JavaScript, utiliza la palabra clave **function** seguida del nombre de la función y los parámetros de la función. Para crear una función de orden superior en JavaScript, utiliza funciones de flecha y funciones de retorno.
+
+Con estos temas cubiertos podemos comenzar a escribir código en JavaScript.
+
+## Hola Mundo en JavaScript
+
+Para crear un "Hola Mundo" en JavaScript, sigue estos pasos:
+
+1.  Abre Visual Studio Code.
+
+2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
+
+3.  Escribe el siguiente código en el archivo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hola Mundo en JavaScript</title>
+</head>
+<body>
+    <h1 id="mensaje"></h1>
+    <script href='app.js'></script>
+</body>
+</html>
+```
+4. Crea un nuevo archivo y guárdalo con la extensión **.js**.
+
+``` javascript
+document.getElementById("mensaje").innerHTML = "Hola Mundo!";
+```
+
+5.  Guarda el archivo y ábrelo en un navegador web.
+
+6.  Deberías ver un mensaje que dice "Hola Mundo!" en la página.
+
+## Comentarios en JavaScript
+
+Los comentarios en JavaScript se utilizan para explicar el código y hacerlo más legible. Los comentarios en JavaScript comienzan con **//** para comentarios de una sola línea.
+
+``` javascript
+// Este es un comentario de una sola línea
+```
+
+También puedes utilizar comentarios de varias líneas utilizando **/*\**** ... **\*/**
+
+``` javascript
+/*
+Este es un comentario de varias líneas
+*/
+```
+
+## Variables en JavaScript
+
+Las variables en JavaScript se utilizan para almacenar datos. Para declarar una variable en JavaScript, utiliza la palabra clave **var**, **let** o **const** seguida del nombre de la variable.
+
+``` javascript
+var nombre = "Juan";
+let edad = 30;
+const PI = 3.1416;
+```
+:::{.callout-tip}
+Se recomienda utilizar **let** en lugar de **var** para declarar variables en JavaScript.
+:::
+
+## Tipos de datos en JavaScript
+
+JavaScript es un lenguaje de programación de tipado dinámico, lo que significa que no es necesario especificar el tipo de datos de una variable al declararla. JavaScript tiene varios tipos de datos, incluidos:
+
+-   **String**: Cadena de texto.
+-   **Number**: Número.
+-   **Boolean**: Valor booleano (verdadero o falso).
+-   **Array**: Arreglo de elementos.
+-   **Object**: Objeto.
+-   **Function**: Función.
+-   **Null**: Valor nulo.
+-   **Undefined**: Valor indefinido.
+
+``` javascript
+let nombre = "Juan"; // String
+let edad = 30; // Number
+let esMayor = true; // Boolean
+let colores = ["Rojo", "Verde", "Azul"]; // Array
+let persona = {nombre: "Juan", edad: 30}; // Object
+let sumar = function(a, b) { return a + b; }; // Function
+let nulo = null; // Null
+let indefinido = undefined; // Undefined
+```
+
+:::{.callout-info}
+Existen otras opciones de tipos de datos de tipo null y undefined, pero estos son los más comunes.
+:::
+
+## Operadores en JavaScript
+
+Los operadores en JavaScript se utilizan para realizar operaciones en variables y valores. Algunos de los operadores más comunes en JavaScript incluyen:
+
+-   **Operadores aritméticos**: +, -, *, /, %.
+-   **Operadores de asignación**: =, +=, -=, *=, /=.
+-   **Operadores de comparación**: ==, !=, ===, !==, >, <, >=, <=.
+-   **Operadores lógicos**: &&, ||, !.
+-   **Operadores de incremento y decremento**: ++, --.
+-   **Operadores de concatenación**: +.
+
+``` javascript
+let a = 10;
+let b = 5;
+
+let suma = a + b; // 15
+let resta = a - b; // 5
+let multiplicacion = a * b; // 50
+let division = a / b; // 2
+
+let igual = a == b; // false
+let mayor = a > b; // true
+let menor = a < b; // false
+
+let and = (a > 0) && (b > 0); // true
+let or = (a > 0) || (b > 0); // true
+let not = !(a > 0); // false
+
+let incremento = a++; // 10
+let decremento = b--; // 5
+
+let cadena = "Hola " + "Mundo!"; // Hola Mundo!
+```
+
+## Condicionales en JavaScript
+
+Los condicionales en JavaScript se utilizan para tomar decisiones basadas en ciertas condiciones. Algunos de los condicionales más comunes en JavaScript incluyen:
+
+-   **if**: Se utiliza para ejecutar un bloque de código si una condición es verdadera.
+-   **else**: Se utiliza para ejecutar un bloque de código si una condición es falsa.
+-   **else if**: Se utiliza para ejecutar un bloque de código si la primera condición es falsa y la segunda condición es verdadera.
+-   **switch**: Se utiliza para ejecutar diferentes bloques de código según diferentes casos.
+
+``` javascript
+let edad = 18;
+
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+let dia = "Lunes";
+
+switch (dia) {
+    case "Lunes":
+        console.log("Hoy es Lunes");
+        break;
+    case "Martes":
+        console.log("Hoy es Martes");
+        break;
+    default:
+        console.log("Hoy es otro día");
+}
+```
+
+## Bucles en JavaScript
+
+Los bucles en JavaScript se utilizan para repetir una serie de instrucciones varias veces. Algunos de los bucles más comunes en JavaScript incluyen:
+
+-   **for**: Se utiliza para repetir un bloque de código un número específico de veces.
+-   **while**: Se utiliza para repetir un bloque de código mientras una condición sea verdadera.
+-   **do...while**: Se utiliza para repetir un bloque de código al menos una vez y luego repetirlo mientras una condición sea verdadera.
+
+``` javascript
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let j = 0;
+while (j < 5) {
+    console.log(j);
+    j++;
+}
+
+let k = 0;
+do {
+    console.log(k);
+    k++;
+} while (k < 5);
+```
+
+## Funciones en JavaScript
+
+Las funciones en JavaScript se utilizan para encapsular un bloque de código y reutilizarlo en diferentes partes de un programa. Para declarar una función en JavaScript, utiliza la palabra clave **function** seguida del nombre de la función y los parámetros de la función.
+
+``` javascript
+function saludar(nombre) {
+    console.log("Hola " + nombre);
+}
+
+saludar("Juan");
+```
+
+## Eventos en JavaScript
+
+Los eventos en JavaScript se utilizan para manejar la interacción del usuario con una página web. Algunos de los eventos más comunes en JavaScript incluyen:
+
+-   **click**: Se activa cuando se hace clic en un elemento.
+-   **mouseover**: Se activa cuando el puntero del ratón se mueve sobre un elemento.
+-   **keydown**: Se activa cuando se presiona una tecla.
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventos en JavaScript</title>
+</head>
+<body>
+    <button id="boton">Haz clic aquí</button>
+    <script href="script.js"></script>
+</body>
+</html>
+```
+
+``` javascript
+document.getElementById("boton").addEventListener("click", function() {
+    alert("Haz hecho clic en el botón");
+});
+```
+
+En los archivos anteriore se muestra un ejemplo de cómo manejar eventos en JavaScript.
+
+## Objetos en JavaScript
+
+Los objetos en JavaScript se utilizan para almacenar colecciones de datos y funciones. Para crear un objeto en JavaScript, utiliza llaves **{}** y define las propiedades y métodos del objeto.
+
+``` javascript
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    saludar: function() {
+        console.log("Hola, mi nombre es " + this.nombre);
+    }
+};
+
+console.log(persona.nombre); // Juan
+console.log(persona.edad); // 30
+persona.saludar(); // Hola, mi nombre es Juan
+```
+
+## Arrays en JavaScript
+
+Los arrays en JavaScript se utilizan para almacenar una colección de elementos. Para crear un array en JavaScript, utiliza corchetes **[]** y separa los elementos con comas.
+
+``` javascript
+let colores = ["Rojo", "Verde", "Azul"];
+
+console.log(colores[0]); // Rojo
+console.log(colores[1]); // Verde
+console.log(colores[2]); // Azul
+```
+
+## Métodos en JavaScript
+
+Los métodos en JavaScript son funciones que se pueden llamar en un objeto. Algunos de los métodos más comunes en JavaScript incluyen:
+
+-   **push()**: Agrega un elemento al final de un array.
+-   **pop()**: Elimina el último elemento de un array.
+-   **shift()**: Elimina el primer elemento de un array.
+-   **unshift()**: Agrega un elemento al principio de un array.
+-   **splice()**: Agrega o elimina elementos de un array en una posición específica.
+
+``` javascript
+let colores = ["Rojo", "Verde", "Azul"];
+
+colores.push("Amarillo");
+console.log(colores); // ["Rojo", "Verde", "Azul", "Amarillo"]
+
+colores.pop();
+console.log(colores); // ["Rojo", "Verde", "Azul"]
+
+colores.shift();
+console.log(colores); // ["Verde", "Azul"]
+
+colores.unshift("Rojo");
+console.log(colores); // ["Rojo", "Verde", "Azul"]
+
+colores.splice(1, 0, "Amarillo");
+console.log(colores); // ["Rojo", "Amarillo", "Verde", "Azul"]
+```
+
+## Clases en JavaScript
+
+Las clases en JavaScript se utilizan para crear objetos basados en un modelo. Para crear una clase en JavaScript, utiliza la palabra clave **class** seguida del nombre de la clase y define las propiedades y métodos de la clase.
+
+``` javascript
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    saludar() {
+        console.log("Hola, mi nombre es " + this.nombre);
+    }
+}
+
+let juan = new Persona("Juan", 30);
+console.log(juan.nombre); // Juan
+console.log(juan.edad); // 30
+juan.saludar(); // Hola, mi nombre es Juan
+```
+
+## Herencia en JavaScript
+
+La herencia en JavaScript se utiliza para crear una clase basada en otra clase. Para heredar una clase en JavaScript, utiliza la palabra clave **extends** seguida del nombre de la clase padre.
+
+``` javascript
+class Empleado extends Persona {
+    constructor(nombre, edad, salario) {
+        super(nombre, edad);
+        this.salario = salario;
+    }
+
+    trabajar() {
+        console.log("Estoy trabajando");
+    }
+}
+
+let pedro = new Empleado("Pedro", 25, 20000);
+console.log(pedro.nombre); // Pedro
+console.log(pedro.edad); // 25
+console.log(pedro.salario); // 20000
+pedro.saludar(); // Hola, mi nombre es Pedro
+pedro.trabajar(); // Estoy trabajando
+```
+
+## Promesas en JavaScript
+
+Las promesas en JavaScript se utilizan para manejar operaciones asincrónicas. Una promesa puede estar en uno de los siguientes estados:
+
+-   **Pendiente**: La operación aún no se ha completado.
+-   **Cumplida**: La operación se ha completado con éxito.
+-   **Rechazada**: La operación ha fallado.
+
+``` javascript
+let promesa = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        let exito = true;
+
+        if (exito) {
+            resolve("La operación se ha completado con éxito");
+        } else {
+            reject("La operación ha fallado");
+        }
+    }, 2000);
+});
+
+promesa.then(function(resultado) {
+    console.log(resultado);
+}).catch(function(error) {
+    console.log(error);
+});
+```
+
+## Async/Await en JavaScript
+
+Async/Await en JavaScript se utiliza para manejar operaciones asincrónicas de forma más sencilla. La palabra clave **async** se utiliza para declarar una función asincrónica, mientras que la palabra clave **await** se utiliza para esperar a que una promesa se resuelva.
+
+``` javascript
+async function operacion() {
+    let promesa = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            let exito = true;
+
+            if (exito) {
+                resolve("La operación se ha completado con éxito");
+            } else {
+                reject("La operación ha fallado");
+            }
+        }, 2000);
+    });
+
+    let resultado = await promesa;
+    console.log(resultado);
+}
+
+operacion();
+```
+## Consumir una api con fetch
+
+En esta sección vamos a consumir una api de pokemon con fetch, para ello vamos a seguir los siguientes pasos:
+
+1.  Abre Visual Studio Code.
+
+2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
+
+3.  Escribe el siguiente código en el archivo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consumir una api con fetch</title>
+</head>
+<body>
+    <ul id="pokemones"></ul>
+    <script href="script.js"></script>
+</body>
+</html>
+```
+
+4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
+
+``` javascript
+fetch("https://pokeapi.co/api/v2/pokemon")
+    .then(response => response.json())
+    .then(data => {
+        let pokemones = data.results;
+
+        pokemones.forEach(pokemon => {
+            let li = document.createElement("li");
+            li.textContent = pokemon.name;
+            document.getElementById("pokemones").appendChild(li);
+        });
+    })
+    .catch(error => console.log(error));
+```
+
+5.  Guarda el archivo y ábrelo en un navegador web.
+
+6.  Deberías ver una lista de nombres de pokemones en la página.
+
+En los archivos anteriores se muestra un ejemplo de cómo consumir una api con fetch en JavaScript.
+
+## Crear una aplicación web con JavaScript
+
+En esta sección vamos a crear una aplicación web con JavaScript, para ello vamos a seguir los siguientes pasos:
+
+1.  Abre Visual Studio Code.
+
+2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
+
+3.  Escribe el siguiente código en el archivo:
+
+``` html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear una aplicación web con JavaScript</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="text" id="numero1">
+    <input type="text" id="numero2">
+    <button onclick="sumar()">Sumar</button>
+    <button onclick="restar()">Restar</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <h2 id="resultado"></h2>
+    <script href="script.js"></script>
+</body>
+</html>
+```
+
+4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
+
+``` javascript
+function sumar() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    let resultado = numero1 + numero2;
+    document.getElementById("resultado").textContent = resultado;
+}
+
+function restar() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    let resultado = numero1 - numero2;
+    document.getElementById("resultado").textContent = resultado;
+}
+
+function multiplicar() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    let resultado = numero1 * numero2;
+    document.getElementById("resultado").textContent = resultado;
+}
+
+function dividir() {
+    let numero1 = parseInt(document.getElementById("numero1").value);
+    let numero2 = parseInt(document.getElementById("numero2").value);
+    let resultado = numero1 / numero2;
+    document.getElementById("resultado").textContent = resultado;
+}
+```
+
+5.  Guarda el archivo y ábrelo en un navegador web.
+
+6.  Deberías ver una calculadora en la página.
+
+En los archivos anteriores se muestra un ejemplo de cómo crear una aplicación web con JavaScript.
+
+## Crear un juego con JavaScript
+
+En esta sección vamos a crear un juego con JavaScript, para ello vamos a seguir los siguientes pasos:
+
+1.  Abre Visual Studio Code.
+
+2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
+
+3.  Escribe el siguiente código en el archivo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear un juego con JavaScript</title>
+</head>
+<body>
+    <h1>Adivina el número</h1>
+    <input type="text" id="numero">
+    <button onclick="adivinar()">Adivinar</button>
+    <h2 id="resultado"></h2>
+    <script href="script.js"></script>
+</body>
+</html>
+```
+
+4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
+
+``` javascript
+let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let intentos = 0;
+
+function adivinar() {
+    let numero = parseInt(document.getElementById("numero").value);
+    intentos++;
+
+    if (numero === numeroAleatorio) {
+        document.getElementById("resultado").textContent = "¡Felicidades! Has adivinado el número en " + intentos + " intentos";
+    } else if (numero < numeroAleatorio) {
+        document.getElementById("resultado").textContent = "El número es mayor";
+    } else {
+        document.getElementById("resultado").textContent = "El número es menor";
+    }
+}
+```
+
+5.  Guarda el archivo y ábrelo en un navegador web.
+
+6.  Deberías ver un juego de adivinar el número en la página.
+
+En los archivos anteriores se muestra un ejemplo de cómo crear un juego con JavaScript.
+
+## Conclusiones
+
+JavaScript es un lenguaje de programación poderoso y versátil que se utiliza para crear páginas web interactivas. Con JavaScript, puedes agregar interactividad a una página web, crear aplicaciones web y juegos, y mucho más. JavaScript es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web. JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal.
+
+# Referencias
+
+-   [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [W3Schools](https://www.w3schools.com/js/default.asp)
+-   [Node.js](https://nodejs.org/en/docs/)
+-   [W3Schools Node.js](https://www.w3schools.com/nodejs/default.asp)
+-   [MDN Web Docs Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodejs)
+

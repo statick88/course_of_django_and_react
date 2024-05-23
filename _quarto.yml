@@ -68,6 +68,8 @@ book:
       chapters:
         - unidades/unidad6/1_introduccion_frontend.qmd
         - unidades/unidad6/2_introduccion_css.qmd
+        - unidades/unidad6/3_introduccion_javascript.qmd
+        - unidades/unidad6/4_introduccion_node.qmd
 
     - part: "Ejercicios"
       chapters: 

@@ -1,0 +1,153 @@
+# Nodejs
+
+## ¿Qué es nodejs?
+
+Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+
+## ¿Por qué nodejs?
+
+Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+
+## ¿Cómo instalar nodejs?
+
+Para instalar nodejs en windows debemos descargar el instalador desde la página oficial de nodejs [nodejs.org](https://nodejs.org/es/), una vez descargado el instalador lo ejecutamos y seguimos los pasos del instalador.
+
+Para instalar nodejs en linux debemos abrir una terminal y ejecutar los siguientes comandos:
+
+```bash
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+```
+
+## ¿Cómo ejecutar un archivo de nodejs?
+
+Para ejecutar un archivo de nodejs debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+node archivo.js
+```
+
+## ¿Qué es npm?
+
+npm es el sistema de gestión de paquetes por defecto para Node.js, un entorno de ejecución para JavaScript. npm es un acrónimo de Node Package Manager.
+
+## ¿Cómo instalar un paquete de npm?
+
+Para instalar un paquete de npm debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install nombre-del-paquete
+```
+
+## ¿Cómo crear un proyecto de nodejs?
+
+Para crear un proyecto de nodejs debemos abrir una terminal y ejecutar los siguientes comandos:
+
+```bash
+mkdir nombre-del-proyecto
+cd nombre-del-proyecto
+npm init -y
+```
+
+## ¿Cómo instalar express?
+
+Para instalar express debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install express
+```
+
+## ¿Cómo instalar nodemon?
+
+Para instalar nodemon debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install nodemon
+```
+
+## ¿Cómo instalar mongoose?
+
+Para instalar mongoose debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install mongoose
+```
+
+## ¿Cómo instalar dotenv?
+
+Para instalar dotenv debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install dotenv
+```
+
+## ¿Cómo instalar bcrypt?
+
+Para instalar bcrypt debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install bcrypt
+```
+
+## ¿Cómo instalar jsonwebtoken?
+
+Para instalar jsonwebtoken debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install jsonwebtoken
+```
+
+## ¿Cómo instalar cors?
+
+Para instalar cors debemos abrir una terminal y ejecutar el siguiente comando:
+
+```bash
+npm install cors
+```
+
+Ahora que ya sabes como instalar los paquetes necesarios para crear un proyecto de nodejs, puedes empezar a crear tu proyecto.
+
+Con Nodejs podemos trabajar en proyectos de frontend con librerías populares como React, Angular, Vue, etc. y también podemos trabajar en proyectos de backend con librerías populares como Express, Mongoose, etc.
+
+## ¿Cómo empiezo mis primeros pasos con React?
+
+Para trabajar con React lo podemos hacer de la forma tradicional que ya no es tan recomandada o utilziar vite que es una herramienta que nos permite trabajar con React de una forma más rápida y sencilla.
+
+## ¿Qué es vite?
+
+Vite es un nuevo compilador de frontend que permite trabajar con React de una forma más rápida y sencilla.
+
+Esto lo veremos en el siguiente capítulo.
+
+## Conclusiones
+
+Nodejs es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+
+## Referencias
+
+[nodejs.org](https://nodejs.org/es/)
+
+[npm](https://www.npmjs.com/)
+
+[express](https://expressjs.com/)
+
+[nodemon](https://nodemon.io/)
+
+[mongoose](https://mongoosejs.com/)
+
+[dotenv](https://www.npmjs.com/package/dotenv)
+
+[bcrypt](https://www.npmjs.com/package/bcrypt)
+
+[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+
+[cors](https://www.npmjs.com/package/cors)
+
+[vite](https://vitejs.dev/)
+
+[react](https://reactjs.org/)
+
+[angular](https://angular.io/)
+
+[vue](https://v3.vuejs.org/)
