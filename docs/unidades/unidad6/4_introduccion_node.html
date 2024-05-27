@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Django y React 2024 - Corrección de tests en Django Rest Framework</title>
+<title>Django y React 2024 - Nodejs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad6/1_introduccion_frontend.html" rel="next">
-<link href="../../unidades/unidad5/6_testing.html" rel="prev">
+<link href="../../unidades/ejercicios/ejercicios_git_github-000.html" rel="next">
+<link href="../../unidades/unidad6/3_introduccion_javascript.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/4_introduccion_node.html"><span class="chapter-title">Nodejs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -252,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Unidad 5: Django</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad5/1_django_fundamentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
@@ -291,20 +325,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
+  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Unidad 6: Frontend</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad6/1_introduccion_frontend.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a HTML</span></a>
@@ -322,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/4_introduccion_node.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nodejs</span></a>
+  <a href="../../unidades/unidad6/4_introduccion_node.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Nodejs</span></a>
   </div>
 </li>
       </ul>
@@ -373,18 +407,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#pasos" id="toc-pasos" class="nav-link" data-scroll-target="#pasos">Pasos</a>
-  <ul class="collapse">
-  <li><a href="#crear-un-entorno-virtual" id="toc-crear-un-entorno-virtual" class="nav-link" data-scroll-target="#crear-un-entorno-virtual">1. Crear un entorno virtual</a></li>
-  <li><a href="#activar-el-entorno-virtual" id="toc-activar-el-entorno-virtual" class="nav-link" data-scroll-target="#activar-el-entorno-virtual">2. Activar el entorno virtual</a></li>
-  <li><a href="#instalar-las-dependencias" id="toc-instalar-las-dependencias" class="nav-link" data-scroll-target="#instalar-las-dependencias">3. Instalar las dependencias</a></li>
-  <li><a href="#correr-los-tests" id="toc-correr-los-tests" class="nav-link" data-scroll-target="#correr-los-tests">4. Correr los tests</a></li>
-  <li><a href="#corregir-los-tests" id="toc-corregir-los-tests" class="nav-link" data-scroll-target="#corregir-los-tests">5. Corregir los tests</a></li>
-  <li><a href="#correr-los-tests-nuevamente" id="toc-correr-los-tests-nuevamente" class="nav-link" data-scroll-target="#correr-los-tests-nuevamente">6. Correr los tests nuevamente</a></li>
-  <li><a href="#desactivar-el-entorno-virtual" id="toc-desactivar-el-entorno-virtual" class="nav-link" data-scroll-target="#desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</a></li>
-  </ul></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  <li><a href="#qué-es-nodejs" id="toc-qué-es-nodejs" class="nav-link active" data-scroll-target="#qué-es-nodejs">¿Qué es nodejs?</a></li>
+  <li><a href="#por-qué-nodejs" id="toc-por-qué-nodejs" class="nav-link" data-scroll-target="#por-qué-nodejs">¿Por qué nodejs?</a></li>
+  <li><a href="#cómo-instalar-nodejs" id="toc-cómo-instalar-nodejs" class="nav-link" data-scroll-target="#cómo-instalar-nodejs">¿Cómo instalar nodejs?</a></li>
+  <li><a href="#cómo-ejecutar-un-archivo-de-nodejs" id="toc-cómo-ejecutar-un-archivo-de-nodejs" class="nav-link" data-scroll-target="#cómo-ejecutar-un-archivo-de-nodejs">¿Cómo ejecutar un archivo de nodejs?</a></li>
+  <li><a href="#qué-es-npm" id="toc-qué-es-npm" class="nav-link" data-scroll-target="#qué-es-npm">¿Qué es npm?</a></li>
+  <li><a href="#cómo-instalar-un-paquete-de-npm" id="toc-cómo-instalar-un-paquete-de-npm" class="nav-link" data-scroll-target="#cómo-instalar-un-paquete-de-npm">¿Cómo instalar un paquete de npm?</a></li>
+  <li><a href="#cómo-crear-un-proyecto-de-nodejs" id="toc-cómo-crear-un-proyecto-de-nodejs" class="nav-link" data-scroll-target="#cómo-crear-un-proyecto-de-nodejs">¿Cómo crear un proyecto de nodejs?</a></li>
+  <li><a href="#cómo-instalar-express" id="toc-cómo-instalar-express" class="nav-link" data-scroll-target="#cómo-instalar-express">¿Cómo instalar express?</a></li>
+  <li><a href="#cómo-instalar-nodemon" id="toc-cómo-instalar-nodemon" class="nav-link" data-scroll-target="#cómo-instalar-nodemon">¿Cómo instalar nodemon?</a></li>
+  <li><a href="#cómo-instalar-mongoose" id="toc-cómo-instalar-mongoose" class="nav-link" data-scroll-target="#cómo-instalar-mongoose">¿Cómo instalar mongoose?</a></li>
+  <li><a href="#cómo-instalar-dotenv" id="toc-cómo-instalar-dotenv" class="nav-link" data-scroll-target="#cómo-instalar-dotenv">¿Cómo instalar dotenv?</a></li>
+  <li><a href="#cómo-instalar-bcrypt" id="toc-cómo-instalar-bcrypt" class="nav-link" data-scroll-target="#cómo-instalar-bcrypt">¿Cómo instalar bcrypt?</a></li>
+  <li><a href="#cómo-instalar-jsonwebtoken" id="toc-cómo-instalar-jsonwebtoken" class="nav-link" data-scroll-target="#cómo-instalar-jsonwebtoken">¿Cómo instalar jsonwebtoken?</a></li>
+  <li><a href="#cómo-instalar-cors" id="toc-cómo-instalar-cors" class="nav-link" data-scroll-target="#cómo-instalar-cors">¿Cómo instalar cors?</a></li>
+  <li><a href="#cómo-empiezo-mis-primeros-pasos-con-react" id="toc-cómo-empiezo-mis-primeros-pasos-con-react" class="nav-link" data-scroll-target="#cómo-empiezo-mis-primeros-pasos-con-react">¿Cómo empiezo mis primeros pasos con React?</a></li>
+  <li><a href="#qué-es-vite" id="toc-qué-es-vite" class="nav-link" data-scroll-target="#qué-es-vite">¿Qué es vite?</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
@@ -392,9 +431,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/4_introduccion_node.html"><span class="chapter-title">Nodejs</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></h1>
+<h1 class="title"><span class="chapter-title">Nodejs</span></h1>
 </div>
 
 
@@ -411,78 +450,108 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>En este documento se describen los pasos necesarios para corregir los tests de Django Rest Framework.</p>
-<p>Actualmente tenemos el siguiente error en los tests:</p>
-<pre class="shell"><code>================================================== test session starts ===================================================
-platform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django
-collected 0 items / 1 error                                                                                              
-
-========================================================= ERRORS =========================================================
-________________________________________ ERROR collecting productos/test_views.py ________________________________________
-ImportError while importing test module '/home/statick/workspaces/Curso_django_and_react/inventario_django/productos/test_views.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib64/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-productos/test_views.py:1: in &lt;module&gt;
-    from django.urls import reverse
-E   ModuleNotFoundError: No module named 'django'
-================================================ short test summary info =================================================
-ERROR productos/test_views.py
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-==================================================== 1 error in 0.07s ====================================================</code></pre>
+<section id="qué-es-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-nodejs">¿Qué es nodejs?</h2>
+<p>Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.</p>
 </section>
-<section id="pasos" class="level2">
-<h2 class="anchored" data-anchor-id="pasos">Pasos</h2>
-<section id="crear-un-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="crear-un-entorno-virtual">1. Crear un entorno virtual</h3>
-<pre class="shell"><code>python3 -m venv venv</code></pre>
+<section id="por-qué-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-nodejs">¿Por qué nodejs?</h2>
+<p>Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.</p>
 </section>
-<section id="activar-el-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="activar-el-entorno-virtual">2. Activar el entorno virtual</h3>
-<pre class="shell"><code>source venv/bin/activate</code></pre>
+<section id="cómo-instalar-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-nodejs">¿Cómo instalar nodejs?</h2>
+<p>Para instalar nodejs en windows debemos descargar el instalador desde la página oficial de nodejs <a href="https://nodejs.org/es/">nodejs.org</a>, una vez descargado el instalador lo ejecutamos y seguimos los pasos del instalador.</p>
+<p>Para instalar nodejs en linux debemos abrir una terminal y ejecutar los siguientes comandos:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install nodejs</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install npm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalar-las-dependencias" class="level3">
-<h3 class="anchored" data-anchor-id="instalar-las-dependencias">3. Instalar las dependencias</h3>
-<pre class="shell"><code>pip install -r requirements.txt</code></pre>
+<section id="cómo-ejecutar-un-archivo-de-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-ejecutar-un-archivo-de-nodejs">¿Cómo ejecutar un archivo de nodejs?</h2>
+<p>Para ejecutar un archivo de nodejs debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> archivo.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="correr-los-tests" class="level3">
-<h3 class="anchored" data-anchor-id="correr-los-tests">4. Correr los tests</h3>
-<pre class="shell"><code>pytest</code></pre>
+<section id="qué-es-npm" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-npm">¿Qué es npm?</h2>
+<p>npm es el sistema de gestión de paquetes por defecto para Node.js, un entorno de ejecución para JavaScript. npm es un acrónimo de Node Package Manager.</p>
 </section>
-<section id="corregir-los-tests" class="level3">
-<h3 class="anchored" data-anchor-id="corregir-los-tests">5. Corregir los tests</h3>
-<p>Para corregir los tests, se debe modificar el archivo <code>productos/test_views.py</code> y corregir el error de importación.</p>
+<section id="cómo-instalar-un-paquete-de-npm" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-un-paquete-de-npm">¿Cómo instalar un paquete de npm?</h2>
+<p>Para instalar un paquete de npm debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install nombre-del-paquete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="correr-los-tests-nuevamente" class="level3">
-<h3 class="anchored" data-anchor-id="correr-los-tests-nuevamente">6. Correr los tests nuevamente</h3>
-<pre class="shell"><code>pytest</code></pre>
+<section id="cómo-crear-un-proyecto-de-nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-crear-un-proyecto-de-nodejs">¿Cómo crear un proyecto de nodejs?</h2>
+<p>Para crear un proyecto de nodejs debemos abrir una terminal y ejecutar los siguientes comandos:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> nombre-del-proyecto</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> nombre-del-proyecto</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="desactivar-el-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</h3>
-<pre class="shell"><code>deactivate</code></pre>
+<section id="cómo-instalar-express" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-express">¿Cómo instalar express?</h2>
+<p>Para instalar express debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install express</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="cómo-instalar-nodemon" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-nodemon">¿Cómo instalar nodemon?</h2>
+<p>Para instalar nodemon debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install nodemon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="conclusión" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
-<p>Una vez corregidos los tests, se debe hacer un pull request al repositorio original.</p>
+<section id="cómo-instalar-mongoose" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-mongoose">¿Cómo instalar mongoose?</h2>
+<p>Para instalar mongoose debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install mongoose</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cómo-instalar-dotenv" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-dotenv">¿Cómo instalar dotenv?</h2>
+<p>Para instalar dotenv debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install dotenv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cómo-instalar-bcrypt" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-bcrypt">¿Cómo instalar bcrypt?</h2>
+<p>Para instalar bcrypt debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install bcrypt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cómo-instalar-jsonwebtoken" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-jsonwebtoken">¿Cómo instalar jsonwebtoken?</h2>
+<p>Para instalar jsonwebtoken debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install jsonwebtoken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cómo-instalar-cors" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-instalar-cors">¿Cómo instalar cors?</h2>
+<p>Para instalar cors debemos abrir una terminal y ejecutar el siguiente comando:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install cors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora que ya sabes como instalar los paquetes necesarios para crear un proyecto de nodejs, puedes empezar a crear tu proyecto.</p>
+<p>Con Nodejs podemos trabajar en proyectos de frontend con librerías populares como React, Angular, Vue, etc. y también podemos trabajar en proyectos de backend con librerías populares como Express, Mongoose, etc.</p>
+</section>
+<section id="cómo-empiezo-mis-primeros-pasos-con-react" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-empiezo-mis-primeros-pasos-con-react">¿Cómo empiezo mis primeros pasos con React?</h2>
+<p>Para trabajar con React lo podemos hacer de la forma tradicional que ya no es tan recomandada o utilziar vite que es una herramienta que nos permite trabajar con React de una forma más rápida y sencilla.</p>
+</section>
+<section id="qué-es-vite" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-vite">¿Qué es vite?</h2>
+<p>Vite es un nuevo compilador de frontend que permite trabajar con React de una forma más rápida y sencilla.</p>
+<p>Esto lo veremos en el siguiente capítulo.</p>
+</section>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
+<p>Nodejs es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.</p>
 </section>
 <section id="referencias" class="level2">
 <h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<ul>
-<li><a href="https://www.django-rest-framework.org/">Django Rest Framework</a></li>
-<li><a href="https://www.djangoproject.com/">Django</a></li>
-<li><a href="https://docs.pytest.org/en/latest/">pytest</a></li>
-<li><a href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a></li>
-<li><a href="https://www.python.org/">Python</a></li>
-<li><a href="https://git-scm.com/">Git</a></li>
-<li><a href="https://www.github.com/">GitHub</a></li>
-<li><a href="https://www.markdownguide.org/">Markdown</a></li>
-<li><a href="https://pypi.org/project/pip/">Pip</a></li>
-</ul>
+<p><a href="https://nodejs.org/es/">nodejs.org</a></p>
+<p><a href="https://www.npmjs.com/">npm</a></p>
+<p><a href="https://expressjs.com/">express</a></p>
+<p><a href="https://nodemon.io/">nodemon</a></p>
+<p><a href="https://mongoosejs.com/">mongoose</a></p>
+<p><a href="https://www.npmjs.com/package/dotenv">dotenv</a></p>
+<p><a href="https://www.npmjs.com/package/bcrypt">bcrypt</a></p>
+<p><a href="https://www.npmjs.com/package/jsonwebtoken">jsonwebtoken</a></p>
+<p><a href="https://www.npmjs.com/package/cors">cors</a></p>
+<p><a href="https://vitejs.dev/">vite</a></p>
+<p><a href="https://reactjs.org/">react</a></p>
+<p><a href="https://angular.io/">angular</a></p>
+<p><a href="https://v3.vuejs.org/">vue</a></p>
 
 
 </section>
@@ -1050,13 +1119,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad5/6_testing.html" class="pagination-link" aria-label="Testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Testing</span></span>
+      <a href="../../unidades/unidad6/3_introduccion_javascript.html" class="pagination-link" aria-label="JavaScript">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">JavaScript</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad6/1_introduccion_frontend.html" class="pagination-link" aria-label="Introducción a HTML">
-        <span class="nav-page-text"><span class="chapter-title">Introducción a HTML</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/ejercicios/ejercicios_git_github-000.html" class="pagination-link" aria-label="Ejercicios de Git y Github">
+        <span class="nav-page-text"><span class="chapter-title">Ejercicios de Git y Github</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Django y React 2024 - Corrección de tests en Django Rest Framework</title>
+<title>Django y React 2024 - Introducción a React</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad6/1_introduccion_frontend.html" rel="next">
-<link href="../../unidades/unidad5/6_testing.html" rel="prev">
+<link href="../../unidades/unidad6/6_primeros_pasos_con_react.html" rel="next">
+<link href="../../unidades/unidad6/4_introduccion_node.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/5_introduccion_react.html"><span class="chapter-title">Introducción a React</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -252,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Unidad 5: Django</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad5/1_django_fundamentos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
@@ -291,20 +325,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
+  <a href="../../unidades/unidad5/7_correccion_test.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Unidad 6: Frontend</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad6/1_introduccion_frontend.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a HTML</span></a>
@@ -323,6 +357,16 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad6/4_introduccion_node.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nodejs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/5_introduccion_react.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a React</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/6_primeros_pasos_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primeros pasos con React</span></a>
   </div>
 </li>
       </ul>
@@ -373,28 +417,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#pasos" id="toc-pasos" class="nav-link" data-scroll-target="#pasos">Pasos</a>
+  <li><a href="#qué-es-vite" id="toc-qué-es-vite" class="nav-link active" data-scroll-target="#qué-es-vite">¿Qué es Vite?</a></li>
+  <li><a href="#crear-un-proyecto-con-vite" id="toc-crear-un-proyecto-con-vite" class="nav-link" data-scroll-target="#crear-un-proyecto-con-vite">Crear un proyecto con Vite</a></li>
+  <li><a href="#entendiendo-react" id="toc-entendiendo-react" class="nav-link" data-scroll-target="#entendiendo-react">Entendiendo React</a>
   <ul class="collapse">
-  <li><a href="#crear-un-entorno-virtual" id="toc-crear-un-entorno-virtual" class="nav-link" data-scroll-target="#crear-un-entorno-virtual">1. Crear un entorno virtual</a></li>
-  <li><a href="#activar-el-entorno-virtual" id="toc-activar-el-entorno-virtual" class="nav-link" data-scroll-target="#activar-el-entorno-virtual">2. Activar el entorno virtual</a></li>
-  <li><a href="#instalar-las-dependencias" id="toc-instalar-las-dependencias" class="nav-link" data-scroll-target="#instalar-las-dependencias">3. Instalar las dependencias</a></li>
-  <li><a href="#correr-los-tests" id="toc-correr-los-tests" class="nav-link" data-scroll-target="#correr-los-tests">4. Correr los tests</a></li>
-  <li><a href="#corregir-los-tests" id="toc-corregir-los-tests" class="nav-link" data-scroll-target="#corregir-los-tests">5. Corregir los tests</a></li>
-  <li><a href="#correr-los-tests-nuevamente" id="toc-correr-los-tests-nuevamente" class="nav-link" data-scroll-target="#correr-los-tests-nuevamente">6. Correr los tests nuevamente</a></li>
-  <li><a href="#desactivar-el-entorno-virtual" id="toc-desactivar-el-entorno-virtual" class="nav-link" data-scroll-target="#desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</a></li>
+  <li><a href="#srcapp.jsx" id="toc-srcapp.jsx" class="nav-link" data-scroll-target="#srcapp.jsx">src/App.jsx</a></li>
+  <li><a href="#srcmain.jsx" id="toc-srcmain.jsx" class="nav-link" data-scroll-target="#srcmain.jsx">src/main.jsx</a></li>
   </ul></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#hello-world-con-react" id="toc-hello-world-con-react" class="nav-link" data-scroll-target="#hello-world-con-react">Hello World con React</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#ejericios" id="toc-ejericios" class="nav-link" data-scroll-target="#ejericios">Ejericios</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_django_fundamentos.html">Unidad 5: Django</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/7_correccion_test.html"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/5_introduccion_react.html"><span class="chapter-title">Introducción a React</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Corrección de tests en Django Rest Framework</span></h1>
+<h1 class="title"><span class="chapter-title">Introducción a React</span></h1>
 </div>
 
 
@@ -411,78 +452,126 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>En este documento se describen los pasos necesarios para corregir los tests de Django Rest Framework.</p>
-<p>Actualmente tenemos el siguiente error en los tests:</p>
-<pre class="shell"><code>================================================== test session starts ===================================================
-platform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0
-rootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django
-collected 0 items / 1 error                                                                                              
-
-========================================================= ERRORS =========================================================
-________________________________________ ERROR collecting productos/test_views.py ________________________________________
-ImportError while importing test module '/home/statick/workspaces/Curso_django_and_react/inventario_django/productos/test_views.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib64/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-productos/test_views.py:1: in &lt;module&gt;
-    from django.urls import reverse
-E   ModuleNotFoundError: No module named 'django'
-================================================ short test summary info =================================================
-ERROR productos/test_views.py
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-==================================================== 1 error in 0.07s ====================================================</code></pre>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/react-logo.png" class="center img-fluid figure-img" width="200"></p>
+<figcaption>React</figcaption>
+</figure>
+</div>
+</div>
+<div class="justify">
+<p>Antes de conocer React, es importante entender que es una librería de JavaScript que se utiliza para construir interfaces de usuario. React fue desarrollado por Facebook y lanzado en 2013. React es una librería de código abierto y se utiliza para construir interfaces de usuario en aplicaciones web. React es una de las librerías de JavaScript más populares y se utiliza en aplicaciones web de todo tipo.</p>
+<p>La forma clásica de instalar React es a través de npm, el gestor de paquetes de Node.js. Para instalar React, primero debes instalar Node.js en tu sistema. Luego, puedes instalar React utilizando el siguiente comando:</p>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install react</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="justify">
+<p>Sin embargo en la actualidad no se recomienda hacerlo de esta forma, es mejor utilizar Vite, un entorno de desarrollo que permite trabajar con React de forma más sencilla.</p>
+</div>
+<section id="qué-es-vite" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-vite">¿Qué es Vite?</h2>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/viteAndReact.png" class="center img-fluid figure-img"></p>
+<figcaption>Vite + React</figcaption>
+</figure>
+</div>
+</div>
+<div class="justify">
+<p>Vite es un entorno de desarrollo que permite trabajar con React de forma más sencilla. Vite es un entorno de desarrollo que se basa en la tecnología de ES Modules, que es una forma de importar y exportar módulos en JavaScript. Vite utiliza ES Modules para cargar los módulos de JavaScript de forma rápida y eficiente. Vite también utiliza un servidor de desarrollo que permite trabajar con React de forma más sencilla.</p>
+<p>La documentación oficial de Vite se encuentra en el siguiente enlace: <a href="https://vitejs.dev/" class="uri">https://vitejs.dev/</a></p>
+</div>
 </section>
-<section id="pasos" class="level2">
-<h2 class="anchored" data-anchor-id="pasos">Pasos</h2>
-<section id="crear-un-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="crear-un-entorno-virtual">1. Crear un entorno virtual</h3>
-<pre class="shell"><code>python3 -m venv venv</code></pre>
+<section id="crear-un-proyecto-con-vite" class="level2">
+<h2 class="anchored" data-anchor-id="crear-un-proyecto-con-vite">Crear un proyecto con Vite</h2>
+<div class="justify">
+<p>Para crear un proyecto con Vite, puedes utilizar el siguiente comando:</p>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="justify">
+<p>Este comando crea un proyecto con Vite y te guía a través de la configuración del proyecto. Puedes elegir el nombre del proyecto, el tipo de proyecto (React, Vue, Vanilla), y otras opciones de configuración.</p>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="activar-el-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="activar-el-entorno-virtual">2. Activar el entorno virtual</h3>
-<pre class="shell"><code>source venv/bin/activate</code></pre>
+<section id="entendiendo-react" class="level2">
+<h2 class="anchored" data-anchor-id="entendiendo-react">Entendiendo React</h2>
+<section id="srcapp.jsx" class="level3">
+<h3 class="anchored" data-anchor-id="srcapp.jsx">src/App.jsx</h3>
+<div class="justify">
+<p>Antes de correr un servidor de pruebas podemos entender la estructura de React, en el archivo App.jsx ubicado en la ruta <strong>src/App.jsx</strong> se encuentra el código principal de la aplicación, en este archivo se importa React y ReactDOM, se crea un componente de React llamado <strong>App</strong> y se renderiza en el DOM utilizando <strong>ReactDOM.render</strong>.</p>
+</div>
 </section>
-<section id="instalar-las-dependencias" class="level3">
-<h3 class="anchored" data-anchor-id="instalar-las-dependencias">3. Instalar las dependencias</h3>
-<pre class="shell"><code>pip install -r requirements.txt</code></pre>
-</section>
-<section id="correr-los-tests" class="level3">
-<h3 class="anchored" data-anchor-id="correr-los-tests">4. Correr los tests</h3>
-<pre class="shell"><code>pytest</code></pre>
-</section>
-<section id="corregir-los-tests" class="level3">
-<h3 class="anchored" data-anchor-id="corregir-los-tests">5. Corregir los tests</h3>
-<p>Para corregir los tests, se debe modificar el archivo <code>productos/test_views.py</code> y corregir el error de importación.</p>
-</section>
-<section id="correr-los-tests-nuevamente" class="level3">
-<h3 class="anchored" data-anchor-id="correr-los-tests-nuevamente">6. Correr los tests nuevamente</h3>
-<pre class="shell"><code>pytest</code></pre>
-</section>
-<section id="desactivar-el-entorno-virtual" class="level3">
-<h3 class="anchored" data-anchor-id="desactivar-el-entorno-virtual">7. Desactivar el entorno virtual</h3>
-<pre class="shell"><code>deactivate</code></pre>
+<section id="srcmain.jsx" class="level3">
+<h3 class="anchored" data-anchor-id="srcmain.jsx">src/main.jsx</h3>
+<div class="justify">
+<p>En el archivo <strong>src/main.jsx</strong> se importa el componente <strong>App</strong> y se renderiza en el elemento con el id <strong>root</strong> en el DOM.</p>
+<p>Por ahora no serán necesarios los archivo <strong>App.css</strong> y <strong>index.css</strong>. Asi que puedes eliminarlos. Para correr la aplicación puedes utilizar el siguiente comando:</p>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="conclusión" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
-<p>Una vez corregidos los tests, se debe hacer un pull request al repositorio original.</p>
+<section id="hello-world-con-react" class="level2">
+<h2 class="anchored" data-anchor-id="hello-world-con-react">Hello World con React</h2>
+<div class="justify">
+<p>Para crear un Hello World con React, puedes utilizar el siguiente código en el archivo <strong>src/App.jsx</strong>:</p>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="kw">&lt;h1&gt;</span>Hello World in React<span class="kw">&lt;/h1&gt;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="justify">
+<p>Este código crea un componente de React llamado <strong>App</strong> que renderiza el texto “Hello World” en la pantalla.</p>
+<p>Para crear el hello world tambien vamos a modificar el archivo <strong>src/main.jsx</strong> para que renderice el componente <strong>App</strong> en el elemento con el id <strong>root</strong> en el DOM.</p>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="kw">&lt;h1&gt;</span>Hello World in React<span class="kw">&lt;/h1&gt;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="justify">
+<p>Este código crea un componente de React llamado <strong>App</strong> que renderiza el texto “Hello World” en la pantalla.</p>
+<p>Para ejecutar la aplicación, puedes utilizar el siguiente comando:</p>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="justify">
+<p>Este comando inicia el servidor de desarrollo de Vite y abre la aplicación en tu navegador. Verás el texto “Hello World” en la pantalla.</p>
+</div>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/react_hello_world.png" class="center img-fluid figure-img"></p>
+<figcaption>Django Framework</figcaption>
+</figure>
+</div>
+</div>
 </section>
-<section id="referencias" class="level2">
-<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<ul>
-<li><a href="https://www.django-rest-framework.org/">Django Rest Framework</a></li>
-<li><a href="https://www.djangoproject.com/">Django</a></li>
-<li><a href="https://docs.pytest.org/en/latest/">pytest</a></li>
-<li><a href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a></li>
-<li><a href="https://www.python.org/">Python</a></li>
-<li><a href="https://git-scm.com/">Git</a></li>
-<li><a href="https://www.github.com/">GitHub</a></li>
-<li><a href="https://www.markdownguide.org/">Markdown</a></li>
-<li><a href="https://pypi.org/project/pip/">Pip</a></li>
-</ul>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
+<div class="justify">
+<p>En este capítulo aprendimos a crear un proyecto con Vite y React, entendimos la estructura de un proyecto de React y creamos un Hello World con React. En el próximo capítulo aprenderemos a crear componentes en React.</p>
+</div>
+</section>
+<section id="ejericios" class="level2">
+<h2 class="anchored" data-anchor-id="ejericios">Ejericios</h2>
+<ol type="1">
+<li>Crea un nuevo proyecto con Vite y React.</li>
+<li>Crea un componente de React que renderice un texto en la pantalla.</li>
+</ol>
+<details>
+<summary>
+Ver respuesta
+</summary>
+<p>Solución ejercicio 1:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Solución ejercicio 2:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="kw">&lt;h1&gt;</span>Este es un componente de React<span class="kw">&lt;/h1&gt;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
 
 </section>
@@ -1050,13 +1139,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad5/6_testing.html" class="pagination-link" aria-label="Testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Testing</span></span>
+      <a href="../../unidades/unidad6/4_introduccion_node.html" class="pagination-link" aria-label="Nodejs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Nodejs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad6/1_introduccion_frontend.html" class="pagination-link" aria-label="Introducción a HTML">
-        <span class="nav-page-text"><span class="chapter-title">Introducción a HTML</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad6/6_primeros_pasos_con_react.html" class="pagination-link" aria-label="Primeros pasos con React">
+        <span class="nav-page-text"><span class="chapter-title">Primeros pasos con React</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,224 @@
+# Primeros pasos con React
+:::{.justify}
+Antes de continuar con la parte práctica es necesario repasar algunos conceptos básicos de React.
+
+## ¿Qué es React?
+
+React es una librería de JavaScript para construir interfaces de usuario. Fue desarrollada por Facebook y lanzada en 2013. React es una de las librerías más populares para construir interfaces de usuario en la actualidad.
+
+## Componentes
+
+En React, todo es un componente. Un componente es una pieza de la interfaz de usuario que puede ser reutilizada en diferentes partes de la aplicación. Los componentes pueden ser simples o complejos, y pueden contener otros componentes.
+
+## JSX
+
+JSX es una extensión de JavaScript que permite escribir código HTML dentro de JavaScript. JSX es una de las características más importantes de React, ya que permite escribir componentes de una forma más sencilla y legible.
+
+## Props
+
+Las props son los argumentos que se pasan a un componente. Las props son inmutables, lo que significa que no pueden ser modificadas por el componente que las recibe.
+
+## State
+
+El state es un objeto que contiene los datos de un componente. El state es mutable, lo que significa que puede ser modificado por el componente que lo contiene.
+
+## Ciclo de vida
+
+Los componentes de React tienen un ciclo de vida que consta de diferentes fases. Algunas de las fases más importantes son:
+
+- **componentDidMount**: Se ejecuta después de que el componente ha sido montado en el DOM.
+- **componentDidUpdate**: Se ejecuta después de que el componente ha sido actualizado.
+- **componentWillUnmount**: Se ejecuta antes de que el componente sea desmontado del DOM.
+
+## Hooks
+
+Los hooks son una característica de React que permite añadir estado y otras características a los componentes funcionales. Algunos de los hooks más comunes son:
+
+- **useState**: Permite añadir estado a los componentes funcionales.
+- **useEffect**: Permite añadir efectos secundarios a los componentes funcionales.
+- **useContext**: Permite acceder al contexto de un componente.
+
+## Context
+
+El contexto es una característica de React que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.
+
+## Router
+
+El router es una característica de React que permite gestionar la navegación entre diferentes páginas de la aplicación.
+
+## Redux
+
+Redux es una librería de JavaScript para gestionar el estado de la aplicación de una forma predecible y escalable. Redux se basa en tres principios fundamentales: un único origen de verdad, solo lectura y cambios mediante acciones.
+
+## Práctica
+
+Ahora que hemos repasado los conceptos básicos de React, vamos a crear una aplicación sencilla para poner en práctica lo aprendido. En esta aplicación vamos a crear un contador que permita incrementar y decrementar un número.
+
+Para crear la aplicación vamos a utilizar como aprendimos en la sección anterior Vite + React.
+
+### Crear la aplicación
+
+Para crear la aplicación vamos a utilizar el siguiente comando:
+:::
+
+```bash
+npm create vite@latest
+```
+:::{.justify}
+Luego seleccionamos la opción **react** y el nombre de la aplicación.
+
+### Crear el componente del contador
+
+Para organizar de mejor forma el código vamos a crear el directorio **components** y dentro de este directorio vamos a crear el archivo **Counter.js** con el siguiente contenido:
+:::
+
+```jsx
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+### Crear el componente principal
+
+:::{.justify}
+Para organizar de mejor forma el código vamos a crear el directorio **pages** y dentro de este directorio vamos a crear el archivo **Home.js** con el siguiente contenido:
+:::
+
+```jsx
+import React from 'react';
+import Counter from '../components/Counter';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Counter App</h1>
+      <Counter />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+:::{.callout-tip}
+Podemos utilizar la opción de exportación por defecto agregando **export default** al componente cuando lo creamos o podemos exportar el componente al final del archivo utilizando **export**.
+:::
+
+### Crear la aplicación principal
+:::{.justify}
+Modificamos el archivo **src/App.js** con el siguiente contenido:
+:::
+
+```jsx
+import React from 'react';
+import Home from './pages/Home';
+
+const App = () => {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
+};
+
+export default App;
+```
+
+### Ejecutar la aplicación
+:::{.justify}
+Para ejecutar la aplicación vamos a utilizar el siguiente comando:
+:::
+
+```bash
+npm run dev
+```
+
+### Resultado
+:::{.justify}
+Si todo ha salido bien, deberíamos ver la aplicación en el navegador con el contador funcionando correctamente.
+:::
+
+:::{.center}
+![App Counter](/images/counter.png){.center}
+:::
+
+## Conclusiones
+:::{.justify}
+En este capítulo aprendimos los conceptos básicos de React y cómo crear una aplicación sencilla utilizando Vite + React. En el próximo capítulo vamos a aprender cómo trabajar con componentes en React y cómo organizar el código de una aplicación de forma eficiente.
+:::
+
+## Ejercicios
+:::{.justify}
+1. Modificar el contador para que no pueda ser menor que cero.
+2. Crear un nuevo componente que muestre un mensaje si el contador es mayor que cero.
+:::
+
+<details>
+  <summary>Ver solución</summary>
+
+### Solución ejercicio 1
+
+Para modificar el contador para que no pueda ser menor que cero, podemos modificar la función **decrement** de la siguiente forma:
+
+```jsx
+const decrement = () => {
+  if (count > 0) {
+    setCount(count - 1);
+  }
+};
+```
+
+### Solución ejercicio 2
+
+Para crear un nuevo componente que muestre un mensaje si el contador es mayor que cero, podemos crear un nuevo componente llamado **Message.js** con el siguiente contenido:
+
+```jsx
+import React from 'react';
+
+const Message = ({ count }) => {
+  return count > 0 ? <h2>El contador es mayor que cero</h2> : null;
+};
+
+export default Message;
+```
+
+Luego podemos importar y utilizar este componente en el componente **Home**:
+
+```jsx
+import React from 'react';
+import Counter from '../components/Counter';
+import Message from '../components/Message';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Counter App</h1>
+      <Counter />
+      <Message />
+    </div>
+  );
+};
+
+export default Home;
+```
+</details>

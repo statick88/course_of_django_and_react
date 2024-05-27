@@ -70,6 +70,8 @@ book:
         - unidades/unidad6/2_introduccion_css.qmd
         - unidades/unidad6/3_introduccion_javascript.qmd
         - unidades/unidad6/4_introduccion_node.qmd
+        - unidades/unidad6/5_introduccion_react.qmd
+        - unidades/unidad6/6_primeros_pasos_con_react.qmd
 
     - part: "Ejercicios"
       chapters: 
