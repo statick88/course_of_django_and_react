@@ -24,11 +24,11 @@ Para instalar Python en Windows, primero necesitamos descargar el instalador de 
 <https://www.python.org/downloads/>
 :::
 
-![](images/paste-1.png){fig-align="center"}
+![](images/paste-1.png){.center}
 
 En la página de descargas, haga clic en el botón de descarga para la última versión de Python. En el momento de escribir este tutorial, la última versión de Python es 3.12.1
 
-![](images/paste-2.png){fig-align="center"}
+![](images/paste-2.png){.center}
 
 Excelente, ahora que hemos descargado el instalador de Python, podemos continuar con la instalación de Python en Windows.
 
@@ -36,7 +36,9 @@ Excelente, ahora que hemos descargado el instalador de Python, podemos continuar
 
 Una vez que el instalador de Python se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Asegúrese de marcar la casilla que dice "Add Python 3.12 to PATH" antes de hacer clic en el botón "Install Now".
 
-![](images/paste-4.png){fig-align="center"}
+:::{.center}
+![](images/paste-4.png){.center}
+:::
 
 Ahora que hemos instalado Python en nuestra computadora, podemos continuar con la configuración de nuestro entorno de desarrollo para escribir y ejecutar programas en Python.
 
@@ -45,15 +47,16 @@ Ahora que hemos instalado Python en nuestra computadora, podemos continuar con l
 Para comprobar que Python se ha instalado correctamente en nuestra computadora, abra una ventana de comandos y escriba el siguiente comando:
 
 ``` bash
-python --version # <1>
+python --version
 ```
 
 4.  **Impresion de la versión de Python**
 
 Este comando imprimirá la versión de Python que está instalada en su computadora. En mi caso, la versión de Python es 3.12.1.
 
-![](images/paste-5.png){fig-align="center"}
-
+:::{.center}
+![](images/paste-5.png){.center}
+:::
 ### Paso 3: Crear nuestro primer "Hola Mundo" en Python 🗺️.
 
 Ahora que hemos instalado Python en nuestra computadora, podemos comenzar a escribir y ejecutar programas en Python. Para hacer esto, necesitamos un editor de texto para escribir nuestro código y un intérprete de Python para ejecutar nuestro código.
@@ -68,33 +71,41 @@ Para instalar Visual Studio Code, vaya al sitio web oficial de Visual Studio Cod
 <https://code.visualstudio.com/>
 :::
 
-![](images/paste-6.png){fig-align="center"}
+:::{.center}
+![](images/paste-6.png){.center}
+:::
 
 En la página de descargas, haga clic en el botón de descarga para su sistema operativo. En el momento de escribir este tutorial, la última versión de Visual Studio Code es 1.85.2.
 
 Una vez que el instalador de Visual Studio Code se haya descargado, haga doble clic en el archivo de instalación para iniciar el proceso de instalación. Siga las instrucciones en pantalla para completar la instalación.
 
-![](images/paste-7.png){fig-align="center"}
+:::{.center}
+![](images/paste-7.png){.center}
+:::
 
 2.  **Crear un nuevo archivo de Python**
 
 Para crear un nuevo archivo de Python en Visual Studio Code, abra Visual Studio Code y haga clic en el botón "New File" en la barra de herramientas. Luego, escriba el siguiente código en el archivo:
 
 ``` python
-print("Hola Mundo") # <1>
+print("Hola Mundo")
 ```
 
 3.  Este código imprimirá "Hola Mundo" en la consola.
 
-![](images/paste-8.png){fig-align="center"}
+:::{.center}
+![](images/paste-8.png){.center}
+:::
 
 4.  Ejecutar el programa
 
 Para ejecutar el programa, haga clic en el botón "Run" en la barra de herramientas. Esto ejecutará el programa y mostrará "Hola Mundo" en la consola.
 
-![](images/paste-9.png)print
+:::{.center}
+![](images/paste-9.png){.center}
+:::
 
-::: {.text-center}
+:::{.center}
 ¡Felicidades! 
 
 Acabas de escribir y ejecutar tu primer programa en Python. Ahora que has configurado tu entorno de desarrollo y has escrito tu primer programa en Python, puedes comenzar a explorar el lenguaje de programación Python y aprender a escribir programas más complejos.
