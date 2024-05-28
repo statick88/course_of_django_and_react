@@ -116,6 +116,7 @@ Al ejecutar el comando, verás los resultados de las operaciones matemáticas en
 Nodejs cuenta con un objeto global llamado **globalThis** que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto **globalThis** para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.
 
 Por ejemplo, puedes utilizar el objeto **globalThis** para acceder a la variable **process** que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:
+:::
 
 ```javascript
 console.log(globalThis.process.version);
@@ -198,10 +199,6 @@ En esta sección hemos analizado las características de Nodejs y cómo podemos 
 
 # Alternativas a Nodejs
 
-:::{.center}
-![Alternativas a Nodejs](/images/nodejs-alternativas.png){.center}
-:::
-
 :::{.justify}
 En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección analizaremos algunas de las alternativas a Nodejs y sus características.
 
@@ -249,7 +246,7 @@ await app.listen({ port: 3000 });
 ```bash
 deno run --allow-net app.ts
 ```
-:::{.center}
+:::{.justify}
 3. Abre tu navegador y accede a la dirección [http://localhost:3000/](http://localhost:3000/).
 
 Con estos pasos has creado una aplicación web con Deno que muestra un mensaje de "Hola mundo!" en el navegador.

@@ -2851,7 +2851,7 @@
     "href": "unidades/unidad6/4_introduccion_node.html#globalthis",
     "title": "Nodejs",
     "section": "GlobalThis",
-    "text": "GlobalThis\n:::{.justify} Nodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
+    "text": "GlobalThis\n\nNodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\n\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"

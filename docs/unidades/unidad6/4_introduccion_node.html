@@ -550,8 +550,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Al ejecutar el comando, verás los resultados de las operaciones matemáticas en la consola del sistema operativo.</p>
 <section id="globalthis" class="level2">
 <h2 class="anchored" data-anchor-id="globalthis">GlobalThis</h2>
-<p>:::{.justify} Nodejs cuenta con un objeto global llamado <strong>globalThis</strong> que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto <strong>globalThis</strong> para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.</p>
+<div class="justify">
+<p>Nodejs cuenta con un objeto global llamado <strong>globalThis</strong> que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto <strong>globalThis</strong> para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.</p>
 <p>Por ejemplo, puedes utilizar el objeto <strong>globalThis</strong> para acceder a la variable <strong>process</strong> que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:</p>
+</div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(globalThis<span class="op">.</span><span class="at">process</span><span class="op">.</span><span class="at">version</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Al ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.</p>
 </section>
@@ -628,14 +630,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="alternativas-a-nodejs" class="level1">
 <h1>Alternativas a Nodejs</h1>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/nodejs-alternativas.png" class="center img-fluid figure-img"></p>
-<figcaption>Alternativas a Nodejs</figcaption>
-</figure>
-</div>
-</div>
 <div class="justify">
 <p>En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección analizaremos algunas de las alternativas a Nodejs y sus características.</p>
 <section id="deno" class="level2">
@@ -677,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">deno</span> run <span class="at">--allow-net</span> app.ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="center">
+<div class="justify">
 <ol start="3" type="1">
 <li>Abre tu navegador y accede a la dirección <a href="http://localhost:3000/">http://localhost:3000/</a>.</li>
 </ol>
