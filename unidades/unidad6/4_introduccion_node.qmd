@@ -183,7 +183,7 @@ node index.js
 6. Abre tu navegador y accede a la dirección [http://localhost:3000/](http://localhost:3000/).
 
 :::{.center}
-![App Express](//images/app_express.png){.center}
+![App Express](/images/app_express.png){.center}
 :::
 
 Con estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de "Hola mundo!" en el navegador.
