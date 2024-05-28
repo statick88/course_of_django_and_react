@@ -1,153 +1,498 @@
 # Nodejs
 
-## ¿Qué es nodejs?
+:::{.center}
+![Nodejs](/images/node-logo.png){.center width="200px"}
+:::
 
-Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+:::{.justify}
+Nodejs es muy importante para el desarrollo de aplicaciones web, ya que es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.
 
-## ¿Por qué nodejs?
+En esta sección analizaremos las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web para posteriormente adentrarnos en Reactjs.
+:::
 
-Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+## Características de Nodejs
 
-## ¿Cómo instalar nodejs?
+:::{.justify}
+Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.
 
-Para instalar nodejs en windows debemos descargar el instalador desde la página oficial de nodejs [nodejs.org](https://nodejs.org/es/), una vez descargado el instalador lo ejecutamos y seguimos los pasos del instalador.
+Algunas de las características de Nodejs son:
 
-Para instalar nodejs en linux debemos abrir una terminal y ejecutar los siguientes comandos:
+- **JavaScript en el servidor**: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.
+
+- **Event-driven**: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.
+
+- **I/O no bloqueante**: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.
+
+- **Módulos**: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.
+
+- **NPM**: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.
+
+- **APIs**: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.
+
+- **Escalabilidad**: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.
+
+- **Comunidad**: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.
+
+## Instalación de Nodejs
+
+Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: [https://nodejs.org/](https://nodejs.org/).
+
+Una vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.
+:::
+
+## Utilizando nodejs
+
+:::{.justify}
+Una vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando **node** para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo **hola-mundo.js** con el siguiente código:
+:::
+
+```javascript
+console.log('Hola mundo!');
+console.info('Información');
+console.warn('Advertencia');
+console.error('Error');
+```
+:::{.justify}
+Para ejecutar el archivo **hola-mundo.js**, puedes utilizar el siguiente comando:
+:::
 
 ```bash
-sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install npm
+node hola-mundo.js
+```
+:::{.justify}
+Al ejecutar el comando, verás el mensaje de "Hola mundo!" en la consola del sistema operativo.
+
+# Lógica de la programación con nodejs
+
+Para realizar operaciones más complejas con Nodejs, puedes utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación. Por ejemplo, puedes crear un módulo **operaciones.js** con las siguientes funciones:
+
+```javascript
+function sumar(a, b) {
+  return a + b;
+}
+
+function restar(a, b) {
+  return a - b;
+}
+
+function multiplicar(a, b) {
+  return a * b;
+}
+
+function dividir(a, b) {
+  return a / b;
+}
+
+module.exports = {
+  sumar,
+  restar,
+  multiplicar,
+  dividir
+};
 ```
 
-## ¿Cómo ejecutar un archivo de nodejs?
+Para utilizar el módulo **operaciones.js** en otro archivo, puedes utilizar la función **require** de Nodejs. Por ejemplo, puedes crear un archivo **index.js** con el siguiente código:
 
-Para ejecutar un archivo de nodejs debemos abrir una terminal y ejecutar el siguiente comando:
+```javascript
+const operaciones = require('./operaciones');
+
+console.log('Suma:', operaciones.sumar(2, 3));
+console.log('Resta:', operaciones.restar(5, 3));
+console.log('Multiplicación:', operaciones.multiplicar(2, 3));
+console.log('División:', operaciones.dividir(6, 3));
+```
+
+Para ejecutar el archivo **index.js**, puedes utilizar el siguiente comando:
 
 ```bash
-node archivo.js
+node index.js
 ```
 
-## ¿Qué es npm?
+Al ejecutar el comando, verás los resultados de las operaciones matemáticas en la consola del sistema operativo.
 
-npm es el sistema de gestión de paquetes por defecto para Node.js, un entorno de ejecución para JavaScript. npm es un acrónimo de Node Package Manager.
+## GlobalThis
 
-## ¿Cómo instalar un paquete de npm?
+:::{.justify}
+Nodejs cuenta con un objeto global llamado **globalThis** que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto **globalThis** para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.
 
-Para instalar un paquete de npm debemos abrir una terminal y ejecutar el siguiente comando:
+Por ejemplo, puedes utilizar el objeto **globalThis** para acceder a la variable **process** que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:
+
+```javascript
+console.log(globalThis.process.version);
+```
+
+Al ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.
+
+## Conclusiones
+
+Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.
+
+En esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.
+
+## Creación de una aplicación web con Nodejs
+
+:::{.justify}
+Para crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:
+
+1. Crea un directorio para tu aplicación web:
+:::
+
+```bash
+mkdir mi-aplicacion-web
+cd mi-aplicacion-web
+```
+:::{.justify}
+2. Inicializa un proyecto de Nodejs:
+:::
+
+```bash
+npm init -y
+```
+:::{.justify}
+3. Instala el paquete **express** para crear un servidor web:
+:::
+
+```bash
+npm install express
+```
+:::{.justify}
+4. Crea un archivo **index.js** con el siguiente código:
+:::
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hola mundo!');
+});
+
+app.listen(3000, () => {
+  console.log('Servidor web iniciado en el puerto 3000');
+});
+```
+:::{.justify}
+5. Inicia el servidor web:
+:::
+
+```bash
+node index.js
+```
+:::{.justify}
+6. Abre tu navegador y accede a la dirección [http://localhost:3000/](http://localhost:3000/).
+
+:::{.center}
+![App Express](//images/app_express.png){.center}
+:::
+
+Con estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de "Hola mundo!" en el navegador.
+:::
+
+## Conclusiones
+
+:::{.justify}
+Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.
+
+En esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.
+:::
+
+# Alternativas a Nodejs
+
+:::{.center}
+![Alternativas a Nodejs](/images/nodejs-alternativas.png){.center}
+:::
+
+:::{.justify}
+En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección analizaremos algunas de las alternativas a Nodejs y sus características.
+
+## Deno
+
+Deno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:
+
+- **Seguridad**: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.
+
+- **TypeScript**: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.
+
+- **Módulos ESM**: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.
+
+- **APIs**: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.
+
+- **Gestor de paquetes**: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.
+
+## Creación de una aplicación web con Deno
+
+Para crear una aplicación web con Deno, puedes seguir los siguientes pasos:
+
+1. Crea un archivo **app.ts** con el siguiente código:
+:::
+
+```typescript
+import { Application, Router } from 'https://deno.land/x/oak/mod.ts';
+
+const app = new Application();
+const router = new Router();
+
+router.get('/', (ctx) => {
+  ctx.response.body = 'Hola mundo!';
+});
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+console.log('Servidor web iniciado en el puerto 3000');
+await app.listen({ port: 3000 });
+```
+:::{.justify}
+2. Inicia el servidor web:
+:::
+
+```bash
+deno run --allow-net app.ts
+```
+:::{.center}
+3. Abre tu navegador y accede a la dirección [http://localhost:3000/](http://localhost:3000/).
+
+Con estos pasos has creado una aplicación web con Deno que muestra un mensaje de "Hola mundo!" en el navegador.
+
+## Bun
+
+Bun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:
+
+- **Velocidad**: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.
+
+- **Módulos**: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.
+
+- **APIs**: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.
+
+- **Gestor de paquetes**: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.
+
+## Creación de una aplicación web con Bun
+
+Para crear una aplicación web con Bun, puedes seguir los siguientes pasos:
+
+1. Crea un archivo **app.js** con el siguiente código:
+:::
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hola mundo!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Servidor web iniciado en el puerto 3000');
+});
+```
+:::{.justify}
+2. Inicia el servidor web:
+:::
+
+```bash
+node app.js
+```
+:::{.justify}
+3. Abre tu navegador y accede a la dirección [http://localhost:3000/](http://localhost:3000/).
+
+Con estos pasos has creado una aplicación web con Bun que muestra un mensaje de "Hola mundo!" en el navegador.
+
+## Conclusiones
+
+En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.
+
+En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.
+:::
+
+# Npm, Yarn y Pnpm
+
+:::{.center}
+![Npm, Yarn y Pnpm](/images/npm-vs-yarn-vs-pnpm-1.png){.center}
+:::
+
+## Introducción
+
+:::{.justify}
+En el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.
+
+En esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.
+:::
+
+## Npm
+
+:::{.justify}
+Npm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.
+
+Algunas de las características de Npm son:
+
+- **Instalación de paquetes**: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.
+
+- **Gestión de dependencias**: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.
+
+- **Scripts**: Npm permite ejecutar scripts de forma sencilla a través del archivo **package.json**.
+
+- **Repositorio de paquetes**: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.
+
+- **Versionado semántico**: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.
+
+## Instalación de paquetes con Npm
+
+Para instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:
 
 ```bash
 npm install nombre-del-paquete
 ```
 
-## ¿Cómo crear un proyecto de nodejs?
+En la sección anterior aprendimos a crear un proyecto con **NPM**
 
-Para crear un proyecto de nodejs debemos abrir una terminal y ejecutar los siguientes comandos:
+## Yarn
 
-```bash
-mkdir nombre-del-proyecto
-cd nombre-del-proyecto
-npm init -y
-```
+:::{.justify}
+Yarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.
 
-## ¿Cómo instalar express?
+Algunas de las características de Yarn son:
 
-Para instalar express debemos abrir una terminal y ejecutar el siguiente comando:
+- **Instalación de paquetes**: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.
 
-```bash
-npm install express
-```
+- **Gestión de dependencias**: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.
 
-## ¿Cómo instalar nodemon?
+- **Scripts**: Yarn permite ejecutar scripts de forma sencilla a través del archivo **package.json**.
 
-Para instalar nodemon debemos abrir una terminal y ejecutar el siguiente comando:
+- **Repositorio de paquetes**: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.
 
-```bash
-npm install nodemon
-```
+- **Velocidad**: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.
 
-## ¿Cómo instalar mongoose?
+## Instalación de paquetes con Yarn
 
-Para instalar mongoose debemos abrir una terminal y ejecutar el siguiente comando:
+Para instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:
+:::
 
 ```bash
-npm install mongoose
+yarn add nombre-del-paquete
 ```
+:::{.justify}
+## Crear un proyecto con Yarn
 
-## ¿Cómo instalar dotenv?
-
-Para instalar dotenv debemos abrir una terminal y ejecutar el siguiente comando:
+Para crear un proyecto con Yarn, puedes utilizar el siguiente comando:
+:::
 
 ```bash
-npm install dotenv
+yarn init
 ```
+:::{.justify}
+## Pnpm
 
-## ¿Cómo instalar bcrypt?
+Pnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.
 
-Para instalar bcrypt debemos abrir una terminal y ejecutar el siguiente comando:
+Algunas de las características de Pnpm son:
+
+- **Instalación de paquetes**: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.
+
+- **Gestión de dependencias**: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.
+
+- **Scripts**: Pnpm permite ejecutar scripts de forma sencilla a través del archivo **package.json**.
+
+- **Repositorio de paquetes**: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.
+
+- **Espacio en disco**: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.
+
+## Instalación de paquetes con Pnpm
+
+Para instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:
+:::
 
 ```bash
-npm install bcrypt
+pnpm add nombre-del-paquete
 ```
+:::{.justify}
+## Crear un proyecto con Pnpm
 
-## ¿Cómo instalar jsonwebtoken?
-
-Para instalar jsonwebtoken debemos abrir una terminal y ejecutar el siguiente comando:
+Para crear un proyecto con Pnpm, puedes utilizar el siguiente comando:
+:::
 
 ```bash
-npm install jsonwebtoken
+pnpm init
 ```
-
-## ¿Cómo instalar cors?
-
-Para instalar cors debemos abrir una terminal y ejecutar el siguiente comando:
-
-```bash
-npm install cors
-```
-
-Ahora que ya sabes como instalar los paquetes necesarios para crear un proyecto de nodejs, puedes empezar a crear tu proyecto.
-
-Con Nodejs podemos trabajar en proyectos de frontend con librerías populares como React, Angular, Vue, etc. y también podemos trabajar en proyectos de backend con librerías populares como Express, Mongoose, etc.
-
-## ¿Cómo empiezo mis primeros pasos con React?
-
-Para trabajar con React lo podemos hacer de la forma tradicional que ya no es tan recomandada o utilziar vite que es una herramienta que nos permite trabajar con React de una forma más rápida y sencilla.
-
-## ¿Qué es vite?
-
-Vite es un nuevo compilador de frontend que permite trabajar con React de una forma más rápida y sencilla.
-
-Esto lo veremos en el siguiente capítulo.
-
+:::{.justify}
 ## Conclusiones
 
-Nodejs es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.
+En el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.
 
-## Referencias
+En esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.
+:::
 
-[nodejs.org](https://nodejs.org/es/)
+:::{.center}
+![Npm, Yarn y Pnpm](/images/npm-vs-yarn-vs-pnpm-1.png){.center}
+:::
 
-[npm](https://www.npmjs.com/)
+## FNM
 
-[express](https://expressjs.com/)
+:::{.justify}
+FNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.
 
-[nodemon](https://nodemon.io/)
+Algunas de las características de FNM son:
 
-[mongoose](https://mongoosejs.com/)
+- **Instalación de versiones**: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.
 
-[dotenv](https://www.npmjs.com/package/dotenv)
+- **Cambio de versión**: FNM permite cambiar de versión de Nodejs de forma sencilla.
 
-[bcrypt](https://www.npmjs.com/package/bcrypt)
+- **Gestión de versiones**: FNM permite gestionar las versiones de Nodejs de forma sencilla.
 
-[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- **Integración con Npm, Yarn y Pnpm**: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.
 
-[cors](https://www.npmjs.com/package/cors)
+## Instalación de FNM
 
-[vite](https://vitejs.dev/)
+Para instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:
+:::
 
-[react](https://reactjs.org/)
+```bash
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+:::{.justify}
+Una vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:
 
-[angular](https://angular.io/)
+- **fnm install**: Instala una versión de Nodejs.
 
-[vue](https://v3.vuejs.org/)
+- **fnm use**: Cambia de versión de Nodejs.
+
+- **fnm ls**: Lista las versiones de Nodejs instaladas.
+
+- **fnm default**: Establece la versión de Nodejs por defecto.
+
+## Ejemplo de uso de FNM
+
+Para instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:
+:::
+
+```bash
+fnm install 14
+```
+:::{.justify}
+Para cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:
+:::
+
+```bash
+fnm use 14
+```
+:::{.justify}
+Para listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:
+:::
+
+```bash
+fnm ls
+```
+
+:::{.justify}
+Para establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:
+:::
+
+```bash
+fnm default 14
+```
+:::{.justify}
+## Conclusiones
+
+FNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.
+
+En esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.
+:::

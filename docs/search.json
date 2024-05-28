@@ -1826,7 +1826,7 @@
     "href": "unidades/unidad6/4_introduccion_node.html",
     "title": "Nodejs",
     "section": "",
-    "text": "¿Qué es nodejs?\nNode.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.",
+    "text": "Características de Nodejs",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2002,7 +2002,7 @@
     "href": "unidades/unidad6/4_introduccion_node.html#conclusiones",
     "title": "Nodejs",
     "section": "Conclusiones",
-    "text": "Conclusiones\nNodejs es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.",
+    "text": "Conclusiones\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2013,7 +2013,7 @@
     "href": "unidades/unidad6/4_introduccion_node.html#referencias",
     "title": "Nodejs",
     "section": "Referencias",
-    "text": "Referencias\nnodejs.org\nnpm\nexpress\nnodemon\nmongoose\ndotenv\nbcrypt\njsonwebtoken\ncors\nvite\nreact\nangular\nvue",
+    "text": "Referencias\n\nNodejs\nExpress\nReactjs",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2559,5 +2559,302 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
+    "title": "Nodejs",
+    "section": "Instalación de Nodejs",
+    "text": "Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nAlgunas de las características de Nodejs son:\n\nJavaScript en el servidor: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.\nEvent-driven: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.\nI/O no bloqueante: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.\nMódulos: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nNPM: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\nAPIs: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nEscalabilidad: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.\nComunidad: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.\n\n\nInstalación de Nodejs\nPara instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
+    "title": "Nodejs",
+    "section": "",
+    "text": "Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
+    "title": "Nodejs",
+    "section": "Creación de una aplicación web con Nodejs",
+    "text": "Creación de una aplicación web con Nodejs\n\nPara crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:\n\nCrea un directorio para tu aplicación web:\n\n\nmkdir mi-aplicacion-web\ncd mi-aplicacion-web\n\n\nInicializa un proyecto de Nodejs:\n\n\nnpm init -y\n\n\nInstala el paquete express para crear un servidor web:\n\n\nnpm install express\n\n\nCrea un archivo index.js con el siguiente código:\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hola mundo!');\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode index.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\n\n\n\n\nApp Express\n\n\n\nCon estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#nodejs-y-reactjs",
+    "href": "unidades/unidad6/4_introduccion_node.html#nodejs-y-reactjs",
+    "title": "Nodejs",
+    "section": "Nodejs y Reactjs",
+    "text": "Nodejs y Reactjs\n\nNodejs y Reactjs son dos tecnologías muy populares en el desarrollo de aplicaciones web. Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor, mientras que Reactjs es una biblioteca de JavaScript para crear interfaces de usuario interactivas.\nNodejs y Reactjs se complementan muy bien, ya que Nodejs puede utilizarse como servidor para servir las páginas web creadas con Reactjs. De esta forma, puedes utilizar Nodejs para crear una API REST que se comunique con el frontend de Reactjs y servir las páginas web estáticas generadas por Reactjs.\nEn la siguiente sección veremos cómo podemos utilizar Nodejs y Reactjs juntos para crear una aplicación web completa.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#nodejs-en-el-desarrollo-de-aplicaciones-con-reactjs.",
+    "href": "unidades/unidad6/4_introduccion_node.html#nodejs-en-el-desarrollo-de-aplicaciones-con-reactjs.",
+    "title": "Nodejs",
+    "section": "Nodejs en el desarrollo de Aplicaciones con Reactjs.",
+    "text": "Nodejs en el desarrollo de Aplicaciones con Reactjs.\n\nNodejs es muy importante en el desarrollo de aplicaciones web con Reactjs, ya que permite ejecutar código JavaScript en el servidor y crear APIs RESTful para interactuar con la base de datos.\nEn el desarrollo de aplicaciones web con Reactjs, Nodejs se utiliza para crear un servidor web que sirva los archivos estáticos de la aplicación y para crear una API RESTful que interactúe con la base de datos.\nEn la siguiente sección veremos cómo podemos utilizar Nodejs en el desarrollo de aplicaciones web con Reactjs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción",
+    "href": "unidades/unidad6/4_introduccion_node.html#introducción",
+    "title": "Nodejs",
+    "section": "Introducción",
+    "text": "Introducción\n\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#npm",
+    "href": "unidades/unidad6/4_introduccion_node.html#npm",
+    "title": "Nodejs",
+    "section": "Npm",
+    "text": "Npm\n:::{.justify} Npm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Npm son:\n\nInstalación de paquetes: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Npm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVersionado semántico: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Npm",
+    "text": "Instalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#yarn",
+    "title": "Nodejs",
+    "section": "Yarn",
+    "text": "Yarn\n\nYarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Yarn son:\n\nInstalación de paquetes: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Yarn permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVelocidad: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.\n\n\nInstalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:\n\n\nyarn add nombre-del-paquete",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Yarn",
+    "text": "Instalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
+    "title": "Nodejs",
+    "section": "Crear un proyecto con Yarn",
+    "text": "Crear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#pnpm",
+    "title": "Nodejs",
+    "section": "Pnpm",
+    "text": "Pnpm\nPnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Pnpm son:\n\nInstalación de paquetes: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Pnpm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nEspacio en disco: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Pnpm",
+    "text": "Instalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
+    "title": "Nodejs",
+    "section": "Crear un proyecto con Pnpm",
+    "text": "Crear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#deno",
+    "href": "unidades/unidad6/4_introduccion_node.html#deno",
+    "title": "Nodejs",
+    "section": "Deno",
+    "text": "Deno\nDeno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nSeguridad: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.\nTypeScript: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.\nMódulos ESM: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.\nAPIs: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
+    "title": "Nodejs",
+    "section": "Creación de una aplicación web con Deno",
+    "text": "Creación de una aplicación web con Deno\nPara crear una aplicación web con Deno, puedes seguir los siguientes pasos:\n\nCrea un archivo app.ts con el siguiente código:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#bun",
+    "href": "unidades/unidad6/4_introduccion_node.html#bun",
+    "title": "Nodejs",
+    "section": "Bun",
+    "text": "Bun\nBun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nVelocidad: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.\nMódulos: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nAPIs: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
+    "title": "Nodejs",
+    "section": "Creación de una aplicación web con Bun",
+    "text": "Creación de una aplicación web con Bun\nPara crear una aplicación web con Bun, puedes seguir los siguientes pasos:\n\nCrea un archivo app.js con el siguiente código:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.\nEn la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#fnm",
+    "title": "Nodejs",
+    "section": "FNM",
+    "text": "FNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
+    "title": "Nodejs",
+    "section": "Instalación de FNM",
+    "text": "Instalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
+    "title": "Nodejs",
+    "section": "Ejemplo de uso de FNM",
+    "text": "Ejemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
+    "title": "Nodejs",
+    "section": "Utilizando nodejs",
+    "text": "Utilizando nodejs\n\nUna vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando node para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo hola-mundo.js con el siguiente código:\n\nconsole.log('Hola mundo!');\nconsole.info('Información');\nconsole.warn('Advertencia');\nconsole.error('Error');\n\nPara ejecutar el archivo hola-mundo.js, puedes utilizar el siguiente comando:\n\nnode hola-mundo.js\n:::{.justify} Al ejecutar el comando, verás el mensaje de “Hola mundo!” en la consola del sistema operativo.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#globalthis",
+    "href": "unidades/unidad6/4_introduccion_node.html#globalthis",
+    "title": "Nodejs",
+    "section": "GlobalThis",
+    "text": "GlobalThis\n:::{.justify} Nodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
   }
 ]
