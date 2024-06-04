@@ -2350,6 +2350,193 @@
     ]
   },
   {
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
+    "href": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
+    "title": "Método fetch con React",
+    "section": "Crear la aplicación",
+    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .\nLuego vamos a instalar las dependencias necesarias para la aplicación:\nnpm install axios",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
+    "href": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
+    "title": "Método fetch con React",
+    "section": "Crear el componente",
+    "text": "Crear el componente\nVamos a crear un componente llamado Pokemon dentro de un directorio llamado src/components que nos permita buscar imágenes de Pokemon en la API de Pokemon.\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst Pokemon = () =&gt; {\n  const [pokemon, setPokemon] = useState('');\n  const [image, setImage] = useState('');\n\n  const getPokemon = async () =&gt; {\n    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);\n    setImage(response.data.sprites.front_default);\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={pokemon} onChange={(e) =&gt; setPokemon(e.target.value)} /&gt;\n      &lt;button onClick={getPokemon}&gt;Buscar&lt;/button&gt;\n      &lt;img src={image} alt={pokemon} /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Pokemon;",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
+    "href": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
+    "title": "Método fetch con React",
+    "section": "Importar el componente",
+    "text": "Importar el componente\nVamos a importar el componente en el archivo App.js.\nimport Pokemon from './components/Pokemon';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;Pokemon /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
+    "href": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
+    "title": "Método fetch con React",
+    "section": "Ejecutar la aplicación",
+    "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a utilizar el siguiente comando:\nnpm run dev",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#conclusión",
+    "href": "unidades/unidad6/7_fetch_con_react.html#conclusión",
+    "title": "Método fetch con React",
+    "section": "Conclusión",
+    "text": "Conclusión\nHemos aprendido a crear el método fetch con React, para ello hemos creado una aplicación que nos permite buscar imágenes de Pokemon en la API de Pokemon.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-la-aplicación",
+    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-la-aplicación",
+    "title": "Fetch con React para obtener el listado de productos",
+    "section": "Crear la aplicación",
+    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-el-componente",
+    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-el-componente",
+    "title": "Fetch con React para obtener el listado de productos",
+    "section": "Crear el componente",
+    "text": "Crear el componente\nVamos a crear el directorio components y dentro de él el archivo Products.jsx.\nimport React, { useState, useEffect } from 'react';\n\nconst Products = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    fetch('https://fakestoreapi.com/products')\n      .then((response) =&gt; response.json())\n      .then((data) =&gt; setProducts(data));\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map((product) =&gt; (\n          &lt;li key={product.id}&gt;{product.title}&lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Products;\nEn este componente estamos utilizando el hook useState para guardar el listado de productos y el hook useEffect para hacer el fetch a la API.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#importar-el-componente",
+    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#importar-el-componente",
+    "title": "Fetch con React para obtener el listado de productos",
+    "section": "Importar el componente",
+    "text": "Importar el componente\nVamos a importar el componente Products en App.jsx.\nimport React from 'react';\n\nimport Products from './components/Products';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;Products /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;\nEn el código anterior estamos importando el componente Products y lo estamos renderizando en App.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
+    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
+    "title": "Fetch con React para obtener el listado de productos",
+    "section": "Ejecutar la aplicación",
+    "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a correr el siguiente comando.\nnpm run dev\nAhora vamos a abrir el navegador en la dirección http://localhost:3000 y vamos a ver el listado de productos.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#conclusiones",
+    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#conclusiones",
+    "title": "Fetch con React para obtener el listado de productos",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn esta sección hemos visto cómo podemos hacer un fetch con React para obtener un listado de productos desde una API.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
+    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
+    "title": "Crud Básico con React y Axios",
+    "section": "Crear el proyecto",
+    "text": "Crear el proyecto",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#crear-la-api",
+    "href": "unidades/unidad6/9_crud_react.html#crear-la-api",
+    "title": "Crud Básico con React y Axios",
+    "section": "Crear la API",
+    "text": "Crear la API\nCreamos un directorio llamado backend y dentro de él, creamos un archivo llamado package.json con el siguiente contenido:\nnpm init -y\nLuego, instalamos express y cors:\nVamos a crear una API muy sencilla con express. Para instalarlo, ejecuta el siguiente comando:\nnpm install express cors\nLuego, crea un archivo llamado server.js en la raíz del proyecto con el siguiente contenido:\nconst express = require('express');\nconst cors = require('cors');\nconst app = express();\n\napp.use(cors());\napp.use(express.json());\n\nlet tasks = [\n  { id: 1, title: 'Task 1' },\n  { id: 2, title: 'Task 2' },\n  { id: 3, title: 'Task 3' },\n];\n\napp.get('/tasks', (req, res) =&gt; {\n  res.json(tasks);\n});\n\napp.post('/tasks', (req, res) =&gt; {\n  const task = { id: tasks.length + 1, title: req.body.title };\n  tasks.push(task);\n  res.json(task);\n});\n\napp.put('/tasks/:id', (req, res) =&gt; {\n  const task = tasks.find(task =&gt; task.id === parseInt(req.params.id));\n  task.title = req.body.title;\n  res.json(task);\n});\n\napp.delete('/tasks/:id', (req, res) =&gt; {\n  tasks = tasks.filter(task =&gt; task.id !== parseInt(req.params.id));\n  res.json({ message: 'Task deleted' });\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Server running on port 3000');\n});\nEn el código anterior estamos creando una API con las siguientes rutas:\n\nGET /tasks: Obtiene la lista de tareas.\nPOST /tasks: Agrega una tarea.\nPUT /tasks/:id: Edita una tarea.\nDELETE /tasks/:id: Elimina una tarea.\n\nPara ejecutar la API, ejecuta el siguiente comando:\nnode server.js",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
+    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
+    "title": "Crud Básico con React y Axios",
+    "section": "Crear el proyecto de React",
+    "text": "Crear el proyecto de React\nPara ello nos dirijimos al directorio frontend.\nPara crear el proyecto vamos a usar vite. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:\nnpm create vite@latest .\nLuego, vamos a instalar axios para hacer las peticiones a la API:\nnpm install axios",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
+    "href": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
+    "title": "Crud Básico con React y Axios",
+    "section": "Crear la lista de tareas",
+    "text": "Crear la lista de tareas\nCreamos el directorio src/components y dentro de él, creamos un archivo llamado TaskList.js con el siguiente contenido:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst TaskList = () =&gt; {\n  const [tasks, setTasks] = useState([]);\n  const [title, setTitle] = useState('');\n\n  useEffect(() =&gt; {\n    axios.get('http://localhost:3000/tasks')\n      .then(response =&gt; setTasks(response.data));\n  }, []);\n\n  const addTask = () =&gt; {\n    axios.post('http://localhost:3000/tasks', { title })\n      .then(response =&gt; setTasks([...tasks, response.data]));\n  };\n\n  const editTask = (id, title) =&gt; {\n    axios.put(`http://localhost:3000/tasks/${id}`, { title })\n      .then(response =&gt; {\n        const newTasks = tasks.map(task =&gt; {\n          if (task.id === id) {\n            task.title = title;\n          }\n          return task;\n        });\n        setTasks(newTasks);\n      });\n  };\n\n  const deleteTask = id =&gt; {\n    axios.delete(`http://localhost:3000/tasks/${id}`)\n      .then(() =&gt; setTasks(tasks.filter(task =&gt; task.id !== id)));\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={title} onChange={e =&gt; setTitle(e.target.value)} /&gt;\n      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;\n      &lt;ul&gt;\n        {tasks.map(task =&gt; (\n          &lt;li key={task.id}&gt;\n            &lt;input type=\"text\" value={task.title} onChange={e =&gt; editTask(task.id, e.target.value)} /&gt;\n            &lt;button onClick={() =&gt; deleteTask(task.id)}&gt;Delete&lt;/button&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default TaskList;\nEn el código anterior estamos creando un componente llamado TaskList que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el useEffect hacemos una petición a la API para obtener la lista de tareas. En el método addTask agregamos una tarea a la lista. En el método editTask editamos una tarea de la lista. En el método deleteTask eliminamos una tarea de la lista.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#mostrar-la-lista-de-tareas",
+    "href": "unidades/unidad6/9_crud_react.html#mostrar-la-lista-de-tareas",
+    "title": "Crud Básico con React y Axios",
+    "section": "Mostrar la lista de tareas",
+    "text": "Mostrar la lista de tareas\nVamos a importar el componente TaskList en el archivo App.js y mostrarlo en la aplicación:\nimport React from 'react';\nimport TaskList from './components/TaskList';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Task List&lt;/h1&gt;\n      &lt;TaskList /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#probar-la-aplicación",
+    "href": "unidades/unidad6/9_crud_react.html#probar-la-aplicación",
+    "title": "Crud Básico con React y Axios",
+    "section": "Probar la aplicación",
+    "text": "Probar la aplicación\n\n\n\nPara probar la aplicación, ejecuta el siguiente comando:\nnpm run dev\nAbre tu navegador en la dirección http://localhost:3000 y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_crud_react.html#conclusiones",
+    "href": "unidades/unidad6/9_crud_react.html#conclusiones",
+    "title": "Crud Básico con React y Axios",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con axios y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
     "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
     "href": "unidades/ejercicios/ejercicios_git_github-000.html",
     "title": "Ejercicios de Git y Github",
@@ -2357,7 +2544,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -2368,7 +2555,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2379,7 +2566,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2390,7 +2577,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2401,7 +2588,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2412,7 +2599,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2423,7 +2610,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -2434,7 +2621,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2445,7 +2632,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2456,7 +2643,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2467,7 +2654,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2478,7 +2665,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2489,7 +2676,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -2500,7 +2687,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2511,7 +2698,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2522,7 +2709,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2533,7 +2720,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2544,7 +2731,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2555,7 +2742,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -2566,7 +2753,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -2577,7 +2764,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -2588,7 +2775,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -2599,7 +2786,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -2610,7 +2797,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -2621,7 +2808,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
