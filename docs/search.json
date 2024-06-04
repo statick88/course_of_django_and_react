@@ -1833,165 +1833,44 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#por-qué-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#por-qué-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
     "title": "Nodejs",
-    "section": "¿Por qué nodejs?",
-    "text": "¿Por qué nodejs?\nNode.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y orientado a eventos, que lo hace liviano y eficiente. El ecosistema de paquetes de Node.js, npm, es el ecosistema mas grande de librerías de código abierto en el mundo.",
+    "section": "Instalación de Nodejs",
+    "text": "Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nAlgunas de las características de Nodejs son:\n\nJavaScript en el servidor: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.\nEvent-driven: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.\nI/O no bloqueante: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.\nMódulos: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nNPM: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\nAPIs: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nEscalabilidad: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.\nComunidad: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.\n\n\nInstalación de Nodejs\nPara instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
     "title": "Nodejs",
-    "section": "¿Cómo instalar nodejs?",
-    "text": "¿Cómo instalar nodejs?\nPara instalar nodejs en windows debemos descargar el instalador desde la página oficial de nodejs nodejs.org, una vez descargado el instalador lo ejecutamos y seguimos los pasos del instalador.\nPara instalar nodejs en linux debemos abrir una terminal y ejecutar los siguientes comandos:\nsudo apt-get update\nsudo apt-get install nodejs\nsudo apt-get install npm",
+    "section": "",
+    "text": "Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-ejecutar-un-archivo-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-ejecutar-un-archivo-de-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
     "title": "Nodejs",
-    "section": "¿Cómo ejecutar un archivo de nodejs?",
-    "text": "¿Cómo ejecutar un archivo de nodejs?\nPara ejecutar un archivo de nodejs debemos abrir una terminal y ejecutar el siguiente comando:\nnode archivo.js",
+    "section": "Utilizando nodejs",
+    "text": "Utilizando nodejs\n\nUna vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando node para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo hola-mundo.js con el siguiente código:\n\nconsole.log('Hola mundo!');\nconsole.info('Información');\nconsole.warn('Advertencia');\nconsole.error('Error');\n\nPara ejecutar el archivo hola-mundo.js, puedes utilizar el siguiente comando:\n\nnode hola-mundo.js\n:::{.justify} Al ejecutar el comando, verás el mensaje de “Hola mundo!” en la consola del sistema operativo.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#qué-es-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#qué-es-npm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#globalthis",
+    "href": "unidades/unidad6/4_introduccion_node.html#globalthis",
     "title": "Nodejs",
-    "section": "¿Qué es npm?",
-    "text": "¿Qué es npm?\nnpm es el sistema de gestión de paquetes por defecto para Node.js, un entorno de ejecución para JavaScript. npm es un acrónimo de Node Package Manager.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-un-paquete-de-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-un-paquete-de-npm",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar un paquete de npm?",
-    "text": "¿Cómo instalar un paquete de npm?\nPara instalar un paquete de npm debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install nombre-del-paquete",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-crear-un-proyecto-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-crear-un-proyecto-de-nodejs",
-    "title": "Nodejs",
-    "section": "¿Cómo crear un proyecto de nodejs?",
-    "text": "¿Cómo crear un proyecto de nodejs?\nPara crear un proyecto de nodejs debemos abrir una terminal y ejecutar los siguientes comandos:\nmkdir nombre-del-proyecto\ncd nombre-del-proyecto\nnpm init -y",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-express",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar express?",
-    "text": "¿Cómo instalar express?\nPara instalar express debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install express",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-nodemon",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-nodemon",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar nodemon?",
-    "text": "¿Cómo instalar nodemon?\nPara instalar nodemon debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install nodemon",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-mongoose",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-mongoose",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar mongoose?",
-    "text": "¿Cómo instalar mongoose?\nPara instalar mongoose debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install mongoose",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-dotenv",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-dotenv",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar dotenv?",
-    "text": "¿Cómo instalar dotenv?\nPara instalar dotenv debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install dotenv",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-bcrypt",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-bcrypt",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar bcrypt?",
-    "text": "¿Cómo instalar bcrypt?\nPara instalar bcrypt debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install bcrypt",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-jsonwebtoken",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-jsonwebtoken",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar jsonwebtoken?",
-    "text": "¿Cómo instalar jsonwebtoken?\nPara instalar jsonwebtoken debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install jsonwebtoken",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-cors",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-instalar-cors",
-    "title": "Nodejs",
-    "section": "¿Cómo instalar cors?",
-    "text": "¿Cómo instalar cors?\nPara instalar cors debemos abrir una terminal y ejecutar el siguiente comando:\nnpm install cors\nAhora que ya sabes como instalar los paquetes necesarios para crear un proyecto de nodejs, puedes empezar a crear tu proyecto.\nCon Nodejs podemos trabajar en proyectos de frontend con librerías populares como React, Angular, Vue, etc. y también podemos trabajar en proyectos de backend con librerías populares como Express, Mongoose, etc.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#cómo-empiezo-mis-primeros-pasos-con-react",
-    "href": "unidades/unidad6/4_introduccion_node.html#cómo-empiezo-mis-primeros-pasos-con-react",
-    "title": "Nodejs",
-    "section": "¿Cómo empiezo mis primeros pasos con React?",
-    "text": "¿Cómo empiezo mis primeros pasos con React?\nPara trabajar con React lo podemos hacer de la forma tradicional que ya no es tan recomandada o utilziar vite que es una herramienta que nos permite trabajar con React de una forma más rápida y sencilla.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#qué-es-vite",
-    "href": "unidades/unidad6/4_introduccion_node.html#qué-es-vite",
-    "title": "Nodejs",
-    "section": "¿Qué es vite?",
-    "text": "¿Qué es vite?\nVite es un nuevo compilador de frontend que permite trabajar con React de una forma más rápida y sencilla.\nEsto lo veremos en el siguiente capítulo.",
+    "section": "GlobalThis",
+    "text": "GlobalThis\n\nNodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\n\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2009,11 +1888,231 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#referencias",
-    "href": "unidades/unidad6/4_introduccion_node.html#referencias",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
     "title": "Nodejs",
-    "section": "Referencias",
-    "text": "Referencias\n\nNodejs\nExpress\nReactjs",
+    "section": "Creación de una aplicación web con Nodejs",
+    "text": "Creación de una aplicación web con Nodejs\n\nPara crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:\n\nCrea un directorio para tu aplicación web:\n\n\nmkdir mi-aplicacion-web\ncd mi-aplicacion-web\n\n\nInicializa un proyecto de Nodejs:\n\n\nnpm init -y\n\n\nInstala el paquete express para crear un servidor web:\n\n\nnpm install express\n\n\nCrea un archivo index.js con el siguiente código:\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hola mundo!');\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode index.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\n\n\n\n\nApp Express\n\n\n\nCon estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#deno",
+    "href": "unidades/unidad6/4_introduccion_node.html#deno",
+    "title": "Nodejs",
+    "section": "Deno",
+    "text": "Deno\nDeno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nSeguridad: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.\nTypeScript: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.\nMódulos ESM: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.\nAPIs: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
+    "title": "Nodejs",
+    "section": "Creación de una aplicación web con Deno",
+    "text": "Creación de una aplicación web con Deno\nPara crear una aplicación web con Deno, puedes seguir los siguientes pasos:\n\nCrea un archivo app.ts con el siguiente código:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#bun",
+    "href": "unidades/unidad6/4_introduccion_node.html#bun",
+    "title": "Nodejs",
+    "section": "Bun",
+    "text": "Bun\nBun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nVelocidad: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.\nMódulos: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nAPIs: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
+    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
+    "title": "Nodejs",
+    "section": "Creación de una aplicación web con Bun",
+    "text": "Creación de una aplicación web con Bun\nPara crear una aplicación web con Bun, puedes seguir los siguientes pasos:\n\nCrea un archivo app.js con el siguiente código:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.\nEn la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción",
+    "href": "unidades/unidad6/4_introduccion_node.html#introducción",
+    "title": "Nodejs",
+    "section": "Introducción",
+    "text": "Introducción\n\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#npm",
+    "href": "unidades/unidad6/4_introduccion_node.html#npm",
+    "title": "Nodejs",
+    "section": "Npm",
+    "text": "Npm\n:::{.justify} Npm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Npm son:\n\nInstalación de paquetes: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Npm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVersionado semántico: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Npm",
+    "text": "Instalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#yarn",
+    "title": "Nodejs",
+    "section": "Yarn",
+    "text": "Yarn\n\nYarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Yarn son:\n\nInstalación de paquetes: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Yarn permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVelocidad: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.\n\n\nInstalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:\n\n\nyarn add nombre-del-paquete",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Yarn",
+    "text": "Instalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
+    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
+    "title": "Nodejs",
+    "section": "Crear un proyecto con Yarn",
+    "text": "Crear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#pnpm",
+    "title": "Nodejs",
+    "section": "Pnpm",
+    "text": "Pnpm\nPnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Pnpm son:\n\nInstalación de paquetes: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Pnpm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nEspacio en disco: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
+    "title": "Nodejs",
+    "section": "Instalación de paquetes con Pnpm",
+    "text": "Instalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
+    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
+    "title": "Nodejs",
+    "section": "Crear un proyecto con Pnpm",
+    "text": "Crear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#fnm",
+    "title": "Nodejs",
+    "section": "FNM",
+    "text": "FNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
+    "title": "Nodejs",
+    "section": "Instalación de FNM",
+    "text": "Instalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
+    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
+    "title": "Nodejs",
+    "section": "Ejemplo de uso de FNM",
+    "text": "Ejemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
+    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
+    "title": "Nodejs",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2251,624 +2350,6 @@
     ]
   },
   {
-    "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
-    "href": "unidades/ejercicios/ejercicios_git_github-000.html",
-    "title": "Ejercicios de Git y Github",
-    "section": "",
-    "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
-    "href": "unidades/ejercicios/ejercicios_python-001.html",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "",
-    "text": "Ejercicio 1",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "",
-    "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 1",
-    "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html",
-    "href": "unidades/ejercicios/ejercicios_python-002.html",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "",
-    "text": "Ejercicio 1",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "",
-    "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 2",
-    "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html",
-    "href": "unidades/ejercicios/ejercicios_python-003.html",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "",
-    "text": "Ejercicio 1:",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "",
-    "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "Ejercicio 2:",
-    "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "Ejercicio 3:",
-    "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "Ejercicio 4:",
-    "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 3",
-    "section": "Ejercicio 5:",
-    "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html",
-    "href": "unidades/ejercicios/ejercicios_python-004.html",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "",
-    "text": "Ejercicio 1:",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
-    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "",
-    "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
-    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "Ejercicio 2:",
-    "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
-    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "Ejercicio 3:",
-    "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
-    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "Ejercicio 4:",
-    "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
-    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
-    "title": "Ejercicios Python - Nivel 4",
-    "section": "Ejercicio 5:",
-    "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
-    "crumbs": [
-      "Ejercicios",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
-    "title": "Nodejs",
-    "section": "Instalación de Nodejs",
-    "text": "Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nAlgunas de las características de Nodejs son:\n\nJavaScript en el servidor: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.\nEvent-driven: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.\nI/O no bloqueante: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.\nMódulos: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nNPM: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\nAPIs: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nEscalabilidad: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.\nComunidad: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.\n\n\nInstalación de Nodejs\nPara instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
-    "title": "Nodejs",
-    "section": "",
-    "text": "Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Nodejs",
-    "text": "Creación de una aplicación web con Nodejs\n\nPara crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:\n\nCrea un directorio para tu aplicación web:\n\n\nmkdir mi-aplicacion-web\ncd mi-aplicacion-web\n\n\nInicializa un proyecto de Nodejs:\n\n\nnpm init -y\n\n\nInstala el paquete express para crear un servidor web:\n\n\nnpm install express\n\n\nCrea un archivo index.js con el siguiente código:\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hola mundo!');\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode index.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\n\n\n\n\nApp Express\n\n\n\nCon estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#nodejs-y-reactjs",
-    "href": "unidades/unidad6/4_introduccion_node.html#nodejs-y-reactjs",
-    "title": "Nodejs",
-    "section": "Nodejs y Reactjs",
-    "text": "Nodejs y Reactjs\n\nNodejs y Reactjs son dos tecnologías muy populares en el desarrollo de aplicaciones web. Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor, mientras que Reactjs es una biblioteca de JavaScript para crear interfaces de usuario interactivas.\nNodejs y Reactjs se complementan muy bien, ya que Nodejs puede utilizarse como servidor para servir las páginas web creadas con Reactjs. De esta forma, puedes utilizar Nodejs para crear una API REST que se comunique con el frontend de Reactjs y servir las páginas web estáticas generadas por Reactjs.\nEn la siguiente sección veremos cómo podemos utilizar Nodejs y Reactjs juntos para crear una aplicación web completa.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#nodejs-en-el-desarrollo-de-aplicaciones-con-reactjs.",
-    "href": "unidades/unidad6/4_introduccion_node.html#nodejs-en-el-desarrollo-de-aplicaciones-con-reactjs.",
-    "title": "Nodejs",
-    "section": "Nodejs en el desarrollo de Aplicaciones con Reactjs.",
-    "text": "Nodejs en el desarrollo de Aplicaciones con Reactjs.\n\nNodejs es muy importante en el desarrollo de aplicaciones web con Reactjs, ya que permite ejecutar código JavaScript en el servidor y crear APIs RESTful para interactuar con la base de datos.\nEn el desarrollo de aplicaciones web con Reactjs, Nodejs se utiliza para crear un servidor web que sirva los archivos estáticos de la aplicación y para crear una API RESTful que interactúe con la base de datos.\nEn la siguiente sección veremos cómo podemos utilizar Nodejs en el desarrollo de aplicaciones web con Reactjs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción",
-    "title": "Nodejs",
-    "section": "Introducción",
-    "text": "Introducción\n\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#npm",
-    "title": "Nodejs",
-    "section": "Npm",
-    "text": "Npm\n:::{.justify} Npm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Npm son:\n\nInstalación de paquetes: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Npm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVersionado semántico: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
-    "title": "Nodejs",
-    "section": "Instalación de paquetes con Npm",
-    "text": "Instalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#yarn",
-    "href": "unidades/unidad6/4_introduccion_node.html#yarn",
-    "title": "Nodejs",
-    "section": "Yarn",
-    "text": "Yarn\n\nYarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Yarn son:\n\nInstalación de paquetes: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Yarn permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVelocidad: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.\n\n\nInstalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:\n\n\nyarn add nombre-del-paquete",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
-    "title": "Nodejs",
-    "section": "Instalación de paquetes con Yarn",
-    "text": "Instalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
-    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
-    "title": "Nodejs",
-    "section": "Crear un proyecto con Yarn",
-    "text": "Crear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#pnpm",
-    "href": "unidades/unidad6/4_introduccion_node.html#pnpm",
-    "title": "Nodejs",
-    "section": "Pnpm",
-    "text": "Pnpm\nPnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Pnpm son:\n\nInstalación de paquetes: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Pnpm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nEspacio en disco: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
-    "title": "Nodejs",
-    "section": "Instalación de paquetes con Pnpm",
-    "text": "Instalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
-    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
-    "title": "Nodejs",
-    "section": "Crear un proyecto con Pnpm",
-    "text": "Crear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\n\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#deno",
-    "href": "unidades/unidad6/4_introduccion_node.html#deno",
-    "title": "Nodejs",
-    "section": "Deno",
-    "text": "Deno\nDeno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nSeguridad: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.\nTypeScript: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.\nMódulos ESM: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.\nAPIs: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Deno",
-    "text": "Creación de una aplicación web con Deno\nPara crear una aplicación web con Deno, puedes seguir los siguientes pasos:\n\nCrea un archivo app.ts con el siguiente código:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#bun",
-    "href": "unidades/unidad6/4_introduccion_node.html#bun",
-    "title": "Nodejs",
-    "section": "Bun",
-    "text": "Bun\nBun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nVelocidad: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.\nMódulos: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nAPIs: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Bun",
-    "text": "Creación de una aplicación web con Bun\nPara crear una aplicación web con Bun, puedes seguir los siguientes pasos:\n\nCrea un archivo app.js con el siguiente código:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.\nEn la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#fnm",
-    "title": "Nodejs",
-    "section": "FNM",
-    "text": "FNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
-    "title": "Nodejs",
-    "section": "Instalación de FNM",
-    "text": "Instalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
-    "title": "Nodejs",
-    "section": "Ejemplo de uso de FNM",
-    "text": "Ejemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
-    "title": "Nodejs",
-    "section": "Utilizando nodejs",
-    "text": "Utilizando nodejs\n\nUna vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando node para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo hola-mundo.js con el siguiente código:\n\nconsole.log('Hola mundo!');\nconsole.info('Información');\nconsole.warn('Advertencia');\nconsole.error('Error');\n\nPara ejecutar el archivo hola-mundo.js, puedes utilizar el siguiente comando:\n\nnode hola-mundo.js\n:::{.justify} Al ejecutar el comando, verás el mensaje de “Hola mundo!” en la consola del sistema operativo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#globalthis",
-    "href": "unidades/unidad6/4_introduccion_node.html#globalthis",
-    "title": "Nodejs",
-    "section": "GlobalThis",
-    "text": "GlobalThis\n\nNodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\n\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html",
-    "href": "unidades/unidad6/7_fetch_con_react.html",
-    "title": "Método fetch con React",
-    "section": "",
-    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nLuego vamos a instalar las dependencias necesarias para la aplicación:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
     "href": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
     "title": "Método fetch con React",
@@ -2921,17 +2402,6 @@
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "",
-    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
@@ -2990,17 +2460,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html",
-    "href": "unidades/unidad6/9_crud_react.html",
-    "title": "Crud Básico con React y Axios",
-    "section": "",
-    "text": "Crear el proyecto",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
     "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
     "title": "Crud Básico con React y Axios",
@@ -3023,33 +2482,22 @@
     ]
   },
   {
+    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
+    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
+    "title": "Crud Básico con React y Axios",
+    "section": "Crear el proyecto de React",
+    "text": "Crear el proyecto de React\nPara ello nos dirijimos al directorio frontend.\nPara crear el proyecto vamos a usar vite. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:\nnpm create vite@latest .\nLuego, vamos a instalar axios para hacer las peticiones a la API:\nnpm install axios",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
     "href": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
     "title": "Crud Básico con React y Axios",
     "section": "Crear la lista de tareas",
     "text": "Crear la lista de tareas\nCreamos el directorio src/components y dentro de él, creamos un archivo llamado TaskList.js con el siguiente contenido:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst TaskList = () =&gt; {\n  const [tasks, setTasks] = useState([]);\n  const [title, setTitle] = useState('');\n\n  useEffect(() =&gt; {\n    axios.get('http://localhost:3000/tasks')\n      .then(response =&gt; setTasks(response.data));\n  }, []);\n\n  const addTask = () =&gt; {\n    axios.post('http://localhost:3000/tasks', { title })\n      .then(response =&gt; setTasks([...tasks, response.data]));\n  };\n\n  const editTask = (id, title) =&gt; {\n    axios.put(`http://localhost:3000/tasks/${id}`, { title })\n      .then(response =&gt; {\n        const newTasks = tasks.map(task =&gt; {\n          if (task.id === id) {\n            task.title = title;\n          }\n          return task;\n        });\n        setTasks(newTasks);\n      });\n  };\n\n  const deleteTask = id =&gt; {\n    axios.delete(`http://localhost:3000/tasks/${id}`)\n      .then(() =&gt; setTasks(tasks.filter(task =&gt; task.id !== id)));\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={title} onChange={e =&gt; setTitle(e.target.value)} /&gt;\n      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;\n      &lt;ul&gt;\n        {tasks.map(task =&gt; (\n          &lt;li key={task.id}&gt;\n            &lt;input type=\"text\" value={task.title} onChange={e =&gt; editTask(task.id, e.target.value)} /&gt;\n            &lt;button onClick={() =&gt; deleteTask(task.id)}&gt;Delete&lt;/button&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default TaskList;\nEn el código anterior estamos creando un componente llamado TaskList que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el useEffect hacemos una petición a la API para obtener la lista de tareas. En el método addTask agregamos una tarea a la lista. En el método editTask editamos una tarea de la lista. En el método deleteTask eliminamos una tarea de la lista.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_crud_react.html#agregar-una-tarea",
-    "href": "unidades/unidad6/9_crud_react.html#agregar-una-tarea",
-    "title": "Crud Básico con React y Axios",
-    "section": "Agregar una tarea",
-    "text": "Agregar una tarea\nCreamos un archivo llamado TaskForm.js en el directorio src/components con el siguiente contenido:\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst TaskForm = () =&gt; {\n  const [title, setTitle] = useState('');\n\n  const handleSubmit = async e =&gt; {\n    e.preventDefault();\n\n    await axios.post('http://localhost:3000/tasks', { title });\n\n    setTitle('');\n  };\n\n  return (\n    &lt;form onSubmit={handleSubmit}&gt;\n      &lt;input\n        type=\"text\"\n        value={title}\n        onChange={e =&gt; setTitle(e.target.value)}\n        placeholder=\"Add a task\"\n      /&gt;\n      &lt;button type=\"submit\"&gt;Add&lt;/button&gt;\n    &lt;/form&gt;\n  );\n};\n\nexport default TaskForm;\nEn el código anterior estamos creando un formulario para agregar una tarea. Al enviar el formulario, hacemos una petición POST a la API para agregar la tarea.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_crud_react.html#editar-una-tarea",
-    "href": "unidades/unidad6/9_crud_react.html#editar-una-tarea",
-    "title": "Crud Básico con React y Axios",
-    "section": "Editar una tarea",
-    "text": "Editar una tarea\nCreamos un archivo llamado Task.js en el directorio src/components con el siguiente contenido:\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst Task = ({ task }) =&gt; {\n  const [isEditing, setIsEditing] = useState(false);\n  const [title, setTitle] = useState(task.title);\n\n  const handleEdit = async () =&gt; {\n    setIsEditing(true);\n  };\n\n  const handleSave = async () =&gt; {\n    await axios.put(`http://localhost:3000/tasks/${task.id}`, { title });\n\n    setIsEditing(false);\n  };\n\n  const handleDelete = async () =&gt; {\n    await axios.delete(`http://localhost:3000/tasks/${task.id}`);\n  };\n\n  return (\n    &lt;div&gt;\n      {isEditing ? (\n        &lt;input\n          type=\"text\"\n          value={title}\n          onChange={e =&gt; setTitle(e.target.value)}\n        /&gt;\n      ) : (\n        &lt;span&gt;{task.title}&lt;/span&gt;\n      )}\n      &lt;button onClick={isEditing ? handleSave : handleEdit}&gt;\n        {isEditing ? 'Save' : 'Edit'}\n      &lt;/button&gt;\n      &lt;button onClick={handleDelete}&gt;Delete&lt;/button&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Task;\nEn el código anterior estamos creando un componente para mostrar una tarea. Si se está editando la tarea, se muestra un input para editar el título. Al hacer clic en el botón Edit, se cambia a modo edición. Al hacer clic en el botón Save, se guarda la tarea editada. Al hacer clic en el botón Delete, se elimina la tarea.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
@@ -3078,17 +2526,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
-    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
-    "title": "Crud Básico con React y Axios",
-    "section": "Crear el proyecto de React",
-    "text": "Crear el proyecto de React\nPara ello nos dirijimos al directorio frontend.\nPara crear el proyecto vamos a usar vite. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:\nnpm create vite@latest .\nLuego, vamos a instalar axios para hacer las peticiones a la API:\nnpm install axios",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad6/9_crud_react.html#conclusiones",
     "href": "unidades/unidad6/9_crud_react.html#conclusiones",
     "title": "Crud Básico con React y Axios",
@@ -3098,5 +2535,315 @@
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "href": "unidades/ejercicios/ejercicios_git_github-000.html",
+    "title": "Ejercicios de Git y Github",
+    "section": "",
+    "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
+    "href": "unidades/ejercicios/ejercicios_python-001.html",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "",
+    "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-001.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 1",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html",
+    "href": "unidades/ejercicios/ejercicios_python-002.html",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "",
+    "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-002.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 2",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html",
+    "href": "unidades/ejercicios/ejercicios_python-003.html",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "",
+    "text": "Ejercicio 1:",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "",
+    "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 2:",
+    "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 3:",
+    "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 4:",
+    "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-003.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 3",
+    "section": "Ejercicio 5:",
+    "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html",
+    "href": "unidades/ejercicios/ejercicios_python-004.html",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "",
+    "text": "Ejercicio 1:",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-1",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "",
+    "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-2",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 2:",
+    "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-3",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 3:",
+    "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-4",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 4:",
+    "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
+    "href": "unidades/ejercicios/ejercicios_python-004.html#ejercicio-5",
+    "title": "Ejercicios Python - Nivel 4",
+    "section": "Ejercicio 5:",
+    "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   }
 ]

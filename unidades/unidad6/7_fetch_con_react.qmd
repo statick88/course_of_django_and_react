@@ -1,7 +1,7 @@
 ::: {.justify}
-# Método fetch con React
+# Axios con React
 
-En esta sección vamos a aprender a crear el método fetch con React, para ello vamos a crear una aplicación que nos permita buscar imágenes en la API de Pokemon.
+En esta sección vamos a aprender a crear el método Axios con React, para ello vamos a crear una aplicación que nos permita buscar imágenes en la API de Pokemon.
 
 ## Crear la aplicación
 
@@ -22,23 +22,34 @@ npm install axios
 Vamos a crear un componente llamado **Pokemon** dentro de un directorio llamado **src/components** que nos permita buscar imágenes de Pokemon en la API de Pokemon.
 
 ``` jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState('');
   const [image, setImage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const getPokemon = async () => {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    setImage(response.data.sprites.front_default);
+    setLoading(true);
+    setError('');
+    try {
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);
+      setImage(response.data.sprites.front_default);
+    } catch (err) {
+      setError('Pokemon not found');
+    }
+    setLoading(false);
   };
 
   return (
     <div>
       <input type="text" value={pokemon} onChange={(e) => setPokemon(e.target.value)} />
       <button onClick={getPokemon}>Buscar</button>
-      <img src={image} alt={pokemon} />
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {image && <img src={image} alt={pokemon} />}
     </div>
   );
 };
@@ -52,10 +63,12 @@ Vamos a importar el componente en el archivo **App.js**.
 
 ``` jsx
 import Pokemon from './components/Pokemon';
+import './App.css';
 
 function App() {
   return (
     <div>
+      <h1>Pokemon</h1>
       <Pokemon />
     </div>
   );
