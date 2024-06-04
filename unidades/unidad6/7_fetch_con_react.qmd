@@ -1,0 +1,81 @@
+::: {.justify}
+# Método fetch con React
+
+En esta sección vamos a aprender a crear el método fetch con React, para ello vamos a crear una aplicación que nos permita buscar imágenes en la API de Pokemon.
+
+## Crear la aplicación
+
+Para crear la aplicación vamos a utilizar el siguiente comando:
+
+``` bash
+npm create vite@latest .
+```
+
+Luego vamos a instalar las dependencias necesarias para la aplicación:
+
+``` bash
+npm install axios
+```
+
+## Crear el componente
+
+Vamos a crear un componente llamado **Pokemon** dentro de un directorio llamado **src/components** que nos permita buscar imágenes de Pokemon en la API de Pokemon.
+
+``` jsx
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const Pokemon = () => {
+  const [pokemon, setPokemon] = useState('');
+  const [image, setImage] = useState('');
+
+  const getPokemon = async () => {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    setImage(response.data.sprites.front_default);
+  };
+
+  return (
+    <div>
+      <input type="text" value={pokemon} onChange={(e) => setPokemon(e.target.value)} />
+      <button onClick={getPokemon}>Buscar</button>
+      <img src={image} alt={pokemon} />
+    </div>
+  );
+};
+
+export default Pokemon;
+```
+
+## Importar el componente
+
+Vamos a importar el componente en el archivo **App.js**.
+
+``` jsx
+import Pokemon from './components/Pokemon';
+
+function App() {
+  return (
+    <div>
+      <Pokemon />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Ejecutar la aplicación
+
+Para ejecutar la aplicación vamos a utilizar el siguiente comando:
+
+``` bash
+npm run dev
+```
+
+:::{.center}
+![](images/paste-1.png){width=70%}
+:::
+## Conclusión
+
+Hemos aprendido a crear el método fetch con React, para ello hemos creado una aplicación que nos permite buscar imágenes de Pokemon en la API de Pokemon.
+:::

@@ -1,0 +1,193 @@
+:::{justify}
+# Crud Básico con React y Axios
+
+En esta sección vamos a crear un CRUD básico con React y Axios. Vamos a crear una lista de tareas que se podrán agregar, editar y eliminar.
+
+## Crear el proyecto
+
+## Crear la API
+
+Creamos un directorio llamado **backend** y dentro de él, creamos un archivo llamado **package.json** con el siguiente contenido:
+
+``` bash
+npm init -y
+```
+
+Luego, instalamos **express** y **cors**:
+
+Vamos a crear una API muy sencilla con **express**. Para instalarlo, ejecuta el siguiente comando:
+
+``` bash
+npm install express cors
+```
+
+Luego, crea un archivo llamado **server.js** en la raíz del proyecto con el siguiente contenido:
+
+``` javascript
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+let tasks = [
+  { id: 1, title: 'Task 1' },
+  { id: 2, title: 'Task 2' },
+  { id: 3, title: 'Task 3' },
+];
+
+app.get('/tasks', (req, res) => {
+  res.json(tasks);
+});
+
+app.post('/tasks', (req, res) => {
+  const task = { id: tasks.length + 1, title: req.body.title };
+  tasks.push(task);
+  res.json(task);
+});
+
+app.put('/tasks/:id', (req, res) => {
+  const task = tasks.find(task => task.id === parseInt(req.params.id));
+  task.title = req.body.title;
+  res.json(task);
+});
+
+app.delete('/tasks/:id', (req, res) => {
+  tasks = tasks.filter(task => task.id !== parseInt(req.params.id));
+  res.json({ message: 'Task deleted' });
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+```
+
+En el código anterior estamos creando una API con las siguientes rutas:
+
+-   **GET /tasks**: Obtiene la lista de tareas.
+-   **POST /tasks**: Agrega una tarea.
+-   **PUT /tasks/:id**: Edita una tarea.
+-   **DELETE /tasks/:id**: Elimina una tarea.
+
+Para ejecutar la API, ejecuta el siguiente comando:
+
+``` bash
+node server.js
+```
+
+## Crear el proyecto de React
+
+Para ello nos dirijimos al directorio frontend.
+
+Para crear el proyecto vamos a usar **vite**. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:
+
+``` bash
+npm create vite@latest .
+```
+
+Luego, vamos a instalar **axios** para hacer las peticiones a la API:
+
+``` bash
+npm install axios
+```
+
+## Crear la lista de tareas
+
+Creamos el directorio **src/components** y dentro de él, creamos un archivo llamado **TaskList.js** con el siguiente contenido:
+
+``` javascript
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const TaskList = () => {
+  const [tasks, setTasks] = useState([]);
+  const [title, setTitle] = useState('');
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/tasks')
+      .then(response => setTasks(response.data));
+  }, []);
+
+  const addTask = () => {
+    axios.post('http://localhost:3000/tasks', { title })
+      .then(response => setTasks([...tasks, response.data]));
+  };
+
+  const editTask = (id, title) => {
+    axios.put(`http://localhost:3000/tasks/${id}`, { title })
+      .then(response => {
+        const newTasks = tasks.map(task => {
+          if (task.id === id) {
+            task.title = title;
+          }
+          return task;
+        });
+        setTasks(newTasks);
+      });
+  };
+
+  const deleteTask = id => {
+    axios.delete(`http://localhost:3000/tasks/${id}`)
+      .then(() => setTasks(tasks.filter(task => task.id !== id)));
+  };
+
+  return (
+    <div>
+      <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
+      <button onClick={addTask}>Add Task</button>
+      <ul>
+        {tasks.map(task => (
+          <li key={task.id}>
+            <input type="text" value={task.title} onChange={e => editTask(task.id, e.target.value)} />
+            <button onClick={() => deleteTask(task.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TaskList;
+```
+
+En el código anterior estamos creando un componente llamado **TaskList** que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el **useEffect** hacemos una petición a la API para obtener la lista de tareas. En el método **addTask** agregamos una tarea a la lista. En el método **editTask** editamos una tarea de la lista. En el método **deleteTask** eliminamos una tarea de la lista.
+
+## Mostrar la lista de tareas
+
+Vamos a importar el componente **TaskList** en el archivo **App.js** y mostrarlo en la aplicación:
+
+``` javascript
+import React from 'react';
+import TaskList from './components/TaskList';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Task List</h1>
+      <TaskList />
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Probar la aplicación
+
+:::{.center}
+![](images/paste-3.png){width=70%}
+:::
+
+Para probar la aplicación, ejecuta el siguiente comando:
+
+``` bash
+npm run dev
+```
+
+Abre tu navegador en la dirección **http://localhost:3000** y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.
+
+## Conclusiones
+
+En esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con **axios** y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.
+:::

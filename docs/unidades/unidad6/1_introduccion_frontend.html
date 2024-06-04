@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -369,6 +369,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../unidades/unidad6/6_primeros_pasos_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primeros pasos con React</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/7_fetch_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Método fetch con React</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -461,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="estructura-básica-de-un-documento-html" class="level2">
 <h2 class="anchored" data-anchor-id="estructura-básica-de-un-documento-html">Estructura básica de un documento HTML</h2>
 <p>Un documento HTML tiene una estructura básica que debe seguir. Esta estructura es la siguiente:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Título de la página<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
@@ -505,7 +510,7 @@ a
 **: Define un elemento de lista.</li>
 <li>**
 
-**: Define una tabla.<li>**
+**: Define una tabla.</li><li>**
 </li>
 **: Define una fila en una tabla.<li>**
 </li><table>
@@ -534,7 +539,7 @@ a
 <section id="ejemplo-de-un-documento-html" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-de-un-documento-html">Ejemplo de un documento HTML</h2>
 <p>A continuación se muestra un ejemplo de un documento HTML básico que contiene un encabezado, un párrafo de texto y una imagen:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Ejemplo de HTML<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
@@ -1171,4 +1176,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</td></tr></tbody></table></li></ol></li></ul></li></a></ul></section></main></div></body></html>
+</td></tr></tbody></table></ol></li></ul></li></a></ul></section></main></div></body></html>
