@@ -2352,56 +2352,56 @@
   {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
     "href": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
-    "title": "Método fetch con React",
+    "title": "Axios con React",
     "section": "Crear la aplicación",
     "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .\nLuego vamos a instalar las dependencias necesarias para la aplicación:\nnpm install axios",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Axios con React</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
     "href": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
-    "title": "Método fetch con React",
+    "title": "Axios con React",
     "section": "Crear el componente",
-    "text": "Crear el componente\nVamos a crear un componente llamado Pokemon dentro de un directorio llamado src/components que nos permita buscar imágenes de Pokemon en la API de Pokemon.\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst Pokemon = () =&gt; {\n  const [pokemon, setPokemon] = useState('');\n  const [image, setImage] = useState('');\n\n  const getPokemon = async () =&gt; {\n    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);\n    setImage(response.data.sprites.front_default);\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={pokemon} onChange={(e) =&gt; setPokemon(e.target.value)} /&gt;\n      &lt;button onClick={getPokemon}&gt;Buscar&lt;/button&gt;\n      &lt;img src={image} alt={pokemon} /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Pokemon;",
+    "text": "Crear el componente\nVamos a crear un componente llamado Pokemon dentro de un directorio llamado src/components que nos permita buscar imágenes de Pokemon en la API de Pokemon.\nimport { useState } from 'react';\nimport axios from 'axios';\n\nconst Pokemon = () =&gt; {\n  const [pokemon, setPokemon] = useState('');\n  const [image, setImage] = useState('');\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState('');\n\n  const getPokemon = async () =&gt; {\n    setLoading(true);\n    setError('');\n    try {\n      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);\n      setImage(response.data.sprites.front_default);\n    } catch (err) {\n      setError('Pokemon not found');\n    }\n    setLoading(false);\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={pokemon} onChange={(e) =&gt; setPokemon(e.target.value)} /&gt;\n      &lt;button onClick={getPokemon}&gt;Buscar&lt;/button&gt;\n      {loading && &lt;p&gt;Loading...&lt;/p&gt;}\n      {error && &lt;p&gt;{error}&lt;/p&gt;}\n      {image && &lt;img src={image} alt={pokemon} /&gt;}\n    &lt;/div&gt;\n  );\n};\n\nexport default Pokemon;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Axios con React</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
     "href": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
-    "title": "Método fetch con React",
+    "title": "Axios con React",
     "section": "Importar el componente",
-    "text": "Importar el componente\nVamos a importar el componente en el archivo App.js.\nimport Pokemon from './components/Pokemon';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;Pokemon /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
+    "text": "Importar el componente\nVamos a importar el componente en el archivo App.js.\nimport Pokemon from './components/Pokemon';\nimport './App.css';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Pokemon&lt;/h1&gt;\n      &lt;Pokemon /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Axios con React</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
     "href": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
-    "title": "Método fetch con React",
+    "title": "Axios con React",
     "section": "Ejecutar la aplicación",
     "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a utilizar el siguiente comando:\nnpm run dev",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Axios con React</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/7_fetch_con_react.html#conclusión",
     "href": "unidades/unidad6/7_fetch_con_react.html#conclusión",
-    "title": "Método fetch con React",
+    "title": "Axios con React",
     "section": "Conclusión",
     "text": "Conclusión\nHemos aprendido a crear el método fetch con React, para ello hemos creado una aplicación que nos permite buscar imágenes de Pokemon en la API de Pokemon.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Método fetch con React</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Axios con React</span>"
     ]
   },
   {
