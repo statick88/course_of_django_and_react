@@ -704,7 +704,7 @@ if __name__ == "__main__": # <12>
 
 A continuación se sugiere realizar los siguientes ejercicios para practicar la sintaxis y estructura de Python.
 
-[Ejercicios Python Básico](https://classroom.github.com/a/IcerIhRU)
+[Ejercicios Python Básico](https://classroom.github.com/a/LtHIKsxr)
 
 ## Objetivo
 

@@ -1,0 +1,51 @@
+::: justify
+# Uso de Pypi
+
+Pypi es un repositorio de software para Python. Es un lugar donde los desarrolladores pueden publicar y compartir sus paquetes de Python.
+
+# Utilizar algún paquete de Pypi
+
+![](images/paste-1.png)
+
+Para utilizar un paquete de Pypi, primero debes instalarlo usando **pip**. Por ejemplo, si quieres instalar el paquete **requests**, puedes hacerlo de la siguiente manera:
+
+``` bash
+pip install requests
+```
+
+Una vez que hayas instalado el paquete, puedes importarlo en tu código de Python y utilizarlo. Por ejemplo:
+
+``` python
+import requests
+
+response = requests.get('https://www.google.com')
+print(response.status_code)
+```
+
+Otro ejemplo es por ejemplo el paquete emoji, que te permite utilizar emojis en tus programas de Python.
+
+![](images/paste-2.png)
+
+``` bash
+pip install emoji
+```
+
+``` python
+import emoji
+
+print(emoji.emojize('Python es :thumbs_up:'))
+```
+
+¡Y eso es todo! Ahora puedes utilizar cualquier paquete de Python disponible en Pypi en tus proyectos.
+
+Algunos paquetes pueden ser muy importantes para tu proyecto, así que asegúrate de revisar Pypi para encontrar los paquetes que necesitas.
+
+# Conclusión
+
+Pypi es un recurso valioso para los desarrolladores de Python. Te permite encontrar y utilizar paquetes de Python que pueden ayudarte a hacer tu trabajo más fácil y eficiente.
+
+Así que no dudes en explorar Pypi y encontrar los paquetes que necesitas para tus proyectos de Python.
+
+¡Buena suerte!
+
+:::

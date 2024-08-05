@@ -297,7 +297,7 @@ La programación orientada a objetos es un concepto fundamental en Python y en m
 
 ## Asignación
 
-[https://classroom.github.com/a/LVvqQCln](https://classroom.github.com/a/LVvqQCln)
+[https://classroom.github.com/a/LVvqQCln](https://classroom.github.com/a/nSsw5Xmn)
 
 En esta asignación, aprenderás sobre los conceptos básicos de **Programación Orientada a Objetos (POO)** mediante la implementación de clases en Python.
 

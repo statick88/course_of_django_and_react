@@ -2,7 +2,7 @@
 
 ## Asignación
 
-[https://classroom.github.com/a/S9EkZXRf](https://classroom.github.com/a/S9EkZXRf)
+[https://classroom.github.com/a/OVCpAmrV](https://classroom.github.com/a/OVCpAmrV)
 
 Aprenderás a desarrollar un proyecto de utilizando el lenguaje de programación Python.
 

@@ -517,7 +517,7 @@ mi_conjunto.union({12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22})
 
 # Asignación
 
-[https://classroom.github.com/a/93tJXiLB](https://classroom.github.com/a/93tJXiLB)
+[https://classroom.github.com/a/93tJXiLB](https://classroom.github.com/a/fLX28sJ9)
 
 ## Descripción
 

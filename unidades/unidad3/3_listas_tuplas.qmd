@@ -219,7 +219,7 @@ Crear una función que retorne una lista con los números del 1 al 10, y mostrar
 
 # Asignación
 
-[https://classroom.github.com/a/207M40z1](https://classroom.github.com/a/207M40z1)
+[https://classroom.github.com/a/207M40z1](https://classroom.github.com/a/nN7ahXDy)
 
 Este repositorio contiene una asignación para el curso de programación en Python. La asignación es sobre la manipulación de listas y tuplas en Python.
 
@@ -257,6 +257,6 @@ test_ejercicio.py Lista de Compras: [manzanas, peras, plátanos, uvas]
 ================================================== 1 passed in 0.01s ==================================================
 ```
 
-::: {.callout-tip}
+:::{.callout-tip}
 Se sugiere que practique la sección **Ejercicios Python - Nivel 3 **para reforzar los conocimientos adquiridos.
 :::
