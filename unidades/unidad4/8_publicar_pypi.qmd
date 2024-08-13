@@ -235,7 +235,7 @@ En el archivo **.pypirc**, reemplazamos **username** con nuestro nombre de usuar
 ::: callout-tip
 En sistemas operativos basados en Unix, el archivo **.pypirc** se encuentra en el directorio de usuario **.pypirc**.
 
-En sistemas operativos basados en Windows, el archivo **.pypirc** se encuentra en el directorio de usuario **C:**/\Users/\username/\ en este directorio se almacena el archivo **.pypirc**.
+En sistemas operativos basados en Windows, el archivo **.pypirc** se encuentra en el directorio de usuario **C:** / Users / username / --> en este directorio se almacena el archivo **.pypirc**.
 :::
 
 # Publicar el paquete en Pypi
