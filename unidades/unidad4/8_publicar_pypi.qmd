@@ -135,9 +135,9 @@ def check_status(url):
     
     try:
         response = requests.get(url)
-        return f"✅ La URL está activa con código de estado: {response.status_code}"  # Devuelve el mensaje con el código de estado
+        return f"La URL está activa con código de estado: {response.status_code}"  # Devuelve el mensaje con el código de estado
     except requests.exceptions.RequestException as e:
-        return f"❌ Error: {e} 😔"  # Devuelve el mensaje de error con una x
+        return f"Error: {e}"  # Devuelve el mensaje de error con una x
 ```
 
 Analizando el código anterior, podemos ver que el paquete **status_checker_api** contiene una función llamada **check_status** que verifica el estado de una API. La función toma una URL como argumento y devuelve un mensaje con el estado de la API.
