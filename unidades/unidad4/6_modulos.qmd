@@ -60,7 +60,7 @@ print(operaciones.division(a, b))
 
 # Paquetes
 
-Un paquete es un conjunto de módulos organizados en un directorio. Un paquete debe contener un archivo llamado __init__.py. Este archivo puede estar vacío o contener código de inicialización del paquete.
+Un paquete es un conjunto de módulos organizados en un directorio. Un paquete debe contener un archivo llamado __\_\_init\_\_.py__.py. Este archivo puede estar vacío o contener código de inicialización del paquete.
 
 Ejemplo:
 
@@ -146,7 +146,7 @@ print(division.division(a, b))
 # Creación y Uso de Módulos
 
 :::{.callout-tip}
-La diferencia principal entre paquetes y módulos es que los paquetes son directorios que contienen módulos y un archivo __init__.py, mientras que los módulos son archivos individuales que contienen funciones y variables.
+La diferencia principal entre paquetes y módulos es que los paquetes son directorios que contienen módulos y un archivo __\_\_init\_\_.py, mientras que los módulos son archivos individuales que contienen funciones y variables.
 :::
 
 ## Creación de Módulos
@@ -219,7 +219,7 @@ saludar()
 
 ## Creación de Paquetes
 
-Para crear un paquete, se crea un directorio con el nombre del paquete y se agregan los módulos necesarios. Además, se debe crear un archivo __init__.py en el directorio del paquete.
+Para crear un paquete, se crea un directorio con el nombre del paquete y se agregan los módulos necesarios. Además, se debe crear un archivo __\_\_init\_\_.py en el directorio del paquete.
 
 Ejemplo:
 
