@@ -6,8 +6,7 @@
 
 Aprenderás a desarrollar un proyecto de utilizando el lenguaje de programación Python.
 
-Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos
-almacenados en un negocio o empresa.
+Un sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.
 
 Aprenderás a utilizar diferentes conceptos y técnicas de programación para implementar las funcionalidades clave de este sistema.
 
@@ -15,8 +14,7 @@ Algunas de las funcionalidades que implementaremos incluyen:
 
 Aprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.
 
-Te enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar
-productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.
+Te enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.
 
 Aprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas
 transacciones.
