@@ -483,11 +483,185 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>¡Y eso es todo! Ahora puedes utilizar cualquier paquete de Python disponible en Pypi en tus proyectos.</p>
 <p>Algunos paquetes pueden ser muy importantes para tu proyecto, así que asegúrate de revisar Pypi para encontrar los paquetes que necesitas.</p>
 </section>
+<section id="públicar-un-paquete-en-pypi" class="level1">
+<h1>Públicar un paquete en Pypi</h1>
+<p><img src="images/paste-7.png" class="img-fluid"></p>
+<p>Si has creado un paquete de Python y quieres compartirlo con otros desarrolladores, puedes publicarlo en Pypi.</p>
+<p>Para ello vamos a crear un repositorio en GitHub y subir nuestro paquete.</p>
+<p>Lo más importante es tener el script que contiene el código que queremos convertir a paquete.</p>
+<p>Para ello vamos a empezar creando un directorio con el nombre de nuestro paquete, por ejemplo <strong>status_checker_api</strong>. Dentro de este directorio vamos a crear un directorio llamado <strong>src</strong> y dentro de este directorio vamos a crear un archivo llamado __init__.py.</p>
+<p>Para poder publicar nuestro paquete en Pypi, necesitamos crear un archivo llamado <strong>setup.py</strong> en el directorio raíz de nuestro paquete. Este archivo contiene la información necesaria para empaquetar nuestro paquete y publicarlo en Pypi.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> setuptools <span class="im">import</span> setup, find_packages</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'README.md'</span>, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> fh:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    long_description <span class="op">=</span> fh.read()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>setup(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'status_checker_api'</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    version<span class="op">=</span><span class="st">'0.2'</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    packages<span class="op">=</span>find_packages(where<span class="op">=</span><span class="st">'src'</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    package_dir<span class="op">=</span>{<span class="st">''</span>: <span class="st">'src'</span>},</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    install_requires<span class="op">=</span>[</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'requests'</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    entry_points<span class="op">=</span>{</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'console_scripts'</span>: [</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">'api-status-checker=status_checker_api.__main__:main'</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    author<span class="op">=</span><span class="st">'Diego Saavedra'</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    author_email<span class="op">=</span><span class="st">'dsaavedra88@gmail.com'</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Un paquete para verificar el estado de una API.'</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    long_description<span class="op">=</span>long_description,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    long_description_content_type<span class="op">=</span><span class="st">'text/markdown'</span>,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    url<span class="op">=</span><span class="st">'https://github.com/statick88/status_checker_api'</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    classifiers<span class="op">=</span>[</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Programming Language :: Python :: 3'</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'License :: OSI Approved :: MIT License'</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Operating System :: OS Independent'</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>{</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">'egg_info'</span>: {</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">'egg_base'</span>: <span class="st">'src'</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    python_requires<span class="op">=</span><span class="st">'&gt;=3.12'</span>,</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creación-del-archivo-readme.md" class="level1">
+<h1>Creación del archivo README.md</h1>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Status Checker API</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Example](../img/paste-5.png)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Un paquete para verificar el estado de una API.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalación</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install status_checker_api</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="uso" class="level1">
+<h1>Uso</h1>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">status-checker-api</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tendra que pasar los parámetros: de la url, por ejemplo <strong>www.google.com</strong> y el tiempo de espera en segundos, por ejemplo <strong>5</strong>.</p>
+<pre><code>
+El código del paquete se encuentra en el directorio **src**. Para poder ejecutar el paquete, necesitamos un archivo llamado **\_\_main\_\_.py** en el directorio **status_checker_api**.
+
+``` python
+import requests
+
+def check_status(url):
+    try:
+        response = requests.get(url)
+        return response.status_code
+    except requests.exceptions.RequestException as e:
+        return f"Error: {e}"</code></pre>
+</section>
+<section id="creación-del-archivo-__main__.py" class="level1">
+<h1>Creación del archivo __main__.py</h1>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> check_status</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Ingrese la URL de la API: '</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    status <span class="op">=</span> check_status(url)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'El status de la API es: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creación-del-archivo-license" class="level1">
+<h1>Creación del archivo LICENSE</h1>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MIT License</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Copyright (c) 2024 Diego Saavedra</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>of this software and associated documentation files (the "Software"), to deal</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>in the Software without restriction, including without limitation the rights</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>copies of the Software, and to permit persons to whom the Software is</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>furnished to do so, subject to the following conditions:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>The above copyright notice and this permission notice shall be included in all</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>copies or substantial portions of the Software.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creación-del-archivo-.gitignore" class="level1">
+<h1>Creación del archivo .gitignore</h1>
+<pre class="text"><code># Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs / Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Miscellaneous
+*.swp
+.DS_Store</code></pre>
+<p>Ahora vamos a subir nuestro paquete a GitHub, es recomendable que podamos publicar el código fuente para poder compartirlo con otros desarrolladores.</p>
+</section>
+<section id="creación-de-la-cuenta-en-pypi" class="level1">
+<h1>Creación de la cuenta en Pypi</h1>
+<p>Para poder publicar nuestro paquete en Pypi, necesitamos crear una cuenta en <a href="https://pypi.org/account/register/">Pypi</a>.</p>
+<p>Una vez que hayamos creado la cuenta, necesitamos crear un archivo llamado <strong>.pypirc</strong> en nuestro directorio de usuario con la siguiente información:</p>
+<pre class="text"><code>[pypi]
+  username = statick
+  password = pypi-token</code></pre>
+</section>
+<section id="publicar-el-paquete-en-pypi" class="level1">
+<h1>Publicar el paquete en Pypi</h1>
+<p>Para publicar nuestro paquete en Pypi, necesitamos instalar el paquete <strong>twine</strong>.</p>
+<p>Twine es una herramienta que nos permite subir paquetes de Python a Pypi.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install twine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Es recomandable que tengamos la última versión de <strong>twine</strong>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--upgrade</span> twine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez que hayamos instalado y actualizado <strong>twine</strong>, podemos publicar nuestro paquete en Pypi de la siguiente manera:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior instala el paquete <strong>build</strong> que necesitamos para construir nuestro paquete.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior crea un archivo <strong>dist</strong> en el directorio raíz de nuestro paquete. Este archivo contiene el paquete que vamos a publicar en Pypi. Es decir los archivos <strong>.tar.gz</strong> y <strong>.whl</strong>.</p>
+<p>Estos archivos son los que vamos a subir a Pypi.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> twine upload <span class="at">--repository</span> pypi dist/<span class="pp">*</span> <span class="at">--verbose</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El comando anterior sube nuestro paquete a Pypi. Necesitamos proporcionar nuestro nombre de usuario y contraseña de Pypi para autenticarnos.</p>
+<p><img src="images/paste-9.png" class="img-fluid"></p>
+<p>¡Y eso es todo! Ahora puedes compartir tu paquete de Python con otros desarrolladores en Pypi.</p>
+</section>
+<section id="instalar-el-paquete" class="level1">
+<h1>Instalar el paquete</h1>
+<p><img src="images/paste-4.png" class="img-fluid"></p>
+<p>Para instalar el paquete que acabamos de publicar en Pypi, necesitamos usar <strong>pip</strong>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install status_checker_api</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez que hayamos instalado el paquete, podemos utilizarlo en nuestro código de Python.</p>
+</section>
+<section id="uso-del-paquete" class="level1">
+<h1>Uso del paquete</h1>
+<p><img src="images/paste-5.png" class="img-fluid"></p>
+<pre class="basht"><code>api-status-checker</code></pre>
+<p>¡Y eso es todo! Ahora puedes actualizar tu paquete de Python en Pypi.</p>
+<p>No olvides cambiar la versión de tu paquete en el archivo <strong>setup.py</strong> antes de subirlo a Pypi.</p>
+</section>
 <section id="conclusión" class="level1">
 <h1>Conclusión</h1>
-<p>Pypi es un recurso valioso para los desarrolladores de Python. Te permite encontrar y utilizar paquetes de Python que pueden ayudarte a hacer tu trabajo más fácil y eficiente.</p>
-<p>Así que no dudes en explorar Pypi y encontrar los paquetes que necesitas para tus proyectos de Python.</p>
-<p>¡Buena suerte!</p>
+<p>En este tutorial, aprendiste cómo publicar un paquete de Python en Pypi. Ahora puedes compartir tu paquete con otros desarrolladores y contribuir a la comunidad de Python.</p>
 </section>
 </div>
 
