@@ -233,9 +233,9 @@ Una vez que hayamos creado la cuenta, necesitamos crear un archivo llamado **.py
 En el archivo **.pypirc**, reemplazamos **username** con nuestro nombre de usuario de Pypi y **password** con nuestro token de acceso de Pypi.
 
 ::: callout-tip
-En sistemas operativos basados en Unix, el archivo **.pypirc** se encuentra en el directorio de usuario **\~/.pypirc**.
+En sistemas operativos basados en Unix, el archivo **.pypirc** se encuentra en el directorio de usuario **.pypirc**.
 
-En sistemas operativos basados en Windows, el archivo **.pypirc** se encuentra en el directorio de usuario **C:**\Users\username.pypirc.
+En sistemas operativos basados en Windows, el archivo **.pypirc** se encuentra en el directorio de usuario **C:**/\Users/\username.pypirc.
 :::
 
 # Publicar el paquete en Pypi
