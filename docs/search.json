@@ -3093,7 +3093,7 @@
     "href": "unidades/unidad5/6_base_de_datos.html#modelo-de-autor",
     "title": "Bases de Dato en Django",
     "section": "Modelo de Autor",
-    "text": "Modelo de Autor\nA continuación, crearemos un modelo de base de datos para almacenar información sobre los autores. Abriremos el archivo libros/models.py y definiremos el modelo de autor de la siguiente manera:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=200)\n    autor = models.CharField(max_length=100)\n    editorial = models.CharField(max_length=100)\n    fecha_publicacion = models.DateField()\n\n    def __str__(self):\n        return self.titulo\n\nLuego, registraremos el modelo en el archivo **libros/admin.py**:\n\n```python\nfrom .models import Autor\n\nadmin.site.register(Autor)",
+    "text": "Modelo de Autor\nA continuación, crearemos un modelo de base de datos para almacenar información sobre los autores. Abriremos el archivo libros/models.py y definiremos el modelo de autor de la siguiente manera:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=200)\n    autor = models.CharField(max_length=100)\n    editorial = models.CharField(max_length=100)\n    fecha_publicacion = models.DateField()\n\n    def __str__(self):\n        return self.titulo\nLuego, registraremos el modelo en el archivo libros/admin.py:\nfrom .models import Autor\n\nadmin.site.register(Autor)",
     "crumbs": [
       "Unidad 5: Django",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"

@@ -1,4 +1,4 @@
-::::::: justify
+::: justify
 # Bases de Dato en Django
 
 ::: center
@@ -244,7 +244,7 @@ class Libro(models.Model):
 
     def __str__(self):
         return self.titulo
-
+```
 Luego, registraremos el modelo en el archivo **libros/admin.py**:
 
 ```python
@@ -486,4 +486,4 @@ Con esto, hemos creado un sistema para administrar una biblioteca de libros util
 # Conclusión
 
 En este capítulo, aprendimos a trabajar con bases de datos en Django. Creamos un modelo de base de datos para almacenar información sobre libros y autores y lo expusimos a través de una API REST utilizando Django REST Framework. Utilizamos tanto bases de datos relacionales como no relacionales para almacenar información sobre productos. Configuramos Django para conectarse a bases de datos PostgreSQL y MongoDB y almacenar información sobre libros y autores. Finalmente, documentamos la API utilizando drf-yasg y probamos la API utilizando Thunder Client.
-:::::::
+:::
