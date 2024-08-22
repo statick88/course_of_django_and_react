@@ -1239,6 +1239,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad5/5_drf.html#instalación-de-setuptools",
+    "href": "unidades/unidad5/5_drf.html#instalación-de-setuptools",
+    "title": "Django Rest Framework",
+    "section": "Instalación de setuptools",
+    "text": "Instalación de setuptools\nPara instalar setuptools, ejecutamos el siguiente comando:\npip install setuptools\nEs necesario la instalación de setuptools para poder instalar las dependencias necesarias para el proyecto.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad5/5_drf.html#ejecución",
     "href": "unidades/unidad5/5_drf.html#ejecución",
     "title": "Django Rest Framework",
