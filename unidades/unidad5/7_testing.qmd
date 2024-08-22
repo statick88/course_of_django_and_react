@@ -1,0 +1,78 @@
+# Testing
+
+Vamos a empezar la parte de testing para ello vamos a crear en la ruta raiz el archivo pytest.ini
+
+```ini
+[pytest]
+
+DJANGO_SETTINGS_MODULE = inventario.test_settings
+
+python_files = tests.py test_*.py *_tests.py
+```
+
+Ahora vamos a crear el archivo test_settings.py en la carpeta inventario
+
+```python
+from .settings import *
+
+# Configuraciones adicionales para el entorno de prueba
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
+}
+```
+
+Ahora vamos a crear el archivo test_productos.py en la carpeta inventario
+
+```python
+import pytest
+from productos.models import Producto
+
+@pytest.mark.django_db
+def test_crear_producto():
+    producto = Producto.objects.create(
+        nombre="Producto de prueba",
+        precio=10.00,
+        cantidad=5
+    )
+    assert producto.nombre == "Producto de prueba"
+    assert producto.precio == 10.00
+    assert producto.cantidad == 5
+
+@pytest.mark.django_db
+def test_str_producto():
+    producto = Producto.objects.create(
+        nombre="Producto de prueba",
+        precio=10.00,
+        cantidad=5
+    )
+    assert str(producto) == "Producto de prueba"
+```
+
+Ahora vamos a ejecutar el comando pytest
+
+```bash
+pytest
+```
+
+Si todo esta correcto deberiamos ver algo como esto
+
+```bash
+====================================================== test session starts ======================================================
+platform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0
+django: version: 4.2, settings: inventario.test_settings (from ini)
+rootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django
+configfile: pytest.ini
+plugins: django-4.8.0
+collected 2 items                                                                                                               
+
+productos/tests/test_productos.py ..                                                                                      [100%]
+
+======================================================= warnings summary ========================================================
+```
+
+Con esto podemos ver que los test han pasado correctamente.
+
+Podemos ver que pytest.ini tiene la configuracion de DJANGO_SETTINGS_MODULE = inventario.test_settings, esto es para que pytest pueda encontrar las configuraciones de django.

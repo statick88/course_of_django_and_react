@@ -1,0 +1,489 @@
+::::::: justify
+# Bases de Dato en Django
+
+::: center
+![](images/paste-1.png)
+:::
+
+En este capítulo, aprenderemos a trabajar con bases de datos en Django. Crearemos un modelo de base de datos para almacenar información sobre productos y luego lo expondremos a través de una API REST.
+
+Utilizaremos tanto bases de datos relacionales como no relacionales para almacenar información sobre productos. Crearemos un modelo de base de datos para almacenar información sobre productos y luego lo expondremos a través de una API REST.
+
+Utilizaremos un entorno docker para ejecutar una base de datos PostgreSQL y otra base de datos MongoDB. Luego, configuraremos Django para conectarse a estas bases de datos y almacenar información sobre productos.
+
+Para ello iniciaremos un nuevo proyecto donde crearemos un sistema que permita administrar una biblioteca de libros. Crearemos dos modelos de base de datos: uno para almacenar información sobre los libros y otro para almacenar información sobre los autores.
+
+## Objetivos
+
+-   **Modelos de Base de Datos:** Crear modelos de base de datos para almacenar información sobre libros y autores.
+
+-   **API REST:** Exponer los modelos de base de datos a través de una API REST utilizando Django REST Framework.
+
+-   **Migraciones:** Aplicar migraciones para crear las tablas en la base de datos.
+
+-   **Documentación de la API:** Documentar la API utilizando drf-yasg.
+
+# Creación del Entorno Virtual
+
+Para comenzar, crearemos un nuevo entorno virtual para nuestro proyecto. Utilizaremos **virtualenv** para crear un entorno virtual llamado **biblioteca**.
+
+``` bash
+python -m venv env
+```
+
+Luego, activaremos el entorno virtual:
+
+-   En Windows:
+
+``` bash
+env\Scripts\activate
+```
+
+-   En macOS y Linux:
+
+``` bash
+source env/bin/activate
+```
+
+# Instalación de Django
+
+A continuación, instalaremos Django en nuestro entorno virtual:
+
+``` bash
+pip install django==4.2.0
+```
+
+# Creación del Proyecto
+
+Crearemos un nuevo proyecto de Django llamado **biblioteca**:
+
+``` bash
+django-admin startproject biblioteca .
+```
+
+Luego, crearemos una nueva aplicación llamada **libros**:
+
+``` bash
+python manage.py startapp libros
+```
+
+# Configuración de la Base de Datos
+
+## Base de Datos Relacional (PostgreSQL)
+
+::: callout-tip
+Para crear el contenedor de Docker con PostgreSQL, utilizaremos variables de entorno para configurar la base de datos. En este caso, configuraremos la base de datos con el nombre **biblioteca**, el usuario **admin**, y la contraseña **admin**.
+:::
+
+Para trabajar con una base de datos relacional, utilizaremos PostgreSQL. Crearemos un contenedor de Docker con PostgreSQL y configuraremos Django para conectarse a esta base de datos.
+
+Para trabajar con la base de datos no relacional, utilizaremos MongoDB. Crearemos un contenedor de Docker con MongoDB y configuraremos Django para conectarse a esta base de datos.
+
+Primero, crearemos un archivo **docker-compose.yml** en la raíz del proyecto con la siguiente configuración:
+
+``` yml
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: biblioteca
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:4.4
+    environment:
+      MONGO_INITDB_DATABASE: biblioteca
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  postgres_data:
+  mongo_data:
+```
+
+Con el comando anterior, creamos un contenedor de Docker con PostgreSQL y otro con MongoDB. Configuramos la base de datos con el nombre **biblioteca**, el usuario **admin**, y la contraseña **admin**.
+
+# Creación de las variables de entorno
+
+Para cargar las variables de entorno desde un archivo, utilizaremos el paquete **python-dotenv**. A continuación, instalaremos **python-dotenv** en nuestro entorno virtual:
+
+``` bash
+pip install python-dotenv
+```
+
+Luego, crearemos un archivo **.env** en la raíz del proyecto con las siguientes variables de entorno:
+
+``` env
+POSTGRES_DB=biblioteca
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=admin
+
+MONGO_INITDB_DATABASE=biblioteca
+MONGO_INITDB_ROOT_USERNAME=admin
+MONGO_INITDB_ROOT_PASSWORD=admin
+```
+
+Luego, iniciaremos el contenedor de Docker con PostgreSQL y MongoDB utilizando el siguiente comando:
+
+::: center
+![](images/paste-2.png)
+:::
+
+``` bash
+docker compose up --build -d
+```
+
+Para conectarnos a las bases de datos PostgreSQL y MongoDB, utilizaremos las siguientes credenciales:
+
+-   **PostgreSQL:**
+    -   **Usuario:** admin
+    -   **Contraseña:** admin
+    -   **Base de Datos:** biblioteca
+-   **MongoDB:**
+    -   **Usuario:** admin
+    -   **Contraseña:** admin
+    -   **Base de Datos:** biblioteca
+
+Estos datos los utilizamos en el archivo **settings.py** para configurar la conexión a la base de datos.
+
+## Configuración de la Base de Datos en Django
+
+Para configurar Django para conectarse a la base de datos PostgreSQL, y MongoDB, añadiremos las siguientes configuraciones al archivo **settings.py**:
+
+``` python
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': os.getenv('MONGO_INITDB_DATABASE'),
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': f"mongodb://{os.getenv('MONGO_INITDB_ROOT_USERNAME')}:{os.getenv('MONGO_INITDB_ROOT_PASSWORD')}@localhost:27017/{os.getenv('MONGO_INITDB_DATABASE')}"
+        }
+    }
+}
+```
+
+::: center
+![](images/paste-3.png)
+:::
+
+# Instalación de los drivers de PostgreSQL y MongoDB
+
+Para conectarnos a la base de datos PostgreSQL y MongoDB, necesitamos instalar los drivers correspondientes. A continuación, instalaremos los drivers necesarios en nuestro entorno virtual:
+
+``` bash
+pip install psycopg2-binary djongo
+```
+
+Con esta configuración, Django se conectará a la base de datos PostgreSQL y MongoDB utilizando las variables de entorno definidas en el archivo **.env**.
+
+Finalmente, crearemos una nueva base de datos llamada **biblioteca**.
+
+# Modelos de Base de Datos
+
+## Modelo de Libro
+
+Comenzaremos creando un modelo de base de datos para almacenar información sobre los libros. Abriremos el archivo **libros/models.py** y definiremos el modelo de libro de la siguiente manera:
+
+``` python
+from django.db import models
+
+class Libro(models.Model):
+    titulo = models.CharField(max_length=100)
+    autor = models.CharField(max_length=100)
+    editorial = models.CharField(max_length=100)
+    fecha_publicacion = models.DateField()
+
+    def __str__(self):
+        return self.titulo
+```
+
+Luego, registraremos el modelo en el archivo **libros/admin.py** para poder administrarlo a través del panel de administración de Django:
+
+``` python
+from django.contrib import admin
+from .models import Libro
+
+admin.site.register(Libro)
+```
+
+## Modelo de Autor
+
+A continuación, crearemos un modelo de base de datos para almacenar información sobre los autores. Abriremos el archivo **libros/models.py** y definiremos el modelo de autor de la siguiente manera:
+
+``` python
+from django.db import models
+
+class Libro(models.Model):
+    titulo = models.CharField(max_length=200)
+    autor = models.CharField(max_length=100)
+    editorial = models.CharField(max_length=100)
+    fecha_publicacion = models.DateField()
+
+    def __str__(self):
+        return self.titulo
+
+Luego, registraremos el modelo en el archivo **libros/admin.py**:
+
+```python
+from .models import Autor
+
+admin.site.register(Autor)
+```
+
+# Migraciones
+
+Antes de utilizar nuestra API REST, debemos aplicar las migraciones necesarias para crear las tablas en la base de datos:
+
+``` bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+# Django REST Framework
+
+A continuación, instalaremos Django REST Framework en nuestro entorno virtual:
+
+``` bash
+pip install djangorestframework
+```
+
+Luego, añadiremos **rest_framework** a la lista de aplicaciones instaladas en el archivo **settings.py**:
+
+``` python
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+```
+
+# Serializadores
+
+Para exponer los modelos de base de datos a través de una API REST, crearemos serializadores para los modelos de libro y autor. Crearemos un archivo **libros/serializers.py** y definiremos los serializadores de la siguiente manera:
+
+``` python
+from rest_framework import serializers
+from .models import Libro, Autor
+
+class LibroSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Libro
+        fields = '__all__'
+
+class AutorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Autor
+        fields = '__all__'
+```
+
+# Vistas
+
+A continuación, crearemos vistas utilizando Django REST Framework para exponer los modelos de libro y autor a través de una API REST. Crearemos un archivo **libros/views.py** y definiremos las vistas de la siguiente manera:
+
+``` python
+from rest_framework import viewsets
+from .models import Libro, Autor
+from .serializers import LibroSerializer, AutorSerializer
+
+class LibroViewSet(viewsets.ModelViewSet):
+    queryset = Libro.objects.all()
+    serializer_class = LibroSerializer
+
+class AutorViewSet(viewsets.ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
+```
+
+# Rutas
+
+Finalmente, crearemos rutas para acceder a los modelos de libro y autor a través de la API REST. Abriremos el archivo **biblioteca/urls.py** y definiremos las rutas de la siguiente manera:
+
+``` python
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from libros.views import LibroViewSet, AutorViewSet
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="API de Biblioteca",
+        default_version='v1',
+        description="API para administrar una biblioteca de libros y autores.",
+    ),
+    public=True,
+)
+
+router = DefaultRouter()
+router.register(r'libros', LibroViewSet)
+router.register(r'autores', AutorViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+```
+
+# Documentación de la API
+
+Para documentar la API REST, utilizaremos **drf-yasg**. A continuación, instalaremos **drf-yasg** en nuestro entorno virtual:
+
+``` bash
+pip install drf-yasg
+```
+
+Luego, añadiremos **drf_yasg** a la lista de aplicaciones instaladas en el archivo **settings.py**:
+
+``` python
+INSTALLED_APPS = [
+    ...
+    'drf_yasg',
+]
+```
+
+Añadiremos las URLs de la documentación de la API a las URLs del proyecto en el archivo **biblioteca/urls.py**:
+
+``` python
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from libros.views import LibroViewSet, AutorViewSet
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="API de Biblioteca",
+        default_version='v1',
+        description="API para administrar una biblioteca de libros y autores.",
+    ),
+    public=True,
+)
+
+router = DefaultRouter()
+router.register(r'libros', LibroViewSet)
+router.register(r'autores', AutorViewSet)
+
+urlpatterns = [
+     path('', include(router.urls)),
+     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+```
+
+# Instalación de setuptools
+
+Para instalar el paquete de setuptools, ejecutaremos el siguiente comando:
+
+``` bash
+pip install setuptools
+```
+
+# Actualización de requirements.txt
+
+Finalmente, actualizaremos el archivo **requirements.txt** con las dependencias necesarias para nuestro proyecto, recuerda que es necesario tener el archivo **requirements.txt** en la raíz del proyecto.:
+
+``` bash
+pip freeze update > requirements.txt
+```
+
+# Ejecución del Servidor
+
+Finalmente, ejecutaremos el servidor de desarrollo de Django para probar nuestra API REST:
+
+``` bash
+python manage.py runserver
+```
+
+Podremos acceder a la documentación de la API a través de un navegador:
+
+-   **Swagger:** http://127.0.0.1:8000/swagger/
+
+-   **Redoc:** http://127.0.0.1:8000/redoc/
+
+Con esto, hemos creado un sistema para administrar una biblioteca de libros utilizando Django y bases de datos relacionales y no relacionales.
+
+# Probar la API con Thunder Client
+
+Para probar la API REST, utilizaremos la extensión **Thunder Client** para Visual Studio Code. Crearemos una nueva solicitud para obtener una lista de libros:
+
+-   **Método:** GET
+-   **URL:** http://127.0.0.1:8000/libros/
+
+Luego, enviaremos la solicitud y veremos la lista de libros en formato JSON.
+
+![](images/paste-5.png)
+
+-   **Método:** POST
+
+-   **URL:** http://127.0.0.1:8000/libros/
+
+-   **Cuerpo:**
+
+``` json
+{
+    "titulo": "El Quijote",
+    "autor": "Miguel de Cervantes",
+    "editorial": "Editorial Cervantes",
+    "fecha_publicacion": "1605-01-01"
+}
+```
+
+Con esto, hemos creado un sistema para administrar una biblioteca de libros utilizando Django y bases de datos relacionales y no relacionales.
+
+-   **Método:** Put
+
+-   **URL:** http://127.0.0.1:8000/libros/1/
+
+-   **Cuerpo:**
+
+``` json
+{
+    "titulo": "El Quijote 1",
+    "autor": "Miguel de Cervantes",
+    "editorial": "Editorial Cervantes",
+    "fecha_publicacion": "1605-01-01"
+}
+```
+
+-   **Método:** DELETE
+-   **URL:** http://127.0.0.1:8000/libros/1/
+
+Con esto, hemos creado un sistema para administrar una biblioteca de libros utilizando Django y bases de datos relacionales y no relacionales.
+
+# Reto
+
+1.  **Modelos de Base de Datos:** Crea un modelo de base de datos para almacenar información sobre préstamos de libros en la biblioteca.
+
+2.  **API REST:** Expon los modelos de base de datos a través de una API REST utilizando Django REST Framework.
+
+3.  **Migraciones:** Aplica las migraciones necesarias para crear las tablas en la base de datos.
+
+4.  **Documentación de la API:** Documenta la API utilizando drf-yasg.
+
+# Conclusión
+
+En este capítulo, aprendimos a trabajar con bases de datos en Django. Creamos un modelo de base de datos para almacenar información sobre libros y autores y lo expusimos a través de una API REST utilizando Django REST Framework. Utilizamos tanto bases de datos relacionales como no relacionales para almacenar información sobre productos. Configuramos Django para conectarse a bases de datos PostgreSQL y MongoDB y almacenar información sobre libros y autores. Finalmente, documentamos la API utilizando drf-yasg y probamos la API utilizando Thunder Client.
+:::::::

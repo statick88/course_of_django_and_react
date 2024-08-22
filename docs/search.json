@@ -1239,6 +1239,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad5/5_drf.html#instalación-de-setuptools",
+    "href": "unidades/unidad5/5_drf.html#instalación-de-setuptools",
+    "title": "Django Rest Framework",
+    "section": "Instalación de setuptools",
+    "text": "Instalación de setuptools\nPara instalar setuptools, ejecutamos el siguiente comando:\npip install setuptools\nEs necesario la instalación de setuptools para poder instalar las dependencias necesarias para el proyecto.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Django Rest Framework</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad5/5_drf.html#ejecución",
     "href": "unidades/unidad5/5_drf.html#ejecución",
     "title": "Django Rest Framework",
@@ -3032,5 +3043,137 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#objetivos",
+    "href": "unidades/unidad5/6_base_de_datos.html#objetivos",
+    "title": "Bases de Dato en Django",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nModelos de Base de Datos: Crear modelos de base de datos para almacenar información sobre libros y autores.\nAPI REST: Exponer los modelos de base de datos a través de una API REST utilizando Django REST Framework.\nMigraciones: Aplicar migraciones para crear las tablas en la base de datos.\nDocumentación de la API: Documentar la API utilizando drf-yasg.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#base-de-datos-relacional-postgresql",
+    "href": "unidades/unidad5/6_base_de_datos.html#base-de-datos-relacional-postgresql",
+    "title": "Bases de Dato en Django",
+    "section": "Base de Datos Relacional (PostgreSQL)",
+    "text": "Base de Datos Relacional (PostgreSQL)\n\n\n\n\n\n\nTip\n\n\n\nPara crear el contenedor de Docker con PostgreSQL, utilizaremos variables de entorno para configurar la base de datos. En este caso, configuraremos la base de datos con el nombre biblioteca, el usuario admin, y la contraseña admin.\n\n\nPara trabajar con una base de datos relacional, utilizaremos PostgreSQL. Crearemos un contenedor de Docker con PostgreSQL y configuraremos Django para conectarse a esta base de datos.\nPara trabajar con la base de datos no relacional, utilizaremos MongoDB. Crearemos un contenedor de Docker con MongoDB y configuraremos Django para conectarse a esta base de datos.\nPrimero, crearemos un archivo docker-compose.yml en la raíz del proyecto con la siguiente configuración:\nservices:\n  postgres:\n    image: postgres:13\n    environment:\n      POSTGRES_DB: biblioteca\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: admin\n    ports:\n      - \"5432:5432\"\n    volumes:\n      - postgres_data:/var/lib/postgresql/data\n\n  mongo:\n    image: mongo:4.4\n    environment:\n      MONGO_INITDB_DATABASE: biblioteca\n      MONGO_INITDB_ROOT_USERNAME: admin\n      MONGO_INITDB_ROOT_PASSWORD: admin\n    ports:\n      - \"27017:27017\"\n    volumes:\n      - mongo_data:/data/db\n\nvolumes:\n  postgres_data:\n  mongo_data:\nCon el comando anterior, creamos un contenedor de Docker con PostgreSQL y otro con MongoDB. Configuramos la base de datos con el nombre biblioteca, el usuario admin, y la contraseña admin.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#base-de-datos-no-relacional-mongodb",
+    "href": "unidades/unidad5/6_base_de_datos.html#base-de-datos-no-relacional-mongodb",
+    "title": "Bases de Dato en Django",
+    "section": "Base de Datos No Relacional (MongoDB)",
+    "text": "Base de Datos No Relacional (MongoDB)\nPara trabajar con una base de datos no relacional, utilizaremos MongoDB. Crearemos un contenedor de Docker con MongoDB y configuraremos Django para conectarse a esta base de datos.\nPrimero, crearemos un archivo docker-compose.yml en la raíz del proyecto con la siguiente configuración:\nversion: '3.8'\n\nservices:\n  mongo:\n    image: mongo\n    restart: always\n    environment:\n      MONGO_INITDB_DATABASE: biblioteca\n      MONGO_INITDB_ROOT_USERNAME: admin\n      MONGO_INITDB_ROOT_PASSWORD: admin\n    ports:\n      - \"27017:27017\"\nLuego, iniciaremos el contenedor de Docker con MongoDB:\ndocker-compose up --build -d\nPara conectarnos a la base de datos, utilizaremos la herramienta MongoDB Compass. Abriremos la aplicación y crearemos una nueva conexión con los siguientes datos:\n\nNombre de Host: localhost\nPuerto: 27017\nUsuario: admin\nContraseña: admin\n\nFinalmente, crearemos una nueva base de datos llamada biblioteca.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#modelo-de-libro",
+    "href": "unidades/unidad5/6_base_de_datos.html#modelo-de-libro",
+    "title": "Bases de Dato en Django",
+    "section": "Modelo de Libro",
+    "text": "Modelo de Libro\nComenzaremos creando un modelo de base de datos para almacenar información sobre los libros. Abriremos el archivo libros/models.py y definiremos el modelo de libro de la siguiente manera:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=100)\n    autor = models.CharField(max_length=100)\n    editorial = models.CharField(max_length=100)\n    fecha_publicacion = models.DateField()\n\n    def __str__(self):\n        return self.titulo\nLuego, registraremos el modelo en el archivo libros/admin.py para poder administrarlo a través del panel de administración de Django:\nfrom django.contrib import admin\nfrom .models import Libro\n\nadmin.site.register(Libro)",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#modelo-de-autor",
+    "href": "unidades/unidad5/6_base_de_datos.html#modelo-de-autor",
+    "title": "Bases de Dato en Django",
+    "section": "Modelo de Autor",
+    "text": "Modelo de Autor\nA continuación, crearemos un modelo de base de datos para almacenar información sobre los autores. Abriremos el archivo libros/models.py y definiremos el modelo de autor de la siguiente manera:\nfrom django.db import models\n\nclass Libro(models.Model):\n    titulo = models.CharField(max_length=200)\n    autor = models.CharField(max_length=100)\n    editorial = models.CharField(max_length=100)\n    fecha_publicacion = models.DateField()\n\n    def __str__(self):\n        return self.titulo\n\nLuego, registraremos el modelo en el archivo **libros/admin.py**:\n\n```python\nfrom .models import Autor\n\nadmin.site.register(Autor)",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_testing.html",
+    "href": "unidades/unidad5/7_testing.html",
+    "title": "Testing",
+    "section": "",
+    "text": "Vamos a empezar la parte de testing para ello vamos a crear en la ruta raiz el archivo pytest.ini\n[pytest]\n\nDJANGO_SETTINGS_MODULE = inventario.test_settings\n\npython_files = tests.py test_*.py *_tests.py\nAhora vamos a crear el archivo test_settings.py en la carpeta inventario\nfrom .settings import *\n\n# Configuraciones adicionales para el entorno de prueba\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': ':memory:',\n    }\n}\nAhora vamos a crear el archivo test_productos.py en la carpeta inventario\nimport pytest\nfrom productos.models import Producto\n\n@pytest.mark.django_db\ndef test_crear_producto():\n    producto = Producto.objects.create(\n        nombre=\"Producto de prueba\",\n        precio=10.00,\n        cantidad=5\n    )\n    assert producto.nombre == \"Producto de prueba\"\n    assert producto.precio == 10.00\n    assert producto.cantidad == 5\n\n@pytest.mark.django_db\ndef test_str_producto():\n    producto = Producto.objects.create(\n        nombre=\"Producto de prueba\",\n        precio=10.00,\n        cantidad=5\n    )\n    assert str(producto) == \"Producto de prueba\"\nAhora vamos a ejecutar el comando pytest\npytest\nSi todo esta correcto deberiamos ver algo como esto\n====================================================== test session starts ======================================================\nplatform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0\ndjango: version: 4.2, settings: inventario.test_settings (from ini)\nrootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django\nconfigfile: pytest.ini\nplugins: django-4.8.0\ncollected 2 items                                                                                                               \n\nproductos/tests/test_productos.py ..                                                                                      [100%]\n\n======================================================= warnings summary ========================================================\nCon esto podemos ver que los test han pasado correctamente.\nPodemos ver que pytest.ini tiene la configuracion de DJANGO_SETTINGS_MODULE = inventario.test_settings, esto es para que pytest pueda encontrar las configuraciones de django.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Testing</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_correccion_test.html",
+    "href": "unidades/unidad5/8_correccion_test.html",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "",
+    "text": "Introducción\nEn este documento se describen los pasos necesarios para corregir los tests de Django Rest Framework.\nActualmente tenemos el siguiente error en los tests:",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_correccion_test.html#introducción",
+    "href": "unidades/unidad5/8_correccion_test.html#introducción",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "",
+    "text": "================================================== test session starts ===================================================\nplatform linux -- Python 3.12.3, pytest-8.2.0, pluggy-1.5.0\nrootdir: /home/statick/workspaces/Curso_django_and_react/inventario_django\ncollected 0 items / 1 error                                                                                              \n\n========================================================= ERRORS =========================================================\n________________________________________ ERROR collecting productos/test_views.py ________________________________________\nImportError while importing test module '/home/statick/workspaces/Curso_django_and_react/inventario_django/productos/test_views.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib64/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\nproductos/test_views.py:1: in &lt;module&gt;\n    from django.urls import reverse\nE   ModuleNotFoundError: No module named 'django'\n================================================ short test summary info =================================================\nERROR productos/test_views.py\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n==================================================== 1 error in 0.07s ====================================================",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_correccion_test.html#pasos",
+    "href": "unidades/unidad5/8_correccion_test.html#pasos",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Pasos",
+    "text": "Pasos\n\n1. Crear un entorno virtual\npython3 -m venv venv\n\n\n2. Activar el entorno virtual\nsource venv/bin/activate\n\n\n3. Instalar las dependencias\npip install -r requirements.txt\n\n\n4. Correr los tests\npytest\n\n\n5. Corregir los tests\nPara corregir los tests, se debe modificar el archivo productos/test_views.py y corregir el error de importación.\n\n\n6. Correr los tests nuevamente\npytest\n\n\n7. Desactivar el entorno virtual\ndeactivate",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_correccion_test.html#conclusión",
+    "href": "unidades/unidad5/8_correccion_test.html#conclusión",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Conclusión",
+    "text": "Conclusión\nUna vez corregidos los tests, se debe hacer un pull request al repositorio original.",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_correccion_test.html#referencias",
+    "href": "unidades/unidad5/8_correccion_test.html#referencias",
+    "title": "Corrección de tests en Django Rest Framework",
+    "section": "Referencias",
+    "text": "Referencias\n\nDjango Rest Framework\nDjango\npytest\nVirtualenv\nPython\nGit\nGitHub\nMarkdown\nPip",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Corrección de tests en Django Rest Framework</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_base_de_datos.html#configuración-de-la-base-de-datos-en-django",
+    "href": "unidades/unidad5/6_base_de_datos.html#configuración-de-la-base-de-datos-en-django",
+    "title": "Bases de Dato en Django",
+    "section": "Configuración de la Base de Datos en Django",
+    "text": "Configuración de la Base de Datos en Django\nPara configurar Django para conectarse a la base de datos PostgreSQL, y MongoDB, añadiremos las siguientes configuraciones al archivo settings.py:\nimport os\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': os.getenv('POSTGRES_DB'),\n        'USER': os.getenv('POSTGRES_USER'),\n        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),\n        'HOST': 'localhost',\n        'PORT': '5432',\n    },\n    'mongodb': {\n        'ENGINE': 'djongo',\n        'NAME': os.getenv('MONGO_INITDB_DATABASE'),\n        'ENFORCE_SCHEMA': False,\n        'CLIENT': {\n            'host': f\"mongodb://{os.getenv('MONGO_INITDB_ROOT_USERNAME')}:{os.getenv('MONGO_INITDB_ROOT_PASSWORD')}@localhost:27017/{os.getenv('MONGO_INITDB_DATABASE')}\"\n        }\n    }\n}",
+    "crumbs": [
+      "Unidad 5: Django",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Bases de Dato en Django</span>"
+    ]
   }
 ]
