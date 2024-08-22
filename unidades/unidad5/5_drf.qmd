@@ -115,6 +115,16 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+## Instalación de setuptools
+
+Para instalar setuptools, ejecutamos el siguiente comando:
+
+```bash
+pip install setuptools
+```
+
+Es necesario la instalación de setuptools para poder instalar las dependencias necesarias para el proyecto.
+
 ## Ejecución
 
 Una vez configurada nuestra API REST, podemos ejecutar el servidor de desarrollo de Django y acceder a la API a través de un navegador o una herramienta como Postman:

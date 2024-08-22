@@ -810,6 +810,39 @@
     ]
   },
   {
+    "objectID": "unidades/unidad4/project001.html#objetivos",
+    "href": "unidades/unidad4/project001.html#objetivos",
+    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nDiseño de la estructura de datos: Aprenderás a diseñar y crear una estructura de datos para almacenar la información de los productos, incluyendo atributos como nombre, descripción, precio, y cantidad disponible.\nAgregar productos: Implementarás la funcionalidad para agregar nuevos productos al inventario.\nBúsqueda y filtrado: Aprenderás a implementar funciones de búsqueda y filtrado para encontrar productos específicos basados en diferentes criterios.\nActualización de inventario: Desarrollarás funciones para manejar la compra y venta de productos, permitiendo ajustar la cantidad disponible en el inventario.\nGeneración de informes: Crearás funciones para generar informes sobre el estado del inventario, tales como productos disponibles, productos más vendidos, y productos con bajo stock.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/project001.html#entregables",
+    "href": "unidades/unidad4/project001.html#entregables",
+    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
+    "section": "Entregables",
+    "text": "Entregables\n\nCódigo fuente del proyecto: Estructurado y organizado de manera coherente.\nDocumentación del proyecto: Incluyendo instrucciones de instalación, uso, y una breve explicación del diseño de la solución (Esto se sugiere generar en el Readme.md del proyecto).\nPruebas unitarias: Implementación de pruebas para verificar que las funcionalidades clave del sistema funcionan correctamente.",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/project001.html#instrucciones",
+    "href": "unidades/unidad4/project001.html#instrucciones",
+    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n1. Crear la Estructura de Datos\nDiseña una clase Producto que contenga los atributos básicos como nombre, descripción, precio, y cantidad disponible. Implementa un método str para imprimir la información del producto de manera legible.\n\n\nSolución\n\nclass Producto:\n    def __init__(self, nombre, descripcion, precio, cantidad):\n        self.nombre = nombre\n        self.descripcion = descripcion\n        self.precio = precio\n        self.cantidad = cantidad\n\n    def __str__(self):\n        return f\"Producto: {self.nombre}, Precio: {self.precio}, Cantidad: {self.cantidad}\"\n\n\n\n2. Agregar Productos\nImplementa una función que permita agregar nuevos productos a una lista que actúe como el inventario.\n\n\nSolución\n\ninventario = []\n\ndef agregar_producto(producto):\n    inventario.append(producto)\n    print(f\"{producto.nombre} ha sido añadido al inventario.\")\n\n\n\n3. Búsqueda y Filtrado\nCrea funciones para buscar productos por nombre, categoría o rango de precios.\n\n\nSolución\n\ndef buscar_producto_por_nombre(nombre):\n    return [p for p in inventario if nombre.lower() in p.nombre.lower()]\n\ndef buscar_producto_por_precio(min_precio, max_precio):\n    return [p for p in inventario if min_precio &lt;= p.precio &lt;= max_precio]\n\n\n\n4. Actualización de Inventario\nImplementa funciones para aumentar o disminuir la cantidad de productos en el inventario, simulando la compra o venta de productos.\n\n\nSolución\n\ndef actualizar_cantidad(nombre, cantidad):\n    for producto in inventario:\n        if producto.nombre == nombre:\n            producto.cantidad += cantidad\n            print(f\"Cantidad actualizada: {producto.nombre} ahora tiene {producto.cantidad} unidades.\")\n            return\n    print(\"Producto no encontrado.\")\n\n\n\n5. Generación de Informes\nCrea funciones para generar informes del estado del inventario.\n\n\nSolución\n\ndef generar_informe_productos_disponibles():\n    return [p for p in inventario if p.cantidad &gt; 0]\n\ndef generar_informe_productos_bajo_stock(limite):\n    return [p for p in inventario if p.cantidad &lt;= limite]\n\n\n\n6. Pruebas Unitarias\nEscribe pruebas para cada una de las funciones clave utilizando unittest.\n\n\nSolución\n\nimport unittest\n\nclass TestInventario(unittest.TestCase):\n    def test_agregar_producto(self):\n        producto = Producto(\"Test\", \"Descripcion\", 10.0, 5)\n        agregar_producto(producto)\n        self.assertIn(producto, inventario)\n\n\n\n7. Documentación y GitHub Classroom\nDocumenta el código fuente, incluyendo instrucciones sobre cómo ejecutar el programa y las pruebas.\nConfigura tu repositorio de GitHub Classroom y sube todo el código y documentación.\n\n\nEvaluación\n\nFuncionalidad (40%): El sistema implementa correctamente las funcionalidades solicitadas.\nCalidad del Código (30%): El código es claro, bien estructurado, y sigue buenas prácticas de programación.\nPruebas (20%): Las pruebas cubren las funcionalidades clave y se ejecutan correctamente.\nDocumentación (10%): La documentación es clara y proporciona una guía adecuada para el usuario.\n\n\n¡Buena suerte!",
+    "crumbs": [
+      "Unidad 4: Python Avanzado",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad5/1_django_fundamentos.html",
     "href": "unidades/unidad5/1_django_fundamentos.html",
     "title": "Introducción a Django",
@@ -983,17 +1016,6 @@
     "crumbs": [
       "Unidad 5: Django",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Estructura de archivos y carpetas</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/4_modelos_vistas_plantillas.html",
-    "href": "unidades/unidad5/4_modelos_vistas_plantillas.html",
-    "title": "Modelos",
-    "section": "",
-    "text": "Registramos la aplicacion en admin.py\nPara que Django reconozca la clase Producto, debemos registrarla en el archivo admin.py de la aplicación productos.",
-    "crumbs": [
-      "Unidad 5: Django",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Modelos</span>"
     ]
   },
   {
@@ -3010,49 +3032,5 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad4/project001.html#objetivos",
-    "href": "unidades/unidad4/project001.html#objetivos",
-    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
-    "section": "Objetivos",
-    "text": "Objetivos\n\nDiseño de la estructura de datos: Aprenderás a diseñar y crear una estructura de datos para almacenar la información de los productos, incluyendo atributos como nombre, descripción, precio, y cantidad disponible.\nAgregar productos: Implementarás la funcionalidad para agregar nuevos productos al inventario.\nBúsqueda y filtrado: Aprenderás a implementar funciones de búsqueda y filtrado para encontrar productos específicos basados en diferentes criterios.\nActualización de inventario: Desarrollarás funciones para manejar la compra y venta de productos, permitiendo ajustar la cantidad disponible en el inventario.\nGeneración de informes: Crearás funciones para generar informes sobre el estado del inventario, tales como productos disponibles, productos más vendidos, y productos con bajo stock.",
-    "crumbs": [
-      "Unidad 4: Python Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad4/project001.html#entregables",
-    "href": "unidades/unidad4/project001.html#entregables",
-    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
-    "section": "Entregables",
-    "text": "Entregables\n\nCódigo fuente del proyecto: Estructurado y organizado de manera coherente.\nDocumentación del proyecto: Incluyendo instrucciones de instalación, uso, y una breve explicación del diseño de la solución (Esto se sugiere generar en el Readme.md del proyecto).\nPruebas unitarias: Implementación de pruebas para verificar que las funcionalidades clave del sistema funcionan correctamente.",
-    "crumbs": [
-      "Unidad 4: Python Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad4/project001.html#instrucciones",
-    "href": "unidades/unidad4/project001.html#instrucciones",
-    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n1. Crear la Estructura de Datos\nDiseña una clase Producto que contenga los atributos básicos como nombre, descripción, precio, y cantidad disponible. Implementa un método str para imprimir la información del producto de manera legible.\n\n\nSolución\n\nclass Producto:\n    def __init__(self, nombre, descripcion, precio, cantidad):\n        self.nombre = nombre\n        self.descripcion = descripcion\n        self.precio = precio\n        self.cantidad = cantidad\n\n    def __str__(self):\n        return f\"Producto: {self.nombre}, Precio: {self.precio}, Cantidad: {self.cantidad}\"\n\n\n\n2. Agregar Productos\nImplementa una función que permita agregar nuevos productos a una lista que actúe como el inventario.\n\n\nSolución\n\ninventario = []\n\ndef agregar_producto(producto):\n    inventario.append(producto)\n    print(f\"{producto.nombre} ha sido añadido al inventario.\")\n\n\n\n3. Búsqueda y Filtrado\nCrea funciones para buscar productos por nombre, categoría o rango de precios.\n\n\nSolución\n\ndef buscar_producto_por_nombre(nombre):\n    return [p for p in inventario if nombre.lower() in p.nombre.lower()]\n\ndef buscar_producto_por_precio(min_precio, max_precio):\n    return [p for p in inventario if min_precio &lt;= p.precio &lt;= max_precio]\n\n\n\n4. Actualización de Inventario\nImplementa funciones para aumentar o disminuir la cantidad de productos en el inventario, simulando la compra o venta de productos.\n\n\nSolución\n\ndef actualizar_cantidad(nombre, cantidad):\n    for producto in inventario:\n        if producto.nombre == nombre:\n            producto.cantidad += cantidad\n            print(f\"Cantidad actualizada: {producto.nombre} ahora tiene {producto.cantidad} unidades.\")\n            return\n    print(\"Producto no encontrado.\")\n\n\n\n5. Generación de Informes\nCrea funciones para generar informes del estado del inventario.\n\n\nSolución\n\ndef generar_informe_productos_disponibles():\n    return [p for p in inventario if p.cantidad &gt; 0]\n\ndef generar_informe_productos_bajo_stock(limite):\n    return [p for p in inventario if p.cantidad &lt;= limite]\n\n\n\n6. Pruebas Unitarias\nEscribe pruebas para cada una de las funciones clave utilizando unittest.\n\n\nSolución\n\nimport unittest\n\nclass TestInventario(unittest.TestCase):\n    def test_agregar_producto(self):\n        producto = Producto(\"Test\", \"Descripcion\", 10.0, 5)\n        agregar_producto(producto)\n        self.assertIn(producto, inventario)\n\n\n\n7. Documentación y GitHub Classroom\nDocumenta el código fuente, incluyendo instrucciones sobre cómo ejecutar el programa y las pruebas.\nConfigura tu repositorio de GitHub Classroom y sube todo el código y documentación.\n\n\nEvaluación\n\nFuncionalidad (40%): El sistema implementa correctamente las funcionalidades solicitadas.\nCalidad del Código (30%): El código es claro, bien estructurado, y sigue buenas prácticas de programación.\nPruebas (20%): Las pruebas cubren las funcionalidades clave y se ejecutan correctamente.\nDocumentación (10%): La documentación es clara y proporciona una guía adecuada para el usuario.\n\n\n¡Buena suerte!",
-    "crumbs": [
-      "Unidad 4: Python Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad4/project001.html#asignación",
-    "href": "unidades/unidad4/project001.html#asignación",
-    "title": "Desarrollo de un Sistema de Gestión de Inventarios en Python",
-    "section": "Asignación",
-    "text": "Asignación\nhttps://classroom.github.com/a/OVCpAmrV\nAprenderás a desarrollar un proyecto de utilizando el lenguaje de programación Python.\nUn sistema de gestión de inventarios es una herramienta que permite realizar un seguimiento y control de los productos o artículos almacenados en un negocio o empresa.\nAprenderás a utilizar diferentes conceptos y técnicas de programación para implementar las funcionalidades clave de este sistema.\nAlgunas de las funcionalidades que implementaremos incluyen:\nAprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.\nTe enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.\nAprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas transacciones.\nTe mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.",
-    "crumbs": [
-      "Unidad 4: Python Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Desarrollo de un Sistema de Gestión de Inventarios en Python</span>"
-    ]
   }
 ]
