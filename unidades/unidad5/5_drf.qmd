@@ -1,8 +1,10 @@
 # Django Rest Framework
 
-Django Rest Framework es una librería que nos permite crear APIs REST de una forma sencilla y rápida.
+**Django Rest Framework** más que una **librearía** es un **framework** que nos permite crear **APIs REST** de forma rápida y sencilla. 
 
-En el proyecto que hemos iniciado vamos a utilizar Django Rest Framework para crear una API REST que nos permita gestionar los datos de nuestra aplicación.
+## ¿Qué es una API REST?
+
+Una **API REST** (Representational State Transfer) es una **interfaz de programación de aplicaciones** que utiliza los métodos HTTP para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos.
 
 ## Instalación
 
@@ -21,7 +23,7 @@ INSTALLED_APPS = [
 ```
 ## Actualizar el archivo requirements.txt
 
-Es necesario eliminar el archivo requirements.txt y volver a crearlo con el siguiente comando:
+Es necesario **eliminar** el archivo **requirements.txt** y volver a crearlo con el siguiente comando:
 
 ```bash
 pip freeze > requirements.txt
@@ -33,29 +35,38 @@ Los serializadores nos permiten convertir los datos de nuestro modelo en un form
 Para crear un serializador, creamos un archivo serializers.py en la carpeta de nuestra aplicación y añadimos el siguiente código:
 
 ```python
-from rest_framework import serializers
+from rest_framework import serializers #<1>
 from .models import Producto
 
-class ProductoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Producto
-        fields = '__all__'
+class ProductoSerializer(serializers.ModelSerializer): #<2>
+    class Meta: #<3>
+        model = Producto #<4>
+        fields = '__all__' #<5>
 ```
+1. Importamos el módulo serializers de Django Rest Framework.
+2. Creamos un serializador ProductoSerializer que hereda de serializers.ModelSerializer.
+3. Definimos la clase Meta para configurar el serializador.
+4. Especificamos el modelo Producto que queremos serializar.
+5. Indicamos que queremos serializar todos los campos del modelo Producto.
+
 ## Views
 
-Las vistas en Django Rest Framework son similares a las vistas en Django. En lugar de devolver una respuesta HTML, devuelven una respuesta JSON que puede ser consumida por una API REST.
+Las vistas en Django Rest Framework son similares a las vistas en Django. En lugar de devolver una **respuesta HTML**, devuelven una **respuesta JSON** que puede ser consumida por una **API REST**.
 
-Para crear una vista, creamos un archivo views.py en la carpeta de nuestra aplicación y añadimos el siguiente código:
+Para crear una vista, creamos un archivo **views.py** en la carpeta de nuestra aplicación y añadimos el siguiente código:
 
 ``` python
-from rest_framework import viewsets
-from .serializers import ProductoSerializer
+from rest_framework import viewsets #<1>
+from .serializers import ProductoSerializer #<2> 
 from .models import Producto
 
-class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
+class ProductoViewSet(viewsets.ModelViewSet): #<3>
+    queryset = Producto.objects.all() #<4>
+    serializer_class = ProductoSerializer #<5>
 ```
+1. Importamos el módulo viewsets de Django Rest Framework.
+2. Importamos el serializador ProductoSerializer que creamos anteriormente.
+3. Creamos una vista ProductoViewSet que hereda de viewsets.ModelViewSet.
 
 ## URLs de la Aplicación
 
@@ -63,13 +74,16 @@ Para conectar nuestras vistas con las URLs de nuestra aplicación, creamos un ar
 
 ```python
 from django.urls import path
-from .views import ProductoViewSet
+from .views import ProductoViewSet #<1>
 
 urlpatterns = [
-    path('api/productos/', ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'),
-    path('api/productos/<int:pk>/', ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'),
+    path('api/productos/', ProductoViewSet.as_view({'get': 'list', 'post': 'create'}), name='api-productos'), #<2>
+    path('api/productos/<int:pk>/', ProductoViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='api-producto-detail'), #<3>
 ]
 ```
+1. Importamos la vista ProductoViewSet que creamos anteriormente.
+2. Configuramos la URL '/api/productos/' para listar y crear productos.
+3. Configuramos la URL '/api/productos/\<int:pk>/' para ver, actualizar y eliminar un producto específico.
 
 ## Configuración URLs del Proyecto
 

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Sistema de Gestión de Inventarios – Django y React 2024</title>
+<title>Desarrollo de un Sistema de Gestión de Inventarios en Python – Django y React 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/project001.html"><span class="chapter-title">Sistema de Gestión de Inventarios</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/project001.html"><span class="chapter-title">Desarrollo de un Sistema de Gestión de Inventarios en Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -255,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad4/project001.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Sistema de Gestión de Inventarios</span></a>
+  <a href="../../unidades/unidad4/project001.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Desarrollo de un Sistema de Gestión de Inventarios en Python</span></a>
   </div>
 </li>
       </ul>
@@ -420,9 +454,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/project001.html"><span class="chapter-title">Sistema de Gestión de Inventarios</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad4/5_programacion_oo.html">Unidad 4: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad4/project001.html"><span class="chapter-title">Desarrollo de un Sistema de Gestión de Inventarios en Python</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Sistema de Gestión de Inventarios</span></h1>
+<h1 class="title"><span class="chapter-title">Desarrollo de un Sistema de Gestión de Inventarios en Python</span></h1>
 </div>
 
 
@@ -439,6 +473,139 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="justify">
+<p>Este laboratorio tiene como objetivo guiarte en el desarrollo de un sistema de gestión de inventarios utilizando el lenguaje de programación Python. A través de esta actividad, aprenderás a implementar funcionalidades clave en un proyecto práctico que puedes utilizar como base para futuros desarrollos.</p>
+<section id="objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
+<ul>
+<li><p><strong>Diseño de la estructura de datos:</strong> Aprenderás a diseñar y crear una estructura de datos para almacenar la información de los productos, incluyendo atributos como nombre, descripción, precio, y cantidad disponible.</p></li>
+<li><p><strong>Agregar productos:</strong> Implementarás la funcionalidad para agregar nuevos productos al inventario.</p></li>
+<li><p><strong>Búsqueda y filtrado:</strong> Aprenderás a implementar funciones de búsqueda y filtrado para encontrar productos específicos basados en diferentes criterios.</p></li>
+<li><p><strong>Actualización de inventario:</strong> Desarrollarás funciones para manejar la compra y venta de productos, permitiendo ajustar la cantidad disponible en el inventario.</p></li>
+<li><p><strong>Generación de informes:</strong> Crearás funciones para generar informes sobre el estado del inventario, tales como productos disponibles, productos más vendidos, y productos con bajo stock.</p></li>
+</ul>
+</section>
+<section id="entregables" class="level2">
+<h2 class="anchored" data-anchor-id="entregables">Entregables</h2>
+<ul>
+<li><strong>Código fuente del proyecto:</strong> Estructurado y organizado de manera coherente.</li>
+<li><strong>Documentación del proyecto:</strong> Incluyendo instrucciones de instalación, uso, y una breve explicación del diseño de la solución (Esto se sugiere generar en el <strong>Readme.md</strong> del proyecto).</li>
+<li><strong>Pruebas unitarias:</strong> Implementación de pruebas para verificar que las funcionalidades clave del sistema funcionan correctamente.</li>
+</ul>
+</section>
+<section id="instrucciones" class="level2">
+<h2 class="anchored" data-anchor-id="instrucciones">Instrucciones</h2>
+<section id="crear-la-estructura-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="crear-la-estructura-de-datos">1. Crear la Estructura de Datos</h3>
+<p>Diseña una clase Producto que contenga los atributos básicos como nombre, descripción, precio, y cantidad disponible. Implementa un método <strong>str</strong> para imprimir la información del producto de manera legible.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Producto:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, descripcion, precio, cantidad):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.descripcion <span class="op">=</span> descripcion</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.precio <span class="op">=</span> precio</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.cantidad <span class="op">=</span> cantidad</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Producto: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss">, Precio: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>precio<span class="sc">}</span><span class="ss">, Cantidad: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>cantidad<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="agregar-productos" class="level3">
+<h3 class="anchored" data-anchor-id="agregar-productos">2. Agregar Productos</h3>
+<p>Implementa una función que permita agregar nuevos productos a una lista que actúe como el inventario.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="op">=</span> []</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_producto(producto):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    inventario.append(producto)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>producto<span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> ha sido añadido al inventario."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="búsqueda-y-filtrado" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda-y-filtrado">3. Búsqueda y Filtrado</h3>
+<p>Crea funciones para buscar productos por nombre, categoría o rango de precios.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_producto_por_nombre(nombre):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p <span class="cf">for</span> p <span class="kw">in</span> inventario <span class="cf">if</span> nombre.lower() <span class="kw">in</span> p.nombre.lower()]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_producto_por_precio(min_precio, max_precio):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p <span class="cf">for</span> p <span class="kw">in</span> inventario <span class="cf">if</span> min_precio <span class="op">&lt;=</span> p.precio <span class="op">&lt;=</span> max_precio]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="actualización-de-inventario" class="level3">
+<h3 class="anchored" data-anchor-id="actualización-de-inventario">4. Actualización de Inventario</h3>
+<p>Implementa funciones para aumentar o disminuir la cantidad de productos en el inventario, simulando la compra o venta de productos.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> actualizar_cantidad(nombre, cantidad):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> producto <span class="kw">in</span> inventario:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> producto.nombre <span class="op">==</span> nombre:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            producto.cantidad <span class="op">+=</span> cantidad</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Cantidad actualizada: </span><span class="sc">{</span>producto<span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> ahora tiene </span><span class="sc">{</span>producto<span class="sc">.</span>cantidad<span class="sc">}</span><span class="ss"> unidades."</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Producto no encontrado."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="generación-de-informes" class="level3">
+<h3 class="anchored" data-anchor-id="generación-de-informes">5. Generación de Informes</h3>
+<p>Crea funciones para generar informes del estado del inventario.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generar_informe_productos_disponibles():</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p <span class="cf">for</span> p <span class="kw">in</span> inventario <span class="cf">if</span> p.cantidad <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generar_informe_productos_bajo_stock(limite):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [p <span class="cf">for</span> p <span class="kw">in</span> inventario <span class="cf">if</span> p.cantidad <span class="op">&lt;=</span> limite]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="pruebas-unitarias" class="level3">
+<h3 class="anchored" data-anchor-id="pruebas-unitarias">6. Pruebas Unitarias</h3>
+<p>Escribe pruebas para cada una de las funciones clave utilizando unittest.</p>
+<details>
+<summary>
+Solución
+</summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> unittest</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TestInventario(unittest.TestCase):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_agregar_producto(<span class="va">self</span>):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        producto <span class="op">=</span> Producto(<span class="st">"Test"</span>, <span class="st">"Descripcion"</span>, <span class="fl">10.0</span>, <span class="dv">5</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        agregar_producto(producto)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertIn(producto, inventario)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="documentación-y-github-classroom" class="level3">
+<h3 class="anchored" data-anchor-id="documentación-y-github-classroom">7. Documentación y GitHub Classroom</h3>
+<p>Documenta el código fuente, incluyendo instrucciones sobre cómo ejecutar el programa y las pruebas.</p>
+<p>Configura tu repositorio de GitHub Classroom y sube todo el código y documentación.</p>
+</section>
+<section id="evaluación" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
+<ol type="1">
+<li><p><strong>Funcionalidad (40%):</strong> El sistema implementa correctamente las funcionalidades solicitadas.</p></li>
+<li><p><strong>Calidad del Código (30%):</strong> El código es claro, bien estructurado, y sigue buenas prácticas de programación.</p></li>
+<li><p><strong>Pruebas (20%):</strong> Las pruebas cubren las funcionalidades clave y se ejecutan correctamente.</p></li>
+<li><p><strong>Documentación (10%):</strong> La documentación es clara y proporciona una guía adecuada para el usuario.</p></li>
+</ol>
+<div class="center">
+<p>¡Buena suerte!</p>
+</div>
+</section>
+</section>
+</div>
 <section id="asignación" class="level2">
 <h2 class="anchored" data-anchor-id="asignación">Asignación</h2>
 <p><a href="https://classroom.github.com/a/OVCpAmrV">https://classroom.github.com/a/OVCpAmrV</a></p>
@@ -449,7 +616,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Aprenderás a crear una estructura de datos para almacenar la información de los productos, como su nombre, descripción, precio, cantidad disponible, etc. También aprenderás a agregar nuevos productos al sistema.</p>
 <p>Te enseñaré cómo implementar funciones de búsqueda y filtrado para encontrar productos específicos en base a diferentes criterios, como el nombre, la categoría o el precio.</p>
 <p>Aprenderás a manejar las actualizaciones de inventario, como la compra o venta de productos. Implementaremos funciones que permitan aumentar o disminuir la cantidad disponible de un producto y mantener un registro de estas transacciones.</p>
-<p>Te mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa.</p>
+<p>Te mostraré cómo generar informes sobre el estado del inventario, como la lista de productos disponibles, los productos más vendidos, los productos con bajo stock, etc. Utilizaremos técnicas de manipulación de datos y generación de informes para presentar esta información de manera clara y concisa. :::</p>
 
 
 </section>

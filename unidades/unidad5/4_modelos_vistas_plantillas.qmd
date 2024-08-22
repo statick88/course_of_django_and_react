@@ -1,3 +1,4 @@
+:::{.justify}
 # Modelos
 
 Para entender este tema crearemos un sistema de gestión de inventario de productos. Para ello, crearemos una clase **Producto** que representará un producto en el inventario. Cada producto tendrá un nombre, un precio y una cantidad en inventario.
@@ -6,13 +7,33 @@ Empezaremos creando un entorno virtual e instalando Django.
 
 ```bash
 python -m venv env
+```
+Ahora activaremos el entorno virtual.
+
+```bash
 source env/bin/activate
+```
+
+crearemos un directorio llamado **inventario** y nos moveremos a ese directorio.
+
+```bash
 mkdir inventario
+```
+```bash
 cd inventario
+```
+
+Una vez activado el entorno y creando el directorio **inventario**, instalaremos Django.
+
+```bash
 pip install django==4.2.0
 ```
 
-Ahora crearemos un proyecto de Django llamado **inventario**
+::: {.callout-tip}
+**Tip:** Para crear un proyecto de Django, utilizamos el comando **django-admin startproject**. En este caso utilizamos la versión LTS, recuerda que puedes consultar la versión más reciente en la [página oficial de Django](https://www.djangoproject.com/download/). Sin embargo en este caso utilizaremos la versión 4.2.0.
+:::
+
+Ahora crearemos un ***proyecto*** de Django llamado **inventario**
 
 ```bash
 django-admin startproject inventario .
@@ -26,6 +47,7 @@ python manage.py startapp productos
 
 ::: {.callout-info}
 **Info:** En Django, un proyecto es un conjunto de aplicaciones web y un proyecto puede contener múltiples aplicaciones.
+:::
 
 Para que la app productos funcione, debemos registrarla en el archivo **settings.py** del proyecto **inventario**.
 
@@ -35,7 +57,6 @@ INSTALLED_APPS = [
     "productos",
 ]
 ```
-:::
 
 Ahora crearemos la clase **Producto** en el archivo **models.py** de la aplicación **productos**.
 
@@ -53,6 +74,8 @@ class Producto(models.Model):
 
 ::: {.callout-tip}
 **Tip:** La función **\_\_str\_\_** es una función especial que se llama cuando se convierte un objeto a una cadena de texto.
+
+Los modelos en Django son clases que representan tablas en la base de datos. Cada atributo de la clase representa una columna en la tabla y cada instancia de la clase representa una fila en la tabla.
 :::
 
 # Registramos la aplicacion en admin.py
@@ -72,7 +95,7 @@ admin.site.register(Producto) #<2>
 
 # Vistas en Django
 
-Ahora crearemos las vistas de nuestro sistema en Django. Para ello, crearemos una función para cada vista que renderizará una plantilla HTML.
+Ahora crearemos las vistas de nuestro sistema en Django. Para ello, crearemos una función para cada vista que renderizará una plantilla HTML. Por lo tanto nuestras vistas están basadas en funciones. Sin embargo tambien existen vistas basadas en clases.
 
 ::: {.callout-tip}
 En Django, una vista es una función que recibe una petición HTTP y devuelve una respuesta HTTP.
@@ -184,6 +207,29 @@ Django utiliza un sistema de herencia de plantillas llamado Jinja2. Adicional a 
 ::: {.callout-tip}
 **Bootstrap** es un framework de CSS que se utiliza para crear sitios web y aplicaciones web responsivos y móviles.
 :::
+
+Para crear las plantillas de nuestro sistema, crearemos una carpeta llamada **templates** en el directorio de la aplicación **productos**.
+
+Teniendo la siguiente estructura:
+
+```simpletext
+productos/
+    migrations/
+    templates/
+        productos/
+            base.html
+            listar.html
+            agregar.html
+            actualizar.html
+            eliminar.html
+            buscar.html
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py
+```
 
 ## Base
 
@@ -401,6 +447,26 @@ python manage.py migrate #<2>
 2. Aplica las migraciones.
 :::
 
+::: {.callout-tip}
+**Tip:** Para acceder a las vistas de nuestro sistema, debemos definir las URLs en el archivo **urls.py** de la aplicación y el proyecto.
+
+En Django, las URLs se definen en el archivo **urls.py** de la aplicación y el proyecto. Las URLs se utilizan para acceder a las vistas de nuestro sistema.
+
+:::
+
+Es necesario realizar una modificación en el archivo **settings.py** del proyecto **inventario** para que Django pueda encontrar las plantillas de nuestro sistema.
+
+```python
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #<1>
+        ...
+    },
+]
+```
+
+1. Agregamos la ruta de la carpeta **templates** al directorio de plantillas.
 
 # Ejecutar el servidor
 
@@ -410,3 +476,8 @@ Para ejecutar el servidor de desarrollo de Django, utilizaremos el siguiente com
 python manage.py runserver
 ```
 Con esto hemos creado un sistema de gestión de inventario de productos con Django. Ahora podemos listar, agregar, actualizar, eliminar y buscar productos en el inventario y hemos utilizado el sistema de plantillas de Django para crear las vistas de nuestro sistema. Adicional a ello tambien hemos utilizado el framework de CSS Bootstrap para darle estilo a nuestro sistema.
+
+# Conclusiones
+
+En este tema hemos aprendido a crear un sistema de gestión de inventario de productos con Django. Hemos creado un modelo de datos para representar los productos en el inventario y hemos creado vistas para listar, agregar, actualizar, eliminar y buscar productos en el inventario. Adicional a ello tambien hemos creado plantillas HTML para renderizar las vistas de nuestro sistema.
+:::
