@@ -64,7 +64,6 @@ book:
         - unidades/unidad5/4_modelos_vistas_plantillas.qmd
         - unidades/unidad5/5_drf.qmd
         - unidades/unidad5/6_base_de_datos.qmd
-        - unidades/unidad5/6_base_de_datos.qmd
         - unidades/unidad5/7_testing.qmd
         - unidades/unidad5/8_correccion_test.qmd
 
