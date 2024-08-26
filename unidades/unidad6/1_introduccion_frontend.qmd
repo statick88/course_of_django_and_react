@@ -1,111 +1,797 @@
 # Introducción a HTML
 
-HTML es un lenguaje de marcado que se utiliza para el desarrollo de páginas de internet. Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros. Es un estándar a cargo del W3C, organización dedicada a la estandarización de casi todas las tecnologías ligadas a la web, sobre todo en lo referente a su escritura e interpretación. Se considera el lenguaje más importante en el desarrollo de páginas web.
+Este capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML.
 
-HTML se escribe en forma de "etiquetas", rodeadas por corchetes angulares (<,>). HTML también puede describir, hasta un cierto punto, la apariencia de un documento, y puede incluir un script (por ejemplo JavaScript), el cual puede afectar el comportamiento de navegadores web y otros procesadores de HTML.
+Bienvenido a HTML! 
 
-HTML se ha desarrollado en diferentes versiones, llamadas "versiones de HTML". Sin embargo, su núcleo es siempre el mismo: definir la estructura de una página web. Las versiones de HTML son:
+**HyperText Markup Language**, o HTML, es la columna vertebral de la web, proporcionando el contenido, así como la estructura de ese contenido, que se muestra en tu navegador web.
 
-- HTML 2
-- HTML 3
-- HTML 4
-- HTML 5
+A menos que estés leyendo un PDF o una versión impresa de esta página, este contenido está compuesto por varios elementos y texto HTML. HTML es la capa de contenido de la web. Los elementos HTML son los nodos que componen el Modelo de Objetos del Documento.
 
-HTML 5 es la última versión de HTML, y es la que se utiliza actualmente.
+Las **Hojas de Estilo en Cascada** proporcionan el aspecto y la apariencia, o capa de presentación de la página. **JavaScript es la capa de comportamiento**, a menudo utilizado para manipular los objetos dentro de un documento. Los sitios web que se construyen con frameworks de JavaScript realmente están manipulando HTML. A su vez, es importante marcar tu HTML de una manera que los scripts puedan analizar fácilmente y que las tecnologías de asistencia puedan entender fácilmente. Esto significa escribir código HTML con estándares modernos.
 
-## Estructura básica de un documento HTML
+# Resumen
 
-Un documento HTML tiene una estructura básica que debe seguir. Esta estructura es la siguiente:
+Este capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML. Si eres completamente nuevo en HTML, aprenderás cómo construir contenido estructuralmente sólido. Si has estado construyendo sitios web durante años, este curso puede llenar lagunas de conocimiento que ni siquiera sabías que tenías.
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Título de la página</title>
-    </head>
-    <body>
-        <!-- Contenido de la página -->
-    </body>
-</html>
-```
+A lo largo de este viaje, estaremos construyendo la estructura para MachineLearningWorkshop.com. Ninguna máquina resultó dañada en la creación de esta serie.
 
-A continuación se describen las partes de un documento HTML:
+Esto no es una referencia completa. Cada sección presenta el tema de la sección con explicaciones breves y ejemplos, brindándote la oportunidad de explorar más a fondo. Habrá enlaces a referencias de temas, como las especificaciones de MDN y WHATWG, y otros artículos de web.dev. Si bien este no es un curso de accesibilidad, cada sección incluirá las mejores prácticas de accesibilidad y problemas específicos, con enlaces a investigaciones más profundas sobre el tema. Cada sección tendrá una breve evaluación para ayudar a las personas a confirmar su comprensión.
 
-- **!DOCTYPE html**: Define la versión de HTML que se está utilizando. En este caso, HTML 5.
-- **html**: Es el elemento raíz de un documento HTML.
-- **head**: Contiene información sobre el documento, como su título.
-- **title**: Define el título de la página, que se muestra en la pestaña del navegador.
-- **body**: Contiene el contenido de la página, como texto, imágenes, videos, etc.
+## Visión general de HTML
 
-## Etiquetas HTML
+HTML es el lenguaje de marcado estándar para crear páginas web. HTML significa Lenguaje de Marcado de Hipertexto. Un lenguaje de marcado es un conjunto de etiquetas que se utilizan para definir la estructura de una página web. El contenido de una página web se define con HTML. Los elementos HTML son los bloques de construcción de las páginas HTML.
 
-Las etiquetas HTML son los bloques de construcción de un documento HTML. Las etiquetas se utilizan para definir la estructura y el contenido de la página. Cada etiqueta tiene un propósito específico y puede contener otros elementos HTML.
+## Una breve introducción a los conceptos clave en HTML.
 
-A continuación se muestran algunas etiquetas HTML comunes:
+HTML es un lenguaje de marcado que define la estructura de tu contenido, consta de una serie de elementos que rodean o envuelven el contenido para que se muestre o actúe de una manera particular. 
 
-- **<h1> a <h6>**: Define encabezados de diferentes tamaños.
-- **<p>**: Define un párrafo de texto.
-- **<a>**: Define un enlace a otra página.
-- **<img>**: Define una imagen.
-- **<ul>**: Define una lista desordenada.
-- **<ol>**: Define una lista ordenada.
-- **<li>**: Define un elemento de lista.
-- **<table>**: Define una tabla.
-- **<tr>**: Define una fila en una tabla.
-- **<td>**: Define una celda en una tabla.
-- **<div>**: Define una sección genérica de una página.
-- **<span>**: Define una sección en línea de una página.
+Los elementos HTML son los bloques de construcción de las páginas HTML. Los elementos HTML se representan mediante etiquetas. Las etiquetas HTML etiquetan piezas de contenido como "encabezado", "párrafo", "tabla" y así sucesivamente. Browsers web renderizan el contenido HTML en una página web.
 
-## Atributos HTML
-
-Los atributos HTML proporcionan información adicional sobre los elementos HTML. Los atributos se especifican en la etiqueta de inicio y se utilizan para modificar el comportamiento o la apariencia del elemento.
-
-A continuación se muestran algunos atributos HTML comunes:
-
-- **href**: Especifica la URL de destino de un enlace.
-- **src**: Especifica la URL de origen de una imagen.
-- **alt**: Especifica un texto alternativo para una imagen.
-- **width**: Especifica el ancho de un elemento.
-- **height**: Especifica la altura de un elemento.
-- **style**: Especifica estilos CSS para un elemento.
-
-## Ejemplo de un documento HTML
-
-A continuación se muestra un ejemplo de un documento HTML básico que contiene un encabezado, un párrafo de texto y una imagen:
+### Encabezado de un documento HTML
 
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Ejemplo de HTML</title>
-    </head>
-    <body>
-        <h1>Este es un encabezado</h1>
-        <p>Este es un párrafo de texto.</p>
-        <img src="imagen.jpg" alt="Una imagen">
-    </body>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+El contenido de la página va aquí.
+</body>
 </html>
 ```
 
-En este ejemplo, se define un encabezado de nivel 1 con el texto "Este es un encabezado", un párrafo de texto con el texto "Este es un párrafo de texto" y una imagen con la URL "imagen.jpg" y el texto alternativo "Una imagen".
+### Párrafo
 
-## Recursos adicionales
+```html
+<p>Este es un párrafo.</p>
+```
 
-- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
-- [Mozilla Developer Network HTML Guide](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [HTML Reference](https://htmlreference.io/)
-- [HTML Cheat Sheet](https://htmlcheatsheet.com/)
+### Tabla
 
-## Ejercicios
+```html
+<table>
+  <tr>
+    <th>Encabezado de la tabla</th>
+  </tr>
+  <tr>
+    <td>Dato de la tabla</td>
+  </tr>
+</table>
+```
 
-1. Crea un documento HTML que contenga un encabezado de nivel 1 con el texto "Hola, mundo!" y un párrafo de texto con el texto "Este es un ejemplo de un documento HTML básico".
+## Estructura del documento
 
-2. Crea un documento HTML que contenga una lista desordenada con tres elementos de lista. Los elementos de lista deben contener los siguientes textos: "Elemento 1", "Elemento 2" y "Elemento 3".
+### Aprende cómo estructurar tus documentos HTML con una base sólida.
 
-3. Crea un documento HTML que contenga una tabla con tres filas y tres columnas. En cada celda de la tabla, coloca un número del 1 al 9.
+Un documento HTML consta de una serie de elementos HTML anidados. Un documento HTML comienza con un elemento raíz **<html>**, seguido de un elemento **<head>** y un elemento **<body>**. El elemento **<head>** contiene metadatos sobre el documento, como el título de la página. El elemento **<body>** contiene el contenido de la página.
 
-4. Crea un documento HTML que contenga un enlace a la página de Google. El enlace debe tener el texto "Ir a Google" y debe abrirse en una nueva pestaña del navegador.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+El contenido de la página va aquí.
+</body>
+</html>
+```
 
-5. Crea un documento HTML que contenga una imagen de tu elección. La imagen debe tener un ancho de 200 píxeles y un alto de 200 píxeles.
+## Metadatos
 
+### Cómo utilizar etiquetas meta para proporcionar información sobre tus documentos.
 
+Las etiquetas meta proporcionan información sobre el documento HTML. Los metadatos no se muestran en la página web, pero son importantes para los motores de búsqueda y otros servicios web.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Descripción de la página">
+<meta name="keywords" content="Palabras clave, separadas por comas">
+<meta name="author" content="Nombre del autor">
+</head>
+<body>
+El contenido de la página va aquí.
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan las etiquetas meta para proporcionar información sobre el documento HTML, como la codificación de caracteres, la descripción de la página, las palabras clave y el autor.
+
+## HTML semántico
+
+### Usar los elementos HTML correctos para describir el contenido de tu documento.
+
+HTML semántico es un enfoque de escribir HTML que hace que el código sea más claro y legible tanto para los humanos como para las máquinas. Los elementos HTML semánticos describen el significado del contenido en lugar de su apariencia.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<header>
+<h1>Encabezado de la página</h1>
+</header>
+<nav>
+<ul>
+<li><a href="#">Enlace 1</a></li>
+<li><a href="#">Enlace 2</a></li>
+<li><a href="#">Enlace 3</a></li>
+</ul>
+</nav>
+<section>
+<h2>Sección 1</h2>
+<p>Contenido de la sección 1.</p>
+</section>
+<section>
+<h2>Sección 2</h2>
+<p>Contenido de la sección 2.</p>
+</section>
+<footer>
+<p>Pie de página</p>
+</footer>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan elementos HTML semánticos como **<header>**, **<nav>**, **<section>** y **<footer>** para describir el contenido de la página.
+
+## Encabezados y secciones
+
+### Cómo utilizar correctamente los elementos de sección para darle significado a tu contenido.
+
+Los elementos de sección en HTML son elementos que definen secciones de contenido en un documento HTML. Los elementos de sección ayudan a organizar y estructurar el contenido de una página web.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<h1>Encabezado de nivel 1</h1>
+<section>
+<h2>Sección 1</h2>
+<p>Contenido de la sección 1.</p>
+</section>
+<section>
+<h2>Sección 2</h2>
+<p>Contenido de la sección 2.</p>
+</section>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan elementos de sección como **<section>** y **<h2>** para organizar y estructurar el contenido de la página.
+
+## Atributos
+
+### Aprende sobre los diferentes atributos globales junto con los atributos específicos de elementos HTML particulares.
+
+Los atributos HTML proporcionan información adicional sobre los elementos HTML. Los atributos pueden ser globales o específicos de un elemento.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<img src="imagen.jpg" alt="Texto alternativo">
+<a href="https://www.ejemplo.com">Enlace</a>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **<img>** y el atributo **href** en el elemento **<a>**.
+
+## HTML particulares.
+
+### Aprende sobre los diferentes atributos globales junto con los atributos específicos de elementos HTML particulares.
+
+Los atributos HTML proporcionan información adicional sobre los elementos HTML. Los atributos pueden ser globales o específicos de un elemento.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<img src="imagen.jpg" alt="Texto alternativo">
+<a href="https://www.ejemplo.com">Enlace</a>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **<img>** y el atributo **href** en el elemento **<a>**.
+
+## Conceptos básicos de texto
+
+### Cómo formatear texto utilizando HTML.
+
+HTML proporciona una serie de elementos para formatear texto, como **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>**.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<p>Este es un <strong>párrafo</strong> con texto en negrita.</p>
+<p>Este es un <em>párrafo</em> con texto en cursiva.</p>
+<p>Este es un <u>párrafo</u> con texto subrayado.</p>
+<p>Este es un <s>párrafo</s> con texto tachado.</p>
+<p>Este es un <sub>párrafo</sub> con texto subíndice.</p>
+<p>Este es un <sup>párrafo</sup> con texto superíndice.</p>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan elementos HTML como **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>** para formatear texto.
+
+## Enlaces
+
+### Todo lo que necesitas saber sobre enlaces.
+
+Los enlaces HTML se crean con el elemento **<a>**. El atributo **href** especifica la URL de la página a la que enlaza el enlace.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<a href="https://www.ejemplo.com">Enlace a ejemplo.com</a>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<a>** con el atributo **href** para crear un enlace a una página web.
+
+## Listas
+
+### Cómo crear listas en HTML.
+
+HTML proporciona elementos para crear listas ordenadas (**<ol>**), listas desordenadas (**<ul>**) y listas de definición (**<dl>**).
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<h2>Listas ordenadas</h2>
+<ol>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ol>
+<h2>Listas desordenadas</h2>
+<ul>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ul>
+<h2>Listas de definición</h2>
+<dl>
+<dt>Término 1</dt>
+<dd>Definición 1</dd>
+<dt>Término 2</dt>
+<dd>Definición 2</dd>
+</dl>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan elementos HTML como **<ol>**, **<ul>**, **<li>**, **<dl>**, **<dt>** y **<dd>** para crear listas.
+
+## Navegación
+
+### La navegación es un elemento clave de cualquier sitio o aplicación, y comienza con HTML.
+
+La navegación en HTML se puede crear con elementos como **<nav>**, **<ul>** y **<li>**.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<nav>
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Acerca de</a></li>
+<li><a href="#">Servicios</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+</nav>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<nav>** con elementos **<ul>** y **<li>** para crear una barra de navegación.
+
+## Tablas
+
+### Comprender cómo utilizar tablas para marcar datos tabulares.
+
+Las tablas en HTML se crean con elementos como **<table>**, **<tr>**, **<th>** y **<td>**.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<table>
+<tr>
+<th>Encabezado 1</th>
+<th>Encabezado 2</th>
+</tr>
+<tr>
+<td>Dato 1</td>
+<td>Dato 2</td>
+</tr>
+<tr>
+<td>Dato 3</td>
+<td>Dato 4</td>
+</tr>
+</table>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<table>** con elementos **<tr>**, **<th>** y **<td>** para crear una tabla.
+
+## Formularios
+
+### Una visión general de los formularios en HTML.
+
+Los formularios en HTML se crean con elementos como **<form>**, **<input>**, **<textarea>** y **<button>**.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<form>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre">
+<label for="correo">Correo:</label>
+<input type="email" id="correo" name="correo">
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje"></textarea>
+<button type="submit">Enviar</button>
+</form>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<form>** con elementos **<input>**, **<textarea>** y **<button>** para crear un formulario.
+
+## Imágenes
+
+### Una visión general de las imágenes en HTML.
+
+Las imágenes en HTML se crean con el elemento **<img>**. El atributo **src** especifica la URL de la imagen.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<img src="imagen.jpg" alt="Texto alternativo">
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<img>** con el atributo **src** para mostrar una imagen en la página.
+
+## Audio y video
+
+### Descubre cómo trabajar con medios HTML como audio y video.
+
+Los elementos de audio y video en HTML se crean con los elementos **<audio>** y **<video>**. Los atributos **src** y **controls** son comunes a ambos elementos.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<audio src="audio.mp3" controls></audio>
+<video src="video.mp4" controls></video>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<audio>** y **<video>** con los atributos **src** y **controls** para reproducir audio y video en la página.
+
+## Plantilla, ranura y sombra
+
+### Una explicación de plantilla, ranura y sombra.
+
+Los elementos de plantilla, ranura y sombra en HTML se utilizan para crear contenido reutilizable y encapsulado.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<template>
+<p>Este es un contenido de plantilla.</p>
+</template>
+<slot></slot>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<template>** y **<slot>** para crear contenido reutilizable y encapsulado.
+
+## APIs de HTML
+
+### Aprende cómo se puede exponer y manipular información HTML utilizando JavaScript.
+
+Las APIs de HTML proporcionan una forma de interactuar con el contenido HTML utilizando JavaScript.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<p id="parrafo">Este es un párrafo.</p>
+<script>
+document.getElementById("parrafo").innerHTML = "Este es un nuevo párrafo.";
+</script>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el método **getElementById** para seleccionar un elemento HTML y cambiar su contenido.
+
+## Enfoque
+
+### Cómo gestionar el orden de enfoque en tus documentos HTML.
+
+El enfoque en HTML se puede gestionar con el atributo **tabindex** y el método **focus()** en JavaScript.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<input type="text" id="campo1" tabindex="1">
+<input type="text" id="campo2" tabindex="2">
+<input type="text" id="campo3" tabindex="3">
+<script>
+document.getElementById("campo2").focus();
+</script>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el atributo **tabindex** y el método **focus()** para gestionar el orden de enfoque en los campos de texto.
+
+## Otros elementos de texto en línea
+
+### Una introducción a la variedad de elementos utilizados para marcar texto.
+
+HTML proporciona una variedad de elementos para marcar texto, como **<a>**, **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>**.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<p>Este es un <a href="#">enlace</a>.</p>
+<p>Este es un <strong>texto en negrita</strong>.</p>
+<p>Este es un <em>texto en cursiva</em>.</p>
+<p>Este es un <u>texto subrayado</u>.</p>
+<p>Este es un <s>texto tachado</s>.</p>
+<p>Este es un <sub>texto subíndice</sub>.</p>
+<p>Este es un <sup>texto superíndice</sup>.</p>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan elementos HTML como **<a>**, **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>** para marcar texto.
+
+## Detalles y resumen
+
+### Descubre cómo funcionan los elementos de detalles y resumen, muy útiles, y dónde usarlos.
+
+Los elementos de detalles y resumen en HTML se utilizan para crear un widget de detalles que se puede mostrar u ocultar.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<details>
+<summary>Detalles</summary>
+<p>Este es un contenido de detalles.</p>
+</details>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<details>** y **<summary>** para crear un widget de detalles.
+
+## Diálogo
+
+### El elemento <dialog> es un elemento útil para representar cualquier tipo de diálogo en HTML, descubre cómo funciona.
+
+El elemento **<dialog>** en HTML se utiliza para representar cualquier tipo de diálogo, como una ventana emergente o un cuadro de diálogo.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<dialog open>
+<p>Este es un contenido de diálogo.</p>
+<button>Botón de cierre</button>
+</dialog>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utiliza el elemento **<dialog>** para representar un diálogo con un botón de cierre.
+
+## Elementos de agrupación
+
+### Descubre cómo utilizar los elementos de agrupación en HTML.
+
+Los elementos de agrupación en HTML se utilizan para agrupar elementos relacionados juntos.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<fieldset>
+<legend>Grupo de campos</legend>
+<input type="text" id="campo1">
+<input type="text" id="campo2">
+<input type="text" id="campo3">
+</fieldset>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<fieldset>** y **<legend>** para agrupar campos de formulario relacionados juntos.
+
+## Elementos de contenido incrustado
+
+### Descubre cómo incrustar contenido en tu documento HTML.
+
+Los elementos de contenido incrustado en HTML se utilizan para incrustar contenido de otros documentos o fuentes.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<iframe src="https://www.ejemplo.com"></iframe>
+<object data="archivo.pdf" type="application/pdf"></object>
+<embed src="archivo.swf" type="application/x-shockwave-flash">
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<iframe>**, **<object>** y **<embed>** para incrustar contenido en la página.
+
+## Elementos de formulario
+
+### Descubre cómo utilizar los elementos de formulario en HTML.
+
+Los elementos de formulario en HTML se utilizan para crear formularios interactivos en una página web.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<form>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre">
+<label for="correo">Correo:</label>
+<input type="email" id="correo" name="correo">
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje"></textarea>
+<button type="submit">Enviar</button>
+</form>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<form>**, **<input>**, **<textarea>** y **<button>** para crear un formulario interactivo.
+
+## Elementos de marco
+
+### Descubre cómo utilizar los elementos de marco en HTML.
+
+Los elementos de marco en HTML se utilizan para dividir una página en secciones independientes.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<frameset cols="25%, 75%">
+<frame src="menu.html">
+<frame src="contenido.html">
+</frameset>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<frameset>** y **<frame>** para dividir una página en secciones independientes.
+
+## Elementos de interacción
+
+### Descubre cómo utilizar los elementos de interacción en HTML.
+
+Los elementos de interacción en HTML se utilizan para crear elementos interactivos en una página web.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<button>Botón</button>
+<input type="text">
+<select>
+<option>Elemento 1</option>
+<option>Elemento 2</option>
+<option>Elemento 3</option>
+</select>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<button>**, **<input>** y **<select>** para crear elementos interactivos en la página.
+
+## Elementos de lista
+
+### Descubre cómo utilizar los elementos de lista en HTML.
+
+Los elementos de lista en HTML se utilizan para crear listas de elementos.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Título de la página</title>
+</head>
+<body>
+<ul>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ul>
+<ol>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ol>
+</body>
+</html>
+```
+
+En el ejemplo anterior se utilizan los elementos **<ul>** y **<ol>** para crear listas de elementos.
+
+# Reto
+
+Crea una página web con los siguientes elementos:
+
+1. Un encabezado con el título de la página.
+2. Un párrafo con el contenido de la página.
+3. Una lista ordenada con al menos tres elementos.
+4. Una lista desordenada con al menos tres elementos.
+5. Una tabla con al menos tres filas y dos columnas.
+6. Un formulario con al menos tres campos de entrada y un botón de envío.
+7. Una imagen incrustada en la página.
+8. Un enlace a una página web externa.
+
+¡Buena suerte!
+
+<details>
+<summary>Ver solución</summary>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Página de ejemplo</title>
+</head>
+<body>
+<h1>Encabezado de la página</h1>
+<p>Este es un párrafo de ejemplo.</p>
+<h2>Lista ordenada</h2>
+<ol>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ol>
+<h2>Lista desordenada</h2>
+<ul>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+<li>Elemento 3</li>
+</ul>
+<h2>Tabla</h2>
+<table>
+<tr>
+<th>Encabezado 1</th>
+<th>Encabezado 2</th>
+</tr>
+<tr>
+<td>Dato 1</td>
+<td>Dato 2</td>
+</tr>
+<tr>
+<td>Dato 3</td>
+<td>Dato 4</td>
+</tr>
+</table>
+<h2>Formulario</h2>
+<form>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre">
+<label for="correo">Correo:</label>
+<input type="email" id="correo" name="correo">
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje"></textarea>
+<button type="submit">Enviar</button>
+</form>
+<h2>Imagen</h2>
+<img src="imagen.jpg" alt="Texto alternativo">
+<h2>Enlace</h2>
+<a href="https://www.ejemplo.com">Enlace a ejemplo.com</a>
+</body>
+</html>
+```
+
+</details>
+
+# Conclusiones
+
+HTML es un lenguaje de marcado que define la estructura de tu contenido. Los elementos HTML son los bloques de construcción de las páginas HTML. HTML proporciona una serie de elementos para crear contenido estructurado, como encabezados, párrafos, listas, tablas, formularios, imágenes, audio y video. HTML también proporciona elementos para formatear texto, crear enlaces, navegar por el contenido, agrupar elementos y crear contenido incrustado. HTML es un lenguaje poderoso que te permite crear páginas web interactivas y atractivas.
