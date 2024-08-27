@@ -1,3 +1,4 @@
+:::{.justify}
 # Introducción a HTML
 
 Este capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML.
@@ -140,7 +141,7 @@ HTML semántico es un enfoque de escribir HTML que hace que el código sea más 
 </html>
 ```
 
-En el ejemplo anterior se utilizan elementos HTML semánticos como **<header>**, **<nav>**, **<section>** y **<footer>** para describir el contenido de la página.
+En el ejemplo anterior se utilizan elementos HTML semánticos como **\<header\>**, **\<nav\>**, **\<section\>** y **\<footer\>** para describir el contenido de la página.
 
 ## Encabezados y secciones
 
@@ -168,7 +169,7 @@ Los elementos de sección en HTML son elementos que definen secciones de conteni
 </html>
 ```
 
-En el ejemplo anterior se utilizan elementos de sección como **<section>** y **<h2>** para organizar y estructurar el contenido de la página.
+En el ejemplo anterior se utilizan elementos de sección como **\<section\>** y **\<h2\>** para organizar y estructurar el contenido de la página.
 
 ## Atributos
 
@@ -189,7 +190,7 @@ Los atributos HTML proporcionan información adicional sobre los elementos HTML.
 </html>
 ```
 
-En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **<img>** y el atributo **href** en el elemento **<a>**.
+En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **\<img\>** y el atributo **href** en el elemento **\<a\>**.
 
 ## HTML particulares.
 
@@ -210,13 +211,13 @@ Los atributos HTML proporcionan información adicional sobre los elementos HTML.
 </html>
 ```
 
-En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **<img>** y el atributo **href** en el elemento **<a>**.
+En el ejemplo anterior se utilizan los atributos **src** y **alt** en el elemento **\<img>** y el atributo **href** en el elemento **\<a>**.
 
 ## Conceptos básicos de texto
 
 ### Cómo formatear texto utilizando HTML.
 
-HTML proporciona una serie de elementos para formatear texto, como **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>**.
+HTML proporciona una serie de elementos para formatear texto, como **\<strong\>**, **\<em\>**, **\<u\>**, **\<s\>**, **\<sub\>** y **\<sup\>**.
 
 ```html
 <!DOCTYPE html>
@@ -235,13 +236,13 @@ HTML proporciona una serie de elementos para formatear texto, como **<strong>**,
 </html>
 ```
 
-En el ejemplo anterior se utilizan elementos HTML como **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>** para formatear texto.
+En el ejemplo anterior se utilizan elementos HTML como **\<strong\>**, **\<em\>**, **\<u\>**, **\<s\>**, **\<sub\>** y **\<sup\>** para formatear texto.
 
 ## Enlaces
 
 ### Todo lo que necesitas saber sobre enlaces.
 
-Los enlaces HTML se crean con el elemento **<a>**. El atributo **href** especifica la URL de la página a la que enlaza el enlace.
+Los enlaces HTML se crean con el elemento **\<a\>**. El atributo **href** especifica la URL de la página a la que enlaza el enlace.
 
 ```html
 <!DOCTYPE html>
@@ -255,13 +256,13 @@ Los enlaces HTML se crean con el elemento **<a>**. El atributo **href** especifi
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<a>** con el atributo **href** para crear un enlace a una página web.
+En el ejemplo anterior se utiliza el elemento **\<a\>** con el atributo **href** para crear un enlace a una página web.
 
 ## Listas
 
 ### Cómo crear listas en HTML.
 
-HTML proporciona elementos para crear listas ordenadas (**<ol>**), listas desordenadas (**<ul>**) y listas de definición (**<dl>**).
+HTML proporciona elementos para crear listas ordenadas (**\<ol\>**), listas desordenadas (**\<ul\>**) y listas de definición (**\<dl\>**).
 
 ```html
 <!DOCTYPE html>
@@ -293,13 +294,13 @@ HTML proporciona elementos para crear listas ordenadas (**<ol>**), listas desord
 </html>
 ```
 
-En el ejemplo anterior se utilizan elementos HTML como **<ol>**, **<ul>**, **<li>**, **<dl>**, **<dt>** y **<dd>** para crear listas.
+En el ejemplo anterior se utilizan elementos HTML como **\<ol\>**, **\<ul\>**, **\<li\>**, **\<dl\>**, **\<dt\>** y **\<dd\>** para crear listas.
 
 ## Navegación
 
 ### La navegación es un elemento clave de cualquier sitio o aplicación, y comienza con HTML.
 
-La navegación en HTML se puede crear con elementos como **<nav>**, **<ul>** y **<li>**.
+La navegación en HTML se puede crear con elementos como **\<nav\>**, **\<ul\>** y **\<li\>**.
 
 ```html
 <!DOCTYPE html>
@@ -320,13 +321,13 @@ La navegación en HTML se puede crear con elementos como **<nav>**, **<ul>** y *
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<nav>** con elementos **<ul>** y **<li>** para crear una barra de navegación.
+En el ejemplo anterior se utiliza el elemento **\<nav\>** con elementos **\<ul\>** y **\<li\>** para crear una barra de navegación.
 
 ## Tablas
 
 ### Comprender cómo utilizar tablas para marcar datos tabulares.
 
-Las tablas en HTML se crean con elementos como **<table>**, **<tr>**, **<th>** y **<td>**.
+Las tablas en HTML se crean con elementos como **\<table\>**, **\<tr\>**, **\<th\>** y **\<td\>**.
 
 ```html
 <!DOCTYPE html>
@@ -353,13 +354,13 @@ Las tablas en HTML se crean con elementos como **<table>**, **<tr>**, **<th>** y
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<table>** con elementos **<tr>**, **<th>** y **<td>** para crear una tabla.
+En el ejemplo anterior se utiliza el elemento **\<table\>** con elementos **\<tr\>**, **\<th\>** y **\<td\>** para crear una tabla.
 
 ## Formularios
 
 ### Una visión general de los formularios en HTML.
 
-Los formularios en HTML se crean con elementos como **<form>**, **<input>**, **<textarea>** y **<button>**.
+Los formularios en HTML se crean con elementos como **\<form\>**, **\<input\>**, **\<textarea\>** y **\<button\>**.
 
 ```html
 <!DOCTYPE html>
@@ -381,13 +382,13 @@ Los formularios en HTML se crean con elementos como **<form>**, **<input>**, **<
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<form>** con elementos **<input>**, **<textarea>** y **<button>** para crear un formulario.
+En el ejemplo anterior se utiliza el elemento **\<form\>** con elementos **\<input\>**, **\<textarea\>** y **\<button\>** para crear un formulario.
 
 ## Imágenes
 
 ### Una visión general de las imágenes en HTML.
 
-Las imágenes en HTML se crean con el elemento **<img>**. El atributo **src** especifica la URL de la imagen.
+Las imágenes en HTML se crean con el elemento **\<img\>**. El atributo **src** especifica la URL de la imagen.
 
 ```html
 <!DOCTYPE html>
@@ -401,13 +402,13 @@ Las imágenes en HTML se crean con el elemento **<img>**. El atributo **src** es
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<img>** con el atributo **src** para mostrar una imagen en la página.
+En el ejemplo anterior se utiliza el elemento **\<img\>** con el atributo **src** para mostrar una imagen en la página.
 
 ## Audio y video
 
 ### Descubre cómo trabajar con medios HTML como audio y video.
 
-Los elementos de audio y video en HTML se crean con los elementos **<audio>** y **<video>**. Los atributos **src** y **controls** son comunes a ambos elementos.
+Los elementos de audio y video en HTML se crean con los elementos **\<audio\>** y **\<video\>**. Los atributos **src** y **controls** son comunes a ambos elementos.
 
 ```html
 <!DOCTYPE html>
@@ -422,7 +423,7 @@ Los elementos de audio y video en HTML se crean con los elementos **<audio>** y 
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<audio>** y **<video>** con los atributos **src** y **controls** para reproducir audio y video en la página.
+En el ejemplo anterior se utilizan los elementos **\<audio\>** y **\<video\>** con los atributos **src** y **controls** para reproducir audio y video en la página.
 
 ## Plantilla, ranura y sombra
 
@@ -445,7 +446,7 @@ Los elementos de plantilla, ranura y sombra en HTML se utilizan para crear conte
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<template>** y **<slot>** para crear contenido reutilizable y encapsulado.
+En el ejemplo anterior se utilizan los elementos **\<template\>** y **\<slot\>** para crear contenido reutilizable y encapsulado.
 
 ## APIs de HTML
 
@@ -499,7 +500,7 @@ En el ejemplo anterior se utiliza el atributo **tabindex** y el método **focus(
 
 ### Una introducción a la variedad de elementos utilizados para marcar texto.
 
-HTML proporciona una variedad de elementos para marcar texto, como **<a>**, **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>**.
+HTML proporciona una variedad de elementos para marcar texto, como **\<a\>**, **\<strong\>**, **\<em\>**, **\<u\>**, **\<s\>**, **\<sub\>** y **\<sup\>**.
 
 ```html
 <!DOCTYPE html>
@@ -519,7 +520,7 @@ HTML proporciona una variedad de elementos para marcar texto, como **<a>**, **<s
 </html>
 ```
 
-En el ejemplo anterior se utilizan elementos HTML como **<a>**, **<strong>**, **<em>**, **<u>**, **<s>**, **<sub>** y **<sup>** para marcar texto.
+En el ejemplo anterior se utilizan elementos HTML como **\<a\>**, **\<strong\>**, **\<em\>**, **\<u\>**, **\<s\>**, **\<sub\>** y **\<sup\>** para marcar texto.
 
 ## Detalles y resumen
 
@@ -542,13 +543,13 @@ Los elementos de detalles y resumen en HTML se utilizan para crear un widget de 
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<details>** y **<summary>** para crear un widget de detalles.
+En el ejemplo anterior se utilizan los elementos **\<details\>** y **\<summary\>** para crear un widget de detalles.
 
 ## Diálogo
 
 ### El elemento <dialog> es un elemento útil para representar cualquier tipo de diálogo en HTML, descubre cómo funciona.
 
-El elemento **<dialog>** en HTML se utiliza para representar cualquier tipo de diálogo, como una ventana emergente o un cuadro de diálogo.
+El elemento **\<dialog\>** en HTML se utiliza para representar cualquier tipo de diálogo, como una ventana emergente o un cuadro de diálogo.
 
 ```html
 <!DOCTYPE html>
@@ -565,7 +566,7 @@ El elemento **<dialog>** en HTML se utiliza para representar cualquier tipo de d
 </html>
 ```
 
-En el ejemplo anterior se utiliza el elemento **<dialog>** para representar un diálogo con un botón de cierre.
+En el ejemplo anterior se utiliza el elemento **\<dialog\>** para representar un diálogo con un botón de cierre.
 
 ## Elementos de agrupación
 
@@ -590,7 +591,7 @@ Los elementos de agrupación en HTML se utilizan para agrupar elementos relacion
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<fieldset>** y **<legend>** para agrupar campos de formulario relacionados juntos.
+En el ejemplo anterior se utilizan los elementos **\<fieldset\>** y **\<legend\>** para agrupar campos de formulario relacionados juntos.
 
 ## Elementos de contenido incrustado
 
@@ -612,7 +613,7 @@ Los elementos de contenido incrustado en HTML se utilizan para incrustar conteni
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<iframe>**, **<object>** y **<embed>** para incrustar contenido en la página.
+En el ejemplo anterior se utilizan los elementos **\<iframe\>**, **\<object\>** y **\<embed\>** para incrustar contenido en la página.
 
 ## Elementos de formulario
 
@@ -640,7 +641,7 @@ Los elementos de formulario en HTML se utilizan para crear formularios interacti
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<form>**, **<input>**, **<textarea>** y **<button>** para crear un formulario interactivo.
+En el ejemplo anterior se utilizan los elementos **\<form\>**, **\<input\>**, **\<textarea\>** y **<button>** para crear un formulario interactivo.
 
 ## Elementos de marco
 
@@ -661,7 +662,7 @@ Los elementos de marco en HTML se utilizan para dividir una página en secciones
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<frameset>** y **<frame>** para dividir una página en secciones independientes.
+En el ejemplo anterior se utilizan los elementos **\<frameset\>** y **\<frame\>** para dividir una página en secciones independientes.
 
 ## Elementos de interacción
 
@@ -687,7 +688,7 @@ Los elementos de interacción en HTML se utilizan para crear elementos interacti
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<button>**, **<input>** y **<select>** para crear elementos interactivos en la página.
+En el ejemplo anterior se utilizan los elementos **\<button\>**, **\<input\>** y **\<select\>** para crear elementos interactivos en la página.
 
 ## Elementos de lista
 
@@ -716,7 +717,7 @@ Los elementos de lista en HTML se utilizan para crear listas de elementos.
 </html>
 ```
 
-En el ejemplo anterior se utilizan los elementos **<ul>** y **<ol>** para crear listas de elementos.
+En el ejemplo anterior se utilizan los elementos **\<ul\>** y **\<ol\>** para crear listas de elementos.
 
 # Reto
 
@@ -795,3 +796,4 @@ Crea una página web con los siguientes elementos:
 # Conclusiones
 
 HTML es un lenguaje de marcado que define la estructura de tu contenido. Los elementos HTML son los bloques de construcción de las páginas HTML. HTML proporciona una serie de elementos para crear contenido estructurado, como encabezados, párrafos, listas, tablas, formularios, imágenes, audio y video. HTML también proporciona elementos para formatear texto, crear enlaces, navegar por el contenido, agrupar elementos y crear contenido incrustado. HTML es un lenguaje poderoso que te permite crear páginas web interactivas y atractivas.
+:::
