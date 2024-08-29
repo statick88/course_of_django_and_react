@@ -3416,7 +3416,6 @@ En este ejemplo, se utiliza Bulma para dar estilo al portafolio personal de HTML
 ```
 </details>
 
-
 # Reto
 
 Crea un portafolio personal de HTML con CSS utilizando los conocimientos adquiridos en este capítulo, puede ser con CSS de forma nativa o con un Framework de CSS como Bootstrap, Tailwind CSS o Bulma.
@@ -3433,8 +3432,7 @@ El portafolio personal de HTML debe contener las siguientes secciones:
 
 5.  **Contact**: Contiene un formulario de contacto.
 
-<detais>
-
+<details>
 <summary>Ver respuesta</summary>
 
 -   CSS Nativo
