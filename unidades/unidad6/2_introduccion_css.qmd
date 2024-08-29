@@ -1,1847 +1,3735 @@
 ::: justify
 # Introducción al CSS
 
-¡Bienvenido a Aprender CSS!
+CSS signifíca Cascading Style Sheets, es un lenguaje de diseño gráfico para definir la presentación de documentos HTML. CSS describe cómo los elementos HTML deben ser mostrados en la pantalla, en papel, o en otras formas de medios. CSS ahorra mucho trabajo. Puede controlar el diseño de varias páginas a la vez. CSS puede ser almacenado en archivos externos, lo que permite actualizar un sitio web entero simplemente actualizando un archivo. CSS hace que el sitio web sea más accesible para los visitantes con discapacidades. CSS es fácil de aprender y entender, pero también es poderoso.
 
-En este capítulo se detallarán los fundamentos de CSS en fragmentos sencillos y fáciles de comprender. A lo largo de los próximos subtemas, aprenderá cómo funcionan los aspectos fundamentales de CSS y cómo utilizarlos eficazmente en sus proyectos.
+Para utilizar CSS en un documento HTML, se puede hacer de tres maneras:
 
-Aprenderá los fundamentos de CSS, como el modelo de caja, cascada y especificidad, caja flexible, cuadrícula e índice z. Y, junto con estos fundamentos, aprenderá sobre funciones, tipos de color, gradientes, propiedades lógicas y herencia para convertirse en un desarrollador front-end integral, listo para enfrentarse a cualquier interfaz de usuario.
+1.  **CSS Externo**: Se crea un archivo con extensión **.css** y se enlaza al documento HTML con la etiqueta **\<link\>**.
 
-Cada subtema está lleno de demostraciones interactivas para que ponga a prueba sus conocimientos. Este capítulo se creó para desarrolladores de CSS, tanto principiantes como avanzados. Puede recorrer la serie de principio a fin para alcanzar una comprensión general de CSS que abarque todos los aspectos, o puede utilizarlo como referencia para temas específicos de estilo. Para aquellos que son nuevos en el desarrollo web en general.
-
-Para desarrollar este tema vamos a construir una hoja de vida personal que la hemos iniciado en la clase de HTML5, ahora vamos a darle estilo con CSS, conforme avancemos creando el código necesario iremos aprendiendo los conceptos básicos de CSS.
-
-# Objetivos
-
--   Aprender los fundamentos de CSS.
-
--   Aprender a utilizar CSS eficazmente en sus proyectos.
-
-# Proyecto
-
--   En este tema crearemos un portafolio personal que permita dar a conocer nuestros conceptos básicos en desarrollo frontend.
-
-# Temas
-
-1.  Modelo de caja
-
-2.  Cascada y especificidad
-
-3.  Caja flexible
-
-4.  Cuadrícula
-
-5.  Índice z
-
-6.  Funciones
-
-7.  Tipos de color
-
-8.  Gradientes
-
-9.  Propiedades lógicas
-
-10. Herencia
-
-# Prerrequisitos
-
--   Conocimientos básicos de HTML5.
-
--   Editor de código.
-
--   Navegador web.
-
--   Conexión a Internet.
-
-# Inicio
-
-¡Vamos a empezar!
-
-Empezamos creando una estructura básica de HTML5, para ello vamos a crear un archivo **index.html** y le agregamos el siguiente código:
+Ejemplo:
 
 ``` html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Personal</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Portafolio Personal</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Datos Personales</h2>
-            <p>Nombre: Juan Pérez</p>
-            <p>Edad: 25 años</p>
-            <p>Correo:
-                <a href="mailto: [email protected]"> [email protected]</a>
-            </p>
-        </section>
-
-        <section>
-            <h2>Experiencia Laboral</h2>
-            <p>Desarrollador Frontend en Empresa X</p>
-            <p>Desarrollador Backend en Empresa Y</p>
-        </section>
-
-        <section>
-            <h2>Estudios</h2>
-            <p>Ingeniería en Sistemas</p>
-            <p>Curso de Desarrollo Web</p>
-        </section>
-
-        <section>
-            <h2>Proyectos</h2>
-            <p>Proyecto 1</p>
-            <p>Proyecto 2</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Portafolio Personal</p>
-    </footer>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
 </body>
 </html>
 ```
 
-Este código nos permitirá tener una estructura básica de nuestro portafolio personal, ahora vamos a darle estilo con CSS.
+En el archivo **styles.css** se pueden definir los estilos de los elementos HTML.
 
-Ahora creamos un archivo **style.css** y le agregamos el siguiente código:
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
 
 ``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+h1 {
+    color: blue;
 }
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+p {
+    color: red;
 }
+```
+</details>
 
-main {
-    padding: 20px;
-}
+2.  **CSS Interno**: Se utiliza la etiqueta **\<style\>** dentro del documento HTML.
 
-section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-}
+Ejemplo:
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            color: blue;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+## Actividad
+
+*  Definir los estilos de los elementos HTML dentro del documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            color: blue;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+</details>
+
+3.  **CSS en línea**: Se utiliza el atributo **style** en los elementos HTML.
+
+Ejemplo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 style="color: blue;">Este es un título</h1>
+    <p style="color: red;">Este es un párrafo</p>
+</body>
+</html>
+```
+
+## Actividad
+
+*  Definir los estilos de los elementos HTML utilizando el atributo **style**.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 style="color: blue;">Este es un título</h1>
+    <p style="color: red;">Este es un párrafo</p>
+</body>
+</html>
+```
+</details>
+
+En este capítulo se utilizará CSS Externo para definir los estilos de los elementos HTML.
+
+Ahora que hemos aprendido cómo se puede utilizar CSS en un documento HTML, vamos a ver cómo se pueden definir los estilos de los elementos HTML.
+
+Para comprender mejor el tema de CSS vamos a utilizar varios ejemplos que permitirán conocer cada uno de los conceptos necesarios para poder aplicar estilos a los elementos HTML.
+
+# Selectores
+
+Los selectores son patrones que se utilizan para seleccionar los elementos a los que se les aplicarán los estilos. Existen varios tipos de selectores, los más comunes son:
+
+1.  Selector de tipo
+2.  Selector de clase
+3.  Selector de ID
+4.  Selector de atributo
+5.  Selector universal
+
+A continuación se describen brevemente cada uno de los selectores:
+
+1.  **Selector de tipo**: Selecciona todos los elementos de un tipo específico.
+
+Ejemplo:
+
+``` css
+p {
+    color: red;
 }
 ```
 
-Este código nos permitirá darle estilo a nuestro portafolio personal, ahora vamos a vincular el archivo **style.css** con nuestro archivo **index.html**.
+2.  **Selector de clase**: Selecciona todos los elementos que tienen un atributo **class** específico.
+
+Ejemplo:
+
+``` css
+.texto-rojo {
+    color: red;
+}
+```
+
+3.  **Selector de ID**: Selecciona un único elemento que tiene un atributo **id** específico.
+
+Ejemplo:
+
+``` css
+#titulo {
+    color: blue;
+}
+```
+
+4.  **Selector de atributo**: Selecciona todos los elementos que tienen un atributo específico.
+
+Ejemplo:
+
+``` css
+[title] {
+    color: green;
+}
+```
+
+5.  **Selector universal**: Selecciona todos los elementos de la página.
+
+Ejemplo:
+
+``` css
+* {
+    color: black;
+}
+```
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando los selectores de tipo, clase, ID, atributo y universal.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1 id="titulo">Este es un título</h1>
+    <p class="texto-rojo">Este es un párrafo</p>
+    <p title="Este es un párrafo con título">Este es un párrafo con título</p>
+    <p>Este es un párrafo sin título</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    color: blue;
+}
+
+.texto-rojo {
+    color: red;
+}
+
+#titulo {
+    color: green;
+}
+
+[title] {
+    color: purple;
+}
+
+* {
+    color: black;
+}
+```
+
+</details>
+
+En los siguientes ejemplos se verán más detalles sobre cómo se pueden utilizar los selectores para aplicar estilos a los elementos HTML.
+
+# Comentarios
+
+Para añadir comentarios en un archivo CSS se utiliza la siguiente sintaxis:
+
+``` css
+/* Este es un comentario */
+```
+
+Los comentarios en CSS se utilizan para explicar el código y hacerlo más fácil de entender.
+
+## Actividad
+
+*  Añadir comentarios en el archivo **styles.css**.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` css
+/* Este es un comentario */
+
+h1 {
+    color: blue; /* Este es un comentario */
+}
+
+.texto-rojo {
+    color: red; /* Este es un comentario */
+}
+
+#titulo {
+    color: green; /* Este es un comentario */
+}
+
+[title] {
+    color: purple; /* Este es un comentario */
+}
+
+* {
+    color: black; /* Este es un comentario */
+}
+```
+
+</details>
+
+Los comentarios son útiles para explicar el código y hacerlo más fácil de entender.
+
+# Colores, valores y convenciones
+
+Par entender acerca de este tema crearemos un archivo **styles.css** y lo enlazaremos a un archivo **index.html**.
+
+Ejemplo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+En el archivo **styles.css** se pueden definir los estilos de los elementos HTML.
+
+Ejemplo:
+
+``` css
+h1 {
+    color: blue;
+}
+p {
+    color: red;
+}
+```
+
+En este ejemplo, el título se mostrará en color azul y el párrafo en color rojo.
+
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    color: blue;
+}
+
+p {
+    color: red;
+}
+```
+
+</details>
+
+En CSS se pueden utilizar varios tipos de valores para definir los estilos de los elementos HTML. Algunos de los valores más comunes son:
+
+1.  **Colores**: Se pueden utilizar nombres de colores, códigos hexadecimales, códigos RGB, códigos RGBA, códigos HSL y códigos HSLA.
+
+Ejemplo:
+
+``` css
+h1 {
+    color: blue; /* Nombre de color */
+    color: #ff0000; /* Código hexadecimal */
+    color: rgb(255, 0, 0); /* Código RGB */
+    color: rgba(255, 0, 0, 0.5); /* Código RGBA */
+    color: hsl(0, 100%, 50%); /* Código HSL */
+    color: hsla(0, 100%, 50%, 0.5); /* Código HSLA */
+}
+```
+
+2.  **Tamaños**: Se pueden utilizar valores en píxeles, porcentajes, ems, rems, etc.
+
+Ejemplo:
+
+``` css
+h1 {
+    font-size: 24px; /* Tamaño en píxeles */
+    font-size: 150%; /* Tamaño en porcentaje */
+    font-size: 1.5em; /* Tamaño en ems */
+    font-size: 1.5rem; /* Tamaño en rems */
+}
+```
+
+3.  **Unidades de medida**: Se pueden utilizar diferentes unidades de medida como píxeles, porcentajes, ems, rems, etc.
+
+Ejemplo:
+
+``` css
+h1 {
+    margin: 10px; /* Margen en píxeles */
+    margin: 10%; /* Margen en porcentaje */
+    margin: 1em; /* Margen en ems */
+    margin: 1rem; /* Margen en rems */
+}
+```
+
+4.  **Fuentes**: Se pueden utilizar diferentes fuentes para los textos.
+
+Ejemplo:
+
+``` css
+h1 {
+    font-family: Arial, sans-serif; /* Fuente Arial */
+}
+```
+
+# Border
+
+5.  **Bordes**: Se pueden utilizar diferentes estilos de bordes.
+
+Ejemplo:
+
+``` css
+h1 {
+    border: 1px solid black; /* Borde sólido de 1 píxel de ancho y color */
+}
+```
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando colores, tamaños, unidades de medida y fuentes.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    color: blue; /* Nombre de color */
+    font-size: 24px; /* Tamaño en píxeles */
+    margin: 10px; /* Margen en píxeles */
+    font-family: Arial, sans-serif; /* Fuente Arial */
+}
+
+p {
+    color: red; /* Nombre de color */
+    font-size: 18px; /* Tamaño en píxeles */
+    margin: 5px; /* Margen en píxeles */
+    font-family: Verdana, sans-serif; /* Fuente Verdana */
+}
+```
+</details>
+
+En los siguientes ejemplos se verán más detalles sobre cómo se pueden utilizar los valores y convenciones para aplicar estilos a los elementos HTML.
+
+# Border en profundidad
+
+Los bordes son una parte importante de la presentación de un sitio web. Se pueden utilizar para resaltar elementos, crear separaciones entre elementos, etc.
+
+En CSS se pueden definir los bordes de un elemento utilizando la propiedad **border**. La propiedad **border** tiene tres sub-propiedades que se pueden utilizar para definir el ancho, el estilo y el color del borde.
+
+Ejemplo:
+
+``` css
+h1 {
+    border: 1px solid black;
+}
+```
+
+En este ejemplo, se define un borde de 1 píxel de ancho, de estilo sólido y black.
+
+La propiedad **border** también se puede dividir en tres sub-propiedades: **border-width**, **border-style** y **border-color**.
+
+Ejemplo:
+
+``` css
+h1 {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+```
+
+En este ejemplo, se define un borde de 1 píxel de ancho, de estilo sólido y black.
+
+La propiedad **border** también se puede dividir en cuatro sub-propiedades: **border-top**, **border-right**, **border-bottom** y **border-left**.
+
+Ejemplo:
+
+``` css
+h1 {
+    border-top: 1px solid black;
+    border-right: 2px dashed red;
+    border-bottom: 3px dotted blue;
+    border-left: 4px double green;
+}
+```
+En este ejemplo, se definen bordes diferentes para cada lado del elemento.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando bordes.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    border-top: 1px solid black;
+    border-right: 2px dashed red;
+    border-bottom: 3px dotted blue;
+    border-left: 4px double green;
+}
+
+p {
+    border-top: 1px solid black;
+    border-right: 2px dashed red;
+    border-bottom: 3px dotted blue;
+    border-left: 4px double green;
+}
+```
+
+</details>
+
+# Unidades de medida
+
+Las unidades de medida son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir tamaños, márgenes, rellenos, etc.
+
+En CSS se pueden utilizar diferentes unidades de medida como píxeles, porcentajes, ems, rems, etc.
+
+Ejemplo:
+
+``` css
+h1 {
+    font-size: 24px; /* Tamaño en píxeles */
+    margin: 10px; /* Margen en píxeles */
+    padding: 5%; /* Relleno en porcentaje */
+    width: 50em; /* Ancho en ems */
+    height: 100%; /* Altura en porcentaje */
+}
+```
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando diferentes unidades de medida.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    font-size: 24px; /* Tamaño en píxeles */
+    margin: 10px; /* Margen en píxeles */
+    padding: 5%; /* Relleno en porcentaje */
+    width: 50em; /* Ancho en ems */
+    height: 100%; /* Altura en porcentaje */
+}
+
+p {
+    font-size: 18px; /* Tamaño en píxeles */
+    margin: 5px; /* Margen en píxeles */
+    padding: 2%; /* Relleno en porcentaje */
+    width: 30em; /* Ancho en ems */
+    height: 50%; /* Altura en porcentaje */
+}
+```
+</details>
+
+En este ejemplo, se utilizan diferentes unidades de medida para definir el tamaño de la fuente, el margen, el relleno, el ancho y la altura de un elemento.
+
+# Background
+
+El Background es una parte importante de la presentación de un sitio web. Se puede utilizar para definir el color de fondo, una imagen de fondo, etc.
+
+En CSS se pueden definir el color de fondo de un elemento utilizando la propiedad **background-color**.
+
+Ejemplo:
+
+``` css
+h1 {
+    background-color: yellow;
+}
+```
+
+En este ejemplo, se define el color de fondo del elemento h1 como amarillo.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando el color de fondo.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+
+h1 {
+    background-color: yellow;
+}
+
+p {
+    background-color: lightblue;
+}
+```
+
+</details>
+
+# Box model, margin, padding, overflow
+
+El Box Model es una parte importante de la presentación de un sitio web. Se puede utilizar para definir el tamaño, el margen, el relleno, etc. de un elemento.
+
+En CSS se pueden definir el tamaño de un elemento utilizando las propiedades **width** y **height**.
+
+Ejemplo:
+
+``` css
+h1 {
+    width: 200px;
+    height: 100px;
+}
+```
+
+En este ejemplo, se define el ancho del elemento h1 como 200 píxeles y la altura como 100 píxeles.
+
+También se pueden definir el margen y el relleno de un elemento utilizando las propiedades **margin** y **padding**.
+
+Ejemplo:
+
+``` css
+h1 {
+    margin: 10px;
+    padding: 5px;
+}
+```
+
+En este ejemplo, se define un margen de 10 píxeles y un relleno de 5 píxeles para el elemento h1.
+
+La propiedad **overflow** se utiliza para definir cómo se comporta un elemento cuando su contenido es más grande que su tamaño.
+
+Ejemplo:
+
+``` css
+h1 {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+```
+
+En este ejemplo, se define que el contenido del elemento h1 se ocultará si es más grande que su tamaño.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando el Box Model, el margen, el relleno y el overflow.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+p {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    padding: 10px;
+    overflow: auto;
+}
+```
+</details>
+
+# Outline, text-align, text-decoration, text-shadow
+
+Outline es una parte importante de la presentación de un sitio web. Se puede utilizar para definir un contorno alrededor de un elemento.
+
+En CSS se puede definir un contorno alrededor de un elemento utilizando la propiedad **outline**.
+
+Ejemplo:
+
+``` css
+h1 {
+    outline: 1px solid black;
+}
+```
+
+En este ejemplo, se define un contorno de 1 píxel de ancho
+
+Otros estilos de contorno son **dotted**, **dashed**, **double**, **groove**, **ridge**, **inset**, **outset**.
+
+Ejemplo:
+
+``` css
+h1 {
+    outline: 1px dotted black;
+}
+
+h2 {
+    outline: 2px dashed red;
+}
+
+h3 {
+    outline: 3px double blue;
+}
+
+h4 {
+    outline: 4px groove green;
+}
+
+h5 {
+    outline: 5px ridge orange;
+}
+
+h6 {
+    outline: 6px inset purple;
+}
+
+p {
+    outline: 7px outset pink;
+}
+```
+
+En este ejemplo, se definen diferentes estilos de contorno para los elementos h1, h2, h3, h4, h5, h6 y p.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando el contorno.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <h2>Este es un subtítulo</h2>
+    <h3>Este es un subtítulo</h3>
+    <h4>Este es un subtítulo</h4>
+    <h5>Este es un subtítulo</h5>
+    <h6>Este es un subtítulo</h6>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    outline: 1px dotted black;
+}
+
+h2 {
+    outline: 2px dashed red;
+}
+
+h3 {
+    outline: 3px double blue;
+}
+
+h4 {
+    outline: 4px groove green;
+}
+
+h5 {
+    outline: 5px ridge orange;
+}
+
+h6 {
+    outline: 6px inset purple;
+}
+
+p {
+    outline: 7px outset pink;
+}
+```
+</details>
+
+# Fuentes custom
+
+Las fuentes personalizadas son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir una fuente personalizada para los textos.
+
+En CSS se puede definir una fuente personalizada para los textos utilizando la propiedad **font-family**.
+
+Ejemplo:
+
+``` css
+h1 {
+    font-family: Arial, sans-serif;
+}
+```
+
+En este ejemplo, se define la fuente Arial para el elemento h1.
+
+También se pueden utilizar fuentes personalizadas de Google Fonts.
+
+Ejemplo:
+
+``` css
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+```
+
+En este ejemplo, se define la fuente Roboto de Google Fonts para el elemento h1.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando fuentes personalizadas.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+```
+</details>
+
+# Links y sus estados
+
+Los Links son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir el estilo de los enlaces.
+
+En CSS se pueden definir los estilos de los enlaces utilizando los selectores **a**, **a:link**, **a:visited**, **a:hover** y **a:active**.
+
+Ejemplo:
+
+``` css
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: green;
+    text-decoration: underline;
+}
+```
+
+En este ejemplo, se definen los estilos de los enlaces, los enlaces visitados, los enlaces al pasar el ratón por encima y los enlaces activos.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los enlaces utilizando los selectores **a**, **a:link**, **a:visited**, **a:hover** y **a:active**.   
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <a href="#">Este es un enlace</a>
+</body>
+</html>
+```
+
+``` css
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: green;
+    text-decoration: underline;
+}
+```
+</details>
+
+# Listas
+
+Las Listas son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir el estilo de las listas.
+
+En CSS se pueden definir los estilos de las listas utilizando los selectores **ul**, **ol** y **li**.
+
+Ejemplo:
+
+``` css
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    color: blue;
+}
+
+li:first-child {
+    color: red;
+}
+
+li:last-child {
+    color: green;
+}
+
+li:nth-child(2) {
+    color: orange;
+}
+```
+
+En este ejemplo, se definen los estilos de las listas no ordenadas, las listas ordenadas y los elementos de la lista.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de las listas utilizando los selectores **ul**, **ol** y **li**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+</body>
+</html>
+```
+
+``` css
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    color: blue;
+}
+
+li:first-child {
+    color: red;
+}
+
+li:last-child {
+    color: green;
+}
+
+li:nth-child(2) {
+    color: orange;
+}
+```
+</details>
+
+# Tablas
+
+Las Tablas son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir el estilo de las tablas.
+
+En CSS se pueden definir los estilos de las tablas utilizando los selectores **table**, **tr**, **th** y **td**.
+
+Ejemplo:
+
+``` css
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgray;
+}
+
+td {
+    background-color: lightblue;
+}
+```
+
+En este ejemplo, se definen los estilos de las tablas, las filas, las celdas de encabezado y las celdas de datos.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de las tablas utilizando los selectores **table**, **tr**, **th** y **td**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+``` css
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgray;
+}
+
+td {
+    background-color: lightblue;
+}
+```
+</details>
+
+# Display, max-width y position
+
+Display es una parte importante de la presentación de un sitio web. Se puede utilizar para definir el tipo de visualización de un elemento.
+
+En CSS se puede definir el tipo de visualización de un elemento utilizando la propiedad **display**.
+
+Ejemplo:
+
+``` css
+h1 {
+    display: block;
+}
+
+p {
+    display: inline;
+}
+
+div {
+    display: inline-block;
+}
+
+span {
+    display: none;
+}
+
+img {
+    display: none;
+}
+
+a {
+    display: none;
+}
+
+ul {
+    display: none;
+}
+
+ol {
+    display: none;
+}
+
+li {
+    display: none;
+}
+
+table {
+    display: none;
+}
+
+tr {
+    display: none;
+}
+
+th {
+    display: none;
+}
+
+td {
+    display: none;
+}
+
+form {
+    display: none;
+}
+
+input {
+    display: none;
+}
+
+button {
+    display: none;
+}
+```
+
+En este ejemplo, se definen los tipos de visualización de los elementos h1, p, div, span, img, a, ul, ol, li, table, tr, th, td, form, input y button.
+
+La propiedad **max-width** se utiliza para definir el ancho máximo de un elemento.
+
+Ejemplo:
+
+``` css
+h1 {
+    max-width: 200px;
+}
+
+p {
+    max-width: 300px;
+}
+
+div {
+    max-width: 400px;
+}
+
+span {
+    max-width: 500px;
+}
+
+img {
+    max-width: 600px;
+}
+
+a {
+    max-width: 700px;
+}
+
+ul {
+    max-width: 800px;
+}
+
+ol {
+    max-width: 900px;
+}
+
+li {
+    max-width: 1000px;
+}
+
+table {
+    max-width: 1100px;
+}
+
+tr {
+    max-width: 1200px;
+}
+
+th {
+    max-width: 1300px;
+}
+
+td {
+    max-width: 1400px;
+}
+
+form {
+    max-width: 1500px;
+}
+
+input {
+    max-width: 1600px;
+}
+
+button {
+    max-width: 1700px;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+```
+La propiedad **position** se utiliza para definir la posición de un elemento.
+
+Ejemplo:
+
+``` css
+h1 {
+    position: static;
+}
+
+p {
+    position: relative;
+}
+
+div {
+    position: absolute;
+}
+
+span {
+    position: fixed;
+}
+
+img {
+    position: sticky;
+}
+
+a {
+    position: static;
+}
+
+ul {
+    position: relative;
+}
+
+ol {
+    position: absolute;
+}
+
+li {
+    position: fixed;
+}
+
+table {
+    position: sticky;
+}
+
+tr {
+    position: static;
+}
+
+th {
+    position: relative;
+}
+
+td {
+    position: absolute;
+}
+
+form {
+    position: fixed;
+}
+
+input {
+    position: sticky;
+}
+
+button {
+    position: static;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+```
+
+En este ejemplo, se definen las posiciones de los elementos h1, p, div, span, img, a, ul, ol, li, table, tr, th, td, form, input y button.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando la propiedad **display**, **max-width** y **position**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Este es un título</h1>
+    <p>Este es un párrafo</p>
+    <div>Este es un div</div>
+    <span>Este es un span</span>
+    <img src="https://via.placeholder.com/150" alt="Imagen">
+    <a href="#">Este es un enlace</a>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="text" placeholder="Texto">
+        <button>Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+``` css
+h1 {
+    display: block;
+    max-width: 200px;
+    position: static;
+}
+
+p {
+    display: inline;
+    max-width: 300px;
+    position: relative;
+}
+
+div {
+    display: inline-block;
+    max-width: 400px;
+    position: absolute;
+}
+
+span {
+    display: none;
+    max-width: 500px;
+    position: fixed;
+}
+
+img {
+    display: none;
+    max-width: 600px;
+    position: sticky;
+}
+
+a {
+    display: none;
+    max-width: 700px;
+    position: static;
+}
+
+ul {
+    display: none;
+    max-width: 800px;
+    position: relative;
+}
+
+ol {
+    display: none;
+    max-width: 900px;
+    position: absolute;
+}
+
+li {
+    display: none;
+    max-width: 1000px;
+    position: fixed;
+}
+
+table {
+    display: none;
+    max-width: 1100px;
+    position: sticky;
+}
+
+tr {
+    display: none;
+    max-width: 1200px;
+    position: static;
+}
+
+th {
+    display: none;
+    max-width: 1300px;
+    position: relative;
+}
+
+td {
+    display: none;
+    max-width: 1400px;
+    position: absolute;
+}
+
+form {
+    display: none;
+    max-width: 1500px;
+    position: fixed;
+}
+
+input {
+    display: none;
+    max-width: 1600px;
+    position: sticky;
+}
+
+button {
+    display: none;
+    max-width: 1700px;
+    position: static;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+```
+
+</details>
+
+# Float
+
+Float es una parte importante de la presentación de un sitio web. Se puede utilizar para definir la posición de un elemento.
+
+En CSS se puede definir la posición de un elemento utilizando la propiedad **float**.
+
+Ejemplo:
+
+``` css
+img {
+    float: left;
+}
+
+p {
+    float: right;
+}
+
+div {
+    float: none;
+}
+
+span {
+    float: none;
+}
+
+a {
+    float: none;
+}
+
+ul {
+    float: none;
+}
+
+ol {
+    float: none;
+}
+
+li {
+    float: none;
+}
+
+table {
+    float: none;
+}
+
+tr {
+    float: none;
+}
+
+th {
+    float: none;
+}
+
+td {
+    float: none;
+}
+
+form {
+    float: none;
+}
+
+input {
+    float: none;
+}
+
+button {
+    float: none;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+```
+
+En este ejemplo, se definen las posiciones de los elementos img, p, div, span, a, ul, ol, li, table, tr, th, td, form, input y button.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando la propiedad **float**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <img src="https://via.placeholder.com/150" alt="Imagen">
+    <p>Este es un párrafo</p>
+    <div>Este es un div</div>
+    <span>Este es un span</span>
+    <a href="#">Este es un enlace</a>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="text" placeholder="Texto">
+        <button>Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+``` css
+img {
+    float: left;
+}
+
+p {
+    float: right;
+}
+
+div {
+    float: none;
+}
+
+span {
+    float: none;
+}
+
+a {
+    float: none;
+}
+
+ul {
+    float: none;
+}
+
+ol {
+    float: none;
+}
+
+li {
+    float: none;
+}
+
+table {
+    float: none;
+}
+
+tr {
+    float: none;
+}
+
+th {
+    float: none;
+}
+
+td {
+    float: none;
+}
+
+form {
+    float: none;
+}
+
+input {
+    float: none;
+}
+
+button {
+    float: none;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+```
+</details>
+
+# inline-block
+
+Inline-block es una parte importante de la presentación de un sitio web. Se puede utilizar para definir la posición de un elemento.
+
+En CSS se puede definir la posición de un elemento utilizando la propiedad **display** con el valor **inline-block**.
+
+Ejemplo:
+
+``` css
+img {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+div {
+    display: inline-block;
+}
+
+span {
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+}
+
+ul {
+    display: inline-block;
+}
+
+ol {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+}
+
+table {
+    display: inline-block;
+}
+
+tr {
+    display: inline-block;
+}
+
+th {
+    display: inline-block;
+}
+
+td {
+    display: inline-block;
+}
+
+form {
+    display: inline-block;
+}
+
+input {
+    display: inline-block;
+}
+
+button {
+    display: inline-block;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+```
+
+En este ejemplo, se definen las posiciones de los elementos img, p, div, span, a, ul, ol, li, table, tr, th, td, form, input y button.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando la propiedad **display** con el valor **inline-block**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <img src="https://via.placeholder.com/150" alt="Imagen">
+    <p>Este es un párrafo</p>
+    <div>Este es un div</div>
+    <span>Este es un span</span>
+    <a href="#">Este es un enlace</a>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="text" placeholder="Texto">
+        <button>Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+``` css
+img {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+div {
+    display: inline-block;
+}
+
+span {
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+}
+
+ul {
+    display: inline-block;
+}
+
+ol {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+}
+
+table {
+    display: inline-block;
+}
+
+tr {
+    display: inline-block;
+}
+
+th {
+    display: inline-block;
+}
+
+td {
+    display: inline-block;
+}
+
+form {
+    display: inline-block;
+}
+
+input {
+    display: inline-block;
+}
+
+button {
+    display: inline-block;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+```
+</details>
+
+# Centrar un elemento
+
+Centrar un elemento es una parte importante de la presentación de un sitio web. Se puede utilizar para definir la posición de un elemento.
+
+En CSS se puede definir la posición de un elemento utilizando la propiedad **margin** con los valores **auto** y **0**.
+
+Ejemplo:
+
+``` css
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    display: block;
+    margin: 0 auto;
+}
+
+div {
+    display: block;
+    margin: 0 auto;
+}
+
+span {
+    display: block;
+    margin: 0 auto;
+}
+
+a {
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    display: block;
+    margin: 0 auto;
+}
+
+ol {
+    display: block;
+    margin: 0 auto;
+}
+
+li {
+    display: block;
+    margin: 0 auto;
+}
+
+table {
+    display: block;
+    margin: 0 auto;
+}
+
+tr {
+    display: block;
+    margin: 0 auto;
+}
+
+th {
+    display: block;
+    margin: 0 auto;
+}
+
+td {
+    display: block;
+    margin: 0 auto;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+
+center clear {
+    clear: both;
+}
+
+center clearfix {
+    overflow: hidden;
+}
+
+center clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+```
+
+En este ejemplo, se definen las posiciones de los elementos img, p, div, span, a, ul, ol, li, table, tr, th, td, form, input y button.
+
+## Actividad
+
+*  Crear un archivo **styles.css**.
+
+*  Definir los estilos de los elementos HTML utilizando la propiedad **margin** con los valores **auto** y **0**.
+
+*  Enlazar el archivo **styles.css** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <img src="https://via.placeholder.com/150" alt="Imagen">
+    <p>Este es un párrafo</p>
+    <div>Este es un div</div>
+    <span>Este es un span</span>
+    <a href="#">Este es un enlace</a>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+        </tr>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="text" placeholder="Texto">
+        <button>Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+``` css
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    display: block;
+    margin: 0 auto;
+}
+
+div {
+    display: block;
+    margin: 0 auto;
+}
+
+span {
+    display: block;
+    margin: 0 auto;
+}
+
+a {
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    display: block;
+    margin: 0 auto;
+}
+
+ol {
+    display: block;
+    margin: 0 auto;
+}
+
+li {
+    display: block;
+    margin: 0 auto;
+}
+
+table {
+    display: block;
+    margin: 0 auto;
+}
+
+tr {
+    display: block;
+    margin: 0 auto;
+}
+
+th {
+    display: block;
+    margin: 0 auto;
+}
+
+td {
+    display: block;
+    margin: 0 auto;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+clear {
+    clear: both;
+}
+
+clearfix {
+    overflow: hidden;
+}
+
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+center {
+    text-align: center;
+}
+
+center img {
+    display: inline-block;
+}
+
+center p {
+    display: inline-block;
+}
+
+center div {
+    display: inline-block;
+}
+
+center span {
+    display: inline-block;
+}
+
+center a {
+    display: inline-block;
+}
+
+center ul {
+    display: inline-block;
+}
+
+center ol {
+    display: inline-block;
+}
+
+center li {
+    display: inline-block;
+}
+
+center table {
+    display: inline-block;
+}
+
+center tr {
+    display: inline-block;
+}
+
+center th {
+    display: inline-block;
+}
+
+center td {
+    display: inline-block;
+}
+
+center form {
+    display: inline-block;
+}
+
+center input {
+    display: inline-block;
+}
+
+center button {
+    display: inline-block;
+}
+
+center clear {
+    clear: both;
+}
+
+center clearfix {
+    overflow: hidden;
+}
+
+center clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+```
+</details>
+
+# Proyecto: Danto estilo a un portafolio personal de HTML
+
+:::{.center}
+![](images/paste-24.png)
 :::
 
-![](images/paste-4.png)
+En el presente proyecto se aplicarán los conocimientos adquiridos en este capítulo para dar estilo a un portafolio personal de HTML.
 
-El siguiente paso es vincular el archivo **style.css** con nuestro archivo **index.html**, para ello agregamos la siguiente línea de código en la sección **head** de nuestro archivo **index.html**:
+El portafolio personal de HTML se compone de las siguientes secciones:
+
+1.  **Header**: Contiene el nombre del autor y una imagen de perfil.
+
+2.  **About**: Contiene una breve descripción del autor.
+
+3.  **Skills**: Contiene una lista de habilidades del autor.
+
+4.  **Projects**: Contiene una lista de proyectos del autor.
+
+5.  **Contact**: Contiene un formulario de contacto.
+
+En el archivo **index.html** se encuentra la estructura del portafolio personal de HTML.
+
+Ejemplo:
 
 ``` html
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil">
+    </header>
+    <section id="about">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
 ```
 
-Como podemos observar, hemos creado un archivo **style.css** y le hemos dado estilo a nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+En el archivo **styles.css** se deben definir los estilos de los elementos HTML.
 
-![](images/paste-5.png)
-
-Ahora vamos a ir modificando el archivo **style.css** para darle un estilo más atractivo a nuestro portafolio personal. Y vamos conociendo los conceptos básicos de CSS.
-
-Empezamos con el **Modelo de Caja**.
-
-![](images/paste-6.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
+Ejemplo:
 
 ``` css
-body { /*<1>*/
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header { /*<2>*/
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-main { /*<3>*/
-    padding: 20px;
-}
-
-section { /*<4>*/
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-}
-
-footer { /*<5>*/
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-h1 { /*<6>*/
-    margin: 0;
-    padding: 10px;
-}
-
-h2 { /*<7>*/
-    margin: 0;
-    padding: 10px;
-}
-
-p { /*<8>*/
-    margin: 0;
-    padding: 10px;
-}
-
-a { /*<9>*/
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover { /*<10>*/
-    color: #666;
-}
-```
-
-1.  Se establece la fuente y se eliminan los márgenes y rellenos predeterminados.
-
-2.  Se establece el color de fondo, el color del texto, el alineamiento del texto y el relleno del encabezado.
-
-3.  Se establece el relleno del contenido principal.
-
-4.  Se establece el margen inferior, el borde inferior, el relleno y el margen interno de las secciones.
-
-5.  Se establece el color de fondo, el color del texto, el alineamiento del texto y el relleno del pie de página.
-
-6.  Se establece el margen y el relleno del encabezado de nivel 1.
-
-7.  Se establece el margen y el relleno del encabezado de nivel 2.
-
-8.  Se establece el margen y el relleno de los párrafos.
-
-9.  Se establece el color y la decoración del enlace.
-
-10. Se establece el color del enlace al pasar el cursor sobre él.
-
-En el código anterior hemos aplicado el **Modelo de Caja** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Ahora vamos a aprender sobre **Cascada y Especificidad**.
-
-![](images/paste-7.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 header {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px;
 }
 
-main {
-    padding: 20px;
+header h1 {
+    color: blue;
+}
+
+header img {
+    border-radius: 50%;
 }
 
 section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
+    margin: 20px;
 }
 
-footer {
-    background-color: #333;
+section h2 {
+    color: red;
+}
+
+section p {
+    color: green;
+}
+
+section ul {
+    list-style-type: disc;
+}
+
+section li {
+    color: orange;
+}
+
+form {
+    margin: 20px;
+}
+
+form label {
+    color: purple;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+form button {
+    background-color: pink;
     color: white;
-    text-align: center;
     padding: 10px;
-}
-
-h1 {
-    margin: 0;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #666;
-}
-
-section:nth-child(odd) { /*<1>*/
-    background-color: #f9f9f9;
-}
-
-section:nth-child(even) { /*<2>*/
-    background-color: #f0f0f0;
-}
-
-section:last-child { /*<3>*/
-    border-bottom: none;
+    border: none;
+    cursor: pointer;
 }
 ```
 
-1.  Se establece el color de fondo de las secciones impares.
+En este ejemplo, se definen los estilos de los elementos HTML del portafolio personal de HTML.
 
-2.  Se establece el color de fondo de las secciones pares.
+## Actividad
 
-3.  Se elimina el borde inferior de la última sección.
+*  Crear un archivo **styles.css**.
 
-En el código anterior hemos aplicado **Cascada y Especificidad** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+*  Definir los estilos de los elementos HTML del portafolio personal de HTML.
 
-Ahora vamos a aprender sobre **Caja Flexible**.
+*  Enlazar el archivo **styles.css** al documento HTML.
 
-![](images/paste-8.png)
+<details>
+<summary>Ver respuesta</summary>
 
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil">
+    </header>
+    <section id="about">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
 
 ``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 header {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px;
 }
 
-main {
-    padding: 20px;
-    display: flex; /*<1>*/
-    flex-wrap: wrap; /*<2>*/
+header h1 {
+    color: blue;
+}
+
+header img {
+    border-radius: 50%;
 }
 
 section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    flex: 1; /*<3>*/
+    margin: 20px;
 }
 
-footer {
-    background-color: #333;
+section h2 {
+    color: red;
+}
+
+section p {
+    color: green;
+}
+
+section ul {
+    list-style-type: disc;
+}
+
+section li {
+    color: orange;
+}
+
+form {
+    margin: 20px;
+}
+
+form label {
+    color: purple;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+form button {
+    background-color: pink;
     color: white;
-    text-align: center;
     padding: 10px;
-}
-
-h1 {
-    margin: 0;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #666;
-}
-
-section:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-section:nth-child(even) {
-    background-color: #f0f0f0;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) { /*<4>*/
-    section {
-        flex: 2;
-    }
-}
-
-@media (max-width: 576px) { /*<5>*/
-    section {
-        flex: 3;
-    }
-}
-
-@media (max-width: 320px) { /*<6>*/
-    section {
-        flex: 4;
-    }
+    border: none;
+    cursor: pointer;
 }
 ```
+</details>
 
-1.  Se establece el contenedor principal como un contenedor flexible.
+# Frameworks de CSS
 
-2.  Se establece el contenedor principal para que los elementos se envuelvan en una nueva línea si no caben en la misma línea.
+Los Frameworks de CSS son una parte importante de la presentación de un sitio web. Se pueden utilizar para definir los estilos de los elementos HTML de forma rápida y sencilla.
 
-3.  Se establece la propiedad de flexibilidad de las secciones.
+Algunos de los Frameworks de CSS más populares son:
 
-4.  Se establece la propiedad de flexibilidad de las secciones para pantallas de hasta 768 píxeles de ancho.
+1.  **Bootstrap**: Es un Framework de CSS que permite crear sitios web responsivos y móviles de forma rápida y sencilla.
 
-5.  Se establece la propiedad de flexibilidad de las secciones para pantallas de hasta 576 píxeles de ancho.
+2.  **Tailwind CSS**: Es un Framework de CSS que permite crear sitios web responsivos y móviles de forma rápida y sencilla.
 
-6.  Se establece la propiedad de flexibilidad de las secciones para pantallas de hasta 320 píxeles de ancho.
+3.  **Bulma**: Es un Framework de CSS que permite crear sitios web responsivos y móviles de forma rápida y sencilla.
 
-En el código anterior hemos aplicado **Caja Flexible** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+# Proyecto: Danto estilo a un portafolio personal de HTML con Bootstrap,
 
-::: callout-tip
-Parece que el plugin de Live Preview es bastante útil para ver los avances en tiempo real, otro plugin muy importante en desarrollo frontend es Live Server, que nos permite ver los cambios en tiempo real en un servidor local.
+:::{.center}
+![](images/paste-25.png)
 :::
 
-Ahora vamos a aprender sobre **Cuadrícula**.
+En el presente proyecto se aplicarán los conocimientos adquiridos en este capítulo para dar estilo a un portafolio personal de HTML con Bootstrap.
 
-![](images/paste-11.png)
+El portafolio personal de HTML con Bootstrap se compone de las siguientes secciones:
 
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
+1.  **Header**: Contiene el nombre del autor y una imagen de perfil.
 
-``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+2.  **About**: Contiene una breve descripción del autor.
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-}
+3.  **Skills**: Contiene una lista de habilidades del autor.
 
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
+4.  **Projects**: Contiene una lista de proyectos del autor.
 
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-}
+5.  **Contact**: Contiene un formulario de contacto.
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-}
+En el archivo **index.html** se encuentra la estructura del portafolio personal de HTML con Bootstrap.
 
-h1 {
-    margin: 0;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #666;
-}
-
-section:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-section:nth-child(even) {
-    background-color: #f0f0f0;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container { /*<1>*/
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-```
-
-1.  Se establece un contenedor de cuadrícula con tres columnas.
-
-En el código anterior hemos aplicado **Cuadrícula** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Índice z**.
-
-![](images/paste-12.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1; /*<1>*/
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1; /*<2>*/
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1; /*<3>*/
-}
-
-h1 {
-    margin: 0;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #666;
-}
-
-section:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-section:nth-child(even) {
-    background-color: #f0f0f0;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.grid-container::before { /*<4>*/
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container::after { /*<5>*/
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after { /*<6>*/
-    color: #333;
-}
-```
-
-1.  Se establece el índice z del encabezado.
-
-2.  Se establece el índice z de las secciones.
-
-3.  Se establece el índice z del pie de página.
-
-4.  Se establece un fondo semitransparente para el contenedor de cuadrícula.
-
-5.  Se establece un texto en el centro del contenedor de cuadrícula.
-
-6.  Se establece el color del texto al pasar el cursor sobre el contenedor de cuadrícula.
-
-En el código anterior hemos aplicado **Índice z** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Funciones**.![](images/paste-13.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-h1 {
-    margin: 0;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px;
-}
-
-p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #666;
-}
-
-section:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-section:nth-child(even) {
-    background-color: #f0f0f0;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.grid-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container::after {
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after {
-    color: #333;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    z-index: -1;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-body::before, body::after {
-    mix-blend-mode: overlay;
-}
-```
-
-En el código anterior hemos aplicado **Funciones** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Ahora vamos a aprender sobre **Tipos de Color**.
-
-![](images/paste-15.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-:root {
-    --primary-color: #333;
-    --secondary-color: #666;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --hover-color: #666;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-}
-
-header, footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-h1, h2, p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--hover-color);
-}
-
-section:nth-child(odd), section:nth-child(even) {
-    background-color: var(--background-color);
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before, h2::before, footer::before, .grid-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container::after {
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after {
-    color: var(--primary-color);
-}
-
-body::before, body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-body::before {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-}
-
-body::after {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-body::before, body::after {
-    mix-blend-mode: overlay;
-}
-
-body {
-    background-color: hsl(0, 0%, 100%);
-}
-
-header, footer {
-    background-color: hsl(0, 0%, 20%);
-}
-
-section:nth-child(odd) {
-    background-color: hsl(0, 0%, 97%);
-}
-
-section:nth-child(even) {
-    background-color: hsl(0, 0%, 94%);
-}
-
-a {
-    color: hsl(0, 0%, 20%);
-}
-
-a:hover {
-    color: hsl(0, 0%, 40%);
-}
-
-.grid-container::before {
-    background-color: hsl(0, 0%, 0%);
-}
-```
-
-En el código anterior hemos aplicado **Tipos de Color** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Ahora vamos a aprender sobre **Gradientes**.
-
-![](images/paste-16.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-:root {
-    --primary-color: #333;
-    --secondary-color: #666;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --hover-color: #666;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-}
-
-header, footer {
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-h1, h2, p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--hover-color);
-}
-
-section:nth-child(odd), section:nth-child(even) {
-    background-image: linear-gradient(to right, var(--background-color), var(--secondary-color));
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before, h2::before, footer::before, .grid-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container::after {
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after {
-    color: var(--primary-color);
-}
-
-body::before, body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-body::before {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-}
-
-body::after {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-body::before, body::after {
-    mix-blend-mode: overlay;
-}
-
-body {
-    background-color: hsl(0, 0%, 100%);
-}
-
-header, footer {
-    background-color: hsl(0, 0%, 20%);
-}
-
-section:nth-child(odd) {
-    background-color: hsl(0, 0%, 97%);
-}
-
-section:nth-child(even) {
-    background-color: hsl(0, 0%, 94%);
-}
-
-a {
-    color: hsl(0, 0%, 20%);
-}
-
-a:hover {
-    color: hsl(0, 0%, 40%);
-}
-
-.grid-container::before {
-    background-color: hsl(0, 0%, 0%);
-}
-```
-
-En el código anterior hemos aplicado **Gradientes** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Ahora vamos a aprender sobre **Propiedades Lógicas**.
-
-![](images/paste-17.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-:root {
-    --primary-color: #333;
-    --secondary-color: #666;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --hover-color: #666;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-}
-
-header, footer {
-    background-image: linear-gradient(to inline-end, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-h1, h2, p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--hover-color);
-}
-
-section:nth-child(odd), section:nth-child(even) {
-    background-image: linear-gradient(to inline-end, var(--background-color), var(--secondary-color));
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before, h2::before, footer::before, .grid-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    inline-start: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.grid-container::after {
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    inline-start: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after {
-    color: var(--primary-color);
-}
-
-body::before, body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    inline-start: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-body::before {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-}
-
-body::after {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-body::before, body::after {
-    mix-blend-mode: overlay;
-}
-
-body {
-    background-color: hsl(0, 0%, 100%);
-}
-
-header, footer {
-    background-color: hsl(0, 0%, 20%);
-}
-
-section:nth-child(odd) {
-    background-color: hsl(0, 0%, 97%);
-}
-
-section:nth-child(even) {
-    background-color: hsl(0, 0%, 94%);
-}
-
-a {
-    color: hsl(0, 0%, 20%);
-}
-
-a:hover {
-    color: hsl(0, 0%, 40%);
-}
-
-.grid-container::before {
-    background-color: hsl(0, 0%, 0%);
-}
-```
-
-En el código anterior hemos aplicado **Propiedades Lógicas** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Variables**.
-
-![](images/paste-18.png)
-
-Para ello vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
-
-``` css
-:root {
-    --primary-color: #333;
-    --secondary-color: #666;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --hover-color: #666;
-    --overlay-color: rgba(0, 0, 0, 0.5);
-    --body-background-image: url('images/background.jpg');
-    --body-blend-mode: overlay;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    background-image: var(--body-background-image);
-    background-size: cover;
-    mix-blend-mode: var(--body-blend-mode);
-}
-
-header, footer {
-    background-image: linear-gradient(to inline-end, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-    background-color: hsl(0, 0%, 20%);
-}
-
-main {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-    background-color: hsl(0, 0%, 97%);
-}
-
-h1, h2, p {
-    margin: 0;
-    padding: 10px;
-}
-
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--hover-color);
-}
-
-section:nth-child(odd), section:nth-child(even) {
-    background-image: linear-gradient(to inline-end, var(--background-color), var(--secondary-color));
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 576px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 320px) {
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-h1::before, h2::before, footer::before, .grid-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    inline-start: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--overlay-color);
-    z-index: -1;
-}
-
-.grid-container::after {
-    content: 'Índice z';
-    position: absolute;
-    top: 50%;
-    inline-start: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    z-index: 1;
-}
-
-.grid-container:hover::after {
-    color: var(--primary-color);
-}
-
-body::before, body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    inline-start: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-body::after {
-    background-color: var(--overlay-color);
-}
-
-body {
-    background-color: hsl(0, 0%, 100%);
-}
-
-section:nth-child(odd) {
-    background-color: hsl(0, 0%, 97%);
-}
-
-section:nth-child(even) {
-    background-color: hsl(0, 0%, 94%);
-}
-
-a {
-    color: hsl(0, 0%, 20%);
-}
-
-a:hover {
-    color: hsl(0, 0%, 40%);
-}
-
-.grid-container::before {
-    background-color: hsl(0, 0%, 0%);
-}
-```
-
-En el código anterior hemos aplicado **Variables** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Existen muchos conceptos que podemos incorporar, pero el uso de Frameworks como Bootstrap, Materialize, Bulma, entre otros, nos facilitan el trabajo y nos permiten tener un diseño responsivo y atractivo en poco tiempo.
-
-Vamos a utilizar el mismo proyecto la base del acrhivo **index.html** y **style.css**, y vamos a agregar Bootstrap. Y comprenderas porqué es importante el uso de Frameworks.
-
-![](images/paste-19.png)
-
-Para ello vamos a modificar el archivo **index.html** y le agregamos el siguiente código:
+Ejemplo:
 
 ``` html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Personal</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1>Portafolio Personal</h1>
+    <header class="text-center">
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-circle">
     </header>
-    <main class="container">
-        <section>
-            <h2>Proyecto 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Portafolio Personal</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <section id="about" class="container">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
 </body>
 </html>
 ```
 
-En el código anterior hemos agregado Bootstrap al proyecto, ahora vamos a modificar el archivo **style.css** y le agregamos el siguiente código:
+En este ejemplo, se utiliza Bootstrap para dar estilo al portafolio personal de HTML.
 
-``` css
+## Actividad
 
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+*  Crear un archivo **index.html**.
 
-header { background-color: #333; color: white; text-align: center; padding: 10px; }
+*  Definir la estructura del portafolio personal de HTML con Bootstrap.
 
-main { padding: 20px; }
+*  Enlazar el archivo **index.html** al documento HTML.
 
-section { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding: 10px; }
-
-footer { background-color: #333; color: white; text-align: center; padding: 10px; }
-
-h1 { margin: 0; padding: 10px; }
-
-h2 { margin: 0; padding: 10px; }
-
-p { margin: 0; padding: 10px; }
-
-a { color: #333; text-decoration: none; }
-
-a:hover { color: #666; }
-
-section:nth-child(odd) { background-color: #f9f9f9; }
-
-section:nth-child(even) { background-color: #f0f0f0; }
-
-section:last-child { border-bottom: none; }
-
-@media (max-width: 768px) { section { flex: 2; } }
-
-@media (max-width: 576px) { section { flex: 3; } }
-
-@media (max-width: 320px) { section { flex: 4; } }
-```
-
-En el código anterior hemos aplicado **Bootstrap** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
-
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Bootstrap**.
-
-![](images/paste-20.png)
-
-Para ello vamos a modificar el archivo **index.html** y le agregamos el siguiente código:
+<details>
+<summary>Ver respuesta</summary>
 
 ``` html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Personal</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1>Portafolio Personal</h1>
+    <header class="text-center">
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-circle">
     </header>
-    <main class="container">
-        <section class="row">
-            <div class="col">
-                <h2>Proyecto 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-                <a href="#">Ver más</a>
-            </div>
-            <div class="col">
-                <h2>Proyecto 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-                <a href="#">Ver más</a>
-            </div>
-            <div class="col">
-                <h2>Proyecto 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-                <a href="#">Ver más</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Portafolio Personal</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <section id="about" class="container">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
 </body>
 </html>
 ```
 
-En el código anterior hemos aplicado **Bootstrap** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+</details>
 
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Materialize**.
+# Proyecto: Danto estilo a un portafolio personal de HTML con Tailwind CSS
 
-![](images/paste-20.png)
+:::{.center}
+![](images/paste-26.png)
+:::
 
-Para ello vamos a modificar el archivo **index.html** y le agregamos el siguiente código:
+En el presente proyecto se aplicarán los conocimientos adquiridos en este capítulo para dar estilo a un portafolio personal de HTML con Tailwind CSS.
 
-![](images/paste-21.png)
+El portafolio personal de HTML con Tailwind CSS se compone de las siguientes secciones:
+
+1.  **Header**: Contiene el nombre del autor y una imagen de perfil.
+
+2.  **About**: Contiene una breve descripción del autor.
+
+3.  **Skills**: Contiene una lista de habilidades del autor.
+
+4.  **Projects**: Contiene una lista de proyectos del autor.
+
+5.  **Contact**: Contiene un formulario de contacto.
+
+En el archivo **index.html** se encuentra la estructura del portafolio personal de HTML con Tailwind CSS.
+
+Ejemplo:
 
 ``` html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Personal</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
-        <h1>Portafolio Personal</h1>
+    <header class="text-center">
+        <h1 class="text-2xl font-bold">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-full w-24 h-24">
     </header>
-    <main class="container">
-        <section>
-            <h2>Proyecto 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Portafolio Personal</p>
-    </footer>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <section id="about" class="container mx-auto">
+        <h2 class="text-xl font-bold">Acerca de mí</h2>
+        <p class="text-lg">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container mx-auto">
+        <h2 class="text-xl font-bold">Habilidades</h2>
+        <ul class="list-disc">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container mx-auto">
+        <h2 class="text-xl font-bold">Proyectos</h2>
+        <ul class="list-disc">
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container mx-auto">
+        <h2 class="text-xl font-bold">Contacto</h2>
+        <form>
+            <label for="nombre" class="block">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded">
+            <label for="email" class="block">Email:</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded">
+            <label for="mensaje" class="block">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="w-full p-2 border border-gray-300 rounded"></textarea>
+            <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded">Enviar</button>
+        </form>
+    </section>
 </body>
 </html>
 ```
 
-En el código anterior hemos aplicado **Materialize** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+En este ejemplo, se utiliza Tailwind CSS para dar estilo al portafolio personal de HTML.
 
-Con los conceptos que hemos aprendido hasta ahora, hemos logrado darle un estilo atractivo a nuestro portafolio personal, ahora vamos a seguir aprendiendo sobre **Bulma**.
+## Actividad
 
-![](images/paste-22.png)
+*  Crear un archivo **index.html**.
 
-Para ello vamos a modificar el archivo **index.html** y le agregamos el siguiente código:
+*  Definir la estructura del portafolio personal de HTML con Tailwind CSS.
 
-![](images/paste-23.png)
+*  Enlazar el archivo **index.html** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
 
 ``` html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="text-center">
+        <h1 class="text-2xl font-bold">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-full w-24 h-24">
+    </header>
+    <section id="about" class="container mx-auto">
+        <h2 class="text-xl font-bold">Acerca de mí</h2>
+        <p class="text-lg">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container mx-auto">
+        <h2 class="text-xl font-bold">Habilidades</h2>
+        <ul class="list-disc">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container mx-auto">
+        <h2 class="text-xl font-bold">Proyectos</h2>
+        <ul class="list-disc">
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container mx-auto">
+        <h2 class="text-xl font-bold">Contacto</h2>
+        <form>
+            <label for="nombre" class="block">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded">
+            <label for="email" class="block">Email:</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded">
+            <label for="mensaje" class="block">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="w-full p-2 border border-gray-300 rounded"></textarea>
+            <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+</details>
+
+# Proyecto: Danto estilo a un portafolio personal de HTML con Bulma.
+
+:::{.center}
+![](images/paste-27.png)
+:::
+
+En el presente proyecto se aplicarán los conocimientos adquiridos en este capítulo para dar estilo a un portafolio personal de HTML con Bulma.
+
+El portafolio personal de HTML con Bulma se compone de las siguientes secciones:
+
+1.  **Header**: Contiene el nombre del autor y una imagen de perfil.
+
+2.  **About**: Contiene una breve descripción del autor.
+
+3.  **Skills**: Contiene una lista de habilidades del autor.
+
+4.  **Projects**: Contiene una lista de proyectos del autor.
+
+5.  **Contact**: Contiene un formulario de contacto.
+
+En el archivo **index.html** se encuentra la estructura del portafolio personal de HTML con Bulma.
+
+Ejemplo:
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
-  >
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
 </head>
 <body>
-    <header>
-        <h1>Portafolio Personal</h1>
+    <header class="has-text-centered">
+        <h1 class="title is-2">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="is-rounded is-128x128">
     </header>
-    <main class="container">
-        <section>
-            <h2>Proyecto 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-        <section>
-            <h2>Proyecto 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt tincidunt. Nullam nec purus nec nunc tincidunt tincidunt.</p>
-            <a href="#">Ver más</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Portafolio Personal</p>
-    </footer>
+    <section id="about" class="container">
+        <h2 class="title is-4">Acerca de mí</h2>
+        <p class="subtitle is-5">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2 class="title is-4">Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2 class="title is-4">Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2 class="title is-4">Contacto</h2>
+        <form>
+            <label for="nombre" class="label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="input">
+            <label for="email" class="label">Email:</label>
+            <input type="email" id="email" name="email" class="input">
+            <label for="mensaje" class="label">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="textarea"></textarea>
+            <button type="submit" class="button is-primary">Enviar</button>
+        </form>
+    </section>
 </body>
 </html>
 ```
 
-En el código anterior hemos aplicado **Bulma** a los elementos de nuestro portafolio personal, ahora vamos a ver cómo se ve con el plugin **Live Preview**.
+En este ejemplo, se utiliza Bulma para dar estilo al portafolio personal de HTML.
 
-De esta forma hemos trabajado con los conceptos de **CSS** y **Frameworks** para darle un estilo atractivo a nuestro portafolio personal.
+## Actividad
 
-Si queremos profundizar en cada uno de los conceptos, podemos hacerlo en la documentación oficial de cada uno de ellos.
+*  Crear un archivo **index.html**.
+
+*  Definir la estructura del portafolio personal de HTML con Bulma.
+
+*  Enlazar el archivo **index.html** al documento HTML.
+
+<details>
+<summary>Ver respuesta</summary>
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
+</head>
+<body>
+    <header class="has-text-centered">
+        <h1 class="title is-2">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="is-rounded is-128x128">
+    </header>
+    <section id="about" class="container">
+        <h2 class="title is-4">Acerca de mí</h2>
+        <p class="subtitle is-5">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2 class="title is-4">Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2 class="title is-4">Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2 class="title is-4">Contacto</h2>
+        <form>
+            <label for="nombre" class="label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="input">
+            <label for="email" class="label">Email:</label>
+            <input type="email" id="email" name="email" class="input">
+            <label for="mensaje" class="label">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="textarea"></textarea>
+            <button type="submit" class="button is-primary">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+</details>
+
+
+# Reto
+
+Crea un portafolio personal de HTML con CSS utilizando los conocimientos adquiridos en este capítulo, puede ser con CSS de forma nativa o con un Framework de CSS como Bootstrap, Tailwind CSS o Bulma.
+
+El portafolio personal de HTML debe contener las siguientes secciones:
+
+1.  **Header**: Contiene el nombre del autor y una imagen de perfil.
+
+2.  **About**: Contiene una breve descripción del autor.
+
+3.  **Skills**: Contiene una lista de habilidades del autor.
+
+4.  **Projects**: Contiene una lista de proyectos del autor.
+
+5.  **Contact**: Contiene un formulario de contacto.
+
+<detais>
+
+<summary>Ver respuesta</summary>
+
+-   CSS Nativo
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            color: blue;
+        }
+
+        header img {
+            border-radius: 50%;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        section h2 {
+            color: red;
+        }
+
+        section p {
+            color: green;
+        }
+
+        section ul {
+            list-style-type: disc;
+        }
+
+        section li {
+            color: orange;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        form label {
+            color: purple;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        form button {
+            background-color: pink;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil">
+    </header>
+    <section id="about">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+
+-   Bootstrap
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header class="text-center">
+        <h1>Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-circle">
+    </header>
+    <section id="about" class="container">
+        <h2>Acerca de mí</h2>
+        <p>Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2>Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+
+-   Tailwind CSS
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="text-center">
+        <h1 class="text-2xl font-bold">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="rounded-full w-24 h-24">
+    </header>
+    <section id="about" class="container mx-auto">
+        <h2 class="text-xl font-bold">Acerca de mí</h2>
+        <p class="text-lg">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container mx-auto">
+        <h2 class="text-xl font-bold">Habilidades</h2>
+        <ul class="list-disc">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container mx-auto">
+        <h2 class="text-xl font-bold">Proyectos</h2>
+        <ul class="list-disc">
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container mx-auto">
+        <h2 class="text-xl font-bold">Contacto</h2>
+        <form>
+            <label for="nombre" class="block">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded">
+            <label for="email" class="block">Email:</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded">
+            <label for="mensaje" class="block">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="w-full p-2 border border-gray-300 rounded"></textarea>
+            <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+
+-   Bulma
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
+</head>
+<body>
+    <header class="has-text-centered">
+        <h1 class="title is-2">Nombre del autor</h1>
+        <img src="imagen.jpg" alt="Imagen de perfil" class="is-rounded is-128x128">
+    </header>
+    <section id="about" class="container">
+        <h2 class="title is-4">Acerca de mí</h2>
+        <p class="subtitle is-5">Breve descripción del autor</p>
+    </section>
+    <section id="skills" class="container">
+        <h2 class="title is-4">Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+    <section id="projects" class="container">
+        <h2 class="title is-4">Proyectos</h2>
+        <ul>
+            <li>Proyecto 1</li>
+            <li>Proyecto 2</li>
+            <li>Proyecto 3</li>
+        </ul>
+    </section>
+    <section id="contact" class="container">
+        <h2 class="title is-4">Contacto</h2>
+        <form>
+            <label for="nombre" class="label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="input">
+            <label for="email" class="label">Email:</label>
+            <input type="email" id="email" name="email" class="input">
+            <label for="mensaje" class="label">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" class="textarea"></textarea>
+            <button type="submit" class="button is-primary">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+```
+
+</details>
+
+# Conclusiones
+
+En este capítulo se aprendió sobre CSS, que es un lenguaje de estilo utilizado para dar estilo a los elementos HTML de un sitio web.
+
+Se aprendió sobre las propiedades de CSS, que se utilizan para definir el estilo de los elementos HTML, como el color de fondo, el tamaño, el margen, el relleno, etc.
+
+Se aprendió sobre el Box Model, que es una parte importante de la presentación de un sitio web, y se puede utilizar para definir el tamaño, el margen, el relleno, etc. de un elemento.
+
+Se aprendió sobre el Outline, que se utiliza para definir un contorno alrededor de un elemento.
+
+Se aprendió sobre las fuentes personalizadas, que se pueden utilizar para definir una fuente personalizada para los textos.
+
+Se aprendió sobre los Links y sus estados, que se pueden utilizar para definir el estilo de los enlaces.
+
+Se aprendió sobre las Listas, que se pueden utilizar para definir el estilo de las listas.
+
+Se aprendió sobre las Tablas, que se pueden utilizar para definir el estilo de las tablas.
+
+Se aprendió sobre el Display, que se puede utilizar para definir el tipo de visualización de un elemento.
+
+Se aprendió sobre el Float, que se puede utilizar para definir la posición de un elemento.
+
+Se aprendió sobre el Inline-block, que se puede utilizar para definir la posición de un elemento.
+
+Se aprendió sobre cómo centrar un elemento, que se puede utilizar para definir la posición de un elemento.
+
+Se aprendió sobre los Frameworks de CSS, que se pueden utilizar para definir los estilos de los elementos HTML de forma rápida y sencilla.
+
+Se aplicaron los conocimientos adquiridos en este capítulo para dar estilo a un portafolio personal de HTML con CSS, Bootstrap, Tailwind CSS y Bulma.
+
+# Recursos
+
+-   [CSS Tutorial](https://www.w3schools.com/css/)
+
+-   [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
+-   [Bootstrap](https://getbootstrap.com/)
+
+-   [Tailwind CSS](https://tailwindcss.com/)
+
+-   [Bulma](https://bulma.io/)
+:::
