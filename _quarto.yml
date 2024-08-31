@@ -123,3 +123,6 @@ format:
     rights: "© Statick | 2024"
     fig-responsive: true
     number-sections: true
+
+filters:
+  - naquiz

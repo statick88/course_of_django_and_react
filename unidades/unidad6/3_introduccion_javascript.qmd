@@ -1,675 +1,1664 @@
 # JavaScript
 
-Para empezar a aprender JavaScript es necesario tener conocimientos básicos de HTML y CSS. JavaScript es un lenguaje de programación que se utiliza para crear páginas web interactivas. Es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
-
-JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es un lenguaje de programación que se utiliza para crear páginas web interactivas. JavaScript es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
+Esté capítulo está basado en el Curso de **"Aprende JavaScript"** en la url [AprendeJavaScript.dev](https://aprendejavascript.dev/) creado por Miguel Ángel [statick](https://porfolio.dev/#sobre-mi), el cual es un desarrollador FullStack y Creador de Contenido, sin más que agregar comencemos.
 
 ## ¿Qué es JavaScript?
 
-JavaScript es un lenguaje de programación que se utiliza para crear páginas web interactivas. Es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web.
+JavaScript es uno de los lenguajes de programación más usados y populares del mundo. Nació en 1995 para darle interactividad a las páginas web y desde entonces ha evolucionado hasta convertirse en un lenguaje de programación de propósito general. Dicho de otra forma: se puede usar casi para cualquier cosa.
 
-## ¿Dónde puedo aprender JavaScript?
+## ¿Qué es programar?
 
-Hay muchos recursos en línea que puedes utilizar para aprender JavaScript. Algunos de los recursos más populares incluyen:
+Es el acto de construir un programa o conjunto de instrucciones para decirle a una computadora qué y cómo queremos que haga algo. No es diferente a cuando "programamos" la lavadora, sólo que en vez de pulsar un botón, vamos a usar texto. A este texto se le conoce como "código".
 
--   [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
--   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
--   [W3Schools](https://www.w3schools.com/js/default.asp)
+## ¿Por qué aprender JavaScript?
 
-## ¿Qué puedo hacer con JavaScript?
+JavaScript es, a día de hoy, el único lenguaje de programación que todos los navegadores web entienden sin necesidad de realizar ningún paso previo. Esto hace que casi cualquier página web que visitas tiene alguna línea de JavaScript en su interior.
 
-JavaScript se utiliza para crear páginas web interactivas. Algunas de las cosas que puedes hacer con JavaScript incluyen:
+Su curva de aprendizaje para iniciarte es muy corta ya que en muy poco tiempo puedes empezar a hacer cosas interesantes. Para alcanzar a ser un buen programador en JavaScript necesitarás años de práctica, pero para empezar a hacer cosas interesantes bastará con poco tiempo.
 
--   Validar formularios
--   Crear animaciones
--   Crear juegos
--   Crear aplicaciones web
+Por si fuera poco, JavaScript es uno de los lenguajes de programación más demandados en el mercado laboral. Es normal, ya que es un lenguaje muy versátil y que se puede usar para casi cualquier cosa.
 
-## ¿Qué es un script de JavaScript?
+Además, con JavaScript vas a poder desarrollar casi cualquier cosa que te propongas. Desde aplicaciones web, móviles y de escritorio a backend, videojuegos, inteligencia artificial, Internet de las cosas. Todo un mundo de posibilidades con un sólo lenguaje.
 
-Un script de JavaScript es un archivo de texto que contiene código JavaScript. Los scripts de JavaScript se pueden incrustar en una página web utilizando la etiqueta **script**. Los scripts de JavaScript se utilizan para agregar interactividad a una página web.
+## Quiz
 
-## ¿Dónde puedo ejecutar JavaScript?
+:::::: question
+**¿JavaScript sólo se puede usar para crear páginas web?**
 
-JavaScript se puede ejecutar en cualquier navegador web moderno. Algunos de los navegadores web más populares que admiten JavaScript incluyen:
+::::: choices
+::: choice
+Verdadero
+:::
 
--   Google Chrome
--   Mozilla Firefox
--   Microsoft Edge
--   Safari
+::: {.choice .correct-choice}
+Falso
+:::
+:::::
+::::::
 
-Sin embargo tambien es posible ejecutar JavaScript en el servidor utilizando Node.js.
+::::::: question
+**¿Qué es programar en el mundo del software?**
 
-## ¿Qué es Node.js?
+:::::: choices
+::: choice
+Crear páginas web y que el usuario pueda usarlas
+:::
 
-Node.js es un entorno de ejecución de JavaScript del lado del servidor que permite a los desarrolladores crear aplicaciones web utilizando JavaScript. Node.js se basa en el motor de JavaScript V8 de Google Chrome y proporciona una forma de ejecutar JavaScript en el servidor.
+::: {.choice .correct-choice}
+Es el acto de construir un programa o conjunto de instrucciones para decirle a una comptuadora qué y cómo queremos que haga algo
+:::
 
-## ¿Dónde puedo aprender Node.js?
+::: choice
+Cualquier cosa que hagamos en un ordenador
+:::
+::::::
+:::::::
 
-Hay muchos recursos en línea que puedes utilizar para aprender Node.js. Algunos de los recursos más populares incluyen:
+# La consola del navegador
 
--   [Node.js](https://nodejs.org/en/docs/)
--   [W3Schools](https://www.w3schools.com/nodejs/default.asp)
--   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodejs)
+Ahora es necesario utilizar un navegador web, ya que vamos a empezar a escribir código JavaScript.
 
-## ¿Qué puedo hacer con Node.js?
+Todos los navegadores tienen una herramienta llamada **consola**. La consola nos permite ejecutar código JavaScript en tiempo real y ver el resultado. También ahí podemos ver los errores, advertencias y trazas que se producen en nuestro código.
 
-Node.js se utiliza para crear aplicaciones web del lado del servidor. Algunas de las cosas que puedes hacer con Node.js incluyen:
+Aunque podemos ejecutar código JavaScript de otras formas, para empezar, vamos a usar esta herramienta que nos ofrece el navegador.
 
--   Crear servidores web
--   Crear aplicaciones web en tiempo real
--   Crear aplicaciones de línea de comandos
--   Crear aplicaciones de red
+::: callout-tip
+Recuerda que llamamos código a las instrucciones que le damos a la computadora para que haga algo.
+:::
 
-# Primeros pasos con JavaScript
+## Cómo abrir la consola
 
-Para empezar a aprender JavaScript, necesitas tener un editor de texto y un navegador web. Puedes utilizar cualquier editor de texto para escribir código JavaScript, en este caso vamos a utilizar Visual Studio Code.
+Para abrir la consola del navegador debes hacer lo siguiente:
 
-Se sugiere utilizar la siguiente lista de plugins para Visual Studio Code:
+1.  Abre tu navegador web favorito, por ejemplo, Google Chrome, Firefox, Safari o Edge.
 
--   [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
--   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
--   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+2.  Ve a la página **about:blank** en la barra de direcciones. Así evitaremos que la página web que hemos cargado nos moleste.
 
-Antes de comenzar la parte práctica de JavaScript, es importante tener en cuenta algunos temas como:  Ecmascript 6, Motor V8, Asincronismo, Programación Orientada a Objetos, Programación Funcional, en JavaScript.
+3.  Haz **click derecho** en cualquier parte de la página y selecciona la opción **Inspeccionar Elemento** o **Inspect**.
 
-## Ecmascript 6
+Aquí podrás ejecutar tu código JavaScript y ver el resultado. Es lo que usaremos en un inicio. Más adelante pasaremos a usar un editor como **VSCode**.
 
-ECMAScript 6 (también conocido como ES6 o ECMAScript 2015) es la sexta versión de ECMAScript, el estándar subyacente de JavaScript. ECMAScript 6 fue lanzado en junio de 2015 y trajo muchas nuevas características y mejoras al lenguaje JavaScript.
+En **Google Chrome** o **Brave**, este es el aspecto de la consola
 
-Algunas de las características más importantes de ECMAScript 6 incluyen:
+![](images/paste-28.png)
 
--   **let y const**: Declaración de variables con let y const.
--   **Arrow functions**: Funciones de flecha.
--   **Template literals**: Literales de plantilla.
--   **Destructuring**: Desestructuración de objetos y arreglos.
--   **Spread operator**: Operador de propagación.
--   **Classes**: Clases.
--   **Promises**: Promesas.
--   **Async/Await**: Async/Await.
+En **Firefox**, este es el aspecto de la consola
 
-## Motor V8
+![](images/paste-29.png)
 
-V8 es el motor de JavaScript de código abierto de Google que se utiliza en Google Chrome y en Node.js. V8 es un motor de JavaScript de alto rendimiento que compila el código JavaScript en código de máquina nativo antes de ejecutarlo.
+## Quiz
 
-V8 utiliza una técnica de compilación just-in-time (JIT) para compilar el código JavaScript en tiempo de ejecución y optimizar su rendimiento. V8 es uno de los motores de JavaScript más rápidos y eficientes disponibles en la actualidad.
+:::::: question
+**¿Para qué sirve la consola del navegador?**
 
-## Asincronismo
+::::: choices
+::: choice
+La consola sirve para poder jugar con JavaScript. Es la única forma de poder ejecutar nuestro código y por eso todos los navegadores lo incorporan.
+:::
 
-El asincronismo en JavaScript se utiliza para manejar operaciones asincrónicas, como la lectura de archivos, las solicitudes de red y las interacciones del usuario. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puede ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal.
+::: {.choice .correct-choice}
+La consola nos permite ejecutar código JavaScript en tiempo real y ver el resultado. También ahí podemos ver los errores, advertencias y trazas que se producen en nuestro código.
+:::
+:::::
+::::::
 
-Para manejar operaciones asincrónicas en JavaScript, puedes utilizar callbacks, promesas o async/await. Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan cuando se completa una operación asincrónica. Las promesas son objetos que representan el resultado de una operación asincrónica y se pueden encadenar para manejar múltiples operaciones asincrónicas. Async/await es una forma más moderna de manejar operaciones asincrónicas en JavaScript y se basa en promesas.
+# Editores y entornos de desarrollo
 
-## Programación Orientada a Objetos
+En la actualidad existen muchos editores de código y entornos de desarrollo que nos permiten escribir código de forma más cómoda y eficiente. Algunos de los más populares son:
 
-La programación orientada a objetos (POO) en JavaScript se utiliza para crear objetos y clases que encapsulan datos y funciones relacionadas. JavaScript es un lenguaje de programación orientado a objetos, lo que significa que puedes crear objetos y clases para representar entidades del mundo real.
+-   **Visual Studio Code**: Es uno de los editores de código más populares y es el que usaremos en este curso.
 
-Para crear una clase en JavaScript, utiliza la palabra clave **class** seguida del nombre de la clase y define las propiedades y métodos de la clase. Para crear un objeto en JavaScript, utiliza la palabra clave **new** seguida del nombre de la clase y los parámetros de la clase.
+    ::: center
+    ![](images/paste-41.png)
+    :::
 
-## Programación Funcional
+-   **Runjs**: Un entorno de desarrollo online que nos permite escribir código JavaScript y ver el resultado en tiempo real.
 
-La programación funcional en JavaScript se utiliza para crear funciones que se pueden pasar como argumentos a otras funciones y se pueden utilizar para realizar operaciones en datos. JavaScript es un lenguaje de programación funcional, lo que significa que puedes crear funciones de primera clase y funciones de orden superior.
+    ::: center
+    ![](images/paste-38.png)
+    :::
 
-Para crear una función en JavaScript, utiliza la palabra clave **function** seguida del nombre de la función y los parámetros de la función. Para crear una función de orden superior en JavaScript, utiliza funciones de flecha y funciones de retorno.
+-   **Zed Code Editor**: Un editor de código muy sencillo y minimalista.
 
-Con estos temas cubiertos podemos comenzar a escribir código en JavaScript.
+    ::: center
+    ![](images/paste-39.png)
+    :::
 
-## Hola Mundo en JavaScript
+# Tipos de Datos
 
-Para crear un "Hola Mundo" en JavaScript, sigue estos pasos:
+En JavaScript, como cualquier otro lenguaje de programación, vamos a querer trasladar la información del mundo real a nuestro código. Para ello, necesitamos entender qué tipos de datos existen en el lenguaje para poder representar la información que necesitamos.
 
-1.  Abre Visual Studio Code.
+En JavaScript tenemos 9 tipos de datos que se dividen en dos grandes grupos: **primitivos** o **no primitivos**.
 
-2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
+## Tipos Primitivos.
 
-3.  Escribe el siguiente código en el archivo:
+Dentro de los tipos primitivos tenemos 7 tipos de datos:
 
-``` html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hola Mundo en JavaScript</title>
-</head>
-<body>
-    <h1 id="mensaje"></h1>
-    <script href='app.js'></script>
-</body>
-</html>
-```
-4. Crea un nuevo archivo y guárdalo con la extensión **.js**.
+-   number
+-   string
+-   boolean
+-   null
+-   undefined
+-   symbol
+-   bigint
+
+No te preocupes, no tienes ni recordarlos ni entenderlos todos ahora. En esta lección vamos a ver los tres primeros que son, sin ninguna duda, los que más vamos a usar al inicio del curso.
+
+## Números
+
+Los números (tipo number) son los datos más básicos que podemos representar en JavaScript. En JavaScript, no hay una diferencia entre números enteros y números decimales, todos los números son de tipo number:
 
 ``` javascript
-document.getElementById("mensaje").innerHTML = "Hola Mundo!";
+7
+3.14
+19.95
+2.998e8
+-1
 ```
 
-5.  Guarda el archivo y ábrelo en un navegador web.
+## Operadores aritméticos
 
-6.  Deberías ver un mensaje que dice "Hola Mundo!" en la página.
+Con los números, puedes usar los operadores aritméticos para realizar operaciones matemáticas. En JavaScript tenemos los siguientes operadores aritméticos:
 
-## Comentarios en JavaScript
+-   +: suma
+-   -: resta
+-   \*: multiplicación
+-   /: división
+-   %: módulo (resto de la división)
+-   \*\*: exponente
 
-Los comentarios en JavaScript se utilizan para explicar el código y hacerlo más legible. Los comentarios en JavaScript comienzan con **//** para comentarios de una sola línea.
+Al usar los operadores aritméticos, el resultado siempre será un número. Por ejemplo:
 
 ``` javascript
-// Este es un comentario de una sola línea
+2 + 2 // 4
+4 - 2 // 2
+3 * 2 // 6
+2 / 2 // 1
+2 % 2 // 0
+3 ** 3 // 27
 ```
 
-También puedes utilizar comentarios de varias líneas utilizando **/*\**** ... **\*/**
+## ¿Qué significa el // que ves en los ejemplos?
+
+Es un comentario. En JavaScript, los comentarios se escriben con **//** y todo lo que escribas después de\`*//* será ignorado por el navegador. Los comentarios son muy útiles para explicar qué hace nuestro código.
+
+Al igual que las matemáticas, las operaciones siguen un orden de precedencia. Por ejemplo, si queremos calcular el resultado de **2 + 2 \* 3**, primero se multiplicará **2 \* 3** y luego se sumará **2 + 6**. El resultado será **8**.
+
+También puedes usar paréntesis para cambiar el orden de las operaciones.
+
+``` javascript
+2 + 2 * 3 // 8
+(2 + 2) * 3 // 12
+```
+
+## Cadenas de texto
+
+La cadena de texto (tipo string) es otro tipo de dato muy común. En JavaScript, las cadenas de texto se representan entre **comillas simples**, **dobles** o **acentos graves**:
+
+``` javascript
+'Estás aprendiendo JavaScript'
+
+"JavaScript te va a gustar"
+
+`Esto es una cadena de texto`
+```
+
+Las comillas simples y dobles funcionan igual, pero al usar **acentos graves** podemos escribir cadenas de texto que ocupen varias líneas:
+
+``` javascript
+`Esto es una cadena de texto
+que ocupa varias líneas. Puedes escribir
+tantas líneas como quieras`
+```
+
+## Concatenación
+
+Para unir dos cadenas de texto, podemos usar el operador +:
+
+``` javascript
+'Estás aprendiendo ' + 'JavaScript' // 'Estás aprendiendo JavaScript'
+```
+
+Como ves, el operador **+** de concatenación de cadenas de texto es visualmente el mismo que el operador **+** de **suma de números**. El operador **+** funciona de forma diferente dependiendo del tipo de dato que estemos usando.
+
+## Booleanos
+
+Los booleanos representa sólo dos valores: true (verdadero) o false (falso). Por ejemplo:
+
+-   ¿La luz está encendida (true) o apagada (false)?
+-   ¿Está lloviendo (true) o no está lloviendo (false)?
+-   ¿Está el usuario logueado (true) o no está logueado (false)?
+
+Estos son ejemplos de preguntas que podemos responder con un valor booleano.
+
+-   true
+-   false
+
+## Quiz
+
+:::::: question
+**¿Cuántos tipos de datos existen en JavaScript?**
+
+::::: choices
+::: choice
+Sólo existen 2 tipos de datos
+:::
+
+::: {.choice .correct-choice}
+9 tipos de datos que se dividen en dos grandes grupos
+:::
+:::::
+::::::
+
+::::::: question
+**¿Cuántos valores se pueden representar en el tipo de dato Boolean?**
+
+:::::: choices
+::: choice
+true y false
+:::
+
+::: {.choice .correct-choice}
+Cualquier valor que se te ocurra
+:::
+
+::: choice
+Números, cadenas de texto y verdadero/falso.
+:::
+::::::
+:::::::
+
+::::::: question
+**El operador + se utiliza para...**
+
+:::::: choices
+::: choice
+Sólo sirve para sumar dos números
+:::
+
+::: choice
+Concatenar dos textos
+:::
+
+::: {.choice .correct-choice}
+Depende del tipo de dato que se esté utilizando
+:::
+::::::
+:::::::
+
+# Los operadores de comparación
+
+Los operadores de comparación en JavaScript nos permiten comparar dos valores. Siempre devuelven un valor booleano (true o false).
+
+Por ejemplo, podemos comparar si un número es mayor que otro con el operador **\>**, o si un número es menor que otro con el operador **\<**.
+
+``` javascript
+5 > 3 // true
+5 < 3 // false
+```
+
+También tenemos los operadores **\>=** y **\<=** que nos permiten comparar si un número es mayor o igual que otro, o si un número es menor o igual que otro.
+
+``` javascript
+5 >= 3 // true
+5 >= 5 // true
+5 <= 3 // false
+5 <= 5 // true
+```
+
+Para saber si dos valores son iguales podemos usar el operador **===** o, para saber si son diferentes, el operador **!==**.
+
+``` javascript
+5 === 5 // true
+5 !== 5 // false
+```
+
+## Actividad
+
+1.  Escribe un código que compruebe si 10 es mayor o igual que 9
+
+2.  Comprueba que 0 es igual a 0
+
+<details>
+
+<summary>Respuesta</summary>
+
+R1.
+
+``` javascript
+10 >= 9 // true
+```
+
+R2.
+
+``` javascript
+0 === 0 // true
+```
+
+</detais>
+
+## Comparando cadenas de texto
+
+No sólo podemos usar los comparadores para comparar números, también podemos usarlos para comparar cadenas de texto y otros tipos de datos.
+
+``` javascript
+'JavaScript' === 'JavaScript' // true
+'JavaScript' === 'Java' // false
+"JavaScript" !== 'PHP' // true
+`Estoy Aprendiendo JavaScript` === 'Estoy Aprendiendo JavaScript' // true
+```
+
+::: callout-tip
+Fíjate que puedes comparar cadenas de texto que usan comillas simples, dobles o acentos graves. Al final, siguen siendo cadenas de texto y lo importante es que sean iguales.
+:::
+
+## ¿Y si usamos el operador \> con cadenas de texto?
+
+Aunque no es muy común, podemos usar los operadores **\>** , **\>=**, **\<** y **\<=** para comparar cadenas de texto.
+
+JavaScript comparará las cadenas de texto según el valor de su código Unicode.
+
+Por ejemplo, la letra **A** tiene un valor de **65** y la letra **B** tiene un valor de **66**. Por lo tanto, la letra **A** es menor que la letra **B**. Pero ten cuidado, ya que las letras mayúsculas tienen un valor menor que las letras minúsculas.
+
+``` javascript
+'Alfa' > 'Beta' // false
+'Omega' > 'Beta' // true
+'alfa' > 'Alfa' // true
+```
+
+## Comparando booleanos
+
+También podemos comparar booleanos con los operadores de comparación.
+
+``` javascript
+true === true // true
+true === false // false
+false !== false // false
+```
+
+Por si te preguntas cómo se comportan los operadores de mayor o menor que (**\>** y **\<**) con booleanos te diré que, aunque no tiene sentido, debes saber que true es mayor que false.
+
+``` javascript
+true > false // true
+false < true // true
+true > true // false
+false < false // false
+```
+
+## Comparando valores de diferentes tipos
+
+Por ahora hemos visto cómo comparar valores de un mismo tipo, pero ¿Qué pasa si queremos comparar valores de diferentes tipos? En JavaScript es algo que es posible pero no suele ser recomendable.
+
+En clases posteriores veremos cómo funciona este tipo de mecanismo y explicaremos el operador de igualdad débil **==** y el operador de desigualdad débil **!=** pero, por ahora, nos limitaremos a utilizar siempre el operador de igualdad estricta **===** y el operador de desigualdad estricta **!==**.
+
+## Quiz
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: question
+**¿Cuál es el resultado de 24 \> 12?**
+
+::::: choices
+::: {.choice .correct-choice}
+true
+:::
+
+::: choice
+false
+:::
+:::::
+
+:::::: question
+**Los operadores de compración solo se pueden usar con números**
+
+::::: choices
+::: choice
+Sí, sólo ahí tiene sentido
+:::
+
+::: {.choice .correct-choice}
+No, se pueden usar con otros tipos de datos como cadenas de textos o boleanos
+:::
+:::::
+::::::
+
+# Operadores lógicos en JavaScript
+
+Los operadores lógicos en JavaScript (y en muchos otros lenguajes de programación) se utilizan para evaluar expresiones lógicas.
+
+En JavaScript, hay tres operadores lógicos: AND (&&), OR (\|\|) y NOT (!).
+
+## Operador lógico AND &&
+
+El operador lógico AND se indica con &&. Devuelve true cuando ambos valores que conecta son true.
+
+``` javascript
+true && true // → true
+true && false // → false
+false && false // → false
+```
+
+Un ejemplo en la vida real sería preguntar. **¿Están todas las luces encendidas?** Se comprueba cada luz y si todas están encendidas (true), entonces la respuesta es **true**. Si alguna luz está apagada (false), entonces la respuesta es **false**.
+
+## Operador lógico OR \|\|
+
+El operador lógico OR se indica con \|\| y devuelve true cuando cualquiera de los valores que conecta es true.
+
+``` javascript
+true || true // → true
+true || false // → true
+false || false // → false
+```
+
+Un ejemplo en la vida real sería preguntar. **¿Hay alguna luz encendida?** Se comprueba cada luz y si alguna está encendida (true), entonces la respuesta es **true**. Sólo si todas las luces están apagadas (false), entonces la respuesta es **false**.
+
+## Operador lógico NOT !
+
+El operador lógico NOT se indica con ! e invierte el valor de un valor booleano. Se pone delante del valor que queremos invertir.
+
+``` javascript
+!true // → false
+!false // → true
+```
+
+Un ejemplo en la vida real sería pulsar el interruptor de la luz. Si la luz está encendida (true), entonces pulsando el interruptor la apagamos (false). Si la luz está apagada (false), entonces pulsando el interruptor la encendemos (true).
+
+## Combinando operadores lógicos, aritméticos y de comparación
+
+Los operadores lógicos y los operadores de comparación se pueden combinar para crear expresiones más complejas. Por ejemplo, podemos preguntar si un número está entre dos valores.
+
+``` javascript
+2 < 3 && 3 < 4 // → true
+```
+
+En este caso, la expresión se evalúa como **true** porque **2 \< 3** es **true** y **3 \< 4** es **true**. Si cualquiera de las dos expresiones fuera **false**, entonces la expresión sería **false**.
+
+También puedes usar paréntesis para agrupar operaciones y usar operadores lógicos y aritméticos.
+
+``` javascript
+(2 + 2) < 3 && (10 < (8 * 2)) // → false
+```
+
+Igualmente, es importante que sepas que las operaciones aritméticas tienen precedencia sobre las operaciones de comparación.
+
+``` javascript
+2 + 2 < 3 && 10 < 8 * 2
+// Primero se hacen las operaciones aritméticas:
+// → 4 < 3 && 10 < 16
+// Ahora las comparaciones:
+// → false && true
+// Finalmente:
+// → false
+```
+
+## Actividad
+
+1.  Comprueba si 7 es mayor que 8 y menor que 10
+
+2.  Tenemos un producto en una tienda. Cuesta 1500 y tenemos un descuento del 25%. Tengo \$1150 en mi billetera. Escribe un código que me diga si puedo comprarlo. No utilizar parentesis.
+
+<details>
+
+<summary>Respuesta</summary>
+
+R1.
+
+``` javascript
+7 > 8 && 7 < 10 // false
+```
+
+R2.
+
+``` javascript
+1150 >= 1500 * 0.75 // false
+```
+
+</details>
+
+# Dos o más operandos
+
+Aunque todos los ejemplos que has visto hasta ahora usan dos operandos, los operadores lógicos también pueden usarse con más de dos operandos.
+
+``` javascript
+true && true && true // → true
+```
+
+También puedes mezclar operadores lógicos:
+
+``` javascript
+true && true || false // → true
+!true && !true // → false
+false && true || !true // → false
+```
+
+Ahora te puede costar un poco entender qué está pasando, pero con la práctica te irá resultando más fácil. Prueba a hacer los ejercicios y a jugar con los operadores lógicos para que te vayan quedando más claros.
+
+## Quiz
+
+:::::: question
+**¿Qué operador lógico se utiliza para comprobar si dos o más condiciones son verdaderas?**
+
+::::: choices
+::: choice
+OR (\|\|)
+:::
+
+::: {.choice .correct-choice}
+AND (&&)
+:::
+:::::
+::::::
+
+:::::: question
+**¿Qué operador lógico se utiliza para invertir el valor de un booleano?**
+
+::::: choices
+::: choice
+OR (\|\|)
+:::
+
+::: {.choice .correct-choice}
+NOT (!)
+:::
+:::::
+::::::
+
+:::::: question
+**¿Qué valor devuelve la expresión false \|\| true?**
+
+::::: choices
+::: choice
+false
+:::
+
+::: {.choice .correct-choice}
+true
+:::
+:::::
+::::::
+
+# Variables
+
+A la hora de crear programas, es vital poder almacenar la información para poder utilizarla en un futuro. En JavaScript, usamos variables para conseguirlo.
+
+Para crear una variable podemos usar la palabra reservada **let** y le damos un nombre a la variable. Por ejemplo:
+
+``` javascript
+let numero
+```
+
+Tenemos una variable llamada numero pero no le hemos asignado ningún valor. Para asignarle un valor, usamos el operador de asignación =:
+
+``` javascript
+let numero = 1
+```
+
+Ahora, podemos referirnos a la variable numero y obtener el valor que le hemos asignado.
+
+``` javascript
+numero + 1 // -> 1 + 1
+```
+
+También podemos reasignarle un valor a la variable:
+
+``` javascript
+numero = 5
+numero + 1 // -> 5 + 1
+```
+
+::: callout-tip
+¡Ojo! Si no guardas el valor de esta nueva operación, el valor de la variable **numero** seguirá siendo **5**.
+
+``` javascript
+numero = 5
+numero + 1 // -> 5 + 1
+numero + 1 // -> 5 + 1
+```
+:::
+
+Ten en cuenta que el valor de la variable no tiene porque ser un número. Puede ser cualquier tipo de dato, como un texto o un booleano.
+
+``` javascript
+let welcomeText = 'Hola'
+let isCool = true
+```
+
+## Actividad
+
+1.  Crea una variable llamada mensaje y asígnale el valor "Hola JavaScript"
+
+2.  Crea una variable llamada resultado y asígnale la suma de 2 y 3
+
+<details>
+
+<summary>Respuesta</summary>
+
+R1.
+
+``` javascript
+let mensaje = 'Hola JavaScript'
+```
+
+R2.
+
+``` javascript
+let resultado = 2 + 3
+```
+
+</details>
+
+## Constantes const
+
+Las constantes son variables que no pueden ser reasignadas. Para crear una constante, usamos la palabra reservada const:
+
+``` javascript
+const PI = 3.1415
+```
+
+Si intentas reasignar el valor de una constante, obtendrás un error:
+
+``` javascript
+PI = 3 // -> TypeError: Assignment to constant variable.
+```
+
+Como no se pueden reasignar, las constantes siempre deben ser inicializadas con algún valor. Esto es otra diferencia respecto a let, que no es necesario inicializarla con un valor.
+
+``` javascript
+let numero // ✅
+const RADIUS // ❌ SyntaxError: Missing initializer in const declaration
+```
+
+Son muy útiles para almacenar valores que no van a cambiar. Siempre que puedas, procura usar constantes para que tu código sea más predecible.
+
+## Actividad
+
+1.  Crea una constante llamada IS_DISABLED y asígnale el booleano true
+
+<details>
+
+<summary>Respuesta</summary>
+
+``` javascript
+const IS_DISABLED = true
+```
+
+</details>
+
+## Variables var
+
+En JavaScript, también podemos crear variables usando la palabra reservada **var**. Es la forma más antigua y es normal que encuentres muchos tutoriales que lo usen. Sin embargo, a día de hoy, no es recomendable usar **var** ya que tiene comportamientos extraños que pueden causar errores en tu código.
+
+En una clase posterior te explicaré cuál es la diferencia entre **let**, **const** y **var** además de por qué, siempre que puedas, deberías evitar var.
+
+## El nombre de las variables
+
+En JavaScript, los nombres de las variables pueden contener letras, números y el guión bajo (\_). Además, el primer carácter del nombre de la variable no puede ser un número.
+
+Es importante tener en cuenta que los nombres de las variables son sensibles a las mayúsculas y minúsculas, lo que significa que **miVariable** y **mivariable** son dos variables diferentes en JavaScript.
+
+``` javascript
+let miVariable = 1
+let mivariable = 2
+miVariable + mivariable // -> 1 + 2
+```
+
+También es importante que los nombres de las variables sean descriptivos. Por ejemplo, si queremos almacenar el nombre de un usuario, podemos llamar a la variable userName. De esta forma, cuando leamos el código, sabremos que la variable contiene el nombre de un usuario.
+
+``` javascript
+let n = 'Pepe' // ❌ Mal, no es descriptivo
+let userName = 'Juan' // ✅ Bien, se entiende
+```
+
+## Convenciones y nomenclaturas
+
+En JavaScript, existen diferentes nomenclaturas para nombrar las variables: **camelCase**, **snake_case** y **SCREAMING_CASE**.
+
+**camelCase** es la forma más común de nombrar las variables en JavaScript. Consiste en escribir la primera palabra en minúsculas y las siguientes palabras con su primera letra en mayúsculas. Por ejemplo:
+
+``` javascript
+let camelCase = 1
+let camelCaseIsCool = 2
+let userName = 'statick'
+```
+
+**snake_case** es una forma de nombrar que consiste en escribir todas las palabras en minúsculas y separarlas con guiones bajos. Por ejemplo:
+
+``` javascript
+let snake_case = 1
+let snake_case_is_cool = 2
+let user_name = 'statick'
+```
+
+En algunos lenguajes de programación es muy común usar snake_case para nombrar las variables. En JavaScript no lo es tanto, pero todavía puedes encontrar código que lo use.
+
+Lo más habitual, y es buena idea, es usarlo en los nombres de archivos. Por ejemplo, **mi_archivo.js**. Esto es porque algunos sistemas operativos distinguen entre mayúsculas y minúsculas y, por tanto, **mi_archivo.js** y **Mi_archivo.js** son dos archivos diferentes.
+
+::: callout-tip
+También existe kebab-case, que es una forma de nombrar que consiste en escribir todas las palabras en minúsculas y separarlas con guiones. Por ejemplo: mi-archivo.js. Es muy similar a snake_case pero con guiones en vez de guiones bajos. No se puede usar para nombrar variables pero sí es común usarlo en los nombres de archivos.
+:::
+
+**SCREAMING_CASE** es una forma de nombrar que consiste en escribir todas las palabras en mayúsculas y separarlas con guiones bajos. Por ejemplo:
+
+``` javascript
+const SCREAMING_CASE = 1
+const SCREAMING_CASE_IS_COOL = 2
+const USER_NAME = 'statick'
+```
+
+Para las constantes, con valores que no van a cambiar, es muy común usar **SCREAMING_CASE**. Así se puede distinguir fácilmente de las variables que sí cambian de valor. Por eso, no debes usarla para nombrar variables con **let**.
+
+## Quiz
+
+:::::: question
+**¿Qué es una variable?**
+
+::::: choices
+::: {.choice .correct-choice}
+En JavaScript, una variable es un contenedor de información que se utiliza para almacenar datos en un programa.
+:::
+
+::: choice
+Una variable es un tipo de dato que se utiliza para almacenar información en un programa.
+:::
+:::::
+::::::
+
+:::::: question
+**¿Qué peculiaridad tienen las variables const en JavaScript?**
+
+::::: choices
+::: {.choice .correct-choice}
+No se pueden reasignar
+:::
+
+::: choice
+Sólo pueden guardar números
+:::
+:::::
+::::::
+
+::::::: question
+**Siempre hay que asignar un valor a una variable**
+
+:::::: choices
+::: choice
+Sí, siempre
+:::
+
+::: choice
+No, nunca
+:::
+
+::: {.choice .correct-choice}
+Sólo si es una variable const
+:::
+::::::
+:::::::
+
+## null y undefined
+
+¿Recuerdas que te he comentado que existen diferentes tipos de datos en JavaScript? Hemos visto números, cadenas de texto y booleanos.
+
+En esta clase vas a aprender otros dos tipos de datos que, aunque son similares, tienen ligeras diferencias. Son **null** y **undefined**.
+
+La particularidad de estos dos tipos de datos es que cada uno sólo tiene un valor. El tipo **null** sólo puede tener el valor **null** y el tipo **undefined** sólo puede tener el valor undefined.
+
+::: callout-tip
+Es como el tipo booleano que podía ser **true** y **false** pero, en este caso, sólo tiene un valor.
+:::
+
+## La diferencia entre null y undefined
+
+Mientras que null es un valor que significa que algo no tiene valor, undefined significa que algo no ha sido definido. Por ejemplo, si creamos una variable sin asignarle ningún valor, su valor será undefined:
+
+``` javascript
+let rolloDePapel // -> undefined
+```
+
+También podemos asignar directamente el valor undefined a una variable:
+
+``` javascript
+let rolloDePapel = undefined // -> undefined
+```
+
+En cambio, para que una variable tenga el valor null, sólo podemos conseguirlo asignándole explícitamente ese valor:
+
+``` javascript
+let rolloDePapel = null
+```
+
+Un caso bastante ilustrativo para entender la diferencia entre null y undefined es el siguiente:
+
+![](images/paste-30.png)
+
+## Actividad
+
+1.  Crea una variable con let llamada capacidad y asígnale un valor null
+
+2.  Crea una variable con let llamada dinero y asegúrate que tenga un valor de undefined
+
+<details>
+
+<summary>Respuesta</summary>
+
+R1.
+
+``` javascript
+let capacidad = null
+```
+
+R2.
+
+``` javascript
+let dinero
+```
+
+</details>
+
+## Comparaciones con null y undefined
+
+Al usar la igualdad estricta que hemos visto en la clase anterior, null y undefined son considerados diferentes entre sí:
+
+``` javascript
+null === undefined // -\> false
+```
+
+Sólo cuando comparamos null con null o undefined con undefined obtenemos true:
+
+``` javascript
+null === null // -\> true undefined === undefined // -\> true
+```
+
+## Quiz
+
+:::::: question
+**null y undefined son dos valores que significan lo mismo.**
+
+::::: choices
+::: choice
+Sí, ambos indican la ausencia de valor.
+:::
+
+::: {.choice .correct-choice}
+No, null es un valor que indica algo vacío, mientras que undefined indica algo que no está definido todavía.
+:::
+:::::
+::::::
+
+::::::: question
+**¿Qué valor tiene una variable a la que no se le ha asignado nada al declararla?**
+
+:::::: choices
+::: choice
+Un valor null
+:::
+
+::: {.choice .correct-choice}
+Un valor undefined
+:::
+
+::: choice
+No se puede declarar a una variable sin asignar un valor
+:::
+::::::
+:::::::
+
+# Operador typeof
+
+El operador **typeof** devuelve una cadena de texto que indica el tipo de un operando. Puede ser usado con cualquier tipo de operando, incluyendo variables y literales.
+
+``` javascript
+const MAGIC_NUMBER = 7
+typeof MAGIC_NUMBER // "number"
+```
+
+También puedes usarlo directamente con los valores que quieras comprobar:
+
+``` javascript
+typeof undefined // "undefined"
+typeof true // "boolean"
+typeof 42 // "number"
+typeof "Hola mundo" // "string"
+```
+
+## Actividad
+
+1.  Tengo una variable llamada userName. Excribe el código necesario para ver su tipo.
+
+<details>
+
+<summary>Respuesta</summary>
+
+``` javascript
+let userName
+typeof userName // "undefined"
+```
+
+</details>
+
+Existe, sin embargo, un valor especial en JavaScript, **null**, que es considerado un bug en el lenguaje. El operador **typeof** devuelve **"object"** cuando se usa con **null**:
+
+``` javascript
+typeof null // "object"
+```
+
+Lo correcto sería que **typeof null** devolviera **"null"**, pero es un [error histórico que no se puede corregir sin romper el código existente](https://2ality.com/2013/10/typeof-null.html).
+
+Por eso, si quieres comprobar si una variable es **null**, debes usar la comparación estricta **===**:
+
+``` javascript
+const foo = null
+foo === null // true
+```
+
+Otra pregunta es... ¿Qué es ese **object**? Es un tipo de dato que está en el centro de JavaScript y que veremos en detalle más adelante.
+
+## Usando con operadores de comparación
+
+El operador **typeof** es muy útil cuando se usa con operadores de comparación. Por ejemplo, para comprobar si una variable es del tipo que esperamos:
+
+``` javascript
+const age = 42
+typeof age === "number" // true
+```
+
+Una vez que tenemos expresiones lógicas, podemos empezar a encadenar operadores lógicos para comprobar múltiples condiciones:
+
+``` javascript
+const age = 42
+typeof age === "number" && age > 18 // true
+```
+
+## Actividad
+
+1.  Tengo una variable llamada dogId pero no tengo claro si es una cadena de texto. Escribe el código necesario para asegurarte.
+
+<details>
+
+<summary>Respuesta</summary>
+
+``` javascript
+typeof dogId === "string" // false
+```
+
+</details>
+
+## Quiz
+
+:::::: question
+**¿Para qué sirve el operador typeof en JavaScript?**
+
+::::: choices
+::: choice
+Nos permite leer el valor de una variable
+:::
+
+::: {.choice .correct-choice}
+Nos da el tipo de dato de una variable
+:::
+:::::
+::::::
+
+:::::: question
+**El operador typeof siempre devuelve una cadena de texto con el tipo del operando.**
+
+::::: choices
+::: {.choice .correct-choice}
+Si, siempre devuelve una cadena de texto
+:::
+
+::: choice
+Depende del tipo de dato que le pasemos, Si le pasamos un número, nos devolverá un number
+:::
+:::::
+::::::
+
+## Comentarios
+
+En JavaScript, los comentarios son **una forma de agregar explicaciones al código que se ignora al ejecutar el programa**.
+
+Los comentarios son útiles para explicar el por qué del código, documentar los cambios realizados en el código y hacer que el código sea más fácil de entender para otros desarrolladores.
+
+Hay **dos tipos de comentarios en JavaScript**: los comentarios de una sola línea y los comentarios de varias líneas.
+
+## Comentarios de una sola línea //
+
+Los comentarios de una sola línea comienzan con **//** y se utilizan para agregar una explicación en una sola línea de código. Por ejemplo:
+
+``` javascript
+// Sólo usamos 6 decimales
+const PI = 3.141592
+
+// Iniciamos el radio por 10, pero puede cambiar
+let radio = 10
+```
+
+También puedes añadir un comentario de una sola línea al final de una línea de código. Por ejemplo:
+
+``` javascript
+const PI = 3.141592 // Sólo usamos 6 decimales
+```
+
+## Comentarios de varias líneas /\* \*/
+
+Los comentarios de varias líneas comienzan con /\* y terminan con \*/. Se utilizan para agregar notas explicativas que ocupan varias líneas de código. Por ejemplo:
 
 ``` javascript
 /*
-Este es un comentario de varias líneas
+  Este es un comentario de varias líneas.
+  Se utiliza para agregar notas explicativas que ocupan varias líneas de código.
 */
 ```
 
-## Variables en JavaScript
-
-Las variables en JavaScript se utilizan para almacenar datos. Para declarar una variable en JavaScript, utiliza la palabra clave **var**, **let** o **const** seguida del nombre de la variable.
+Ten en cuenta que también puedes lograr varias líneas usando el tipo de comentario //, sólo que en este caso, cada línea de código debe comenzar con //. Por ejemplo:
 
 ``` javascript
-var nombre = "Juan";
-let edad = 30;
-const PI = 3.1416;
+// Este es un comentario de varias líneas.
+// Se utiliza para agregar notas explicativas que ocupan varias líneas de código.
 ```
-:::{.callout-tip}
-Se recomienda utilizar **let** en lugar de **var** para declarar variables en JavaScript.
+
+Es importante tener en cuenta que **los comentarios no afectan el funcionamiento del código**. Es decir, si se eliminan los comentarios, el código seguirá funcionando de la misma manera.
+
+Es recomendable utilizar comentarios con moderación y de manera efectiva para hacer que el código sea más fácil de entender y mantener. **Los comentarios deben ser claros y concisos, y deben explicar lo que hace el código sin repetir lo que ya es obvio**.
+
+Es mejor que tu código sea lo suficientemente claro como para no necesitar comentarios, pero si es necesario, **utiliza comentarios para explicar el por qué del código, no el qué**.
+
+## Quiz
+
+:::::: question
+**¿Para qué sirven los comentarios en JavaScript?**
+
+::::: choices
+::: {.choice .correct-choice}
+Sirven para documentar nuestro código y explicar qué hace cada parte de él
 :::
 
-## Tipos de datos en JavaScript
+::: choice
+Para cambiar el comportamiento de nuestro código
+:::
+:::::
+::::::
 
-JavaScript es un lenguaje de programación de tipado dinámico, lo que significa que no es necesario especificar el tipo de datos de una variable al declararla. JavaScript tiene varios tipos de datos, incluidos:
+:::::: question
+**¿Cómo se escriben los comentarios en JavaScript?**
 
--   **String**: Cadena de texto.
--   **Number**: Número.
--   **Boolean**: Valor booleano (verdadero o falso).
--   **Array**: Arreglo de elementos.
--   **Object**: Objeto.
--   **Function**: Función.
--   **Null**: Valor nulo.
--   **Undefined**: Valor indefinido.
-
-``` javascript
-let nombre = "Juan"; // String
-let edad = 30; // Number
-let esMayor = true; // Boolean
-let colores = ["Rojo", "Verde", "Azul"]; // Array
-let persona = {nombre: "Juan", edad: 30}; // Object
-let sumar = function(a, b) { return a + b; }; // Function
-let nulo = null; // Null
-let indefinido = undefined; // Undefined
-```
-
-:::{.callout-info}
-Existen otras opciones de tipos de datos de tipo null y undefined, pero estos son los más comunes.
+::::: choices
+::: choice
+Puedes usar \# para escribir comentarios de una línea o varias
 :::
 
-## Operadores en JavaScript
+::: {.choice .correct-choice}
+Puedes usar // para escribir comentarios de una línea o /\* \*/ para escribir comentarios de varias líneas
+:::
+:::::
+::::::
 
-Los operadores en JavaScript se utilizan para realizar operaciones en variables y valores. Algunos de los operadores más comunes en JavaScript incluyen:
+## console.log()
 
--   **Operadores aritméticos**: +, -, *, /, %.
--   **Operadores de asignación**: =, +=, -=, *=, /=.
--   **Operadores de comparación**: ==, !=, ===, !==, >, <, >=, <=.
--   **Operadores lógicos**: &&, ||, !.
--   **Operadores de incremento y decremento**: ++, --.
--   **Operadores de concatenación**: +.
+**console.log()** es una función integrada en *JavaScript* que se utiliza para imprimir mensajes en la consola del navegador o del editor de código. Se utiliza principalmente para depurar el código y para **imprimir valores de variables y mensajes para ayudar en el proceso de desarrollo**.
+
+::: callout-tip
+En programación, una función es un conjunto de instrucciones que se pueden usar una y otra vez para hacer una tarea específica. Muchas veces, las funciones se utilizan para evitar repetir código y son parametrizables. Más adelante tendremos una sección sólo para ellas.
+:::
+
+## Sintaxis
+
+Para poder mostrar estos mensajes en consola, debes escribir **console.log()** y dentro de los paréntesis, el mensaje que quieres mostrar.
 
 ``` javascript
-let a = 10;
-let b = 5;
-
-let suma = a + b; // 15
-let resta = a - b; // 5
-let multiplicacion = a * b; // 50
-let division = a / b; // 2
-
-let igual = a == b; // false
-let mayor = a > b; // true
-let menor = a < b; // false
-
-let and = (a > 0) && (b > 0); // true
-let or = (a > 0) || (b > 0); // true
-let not = !(a > 0); // false
-
-let incremento = a++; // 10
-let decremento = b--; // 5
-
-let cadena = "Hola " + "Mundo!"; // Hola Mundo!
+console.log('Hola, JavaScript')
+// -> 'Hola, JavaScript'
 ```
 
-## Condicionales en JavaScript
-
-Los condicionales en JavaScript se utilizan para tomar decisiones basadas en ciertas condiciones. Algunos de los condicionales más comunes en JavaScript incluyen:
-
--   **if**: Se utiliza para ejecutar un bloque de código si una condición es verdadera.
--   **else**: Se utiliza para ejecutar un bloque de código si una condición es falsa.
--   **else if**: Se utiliza para ejecutar un bloque de código si la primera condición es falsa y la segunda condición es verdadera.
--   **switch**: Se utiliza para ejecutar diferentes bloques de código según diferentes casos.
+También puedes averiguar el valor de una variable, escribiendo el nombre de la variable dentro de los paréntesis.
 
 ``` javascript
-let edad = 18;
+const nombre = 'JavaScript'
+console.log(nombre)
+// -> 'JavaScript'
+```
+
+Como ya sabes concatenar cadenas de texto, puedes mostrar un mensaje y el valor de una variable en el mismo **console.log()**.
+
+``` javascript
+const nombre = 'JavaScript'
+console.log('Hola, ' + nombre)
+// -> 'Hola, JavaScript'
+```
+
+Además, puedes mostrar varios mensajes y valores de variables en el mismo **console.log()** separándolos por comas.
+
+``` javascript
+const nombre = 'JavaScript'
+const version = 2023
+console.log(nombre, version)
+// -> 'JavaScript 2023'
+```
+
+## Más métodos de console
+
+Además de **console.log()**, existen otros métodos que puedes utilizar para imprimir mensajes en la consola. Algunos de ellos son:
+
+::: callout-tip
+-   **console.error():** Imprime un mensaje de error en la consola.
+
+-   **console.warn():** Imprime un mensaje de advertencia en la consola.
+
+-   **console.info():** Imprime un mensaje de información en la consola.
+:::
+
+Como ves, la sintaxis es la misma que **console.log()**, sólo cambia el nombre del método.
+
+::: callout-tip
+Aunque puedes usar **console.log()** para imprimir cualquier tipo de mensaje, es recomendable utilizar los métodos que acabamos de ver para imprimir mensajes de error, advertencia e información ya que tienen un formato especial que los hace más fáciles de identificar.
+:::
+
+``` javascript
+console.error('Error')
+// ❌ Error
+console.warn('Advertencia')
+// ⚠️ Advertencia
+console.info('Información')
+// ℹ️ Información
+```
+
+Prueba estos métodos en la consola del navegador y observa los resultados.
+
+## Quiz
+
+::::::: question
+**¿Cuál es la sintaxis adecuada para imprimir un mensaje en la consola del navegador?**
+
+:::::: choices
+::: choice
+console("mensaje")
+:::
+
+::: {.choice .correct-choice}
+console.log("mensaje")
+:::
+
+::: choice
+console.write("mensaje")
+:::
+::::::
+:::::::
+
+::::::: question
+**¿Cómo podrías usar console.log() para imprimir múltiples valores o variables en una sola línea de código?**
+
+:::::: choices
+::: choice
+Utilizando una sintaxis especial que formatea los valores o variables en una sola línea de código
+:::
+
+::: choice
+No es posible imprimir múltiples valores o variables en una sola línea de código con console.log()
+:::
+
+::: {.choice .correct-choice}
+Separando cada valor o variable con comas dentro de los paréntesis de console.log()
+:::
+::::::
+:::::::
+
+::::::: question
+**¿Cuál es la diferencia entre console.log() y console.error() en JavaScript?**
+
+:::::: choices
+::: {.choice .correct-choice}
+console.log() se utiliza para imprimir mensajes en la consola del navegador, mientras que console.error() se utiliza para imprimir mensajes de error.
+:::
+
+::: choice
+console.log() se utiliza para imprimir mensajes de error en la consola del navegador, mientras que console.error() se utiliza para imprimir mensajes normales
+:::
+
+::: choice
+No hay diferencia entre console.log() y console.error() en JavaScript
+:::
+::::::
+:::::::
+
+# Código Condicional con if
+
+El código condicional es un bloque de código que se ejecuta sólo si se cumple una condición. En JavaScript usamos la palabra reservada if para crear un bloque condicional, así:
+
+``` javascript
+if (condición) {
+  // código que se ejecuta si la condición es verdadera
+}
+```
+
+Como ves, ponemos la condición entre paréntesis y el código se ejecuta si la condición entre llaves es **true**. Si la condición es **false**, el código no se ejecuta.
+
+Imagina que quieres mostrar un mensaje si la edad de un usuario es mayor o igual a 18 años. Podrías hacerlo así:
+
+``` javascript
+const edad = 18
 
 if (edad >= 18) {
-    console.log("Eres mayor de edad");
+  console.log('Eres mayor de edad')
+}
+```
+
+## else
+
+Es posible utilizar la palabra clave **else** para ejecutar un bloque de código diferente si la condición es falsa:
+
+``` javascript
+const edad = 17
+
+if (edad >= 18) {
+  console.log('Eres mayor de edad')
 } else {
-    console.log("Eres menor de edad");
-}
-
-let dia = "Lunes";
-
-switch (dia) {
-    case "Lunes":
-        console.log("Hoy es Lunes");
-        break;
-    case "Martes":
-        console.log("Hoy es Martes");
-        break;
-    default:
-        console.log("Hoy es otro día");
+  console.log('Eres menor de edad')
 }
 ```
 
-## Bucles en JavaScript
+Esto es útil para ejecutar un bloque de código u otro dependiendo de si se cumple o no una condición. else if
 
-Los bucles en JavaScript se utilizan para repetir una serie de instrucciones varias veces. Algunos de los bucles más comunes en JavaScript incluyen:
-
--   **for**: Se utiliza para repetir un bloque de código un número específico de veces.
--   **while**: Se utiliza para repetir un bloque de código mientras una condición sea verdadera.
--   **do...while**: Se utiliza para repetir un bloque de código al menos una vez y luego repetirlo mientras una condición sea verdadera.
+También podemos utilizar la palabra clave **else if** para comprobar más de una condición:
 
 ``` javascript
-for (let i = 0; i < 5; i++) {
-    console.log(i);
-}
-
-let j = 0;
-while (j < 5) {
-    console.log(j);
-    j++;
-}
-
-let k = 0;
-do {
-    console.log(k);
-    k++;
-} while (k < 5);
-```
-
-## Funciones en JavaScript
-
-Las funciones en JavaScript se utilizan para encapsular un bloque de código y reutilizarlo en diferentes partes de un programa. Para declarar una función en JavaScript, utiliza la palabra clave **function** seguida del nombre de la función y los parámetros de la función.
-
-``` javascript
-function saludar(nombre) {
-    console.log("Hola " + nombre);
-}
-
-saludar("Juan");
-```
-
-## Eventos en JavaScript
-
-Los eventos en JavaScript se utilizan para manejar la interacción del usuario con una página web. Algunos de los eventos más comunes en JavaScript incluyen:
-
--   **click**: Se activa cuando se hace clic en un elemento.
--   **mouseover**: Se activa cuando el puntero del ratón se mueve sobre un elemento.
--   **keydown**: Se activa cuando se presiona una tecla.
-
-``` html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Eventos en JavaScript</title>
-</head>
-<body>
-    <button id="boton">Haz clic aquí</button>
-    <script href="script.js"></script>
-</body>
-</html>
-```
-
-``` javascript
-document.getElementById("boton").addEventListener("click", function() {
-    alert("Haz hecho clic en el botón");
-});
-```
-
-En los archivos anteriore se muestra un ejemplo de cómo manejar eventos en JavaScript.
-
-## Objetos en JavaScript
-
-Los objetos en JavaScript se utilizan para almacenar colecciones de datos y funciones. Para crear un objeto en JavaScript, utiliza llaves **{}** y define las propiedades y métodos del objeto.
-
-``` javascript
-let persona = {
-    nombre: "Juan",
-    edad: 30,
-    saludar: function() {
-        console.log("Hola, mi nombre es " + this.nombre);
-    }
-};
-
-console.log(persona.nombre); // Juan
-console.log(persona.edad); // 30
-persona.saludar(); // Hola, mi nombre es Juan
-```
-
-## Arrays en JavaScript
-
-Los arrays en JavaScript se utilizan para almacenar una colección de elementos. Para crear un array en JavaScript, utiliza corchetes **[]** y separa los elementos con comas.
-
-``` javascript
-let colores = ["Rojo", "Verde", "Azul"];
-
-console.log(colores[0]); // Rojo
-console.log(colores[1]); // Verde
-console.log(colores[2]); // Azul
-```
-
-## Métodos en JavaScript
-
-Los métodos en JavaScript son funciones que se pueden llamar en un objeto. Algunos de los métodos más comunes en JavaScript incluyen:
-
--   **push()**: Agrega un elemento al final de un array.
--   **pop()**: Elimina el último elemento de un array.
--   **shift()**: Elimina el primer elemento de un array.
--   **unshift()**: Agrega un elemento al principio de un array.
--   **splice()**: Agrega o elimina elementos de un array en una posición específica.
-
-``` javascript
-let colores = ["Rojo", "Verde", "Azul"];
-
-colores.push("Amarillo");
-console.log(colores); // ["Rojo", "Verde", "Azul", "Amarillo"]
-
-colores.pop();
-console.log(colores); // ["Rojo", "Verde", "Azul"]
-
-colores.shift();
-console.log(colores); // ["Verde", "Azul"]
-
-colores.unshift("Rojo");
-console.log(colores); // ["Rojo", "Verde", "Azul"]
-
-colores.splice(1, 0, "Amarillo");
-console.log(colores); // ["Rojo", "Amarillo", "Verde", "Azul"]
-```
-
-## Clases en JavaScript
-
-Las clases en JavaScript se utilizan para crear objetos basados en un modelo. Para crear una clase en JavaScript, utiliza la palabra clave **class** seguida del nombre de la clase y define las propiedades y métodos de la clase.
-
-``` javascript
-class Persona {
-    constructor(nombre, edad) {
-        this.nombre = nombre;
-        this.edad = edad;
-    }
-
-    saludar() {
-        console.log("Hola, mi nombre es " + this.nombre);
-    }
-}
-
-let juan = new Persona("Juan", 30);
-console.log(juan.nombre); // Juan
-console.log(juan.edad); // 30
-juan.saludar(); // Hola, mi nombre es Juan
-```
-
-## Herencia en JavaScript
-
-La herencia en JavaScript se utiliza para crear una clase basada en otra clase. Para heredar una clase en JavaScript, utiliza la palabra clave **extends** seguida del nombre de la clase padre.
-
-``` javascript
-class Empleado extends Persona {
-    constructor(nombre, edad, salario) {
-        super(nombre, edad);
-        this.salario = salario;
-    }
-
-    trabajar() {
-        console.log("Estoy trabajando");
-    }
-}
-
-let pedro = new Empleado("Pedro", 25, 20000);
-console.log(pedro.nombre); // Pedro
-console.log(pedro.edad); // 25
-console.log(pedro.salario); // 20000
-pedro.saludar(); // Hola, mi nombre es Pedro
-pedro.trabajar(); // Estoy trabajando
-```
-
-## Promesas en JavaScript
-
-Las promesas en JavaScript se utilizan para manejar operaciones asincrónicas. Una promesa puede estar en uno de los siguientes estados:
-
--   **Pendiente**: La operación aún no se ha completado.
--   **Cumplida**: La operación se ha completado con éxito.
--   **Rechazada**: La operación ha fallado.
-
-``` javascript
-let promesa = new Promise(function(resolve, reject) {
-    setTimeout(function() {
-        let exito = true;
-
-        if (exito) {
-            resolve("La operación se ha completado con éxito");
-        } else {
-            reject("La operación ha fallado");
-        }
-    }, 2000);
-});
-
-promesa.then(function(resultado) {
-    console.log(resultado);
-}).catch(function(error) {
-    console.log(error);
-});
-```
-
-## Async/Await en JavaScript
-
-Async/Await en JavaScript se utiliza para manejar operaciones asincrónicas de forma más sencilla. La palabra clave **async** se utiliza para declarar una función asincrónica, mientras que la palabra clave **await** se utiliza para esperar a que una promesa se resuelva.
-
-``` javascript
-async function operacion() {
-    let promesa = new Promise(function(resolve, reject) {
-        setTimeout(function() {
-            let exito = true;
-
-            if (exito) {
-                resolve("La operación se ha completado con éxito");
-            } else {
-                reject("La operación ha fallado");
-            }
-        }, 2000);
-    });
-
-    let resultado = await promesa;
-    console.log(resultado);
-}
-
-operacion();
-```
-## Consumir una api con fetch
-
-En esta sección vamos a consumir una api de pokemon con fetch, para ello vamos a seguir los siguientes pasos:
-
-1.  Abre Visual Studio Code.
-
-2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
-
-3.  Escribe el siguiente código en el archivo:
-
-``` html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Consumir una api con fetch</title>
-</head>
-<body>
-    <ul id="pokemones"></ul>
-    <script href="script.js"></script>
-</body>
-</html>
-```
-
-4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
-
-``` javascript
-fetch("https://pokeapi.co/api/v2/pokemon")
-    .then(response => response.json())
-    .then(data => {
-        let pokemones = data.results;
-
-        pokemones.forEach(pokemon => {
-            let li = document.createElement("li");
-            li.textContent = pokemon.name;
-            document.getElementById("pokemones").appendChild(li);
-        });
-    })
-    .catch(error => console.log(error));
-```
-
-5.  Guarda el archivo y ábrelo en un navegador web.
-
-6.  Deberías ver una lista de nombres de pokemones en la página.
-
-En los archivos anteriores se muestra un ejemplo de cómo consumir una api con fetch en JavaScript.
-
-## Crear una aplicación web con JavaScript
-
-En esta sección vamos a crear una aplicación web con JavaScript, para ello vamos a seguir los siguientes pasos:
-
-1.  Abre Visual Studio Code.
-
-2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
-
-3.  Escribe el siguiente código en el archivo:
-
-``` html
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Crear una aplicación web con JavaScript</title>
-</head>
-<body>
-    <h1>Calculadora</h1>
-    <input type="text" id="numero1">
-    <input type="text" id="numero2">
-    <button onclick="sumar()">Sumar</button>
-    <button onclick="restar()">Restar</button>
-    <button onclick="multiplicar()">Multiplicar</button>
-    <button onclick="dividir()">Dividir</button>
-    <h2 id="resultado"></h2>
-    <script href="script.js"></script>
-</body>
-</html>
-```
-
-4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
-
-``` javascript
-function sumar() {
-    let numero1 = parseInt(document.getElementById("numero1").value);
-    let numero2 = parseInt(document.getElementById("numero2").value);
-    let resultado = numero1 + numero2;
-    document.getElementById("resultado").textContent = resultado;
-}
-
-function restar() {
-    let numero1 = parseInt(document.getElementById("numero1").value);
-    let numero2 = parseInt(document.getElementById("numero2").value);
-    let resultado = numero1 - numero2;
-    document.getElementById("resultado").textContent = resultado;
-}
-
-function multiplicar() {
-    let numero1 = parseInt(document.getElementById("numero1").value);
-    let numero2 = parseInt(document.getElementById("numero2").value);
-    let resultado = numero1 * numero2;
-    document.getElementById("resultado").textContent = resultado;
-}
-
-function dividir() {
-    let numero1 = parseInt(document.getElementById("numero1").value);
-    let numero2 = parseInt(document.getElementById("numero2").value);
-    let resultado = numero1 / numero2;
-    document.getElementById("resultado").textContent = resultado;
+const edad = 17
+
+if (edad >= 18) {
+  console.log('Eres mayor de edad')
+} else if (edad >= 16) {
+  console.log('Eres casi mayor de edad')
+} else {
+  console.log('Eres menor de edad')
 }
 ```
 
-5.  Guarda el archivo y ábrelo en un navegador web.
+El programa comprueba la primera condición. Si es **true**, ejecuta el código dentro del bloque **if**. Si es **false**, comprueba la siguiente condición. Si es **true**, ejecuta el código dentro del bloque **else if**. Si es false, ejecuta el código dentro del bloque **else**.
 
-6.  Deberías ver una calculadora en la página.
+Dicho de otra forma, entrará en el primer bloque que cumpla la condición y no entrará en los demás. Si no cumple ninguna, entonces entrará en el bloque **else**.
 
-En los archivos anteriores se muestra un ejemplo de cómo crear una aplicación web con JavaScript.
+## Anidación de condicionales
 
-## Crear un juego con JavaScript
-
-En esta sección vamos a crear un juego con JavaScript, para ello vamos a seguir los siguientes pasos:
-
-1.  Abre Visual Studio Code.
-
-2.  Crea un nuevo archivo y guárdalo con la extensión **.html**.
-
-3.  Escribe el siguiente código en el archivo:
-
-``` html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Crear un juego con JavaScript</title>
-</head>
-<body>
-    <h1>Adivina el número</h1>
-    <input type="text" id="numero">
-    <button onclick="adivinar()">Adivinar</button>
-    <h2 id="resultado"></h2>
-    <script href="script.js"></script>
-</body>
-</html>
-```
-
-4.  Crea un nuevo archivo y guárdalo con la extensión **.js**.
+Es posible anidar condicionales dentro de otros condicionales. Por ejemplo:
 
 ``` javascript
-let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-let intentos = 0;
+const edad = 17
+const tieneCarnet = true
 
-function adivinar() {
-    let numero = parseInt(document.getElementById("numero").value);
-    intentos++;
-
-    if (numero === numeroAleatorio) {
-        document.getElementById("resultado").textContent = "¡Felicidades! Has adivinado el número en " + intentos + " intentos";
-    } else if (numero < numeroAleatorio) {
-        document.getElementById("resultado").textContent = "El número es mayor";
-    } else {
-        document.getElementById("resultado").textContent = "El número es menor";
-    }
+if (edad >= 18) {
+  if (tieneCarnet) {
+    console.log('Puedes conducir')
+  } else {
+    console.log('No puedes conducir')
+  }
+} else {
+  console.log('No puedes conducir')
 }
 ```
 
-5.  Guarda el archivo y ábrelo en un navegador web.
+En muchas ocasiones vas a querer evitar la anidación innecesaria de condicionales ya que se hacen difíciles de leer y mantener. En estos casos es mejor utilizar operadores lógicos para crear la condición:
 
-6.  Deberías ver un juego de adivinar el número en la página.
+``` javascript
+const edad = 17
+const tieneCarnet = true
 
-En los archivos anteriores se muestra un ejemplo de cómo crear un juego con JavaScript.
+// si es mayor de edad y tiene carnet entonces...
+if (edad >= 18 && tieneCarnet) {
+  console.log('Puedes conducir')
+} else {
+  console.log('No puedes conducir')
+}
+```
 
-## Conclusiones
+Otra técnica muy interesante es la de guardar el resultado de la condición en una variable, para que tus condiciones sean mucho más legibles:
 
-JavaScript es un lenguaje de programación poderoso y versátil que se utiliza para crear páginas web interactivas. Con JavaScript, puedes agregar interactividad a una página web, crear aplicaciones web y juegos, y mucho más. JavaScript es un lenguaje de programación del lado del cliente, lo que significa que se ejecuta en el navegador del usuario, en lugar de en el servidor web. JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal. JavaScript es un lenguaje de programación basado en eventos, lo que significa que puedes ejecutar múltiples tareas simultáneamente sin bloquear el hilo principal.
+``` javascript
+const edad = 17
+const tieneCarnet = true
+const puedeConducir = edad >= 18 && tieneCarnet
 
-# Referencias
+if (puedeConducir) {
+  console.log('Puedes conducir')
+} else {
+  console.log('No puedes conducir')
+}
+```
 
--   [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
--   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
--   [W3Schools](https://www.w3schools.com/js/default.asp)
--   [Node.js](https://nodejs.org/en/docs/)
--   [W3Schools Node.js](https://www.w3schools.com/nodejs/default.asp)
--   [MDN Web Docs Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodejs)
+::: callout-tip
+¡Wow! ¿Has visto cómo hemos mejorado la legibilidad de nuestro código? ¡Es mucho más fácil de leer y entender! A este tipo de técnica se le llama *refactorización* y consiste en mejorar el código sin cambiar su comportamiento.
+:::
 
+## La importancia de las llaves
+
+Es importante que sepas que las llaves **{ }** no siempre son obligatorios. Si el bloque de código sólo tiene una línea, puedes omitir las llaves:
+
+``` javascript
+const edad = 17
+
+if (edad >= 18)
+  console.log('Eres mayor de edad')
+else
+  console.log('Eres menor de edad')
+```
+
+También lo puedes escribir en la misma línea:
+
+``` javascript
+const edad = 18
+
+if (edad >= 18) console.log('Eres mayor de edad')
+else console.log('Eres menor de edad')
+```
+
+Sin embargo, **te recomiendo que mientras estés aprendiendo siempre escribas las llaves**. Esto te ayudará a evitar errores y a que tu código sea más legible.
+
+## Quiz
+
+:::::: question
+**¿Qué es un bloque condicional en JavaScript?**
+
+::::: choices
+::: {.choice .correct-choice}
+Un bloque de código que se ejecuta sólo si se cumple una condición
+:::
+
+::: choice
+Un bloque de código que se ejecuta siempre
+:::
+:::::
+::::::
+
+::::::: question
+**¿Qué palabra clave se utiliza en JavaScript para crear un bloque condicional?**
+
+:::::: choices
+::: choice
+if
+:::
+
+::: {.choice .correct-choice}
+else
+:::
+
+::: choice
+then
+:::
+::::::
+:::::::
+
+::::::: question
+**¿Qué palabra clave se utiliza en JavaScript para ejecutar un bloque de código si la condición de un bloque condicional es falsa?**
+
+:::::: choices
+::: choice
+if
+:::
+
+::: choice
+then
+:::
+
+::: {.choice .correct-choice}
+else
+:::
+::::::
+:::::::
+
+## Actividad
+
+1.  Crea una variable llamada **temperatura** y asígnale un valor numérico. Escribe un bloque condicional que imprima en la consola si la temperatura es mayor o igual a 25 grados.
+
+2.  Crea una variable llamada **esVerano** y asígnale un valor booleano. Escribe un bloque condicional que imprima en la consola si es verano o no.
+
+<details>
+
+<summary>Respuesta</summary>
+
+R1.
+
+``` javascript
+const temperatura = 25
+
+if (temperatura >= 25) {
+  console.log('Hace calor')
+}
+```
+
+R2.
+
+``` javascript
+const esVerano = true
+
+if (esVerano) {
+  console.log('Es verano')
+}
+```
+
+</details>
+
+# Bucles con while
+
+Un bucle es una **estructura de control** que permite repetir un bloque de instrucciones. Vamos, **repetir una tarea tantas veces como queramos**.
+
+En JavaScript, existen varias formas de lograrlo, y una de ellas es el bucle con **while**. El bucle **while** es una estructura de control de flujo que ejecuta una sección de código mientras se cumple una determinada condición.
+
+En esta clase, vamos a explicar cómo funciona el bucle **while** en JavaScript y cómo podemos utilizarlo en nuestros programas.
+
+## Sintaxis
+
+La sintaxis del bucle **while** es similar a la de un condicional **if**. La única diferencia es que, en lugar de ejecutar el código una sola vez, se ejecuta mientras se cumpla la condición.
+
+``` javascript
+while (condición) {
+  // código a ejecutar mientras se cumpla la condición
+}
+```
+
+El bucle comienza evaluando la condición dentro de los paréntesis. Si la condición es **true**, se ejecuta el código dentro de las llaves.
+
+Después de ejecutar el código, la condición se evalúa de nuevo, y si sigue siendo verdadera, el código dentro de las llaves se ejecuta de nuevo. **Este proceso se repite hasta que la condición se evalúa como falsa**.
+
+Ten en cuenta que, si la condición es falsa desde el principio, el código dentro de las llaves nunca se ejecutará.
+
+::: callout-tip
+A cada vuelta del bucle se le llama **iteración**. Una iteración es la repetición de un proceso o acción un número determinado de veces, de manera ordenada y sistemática.
+:::
+
+## Ejemplo de uso de while
+
+Vamos a crear la cuenta atrás de un cohete. Creamos una variable **cuentaAtras** que contenga el número de segundos que faltan para el lanzamiento. En este caso, vamos a empezar con 10 segundos.
+
+``` javascript
+let cuentaAtras = 10
+```
+
+Para quitarle un segundo a la cuenta atrás, vamos a utilizar el operador de resta (**-**) y el operador de asignación (**=**).
+
+``` javascript
+let cuentaAtras = 10
+cuentaAtras = cuentaAtras - 1
+console.log(cuentaAtras) // -> 9
+```
+
+Sabiendo esto y cómo funciona el bucle while, podemos crear la cuenta atrás del cohete.
+
+``` javascript
+// iniciamos la variable fuera del bucle
+let cuentaAtras = 10
+
+// mientras la cuenta atrás sea mayor que 0
+while (cuentaAtras > 0) {
+  // mostramos el valor de la cuenta atrás en cada iteración
+  console.log(cuentaAtras)
+  // restamos 1 a la cuenta atrás
+  cuentaAtras = cuentaAtras - 1
+}
+
+console.log('¡Despegue! 🚀')
+```
+
+Si ejecutas este código en consola, deberías ver los números del 10 al 1, y después el mensaje de despegue.
+
+## Cuidado con los bucles infinitos
+
+Los bucles **while** son muy potentes, pero también pueden ser peligrosos. Si la condición nunca se evalúa como falsa, el bucle se ejecutará infinitamente.
+
+``` javascript
+while (true) {
+  console.log('¡Hola hasta el infinito!')
+}
+```
+
+Esto evaluará la condición **true** como verdadera, y ejecutará el código dentro de las llaves una y otra vez.
+
+## Saliendo de un bucle con break
+
+Podemos controlar cuándo queremos salir de un bucle utilizando la palabra reservada **break**. Cuando el intérprete de JavaScript encuentra la palabra **break**, sale del bucle y continúa ejecutando el código que haya después.
+
+``` javascript
+let cuentaAtras = 10
+
+while (cuentaAtras > 0) {
+  console.log(cuentaAtras)
+  cuentaAtras = cuentaAtras - 1
+
+  // si la cuenta atrás es 5, salimos del bucle
+  if (cuentaAtras === 5) {
+    break // <---- salimos del bucle
+  }
+}
+```
+
+¿Cuál es el valor de **cuentaAtras** en este código? Veamos, el bucle estaba haciendo una cuenta atrás... pero le hemos dicho que cuando tuviese el valor **5** saliese del bucle. Por lo tanto, el valor de **cuentaAtras** es **5**.
+
+Usar **break** puede ser útil en bucles si queremos salir de ellos por alguna condición en concreto o para evitar justamente los bucles infinitos.
+
+## Saltando una iteración con continue
+
+Igual que tenemos la posibilidad de "romper" el bucle con **break**, también podemos saltarnos una iteración con **continue**. Cuando el intérprete de JavaScript encuentra la palabra **continue**, salta a la siguiente iteración del bucle.
+
+``` javascript
+let cuentaAtras = 10
+
+while (cuentaAtras > 0) {
+  cuentaAtras = cuentaAtras - 1
+
+  // si la cuenta atrás es un número par...
+  if (cuentaAtras % 2 === 0) {
+    continue // <---- saltamos a la siguiente iteración
+  }
+
+  console.log(cuentaAtras)
+}
+```
+
+¿Qué aparece en la salida de la consola? El bucle está haciendo una cuenta atrás... pero le hemos dicho que si el número es par, se salte esa iteración y deje de ejecutar el código que le sigue.
+
+Por ello, los números pares no aparecen en la consola.
+
+## Anidación de bucles
+
+Podemos anidar bucles dentro de otros bucles. Imagina que en nuestra cuenta atrás para el cohete, tenemos que revisar que 3 cosas están en sus parámetros: el oxígeno, el combustible y la temperatura.
+
+``` javascript
+const NUMERO_REVISIONES = 3
+let cuentaAtras = 10
+
+// mientras la cuenta atrás sea mayor que 0
+while (cuentaAtras > 0) {
+  // mostramos el valor de la cuenta atrás
+  console.log(cuentaAtras)
+
+  // creamos una variable para contar las revisiones realizadas
+  // y la inicializamos a cero
+  let revisionesRealizadas = 0
+
+  // hasta que no hayamos realizado las 3 revisiones...
+  while (revisionesRealizadas < NUMERO_REVISIONES) {
+    // y sumamos 1 a las revisiones realizadas
+    revisionesRealizadas = revisionesRealizadas + 1
+    console.log(revisionesRealizadas + ' revisiones realizadas...')
+  }
+
+  // ahora podemos restar 1 a la cuenta atrás
+  cuentaAtras = cuentaAtras - 1
+}
+```
+
+::: callout-tip
+¿Por qué la constante la hemos puesto toda en mayúsculas? Como ya explicamos en la clase de introducción a JavaScript, es una convención para indicar que es una constante y que no va a cambiar.
+:::
+
+Además del bucle anidado, hay algo también muy interesante en el código anterior y es la creación de la variable **let revisionesRealizadas**.
+
+Ten en cuenta que esa variable se creará y se inicializará a **0** en cada iteración del bucle.
+
+Las variables creadas con **let** y **const** que se crean dentro de un bucle, solo existen dentro de ese bucle. Cuando el bucle termina, la variable desaparece. De hecho si intentas acceder a ella fuera del bucle, te dará un error.
+
+``` javascript
+let cuentaAtras = 10
+
+while (cuentaAtras > 0) {
+  let revisionesRealizadas = 3
+  console.log(revisionesRealizadas)
+  cuentaAtras = cuentaAtras - 1
+}
+
+console.log(revisionesRealizadas) // -> ERROR: ReferenceError
+```
+
+Esto también pasa con otras estructuras de control. Eso es porque el alcance de las variables creadas con **let** y **const** es el bloque entre **{ }** en el que se crean. Lo iremos viendo más adelante para que vayas practicando, no te preocupes.
+
+## Quiz
+
+:::::: question
+**¿Cuál es la sintaxis correcta para utilizar un bucle while en JavaScript?**
+
+::::: choices
+::: {.choice .correct-choice}
+![](images/paste-31.png)
+:::
+
+::: choice
+![](images/paste-34.png)
+:::
+:::::
+::::::
+
+::::::: question
+**¿Cuál es la palabra reservada que se utiliza para salir de un bucle en JavaScript?**
+
+:::::: choices
+::: {.choice .correct-choice}
+break
+:::
+
+::: choice
+continue
+:::
+
+::: choice
+exit
+:::
+::::::
+:::::::
+
+:::::::: question
+**¿Cuántas veces saldrá en consola la palabra 'Café'?**
+
+::: center
+![](images/paste-36.png)
+:::
+
+:::::: choices
+::: {.choice .correct-choice}
+6
+:::
+
+::: choice
+4
+:::
+
+::: choice
+5
+:::
+::::::
+::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
