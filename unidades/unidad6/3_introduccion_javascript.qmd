@@ -1,7 +1,15 @@
-:::{.justify}
+::: {.justify}
 # JavaScript
 
-Esté capítulo está basado en el Curso de **"Aprende JavaScript"** en la url [AprendeJavaScript.dev](https://aprendejavascript.dev/) creado por Miguel Ángel [statick](https://porfolio.dev/#sobre-mi), el cual es un desarrollador FullStack y Creador de Contenido, sin más que agregar comencemos.
+:::{.center}
+![](/images/javascript.png){width="200"}
+:::
+
+Esté capítulo está basado en el Curso de **"Aprende JavaScript"** en la url [AprendeJavaScript.dev](https://aprendejavascript.dev/) creado por Miguel Ángel [Midudev](https://porfolio.dev/#sobre-mi), el cual es un desarrollador FullStack y Creador de Contenido, sin más que agregar comencemos.
+
+:::{.center}
+![](images/paste-45.png)
+:::
 
 ## ¿Qué es JavaScript?
 
@@ -23,25 +31,25 @@ Además, con JavaScript vas a poder desarrollar casi cualquier cosa que te propo
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿JavaScript sólo se puede usar para crear páginas web?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Verdadero
 :::
 
 ::: {.choice .correct-choice}
 Falso
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Qué es programar en el mundo del software?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Crear páginas web y que el usuario pueda usarlas
 :::
 
@@ -49,11 +57,11 @@ Crear páginas web y que el usuario pueda usarlas
 Es el acto de construir un programa o conjunto de instrucciones para decirle a una comptuadora qué y cómo queremos que haga algo
 :::
 
-::: choice
+:::{.choice}
 Cualquier cosa que hagamos en un ordenador
 :::
-::::::
-:::::::
+:::
+:::
 
 # La consola del navegador
 
@@ -63,7 +71,7 @@ Todos los navegadores tienen una herramienta llamada **consola**. La consola nos
 
 Aunque podemos ejecutar código JavaScript de otras formas, para empezar, vamos a usar esta herramienta que nos ofrece el navegador.
 
-::: callout-tip
+::: {.callout-tip}
 Recuerda que llamamos código a las instrucciones que le damos a la computadora para que haga algo.
 :::
 
@@ -89,19 +97,19 @@ En **Firefox**, este es el aspecto de la consola
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Para qué sirve la consola del navegador?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 La consola sirve para poder jugar con JavaScript. Es la única forma de poder ejecutar nuestro código y por eso todos los navegadores lo incorporan.
 :::
 
 ::: {.choice .correct-choice}
 La consola nos permite ejecutar código JavaScript en tiempo real y ver el resultado. También ahí podemos ver los errores, advertencias y trazas que se producen en nuestro código.
 :::
-:::::
-::::::
+:::
+:::
 
 # Editores y entornos de desarrollo
 
@@ -109,19 +117,19 @@ En la actualidad existen muchos editores de código y entornos de desarrollo que
 
 -   **Visual Studio Code**: Es uno de los editores de código más populares y es el que usaremos en este curso.
 
-    ::: center
+    :::{.center}
     ![](images/paste-41.png)
     :::
 
 -   **Runjs**: Un entorno de desarrollo online que nos permite escribir código JavaScript y ver el resultado en tiempo real.
 
-    ::: center
+    :::{.center}
     ![](images/paste-38.png)
     :::
 
 -   **Zed Code Editor**: Un editor de código muy sencillo y minimalista.
 
-    ::: center
+    :::{.center}
     ![](images/paste-39.png)
     :::
 
@@ -237,25 +245,25 @@ Estos son ejemplos de preguntas que podemos responder con un valor booleano.
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Cuántos tipos de datos existen en JavaScript?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Sólo existen 2 tipos de datos
 :::
 
 ::: {.choice .correct-choice}
 9 tipos de datos que se dividen en dos grandes grupos
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Cuántos valores se pueden representar en el tipo de dato Boolean?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 true y false
 :::
 
@@ -263,29 +271,29 @@ true y false
 Cualquier valor que se te ocurra
 :::
 
-::: choice
+:::{.choice}
 Números, cadenas de texto y verdadero/falso.
 :::
-::::::
-:::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **El operador + se utiliza para...**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Sólo sirve para sumar dos números
 :::
 
-::: choice
+:::{.choice}
 Concatenar dos textos
 :::
 
 ::: {.choice .correct-choice}
 Depende del tipo de dato que se esté utilizando
 :::
-::::::
-:::::::
+:::
+:::
 
 # Los operadores de comparación
 
@@ -349,7 +357,7 @@ No sólo podemos usar los comparadores para comparar números, también podemos 
 `Estoy Aprendiendo JavaScript` === 'Estoy Aprendiendo JavaScript' // true
 ```
 
-::: callout-tip
+::: {.callout-tip}
 Fíjate que puedes comparar cadenas de texto que usan comillas simples, dobles o acentos graves. Al final, siguen siendo cadenas de texto y lo importante es que sean iguales.
 :::
 
@@ -394,32 +402,32 @@ En clases posteriores veremos cómo funciona este tipo de mecanismo y explicarem
 
 ## Quiz
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: question
+::::::::::::::::::::::::::::::::::::::::::::{.question}
 **¿Cuál es el resultado de 24 \> 12?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 true
 :::
 
-::: choice
+:::{.choice}
 false
 :::
-:::::
+:::
 
-:::::: question
+:::{.question}
 **Los operadores de compración solo se pueden usar con números**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Sí, sólo ahí tiene sentido
 :::
 
 ::: {.choice .correct-choice}
 No, se pueden usar con otros tipos de datos como cadenas de textos o boleanos
 :::
-:::::
-::::::
+:::
+:::
 
 # Operadores lógicos en JavaScript
 
@@ -534,47 +542,47 @@ Ahora te puede costar un poco entender qué está pasando, pero con la práctica
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Qué operador lógico se utiliza para comprobar si dos o más condiciones son verdaderas?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 OR (\|\|)
 :::
 
 ::: {.choice .correct-choice}
 AND (&&)
 :::
-:::::
-::::::
+:::
+:::
 
-:::::: question
+:::{.question}
 **¿Qué operador lógico se utiliza para invertir el valor de un booleano?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 OR (\|\|)
 :::
 
 ::: {.choice .correct-choice}
 NOT (!)
 :::
-:::::
-::::::
+:::
+:::
 
-:::::: question
+:::{.question}
 **¿Qué valor devuelve la expresión false \|\| true?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 false
 :::
 
 ::: {.choice .correct-choice}
 true
 :::
-:::::
-::::::
+:::
+:::
 
 # Variables
 
@@ -605,7 +613,7 @@ numero = 5
 numero + 1 // -> 5 + 1
 ```
 
-::: callout-tip
+::: {.callout-tip}
 ¡Ojo! Si no guardas el valor de esta nueva operación, el valor de la variable **numero** seguirá siendo **5**.
 
 ``` javascript
@@ -732,7 +740,7 @@ En algunos lenguajes de programación es muy común usar snake_case para nombrar
 
 Lo más habitual, y es buena idea, es usarlo en los nombres de archivos. Por ejemplo, **mi_archivo.js**. Esto es porque algunos sistemas operativos distinguen entre mayúsculas y minúsculas y, por tanto, **mi_archivo.js** y **Mi_archivo.js** son dos archivos diferentes.
 
-::: callout-tip
+::: {.callout-tip}
 También existe kebab-case, que es una forma de nombrar que consiste en escribir todas las palabras en minúsculas y separarlas con guiones. Por ejemplo: mi-archivo.js. Es muy similar a snake_case pero con guiones en vez de guiones bajos. No se puede usar para nombrar variables pero sí es común usarlo en los nombres de archivos.
 :::
 
@@ -748,51 +756,51 @@ Para las constantes, con valores que no van a cambiar, es muy común usar **SCRE
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Qué es una variable?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 En JavaScript, una variable es un contenedor de información que se utiliza para almacenar datos en un programa.
 :::
 
-::: choice
+:::{.choice}
 Una variable es un tipo de dato que se utiliza para almacenar información en un programa.
 :::
-:::::
-::::::
+:::
+:::
 
-:::::: question
+:::{.question}
 **¿Qué peculiaridad tienen las variables const en JavaScript?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 No se pueden reasignar
 :::
 
-::: choice
+:::{.choice}
 Sólo pueden guardar números
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **Siempre hay que asignar un valor a una variable**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Sí, siempre
 :::
 
-::: choice
+:::{.choice}
 No, nunca
 :::
 
 ::: {.choice .correct-choice}
 Sólo si es una variable const
 :::
-::::::
-:::::::
+:::
+:::
 
 ## null y undefined
 
@@ -802,7 +810,7 @@ En esta clase vas a aprender otros dos tipos de datos que, aunque son similares,
 
 La particularidad de estos dos tipos de datos es que cada uno sólo tiene un valor. El tipo **null** sólo puede tener el valor **null** y el tipo **undefined** sólo puede tener el valor undefined.
 
-::: callout-tip
+::: {.callout-tip}
 Es como el tipo booleano que podía ser **true** y **false** pero, en este caso, sólo tiene un valor.
 :::
 
@@ -870,25 +878,25 @@ null === null // -\> true undefined === undefined // -\> true
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **null y undefined son dos valores que significan lo mismo.**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Sí, ambos indican la ausencia de valor.
 :::
 
 ::: {.choice .correct-choice}
 No, null es un valor que indica algo vacío, mientras que undefined indica algo que no está definido todavía.
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Qué valor tiene una variable a la que no se le ha asignado nada al declararla?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Un valor null
 :::
 
@@ -896,11 +904,11 @@ Un valor null
 Un valor undefined
 :::
 
-::: choice
+:::{.choice}
 No se puede declarar a una variable sin asignar un valor
 :::
-::::::
-:::::::
+:::
+:::
 
 # Operador typeof
 
@@ -984,33 +992,33 @@ typeof dogId === "string" // false
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Para qué sirve el operador typeof en JavaScript?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Nos permite leer el valor de una variable
 :::
 
 ::: {.choice .correct-choice}
 Nos da el tipo de dato de una variable
 :::
-:::::
-::::::
+:::
+:::
 
-:::::: question
+:::{.question}
 **El operador typeof siempre devuelve una cadena de texto con el tipo del operando.**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 Si, siempre devuelve una cadena de texto
 :::
 
-::: choice
+:::{.choice}
 Depende del tipo de dato que le pasemos, Si le pasamos un número, nos devolverá un number
 :::
-:::::
-::::::
+:::
+:::
 
 ## Comentarios
 
@@ -1064,39 +1072,39 @@ Es mejor que tu código sea lo suficientemente claro como para no necesitar come
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Para qué sirven los comentarios en JavaScript?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 Sirven para documentar nuestro código y explicar qué hace cada parte de él
 :::
 
-::: choice
+:::{.choice}
 Para cambiar el comportamiento de nuestro código
 :::
-:::::
-::::::
+:::
+:::
 
-:::::: question
+:::{.question}
 **¿Cómo se escriben los comentarios en JavaScript?**
 
-::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Puedes usar \# para escribir comentarios de una línea o varias
 :::
 
 ::: {.choice .correct-choice}
 Puedes usar // para escribir comentarios de una línea o /\* \*/ para escribir comentarios de varias líneas
 :::
-:::::
-::::::
+:::
+:::
 
 ## console.log()
 
 **console.log()** es una función integrada en *JavaScript* que se utiliza para imprimir mensajes en la consola del navegador o del editor de código. Se utiliza principalmente para depurar el código y para **imprimir valores de variables y mensajes para ayudar en el proceso de desarrollo**.
 
-::: callout-tip
+::: {.callout-tip}
 En programación, una función es un conjunto de instrucciones que se pueden usar una y otra vez para hacer una tarea específica. Muchas veces, las funciones se utilizan para evitar repetir código y son parametrizables. Más adelante tendremos una sección sólo para ellas.
 :::
 
@@ -1138,7 +1146,7 @@ console.log(nombre, version)
 
 Además de **console.log()**, existen otros métodos que puedes utilizar para imprimir mensajes en la consola. Algunos de ellos son:
 
-::: callout-tip
+::: {.callout-tip}
 -   **console.error():** Imprime un mensaje de error en la consola.
 
 -   **console.warn():** Imprime un mensaje de advertencia en la consola.
@@ -1148,7 +1156,7 @@ Además de **console.log()**, existen otros métodos que puedes utilizar para im
 
 Como ves, la sintaxis es la misma que **console.log()**, sólo cambia el nombre del método.
 
-::: callout-tip
+::: {.callout-tip}
 Aunque puedes usar **console.log()** para imprimir cualquier tipo de mensaje, es recomendable utilizar los métodos que acabamos de ver para imprimir mensajes de error, advertencia e información ya que tienen un formato especial que los hace más fáciles de identificar.
 :::
 
@@ -1165,11 +1173,11 @@ Prueba estos métodos en la consola del navegador y observa los resultados.
 
 ## Quiz
 
-::::::: question
+:::{.question}
 **¿Cuál es la sintaxis adecuada para imprimir un mensaje en la consola del navegador?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 console("mensaje")
 :::
 
@@ -1177,47 +1185,47 @@ console("mensaje")
 console.log("mensaje")
 :::
 
-::: choice
+:::{.choice}
 console.write("mensaje")
 :::
-::::::
-:::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Cómo podrías usar console.log() para imprimir múltiples valores o variables en una sola línea de código?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Utilizando una sintaxis especial que formatea los valores o variables en una sola línea de código
 :::
 
-::: choice
+:::{.choice}
 No es posible imprimir múltiples valores o variables en una sola línea de código con console.log()
 :::
 
 ::: {.choice .correct-choice}
 Separando cada valor o variable con comas dentro de los paréntesis de console.log()
 :::
-::::::
-:::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Cuál es la diferencia entre console.log() y console.error() en JavaScript?**
 
-:::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 console.log() se utiliza para imprimir mensajes en la consola del navegador, mientras que console.error() se utiliza para imprimir mensajes de error.
 :::
 
-::: choice
+:::{.choice}
 console.log() se utiliza para imprimir mensajes de error en la consola del navegador, mientras que console.error() se utiliza para imprimir mensajes normales
 :::
 
-::: choice
+:::{.choice}
 No hay diferencia entre console.log() y console.error() en JavaScript
 :::
-::::::
-:::::::
+:::
+:::
 
 # Código Condicional con if
 
@@ -1322,7 +1330,7 @@ if (puedeConducir) {
 }
 ```
 
-::: callout-tip
+::: {.callout-tip}
 ¡Wow! ¿Has visto cómo hemos mejorado la legibilidad de nuestro código? ¡Es mucho más fácil de leer y entender! A este tipo de técnica se le llama *refactorización* y consiste en mejorar el código sin cambiar su comportamiento.
 :::
 
@@ -1352,25 +1360,25 @@ Sin embargo, **te recomiendo que mientras estés aprendiendo siempre escribas la
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Qué es un bloque condicional en JavaScript?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 Un bloque de código que se ejecuta sólo si se cumple una condición
 :::
 
-::: choice
+:::{.choice}
 Un bloque de código que se ejecuta siempre
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Qué palabra clave se utiliza en JavaScript para crear un bloque condicional?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 if
 :::
 
@@ -1378,29 +1386,29 @@ if
 else
 :::
 
-::: choice
+:::{.choice}
 then
 :::
-::::::
-:::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Qué palabra clave se utiliza en JavaScript para ejecutar un bloque de código si la condición de un bloque condicional es falsa?**
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 if
 :::
 
-::: choice
+:::{.choice}
 then
 :::
 
 ::: {.choice .correct-choice}
 else
 :::
-::::::
-:::::::
+:::
+:::
 
 ## Actividad
 
@@ -1458,7 +1466,7 @@ Después de ejecutar el código, la condición se evalúa de nuevo, y si sigue s
 
 Ten en cuenta que, si la condición es falsa desde el principio, el código dentro de las llaves nunca se ejecutará.
 
-::: callout-tip
+::: {.callout-tip}
 A cada vuelta del bucle se le llama **iteración**. Una iteración es la repetición de un proceso o acción un número determinado de veces, de manera ordenada y sistemática.
 :::
 
@@ -1583,7 +1591,7 @@ while (cuentaAtras > 0) {
 }
 ```
 
-::: callout-tip
+::: {.callout-tip}
 ¿Por qué la constante la hemos puesto toda en mayúsculas? Como ya explicamos en la clase de introducción a JavaScript, es una convención para indicar que es una constante y que no va a cambiar.
 :::
 
@@ -1609,59 +1617,59 @@ Esto también pasa con otras estructuras de control. Eso es porque el alcance de
 
 ## Quiz
 
-:::::: question
+:::{.question}
 **¿Cuál es la sintaxis correcta para utilizar un bucle while en JavaScript?**
 
-::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 ![](images/paste-31.png)
 :::
 
-::: choice
+:::{.choice}
 ![](images/paste-34.png)
 :::
-:::::
-::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 **¿Cuál es la palabra reservada que se utiliza para salir de un bucle en JavaScript?**
 
-:::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 break
 :::
 
-::: choice
+:::{.choice}
 continue
 :::
 
-::: choice
+:::{.choice}
 exit
 :::
-::::::
-:::::::
+:::
+:::
 
-:::::::: question
+:::{.question}
 **¿Cuántas veces saldrá en consola la palabra 'Café'?**
 
-::: center
+:::{.center}
 ![](images/paste-36.png)
 :::
 
-:::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 6
 :::
 
-::: choice
+:::{.choice}
 4
 :::
 
-::: choice
+:::{.choice}
 5
 :::
-::::::
-::::::::
+:::
+:::
 
 # Bucles con do while
 
@@ -1702,7 +1710,7 @@ do {
 } while (respuesta)
 ```
 
-::: callout-tip
+::: {.callout-tip}
 ¿Por qué hay que poner la variable **respuesta** fuera? Porque si no, no podría ser usada en la condición del bucle. Ya vas viendo lo que comentámos antes del ámbito de las variables.
 :::
 
@@ -1710,23 +1718,23 @@ Si el usuario pulsa "Aceptar", la variable **respuesta** valdrá **true** y el b
 
 ## Quiz
 
-::::::: question
+:::{.question}
 ¿Cuántas veces como mínimo se ejecutará el código dentro de un bucle do{ ... } while?
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Ninguna vez
 :::
 
-::: choice
+:::{.choice}
 Depende de la condición
 :::
 
 ::: {.choice .correct-choice}
 Una vez
 :::
-::::::
-:::::::
+:::
+:::
 
 # Expresiones y declaraciones
 
@@ -1736,7 +1744,7 @@ En JavaScript, existen dos tipos de elementos fundamentales para escribir códig
 
 Las declaraciones en JavaScript son sentencias que definen la creación de una variable, función o clase. **Podríamos decir que las declaraciones son como las instrucciones que le damos a JavaScript para que haga algo**.
 
-::: callout-tip
+::: {.callout-tip}
 Las funciones y las clases las veremos más adelante en el curso, no te preocupes.
 :::
 
@@ -1793,29 +1801,29 @@ while (let i = 0) { // ❌ SyntaxError
 
 # Quiz
 
-::::::: question
+:::{.question}
 ¿Qué son las declaraciones en JavaScript y para qué se utilizan?
 
-:::::: choices
+:::{.choices}
 ::: {.choice .correct-choice}
 Las declaraciones en JavaScript son sentencias que definen la creación de una variable, función o clase para que puedan ser usadas posteriormente en el código.
 :::
 
-::: choice
+:::{.choice}
 Las declaraciones en JavaScript son sentencias que producen un valor. Se utilizan para calcular un valor y devolverlo en una expresión.
 :::
 
-::: choice
+:::{.choice}
 Las declaraciones en JavaScript son sentencias que se utilizan para realizar operaciones matemáticas complejas.
 :::
-::::::
-:::::::
+:::
+:::
 
-::::::: question
+:::{.question}
 ¿Qué son las expresiones en JavaScript y para qué se utilizan?
 
-:::::: choices
-::: choice
+:::{.choices}
+:::{.choice}
 Las expresiones en JavaScript son sentencias que definen la creación de una variable
 :::
 
@@ -1823,11 +1831,11 @@ Las expresiones en JavaScript son sentencias que definen la creación de una var
 Las expresiones en JavaScript son sentencias que producen un valor.
 :::
 
-::: choice
+:::{.choice}
 Las expresiones sólo se usan como condiciones de los condicionales if y los bucles.
 :::
-::::::
-:::::::
+:::
+:::
 
 # Bucles con for
 
@@ -1947,23 +1955,21 @@ for (let i = 1; i <= 10; i++) {
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Cuál es la sintaxis correcta para crear un bucle for en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 ![](images/paste-42.png)
 :::
 
 ::: {.choice .correct-choice}
 ![](images/paste-44.png)
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Cuántas veces veremos el mensaje "Hola" en consola?
 
 ``` javascript
@@ -1972,20 +1978,18 @@ for (let i = 0; i < 10 && i !== 3; i++) {
 }
 ```
 
-::: choices
-
-::: {.choice}
+:::{.choices}
+:::{.choice}
 10 veces
 :::
 
-::: choice
+:::{.choice}
 4 veces
 :::
 
 ::: {.choice .correct-choice}
 3 veces
 :::
-
 :::
 :::
 
@@ -2012,9 +2016,10 @@ switch (expresión) {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 La condición de **default** es opcional. No es obligatorio que la uses si no la necesitas. Es como el **else** de las condiciones **if**.
 :::
+
 Por ejemplo si queremos mostrar un mensaje diferente dependiendo del día de la semana:
 
 ``` javascript
@@ -2033,7 +2038,7 @@ switch (dia) {
 
 Vamos a hacer esto un poco más interesante. En JavaScript podemos recuperar la información de la hora y la fecha usando el objeto **Date**. Este objeto tiene un método llamado **getDay()** que nos devuelve el día de la semana en formato numérico, siendo 0 el domingo y 6 el sábado.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Igual que **console** es un objeto. También **Date** lo es. Un objeto en JavaScript no es muy diferente a un objeto en la vida real. Tiene propiedades y funciones que podemos usar. En este caso, **getDay()** es una función que nos devuelve el día de la semana.
 :::
 
@@ -2059,6 +2064,7 @@ switch (dia) {
     break
 }
 ```
+
 # switch vs if
 
 Muchas veces verás que puedes escribir el mismo código usando **switch** o **if**. El ejemplo anterior con un **if**:
@@ -2133,7 +2139,6 @@ switch (dia) {
 
 Si hoy es martes (**2**), se ejecutarán todos los casos después de ese, ya que no hay ningún **break** que lo impida. Por lo tanto, el resultado en consola sería:
 
-
 ``` bash
 ¡Hoy es martes! 🥵
 ¡Hoy es miércoles! 🤓
@@ -2168,27 +2173,25 @@ Es un patrón algo más avanzado y es una alternativa a usar **if** y **else if*
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Cuál es la función de la palabra reservada default en una declaración switch en JavaScript?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 Es el caso que se ejecuta cuando se produce un error en el switch
 :::
 
-::: choice
+:::{.choice}
 Es el caso que se ejecuta cuando ninguno de los casos coincide con la expresión
 :::
 
-::: {.choice}
+:::{.choice}
 Es un caso opcional que se puede utilizar para realizar acciones adicionales
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué problema tiene este código?
 
 ``` javascript
@@ -2204,24 +2207,22 @@ switch (day) {
 }
 ```
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 No tiene ningún problema
 :::
 
-::: choice
+:::{.choice}
 Se repite mucho código
 :::
 
 ::: {.choice .correct-choice}
 Falta usar break en cada caso
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Se puede hacer esto con switch?
 
 ``` javascript
@@ -2240,20 +2241,18 @@ switch (true) {
 }
 ```
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 No, porque no se puede usar una expresión booleana en el switch
 :::
 
-::: choice
+:::{.choice}
 No, porque no se puede saber el valor de x dentro
 :::
 
 ::: {.choice .correct-choice}
 Sí, no hay ningún problema
 :::
-
 :::
 :::
 
@@ -2273,23 +2272,21 @@ function saludar() {
 
 Como ves, declarar una función consiste de:
 
-*   La palabra reservada **function** que indica que estamos definiendo una función.
+-   La palabra reservada **function** que indica que estamos definiendo una función.
 
-*   El nombre de la función, en este caso **saludar**. Normalmente usamos verbos para nombrar funciones, ya que son acciones que realizan.
+-   El nombre de la función, en este caso **saludar**. Normalmente usamos verbos para nombrar funciones, ya que son acciones que realizan.
 
-*   Un par de paréntesis **( )** después del nombre. Pueden contener parámetros. En este caso, no tenemos ninguno.
+-   Un par de paréntesis **( )** después del nombre. Pueden contener parámetros. En este caso, no tenemos ninguno.
 
-*   Un bloque de código entre llaves **{ }**. En este caso, solo tenemos una línea de código, pero podríamos tener muchas más.
+-   Un bloque de código entre llaves **{ }**. En este caso, solo tenemos una línea de código, pero podríamos tener muchas más.
 
 Nuestra función ahora mismo no devuelve nada pero cada vez que la llamemos, imprimirá **Hola** en la consola.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Las funciones pueden devolver un resultado (un número, una cadena de texto, un booleano...) o puede no devolver nada. En ese caso, la función devuelve **undefined**.
 :::
 
-saludar() // -> Hola Diego
-saludar() // -> Hola Diego
-saludar() // -> Hola Diego
+saludar() // -\> Hola Diego saludar() // -\> Hola Diego saludar() // -\> Hola Diego
 
 # Devolviendo un resultado
 
@@ -2311,11 +2308,11 @@ const resultado = sumar()
 console.log(sumar()) // -> 2
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 En la siguiente clase verás cómo puedes pasar parámetros a una función para hacerlas todavía más interesantes y reutilizables.
 :::
 
-:::{.callout-tip}
+::: {.callout-tip}
 Recuerda, si no utilizamos **return**, la función devolverá **undefined**.
 :::
 
@@ -2325,10 +2322,10 @@ La función **saludar** y **sumar** no parecen muy útiles, pero con lo poco que
 
 Para ello vamos a descubrir **Math**, un objeto incorporado en JavaScript que tiene propiedades y métodos para constantes y funciones matemáticas. Vamos a ver dos métodos que nos van a ser muy útiles:
 
-*   **Math.random():** devuelve un número aleatorio entre 0 y 1, con decimales.
-*   **Math.floor():** redondea un número hacia abajo.
+-   **Math.random():** devuelve un número aleatorio entre 0 y 1, con decimales.
+-   **Math.floor():** redondea un número hacia abajo.
 
-:::{.callout-tip}
+::: {.callout-tip}
 **Math.random** es parecido a **console.log**, en el sentido que son métodos que JavaScript incorpora de serie y que podemos utilizar en cualquier punto de nuestro programa.
 :::
 
@@ -2357,18 +2354,17 @@ function getRandomNumber() {
 
 ¿Sabes lo mejor? Que **esa función va a acompañarte durante toda tu carrera**. Es muy común necesitar crear un número aleatorio en un programa, así que es muy útil tener una función que lo haga por nosotros.
 
-:::{.callout-tip}
+::: {.callout-tip}
 En la función hemos utilizado varias variables para ir guardando los resultados intermedios. Podríamos haberlo hecho todo en una sola línea, pero así es más fácil de entender.
 :::
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué es una función en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 Algo que se puede hacer con JavaScript de base
 :::
 
@@ -2376,50 +2372,45 @@ Algo que se puede hacer con JavaScript de base
 Un bloque de código que realiza una tarea específica cuando se llama
 :::
 
-::: choice
+:::{.choice}
 Una variable que almacena información
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Cuál es la sintaxis básica de una función en JavaScript?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 function nombreFuncion() { ... }
 :::
 
-::: choice
+:::{.choice}
 const function() { ... }
 :::
 
-::: choice
+:::{.choice}
 fn nombreFuncion() { ... }
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué devuelve una función declarada con function si no tiene una declaración de retorno explícita?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 null
 :::
 
-::: {.correct-choice}
+::: correct-choice
 undefined
 :::
 
-::: choice
+:::{.choice}
 0
 :::
-
 :::
 :::
 
@@ -2442,6 +2433,7 @@ saludar('Diego') // -> Hola Diego
 saludar('Itziar') // -> Hola Itziar
 saludar('Carmen') // -> Hola Carmen
 ```
+
 Ya ves como algo que parece tan sencillo, tiene un poder enorme. **Las funciones son la base de la programación y nos permiten crear programas complejos a partir de pequeñas piezas**.
 
 Por ejemplo, para crear una calculadora, deberíamos empezar a crear funciones que realicen las operaciones básicas. En este caso necesitaremos parametrizar la función para que acepte los dos números para hacer la operación.
@@ -2455,7 +2447,9 @@ function restar(a, b) {
   return a - b
 }
 ```
+
 Y ya podríamos usarlas:
+
 ``` javascript
 const resultadoSuma = sumar(2, 3)
 console.log(resultadoSuma) // -> 5
@@ -2477,6 +2471,7 @@ function sumar(a, b) {
 // cuando llamamos a la función, le pasamos dos argumentos: 2 y 3
 const resultadoSuma = sumar(2, 3)
 ```
+
 Normalmente mucha gente confunde los términos y usa parámetro para referirse a los argumentos. Pero es importante que sepas diferenciarlos, porque son cosas distintas.
 
 # El orden de los parámetros importa
@@ -2498,65 +2493,64 @@ function cocinarMicroondas(plato, tiempo, potencia) {
   return '❌ Plato no soportado'
 }
 ```
-:::{.callout-tip}
+
+::: {.callout-tip}
 Sí, puedes hacer un **return** dentro de un condicional. Esto hace que la función se detenga y devuelva el valor indicado en el **return**.
 :::
+
 Si usamos bien los parámetros, la función funciona correctamente:
 
 ``` javascript
 const resultado = cocinarMicroondas('🐥', 1, 5)
 console.log(resultado) // -> 🍗
 ```
+
 Pero si cambiamos el orden de los parámetros, la función no funciona:
 
 ``` javascript
 const resultado = cocinarMicroondas(1, 5, '🐥')
 console.log(resultado) // -> '❌ Plato no soportado'
 ```
+
 Esto es porque la función espera que el primer parámetro sea el plato, el segundo el tiempo y el tercero la potencia. **Si cambiamos el orden, podemos tener comportamientos inesperados o errores**.
 
 Más adelante veremos una forma en la que podemos evitar este tipo de errores.
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué son los parámetros de una función en JavaScript?
 
-::: choices
-
-::: {.correct-choice}
+:::{.choices}
+::: correct-choice
 Valores que espera recibir una función al llamarla para usarlos dentro de ella
 :::
 
-::: choice
+:::{.choice}
 Valores que devuelve una función
 :::
 
-::: choice
+:::{.choice}
 Valores que se declaran dentro de una función
 :::
-
 :::
 :::
 
-::: question
-
+:::{.question}
 ¿Qué son los argumentos de una función en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 Valores que espera recibir una función
 :::
 
-::: {.correct-choice}
+::: correct-choice
 Valores que se pasan a una función al llamarla
 :::
 
-::: choice
+:::{.choice}
 Lo mismo que los parámetros
 :::
-
 :::
 :::
 
@@ -2564,22 +2558,20 @@ Lo mismo que los parámetros
 ¿Qué pasa si cambiamos el orden de los parámetros al llamar una función?
 :::
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 La función se detiene y no devuelve nada
 :::
 
-::: choice
+:::{.choice}
 La función devuelve undefined
 :::
 
-::: {.correct-choice}
+::: correct-choice
 Podemos tener comportamientos inesperados o errores
 :::
-
 :::
-:::
+::::::::::::::::::::::::::::::::::::::::::::
 
 # Function Expression
 
@@ -2591,16 +2583,11 @@ Sin embargo, existen dos formas más de declarar funciones en JavaScript: functi
 
 Una **function expression** es una función que se asigna a una variable. Por ejemplo:
 
-``` javascript// esto es una function expression
-const sum = function (a, b) {
-  return a + b
-}
+\`\`\` javascript// esto es una function expression const sum = function (a, b) { return a + b }
 
-// esto es una declaración de función
-function sum(a, b) {
-  return a + b
-}
-```
+// esto es una declaración de función function sum(a, b) { return a + b }
+
+```         
 
 :::{.callout-tip}
 ¡Fíjate que la **function** no tiene nombre en la **function expression**! Cuando una función no tiene nombre se le llama función anónima. Aunque en este caso, la función está asignada a una variable que sí tiene nombre y por eso podremos utilizarla más adelante.
@@ -2625,6 +2612,7 @@ function sum(a, b) {
   return a + b
 }
 ```
+
 Aquí primero usamos la función y la declaramos luego. ¡Y funciona! ¿Cómo puede ser? **¿No debería darnos un error ya que la función todavía no existe?**
 
 Lo que está pasando es que JavaScript asigna en memoria durante la fase de compilación las declaraciones de funciones y por eso al ejecutarse el código tiene acceso a esa posición de memoria a la que se refiere la función.
@@ -2645,32 +2633,29 @@ const sum = function (a, b) {
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué es una function expression en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 Una función que se define dentro de otra función
 :::
 
-::: choice
+:::{.choice}
 Una función que se declara con la palabra clave "function"
 :::
 
-::: {.correct-choice}
+::: correct-choice
 Una función que se asigna a una variable
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué diferencia hay entre una declaración de función y una función de expresión en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 Sólo la forma en que se declaran
 :::
 
@@ -2678,26 +2663,23 @@ Sólo la forma en que se declaran
 El hoisting y cómo se crean
 :::
 
-::: choice
+:::{.choice}
 El comportamiento al llamarlas
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Se aplica el hoisting a las funciones de expresión en JavaScript?
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 Sí
 :::
 
 ::: {.choice .correct-choice}
 No
 :::
-
 :::
 :::
 
@@ -2715,11 +2697,11 @@ const miFuncionFlecha = () => {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 Las funciones flecha son siempre **funciones anónimas** y **function expressions**. Esto significa que no tienen nombre y que se asignan a una variable.
 :::
 
-En lugar de la palabra clave **function**, utilizamos una flecha **=>** para definir la función. También podemos omitir los paréntesis alrededor de los parámetros si solo tenemos uno:
+En lugar de la palabra clave **function**, utilizamos una flecha **=\>** para definir la función. También podemos omitir los paréntesis alrededor de los parámetros si solo tenemos uno:
 
 ``` javascript
 const saludar = nombre => {
@@ -2731,13 +2713,13 @@ const saludar = nombre => {
 
 Las funciones flecha tienen varias **ventajas sobre las funciones regulares en JavaScript**. Algunas son:
 
-*   **Sintaxis más concisa:** la sintaxis de las funciones flecha es más corta y más fácil de leer que la sintaxis de las funciones regulares, especialmente cuando se trabaja con funciones de una sola línea.
+-   **Sintaxis más concisa:** la sintaxis de las funciones flecha es más corta y más fácil de leer que la sintaxis de las funciones regulares, especialmente cuando se trabaja con funciones de una sola línea.
 
-*   **Return implícito:** las funciones flecha puede devolver el valor de la expresión sin usar la palabra clave **return** cuando son de una sola línea. Esto hace que las funciones flecha sean aún más cortas y más fáciles de leer.
+-   **Return implícito:** las funciones flecha puede devolver el valor de la expresión sin usar la palabra clave **return** cuando son de una sola línea. Esto hace que las funciones flecha sean aún más cortas y más fáciles de leer.
 
-*   **Funciones anónimas más legibles:** las funciones flecha son una forma más legible y concisa de crear funciones anónimas en JavaScript, lo cual puede hacer que nuestro código sea más fácil de entender.
+-   **Funciones anónimas más legibles:** las funciones flecha son una forma más legible y concisa de crear funciones anónimas en JavaScript, lo cual puede hacer que nuestro código sea más fácil de entender.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Recuerda, las funciones anónimas son funciones que no tienen nombre. Son como las que vimos en la clase anterior.
 :::
 
@@ -2759,51 +2741,48 @@ const sumarFlecha = (a, b) => {
 // Función flecha con return implícito
 const sumarFlecha = (a, b) => a + b
 ```
+
 Como podemos ver, la función flecha con return implícito es mucho más corta y fácil de leer que la función regular. Esto es especialmente útil cuando estamos trabajando con funciones de una sola línea.
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué son las funciones flecha en JavaScript?
 
-::: choices
-
-::: {.correct-choice}
+:::{.choices}
+::: correct-choice
 Una forma más concisa de crear funciones en JavaScript
 :::
 
-::: choice
+:::{.choice}
 Una forma más compleja de crear funciones en JavaScript
 :::
 
-::: choice
+:::{.choice}
 Una técnica para evitar el uso de funciones en JavaScript
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Cuál es una de las ventajas de las funciones flecha?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 Return implícito
 :::
 
-::: choice
+:::{.choice}
 Son más rápidas
 :::
 
-::: choice
+:::{.choice}
 Funciones anónimas
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué devuelve la siguiente función flecha?
 
 ``` javascript
@@ -2811,9 +2790,8 @@ const sum = (a, b) => { a + b }
 sum(2, 3)
 ```
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 5
 :::
 
@@ -2821,10 +2799,9 @@ sum(2, 3)
 undefined
 :::
 
-::: choice
+:::{.choice}
 Error
 :::
-
 :::
 :::
 
@@ -2864,7 +2841,7 @@ cuentaAtras(3)
 
 La ejecución la veríamos así:
 
-```javascript
+``` javascript
 cuentaAtras(3) -> (muestra 3)
                \ 
           cuentaAtras(2) -> (muestra 2)
@@ -2876,7 +2853,7 @@ cuentaAtras(3) -> (muestra 3)
                                    cuentaAtras(-1) -> salida
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 ¡Cuidado! Si no ponemos la condición base, la función se llamará infinitamente y el navegador se quedará bloqueado. Cuando hacemos recursividad SIEMPRE hay que tener una condición que haga que la función salga de sí misma.
 :::
 
@@ -2884,24 +2861,15 @@ cuentaAtras(3) -> (muestra 3)
 
 La recursividad se usa muchas veces para solucionar algoritmos. Por ejemplo, vamos a crear una función que calcule el factorial de un número.
 
-:::{.callout-tip}
-El factorial de un número es el resultado de multiplicar ese número por todos los anteriores hasta llegar a 1. Por ejemplo, el factorial de 5 es 5 * 4 * 3 * 2 * 1 = 120
+::: {.callout-tip}
+El factorial de un número es el resultado de multiplicar ese número por todos los anteriores hasta llegar a 1. Por ejemplo, el factorial de 5 es 5 \* 4 \* 3 \* 2 \* 1 = 120
 :::
 
-``` javascriptfunction factorial(n) {
-  // Condición base: Si el número es 0 o 1, devolvemos 1
-  // y no llamamos a la función de nuevo
-  if (n === 0 || n === 1) {
-    return 1
-  } else {
-    // Si el número es mayor que 1, llamamos a la función
-    return n * factorial(n - 1)
-  }
-}
+\`\`\` javascriptfunction factorial(n) { // Condición base: Si el número es 0 o 1, devolvemos 1 // y no llamamos a la función de nuevo if (n === 0 \|\| n === 1) { return 1 } else { // Si el número es mayor que 1, llamamos a la función return n \* factorial(n - 1) } }
 
-console.log(factorial(5)) // Resultado: 120
-console.log(factorial(3)) // Resultado: 6
-```
+console.log(factorial(5)) // Resultado: 120 console.log(factorial(3)) // Resultado: 6
+
+```         
 
 ```javascript
 factorial(3) --------------------------> 6
@@ -2919,74 +2887,67 @@ La recursividad es un concepto que cuesta entender al principio. ¿Una función 
 
 Después, haz estos ejercicios de recursividad:
 
-Escribe una función que calcule la suma de los primeros n números enteros de forma recursiva. Por ejemplo: **suma(3) -> 1 + 2 + 3 = 6**
+Escribe una función que calcule la suma de los primeros n números enteros de forma recursiva. Por ejemplo: **suma(3) -\> 1 + 2 + 3 = 6**
 
-Escribe una función que calcule la sucesión de Fibonacci de forma recursiva. La sucesión de Fibonacci es una serie de números que empieza por 0 y 1 y cada número es la suma de los dos anteriores. Por ejemplo: **fibonacci(6) -> 8 (0, 1, 1, 2, 3, 5, 8)**
-
+Escribe una función que calcule la sucesión de Fibonacci de forma recursiva. La sucesión de Fibonacci es una serie de números que empieza por 0 y 1 y cada número es la suma de los dos anteriores. Por ejemplo: **fibonacci(6) -\> 8 (0, 1, 1, 2, 3, 5, 8)**
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué es la recursividad en programación?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 Una técnica de programación que consiste en que una función se llame a sí misma
 :::
 
-::: choice
+:::{.choice}
 Un tipo de condición que permite evitar que una función se llame infinitamente
 :::
 
-::: choice
+:::{.choice}
 Un error que ocurre cuando una función se llama a sí misma
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué es la condición base en la recursividad?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 Una condición que permite evitar que una función se llame infinitamente
 :::
 
-::: choice
+:::{.choice}
 Una condición que permite que una función se llame infinitamente
 :::
 
-::: choice
+:::{.choice}
 Una condición que permite que una función se llame infinitamente
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Qué sucede si no se define una condición base en una función recursiva?
 
-::: choices
-
+:::{.choices}
 ::: {.choice .correct-choice}
 La función se puede llamar infinitamente y el programa se bloquea
 :::
 
-::: choice
+:::{.choice}
 La función deja de llamarse después de un cierto número de iteraciones
 :::
 
-::: choice
+:::{.choice}
 La función devuelve un valor incorrecto
 :::
-
 :::
 :::
 
-::: question
+:::{.question}
 ¿Cuál es la salida de este código al pasar como argumento el número 3?
 
 ``` javascript
@@ -2999,9 +2960,8 @@ function recursive(n) {
 }
 ```
 
-::: choices
-
-::: choice
+:::{.choices}
+:::{.choice}
 0
 :::
 
@@ -3009,10 +2969,9 @@ function recursive(n) {
 6
 :::
 
-::: choice
+:::{.choice}
 4
 :::
-
 :::
 :::
 
@@ -3022,7 +2981,7 @@ Hasta ahora hemos visto algunos tipos de datos. Cadenas de texto, números, bool
 
 # Declaración y asignación de arrays
 
-Para declarar un array usamos los corchetes **[ ]** y dentro los elementos de la colección separados por comas **,**.
+Para declarar un array usamos los corchetes **\[ \]** y dentro los elementos de la colección separados por comas **,**.
 
 Por ejemplo, para crear una colección de números del 1 al 5:
 
@@ -3035,11 +2994,13 @@ Los elementos de un array pueden ser de cualquier tipo, incluso otros arrays.
 ``` javascript
 [1, 2, 3, 4, [5, 6, 7, 8, 9]]
 ```
+
 Y, aunque no siempre sea recomendable, puedes mezclar tipos de datos dentro:
 
 ``` javascript
 ['uno', 2, true, null, undefined]
 ```
+
 Para asignar un array a una variable, lo hacemos igual que con los otros tipos de datos:
 
 ``` javascript
@@ -3049,7 +3010,7 @@ let names = ['Dani', 'Miguel', 'Maria']
 
 # Acceso a los elementos de un array
 
-Para acceder a los elementos de un array usamos los corchetes **[ ]** y dentro el índice del elemento que queremos acceder. **Los índices empiezan en 0**.
+Para acceder a los elementos de un array usamos los corchetes **\[ \]** y dentro el índice del elemento que queremos acceder. **Los índices empiezan en 0**.
 
 ``` javascript
 const numbers = [1, 2, 3, 4, 5]
@@ -3058,7 +3019,7 @@ console.log(numbers[0]) // 1
 console.log(numbers[2]) // 3
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 El índice es la posición del elemento dentro del array. El primer elemento tiene índice 0, el segundo índice 1, el tercero índice 2...
 :::
 
@@ -3078,6 +3039,7 @@ let index = 2
 
 console.log(numbers[index]) // 3
 ```
+
 # Modificar elementos de un array
 
 Igual que podemos acceder a los elementos de un array, podemos modificarlos.
@@ -3091,13 +3053,13 @@ numbers[2] = 30
 console.log(numbers) // [10, 2, 30, 4, 5]
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 ¿Cómo es que pese a que hemos indicado que es una constante **const** podemos modificar el Array? Aunque hay una explicación mucho más larga, que veremos más adelante, la respuesta corta es que **const** sólo impide que se reasigne el valor de la variable, no que se modifique el valor en sí.
 :::
 
 # Quiz
 
-::: question
+:::{.question}
 ¿Qué se imprimirá en la consola al ejecutar el siguiente código:
 
 ``` javascript
@@ -3107,20 +3069,18 @@ numbers[2] = 30
 console.log(numbers)
 ```
 
-::: choices
-
-::: choice
-[1, 2, 3, 4, 5]
+:::{.choices}
+:::{.choice}
+\[1, 2, 3, 4, 5\]
 :::
 
 ::: {.choice .correct-choice}
-[10, 2, 30, 4, 5]
+\[10, 2, 30, 4, 5\]
 :::
 
-::: choice
+:::{.choice}
 Error de asignación a una constante
 :::
-
 :::
 :::
 
@@ -3128,7 +3088,7 @@ Error de asignación a una constante
 
 Los arrays de JavaScript tienen una serie de métodos y propiedades que nos permiten trabajar con ellos de forma sencilla.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Un método es una función que se ejecuta sobre un objeto. Una propiedad es una variable que pertenece a un objeto. En este caso, el objeto es un array.
 :::
 
@@ -3242,9 +3202,9 @@ Más adelante hablaremos más de este operador y sus diferentes utilidades.
 
 En un restaurante se reciben pedidos de comida a domicilio. Vamos a escribir una función **procesarPedido** que recibe un pedido, que es un array de platos. Lo que debemos hacer es:
 
-*   El primer elemento lo sacamos del array, ya que es el nombre del cliente.
-*   Añadimos al principio del array la cadena de texto "bebida", ya que es una promoción que tenemos.
-*  Después añadimos al final del array el nombre del usuario que sacamos antes.
+-   El primer elemento lo sacamos del array, ya que es el nombre del cliente.
+-   Añadimos al principio del array la cadena de texto "bebida", ya que es una promoción que tenemos.
+-   Después añadimos al final del array el nombre del usuario que sacamos antes.
 
 Recuerda que debes devolver el array modificado:
 
@@ -3255,6 +3215,7 @@ function procesarPedido(pedidos) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -3302,6 +3263,7 @@ for (let i = 0; i < frutas.length; i++) {
   console.log(frutas[i]) // imprime el elemento en la posición i
 }
 ```
+
 También podrías recorrer el array en orden inverso, empezando desde el último elemento hasta el primero, usando **i--** en lugar de **i++**.
 
 ``` javascript
@@ -3326,7 +3288,7 @@ for (let fruta of frutas) {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 Como ves, hay algunas limitaciones en el uso de **for...of**. Por ejemplo, no podemos usarlo para recorrer un array en orden inverso y tampoco tenemos acceso al índice del elemento que estamos iterando.
 :::
 
@@ -3354,7 +3316,7 @@ frutas.forEach((fruta) => {
 })
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 Algo importante es que **array.forEach()** no devuelve nada, por lo que no podemos asignar el resultado a una variable.
 :::
 
@@ -3362,14 +3324,14 @@ Algo importante es que **array.forEach()** no devuelve nada, por lo que no podem
 
 ::: table
 | **Método** | **Acceso al Índice** | **Acceso al Valor** | **Puede Usar Break** | **Control Manual del Índice** |
-|------------|----------------------|---------------------|----------------------|--------------------------------|
-| **for**    | ✅                   | ✅                  | ✅                   | ✅                             |
-| **while**  | ✅                   | ✅                  | ✅                   | ✅                             |
-| **for...of**| ❌                  | ✅                  | ✅                    | ❌                             |
-| **forEach**| ✅                   | ✅                  | ❌                   | ❌                             |
+|---------------|---------------|---------------|---------------|---------------|
+| **for** | ✅ | ✅ | ✅ | ✅ |
+| **while** | ✅ | ✅ | ✅ | ✅ |
+| **for...of** | ❌ | ✅ | ✅ | ❌ |
+| **forEach** | ✅ | ✅ | ❌ | ❌ |
 :::
 
-:::{.callout-tip}
+::: {.callout-tip}
 Aunque técnicamente no puedes utilizar la sentencia **break** para salir de forEach, puedes simular esto lanzando una excepción y capturándola en un bloque **try/catch** externo. Obviamente es una mala práctica que no te recomiendo.
 :::
 
@@ -3392,6 +3354,7 @@ function sumarPares(numeros) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -3407,6 +3370,7 @@ function sumarPares(numeros) {
   return suma
 }
 ```
+
 </details>
 
 # Búsqueda en Arrays con sus métodos
@@ -3442,11 +3406,13 @@ const tieneCorazon = emojis.includes('😍')
 
 console.log(tieneCorazon) // -> true
 ```
+
 Es la forma más sencilla y corta de buscar un elemento específico dentro de un **Array**. Sin embargo, si queremos revisar si un **Array** contiene un elemento que cumpla con una condición, entonces tenemos que utilizar otros métodos...
 
-:::{.callout-tip}
-El método **.includes()** también funciona con las cadenas de texto. Puedes utilizarlo para buscar una subcadena dentro de una cadena de texto: **'Hola mundo'.includes('Hola') // -> true**
+::: {.callout-tip}
+El método **.includes()** también funciona con las cadenas de texto. Puedes utilizarlo para buscar una subcadena dentro de una cadena de texto: **'Hola mundo'.includes('Hola') // -\> true**
 :::
+
 # some: ¿Alguno de los elementos cumple con la condición?
 
 El método **some** te permite verificar si al menos uno de los elementos de un **Array** cumple con una condición.
@@ -3510,18 +3476,18 @@ const names = ['Miguel', 'Juan', 'Itziar', 'Isabel']
 const todosLosNombresSonLargos = names.every(name => name.length > 3)
 console.log(todosLosNombresSonLargos) // -> true
 ```
+
 Al igual que **some**, el método **every** deja de iterar sobre el **Array** en cuanto encuentra un elemento que no cumple con la condición.
 
 # find: Devuelve el primer elemento que cumple con la condición
 
 El método **find** te permite encontrar el primer elemento que cumple con una condición. Lo interesante es que este método te devuelve el elemento en sí, no un valor **booleano** como **some** y **every**. Aunque el funcionamiento es igual: hay que pasarle una función como argumento que retorne un valor **booleano**.
 
-``` javascriptconst numbers = [13, 27, 44, -10, 81]
-// encuentra el primer número negativo
-const firstNegativeNumber = numbers.find(number => number < 0)
+\`\`\` javascriptconst numbers = \[13, 27, 44, -10, 81\] // encuentra el primer número negativo const firstNegativeNumber = numbers.find(number =\> number \< 0)
 
-console.log(firstNegativeNumber) // -> -10
-```
+console.log(firstNegativeNumber) // -\> -10
+
+```         
 
 Si no encuentra ningún elemento que cumpla con la condición, el método **find** retorna **undefined**.
 
@@ -3532,6 +3498,7 @@ const firstNegativeNumber = numbers.find(number => number < 0)
 
 console.log(firstNegativeNumber) // -> undefined
 ```
+
 De nuevo, igual que **some** y **every**, el método **find** deja de iterar sobre el **Array** en cuanto encuentra un elemento que cumple con la condición.
 
 # findIndex: Devuelve el índice del primer elemento que cumple con la condición
@@ -3549,6 +3516,7 @@ console.log(firstNegativeNumberIndex) // -> 3
 // ahora puedes usar el índice para acceder al elemento
 console.log(numbers[firstNegativeNumberIndex]) // -> -10
 ```
+
 Si no encuentra ningún elemento que cumpla con la condición, el método **findIndex** retorna **-1**.
 
 ``` javascript
@@ -3559,6 +3527,7 @@ const firstNegativeNumberIndex = numbers.findIndex(number => number < 0)
 
 console.log(firstNegativeNumberIndex) // -> -1
 ```
+
 # Actividad Práctica
 
 Crear una función que reciba un array de palabras y devuelva **true** si todas las palabras terminan con la letra "a" y **false** si al menos una palabra no termina con la letra "a".
@@ -3572,6 +3541,7 @@ function acabanEnA(words) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -3604,9 +3574,9 @@ Por suerte, podemos arreglarlo...
 
 Para personalizar cómo **sort()** ordena los elementos, puedes pasar una función de comparación como argumento. La función de comparación debe devolver:
 
-*    Un **valor negativo** si el primer argumento debe aparecer antes que el segundo.
-*    Un **valor positivo** si el segundo argumento debe aparecer antes que el primero.
-*    **Cero** si ambos argumentos son iguales.
+-   Un **valor negativo** si el primer argumento debe aparecer antes que el segundo.
+-   Un **valor positivo** si el segundo argumento debe aparecer antes que el primero.
+-   **Cero** si ambos argumentos son iguales.
 
 Por ejemplo, **para ordenar los números de menor a mayor**, puedes usar la siguiente función de comparación:
 
@@ -3631,6 +3601,7 @@ numeros.sort(function(a, b) {
 
 console.log(numeros) // [25, 10, 7, 5, 2]
 ```
+
 Puedes usar una **arrow function** para simplificar el código:
 
 ``` javascript
@@ -3653,6 +3624,7 @@ let numerosOrdenados = numeros.toSorted((a, b) => {
 console.log(numerosOrdenados) // [2, 5, 7, 10, 25]
 console.log(numeros) // [5, 10, 2, 25, 7]
 ```
+
 También podrías usar el operador de propagación **(...)** para crear una copia del array original y ordenarla:
 
 ``` javascript
@@ -3670,7 +3642,7 @@ console.log(numeros) // [5, 10, 2, 25, 7]
 
 Recibes una lista de números. Debes ordenar los números de menor a mayor según su valor absoluto. Eso quiere decir que los números negativos pierden el signo y se ordenan como si fueran positivos.
 
-Por ejemplo, si recibes **[5, -10, -2, -25, -7]** deberías devolver **[-2, 5, -7, -10, -25]**.
+Por ejemplo, si recibes **\[5, -10, -2, -25, -7\]** deberías devolver **\[-2, 5, -7, -10, -25\]**.
 
 Puedes usar el método **Math.abs(num)** para obtener el valor absoluto de un número.
 
@@ -3681,6 +3653,7 @@ function sortAbsoluteNumbers(numbers) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -3688,6 +3661,7 @@ function sortAbsoluteNumbers(numbers) {
   return numbers.sort((a, b) => Math.abs(a) - Math.abs(b))
 }
 ```
+
 </details>
 
 # Transformación de Arrays en JavaScript
@@ -3784,9 +3758,9 @@ Recibe dos parámetros: una función que se ejecutará por cada elemento y un va
 
 El primer parámetro de **reduce**, que es la función que se ejecutará por cada elemento, recibe tres parámetros:
 
-*    **El acumulador:** el valor que se va a ir acumulando en cada iteración
-*    **El elemento actual:** el elemento del Array que estamos iterando en ese momento.
-*    **El índice:** la posición del elemento actual en el Array.
+-   **El acumulador:** el valor que se va a ir acumulando en cada iteración
+-   **El elemento actual:** el elemento del Array que estamos iterando en ese momento.
+-   **El índice:** la posición del elemento actual en el Array.
 
 Y debe devolver el valor que se va a acumular en cada iteración.
 
@@ -3804,9 +3778,9 @@ console.log(sum) // 6
 
 Vamos a ver qué está pasando en cada iteración:
 
-*    **Iteración 1:** el acumulador vale 0 (ya que 0 es el valor inicial) y el elemento actual vale 1. Así que devolvemos 0 + 1 = 1
-*    **Iteración 2:** el acumulador vale 1 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 2. Así que devolvemos 1 + 2 = 3
-*    **Iteración 3:** el acumulador vale 3 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 3. Así que devolvemos 3 + 3 = 6
+-   **Iteración 1:** el acumulador vale 0 (ya que 0 es el valor inicial) y el elemento actual vale 1. Así que devolvemos 0 + 1 = 1
+-   **Iteración 2:** el acumulador vale 1 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 2. Así que devolvemos 1 + 2 = 3
+-   **Iteración 3:** el acumulador vale 3 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 3. Así que devolvemos 3 + 3 = 6
 
 Por lo tanto, el valor final de **sum** es 6.
 
@@ -3835,11 +3809,12 @@ console.log(doubleEvenNumbers) // [8, 12]
 
 Lo interesante en este caso es que no hemos tenido que crear un array intermedio con **map** y **filter**. Hemos ido acumulando los valores que nos interesaban en cada iteración y los que no nos interesaban los hemos descartado devolviendo lo que ya teníamos en el acumulador.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Ten cuidado con reduce. Como puedes ver, su carga cognitiva es mayor que la de map y filter. Así que si puedes usar map y filter para hacer lo mismo, hazlo. Sólo usa reduce cuando no te quede más remedio.
 :::
 
 # Actividad Práctica
+
 **Recibes dos parámetros:** una lista de palabras **words** y una palabra **word**. Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y devuelve todas las palabras de **words** que sean más largas (**length**) que el número del índice.
 
 Ten en cuenta que la palabra **word** siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
@@ -3851,6 +3826,7 @@ function buscaPalabras(words, word) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -3876,7 +3852,8 @@ const matriz = [
   [4, 5, 6]
 ]
 ```
-:::{.callout-tip}
+
+::: {.callout-tip}
 Las matrices no tienen por qué ser cuadradas. Pueden tener cualquier número de filas y columnas.
 :::
 
@@ -3891,7 +3868,7 @@ let numero = matriz[1][2]
 console.log(numero) // -> 6
 ```
 
-Aquí, el primer índice, **[1]**, se refiere a la segunda fila (recuerda que los arrays en JavaScript tienen un índice base cero), y el segundo índice, **[2]**, se refiere a la tercera columna.
+Aquí, el primer índice, **\[1\]**, se refiere a la segunda fila (recuerda que los arrays en JavaScript tienen un índice base cero), y el segundo índice, **\[2\]**, se refiere a la tercera columna.
 
 # Iteración sobre Matrices
 
@@ -3904,6 +3881,7 @@ for (let i = 0; i < matriz.length; i++) { // {1}
   }
 }
 ```
+
 En este ejemplo, el bucle externo recorre **{1}** cada fila de la matriz, mientras que el bucle interno **{2}** recorre cada elemento dentro de una fila específica.
 
 Puedes usar otros bucles para iterar sobre una matriz, como un bucle while o un bucle for...of. También puedes utilizar el método **forEach()** de los arrays para iterar sobre una matriz, pero tendrás que anidar dos llamadas a **forEach()** para iterar sobre todos los elementos de la matriz.
@@ -3918,6 +3896,7 @@ matriz.forEach((fila, filaIndex) => {
   })
 })
 ```
+
 # Ejemplo práctico de Matrices
 
 Un ejemplo sencillo de entender pero muy útil es el juego del 3 en raya. En este juego, los jugadores se turnan para colocar sus fichas en una cuadrícula de **3x3**.
@@ -3993,7 +3972,7 @@ const position = findJavaScript(matrix)
 console.log(position) // -> [0, 2]
 ```
 
-Si no encuentra la palabra debe devolver **[-1, -1]**. Usa el siguiente código como punto de partida:
+Si no encuentra la palabra debe devolver **\[-1, -1\]**. Usa el siguiente código como punto de partida:
 
 ``` javascript
 function findJavaScript(matrix) {
@@ -4002,6 +3981,7 @@ function findJavaScript(matrix) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -4046,7 +4026,7 @@ function findMaxAlgorithm(array) {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 En JavaScript podríamos usar el método **Math.max** para encontrar el número mayor de un array. Se usaría así: **Math.max(...array)**. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **Math.max** en su lugar.
 :::
 
@@ -4060,7 +4040,7 @@ En programación se usa la notación O(n) para indicar que el número de operaci
 
 # Búsqueda binaria
 
-Imagina que tienes un array de números ordenados de menor a mayor. Por ejemplo, **[11, 18, 23, 25, 48, 55, 88, 111, 120]**. Si te pido que busques el número **55** en el array, ¿cómo lo harías?.
+Imagina que tienes un array de números ordenados de menor a mayor. Por ejemplo, **\[11, 18, 23, 25, 48, 55, 88, 111, 120\]**. Si te pido que busques el número **55** en el array, ¿cómo lo harías?.
 
 Una forma de hacerlo sería recorrer el array desde el principio hasta el final y comprobar si el número que estamos buscando es igual al número actual. Si es así, hemos encontrado el número. Si no, seguimos buscando.
 
@@ -4076,16 +4056,17 @@ function findNumber(array, number) {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 Obviamente, podríamos usar el método **.includes()** para comprobar si un array contiene un elemento. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **.includes()** en su lugar.
 :::
+
 La complejidad algorítmica de este algoritmo es O(n). Es decir, el número de operaciones que se realizan es igual al número de elementos del array. Pero podemos hacerlo mejor.
 
 Existe un algoritmo muy popular llamado búsqueda binaria que nos permite encontrar un elemento en un array ordenado en O(log n). Es decir, el número de operaciones que se realizan es igual al logaritmo del número de elementos del array. ¿Qué significa esto?.
 
 Imagina que tenemos un array de 10 elementos. Si aplicamos la búsqueda binaria, el número de operaciones que se realizan es igual a 3. Si tenemos un array de 100 elementos, el número de operaciones que se realizan es igual a 6. ¿Ves la diferencia? ¡Es mucho más rápido!
 
-:::{.callout-tip}
+::: {.callout-tip}
 Para aplicar la búsqueda binaria, tenemos que tener en cuenta que el array tiene que estar ordenado de menor a mayor. Si no, no funcionará.
 :::
 
@@ -4128,7 +4109,7 @@ function busquedaBinaria(array, elemento) {
 }
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 En JavaScript podríamos usar el método **Array.prototype.indexOf** para encontrar el índice de un elemento en un array. Se usaría así: **array.indexOf(elemento)**. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **Array.prototype.indexOf** en su lugar.
 :::
 
@@ -4145,6 +4126,7 @@ function minAndMaxWord(words) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -4172,8 +4154,7 @@ function minAndMaxWord(words) {
 
 Los objetos en JavaScript son una colección de propiedades y métodos que definen un elemento a través de una clave y un valor.
 
-Por ejemplo, si pensamos en una persona, podemos definir sus propiedades como su nombre, su edad, su altura, su peso, etc. Y sus métodos como caminar, correr, saltar, etc.
-Declaración y asignación de objetos
+Por ejemplo, si pensamos en una persona, podemos definir sus propiedades como su nombre, su edad, su altura, su peso, etc. Y sus métodos como caminar, correr, saltar, etc. Declaración y asignación de objetos
 
 # Declaración y asignación de objetos
 
@@ -4188,6 +4169,7 @@ const persona = {
   isWorking: true
 }
 ```
+
 Las propiedades y métodos de un objeto pueden ser de cualquier tipo de JavaScript, incluso otros objetos o arrays.
 
 ``` javascript
@@ -4203,6 +4185,7 @@ const persona = {
   }
 }
 ```
+
 Y, claro, como hemos comentado antes, también podemos tener funciones. **Cuando una función es parte de un objeto se le llama método**.
 
 ``` javascript
@@ -4237,7 +4220,8 @@ Si intentamos acceder a una propiedad o método que no existe, nos devolverá **
 const persona = { name: 'Dani' }
 console.log(persona.fullName) // -> undefined
 ```
-Puedes usar variables para acceder a las propiedades y métodos de un objeto. Para ello, tienes que usar la notificación por corchetes **[]**.
+
+Puedes usar variables para acceder a las propiedades y métodos de un objeto. Para ello, tienes que usar la notificación por corchetes **\[\]**.
 
 ``` javascript
 const persona = { name: 'Dani' }
@@ -4245,6 +4229,7 @@ let property = 'name'
 
 console.log(persona[property]) // -> Dani
 ```
+
 También necesitas usar los corchetes si la clave de la propiedad o método tiene espacios o caracteres especiales.
 
 ``` javascript
@@ -4256,7 +4241,7 @@ console.log(persona['full name']) // -> Dani
 // persona.full name
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 Siempre que puedas, evita usar espacios o caracteres especiales en las claves de las propiedades y métodos de un objeto. Aunque se puede, es más complicado de leer y de escribir.
 :::
 
@@ -4276,8 +4261,8 @@ let method = 'walk'
 persona[method]() // -> Estoy caminando
 ```
 
-:::{.callout-tip}
-**persona[method]()** parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. **persona** es el objeto. Accedemos a la propiedad **method** del objeto persona con **persona[method]**. Y, finalmente, ejecutamos la función con **persona[method]()**. Es decir, estamos ejecutando **persona.walk()**.
+::: {.callout-tip}
+**persona[method]()** parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. **persona** es el objeto. Accedemos a la propiedad **method** del objeto persona con **persona\[method\]**. Y, finalmente, ejecutamos la función con **persona[method]()**. Es decir, estamos ejecutando **persona.walk()**.
 :::
 
 # Añadir y modificar propiedades de un objeto
@@ -4291,9 +4276,10 @@ persona.age = 30
 
 console.log(persona) // -> { name: 'Dani', age: 30 }
 ```
+
 En el código estamos modificando el objeto **persona** añadiendo la propiedad **age** con el valor **30**.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Fíjate que, al igual que en los Arrays, podemos añadir propiedades a un objeto aunque sea una constante. Esto es porque no estamos reasignando la variable **persona**, si no que estamos modificando una propiedad interna del objeto.
 :::
 
@@ -4313,10 +4299,10 @@ console.log(persona) // -> { name: 'Dani' }
 
 Tenemos una función que recibe dos parámetros. **name** y **subs**. Haz que la función devuelva un objeto con la siguiente información:
 
-*    **name** con el valor del parámetro **name**
-*    **subscribers** con el valor del parámetro **subs**
-*    **hash**, con el valor de la longitud del string **name** multiplicado por el parámetro **subs**
-*    Un método **getStatus** que devuelva el texto **El canal de \<name> tiene \<subs> suscriptores**. Por ejemplo, para name = * 'Dani' y subs = 100, el método **getStatus** devolvería **El canal de Dani tiene 100 suscriptores**.
+-   **name** con el valor del parámetro **name**
+-   **subscribers** con el valor del parámetro **subs**
+-   **hash**, con el valor de la longitud del string **name** multiplicado por el parámetro **subs**
+-   Un método **getStatus** que devuelva el texto **El canal de \<name\> tiene \<subs\> suscriptores**. Por ejemplo, para name = \* 'Dani' y subs = 100, el método **getStatus** devolvería **El canal de Dani tiene 100 suscriptores**.
 
 ¡Ojo! El método **getStatus** debe devolver el texto, NO imprimirlo por consola.
 
@@ -4327,6 +4313,7 @@ function createObject(name, subs) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -4362,8 +4349,6 @@ const spiderman = {
   powers: ['web', 'invisibility', 'spider-sense']
 }
 ```
-
-
 
 En este caso, podemos usar un atajo para crear el objeto. **Si la propiedad y la variable tienen el mismo nombre**, podemos omitir el valor y dejar solo el nombre de la propiedad.
 
@@ -4414,8 +4399,8 @@ const powers = spiderman['powers'][1]
 console.log(powers) // 'invisibility'
 ```
 
-:::{.callout-tip}
-**spiderman['powers'][1]** de nuevo puede parecer un poco confuso, pero hay que separarlo en partes. **spiderman** es el objeto. Accedemos a la propiedad **powers** y como es un array, podemos acceder a su segundo elemento con **[1]**. Y ahí está el valor que queremos: **invisibility**.
+::: {.callout-tip}
+**spiderman\['powers'\]\[1\]** de nuevo puede parecer un poco confuso, pero hay que separarlo en partes. **spiderman** es el objeto. Accedemos a la propiedad **powers** y como es un array, podemos acceder a su segundo elemento con **\[1\]**. Y ahí está el valor que queremos: **invisibility**.
 :::
 
 A la hora de acceder a las propiedades existe un atajo llamado **desestructuración** (o destructuring en inglés) muy interesante que nos permite recuperar el valor de una propiedad y guardarlo en una variable de una.
@@ -4459,7 +4444,7 @@ El objeto que hemos creado antes no tenía la propiedad **isAvenger**, pero al r
 
 Así que si recuperamos una propiedad que no existe, la variable que se creará tendrá el valor por defecto que le hayamos asignado. Y lo hacemos usando el operador **=**.
 
-:::{.callout-tip}
+::: {.callout-tip}
 Esto es muy útil, por ejemplo, para recuperar opciones o configuración del usuario que quizás no ha definido todos los valores pero tenemos claro qué comportamiento queremos que tenga nuestra aplicación por defecto.
 :::
 
@@ -4510,19 +4495,17 @@ Lo que estamos haciendo es: del objeto **spiderman** extrae la propiedad **partn
 ¿Cómo se llama el atajo que nos permite recuperar el valor de una propiedad de un objeto?
 
 :::{.choices}
-
 :::{.choice}
 dot notation o notación de punto
 :::
 
-:::{.choice .correct-choice}
+::: {.choice .correct-choice}
 desestructuración o destructuring
 :::
 
 :::{.choice}
 extracting o extracción
 :::
-
 :::
 :::
 
@@ -4541,19 +4524,17 @@ console.log(age)
 ```
 
 :::{.choices}
-
 :::{.choice}
 30
 :::
 
-:::{.choice .correct-choice}
+::: {.choice .correct-choice}
 ReferenceError: age is not defined
 :::
 
 :::{.choice}
 undefined
 :::
-
 :::
 :::
 
@@ -4576,8 +4557,7 @@ console.log(weight, height)
 ```
 
 :::{.choices}
-
-:::{.choice .correct-choice}
+::: {.choice .correct-choice}
 70 180
 :::
 
@@ -4588,7 +4568,6 @@ ReferenceError: weight is not defined
 :::{.choice}
 undefined undefined
 :::
-
 :::
 :::
 
@@ -4616,7 +4595,7 @@ for (const property in spiderman) {
 // -> powers: web,invisibility,spider-sensibles
 ```
 
-:::{.callout-tip}
+::: {.callout-tip}
 No confundas el bucle **for...in** con el de **for...of** que vimos en la sección de arrays. El primero itera sobre las propiedades enumerables de un objeto, mientras que el segundo itera sobre los elementos de un objeto iterable (como los elementos de un array, por ejemplo).
 :::
 
@@ -4652,7 +4631,7 @@ properties.forEach(property => {
 
 Este código hace algo muy similar al anterior, pero utilizando **Object.keys()** para obtener las propiedades del objeto.
 
-:::{.callout-tip}
+::: {.callout-tip}
 **¿Qué son las propiedades enumerables?** Por defecto, cuando añadimos propiedades a un objeto, estas son enumerables, es decir, que se pueden iterar sobre ellas. Sin embargo, como veremos más adelante, podemos crear propiedades que, por lo que sea, nos interesa que no sean enumerables. A veces estas son más de uso interno, como métodos auxiliares que el propio lenguaje JavaScript tiene, y no queremos que aparezcan cuando iteramos sobre un objeto.
 :::
 
@@ -4676,7 +4655,7 @@ Como ves, la diferencia con **Object.values()** es que este método retorna los 
 
 ## Iterando con Object.entries()
 
-El método **Object.entries()** retorna un array de arrays, donde cada subarray es un par [propiedad, valor] correspondiente a las propiedades enumerables de un objeto.
+El método **Object.entries()** retorna un array de arrays, donde cada subarray es un par \[propiedad, valor\] correspondiente a las propiedades enumerables de un objeto.
 
 ``` javascript
 const entries = Object.entries(spiderman)
@@ -4707,7 +4686,7 @@ entries.forEach(entry => {
 
 Tienes una función que recibe un objeto como parámetro. La función debe retornar un array con el nombre de las propiedades que su tipo sea **boolean**.
 
-Por ejemplo, para el objeto **{ a: true, b: 42, c: false }** la función debe retornar **['a', 'c']** ya que son las dos propiedades que tienen valores booleanos.
+Por ejemplo, para el objeto **{ a: true, b: 42, c: false }** la función debe retornar **\['a', 'c'\]** ya que son las dos propiedades que tienen valores booleanos.
 
 ``` javascript
 function getKeysOfBooleanValues(obj) {
@@ -4716,6 +4695,7 @@ function getKeysOfBooleanValues(obj) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -4771,7 +4751,8 @@ if (typeof gamesystem.specifications === 'object') {
   console.log('No hay especificaciones')
 }
 ```
-:::{.callout-tip}
+
+::: {.callout-tip}
 ¡Cuidado con esto! Al usar el operador **typeof** con un valor **null** nos dice que es **object**. Esto es un error histórico del lenguaje. Así que si la propiedad **specifications** es **null**, el **if** se ejecutará y obtendremos un error al intentar acceder a **ram**. Para evitar esto, podemos añadir una comprobación extra: **gamesystem.specifications !== null**.
 :::
 
@@ -4792,6 +4773,7 @@ if ('specifications' in gamesystem) {
   console.log('No hay especificaciones')
 }
 ```
+
 ¡Pero ojo! ¿Qué pasa si la propiedad existe pero su valor es **undefined**?
 
 ``` javascript
@@ -4806,6 +4788,7 @@ console.log('specifications' in gamesystem) // -> true
 gamesystem.specifications.ram
 // ❌ Uncaught TypeError: Cannot read property 'ram' of undefined
 ```
+
 El operador **in** puede ser interesante para comprobar si una propiedad existe en un objeto, pero no nos sirve para comprobar si el valor de esa propiedad es **undefined** y habría que hacer comprobaciones extra para evitar el error.
 
 ``` javascript
@@ -4841,7 +4824,7 @@ console.log(gamesystem.specs?.cpu)
 // -> AMD Ryzen Zen 2
 ```
 
-Si la propiedad **specifications** no existe, el operador **?**. devuelve **undefined **y no se produce ningún error. Si la propiedad existe, el operador **?**. devuelve el valor de la propiedad.
+Si la propiedad **specifications** no existe, el operador **?**. devuelve **undefined** y no se produce ningún error. Si la propiedad existe, el operador **?**. devuelve el valor de la propiedad.
 
 ## Beneficios del Operador de Encadenamiento Opcional
 
@@ -4877,15 +4860,16 @@ console.log(email) // -> true
 const email = user?.settings?.notifications?.email
 console.log(email) // -> true
 ```
+
 El operador de encadenamiento opcional es una excelente herramienta para trabajar con objetos en JavaScript, especialmente cuando no podemos garantizar la estructura o presencia de ciertos datos. **Nos ayuda a escribir un código más limpio, legible y resistente a errores**.
 
 # Actividad Práctica
 
 Somos un equipo de submarinistas. Estamos explorando el fondo marino pero no sabemos qué nos vamos a encontrar porque vamos casi a ciegas. Vamos con un pequeño robot y funciona con un programa que recibe tres parámetros:
 
-*    Un objeto con la información del fondo marino
-*    Una cadena de texto con el nombre del lugar que queremos explorar
-*    Una cadena de texto con el nombre del objeto que queremos encontrar
+-   Un objeto con la información del fondo marino
+-   Una cadena de texto con el nombre del lugar que queremos explorar
+-   Una cadena de texto con el nombre del objeto que queremos encontrar
 
 Por ejemplo. Con el objeto **ocean** que nos llega como primer parámetro, podemos explorar el lugar **deep** y buscar el objeto **treasure**. Así que intentaríamos acceder a **ocean.deep.treasure**.
 
@@ -4893,7 +4877,7 @@ Si lo encontramos el robot nos devuelve **true** y si no lo encuentra nos devuel
 
 Vamos a necesitar asegurarnos que el robot no se rompa, que cuesta mucho dinero, en el caso que no pueda encontrar el lugar o el objeto que le hemos pedido. Así que vamos a usar el operador de encadenamiento opcional para evitar errores.
 
-Pista: ¡Recuerda que en una clase anterior hemos visto cómo podemos acceder a una propiedad de un objeto usando una variable! Por ejemplo, si tenemos un objeto **person** y una variable **key** con el valor **name**, podemos acceder a la propiedad **name** del objeto **person** usando **person[key]** y sería como hacer **person.name**.
+Pista: ¡Recuerda que en una clase anterior hemos visto cómo podemos acceder a una propiedad de un objeto usando una variable! Por ejemplo, si tenemos un objeto **person** y una variable **key** con el valor **name**, podemos acceder a la propiedad **name** del objeto **person** usando **person\[key\]** y sería como hacer **person.name**.
 
 ``` javascript
 function searchInOcean(ocean, section, item) {
@@ -4902,6 +4886,7 @@ function searchInOcean(ocean, section, item) {
 ```
 
 <details>
+
 <summary>Ver solución</summary>
 
 ``` javascript
@@ -4909,5 +4894,14 @@ function searchInOcean(ocean, section, item) {
   return ocean?.[section]?.[item] !== undefined
 }
 ```
+
 </details>
+
 :::
+
+:::::::::::::::::::::
+
+:::::::::::::::::::::
+
+:::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
