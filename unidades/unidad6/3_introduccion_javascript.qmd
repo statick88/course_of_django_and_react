@@ -1,3 +1,4 @@
+:::{.justify}
 # JavaScript
 
 Esté capítulo está basado en el Curso de **"Aprende JavaScript"** en la url [AprendeJavaScript.dev](https://aprendejavascript.dev/) creado por Miguel Ángel [statick](https://porfolio.dev/#sobre-mi), el cual es un desarrollador FullStack y Creador de Contenido, sin más que agregar comencemos.
@@ -2314,7 +2315,7 @@ console.log(sumar()) // -> 2
 En la siguiente clase verás cómo puedes pasar parámetros a una función para hacerlas todavía más interesantes y reutilizables.
 :::
 
-:::{.callout-info}
+:::{.callout-tip}
 Recuerda, si no utilizamos **return**, la función devolverá **undefined**.
 :::
 
@@ -2356,7 +2357,7 @@ function getRandomNumber() {
 
 ¿Sabes lo mejor? Que **esa función va a acompañarte durante toda tu carrera**. Es muy común necesitar crear un número aleatorio en un programa, así que es muy útil tener una función que lo haga por nosotros.
 
-:::{.callout-info}
+:::{.callout-tip}
 En la función hemos utilizado varias variables para ir guardando los resultados intermedios. Podríamos haberlo hecho todo en una sola línea, pero así es más fácil de entender.
 :::
 
@@ -2875,7 +2876,7 @@ cuentaAtras(3) -> (muestra 3)
                                    cuentaAtras(-1) -> salida
 ```
 
-:::{.callout-info}
+:::{.callout-tip}
 ¡Cuidado! Si no ponemos la condición base, la función se llamará infinitamente y el navegador se quedará bloqueado. Cuando hacemos recursividad SIEMPRE hay que tener una condición que haga que la función salga de sí misma.
 :::
 
@@ -3237,7 +3238,7 @@ console.log(allNumbers) // [1, 2, 3, 4, 5]
 
 Más adelante hablaremos más de este operador y sus diferentes utilidades.
 
-# Ejercicio práctico
+# Actividad Práctica
 
 En un restaurante se reciben pedidos de comida a domicilio. Vamos a escribir una función **procesarPedido** que recibe un pedido, que es un array de platos. Lo que debemos hacer es:
 
@@ -3378,7 +3379,7 @@ Cada uno de estos métodos tiene sus propios casos de uso. **for** y **while** s
 
 Finalmente, **forEach** es una forma muy eficiente y legible de iterar sobre un array si no necesitas **break** y si no necesitas controlar manualmente el índice.
 
-# Ejercicio práctico
+# Actividad Práctica
 
 Dada una lista de números, escribe una función en JavaScript que devuelva la suma de todos los números pares en la lista. La función deberá iterar sobre cada número en la lista, comprobar si el número es par y, si es así, añadirlo a la suma total. Usa el bucle que quieras para solucionarlo.
 
@@ -3687,5 +3688,1226 @@ function sortAbsoluteNumbers(numbers) {
   return numbers.sort((a, b) => Math.abs(a) - Math.abs(b))
 }
 ```
+</details>
+
+# Transformación de Arrays en JavaScript
+
+Ya hemos visto cómo podemos crear arrays, modificarlos y buscar en ellos. Ahora vamos a ver cómo podemos transformarlos. Esto es, cómo podemos crear nuevos arrays a partir de los que ya tenemos.
+
+# filter: Un nuevo Array con los elementos que cumplan una condición
+
+El método filter crea un nuevo array con todos los elementos que devuelven **true** al ejecutar una función que le pasamos como parámetro.
+
+Por ejemplo, podríamos filtrar en un nuevo array todos los números pares de un array de números:
+
+``` javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+
+const evenNumbers = numbers.filter(function (number) {
+  return number % 2 === 0
+})
+
+console.log(evenNumbers) // [2, 4, 6]
+```
+
+O quedarnos con todas las cadenas de texto que tengan la letra **a**:
+
+``` javascript
+const strings = ['hola', 'adiós', 'casa', 'coche', 'perro', 'gato']
+
+// en las cadenas de texto podemos usar el método `includes`
+// para saber si una cadena contiene otra:
+const stringsWithA = strings.filter(string => string.includes('a'))
+
+console.log(stringsWithA) // ['hola', 'adiós', 'casa', 'gato']
+```
+
+# map: Un nuevo Array con los elementos transformados
+
+El método **map** crea un nuevo array de la misma longitud que el original, pero con los elementos transformados por una función que le pasamos como parámetro. Así que la función recibirá cada elemento del array y tendremos que devolver el elemento transformado.
+
+Por ejemplo, podríamos crear un array con el doble de cada número de un array de números:
+
+``` javascript
+const numbers = [1, 2, 3]
+
+const doubleNumbers = numbers.map((number) => {
+  return number * 2
+})
+
+console.log(doubleNumbers) // [2, 4, 6]
+```
+
+O podríamos crear un array con la longitud de cada cadena de texto de un array de cadenas:
+
+``` javascript
+const strings = ['hola', 'javascript', 'midu', 'programación']
+
+const stringsLength = strings.map((string) => string.length)
+
+console.log(stringsLength) // [4, 10, 4, 12]
+```
+
+# map + filter: Un nuevo Array con los elementos transformados y filtrados
+
+En JavaScript podemos crear un encadenamiento de métodos. De esta forma, si un método devuelve un array, podemos llamar a otro método sobre ese array sin necesidad de guardarlo en una variable.
+
+Imagina que queremos crear un array con el doble de los números y sólo quedarnos con los que sean mayores que 5. Podríamos hacerlo así:
+
+``` javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+
+const numsGreaterThanFive = numbers
+  .map(number => number * 2) // [2, 4, 6, 8, 10, 12, 14]
+  .filter(number => number > 5) // [6, 8, 10, 12, 14]
+
+console.log(numsGreaterThanFive) // [6, 8, 10, 12, 14]
+```
+
+También podríamos hacerlo al revés, primero filtrando y luego transformando. Por ejemplo, filtrar los números pares y luego multiplicarlos por 2:
+
+``` javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+
+const doubleEvenNumbers = numbers
+  .filter(number => number % 2 === 0) // [2, 4, 6]
+  .map(number => number * 2) // [4, 8, 12]
+
+console.log(doubleEvenNumbers) // [4, 8, 12]
+```
+
+# reduce: Un único valor a partir de un array
+
+El método **reduce** es un poco más complejo que los anteriores. Este método te permite crear un único valor a partir de un Array.
+
+Recibe dos parámetros: una función que se ejecutará por cada elemento y un valor inicial, opcional, que será donde podremos acumular los valores.
+
+El primer parámetro de **reduce**, que es la función que se ejecutará por cada elemento, recibe tres parámetros:
+
+*    **El acumulador:** el valor que se va a ir acumulando en cada iteración
+*    **El elemento actual:** el elemento del Array que estamos iterando en ese momento.
+*    **El índice:** la posición del elemento actual en el Array.
+
+Y debe devolver el valor que se va a acumular en cada iteración.
+
+Un caso de uso muy típico de **reduce** es sumar todos los elementos de un Array:
+
+``` javascript
+const numbers = [1, 2, 3]
+
+const sum = numbers.reduce((accumulator, currentNumber) => {
+  return accumulator + currentNumber
+}, 0) // <- el 0 es el valor inicial
+
+console.log(sum) // 6
+```
+
+Vamos a ver qué está pasando en cada iteración:
+
+*    **Iteración 1:** el acumulador vale 0 (ya que 0 es el valor inicial) y el elemento actual vale 1. Así que devolvemos 0 + 1 = 1
+*    **Iteración 2:** el acumulador vale 1 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 2. Así que devolvemos 1 + 2 = 3
+*    **Iteración 3:** el acumulador vale 3 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 3. Así que devolvemos 3 + 3 = 6
+
+Por lo tanto, el valor final de **sum** es 6.
+
+¿Recuerdas que hemos visto antes cómo usar **map** y **filter** juntos? Pues podrías usar **reduce** para tener que evitar crear un array intermedio. Por ejemplo, imagina que queremos doblar los números pares y sólo quedarnos con los mayores de 5 (como hicimos en el ejemplo anterior):
+
+``` javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+
+const doubleEvenNumbers = numbers.reduce((accumulator, currentNumber) => {
+  const isEven = currentNumber % 2 === 0
+  const doubled = currentNumber * 2
+  const isGreaterThanFive = doubled > 5
+
+  // si es par y mayor que 5, lo añadimos al array
+  if (isEven && isGreaterThanFive) {
+    // para ello devolvemos un nuevo array con el valor actual
+    return accumulator.concat(doubled)
+  } else {
+    // si no, devolvemos lo que ya teníamos
+    return accumulator
+  }
+}, []) // <- el array vacío es el valor inicial
+
+console.log(doubleEvenNumbers) // [8, 12]
+```
+
+Lo interesante en este caso es que no hemos tenido que crear un array intermedio con **map** y **filter**. Hemos ido acumulando los valores que nos interesaban en cada iteración y los que no nos interesaban los hemos descartado devolviendo lo que ya teníamos en el acumulador.
+
+:::{.callout-tip}
+Ten cuidado con reduce. Como puedes ver, su carga cognitiva es mayor que la de map y filter. Así que si puedes usar map y filter para hacer lo mismo, hazlo. Sólo usa reduce cuando no te quede más remedio.
+:::
+
+# Actividad Práctica
+**Recibes dos parámetros:** una lista de palabras **words** y una palabra **word**. Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y devuelve todas las palabras de **words** que sean más largas (**length**) que el número del índice.
+
+Ten en cuenta que la palabra **word** siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
+
+``` javascript
+function buscaPalabras(words, word) {
+  // tu código aquí
+}
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function buscaPalabras(words, word) {
+  const index = words.indexOf(word)
+  return words.filter(word => word.length > index)
+}
+```
 
 </details>
+
+# Matrices
+
+En matemáticas y en programación, una matriz se refiere a una colección de elementos dispuestos en filas y columnas. En términos más sencillos, y en JavaScript, podemos representar una matriz como un array de arrays.
+
+## Creación de Matrices
+
+Para empezar, aquí se muestra cómo se puede crear una matriz simple de 2x3 en JavaScript:
+
+``` javascript
+const matriz = [
+  [1, 2, 3],
+  [4, 5, 6]
+]
+```
+:::{.callout-tip}
+Las matrices no tienen por qué ser cuadradas. Pueden tener cualquier número de filas y columnas.
+:::
+
+# Acceso a los Elementos de una Matriz
+
+Para acceder a los elementos de una matriz, necesitaremos utilizar dos índices: uno para la *fila* y otro para la *columna*.
+
+Por ejemplo, si queremos acceder al número **6** en la matriz anterior, haríamos lo siguiente:
+
+``` javascript
+let numero = matriz[1][2]
+console.log(numero) // -> 6
+```
+
+Aquí, el primer índice, **[1]**, se refiere a la segunda fila (recuerda que los arrays en JavaScript tienen un índice base cero), y el segundo índice, **[2]**, se refiere a la tercera columna.
+
+# Iteración sobre Matrices
+
+Podemos utilizar bucles anidados para iterar sobre todos los elementos de una matriz. Aquí hay un ejemplo de cómo hacerlo utilizando un bucle for:
+
+``` javascript
+for (let i = 0; i < matriz.length; i++) { // {1}
+  for (let j = 0; j < matriz[i].length; j++) { // {2}
+    console.log(matriz[i][j])
+  }
+}
+```
+En este ejemplo, el bucle externo recorre **{1}** cada fila de la matriz, mientras que el bucle interno **{2}** recorre cada elemento dentro de una fila específica.
+
+Puedes usar otros bucles para iterar sobre una matriz, como un bucle while o un bucle for...of. También puedes utilizar el método **forEach()** de los arrays para iterar sobre una matriz, pero tendrás que anidar dos llamadas a **forEach()** para iterar sobre todos los elementos de la matriz.
+
+``` javascript
+matriz.forEach((fila, filaIndex) => {
+  fila.forEach((elemento, columnaIndex) => {
+    console.log('Fila ' + filaIndex)
+    console.log('Columna ' + columnaIndex)
+    console.log('Elemento ', elemento)
+    console.log('')
+  })
+})
+```
+# Ejemplo práctico de Matrices
+
+Un ejemplo sencillo de entender pero muy útil es el juego del 3 en raya. En este juego, los jugadores se turnan para colocar sus fichas en una cuadrícula de **3x3**.
+
+El objetivo del juego es colocar tres fichas en una fila, columna o diagonal.
+
+Para representar el tablero de juego, podemos utilizar una matriz de **3x3**. Cada elemento de la matriz puede ser una cadena que represente una ficha:
+
+``` javascript
+const tablero = [
+  ['X', 'O', 'X'],
+  ['O', 'X', 'O'],
+  ['O', 'O', 'X']
+]
+```
+
+Ahora, para **buscar si hay un ganador en el tablero**, podemos utilizar un bucle **for** para iterar sobre cada fila y columna del tablero.
+
+Si encontramos tres fichas iguales en una fila, columna o diagonal, entonces tenemos un ganador.
+
+``` javascript
+// Verifica las líneas horizontales
+for (let i = 0; i < 3; i++) {
+  if (
+    tablero[i][0] === tablero[i][1] &&
+    tablero[i][1] === tablero[i][2]
+  ) {
+    console.log(`El ganador es: ${tablero[i][0]}`);
+  }
+}
+
+// Verifica las líneas verticales
+for (let i = 0; i < 3; i++) {
+  if (
+    tablero[0][i] === tablero[1][i] &&
+    tablero[1][i] === tablero[2][i]
+  ) {
+    console.log(`El ganador es: ${tablero[0][i]}`);
+  }
+}
+
+// Verifica la diagonal de arriba izquierda a derecha abajo
+if (
+  tablero[0][0] === tablero[1][1] &&
+  tablero[1][1] === tablero[2][2]
+) {
+  console.log(`El ganador es: ${tablero[0][0]}`);
+}
+
+// Verifica la diagonal de derecha arriba a izquierda abajo
+if (
+  tablero[0][2] === tablero[1][1] &&
+  tablero[1][1] === tablero[2][0]
+) {
+  console.log(`El ganador es: ${tablero[0][2]}`);
+}
+```
+
+Las matrices son muy útiles y necesarias para muchos juegos (ajedrez, damas, buscaminas, etc.) y aplicaciones (hojas de cálculo, bases de datos, etc.). Así que es importante que te familiarices con ellas.
+
+# Actividad Práctica
+
+Recibimos una matriz de cadenas de texto. Tenemos que localizar la posición de la palabra **"JavaScript"** en la matriz y devolver su posición como un **array de dos elementos**: el índice de la fila y el índice de la columna.
+
+``` javascript
+const matrix = [
+  ['HTML', 'CSS', 'JavaScript'],
+  ['Java', 'C++', 'Python'],
+  ['Ruby', 'Go', 'Swift']
+]
+
+const position = findJavaScript(matrix)
+console.log(position) // -> [0, 2]
+```
+
+Si no encuentra la palabra debe devolver **[-1, -1]**. Usa el siguiente código como punto de partida:
+
+``` javascript
+function findJavaScript(matrix) {
+  // tu código aquí
+}
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function findJavaScript(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 'JavaScript') {
+        return [i, j]
+      }
+    }
+  }
+
+  return [-1, -1]
+}
+```
+
+</details>
+
+# Algoritmos con Arrays
+
+Los *algoritmos* son una serie de **pasos que se realizan para resolver un problema**. En este caso, vamos a ver algunos *algoritmos* que se pueden realizar con arrays donde se pueden aplicar los conceptos de complejidad algorítmica (cuánto tarda un algoritmo en ejecutarse).
+
+# Algoritmo para encontrar el número mayor
+
+El primer algoritmo que vamos a ver es el de encontrar el número mayor de un array. Para ello, vamos a crear una función que reciba un array de números y devuelva el número mayor.
+
+``` javascript
+function findMaxAlgorithm(array) {
+  let max = array[0] // recuperamos el primer elemento del array
+
+  // recorremos el array desde el segundo elemento
+  for (let i = 1; i < array.length; i++) {
+    // ¿es el elemento actual mayor que el máximo?
+    if (array[i] > max) {
+      // si es así, lo guardamos como nuevo máximo
+      max = array[i]
+    }
+  }
+
+  // devolvemos el máximo número que hemos encontrado
+  return max;
+}
+```
+
+:::{.callout-tip}
+En JavaScript podríamos usar el método **Math.max** para encontrar el número mayor de un array. Se usaría así: **Math.max(...array)**. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **Math.max** en su lugar.
+:::
+
+# Complejidad algorítmica
+
+Para calcular la complejidad algorítmica del algoritmo anterior, tenemos que tener en cuenta el número de operaciones que se realizan.
+
+En nuestro ejemplo, para encontrar el mayor número de un array tenemos que recorrer todos los elementos del array. Si el array tiene 10 elementos, tendremos que recorrerlo 10 veces. Si tiene 100 elementos, tendremos que recorrerlo 100 veces. Es decir, **el número de operaciones que se realizan es igual al número de elementos del array**.
+
+En programación se usa la notación O(n) para indicar que el número de operaciones que se realizan es igual al número de elementos del array. En este caso, n es el número de elementos del array.
+
+# Búsqueda binaria
+
+Imagina que tienes un array de números ordenados de menor a mayor. Por ejemplo, **[11, 18, 23, 25, 48, 55, 88, 111, 120]**. Si te pido que busques el número **55** en el array, ¿cómo lo harías?.
+
+Una forma de hacerlo sería recorrer el array desde el principio hasta el final y comprobar si el número que estamos buscando es igual al número actual. Si es así, hemos encontrado el número. Si no, seguimos buscando.
+
+``` javascript
+function findNumber(array, number) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === number) {
+      return true
+    }
+  }
+
+  return false
+}
+```
+
+:::{.callout-tip}
+Obviamente, podríamos usar el método **.includes()** para comprobar si un array contiene un elemento. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **.includes()** en su lugar.
+:::
+La complejidad algorítmica de este algoritmo es O(n). Es decir, el número de operaciones que se realizan es igual al número de elementos del array. Pero podemos hacerlo mejor.
+
+Existe un algoritmo muy popular llamado búsqueda binaria que nos permite encontrar un elemento en un array ordenado en O(log n). Es decir, el número de operaciones que se realizan es igual al logaritmo del número de elementos del array. ¿Qué significa esto?.
+
+Imagina que tenemos un array de 10 elementos. Si aplicamos la búsqueda binaria, el número de operaciones que se realizan es igual a 3. Si tenemos un array de 100 elementos, el número de operaciones que se realizan es igual a 6. ¿Ves la diferencia? ¡Es mucho más rápido!
+
+:::{.callout-tip}
+Para aplicar la búsqueda binaria, tenemos que tener en cuenta que el array tiene que estar ordenado de menor a mayor. Si no, no funcionará.
+:::
+
+# Implementación de la búsqueda binaria
+
+La idea de la búsqueda binaria es ir dividiendo el array en dos mitades. Si el elemento que estamos buscando es mayor que el elemento de la mitad del array, tenemos que buscar en la mitad derecha. Si el elemento que estamos buscando es menor que el elemento de la mitad del array, tenemos que buscar en la mitad izquierda. Y así sucesivamente hasta encontrar el elemento que estamos buscando.
+
+``` javascript
+function busquedaBinaria(array, elemento) {
+  let index = 0 // primer elemento del array
+  let final = array.length - 1 // último elemento del array a buscar
+  
+  // mientras el índice sea menor o igual que el final
+  // seguiremos buscando
+  while (index <= final) {
+    // calculamos la mitad del array
+    // como puede ser impar, usamos Math.floor para redondear hacia abajo
+    const mitad = Math.floor((index + final) / 2)
+    
+    // si el elemento de la mitad es igual al elemento que estamos buscando
+    // entonces hemos encontrado el elemento
+    if (array[mitad] === elemento) {
+      return mitad
+    } else if (array[mitad] < elemento) {
+      // si el elemento de la mitad es menor que
+      // el elemento que estamos buscando
+      // entonces tenemos que buscar en la mitad derecha
+      index = mitad + 1
+    } else {
+      // si el elemento de la mitad es mayor que
+      // el elemento que estamos buscando
+      // entonces tenemos que buscar en la mitad izquierda
+      final = mitad - 1
+    }
+  }
+  
+  // si llegamos hasta aquí, es que no hemos encontrado el elemento
+  // devolvemos -1, para indicar que no se ha encontrado
+  return -1
+}
+```
+
+:::{.callout-tip}
+En JavaScript podríamos usar el método **Array.prototype.indexOf** para encontrar el índice de un elemento en un array. Se usaría así: **array.indexOf(elemento)**. Pero por motivos didácticos, hemos creado nuestro propio algoritmo. Siempre que puedas, te recomiendo usar **Array.prototype.indexOf** en su lugar.
+:::
+
+# Actividad Práctica
+
+En una biblioteca queremos saber qué libro es el que menos páginas tiene y el que más páginas. Por suerte, no hay dos libros con el mismo número de páginas.
+
+Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.
+
+``` javascript
+function minAndMaxWord(words) {
+  // tu código aquí
+}
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function minAndMaxWord(words) {
+  let min = 0
+  let max = 0
+
+  for (let i = 1; i < words.length; i++) {
+    if (words[i] < words[min]) {
+      min = i
+    }
+
+    if (words[i] > words[max]) {
+      max = i
+    }
+  }
+
+  return [min, max]
+}
+```
+
+</details>
+
+# Objetos
+
+Los objetos en JavaScript son una colección de propiedades y métodos que definen un elemento a través de una clave y un valor.
+
+Por ejemplo, si pensamos en una persona, podemos definir sus propiedades como su nombre, su edad, su altura, su peso, etc. Y sus métodos como caminar, correr, saltar, etc.
+Declaración y asignación de objetos
+
+# Declaración y asignación de objetos
+
+Para declarar un objeto usamos las llaves **{}** y dentro las propiedades y métodos separados por comas **,**. Cada propiedad o método se define con una clave y un valor separados por dos puntos **:**.
+
+Por ejemplo, vamos a crear un objeto que represente a una persona:
+
+``` javascript
+const persona = { 
+  name: 'Dani',
+  age: 30,
+  isWorking: true
+}
+```
+Las propiedades y métodos de un objeto pueden ser de cualquier tipo de JavaScript, incluso otros objetos o arrays.
+
+``` javascript
+const persona = {
+  name: 'Dani',
+  age: 30,
+  isWorking: true,
+  family: ['Miguel', 'Maria'], // array
+  address: { // otro objeto
+    street: 'Calle de la piruleta',
+    number: 13,
+    city: 'Barcelona'
+  }
+}
+```
+Y, claro, como hemos comentado antes, también podemos tener funciones. **Cuando una función es parte de un objeto se le llama método**.
+
+``` javascript
+const persona = {
+  name: 'Dani',
+  age: 30,
+  isWorking: true,
+  family: ['Miguel', 'Maria'],
+  address: {
+    street: 'Calle de la piruleta',
+    number: 13,
+    city: 'Barcelona'
+  },
+  walk: function () { // <- método
+    console.log('Estoy caminando')
+  }
+}
+```
+
+# Acceder a propiedades y métodos de un objeto
+
+Para acceder a las propiedades y métodos de un objeto usamos el punto . y el nombre de la propiedad o método.
+
+``` javascript
+const persona = { name: 'Dani' }
+console.log(persona.name) // Dani
+```
+
+Si intentamos acceder a una propiedad o método que no existe, nos devolverá **undefined**.
+
+``` javascript
+const persona = { name: 'Dani' }
+console.log(persona.fullName) // -> undefined
+```
+Puedes usar variables para acceder a las propiedades y métodos de un objeto. Para ello, tienes que usar la notificación por corchetes **[]**.
+
+``` javascript
+const persona = { name: 'Dani' }
+let property = 'name'
+
+console.log(persona[property]) // -> Dani
+```
+También necesitas usar los corchetes si la clave de la propiedad o método tiene espacios o caracteres especiales.
+
+``` javascript
+const persona = { 'full name': 'Dani' }
+
+console.log(persona['full name']) // -> Dani
+
+// ❌ no puedes hacer esto
+// persona.full name
+```
+
+:::{.callout-tip}
+Siempre que puedas, evita usar espacios o caracteres especiales en las claves de las propiedades y métodos de un objeto. Aunque se puede, es más complicado de leer y de escribir.
+:::
+
+Igual que las propiedades, puedes acceder a los métodos de un objeto usando cualquiera de las dos formas anteriormente comentadas:
+
+``` javascript
+const persona = {
+  name: 'Dani',
+  walk: function () {
+    console.log('Estoy caminando')
+  }
+}
+
+persona.walk() // -> Estoy caminando
+
+let method = 'walk'
+persona[method]() // -> Estoy caminando
+```
+
+:::{.callout-tip}
+**persona[method]()** parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. **persona** es el objeto. Accedemos a la propiedad **method** del objeto persona con **persona[method]**. Y, finalmente, ejecutamos la función con **persona[method]()**. Es decir, estamos ejecutando **persona.walk()**.
+:::
+
+# Añadir y modificar propiedades de un objeto
+
+Igual que podemos acceder a las propiedades de un objeto, podemos añadir nuevas propiedades o modificar las existentes.
+
+``` javascript
+const persona = { name: 'Dani' }
+
+persona.age = 30
+
+console.log(persona) // -> { name: 'Dani', age: 30 }
+```
+En el código estamos modificando el objeto **persona** añadiendo la propiedad **age** con el valor **30**.
+
+:::{.callout-tip}
+Fíjate que, al igual que en los Arrays, podemos añadir propiedades a un objeto aunque sea una constante. Esto es porque no estamos reasignando la variable **persona**, si no que estamos modificando una propiedad interna del objeto.
+:::
+
+# Eliminar propiedades de un objeto
+
+Para eliminar una propiedad de un objeto usamos la palabra reservada **delete**.
+
+``` javascript
+const persona = { name: 'Dani', age: 18 }
+
+delete persona.age
+
+console.log(persona) // -> { name: 'Dani' }
+```
+
+# Actividad Práctica
+
+Tenemos una función que recibe dos parámetros. **name** y **subs**. Haz que la función devuelva un objeto con la siguiente información:
+
+*    **name** con el valor del parámetro **name**
+*    **subscribers** con el valor del parámetro **subs**
+*    **hash**, con el valor de la longitud del string **name** multiplicado por el parámetro **subs**
+*    Un método **getStatus** que devuelva el texto **El canal de \<name> tiene \<subs> suscriptores**. Por ejemplo, para name = * 'Dani' y subs = 100, el método **getStatus** devolvería **El canal de Dani tiene 100 suscriptores**.
+
+¡Ojo! El método **getStatus** debe devolver el texto, NO imprimirlo por consola.
+
+``` javascript
+function createObject(name, subs) {
+  // tu código aquí
+}
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function createObject(name, subs) {
+  return {
+    name: name,
+    subscribers: subs,
+    hash: name.length * subs,
+    getStatus: function () {
+      return `El canal de ${this.name} tiene ${this.subscribers} suscriptores`
+    }
+  }
+}
+```
+
+</details>
+
+# Atajos para trabajar con objetos
+
+Trabajar con objetos es muy común en JavaScript. En esta clase vamos a ver algunos atajos que nos permiten trabajar con ellos de forma más cómoda, tanto a la hora de crearlos como a la hora de recuperar sus propiedades.
+
+## Atajo al crear un objeto
+
+Imagina que quieres crear un objeto y que algunas de sus propiedades usen como valor algunas variables que ya tenemos.
+
+``` javascript
+const name = 'Spidey'
+const universe = 42
+
+const spiderman = {
+  name: name,
+  universe: universe,
+  powers: ['web', 'invisibility', 'spider-sense']
+}
+```
+
+
+
+En este caso, podemos usar un atajo para crear el objeto. **Si la propiedad y la variable tienen el mismo nombre**, podemos omitir el valor y dejar solo el nombre de la propiedad.
+
+``` javascript
+const name = 'Spidey'
+const universe = 42
+
+const spiderman = {
+  name, // <- automáticamente asigna el valor de la variable name
+  universe, // <- automáticamente asigna el valor de la variable universe
+  powers: ['web', 'invisibility', 'spider-sense']
+}
+```
+
+Fíjate que si tuvieramos **powers** fuera del objeto, podríamos crear el objeto en la misma línea:
+
+``` javascript
+const name = 'Spidey'
+const universe = 42
+const powers = ['web', 'invisibility', 'spider-sense']
+
+const spiderman = { name, universe, powers }
+```
+
+# Destructuración: el atajo al recuperar propiedades
+
+En la anterior clase hemos visto que para recuperar una propiedad de un objeto podemos usar la notación de corchetes o la notación de punto:
+
+``` javascript
+const spiderman = {
+  name: 'Spidey',
+  universe: 42,
+  powers: ['web', 'invisibility', 'spider-sense']
+}
+
+console.log(spiderman['name']) // Spidey
+console.log(spiderman.name) // Spidey
+```
+
+A veces queremos recuperar el valor de la propiedad y guardarlo en una variable, para usarlo más adelante. Haríamos algo así:
+
+``` javascript
+
+const universe = spiderman.universe
+console.log(universe) // 42
+
+const powers = spiderman['powers'][1]
+console.log(powers) // 'invisibility'
+```
+
+:::{.callout-tip}
+**spiderman['powers'][1]** de nuevo puede parecer un poco confuso, pero hay que separarlo en partes. **spiderman** es el objeto. Accedemos a la propiedad **powers** y como es un array, podemos acceder a su segundo elemento con **[1]**. Y ahí está el valor que queremos: **invisibility**.
+:::
+
+A la hora de acceder a las propiedades existe un atajo llamado **desestructuración** (o destructuring en inglés) muy interesante que nos permite recuperar el valor de una propiedad y guardarlo en una variable de una.
+
+Lo importante es que tengamos en cuenta que **la variable que se creará tendrá el mismo nombre que la propiedad que estamos recuperando**.
+
+``` javascript
+const { universe } = spiderman
+console.log(universe) // 42
+```
+
+Además, puedes recuperar tantas propiedades como quieras, separándolas por comas.
+
+``` javascript
+const { universe, name, powers } = spiderman
+console.log(universe) // 42
+console.log(name) // 'Spidey'
+console.log(powers) // ['web', 'invisibility', 'spider-sense']
+```
+
+# Renombrar variables y valores por defecto
+
+Si quieres que la variable que se crea tenga un **nombre diferente al de la propiedad**, puedes hacerlo así:
+
+``` javascript
+const { universe: universeNumber } = spiderman
+console.log(universeNumber) // 42
+```
+
+Lo que estamos haciendo es recuperar la propiedad **universe** pero crear la constante con el nombre **universeNumber**.
+
+Si la propiedad no existe, podemos asignarle un valor por defecto:
+
+``` javascript
+const { name, isAvenger = false } = spiderman
+console.log(name) // 'Spidey'
+console.log(isAvenger) // false
+```
+
+El objeto que hemos creado antes no tenía la propiedad **isAvenger**, pero al recuperarla le hemos asignado un valor por defecto de **false**. Si no le hubiéramos asignado un valor por defecto, la variable **isAvenger** sería **undefined**.
+
+Así que si recuperamos una propiedad que no existe, la variable que se creará tendrá el valor por defecto que le hayamos asignado. Y lo hacemos usando el operador **=**.
+
+:::{.callout-tip}
+Esto es muy útil, por ejemplo, para recuperar opciones o configuración del usuario que quizás no ha definido todos los valores pero tenemos claro qué comportamiento queremos que tenga nuestra aplicación por defecto.
+:::
+
+# Objetos anidados y atajo
+
+Ya sabemos que podemos tener un objeto dentro de un objeto:
+
+``` javascript
+const spiderman = {
+  name: 'Spidey',
+  universe: 42,
+  powers: ['web', 'invisibility', 'spider-sense'],
+  partner: {
+    name: 'Mary Jane',
+    universe: 42,
+    powers: ['red hair', 'blue eyes']
+  }
+}
+```
+
+Para acceder a las propiedades de un objeto anidado, podemos usar la notación de corchetes o la notación de punto:
+
+``` javascript
+console.log(spiderman.partner.name) // 'Mary Jane'
+console.log(spiderman['partner']['name']) // 'Mary Jane'
+```
+
+Si queremos recuperar la propiedad **name** del objeto **partner** y guardarla en una variable, podemos hacerlo así:
+
+``` javascript
+const { partner } = spiderman
+const { name } = partner
+console.log(name) // 'Mary Jane'
+```
+
+Pero también podemos hacerlo en una sola línea:
+
+``` javascript
+const { partner: { name } } = spiderman
+console.log(name) // 'Mary Jane'
+```
+
+Lo que estamos haciendo es: del objeto **spiderman** extrae la propiedad **partner**, y de esta, extrae la propiedad **name**. Como resultado sólo crearemos la variable **name** con el valor **'Mary Jane'**.
+
+# Quiz
+
+:::{.question}
+¿Cómo se llama el atajo que nos permite recuperar el valor de una propiedad de un objeto?
+
+:::{.choices}
+
+:::{.choice}
+dot notation o notación de punto
+:::
+
+:::{.choice .correct-choice}
+desestructuración o destructuring
+:::
+
+:::{.choice}
+extracting o extracción
+:::
+
+:::
+:::
+
+:::{.question}
+¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+
+``` javascript
+const person = {
+  name: 'John',
+  age: 30,
+  hobbies: ['reading', 'music', 'sports']
+}
+          
+const { age: personAge } = person
+console.log(age)
+```
+
+:::{.choices}
+
+:::{.choice}
+30
+:::
+
+:::{.choice .correct-choice}
+ReferenceError: age is not defined
+:::
+
+:::{.choice}
+undefined
+:::
+
+:::
+:::
+
+:::{.question}
+¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+
+``` javascript
+const person = {
+  name: 'John',
+  age: 30,
+  hobbies: ['reading', 'music', 'sports']
+}
+          
+const { 
+  weight = 70,
+  height = 180,
+  } = person
+
+console.log(weight, height)
+```
+
+:::{.choices}
+
+:::{.choice .correct-choice}
+70 180
+:::
+
+:::{.choice}
+ReferenceError: weight is not defined
+:::
+
+:::{.choice}
+undefined undefined
+:::
+
+:::
+:::
+
+# Iterando Objetos en JavaScript
+
+El manejo de objetos es uno de los pilares en JavaScript y es crucial conocer cómo podemos iterar o recorrer los mismos. Existen varias formas de hacerlo y en esta clase vamos a revisar algunas de las más comunes: el bucle **for...in** y los métodos **Object.keys()**, **Object.values()** y **Object.entries()**.
+
+## Iterando con for...in
+
+La estructura de control **for...in** nos permite crear un bucle que itera sobre todas las propiedades enumerables de un objeto, en un orden arbitrario.
+
+``` javascript
+const spiderman = {
+  name: 'Spidey',
+  universe: 42,
+  powers: ['web', 'invisibility', 'spider-sense']
+}
+
+for (const property in spiderman) {
+  console.log(`${property}: ${spiderman[property]}`);
+}
+
+// -> name: Spidey
+// -> universe: 42
+// -> powers: web,invisibility,spider-sensibles
+```
+
+:::{.callout-tip}
+No confundas el bucle **for...in** con el de **for...of** que vimos en la sección de arrays. El primero itera sobre las propiedades enumerables de un objeto, mientras que el segundo itera sobre los elementos de un objeto iterable (como los elementos de un array, por ejemplo).
+:::
+
+# Transformar un objeto en un array
+
+A veces queremos transformar un objeto en un array para poder iterar sobre él. Para esto podemos utilizar el método **Object.keys(), Object.values()** o **Object.entries()**.
+
+Cada uno de estos métodos retorna un array, pero cada uno de ellos contiene elementos diferentes. Vamos a verlos uno por uno.
+
+## Iterar con Object.keys()
+
+El método **Object.keys()** retorna un array con las propiedades enumerables de un objeto.
+
+``` javascript
+const spiderman = {
+  name: 'Spidey',
+  universe: 42,
+  powers: ['web', 'invisibility', 'spider-sense']
+}
+
+const properties = Object.keys(spiderman)
+
+console.log(properties.length) // 3
+
+properties.forEach(property => {
+  console.log(property)
+})
+
+// -> name
+// -> universe
+// -> powers
+```
+
+Este código hace algo muy similar al anterior, pero utilizando **Object.keys()** para obtener las propiedades del objeto.
+
+:::{.callout-tip}
+**¿Qué son las propiedades enumerables?** Por defecto, cuando añadimos propiedades a un objeto, estas son enumerables, es decir, que se pueden iterar sobre ellas. Sin embargo, como veremos más adelante, podemos crear propiedades que, por lo que sea, nos interesa que no sean enumerables. A veces estas son más de uso interno, como métodos auxiliares que el propio lenguaje JavaScript tiene, y no queremos que aparezcan cuando iteramos sobre un objeto.
+:::
+
+## Iterando con Object.values()
+
+El método **Object.values()** retorna un array con los valores correspondientes a las propiedades enumerables de un objeto.
+
+``` javascript
+const values = Object.values(spiderman)
+
+values.forEach(value => {
+  console.log(value)
+})
+
+// -> Spidey
+// -> 42
+// -> [ 'web', 'invisibility', 'spider-sense' ]
+```
+
+Como ves, la diferencia con **Object.values()** es que este método retorna los valores y **Object.keys()** retorna las propiedades.
+
+## Iterando con Object.entries()
+
+El método **Object.entries()** retorna un array de arrays, donde cada subarray es un par [propiedad, valor] correspondiente a las propiedades enumerables de un objeto.
+
+``` javascript
+const entries = Object.entries(spiderman)
+
+entries.forEach(entry => {
+  console.log(entry)
+})
+
+// -> [ 'name', 'Spidey' ]
+// -> [ 'universe', 42 ]
+// -> [ 'powers', [ 'web', 'invisibility', 'spider-sense' ] ]
+```
+
+Lo interesante es que este método nos da acceso tanto a las propiedades como a los valores. Lo puedes ver más claro en el siguiente ejemplo:
+
+``` javascript
+const entries = Object.entries(spiderman)
+
+entries.forEach(entry => {
+  const property = entry[0]
+  const value = entry[1]
+
+  console.log(`${property}: ${value}`)
+})
+```
+
+# Actividad Práctica
+
+Tienes una función que recibe un objeto como parámetro. La función debe retornar un array con el nombre de las propiedades que su tipo sea **boolean**.
+
+Por ejemplo, para el objeto **{ a: true, b: 42, c: false }** la función debe retornar **['a', 'c']** ya que son las dos propiedades que tienen valores booleanos.
+
+``` javascript
+function getKeysOfBooleanValues(obj) {
+    // tu código aquí
+  }
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function getKeysOfBooleanValues(obj) {
+  return Object.keys(obj).filter(key => typeof obj[key] === 'boolean')
+}
+```
+
+</details>
+
+# Operador de Encadenamiento Opcional
+
+Si intentamos acceder a una propiedad de un objeto que no existe... **¡se romperá nuestra aplicación!**
+
+Por suerte, existen formas de evitar que esto ocurra. En esta clase veremos algunas de ellas y presentaremos **el operador de Encadenamiento Opcional**, también llamado *Optional Chaining*.
+
+Este operador es especialmente útil cuando trabajamos con objetos que podrían tener estructuras complejas o variables que podrían no estar definidas en determinados momentos de la ejecución de nuestro código.
+
+# **El error fatal de intentar leer una propiedad de** undefined
+
+**Uno de los errores más comunes en JavaScript**, y que estoy seguro que verás tarde o temprano, es el que dice **que no puedes leer una propiedad de undefined**.
+
+Este error ocurre cuando intentamos acceder a una propiedad de un objeto que no existe. Por ejemplo:
+
+``` javascript
+const gamesystem = {
+  name: 'PS5',
+  price: 550,
+  specs: {
+    cpu: 'AMD Ryzen Zen 2',
+    gpu: 'AMD Radeon RDNA 2',
+  }
+}
+
+console.log(gamesystem.name) // -> PS5
+
+console.log(gamesystem.specifications) // -> undefined
+
+console.log(gamesystem.specifications.ram) 
+// ❌ Uncaught TypeError: Cannot read property 'ram' of undefined
+```
+
+El error parece inocente pero fíjate. En lugar de usar la propiedad **specs** hemos usado **specifications**. Pero esto es suficiente para que JavaScript nos diga que no puede leer la propiedad **ram** de **undefined**.
+
+# Evitar el error con if
+
+Una forma de evitar este error es usando un **if** para comprobar si la propiedad existe antes de intentar acceder a ella:
+
+``` javascript
+if (typeof gamesystem.specifications === 'object') {
+  console.log(gamesystem.specifications.ram)
+} else {
+  console.log('No hay especificaciones')
+}
+```
+:::{.callout-tip}
+¡Cuidado con esto! Al usar el operador **typeof** con un valor **null** nos dice que es **object**. Esto es un error histórico del lenguaje. Así que si la propiedad **specifications** es **null**, el **if** se ejecutará y obtendremos un error al intentar acceder a **ram**. Para evitar esto, podemos añadir una comprobación extra: **gamesystem.specifications !== null**.
+:::
+
+Estamos usando el operador **typeof** para comprobar si la propiedad **specifications** es un objeto. Ya lo vimos en la primera sección del curso y nos ayuda a asegurarnos que **specifications** existe y es un objeto, antes de acceder a su propiedad **ram**.
+
+## El operador in para comprobar si una propiedad existe
+
+Otra forma de comprobar si una propiedad existe es usando el operador **in**. Este operador comprueba si una propiedad existe en un objeto y devuelve **true** o **false**:
+
+``` javascript
+console.log('name' in gamesystem) // -> true
+console.log('specifications' in gamesystem) // -> false
+console.log('specs' in gamesystem) // -> true
+
+if ('specifications' in gamesystem) {
+  console.log(gamesystem.specifications.ram)
+} else {
+  console.log('No hay especificaciones')
+}
+```
+¡Pero ojo! ¿Qué pasa si la propiedad existe pero su valor es **undefined**?
+
+``` javascript
+const gamesystem = {
+  name: 'PS5',
+  price: 550,
+  specifications: undefined,
+}
+
+console.log('specifications' in gamesystem) // -> true
+
+gamesystem.specifications.ram
+// ❌ Uncaught TypeError: Cannot read property 'ram' of undefined
+```
+El operador **in** puede ser interesante para comprobar si una propiedad existe en un objeto, pero no nos sirve para comprobar si el valor de esa propiedad es **undefined** y habría que hacer comprobaciones extra para evitar el error.
+
+``` javascript
+if (
+  'specifications' in gamesystem &&
+  gamesystem.specifications !== undefined &&
+  gamesystem.specifications !== null) {
+  console.log(gamesystem.specifications.ram)
+} else {
+  console.log('No hay especificaciones')
+}
+```
+
+Mucho código para algo tan simple. Por suerte, existe una forma más sencilla de hacerlo.
+
+## El operador de Encadenamiento Opcional, ?.
+
+El Operador de Encadenamiento Opcional **?**. permite leer el valor de una propiedad ubicada profundamente dentro de una cadena de objetos conectados, sin tener que validar expresamente que cada referencia en la cadena es válida.
+
+``` javascript
+const gamesystem = {
+  name: 'PS5',
+  price: 550,
+  specs: {
+    cpu: 'AMD Ryzen Zen 2',
+    gpu: 'AMD Radeon RDNA 2',
+  }
+}
+
+console.log(gamesystem.specifications?.cpu)
+// -> undefined
+console.log(gamesystem.specs?.cpu)
+// -> AMD Ryzen Zen 2
+```
+
+Si la propiedad **specifications** no existe, el operador **?**. devuelve **undefined **y no se produce ningún error. Si la propiedad existe, el operador **?**. devuelve el valor de la propiedad.
+
+## Beneficios del Operador de Encadenamiento Opcional
+
+Uno de los principales beneficios del operador de encadenamiento opcional es que simplifica nuestro código y lo hace más legible. En lugar de tener que hacer varias comprobaciones para asegurarnos de que un objeto y sus propiedades existen, podemos intentar acceder directamente a la propiedad que nos interesa, y JavaScript no se quejará si no existe.
+
+Este operador es especialmente útil en aplicaciones con datos dinámicos, donde no siempre podemos garantizar la estructura exacta de nuestros objetos.
+
+``` javascript
+const user = {
+  name: 'Peter',
+  settings: {
+    theme: 'dark',
+    notifications: {
+      email: true,
+      push: false,
+      marketing: undefined
+    }
+  }
+}
+
+// la forma clásica de acceder a una propiedad anidada
+// de forma segura
+let email = undefined
+if (user && user.settings &&
+  user.settings.notifications &&
+  user.settings.notifications.email) {
+  email = user.settings.notifications.email
+}
+
+console.log(email) // -> true
+
+// con Optional Chaining Operator
+const email = user?.settings?.notifications?.email
+console.log(email) // -> true
+```
+El operador de encadenamiento opcional es una excelente herramienta para trabajar con objetos en JavaScript, especialmente cuando no podemos garantizar la estructura o presencia de ciertos datos. **Nos ayuda a escribir un código más limpio, legible y resistente a errores**.
+
+# Actividad Práctica
+
+Somos un equipo de submarinistas. Estamos explorando el fondo marino pero no sabemos qué nos vamos a encontrar porque vamos casi a ciegas. Vamos con un pequeño robot y funciona con un programa que recibe tres parámetros:
+
+*    Un objeto con la información del fondo marino
+*    Una cadena de texto con el nombre del lugar que queremos explorar
+*    Una cadena de texto con el nombre del objeto que queremos encontrar
+
+Por ejemplo. Con el objeto **ocean** que nos llega como primer parámetro, podemos explorar el lugar **deep** y buscar el objeto **treasure**. Así que intentaríamos acceder a **ocean.deep.treasure**.
+
+Si lo encontramos el robot nos devuelve **true** y si no lo encuentra nos devuelve **false**. Sólo necesitamos saber si lo hemos encontrado o no, no necesitamos saber su valor.
+
+Vamos a necesitar asegurarnos que el robot no se rompa, que cuesta mucho dinero, en el caso que no pueda encontrar el lugar o el objeto que le hemos pedido. Así que vamos a usar el operador de encadenamiento opcional para evitar errores.
+
+Pista: ¡Recuerda que en una clase anterior hemos visto cómo podemos acceder a una propiedad de un objeto usando una variable! Por ejemplo, si tenemos un objeto **person** y una variable **key** con el valor **name**, podemos acceder a la propiedad **name** del objeto **person** usando **person[key]** y sería como hacer **person.name**.
+
+``` javascript
+function searchInOcean(ocean, section, item) {
+    // tu código aquí
+  }
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function searchInOcean(ocean, section, item) {
+  return ocean?.[section]?.[item] !== undefined
+}
+```
+</details>
+:::

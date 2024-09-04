@@ -1,5 +1,5 @@
 :::{.justify}
-# Introducción a HTML
+# HTML
 
 Este capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML.
 

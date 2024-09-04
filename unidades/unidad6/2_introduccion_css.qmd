@@ -1,5 +1,5 @@
 ::: justify
-# Introducción al CSS
+# CSS
 
 CSS signifíca Cascading Style Sheets, es un lenguaje de diseño gráfico para definir la presentación de documentos HTML. CSS describe cómo los elementos HTML deben ser mostrados en la pantalla, en papel, o en otras formas de medios. CSS ahorra mucho trabajo. Puede controlar el diseño de varias páginas a la vez. CSS puede ser almacenado en archivos externos, lo que permite actualizar un sitio web entero simplemente actualizando un archivo. CSS hace que el sitio web sea más accesible para los visitantes con discapacidades. CSS es fácil de aprender y entender, pero también es poderoso.
 
