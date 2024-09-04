@@ -1965,10 +1965,10 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html",
-    "href": "unidades/unidad6/3_introduccion_javascript.html",
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
     "title": "JavaScript",
-    "section": "",
+    "section": "¿Qué es JavaScript?",
     "text": "¿Qué es JavaScript?\nJavaScript es uno de los lenguajes de programación más usados y populares del mundo. Nació en 1995 para darle interactividad a las páginas web y desde entonces ha evolucionado hasta convertirse en un lenguaje de programación de propósito general. Dicho de otra forma: se puede usar casi para cualquier cosa.",
     "crumbs": [
       "Unidad 6: Frontend",
@@ -2652,6 +2652,105 @@
     "title": "JavaScript",
     "section": "Quiz",
     "text": "Quiz\n\n¿Cuántas veces como mínimo se ejecutará el código dentro de un bucle do{ … } while?\n\n\n\n\n ✗Ninguna vez\n\n\n ✗Depende de la condición\n\n\n ✓Una vez",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#creación-de-matrices",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#creación-de-matrices",
+    "title": "JavaScript",
+    "section": "Creación de Matrices",
+    "text": "Creación de Matrices\nPara empezar, aquí se muestra cómo se puede crear una matriz simple de 2x3 en JavaScript:\nconst matriz = [\n  [1, 2, 3],\n  [4, 5, 6]\n]\n\n\n\n\n\n\nTip\n\n\n\nLas matrices no tienen por qué ser cuadradas. Pueden tener cualquier número de filas y columnas.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#atajo-al-crear-un-objeto",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#atajo-al-crear-un-objeto",
+    "title": "JavaScript",
+    "section": "Atajo al crear un objeto",
+    "text": "Atajo al crear un objeto\nImagina que quieres crear un objeto y que algunas de sus propiedades usen como valor algunas variables que ya tenemos.\nconst name = 'Spidey'\nconst universe = 42\n\nconst spiderman = {\n  name: name,\n  universe: universe,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\nEn este caso, podemos usar un atajo para crear el objeto. Si la propiedad y la variable tienen el mismo nombre, podemos omitir el valor y dejar solo el nombre de la propiedad.\nconst name = 'Spidey'\nconst universe = 42\n\nconst spiderman = {\n  name, // &lt;- automáticamente asigna el valor de la variable name\n  universe, // &lt;- automáticamente asigna el valor de la variable universe\n  powers: ['web', 'invisibility', 'spider-sense']\n}\nFíjate que si tuvieramos powers fuera del objeto, podríamos crear el objeto en la misma línea:\nconst name = 'Spidey'\nconst universe = 42\nconst powers = ['web', 'invisibility', 'spider-sense']\n\nconst spiderman = { name, universe, powers }",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-forin",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-forin",
+    "title": "JavaScript",
+    "section": "Iterando con for…in",
+    "text": "Iterando con for…in\nLa estructura de control for…in nos permite crear un bucle que itera sobre todas las propiedades enumerables de un objeto, en un orden arbitrario.\nconst spiderman = {\n  name: 'Spidey',\n  universe: 42,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\n\nfor (const property in spiderman) {\n  console.log(`${property}: ${spiderman[property]}`);\n}\n\n// -&gt; name: Spidey\n// -&gt; universe: 42\n// -&gt; powers: web,invisibility,spider-sensibles\n\n\n\n\n\n\nTip\n\n\n\nNo confundas el bucle for…in con el de for…of que vimos en la sección de arrays. El primero itera sobre las propiedades enumerables de un objeto, mientras que el segundo itera sobre los elementos de un objeto iterable (como los elementos de un array, por ejemplo).",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterar-con-object.keys",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#iterar-con-object.keys",
+    "title": "JavaScript",
+    "section": "Iterar con Object.keys()",
+    "text": "Iterar con Object.keys()\nEl método Object.keys() retorna un array con las propiedades enumerables de un objeto.\nconst spiderman = {\n  name: 'Spidey',\n  universe: 42,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\n\nconst properties = Object.keys(spiderman)\n\nconsole.log(properties.length) // 3\n\nproperties.forEach(property =&gt; {\n  console.log(property)\n})\n\n// -&gt; name\n// -&gt; universe\n// -&gt; powers\nEste código hace algo muy similar al anterior, pero utilizando Object.keys() para obtener las propiedades del objeto.\n\n\n\n\n\n\nTip\n\n\n\n¿Qué son las propiedades enumerables? Por defecto, cuando añadimos propiedades a un objeto, estas son enumerables, es decir, que se pueden iterar sobre ellas. Sin embargo, como veremos más adelante, podemos crear propiedades que, por lo que sea, nos interesa que no sean enumerables. A veces estas son más de uso interno, como métodos auxiliares que el propio lenguaje JavaScript tiene, y no queremos que aparezcan cuando iteramos sobre un objeto.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.values",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.values",
+    "title": "JavaScript",
+    "section": "Iterando con Object.values()",
+    "text": "Iterando con Object.values()\nEl método Object.values() retorna un array con los valores correspondientes a las propiedades enumerables de un objeto.\nconst values = Object.values(spiderman)\n\nvalues.forEach(value =&gt; {\n  console.log(value)\n})\n\n// -&gt; Spidey\n// -&gt; 42\n// -&gt; [ 'web', 'invisibility', 'spider-sense' ]\nComo ves, la diferencia con Object.values() es que este método retorna los valores y Object.keys() retorna las propiedades.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.entries",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.entries",
+    "title": "JavaScript",
+    "section": "Iterando con Object.entries()",
+    "text": "Iterando con Object.entries()\nEl método Object.entries() retorna un array de arrays, donde cada subarray es un par [propiedad, valor] correspondiente a las propiedades enumerables de un objeto.\nconst entries = Object.entries(spiderman)\n\nentries.forEach(entry =&gt; {\n  console.log(entry)\n})\n\n// -&gt; [ 'name', 'Spidey' ]\n// -&gt; [ 'universe', 42 ]\n// -&gt; [ 'powers', [ 'web', 'invisibility', 'spider-sense' ] ]\nLo interesante es que este método nos da acceso tanto a las propiedades como a los valores. Lo puedes ver más claro en el siguiente ejemplo:\nconst entries = Object.entries(spiderman)\n\nentries.forEach(entry =&gt; {\n  const property = entry[0]\n  const value = entry[1]\n\n  console.log(`${property}: ${value}`)\n})",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#el-operador-in-para-comprobar-si-una-propiedad-existe",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#el-operador-in-para-comprobar-si-una-propiedad-existe",
+    "title": "JavaScript",
+    "section": "El operador in para comprobar si una propiedad existe",
+    "text": "El operador in para comprobar si una propiedad existe\nOtra forma de comprobar si una propiedad existe es usando el operador in. Este operador comprueba si una propiedad existe en un objeto y devuelve true o false:\nconsole.log('name' in gamesystem) // -&gt; true\nconsole.log('specifications' in gamesystem) // -&gt; false\nconsole.log('specs' in gamesystem) // -&gt; true\n\nif ('specifications' in gamesystem) {\n  console.log(gamesystem.specifications.ram)\n} else {\n  console.log('No hay especificaciones')\n}\n¡Pero ojo! ¿Qué pasa si la propiedad existe pero su valor es undefined?\nconst gamesystem = {\n  name: 'PS5',\n  price: 550,\n  specifications: undefined,\n}\n\nconsole.log('specifications' in gamesystem) // -&gt; true\n\ngamesystem.specifications.ram\n// ❌ Uncaught TypeError: Cannot read property 'ram' of undefined\nEl operador in puede ser interesante para comprobar si una propiedad existe en un objeto, pero no nos sirve para comprobar si el valor de esa propiedad es undefined y habría que hacer comprobaciones extra para evitar el error.\nif (\n  'specifications' in gamesystem &&\n  gamesystem.specifications !== undefined &&\n  gamesystem.specifications !== null) {\n  console.log(gamesystem.specifications.ram)\n} else {\n  console.log('No hay especificaciones')\n}\nMucho código para algo tan simple. Por suerte, existe una forma más sencilla de hacerlo.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#el-operador-de-encadenamiento-opcional-.",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#el-operador-de-encadenamiento-opcional-.",
+    "title": "JavaScript",
+    "section": "El operador de Encadenamiento Opcional, ?.",
+    "text": "El operador de Encadenamiento Opcional, ?.\nEl Operador de Encadenamiento Opcional ?. permite leer el valor de una propiedad ubicada profundamente dentro de una cadena de objetos conectados, sin tener que validar expresamente que cada referencia en la cadena es válida.\nconst gamesystem = {\n  name: 'PS5',\n  price: 550,\n  specs: {\n    cpu: 'AMD Ryzen Zen 2',\n    gpu: 'AMD Radeon RDNA 2',\n  }\n}\n\nconsole.log(gamesystem.specifications?.cpu)\n// -&gt; undefined\nconsole.log(gamesystem.specs?.cpu)\n// -&gt; AMD Ryzen Zen 2\nSi la propiedad specifications no existe, el operador ?. devuelve undefined y no se produce ningún error. Si la propiedad existe, el operador ?. devuelve el valor de la propiedad.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#beneficios-del-operador-de-encadenamiento-opcional",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#beneficios-del-operador-de-encadenamiento-opcional",
+    "title": "JavaScript",
+    "section": "Beneficios del Operador de Encadenamiento Opcional",
+    "text": "Beneficios del Operador de Encadenamiento Opcional\nUno de los principales beneficios del operador de encadenamiento opcional es que simplifica nuestro código y lo hace más legible. En lugar de tener que hacer varias comprobaciones para asegurarnos de que un objeto y sus propiedades existen, podemos intentar acceder directamente a la propiedad que nos interesa, y JavaScript no se quejará si no existe.\nEste operador es especialmente útil en aplicaciones con datos dinámicos, donde no siempre podemos garantizar la estructura exacta de nuestros objetos.\nconst user = {\n  name: 'Peter',\n  settings: {\n    theme: 'dark',\n    notifications: {\n      email: true,\n      push: false,\n      marketing: undefined\n    }\n  }\n}\n\n// la forma clásica de acceder a una propiedad anidada\n// de forma segura\nlet email = undefined\nif (user && user.settings &&\n  user.settings.notifications &&\n  user.settings.notifications.email) {\n  email = user.settings.notifications.email\n}\n\nconsole.log(email) // -&gt; true\n\n// con Optional Chaining Operator\nconst email = user?.settings?.notifications?.email\nconsole.log(email) // -&gt; true\nEl operador de encadenamiento opcional es una excelente herramienta para trabajar con objetos en JavaScript, especialmente cuando no podemos garantizar la estructura o presencia de ciertos datos. Nos ayuda a escribir un código más limpio, legible y resistente a errores.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
@@ -3824,115 +3923,5 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#creación-de-matrices",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#creación-de-matrices",
-    "title": "JavaScript",
-    "section": "Creación de Matrices",
-    "text": "Creación de Matrices\nPara empezar, aquí se muestra cómo se puede crear una matriz simple de 2x3 en JavaScript:\nconst matriz = [\n  [1, 2, 3],\n  [4, 5, 6]\n]\n\n\n\n\n\n\nTip\n\n\n\nLas matrices no tienen por qué ser cuadradas. Pueden tener cualquier número de filas y columnas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#atajo-al-crear-un-objeto",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#atajo-al-crear-un-objeto",
-    "title": "JavaScript",
-    "section": "Atajo al crear un objeto",
-    "text": "Atajo al crear un objeto\nImagina que quieres crear un objeto y que algunas de sus propiedades usen como valor algunas variables que ya tenemos.\nconst name = 'Spidey'\nconst universe = 42\n\nconst spiderman = {\n  name: name,\n  universe: universe,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\nEn este caso, podemos usar un atajo para crear el objeto. Si la propiedad y la variable tienen el mismo nombre, podemos omitir el valor y dejar solo el nombre de la propiedad.\nconst name = 'Spidey'\nconst universe = 42\n\nconst spiderman = {\n  name, // &lt;- automáticamente asigna el valor de la variable name\n  universe, // &lt;- automáticamente asigna el valor de la variable universe\n  powers: ['web', 'invisibility', 'spider-sense']\n}\nFíjate que si tuvieramos powers fuera del objeto, podríamos crear el objeto en la misma línea:\nconst name = 'Spidey'\nconst universe = 42\nconst powers = ['web', 'invisibility', 'spider-sense']\n\nconst spiderman = { name, universe, powers }",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
-    "title": "JavaScript",
-    "section": "¿Qué es JavaScript?",
-    "text": "¿Qué es JavaScript?\nJavaScript es uno de los lenguajes de programación más usados y populares del mundo. Nació en 1995 para darle interactividad a las páginas web y desde entonces ha evolucionado hasta convertirse en un lenguaje de programación de propósito general. Dicho de otra forma: se puede usar casi para cualquier cosa.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-forin",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-forin",
-    "title": "JavaScript",
-    "section": "Iterando con for…in",
-    "text": "Iterando con for…in\nLa estructura de control for…in nos permite crear un bucle que itera sobre todas las propiedades enumerables de un objeto, en un orden arbitrario.\nconst spiderman = {\n  name: 'Spidey',\n  universe: 42,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\n\nfor (const property in spiderman) {\n  console.log(`${property}: ${spiderman[property]}`);\n}\n\n// -&gt; name: Spidey\n// -&gt; universe: 42\n// -&gt; powers: web,invisibility,spider-sensibles\n\n\n\n\n\n\nTip\n\n\n\nNo confundas el bucle for…in con el de for…of que vimos en la sección de arrays. El primero itera sobre las propiedades enumerables de un objeto, mientras que el segundo itera sobre los elementos de un objeto iterable (como los elementos de un array, por ejemplo).",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterar-con-object.keys",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#iterar-con-object.keys",
-    "title": "JavaScript",
-    "section": "Iterar con Object.keys()",
-    "text": "Iterar con Object.keys()\nEl método Object.keys() retorna un array con las propiedades enumerables de un objeto.\nconst spiderman = {\n  name: 'Spidey',\n  universe: 42,\n  powers: ['web', 'invisibility', 'spider-sense']\n}\n\nconst properties = Object.keys(spiderman)\n\nconsole.log(properties.length) // 3\n\nproperties.forEach(property =&gt; {\n  console.log(property)\n})\n\n// -&gt; name\n// -&gt; universe\n// -&gt; powers\nEste código hace algo muy similar al anterior, pero utilizando Object.keys() para obtener las propiedades del objeto.\n\n\n\n\n\n\nTip\n\n\n\n¿Qué son las propiedades enumerables? Por defecto, cuando añadimos propiedades a un objeto, estas son enumerables, es decir, que se pueden iterar sobre ellas. Sin embargo, como veremos más adelante, podemos crear propiedades que, por lo que sea, nos interesa que no sean enumerables. A veces estas son más de uso interno, como métodos auxiliares que el propio lenguaje JavaScript tiene, y no queremos que aparezcan cuando iteramos sobre un objeto.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.values",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.values",
-    "title": "JavaScript",
-    "section": "Iterando con Object.values()",
-    "text": "Iterando con Object.values()\nEl método Object.values() retorna un array con los valores correspondientes a las propiedades enumerables de un objeto.\nconst values = Object.values(spiderman)\n\nvalues.forEach(value =&gt; {\n  console.log(value)\n})\n\n// -&gt; Spidey\n// -&gt; 42\n// -&gt; [ 'web', 'invisibility', 'spider-sense' ]\nComo ves, la diferencia con Object.values() es que este método retorna los valores y Object.keys() retorna las propiedades.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.entries",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#iterando-con-object.entries",
-    "title": "JavaScript",
-    "section": "Iterando con Object.entries()",
-    "text": "Iterando con Object.entries()\nEl método Object.entries() retorna un array de arrays, donde cada subarray es un par [propiedad, valor] correspondiente a las propiedades enumerables de un objeto.\nconst entries = Object.entries(spiderman)\n\nentries.forEach(entry =&gt; {\n  console.log(entry)\n})\n\n// -&gt; [ 'name', 'Spidey' ]\n// -&gt; [ 'universe', 42 ]\n// -&gt; [ 'powers', [ 'web', 'invisibility', 'spider-sense' ] ]\nLo interesante es que este método nos da acceso tanto a las propiedades como a los valores. Lo puedes ver más claro en el siguiente ejemplo:\nconst entries = Object.entries(spiderman)\n\nentries.forEach(entry =&gt; {\n  const property = entry[0]\n  const value = entry[1]\n\n  console.log(`${property}: ${value}`)\n})",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#el-operador-in-para-comprobar-si-una-propiedad-existe",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#el-operador-in-para-comprobar-si-una-propiedad-existe",
-    "title": "JavaScript",
-    "section": "El operador in para comprobar si una propiedad existe",
-    "text": "El operador in para comprobar si una propiedad existe\nOtra forma de comprobar si una propiedad existe es usando el operador in. Este operador comprueba si una propiedad existe en un objeto y devuelve true o false:\nconsole.log('name' in gamesystem) // -&gt; true\nconsole.log('specifications' in gamesystem) // -&gt; false\nconsole.log('specs' in gamesystem) // -&gt; true\n\nif ('specifications' in gamesystem) {\n  console.log(gamesystem.specifications.ram)\n} else {\n  console.log('No hay especificaciones')\n}\n¡Pero ojo! ¿Qué pasa si la propiedad existe pero su valor es undefined?\nconst gamesystem = {\n  name: 'PS5',\n  price: 550,\n  specifications: undefined,\n}\n\nconsole.log('specifications' in gamesystem) // -&gt; true\n\ngamesystem.specifications.ram\n// ❌ Uncaught TypeError: Cannot read property 'ram' of undefined\nEl operador in puede ser interesante para comprobar si una propiedad existe en un objeto, pero no nos sirve para comprobar si el valor de esa propiedad es undefined y habría que hacer comprobaciones extra para evitar el error.\nif (\n  'specifications' in gamesystem &&\n  gamesystem.specifications !== undefined &&\n  gamesystem.specifications !== null) {\n  console.log(gamesystem.specifications.ram)\n} else {\n  console.log('No hay especificaciones')\n}\nMucho código para algo tan simple. Por suerte, existe una forma más sencilla de hacerlo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#el-operador-de-encadenamiento-opcional-.",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#el-operador-de-encadenamiento-opcional-.",
-    "title": "JavaScript",
-    "section": "El operador de Encadenamiento Opcional, ?.",
-    "text": "El operador de Encadenamiento Opcional, ?.\nEl Operador de Encadenamiento Opcional ?. permite leer el valor de una propiedad ubicada profundamente dentro de una cadena de objetos conectados, sin tener que validar expresamente que cada referencia en la cadena es válida.\nconst gamesystem = {\n  name: 'PS5',\n  price: 550,\n  specs: {\n    cpu: 'AMD Ryzen Zen 2',\n    gpu: 'AMD Radeon RDNA 2',\n  }\n}\n\nconsole.log(gamesystem.specifications?.cpu)\n// -&gt; undefined\nconsole.log(gamesystem.specs?.cpu)\n// -&gt; AMD Ryzen Zen 2\nSi la propiedad specifications no existe, el operador ?. devuelve undefined y no se produce ningún error. Si la propiedad existe, el operador ?. devuelve el valor de la propiedad.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#beneficios-del-operador-de-encadenamiento-opcional",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#beneficios-del-operador-de-encadenamiento-opcional",
-    "title": "JavaScript",
-    "section": "Beneficios del Operador de Encadenamiento Opcional",
-    "text": "Beneficios del Operador de Encadenamiento Opcional\nUno de los principales beneficios del operador de encadenamiento opcional es que simplifica nuestro código y lo hace más legible. En lugar de tener que hacer varias comprobaciones para asegurarnos de que un objeto y sus propiedades existen, podemos intentar acceder directamente a la propiedad que nos interesa, y JavaScript no se quejará si no existe.\nEste operador es especialmente útil en aplicaciones con datos dinámicos, donde no siempre podemos garantizar la estructura exacta de nuestros objetos.\nconst user = {\n  name: 'Peter',\n  settings: {\n    theme: 'dark',\n    notifications: {\n      email: true,\n      push: false,\n      marketing: undefined\n    }\n  }\n}\n\n// la forma clásica de acceder a una propiedad anidada\n// de forma segura\nlet email = undefined\nif (user && user.settings &&\n  user.settings.notifications &&\n  user.settings.notifications.email) {\n  email = user.settings.notifications.email\n}\n\nconsole.log(email) // -&gt; true\n\n// con Optional Chaining Operator\nconst email = user?.settings?.notifications?.email\nconsole.log(email) // -&gt; true\nEl operador de encadenamiento opcional es una excelente herramienta para trabajar con objetos en JavaScript, especialmente cuando no podemos garantizar la estructura o presencia de ciertos datos. Nos ayuda a escribir un código más limpio, legible y resistente a errores.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
   }
 ]
