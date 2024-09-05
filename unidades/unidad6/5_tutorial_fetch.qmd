@@ -1,0 +1,174 @@
+# Laboratorio Fetch
+
+En este laboratorio vamos a aprender a hacer peticiones Fetch con JavaScript puro. Para ello vamos a hacer una aplicación que nos permita buscar pokemon y ver sus detalles.
+
+## Requisitos
+
+Para este tutorial vamos a utilizar tecnologias como **html**, **css** y **javascript**. Además, vamos a necesitar un navegador web y un editor de código, se recomienda leer acerca de peticiones con fetch antes de empezar este tutorial.
+
+## Instrucciones
+
+1.  Creamos un archivo **index.html** y agregamos el siguiente código:
+
+``` html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+    <h1>Pokemon</h1>
+    <input type="text" id="search" placeholder="Buscar pokemon">
+    <button id="search-button">Buscar</button>
+    <div id="pokemon"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+En esta sección hemos creado la **estructura básica de nuestro proyecto**. Hemos **agregado** un **título**, un **input** para **buscar pokemon**, un **botón** para **buscar pokemon**, un div para **mostrar** la **información** del **pokemon** y un **script** para nuestro archivo **app.js**.
+
+2.  Creamos un archivo **app.js** y agregamos el siguiente código:
+
+``` javascript
+document.getElementById('search-button').addEventListener('click', () => {
+    const search = document.getElementById('search').value;
+    fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
+        .then(response => response.json())
+        .then(data => {
+            const pokemon = document.getElementById('pokemon');
+            pokemon.innerHTML = `
+                <h2>${data.name}</h2>
+                <img src="${data.sprites.front_default}" alt="${data.name}">
+                <p>Altura: ${data.height}</p>
+                <p>Peso: ${data.weight}</p>
+            `;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
+```
+
+En esta sección hemos **agregado** un **evento** al **botón** de **buscar pokemon**. Cuando se haga **click** en el **botón**, se va a hacer una **petición** a la **API** de [PokeAPI](https://pokeapi.co/). Si la petición es exitosa, se va a **mostrar la información** del **pokemon** en el **div pokemon**. Si la petición falla, se va a **mostrar** un **mensaje** de **error** en la consola.
+
+Para más información sobre la API de [PokeAPI](https://pokeapi.co/), se puede consultar la [documentación](https://pokeapi.co/docs/v2).
+
+5.  Mediante el plugin de Live Server, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
+
+6.  Vamos a mejorar la presentación de nuestro proyecto agregando estilos CSS. Creamos un archivo **styles.css** y agregamos el siguiente código:
+
+``` css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+input {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+button {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+```
+
+En esta sección hemos agregado **estilos CSS** para **mejorar** la presentación de nuestro proyecto, como **la fuente**, **el color de fondo**, **el color del texto**, **el tamaño de la letra**, **el espaciado**, **el color del botón**, **el cursor**, **el tamaño de la imagen**, **el margen de la imagen**, **el margen del párrafo**, etc.
+
+7.  Agregamos el archivo **styles.css** al archivo **index.html**:
+
+``` html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Pokemon</h1>
+    <input type="text" id="search" placeholder="Buscar pokemon">
+    <button id="search-button">Buscar</button>
+    <div id="pokemon"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+En esta sección hemos agregado el archivo **styles.css** al archivo **index.html**.
+
+8.  Mediante el plugin de **Live Server**, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
+
+:::{.center}
+![](images/paste-1.png)
+:::
+# Deploy
+
+Se sugiere hacer el deploy de la aplicación en **Github Pages**, **Vercel**, **Netlify**, etc.
+
+# Reto
+
+Ahora es necesario mejorar la aplicación. Se sugiere agregar las siguientes funcionalidades:
+
+1.  Agregar un mensaje de error si el pokemon no existe.
+2.  Agregar un mensaje de error si la petición falla.
+3.  Agregar un spinner mientras se hace la petición.
+4.  Agregar un botón para limpiar el div **pokemon**.
+5.  Agregar un botón para buscar un pokemon aleatorio.
+6.  Agregar un botón para buscar un pokemon por id.
+7.  Agregar un botón para buscar un pokemon por nombre.
+8.  Agregar un botón para buscar un pokemon por tipo.
+9.  Agregar un botón para buscar un pokemon por habilidad.
+
+## Conclusión
+
+Felicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a **APIs de terceros**.
+
+## Referencias
+
+-   [Fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+-   [PokeAPI](https://pokeapi.co/)
+-   [Documentación de PokeAPI](https://pokeapi.co/docs/v2)
+-   [Github Pages](https://pages.github.com/)
+-   [Vercel](https://vercel.com/)
+-   [Netlify](https://www.netlify.com/)
+-   [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+-   [HTML](https://developer.mozilla.org/es/docs/Web/HTML)
+-   [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
