@@ -1,6 +1,7 @@
-# Laboratorio Fetch
+:::{.justify}
+# Tutorial de Fetch
 
-En este laboratorio vamos a aprender a hacer peticiones Fetch con JavaScript puro. Para ello vamos a hacer una aplicación que nos permita buscar pokemon y ver sus detalles.
+En este tutorial vamos a aprender a hacer peticiones Fetch con JavaScript puro. Para ello vamos a hacer una aplicación que nos permita buscar pokemon y ver sus detalles.
 
 ## Requisitos
 
@@ -172,3 +173,4 @@ Felicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticion
 -   [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 -   [Visual Studio Code](https://code.visualstudio.com/)
 -   [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+:::
