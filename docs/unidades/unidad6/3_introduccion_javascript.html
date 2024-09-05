@@ -4807,11 +4807,423 @@ Ver solución
 <span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ocean<span class="op">?.</span>[section]<span class="op">?.</span>[item] <span class="op">!==</span> <span class="kw">undefined</span></span>
 <span id="cb252-3"><a href="#cb252-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</section>
+<section id="rest-operator" class="level1">
+<h1>Rest Operator</h1>
+<p>El operador de propagación o <strong>rest operator</strong> es una característica de JavaScript que nos permite capturar un número indefinido de argumentos en una función. Es muy útil cuando no sabemos cuántos argumentos vamos a recibir o queremos trabajar con un número variable de argumentos.</p>
+<section id="sintaxis-del-operador-de-propagación" class="level2">
+<h2 class="anchored" data-anchor-id="sintaxis-del-operador-de-propagación">Sintaxis del operador de propagación</h2>
+<p>El operador de propagación se representa con tres puntos suspensivos <strong>…</strong> seguidos de un nombre de variable. Por convención, se suele usar el nombre <strong>rest</strong>.</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sum</span>(<span class="op">...</span>rest) {</span>
+<span id="cb253-2"><a href="#cb253-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(rest)</span>
+<span id="cb253-3"><a href="#cb253-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb253-4"><a href="#cb253-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb253-5"><a href="#cb253-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>) <span class="co">// -&gt; [1, 2, 3, 4, 5]</span></span>
+<span id="cb253-6"><a href="#cb253-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb253-7"><a href="#cb253-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="st">'a'</span><span class="op">,</span> <span class="st">'b'</span><span class="op">,</span> <span class="st">'c'</span>) <span class="co">// -&gt; ['a', 'b', 'c']</span></span>
+<span id="cb253-8"><a href="#cb253-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb253-9"><a href="#cb253-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>() <span class="co">// -&gt; []</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la función <strong>sum</strong> recibe un número indefinido de argumentos y los guarda en un array llamado <strong>rest</strong>. Luego, simplemente imprimimos el array <strong>rest</strong> por consola.</p>
+</section>
+<section id="usos-comunes-del-operador-de-propagación" class="level2">
+<h2 class="anchored" data-anchor-id="usos-comunes-del-operador-de-propagación">Usos comunes del operador de propagación</h2>
+<p>El operador de propagación es muy versátil y se puede utilizar en muchas situaciones diferentes. Algunos de los usos más comunes son:</p>
+<ul>
+<li><p><strong>Capturar argumentos de una función</strong>: como hemos visto en el ejemplo anterior, el operador de propagación nos permite capturar un número indefinido de argumentos en una función.</p></li>
+<li><p><strong>Concatenar arrays</strong>: podemos usar el operador de propagación para concatenar dos o más arrays en uno solo.</p></li>
+</ul>
+<div class="sourceCode" id="cb254"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arr1 <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]</span>
+<span id="cb254-2"><a href="#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arr2 <span class="op">=</span> [<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]</span>
+<span id="cb254-3"><a href="#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arr3 <span class="op">=</span> [<span class="op">...</span>arr1<span class="op">,</span> <span class="op">...</span>arr2]</span>
+<span id="cb254-4"><a href="#cb254-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb254-5"><a href="#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr3) <span class="co">// -&gt; [1, 2, 3, 4, 5, 6]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Copiar arrays</strong>: también podemos usar el operador de propagación para copiar un array.</li>
+</ul>
+<div class="sourceCode" id="cb255"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arr1 <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]</span>
+<span id="cb255-2"><a href="#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> arr2 <span class="op">=</span> [<span class="op">...</span>arr1]</span>
+<span id="cb255-3"><a href="#cb255-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb255-4"><a href="#cb255-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr2) <span class="co">// -&gt; [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Crear objetos</strong>: podemos usar el operador de propagación para crear un nuevo objeto a partir de uno existente.</li>
+</ul>
+<div class="sourceCode" id="cb256"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb256-1"><a href="#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> obj1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }</span>
+<span id="cb256-2"><a href="#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> obj2 <span class="op">=</span> { <span class="op">...</span>obj1<span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span> }</span>
+<span id="cb256-3"><a href="#cb256-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb256-4"><a href="#cb256-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(obj2) <span class="co">// -&gt; { a: 1, b: 2, c: 3 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Eliminar propiedades de un objeto</strong>: también podemos usar el operador de propagación para eliminar propiedades de un objeto.</li>
+</ul>
+<div class="sourceCode" id="cb257"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> obj1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span> }</span>
+<span id="cb257-2"><a href="#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { c<span class="op">,</span> <span class="op">...</span>obj2 } <span class="op">=</span> obj1</span>
+<span id="cb257-3"><a href="#cb257-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb257-4"><a href="#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(obj2) <span class="co">// -&gt; { a: 1, b: 2 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rest-operator-vs-spread-operator" class="level2">
+<h2 class="anchored" data-anchor-id="rest-operator-vs-spread-operator">Rest Operator vs Spread Operator</h2>
+<p>Es importante tener en cuenta que el operador de propagación o <strong>rest operator</strong> es diferente del operador de propagación o <strong>spread operator</strong>. Aunque ambos utilizan la misma sintaxis de tres puntos suspensivos <strong>…</strong>, tienen diferentes propósitos y se utilizan en diferentes contextos.</p>
+<ul>
+<li><p><strong>Rest Operator</strong>: se utiliza para capturar un número indefinido de argumentos en una función o para desestructurar un objeto o array en variables.</p></li>
+<li><p><strong>Spread Operator</strong>: se utiliza para expandir un objeto o array en otro objeto o array, para concatenar arrays o para copiar un objeto o array.</p></li>
+</ul>
+</section>
+</section>
+<section id="actividad-práctica-10" class="level1">
+<h1>Actividad Práctica</h1>
+<p>Tenemos una función que recibe un número indefinido de argumentos. La función debe devolver un array con los argumentos que sean de tipo <strong>string</strong>.</p>
+<p>Por ejemplo, si llamamos a la función con los argumentos <strong>‘a’, 1, ‘b’, 2, ‘c’</strong>, la función debería devolver <strong>[‘a’, ‘b’, ‘c’]</strong>.</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getStrings</span>(<span class="op">...</span>rest) {</span>
+<span id="cb258-2"><a href="#cb258-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// tu código aquí</span></span>
+<span id="cb258-3"><a href="#cb258-3" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb259"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getStrings</span>(<span class="op">...</span>rest) {</span>
+<span id="cb259-2"><a href="#cb259-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> rest<span class="op">.</span><span class="fu">filter</span>(arg <span class="kw">=&gt;</span> <span class="kw">typeof</span> arg <span class="op">===</span> <span class="st">'string'</span>)</span>
+<span id="cb259-3"><a href="#cb259-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="promesas-y-asyncawait" class="level1">
+<h1>Promesas y async/await</h1>
+<p>Las promesas son un objeto de JavaScript que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.</p>
+<p>Las promesas son una forma de trabajar con código asíncrono en JavaScript. Nos permiten ejecutar tareas en segundo plano y manejar el resultado de esas tareas de forma más sencilla y legible.</p>
+<section id="crear-una-promesa" class="level2">
+<h2 class="anchored" data-anchor-id="crear-una-promesa">Crear una promesa</h2>
+<p>Para crear una promesa, usamos la clase <strong>Promise</strong> y pasamos una función con dos parámetros: <strong>resolve</strong> y <strong>reject</strong>.</p>
+<ul>
+<li><p><strong>resolve</strong>: se llama cuando la promesa se resuelve satisfactoriamente y se le pasa el valor resultante.</p></li>
+<li><p><strong>reject</strong>: se llama cuando la promesa falla y se le pasa el motivo del fallo.</p></li>
+</ul>
+<div class="sourceCode" id="cb260"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promise <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb260-2"><a href="#cb260-2" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb260-3"><a href="#cb260-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">'¡La promesa se ha resuelto!'</span>)</span>
+<span id="cb260-4"><a href="#cb260-4" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)</span>
+<span id="cb260-5"><a href="#cb260-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb260-6"><a href="#cb260-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb260-7"><a href="#cb260-7" aria-hidden="true" tabindex="-1"></a>promise<span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb260-8"><a href="#cb260-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; ¡La promesa se ha resuelto!</span></span>
+<span id="cb260-9"><a href="#cb260-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb260-10"><a href="#cb260-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb260-11"><a href="#cb260-11" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; ¡La promesa se ha resuelto!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, creamos una promesa que se resuelve después de 2 segundos y luego imprimimos el resultado por consola.</p>
+</section>
+<section id="encadenar-promesas" class="level2">
+<h2 class="anchored" data-anchor-id="encadenar-promesas">Encadenar promesas</h2>
+<p>Una de las características más poderosas de las promesas es que podemos encadenarlas para ejecutar tareas en secuencia.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promise1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb261-2"><a href="#cb261-2" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb261-3"><a href="#cb261-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">'¡La primera promesa se ha resuelto!'</span>)</span>
+<span id="cb261-4"><a href="#cb261-4" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)</span>
+<span id="cb261-5"><a href="#cb261-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb261-6"><a href="#cb261-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb261-7"><a href="#cb261-7" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promise2 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb261-8"><a href="#cb261-8" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb261-9"><a href="#cb261-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">'¡La segunda promesa se ha resuelto!'</span>)</span>
+<span id="cb261-10"><a href="#cb261-10" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)</span>
+<span id="cb261-11"><a href="#cb261-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb261-12"><a href="#cb261-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb261-13"><a href="#cb261-13" aria-hidden="true" tabindex="-1"></a>promise1</span>
+<span id="cb261-14"><a href="#cb261-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb261-15"><a href="#cb261-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span></span>
+<span id="cb261-16"><a href="#cb261-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; ¡La primera promesa se ha resuelto!</span></span>
+<span id="cb261-17"><a href="#cb261-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> promise2</span>
+<span id="cb261-18"><a href="#cb261-18" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb261-19"><a href="#cb261-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb261-20"><a href="#cb261-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; ¡La segunda promesa se ha resuelto!</span></span>
+<span id="cb261-21"><a href="#cb261-21" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb261-22"><a href="#cb261-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb261-23"><a href="#cb261-23" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; ¡La primera promesa se ha resuelto!</span></span>
+<span id="cb261-24"><a href="#cb261-24" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; ¡La segunda promesa se ha resuelto!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, creamos dos promesas y las encadenamos para que se ejecuten en secuencia. Primero se resuelve la <strong>promise1</strong> y luego la <strong>promise2</strong>.</p>
+</section>
+<section id="asyncawait" class="level2">
+<h2 class="anchored" data-anchor-id="asyncawait">async/await</h2>
+<p>El operador <strong>async</strong> se utiliza para declarar una función asíncrona, es decir, una función que devuelve una promesa. El operador <strong>await</strong> se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución de la función.</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb262-1"><a href="#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">fetchData</span>() {</span>
+<span id="cb262-2"><a href="#cb262-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'https://api.example.com/data'</span>)</span>
+<span id="cb262-3"><a href="#cb262-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()</span>
+<span id="cb262-4"><a href="#cb262-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data</span>
+<span id="cb262-5"><a href="#cb262-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb262-6"><a href="#cb262-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb262-7"><a href="#cb262-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fetchData</span>()</span>
+<span id="cb262-8"><a href="#cb262-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((data) <span class="kw">=&gt;</span> {</span>
+<span id="cb262-9"><a href="#cb262-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data)</span>
+<span id="cb262-10"><a href="#cb262-10" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb262-11"><a href="#cb262-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
+<span id="cb262-12"><a href="#cb262-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(error)</span>
+<span id="cb262-13"><a href="#cb262-13" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb262-14"><a href="#cb262-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb262-15"><a href="#cb262-15" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; { key: 'value' }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, creamos una función <strong>fetchData</strong> que utiliza el operador <strong>await</strong> para esperar a que la promesa devuelta por <strong>fetch</strong> se resuelva antes de continuar con la ejecución de la función.</p>
+</section>
+<section id="beneficios-de-asyncawait" class="level2">
+<h2 class="anchored" data-anchor-id="beneficios-de-asyncawait">Beneficios de async/await</h2>
+<p>El uso de <strong>async/await</strong> tiene varios beneficios:</p>
+<ul>
+<li><p><strong>Código más legible</strong>: el uso de <strong>async/await</strong> hace que el código sea más fácil de leer y entender, ya que se parece más a la forma en que escribimos código síncrono.</p></li>
+<li><p><strong>Manejo de errores</strong>: podemos usar <strong>try/catch</strong> para manejar los errores de forma más sencilla y clara.</p></li>
+<li><p><strong>Encadenamiento de promesas</strong>: podemos encadenar promesas de forma más sencilla y legible.</p></li>
+<li><p><strong>Mejor manejo de la lógica asíncrona</strong>: <strong>async/await</strong> nos permite escribir código asíncrono de forma más natural y estructurada.</p></li>
+</ul>
+</section>
+</section>
+<section id="actividad-práctica-11" class="level1">
+<h1>Actividad Práctica</h1>
+<p>Tenemos una función que recibe un número y devuelve una promesa que se resuelve con el doble del número recibido.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doubleNumber</span>(number) {</span>
+<span id="cb263-2"><a href="#cb263-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb263-3"><a href="#cb263-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb263-4"><a href="#cb263-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">resolve</span>(number <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb263-5"><a href="#cb263-5" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> <span class="dv">2000</span>)</span>
+<span id="cb263-6"><a href="#cb263-6" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb263-7"><a href="#cb263-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb263-8"><a href="#cb263-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-9"><a href="#cb263-9" aria-hidden="true" tabindex="-1"></a><span class="fu">doubleNumber</span>(<span class="dv">5</span>)</span>
+<span id="cb263-10"><a href="#cb263-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb263-11"><a href="#cb263-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; 10</span></span>
+<span id="cb263-12"><a href="#cb263-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb263-13"><a href="#cb263-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-14"><a href="#cb263-14" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tu tarea es modificar la función <strong>doubleNumber</strong> para que utilice <strong>async/await</strong> en lugar de crear una promesa manualmente.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">doubleNumber</span>(number) {</span>
+<span id="cb264-2"><a href="#cb264-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// tu código aquí</span></span>
+<span id="cb264-3"><a href="#cb264-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb264-4"><a href="#cb264-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-5"><a href="#cb264-5" aria-hidden="true" tabindex="-1"></a><span class="fu">doubleNumber</span>(<span class="dv">5</span>)</span>
+<span id="cb264-6"><a href="#cb264-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb264-7"><a href="#cb264-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; 10</span></span>
+<span id="cb264-8"><a href="#cb264-8" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb264-9"><a href="#cb264-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-10"><a href="#cb264-10" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb265"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">doubleNumber</span>(number) {</span>
+<span id="cb265-2"><a href="#cb265-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb265-3"><a href="#cb265-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb265-4"><a href="#cb265-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">resolve</span>(number <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb265-5"><a href="#cb265-5" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> <span class="dv">2000</span>)</span>
+<span id="cb265-6"><a href="#cb265-6" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb265-7"><a href="#cb265-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb265-8"><a href="#cb265-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-9"><a href="#cb265-9" aria-hidden="true" tabindex="-1"></a><span class="fu">doubleNumber</span>(<span class="dv">5</span>)</span>
+<span id="cb265-10"><a href="#cb265-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((result) <span class="kw">=&gt;</span> {</span>
+<span id="cb265-11"><a href="#cb265-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(result) <span class="co">// -&gt; 10</span></span>
+<span id="cb265-12"><a href="#cb265-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb265-13"><a href="#cb265-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-14"><a href="#cb265-14" aria-hidden="true" tabindex="-1"></a><span class="co">// -&gt; 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="quiz-23" class="level1">
+<h1>Quiz</h1>
+<div class="question">
+<p>¿Qué es una promesa en JavaScript?</p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>Un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no3"> <span id="no3" x-show="answer == $el.id" class="badge">✗</span>Un objeto que representa un valor que puede cambiar en cualquier momento.</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+<div class="question">
+<p>¿Qué hace el operador <strong>await</strong> en una función asíncrona?</p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>Espera a que una promesa se resuelva antes de continuar con la ejecución de la función.</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>Detiene la ejecución de la función hasta que se resuelva una promesa.</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>Espera a que una promesa se resuelva antes de continuar con la ejecución de la función.</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+<div class="question">
+<p>¿Qué hace el operador <strong>async</strong> en una función?</p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>Declara una función que devuelve una promesa.</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>Declara una función que se ejecuta de forma asíncrona.</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>Declara una función asíncrona que devuelve una promesa.</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<section id="módulos" class="level1">
+<h1>Módulos</h1>
+<p>Los módulos son una forma de organizar y reutilizar código en JavaScript. Nos permiten dividir nuestro código en archivos separados y exportar e importar funciones, variables y clases entre ellos.</p>
+<section id="exportar-e-importar" class="level2">
+<h2 class="anchored" data-anchor-id="exportar-e-importar">Exportar e importar</h2>
+<p>Para exportar una función, variable o clase de un módulo, usamos la palabra clave <strong>export</strong> seguida del nombre de la función, variable o clase que queremos exportar.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb266-2"><a href="#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b) {</span>
+<span id="cb266-3"><a href="#cb266-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb266-4"><a href="#cb266-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb266-5"><a href="#cb266-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb266-6"><a href="#cb266-6" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> <span class="cn">PI</span> <span class="op">=</span> <span class="fl">3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para importar una función, variable o clase de un módulo, usamos la palabra clave <strong>import</strong> seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb267-2"><a href="#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { sum<span class="op">,</span> <span class="cn">PI</span> } <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb267-3"><a href="#cb267-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-4"><a href="#cb267-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb267-5"><a href="#cb267-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="cn">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exportar-e-importar-por-defecto" class="level2">
+<h2 class="anchored" data-anchor-id="exportar-e-importar-por-defecto">Exportar e importar por defecto</h2>
+<p>También podemos exportar e importar por defecto una función, variable o clase de un módulo. Para exportar por defecto, usamos la palabra clave <strong>export default</strong> seguida del nombre de la función, variable o clase que queremos exportar por defecto.</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb268-1"><a href="#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb268-2"><a href="#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b) {</span>
+<span id="cb268-3"><a href="#cb268-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb268-4"><a href="#cb268-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb268-5"><a href="#cb268-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-6"><a href="#cb268-6" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> <span class="cn">PI</span> <span class="op">=</span> <span class="fl">3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para importar por defecto una función, variable o clase de un módulo, usamos la palabra clave <strong>import</strong> seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb269-2"><a href="#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sum<span class="op">,</span> { <span class="cn">PI</span> } <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb269-3"><a href="#cb269-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb269-4"><a href="#cb269-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb269-5"><a href="#cb269-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="cn">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exportar-e-importar-todo" class="level2">
+<h2 class="anchored" data-anchor-id="exportar-e-importar-todo">Exportar e importar todo</h2>
+<p>También podemos exportar e importar todo un módulo. Para exportar todo, usamos la palabra clave <strong>export *</strong>.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb270-2"><a href="#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b) {</span>
+<span id="cb270-3"><a href="#cb270-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb270-4"><a href="#cb270-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb270-5"><a href="#cb270-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb270-6"><a href="#cb270-6" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> <span class="cn">PI</span> <span class="op">=</span> <span class="fl">3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para importar todo un módulo, usamos la palabra clave <strong>import *</strong>.</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb271-2"><a href="#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">*</span> <span class="im">as</span> math <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb271-3"><a href="#cb271-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-4"><a href="#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(math<span class="op">.</span><span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb271-5"><a href="#cb271-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(math<span class="op">.</span><span class="at">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="módulos-en-el-navegador" class="level2">
+<h2 class="anchored" data-anchor-id="módulos-en-el-navegador">Módulos en el navegador</h2>
+<p>Los módulos también se pueden utilizar en el navegador. Para importar un módulo en un archivo HTML, usamos la etiqueta <strong>script</strong> con el atributo <strong>type=“module”</strong> y la ruta del archivo que queremos importar en el atributo <strong>src</strong>.</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb272-1"><a href="#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- index.html --&gt;</span></span>
+<span id="cb272-2"><a href="#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb272-3"><a href="#cb272-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en"</span><span class="dt">&gt;</span></span>
+<span id="cb272-4"><a href="#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb272-5"><a href="#cb272-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="dt">&gt;</span></span>
+<span id="cb272-6"><a href="#cb272-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> http-equiv</span><span class="op">=</span><span class="st">"X-UA-Compatible"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"IE=edge"</span><span class="dt">&gt;</span></span>
+<span id="cb272-7"><a href="#cb272-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width, initial-scale=1.0"</span><span class="dt">&gt;</span></span>
+<span id="cb272-8"><a href="#cb272-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Document<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb272-9"><a href="#cb272-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb272-10"><a href="#cb272-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb272-11"><a href="#cb272-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"module"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"app.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb272-12"><a href="#cb272-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb272-13"><a href="#cb272-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el archivo <strong>app.js</strong>, podemos importar un módulo de la misma forma que en Node.js.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb273-2"><a href="#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { sum<span class="op">,</span> <span class="cn">PI</span> } <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb273-3"><a href="#cb273-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-4"><a href="#cb273-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb273-5"><a href="#cb273-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="cn">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="módulos-en-node.js" class="level2">
+<h2 class="anchored" data-anchor-id="módulos-en-node.js">Módulos en Node.js</h2>
+<p>En Node.js, los módulos se pueden utilizar de la misma forma que en el navegador. Para exportar e importar un módulo, usamos la palabra clave <strong>export</strong> y <strong>import</strong>.</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb274-1"><a href="#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb274-2"><a href="#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b) {</span>
+<span id="cb274-3"><a href="#cb274-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb274-4"><a href="#cb274-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb274-5"><a href="#cb274-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-6"><a href="#cb274-6" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> <span class="cn">PI</span> <span class="op">=</span> <span class="fl">3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb275-1"><a href="#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb275-2"><a href="#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { sum<span class="op">,</span> <span class="cn">PI</span> } <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb275-3"><a href="#cb275-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb275-4"><a href="#cb275-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb275-5"><a href="#cb275-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="cn">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="módulos-en-commonjs" class="level2">
+<h2 class="anchored" data-anchor-id="módulos-en-commonjs">Módulos en CommonJS</h2>
+<p>En CommonJS, los módulos se pueden utilizar de la misma forma que en Node.js. Para exportar e importar un módulo, usamos la palabra clave <strong>module.exports</strong> y <strong>require</strong>.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb276-1"><a href="#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb276-2"><a href="#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sum</span>(a<span class="op">,</span> b) {</span>
+<span id="cb276-3"><a href="#cb276-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb276-4"><a href="#cb276-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb276-5"><a href="#cb276-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-6"><a href="#cb276-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> <span class="cn">PI</span> <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb276-7"><a href="#cb276-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-8"><a href="#cb276-8" aria-hidden="true" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> { sum<span class="op">,</span> <span class="cn">PI</span> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb277-1"><a href="#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb277-2"><a href="#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { sum<span class="op">,</span> <span class="cn">PI</span> } <span class="op">=</span> <span class="pp">require</span>(<span class="st">'./math.js'</span>)</span>
+<span id="cb277-3"><a href="#cb277-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-4"><a href="#cb277-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)) <span class="co">// -&gt; 3</span></span>
+<span id="cb277-5"><a href="#cb277-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="cn">PI</span>) <span class="co">// -&gt; 3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="actividad-práctica-12" class="level1">
+<h1>Actividad Práctica</h1>
+<p>Tenemos un módulo que exporta una función que recibe un número y devuelve el doble del número recibido.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb278-1"><a href="#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="co">// math.js</span></span>
+<span id="cb278-2"><a href="#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">doubleNumber</span>(number) {</span>
+<span id="cb278-3"><a href="#cb278-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> number <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb278-4"><a href="#cb278-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tu tarea es importar la función <strong>doubleNumber</strong> en un archivo <strong>app.js</strong> y usarla para duplicar el número <strong>5</strong>.</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb279-1"><a href="#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb279-2"><a href="#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="co">// tu código aquí</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb280"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb280-1"><a href="#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="co">// app.js</span></span>
+<span id="cb280-2"><a href="#cb280-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { doubleNumber } <span class="im">from</span> <span class="st">'./math.js'</span></span>
+<span id="cb280-3"><a href="#cb280-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb280-4"><a href="#cb280-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">doubleNumber</span>(<span class="dv">5</span>)) <span class="co">// -&gt; 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</section>
+<section id="quiz-24" class="level1">
+<h1>Quiz</h1>
+<div class="question">
+<p>¿Qué es un módulo en JavaScript?</p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>Un archivo que contiene código JavaScript que se puede exportar e importar en otros archivos.</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>Un archivo que contiene código JavaScript que se puede exportar e importar en otros archivos.</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
 <p>:::</p>
-<p>:::::::::::::::::::::</p>
-<p>:::::::::::::::::::::</p>
-<p>:::::::::::::::::::::</p>
-<p>:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</p>
 
 
 </section>

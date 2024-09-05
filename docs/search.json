@@ -3967,5 +3967,148 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
+    "title": "JavaScript",
+    "section": "Sintaxis del operador de propagación",
+    "text": "Sintaxis del operador de propagación\nEl operador de propagación se representa con tres puntos suspensivos … seguidos de un nombre de variable. Por convención, se suele usar el nombre rest.\nfunction sum(...rest) {\n  console.log(rest)\n}\n\nsum(1, 2, 3, 4, 5) // -&gt; [1, 2, 3, 4, 5]\n\nsum('a', 'b', 'c') // -&gt; ['a', 'b', 'c']\n\nsum() // -&gt; []\nEn este ejemplo, la función sum recibe un número indefinido de argumentos y los guarda en un array llamado rest. Luego, simplemente imprimimos el array rest por consola.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
+    "title": "JavaScript",
+    "section": "Usos comunes del operador de propagación",
+    "text": "Usos comunes del operador de propagación\nEl operador de propagación es muy versátil y se puede utilizar en muchas situaciones diferentes. Algunos de los usos más comunes son:\n\nCapturar argumentos de una función: como hemos visto en el ejemplo anterior, el operador de propagación nos permite capturar un número indefinido de argumentos en una función.\nConcatenar arrays: podemos usar el operador de propagación para concatenar dos o más arrays en uno solo.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [4, 5, 6]\nconst arr3 = [...arr1, ...arr2]\n\nconsole.log(arr3) // -&gt; [1, 2, 3, 4, 5, 6]\n\nCopiar arrays: también podemos usar el operador de propagación para copiar un array.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [...arr1]\n\nconsole.log(arr2) // -&gt; [1, 2, 3]\n\nCrear objetos: podemos usar el operador de propagación para crear un nuevo objeto a partir de uno existente.\n\nconst obj1 = { a: 1, b: 2 }\nconst obj2 = { ...obj1, c: 3 }\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2, c: 3 }\n\nEliminar propiedades de un objeto: también podemos usar el operador de propagación para eliminar propiedades de un objeto.\n\nconst obj1 = { a: 1, b: 2, c: 3 }\nconst { c, ...obj2 } = obj1\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2 }",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
+    "title": "JavaScript",
+    "section": "Rest Operator vs Spread Operator",
+    "text": "Rest Operator vs Spread Operator\nEs importante tener en cuenta que el operador de propagación o rest operator es diferente del operador de propagación o spread operator. Aunque ambos utilizan la misma sintaxis de tres puntos suspensivos …, tienen diferentes propósitos y se utilizan en diferentes contextos.\n\nRest Operator: se utiliza para capturar un número indefinido de argumentos en una función o para desestructurar un objeto o array en variables.\nSpread Operator: se utiliza para expandir un objeto o array en otro objeto o array, para concatenar arrays o para copiar un objeto o array.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
+    "title": "JavaScript",
+    "section": "Crear una promesa",
+    "text": "Crear una promesa\nPara crear una promesa, usamos la clase Promise y pasamos una función con dos parámetros: resolve y reject.\n\nresolve: se llama cuando la promesa se resuelve satisfactoriamente y se le pasa el valor resultante.\nreject: se llama cuando la promesa falla y se le pasa el motivo del fallo.\n\nconst promise = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise.then((result) =&gt; {\n  console.log(result) // -&gt; ¡La promesa se ha resuelto!\n})\n\n// -&gt; ¡La promesa se ha resuelto!\nEn este ejemplo, creamos una promesa que se resuelve después de 2 segundos y luego imprimimos el resultado por consola.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
+    "title": "JavaScript",
+    "section": "Encadenar promesas",
+    "text": "Encadenar promesas\nUna de las características más poderosas de las promesas es que podemos encadenarlas para ejecutar tareas en secuencia.\nconst promise1 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La primera promesa se ha resuelto!')\n  }, 2000)\n})\n\nconst promise2 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La segunda promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise1\n  .then((result) =&gt; {\n    console\n    console.log(result) // -&gt; ¡La primera promesa se ha resuelto!\n    return promise2\n  })\n  .then((result) =&gt; {\n    console.log(result) // -&gt; ¡La segunda promesa se ha resuelto!\n  })\n\n// -&gt; ¡La primera promesa se ha resuelto!\n// -&gt; ¡La segunda promesa se ha resuelto!\nEn este ejemplo, creamos dos promesas y las encadenamos para que se ejecuten en secuencia. Primero se resuelve la promise1 y luego la promise2.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
+    "title": "JavaScript",
+    "section": "async/await",
+    "text": "async/await\nEl operador async se utiliza para declarar una función asíncrona, es decir, una función que devuelve una promesa. El operador await se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución de la función.\nasync function fetchData() {\n  const response = await fetch('https://api.example.com/data')\n  const data = await response.json()\n  return data\n}\n\nfetchData()\n  .then((data) =&gt; {\n    console.log(data)\n  })\n  .catch((error) =&gt; {\n    console.error(error)\n  })\n\n// -&gt; { key: 'value' }\nEn este ejemplo, creamos una función fetchData que utiliza el operador await para esperar a que la promesa devuelta por fetch se resuelva antes de continuar con la ejecución de la función.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
+    "title": "JavaScript",
+    "section": "Beneficios de async/await",
+    "text": "Beneficios de async/await\nEl uso de async/await tiene varios beneficios:\n\nCódigo más legible: el uso de async/await hace que el código sea más fácil de leer y entender, ya que se parece más a la forma en que escribimos código síncrono.\nManejo de errores: podemos usar try/catch para manejar los errores de forma más sencilla y clara.\nEncadenamiento de promesas: podemos encadenar promesas de forma más sencilla y legible.\nMejor manejo de la lógica asíncrona: async/await nos permite escribir código asíncrono de forma más natural y estructurada.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
+    "title": "JavaScript",
+    "section": "Exportar e importar",
+    "text": "Exportar e importar\nPara exportar una función, variable o clase de un módulo, usamos la palabra clave export seguida del nombre de la función, variable o clase que queremos exportar.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
+    "title": "JavaScript",
+    "section": "Exportar e importar por defecto",
+    "text": "Exportar e importar por defecto\nTambién podemos exportar e importar por defecto una función, variable o clase de un módulo. Para exportar por defecto, usamos la palabra clave export default seguida del nombre de la función, variable o clase que queremos exportar por defecto.\n// math.js\nexport default function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar por defecto una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport sum, { PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
+    "title": "JavaScript",
+    "section": "Exportar e importar todo",
+    "text": "Exportar e importar todo\nTambién podemos exportar e importar todo un módulo. Para exportar todo, usamos la palabra clave export *.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar todo un módulo, usamos la palabra clave import *.\n// app.js\nimport * as math from './math.js'\n\nconsole.log(math.sum(1, 2)) // -&gt; 3\nconsole.log(math.PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
+    "title": "JavaScript",
+    "section": "Módulos en el navegador",
+    "text": "Módulos en el navegador\nLos módulos también se pueden utilizar en el navegador. Para importar un módulo en un archivo HTML, usamos la etiqueta script con el atributo type=“module” y la ruta del archivo que queremos importar en el atributo src.\n&lt;!-- index.html --&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;script type=\"module\" src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn el archivo app.js, podemos importar un módulo de la misma forma que en Node.js.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
+    "title": "JavaScript",
+    "section": "Módulos en Node.js",
+    "text": "Módulos en Node.js\nEn Node.js, los módulos se pueden utilizar de la misma forma que en el navegador. Para exportar e importar un módulo, usamos la palabra clave export y import.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
+    "title": "JavaScript",
+    "section": "Módulos en CommonJS",
+    "text": "Módulos en CommonJS\nEn CommonJS, los módulos se pueden utilizar de la misma forma que en Node.js. Para exportar e importar un módulo, usamos la palabra clave module.exports y require.\n// math.js\nfunction sum(a, b) {\n  return a + b\n}\n\nconst PI = 3.14159\n\nmodule.exports = { sum, PI }\n// app.js\nconst { sum, PI } = require('./math.js')\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
   }
 ]

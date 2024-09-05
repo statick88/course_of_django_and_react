@@ -4897,11 +4897,522 @@ function searchInOcean(ocean, section, item) {
 
 </details>
 
+# Rest Operator
+
+El operador de propagación o **rest operator** es una característica de JavaScript que nos permite capturar un número indefinido de argumentos en una función. Es muy útil cuando no sabemos cuántos argumentos vamos a recibir o queremos trabajar con un número variable de argumentos.
+
+## Sintaxis del operador de propagación
+
+El operador de propagación se representa con tres puntos suspensivos **...** seguidos de un nombre de variable. Por convención, se suele usar el nombre **rest**.
+
+``` javascript
+function sum(...rest) {
+  console.log(rest)
+}
+
+sum(1, 2, 3, 4, 5) // -> [1, 2, 3, 4, 5]
+
+sum('a', 'b', 'c') // -> ['a', 'b', 'c']
+
+sum() // -> []
+```
+
+En este ejemplo, la función **sum** recibe un número indefinido de argumentos y los guarda en un array llamado **rest**. Luego, simplemente imprimimos el array **rest** por consola.
+
+## Usos comunes del operador de propagación
+
+El operador de propagación es muy versátil y se puede utilizar en muchas situaciones diferentes. Algunos de los usos más comunes son:
+
+-   **Capturar argumentos de una función**: como hemos visto en el ejemplo anterior, el operador de propagación nos permite capturar un número indefinido de argumentos en una función.
+
+-   **Concatenar arrays**: podemos usar el operador de propagación para concatenar dos o más arrays en uno solo.
+
+``` javascript
+const arr1 = [1, 2, 3]
+const arr2 = [4, 5, 6]
+const arr3 = [...arr1, ...arr2]
+
+console.log(arr3) // -> [1, 2, 3, 4, 5, 6]
+```
+
+-   **Copiar arrays**: también podemos usar el operador de propagación para copiar un array.
+
+``` javascript
+const arr1 = [1, 2, 3]
+const arr2 = [...arr1]
+
+console.log(arr2) // -> [1, 2, 3]
+```
+
+-   **Crear objetos**: podemos usar el operador de propagación para crear un nuevo objeto a partir de uno existente.
+
+``` javascript
+const obj1 = { a: 1, b: 2 }
+const obj2 = { ...obj1, c: 3 }
+
+console.log(obj2) // -> { a: 1, b: 2, c: 3 }
+```
+
+-   **Eliminar propiedades de un objeto**: también podemos usar el operador de propagación para eliminar propiedades de un objeto.
+
+``` javascript
+const obj1 = { a: 1, b: 2, c: 3 }
+const { c, ...obj2 } = obj1
+
+console.log(obj2) // -> { a: 1, b: 2 }
+```
+
+## Rest Operator vs Spread Operator
+
+Es importante tener en cuenta que el operador de propagación o **rest operator** es diferente del operador de propagación o **spread operator**. Aunque ambos utilizan la misma sintaxis de tres puntos suspensivos **...**, tienen diferentes propósitos y se utilizan en diferentes contextos.
+
+-   **Rest Operator**: se utiliza para capturar un número indefinido de argumentos en una función o para desestructurar un objeto o array en variables.
+
+-   **Spread Operator**: se utiliza para expandir un objeto o array en otro objeto o array, para concatenar arrays o para copiar un objeto o array.
+
+# Actividad Práctica
+
+Tenemos una función que recibe un número indefinido de argumentos. La función debe devolver un array con los argumentos que sean de tipo **string**.
+
+Por ejemplo, si llamamos a la función con los argumentos **'a', 1, 'b', 2, 'c'**, la función debería devolver **\['a', 'b', 'c'\]**.
+
+``` javascript
+function getStrings(...rest) {
+    // tu código aquí
+  }
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+function getStrings(...rest) {
+  return rest.filter(arg => typeof arg === 'string')
+}
+```
+
+</details>
+
+# Promesas y async/await
+
+Las promesas son un objeto de JavaScript que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.
+
+Las promesas son una forma de trabajar con código asíncrono en JavaScript. Nos permiten ejecutar tareas en segundo plano y manejar el resultado de esas tareas de forma más sencilla y legible.
+
+## Crear una promesa
+
+Para crear una promesa, usamos la clase **Promise** y pasamos una función con dos parámetros: **resolve** y **reject**.
+
+-   **resolve**: se llama cuando la promesa se resuelve satisfactoriamente y se le pasa el valor resultante.
+
+-   **reject**: se llama cuando la promesa falla y se le pasa el motivo del fallo.
+
+``` javascript
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('¡La promesa se ha resuelto!')
+  }, 2000)
+})
+
+promise.then((result) => {
+  console.log(result) // -> ¡La promesa se ha resuelto!
+})
+
+// -> ¡La promesa se ha resuelto!
+```
+
+En este ejemplo, creamos una promesa que se resuelve después de 2 segundos y luego imprimimos el resultado por consola.
+
+## Encadenar promesas
+
+Una de las características más poderosas de las promesas es que podemos encadenarlas para ejecutar tareas en secuencia.
+
+``` javascript
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('¡La primera promesa se ha resuelto!')
+  }, 2000)
+})
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('¡La segunda promesa se ha resuelto!')
+  }, 2000)
+})
+
+promise1
+  .then((result) => {
+    console
+    console.log(result) // -> ¡La primera promesa se ha resuelto!
+    return promise2
+  })
+  .then((result) => {
+    console.log(result) // -> ¡La segunda promesa se ha resuelto!
+  })
+
+// -> ¡La primera promesa se ha resuelto!
+// -> ¡La segunda promesa se ha resuelto!
+```
+
+En este ejemplo, creamos dos promesas y las encadenamos para que se ejecuten en secuencia. Primero se resuelve la **promise1** y luego la **promise2**.
+
+## async/await
+
+El operador **async** se utiliza para declarar una función asíncrona, es decir, una función que devuelve una promesa. El operador **await** se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución de la función.
+
+``` javascript
+async function fetchData() {
+  const response = await fetch('https://api.example.com/data')
+  const data = await response.json()
+  return data
+}
+
+fetchData()
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+    console.error(error)
+  })
+
+// -> { key: 'value' }
+```
+
+En este ejemplo, creamos una función **fetchData** que utiliza el operador **await** para esperar a que la promesa devuelta por **fetch** se resuelva antes de continuar con la ejecución de la función.
+
+## Beneficios de async/await
+
+El uso de **async/await** tiene varios beneficios:
+
+-   **Código más legible**: el uso de **async/await** hace que el código sea más fácil de leer y entender, ya que se parece más a la forma en que escribimos código síncrono.
+
+-   **Manejo de errores**: podemos usar **try/catch** para manejar los errores de forma más sencilla y clara.
+
+-   **Encadenamiento de promesas**: podemos encadenar promesas de forma más sencilla y legible.
+
+-   **Mejor manejo de la lógica asíncrona**: **async/await** nos permite escribir código asíncrono de forma más natural y estructurada.
+
+# Actividad Práctica
+
+Tenemos una función que recibe un número y devuelve una promesa que se resuelve con el doble del número recibido.
+
+``` javascript
+function doubleNumber(number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(number * 2)
+    }, 2000)
+  })
+}
+
+doubleNumber(5)
+  .then((result) => {
+    console.log(result) // -> 10
+  })
+
+// -> 10
+```
+
+Tu tarea es modificar la función **doubleNumber** para que utilice **async/await** en lugar de crear una promesa manualmente.
+
+``` javascript
+async function doubleNumber(number) {
+  // tu código aquí
+}
+
+doubleNumber(5)
+  .then((result) => {
+    console.log(result) // -> 10
+  })
+
+// -> 10
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+async function doubleNumber(number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(number * 2)
+    }, 2000)
+  })
+}
+
+doubleNumber(5)
+  .then((result) => {
+    console.log(result) // -> 10
+  })
+
+// -> 10
+```
+
+</details>
+
+# Quiz
+
+:::{.question}
+¿Qué es una promesa en JavaScript?
+
+:::{.choices}
+
+:::{.choice}
+Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.
 :::
 
-:::::::::::::::::::::
+:::{.choice}
+Un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.
+:::
 
-:::::::::::::::::::::
+:::{.choice}
+Un objeto que representa un valor que puede cambiar en cualquier momento.
+:::
 
-:::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::{.choice .correct-choice}
+Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.
+:::
+
+:::
+:::
+
+:::{.question}
+¿Qué hace el operador **await** en una función asíncrona?
+
+:::{.choices}
+
+:::{.choice}
+Espera a que una promesa se resuelva antes de continuar con la ejecución de la función.
+:::
+
+:::{.choice}
+Detiene la ejecución de la función hasta que se resuelva una promesa.
+:::
+
+:::{.choice .correct-choice}
+Espera a que una promesa se resuelva antes de continuar con la ejecución de la función.
+:::
+
+:::
+:::
+
+:::{.question}
+¿Qué hace el operador **async** en una función?
+
+:::{.choices}
+
+:::{.choice}
+Declara una función que devuelve una promesa.
+:::
+
+:::{.choice}
+Declara una función que se ejecuta de forma asíncrona.
+:::
+
+:::{.choice .correct-choice}
+Declara una función asíncrona que devuelve una promesa.
+:::
+
+:::
+:::
+
+# Módulos
+
+Los módulos son una forma de organizar y reutilizar código en JavaScript. Nos permiten dividir nuestro código en archivos separados y exportar e importar funciones, variables y clases entre ellos.
+
+## Exportar e importar
+
+Para exportar una función, variable o clase de un módulo, usamos la palabra clave **export** seguida del nombre de la función, variable o clase que queremos exportar.
+
+``` javascript
+// math.js
+export function sum(a, b) {
+  return a + b
+}
+
+export const PI = 3.14159
+```
+
+Para importar una función, variable o clase de un módulo, usamos la palabra clave **import** seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.
+
+``` javascript
+// app.js
+import { sum, PI } from './math.js'
+
+console.log(sum(1, 2)) // -> 3
+console.log(PI) // -> 3.14159
+```
+
+## Exportar e importar por defecto
+
+También podemos exportar e importar por defecto una función, variable o clase de un módulo. Para exportar por defecto, usamos la palabra clave **export default** seguida del nombre de la función, variable o clase que queremos exportar por defecto.
+
+``` javascript
+// math.js
+export default function sum(a, b) {
+  return a + b
+}
+
+export const PI = 3.14159
+```
+
+Para importar por defecto una función, variable o clase de un módulo, usamos la palabra clave **import** seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.
+
+``` javascript
+// app.js
+import sum, { PI } from './math.js'
+
+console.log(sum(1, 2)) // -> 3
+console.log(PI) // -> 3.14159
+```
+
+## Exportar e importar todo
+
+También podemos exportar e importar todo un módulo. Para exportar todo, usamos la palabra clave **export \***.
+
+``` javascript
+// math.js
+export function sum(a, b) {
+  return a + b
+}
+
+export const PI = 3.14159
+```
+
+Para importar todo un módulo, usamos la palabra clave **import \***.
+
+``` javascript
+// app.js
+import * as math from './math.js'
+
+console.log(math.sum(1, 2)) // -> 3
+console.log(math.PI) // -> 3.14159
+```
+
+## Módulos en el navegador
+
+Los módulos también se pueden utilizar en el navegador. Para importar un módulo en un archivo HTML, usamos la etiqueta **script** con el atributo **type="module"** y la ruta del archivo que queremos importar en el atributo **src**.
+
+``` html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+```
+
+En el archivo **app.js**, podemos importar un módulo de la misma forma que en Node.js.
+
+``` javascript
+// app.js
+import { sum, PI } from './math.js'
+
+console.log(sum(1, 2)) // -> 3
+console.log(PI) // -> 3.14159
+```
+
+## Módulos en Node.js
+
+En Node.js, los módulos se pueden utilizar de la misma forma que en el navegador. Para exportar e importar un módulo, usamos la palabra clave **export** y **import**.
+
+``` javascript
+// math.js
+export function sum(a, b) {
+  return a + b
+}
+
+export const PI = 3.14159
+```
+
+``` javascript
+// app.js
+import { sum, PI } from './math.js'
+
+console.log(sum(1, 2)) // -> 3
+console.log(PI) // -> 3.14159
+```
+
+## Módulos en CommonJS
+
+En CommonJS, los módulos se pueden utilizar de la misma forma que en Node.js. Para exportar e importar un módulo, usamos la palabra clave **module.exports** y **require**.
+
+``` javascript
+// math.js
+function sum(a, b) {
+  return a + b
+}
+
+const PI = 3.14159
+
+module.exports = { sum, PI }
+```
+
+``` javascript
+// app.js
+const { sum, PI } = require('./math.js')
+
+console.log(sum(1, 2)) // -> 3
+console.log(PI) // -> 3.14159
+```
+
+# Actividad Práctica
+
+Tenemos un módulo que exporta una función que recibe un número y devuelve el doble del número recibido.
+
+``` javascript
+// math.js
+export function doubleNumber(number) {
+  return number * 2
+}
+```
+
+Tu tarea es importar la función **doubleNumber** en un archivo **app.js** y usarla para duplicar el número **5**.
+
+``` javascript
+// app.js
+// tu código aquí
+```
+
+<details>
+<summary>Ver solución</summary>
+
+``` javascript
+// app.js
+import { doubleNumber } from './math.js'
+
+console.log(doubleNumber(5)) // -> 10
+```
+
+</details>
+
+# Quiz
+
+:::{.question}
+¿Qué es un módulo en JavaScript?
+
+:::{.choices}
+
+:::{.choice}
+Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.
+:::
+
+:::{.choice}
+Un archivo que contiene código JavaScript que se puede exportar e importar en otros archivos.
+:::
+
+:::{.choice .correct-choice}
+Un archivo que contiene código JavaScript que se puede exportar e importar en otros archivos.
+:::
+
+:::
+:::
+
+:::
