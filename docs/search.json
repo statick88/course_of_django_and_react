@@ -3054,47 +3054,47 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_tutorial_fetch.html",
-    "href": "unidades/unidad6/5_tutorial_fetch.html",
-    "title": "Laboratorio Fetch",
-    "section": "",
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#requisitos",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#requisitos",
+    "title": "Tutorial de Fetch",
+    "section": "Requisitos",
     "text": "Requisitos\nPara este tutorial vamos a utilizar tecnologias como html, css y javascript. Además, vamos a necesitar un navegador web y un editor de código, se recomienda leer acerca de peticiones con fetch antes de empezar este tutorial.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/5_tutorial_fetch.html#instrucciones",
     "href": "unidades/unidad6/5_tutorial_fetch.html#instrucciones",
-    "title": "Laboratorio Fetch",
+    "title": "Tutorial de Fetch",
     "section": "Instrucciones",
     "text": "Instrucciones\n\nCreamos un archivo index.html y agregamos el siguiente código:\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Pokemon&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Pokemon&lt;/h1&gt;\n    &lt;input type=\"text\" id=\"search\" placeholder=\"Buscar pokemon\"&gt;\n    &lt;button id=\"search-button\"&gt;Buscar&lt;/button&gt;\n    &lt;div id=\"pokemon\"&gt;&lt;/div&gt;\n    &lt;script src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn esta sección hemos creado la estructura básica de nuestro proyecto. Hemos agregado un título, un input para buscar pokemon, un botón para buscar pokemon, un div para mostrar la información del pokemon y un script para nuestro archivo app.js.\n\nCreamos un archivo app.js y agregamos el siguiente código:\n\ndocument.getElementById('search-button').addEventListener('click', () =&gt; {\n    const search = document.getElementById('search').value;\n    fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)\n        .then(response =&gt; response.json())\n        .then(data =&gt; {\n            const pokemon = document.getElementById('pokemon');\n            pokemon.innerHTML = `\n                &lt;h2&gt;${data.name}&lt;/h2&gt;\n                &lt;img src=\"${data.sprites.front_default}\" alt=\"${data.name}\"&gt;\n                &lt;p&gt;Altura: ${data.height}&lt;/p&gt;\n                &lt;p&gt;Peso: ${data.weight}&lt;/p&gt;\n            `;\n        })\n        .catch(error =&gt; {\n            console.error(error);\n        });\n});\nEn esta sección hemos agregado un evento al botón de buscar pokemon. Cuando se haga click en el botón, se va a hacer una petición a la API de PokeAPI. Si la petición es exitosa, se va a mostrar la información del pokemon en el div pokemon. Si la petición falla, se va a mostrar un mensaje de error en la consola.\nPara más información sobre la API de PokeAPI, se puede consultar la documentación.\n\nMediante el plugin de Live Server, abrimos el archivo index.html en el navegador y probamos la aplicación.\nVamos a mejorar la presentación de nuestro proyecto agregando estilos CSS. Creamos un archivo styles.css y agregamos el siguiente código:\n\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\nh1 {\n    margin: 1rem 0;\n}\n\ninput {\n    padding: 0.5rem;\n    margin: 0.5rem 0;\n}\n\nbutton {\n    padding: 0.5rem;\n    margin: 0.5rem 0;\n    background-color: #007bff;\n    color: white;\n    border: none;\n    cursor: pointer;\n}\n\n#pokemon {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 1rem 0;\n}\n\nimg {\n    width: 100px;\n    height: 100px;\n    margin: 0.5rem 0;\n}\n\np {\n    margin: 0.5rem 0;\n}\nEn esta sección hemos agregado estilos CSS para mejorar la presentación de nuestro proyecto, como la fuente, el color de fondo, el color del texto, el tamaño de la letra, el espaciado, el color del botón, el cursor, el tamaño de la imagen, el margen de la imagen, el margen del párrafo, etc.\n\nAgregamos el archivo styles.css al archivo index.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Pokemon&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Pokemon&lt;/h1&gt;\n    &lt;input type=\"text\" id=\"search\" placeholder=\"Buscar pokemon\"&gt;\n    &lt;button id=\"search-button\"&gt;Buscar&lt;/button&gt;\n    &lt;div id=\"pokemon\"&gt;&lt;/div&gt;\n    &lt;script src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn esta sección hemos agregado el archivo styles.css al archivo index.html.\n\nMediante el plugin de Live Server, abrimos el archivo index.html en el navegador y probamos la aplicación.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
     "href": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
-    "title": "Laboratorio Fetch",
+    "title": "Tutorial de Fetch",
     "section": "Conclusión",
     "text": "Conclusión\nFelicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a APIs de terceros.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   },
   {
     "objectID": "unidades/unidad6/5_tutorial_fetch.html#referencias",
     "href": "unidades/unidad6/5_tutorial_fetch.html#referencias",
-    "title": "Laboratorio Fetch",
+    "title": "Tutorial de Fetch",
     "section": "Referencias",
     "text": "Referencias\n\nFetch API\nPokeAPI\nDocumentación de PokeAPI\nGithub Pages\nVercel\nNetlify\nCSS\nHTML\nJavaScript\nVisual Studio Code\nLive Server",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   },
   {

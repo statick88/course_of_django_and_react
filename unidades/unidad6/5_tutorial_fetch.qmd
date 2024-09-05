@@ -1,5 +1,9 @@
-:::{.justify}
+::: justify
 # Tutorial de Fetch
+
+:::{.center}
+![](images/paste-46.png)
+:::
 
 En este tutorial vamos a aprender a hacer peticiones Fetch con JavaScript puro. Para ello vamos a hacer una aplicación que nos permita buscar pokemon y ver sus detalles.
 
@@ -29,6 +33,7 @@ Para este tutorial vamos a utilizar tecnologias como **html**, **css** y **javas
 </body>
 </html>
 ```
+
 En esta sección hemos creado la **estructura básica de nuestro proyecto**. Hemos **agregado** un **título**, un **input** para **buscar pokemon**, un **botón** para **buscar pokemon**, un div para **mostrar** la **información** del **pokemon** y un **script** para nuestro archivo **app.js**.
 
 2.  Creamos un archivo **app.js** y agregamos el siguiente código:
@@ -136,8 +141,9 @@ En esta sección hemos agregado el archivo **styles.css** al archivo **index.htm
 8.  Mediante el plugin de **Live Server**, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
 
 :::{.center}
-![](images/paste-1.png)
+![](images/paste-47.png)
 :::
+
 # Deploy
 
 Se sugiere hacer el deploy de la aplicación en **Github Pages**, **Vercel**, **Netlify**, etc.
