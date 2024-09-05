@@ -3054,234 +3054,124 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html",
-    "href": "unidades/unidad6/5_introduccion_react.html",
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html",
+    "href": "unidades/unidad6/5_tutorial_fetch.html",
+    "title": "Laboratorio Fetch",
+    "section": "",
+    "text": "Requisitos\nPara este tutorial vamos a utilizar tecnologias como html, css y javascript. Además, vamos a necesitar un navegador web y un editor de código, se recomienda leer acerca de peticiones con fetch antes de empezar este tutorial.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#instrucciones",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#instrucciones",
+    "title": "Laboratorio Fetch",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nCreamos un archivo index.html y agregamos el siguiente código:\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Pokemon&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Pokemon&lt;/h1&gt;\n    &lt;input type=\"text\" id=\"search\" placeholder=\"Buscar pokemon\"&gt;\n    &lt;button id=\"search-button\"&gt;Buscar&lt;/button&gt;\n    &lt;div id=\"pokemon\"&gt;&lt;/div&gt;\n    &lt;script src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn esta sección hemos creado la estructura básica de nuestro proyecto. Hemos agregado un título, un input para buscar pokemon, un botón para buscar pokemon, un div para mostrar la información del pokemon y un script para nuestro archivo app.js.\n\nCreamos un archivo app.js y agregamos el siguiente código:\n\ndocument.getElementById('search-button').addEventListener('click', () =&gt; {\n    const search = document.getElementById('search').value;\n    fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)\n        .then(response =&gt; response.json())\n        .then(data =&gt; {\n            const pokemon = document.getElementById('pokemon');\n            pokemon.innerHTML = `\n                &lt;h2&gt;${data.name}&lt;/h2&gt;\n                &lt;img src=\"${data.sprites.front_default}\" alt=\"${data.name}\"&gt;\n                &lt;p&gt;Altura: ${data.height}&lt;/p&gt;\n                &lt;p&gt;Peso: ${data.weight}&lt;/p&gt;\n            `;\n        })\n        .catch(error =&gt; {\n            console.error(error);\n        });\n});\nEn esta sección hemos agregado un evento al botón de buscar pokemon. Cuando se haga click en el botón, se va a hacer una petición a la API de PokeAPI. Si la petición es exitosa, se va a mostrar la información del pokemon en el div pokemon. Si la petición falla, se va a mostrar un mensaje de error en la consola.\nPara más información sobre la API de PokeAPI, se puede consultar la documentación.\n\nMediante el plugin de Live Server, abrimos el archivo index.html en el navegador y probamos la aplicación.\nVamos a mejorar la presentación de nuestro proyecto agregando estilos CSS. Creamos un archivo styles.css y agregamos el siguiente código:\n\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\nh1 {\n    margin: 1rem 0;\n}\n\ninput {\n    padding: 0.5rem;\n    margin: 0.5rem 0;\n}\n\nbutton {\n    padding: 0.5rem;\n    margin: 0.5rem 0;\n    background-color: #007bff;\n    color: white;\n    border: none;\n    cursor: pointer;\n}\n\n#pokemon {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 1rem 0;\n}\n\nimg {\n    width: 100px;\n    height: 100px;\n    margin: 0.5rem 0;\n}\n\np {\n    margin: 0.5rem 0;\n}\nEn esta sección hemos agregado estilos CSS para mejorar la presentación de nuestro proyecto, como la fuente, el color de fondo, el color del texto, el tamaño de la letra, el espaciado, el color del botón, el cursor, el tamaño de la imagen, el margen de la imagen, el margen del párrafo, etc.\n\nAgregamos el archivo styles.css al archivo index.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Pokemon&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Pokemon&lt;/h1&gt;\n    &lt;input type=\"text\" id=\"search\" placeholder=\"Buscar pokemon\"&gt;\n    &lt;button id=\"search-button\"&gt;Buscar&lt;/button&gt;\n    &lt;div id=\"pokemon\"&gt;&lt;/div&gt;\n    &lt;script src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn esta sección hemos agregado el archivo styles.css al archivo index.html.\n\nMediante el plugin de Live Server, abrimos el archivo index.html en el navegador y probamos la aplicación.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
+    "title": "Laboratorio Fetch",
+    "section": "Conclusión",
+    "text": "Conclusión\nFelicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a APIs de terceros.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#referencias",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#referencias",
+    "title": "Laboratorio Fetch",
+    "section": "Referencias",
+    "text": "Referencias\n\nFetch API\nPokeAPI\nDocumentación de PokeAPI\nGithub Pages\nVercel\nNetlify\nCSS\nHTML\nJavaScript\nVisual Studio Code\nLive Server",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Laboratorio Fetch</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html",
+    "href": "unidades/unidad6/6_introduccion_react.html",
     "title": "Introducción a React",
     "section": "",
     "text": "¿Qué es Vite?",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#qué-es-vite",
-    "href": "unidades/unidad6/5_introduccion_react.html#qué-es-vite",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#qué-es-vite",
+    "href": "unidades/unidad6/6_introduccion_react.html#qué-es-vite",
     "title": "Introducción a React",
     "section": "",
     "text": "Vite + React\n\n\n\n\nVite es un entorno de desarrollo que permite trabajar con React de forma más sencilla. Vite es un entorno de desarrollo que se basa en la tecnología de ES Modules, que es una forma de importar y exportar módulos en JavaScript. Vite utiliza ES Modules para cargar los módulos de JavaScript de forma rápida y eficiente. Vite también utiliza un servidor de desarrollo que permite trabajar con React de forma más sencilla.\nLa documentación oficial de Vite se encuentra en el siguiente enlace: https://vitejs.dev/",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#crear-un-proyecto-con-vite",
-    "href": "unidades/unidad6/5_introduccion_react.html#crear-un-proyecto-con-vite",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-con-vite",
+    "href": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-con-vite",
     "title": "Introducción a React",
     "section": "Crear un proyecto con Vite",
     "text": "Crear un proyecto con Vite\n\nPara crear un proyecto con Vite, puedes utilizar el siguiente comando:\n\nnpm create vite@latest\n\nEste comando crea un proyecto con Vite y te guía a través de la configuración del proyecto. Puedes elegir el nombre del proyecto, el tipo de proyecto (React, Vue, Vanilla), y otras opciones de configuración.\n\nnpm install",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#entendiendo-react",
-    "href": "unidades/unidad6/5_introduccion_react.html#entendiendo-react",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#entendiendo-react",
+    "href": "unidades/unidad6/6_introduccion_react.html#entendiendo-react",
     "title": "Introducción a React",
     "section": "Entendiendo React",
     "text": "Entendiendo React\n\nsrc/App.jsx\n\nAntes de correr un servidor de pruebas podemos entender la estructura de React, en el archivo App.jsx ubicado en la ruta src/App.jsx se encuentra el código principal de la aplicación, en este archivo se importa React y ReactDOM, se crea un componente de React llamado App y se renderiza en el DOM utilizando ReactDOM.render.\n\n\n\nsrc/main.jsx\n\nEn el archivo src/main.jsx se importa el componente App y se renderiza en el elemento con el id root en el DOM.\nPor ahora no serán necesarios los archivo App.css y index.css. Asi que puedes eliminarlos. Para correr la aplicación puedes utilizar el siguiente comando:\n\nnpm run dev",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#hello-world-con-react",
-    "href": "unidades/unidad6/5_introduccion_react.html#hello-world-con-react",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#hello-world-con-react",
+    "href": "unidades/unidad6/6_introduccion_react.html#hello-world-con-react",
     "title": "Introducción a React",
     "section": "Hello World con React",
     "text": "Hello World con React\n\nPara crear un Hello World con React, puedes utilizar el siguiente código en el archivo src/App.jsx:\n\nfunction App() {\n  return (&lt;h1&gt;Hello World in React&lt;/h1&gt;)\n}\n\nexport default App\n\nEste código crea un componente de React llamado App que renderiza el texto “Hello World” en la pantalla.\nPara crear el hello world tambien vamos a modificar el archivo src/main.jsx para que renderice el componente App en el elemento con el id root en el DOM.\n\nfunction App() {\n  return (&lt;h1&gt;Hello World in React&lt;/h1&gt;)\n}\n\nexport default App\n\nEste código crea un componente de React llamado App que renderiza el texto “Hello World” en la pantalla.\nPara ejecutar la aplicación, puedes utilizar el siguiente comando:\n\nnpm run dev\n\nEste comando inicia el servidor de desarrollo de Vite y abre la aplicación en tu navegador. Verás el texto “Hello World” en la pantalla.\n\n\n\n\n\nDjango Framework",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#conclusiones",
-    "href": "unidades/unidad6/5_introduccion_react.html#conclusiones",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#conclusiones",
+    "href": "unidades/unidad6/6_introduccion_react.html#conclusiones",
     "title": "Introducción a React",
     "section": "Conclusiones",
     "text": "Conclusiones\n\nEn este capítulo aprendimos a crear un proyecto con Vite y React, entendimos la estructura de un proyecto de React y creamos un Hello World con React. En el próximo capítulo aprenderemos a crear componentes en React.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/5_introduccion_react.html#ejericios",
-    "href": "unidades/unidad6/5_introduccion_react.html#ejericios",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#ejericios",
+    "href": "unidades/unidad6/6_introduccion_react.html#ejericios",
     "title": "Introducción a React",
     "section": "Ejericios",
     "text": "Ejericios\n\nCrea un nuevo proyecto con Vite y React.\nCrea un componente de React que renderice un texto en la pantalla.\n\n\n\nVer respuesta\n\nSolución ejercicio 1:\nnpm create vite@latest\nSolución ejercicio 2:\nfunction App() {\n  return (&lt;h1&gt;Este es un componente de React&lt;/h1&gt;)\n}\n\nexport default App",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Introducción a React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html",
-    "title": "Primeros pasos con React",
-    "section": "",
-    "text": "Crear el componente principal",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#qué-es-react",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#qué-es-react",
-    "title": "Primeros pasos con React",
-    "section": "¿Qué es React?",
-    "text": "¿Qué es React?\nReact es una librería de JavaScript para construir interfaces de usuario. Fue desarrollada por Facebook y lanzada en 2013. React es una de las librerías más populares para construir interfaces de usuario en la actualidad.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#componentes",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#componentes",
-    "title": "Primeros pasos con React",
-    "section": "Componentes",
-    "text": "Componentes\nEn React, todo es un componente. Un componente es una pieza de la interfaz de usuario que puede ser reutilizada en diferentes partes de la aplicación. Los componentes pueden ser simples o complejos, y pueden contener otros componentes.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#jsx",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#jsx",
-    "title": "Primeros pasos con React",
-    "section": "JSX",
-    "text": "JSX\nJSX es una extensión de JavaScript que permite escribir código HTML dentro de JavaScript. JSX es una de las características más importantes de React, ya que permite escribir componentes de una forma más sencilla y legible.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#props",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#props",
-    "title": "Primeros pasos con React",
-    "section": "Props",
-    "text": "Props\nLas props son los argumentos que se pasan a un componente. Las props son inmutables, lo que significa que no pueden ser modificadas por el componente que las recibe.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#state",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#state",
-    "title": "Primeros pasos con React",
-    "section": "State",
-    "text": "State\nEl state es un objeto que contiene los datos de un componente. El state es mutable, lo que significa que puede ser modificado por el componente que lo contiene.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#ciclo-de-vida",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#ciclo-de-vida",
-    "title": "Primeros pasos con React",
-    "section": "Ciclo de vida",
-    "text": "Ciclo de vida\nLos componentes de React tienen un ciclo de vida que consta de diferentes fases. Algunas de las fases más importantes son:\n\ncomponentDidMount: Se ejecuta después de que el componente ha sido montado en el DOM.\ncomponentDidUpdate: Se ejecuta después de que el componente ha sido actualizado.\ncomponentWillUnmount: Se ejecuta antes de que el componente sea desmontado del DOM.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#hooks",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#hooks",
-    "title": "Primeros pasos con React",
-    "section": "Hooks",
-    "text": "Hooks\nLos hooks son una característica de React que permite añadir estado y otras características a los componentes funcionales. Algunos de los hooks más comunes son:\n\nuseState: Permite añadir estado a los componentes funcionales.\nuseEffect: Permite añadir efectos secundarios a los componentes funcionales.\nuseContext: Permite acceder al contexto de un componente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#context",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#context",
-    "title": "Primeros pasos con React",
-    "section": "Context",
-    "text": "Context\nEl contexto es una característica de React que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#router",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#router",
-    "title": "Primeros pasos con React",
-    "section": "Router",
-    "text": "Router\nEl router es una característica de React que permite gestionar la navegación entre diferentes páginas de la aplicación.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#redux",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#redux",
-    "title": "Primeros pasos con React",
-    "section": "Redux",
-    "text": "Redux\nRedux es una librería de JavaScript para gestionar el estado de la aplicación de una forma predecible y escalable. Redux se basa en tres principios fundamentales: un único origen de verdad, solo lectura y cambios mediante acciones.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#práctica",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#práctica",
-    "title": "Primeros pasos con React",
-    "section": "Práctica",
-    "text": "Práctica\nAhora que hemos repasado los conceptos básicos de React, vamos a crear una aplicación sencilla para poner en práctica lo aprendido. En esta aplicación vamos a crear un contador que permita incrementar y decrementar un número.\nPara crear la aplicación vamos a utilizar como aprendimos en la sección anterior Vite + React.\n\nCrear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#conclusiones",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#conclusiones",
-    "title": "Primeros pasos con React",
-    "section": "Conclusiones",
-    "text": "Conclusiones\n\nEn este capítulo aprendimos los conceptos básicos de React y cómo crear una aplicación sencilla utilizando Vite + React. En el próximo capítulo vamos a aprender cómo trabajar con componentes en React y cómo organizar el código de una aplicación de forma eficiente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_primeros_pasos_con_react.html#ejercicios",
-    "href": "unidades/unidad6/6_primeros_pasos_con_react.html#ejercicios",
-    "title": "Primeros pasos con React",
-    "section": "Ejercicios",
-    "text": "Ejercicios\n\n\nModificar el contador para que no pueda ser menor que cero.\nCrear un nuevo componente que muestre un mensaje si el contador es mayor que cero.\n\n\n\n\nVer solución\n\n\nSolución ejercicio 1\nPara modificar el contador para que no pueda ser menor que cero, podemos modificar la función decrement de la siguiente forma:\nconst decrement = () =&gt; {\n  if (count &gt; 0) {\n    setCount(count - 1);\n  }\n};\n\n\nSolución ejercicio 2\nPara crear un nuevo componente que muestre un mensaje si el contador es mayor que cero, podemos crear un nuevo componente llamado Message.js con el siguiente contenido:\nimport React from 'react';\n\nconst Message = ({ count }) =&gt; {\n  return count &gt; 0 ? &lt;h2&gt;El contador es mayor que cero&lt;/h2&gt; : null;\n};\n\nexport default Message;\nLuego podemos importar y utilizar este componente en el componente Home:\nimport React from 'react';\nimport Counter from '../components/Counter';\nimport Message from '../components/Message';\n\nconst Home = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Counter App&lt;/h1&gt;\n      &lt;Counter /&gt;\n      &lt;Message /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Home;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
@@ -3340,135 +3230,289 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-la-aplicación",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-la-aplicación",
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html",
+    "title": "Primeros pasos con React",
+    "section": "",
+    "text": "Crear el componente principal",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#qué-es-react",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#qué-es-react",
+    "title": "Primeros pasos con React",
+    "section": "¿Qué es React?",
+    "text": "¿Qué es React?\nReact es una librería de JavaScript para construir interfaces de usuario. Fue desarrollada por Facebook y lanzada en 2013. React es una de las librerías más populares para construir interfaces de usuario en la actualidad.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#componentes",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#componentes",
+    "title": "Primeros pasos con React",
+    "section": "Componentes",
+    "text": "Componentes\nEn React, todo es un componente. Un componente es una pieza de la interfaz de usuario que puede ser reutilizada en diferentes partes de la aplicación. Los componentes pueden ser simples o complejos, y pueden contener otros componentes.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#jsx",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#jsx",
+    "title": "Primeros pasos con React",
+    "section": "JSX",
+    "text": "JSX\nJSX es una extensión de JavaScript que permite escribir código HTML dentro de JavaScript. JSX es una de las características más importantes de React, ya que permite escribir componentes de una forma más sencilla y legible.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#props",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#props",
+    "title": "Primeros pasos con React",
+    "section": "Props",
+    "text": "Props\nLas props son los argumentos que se pasan a un componente. Las props son inmutables, lo que significa que no pueden ser modificadas por el componente que las recibe.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#state",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#state",
+    "title": "Primeros pasos con React",
+    "section": "State",
+    "text": "State\nEl state es un objeto que contiene los datos de un componente. El state es mutable, lo que significa que puede ser modificado por el componente que lo contiene.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#ciclo-de-vida",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#ciclo-de-vida",
+    "title": "Primeros pasos con React",
+    "section": "Ciclo de vida",
+    "text": "Ciclo de vida\nLos componentes de React tienen un ciclo de vida que consta de diferentes fases. Algunas de las fases más importantes son:\n\ncomponentDidMount: Se ejecuta después de que el componente ha sido montado en el DOM.\ncomponentDidUpdate: Se ejecuta después de que el componente ha sido actualizado.\ncomponentWillUnmount: Se ejecuta antes de que el componente sea desmontado del DOM.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#hooks",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#hooks",
+    "title": "Primeros pasos con React",
+    "section": "Hooks",
+    "text": "Hooks\nLos hooks son una característica de React que permite añadir estado y otras características a los componentes funcionales. Algunos de los hooks más comunes son:\n\nuseState: Permite añadir estado a los componentes funcionales.\nuseEffect: Permite añadir efectos secundarios a los componentes funcionales.\nuseContext: Permite acceder al contexto de un componente.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#context",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#context",
+    "title": "Primeros pasos con React",
+    "section": "Context",
+    "text": "Context\nEl contexto es una característica de React que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#router",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#router",
+    "title": "Primeros pasos con React",
+    "section": "Router",
+    "text": "Router\nEl router es una característica de React que permite gestionar la navegación entre diferentes páginas de la aplicación.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#redux",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#redux",
+    "title": "Primeros pasos con React",
+    "section": "Redux",
+    "text": "Redux\nRedux es una librería de JavaScript para gestionar el estado de la aplicación de una forma predecible y escalable. Redux se basa en tres principios fundamentales: un único origen de verdad, solo lectura y cambios mediante acciones.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#práctica",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#práctica",
+    "title": "Primeros pasos con React",
+    "section": "Práctica",
+    "text": "Práctica\nAhora que hemos repasado los conceptos básicos de React, vamos a crear una aplicación sencilla para poner en práctica lo aprendido. En esta aplicación vamos a crear un contador que permita incrementar y decrementar un número.\nPara crear la aplicación vamos a utilizar como aprendimos en la sección anterior Vite + React.\n\nCrear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#conclusiones",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#conclusiones",
+    "title": "Primeros pasos con React",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\nEn este capítulo aprendimos los conceptos básicos de React y cómo crear una aplicación sencilla utilizando Vite + React. En el próximo capítulo vamos a aprender cómo trabajar con componentes en React y cómo organizar el código de una aplicación de forma eficiente.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#ejercicios",
+    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#ejercicios",
+    "title": "Primeros pasos con React",
+    "section": "Ejercicios",
+    "text": "Ejercicios\n\n\nModificar el contador para que no pueda ser menor que cero.\nCrear un nuevo componente que muestre un mensaje si el contador es mayor que cero.\n\n\n\n\nVer solución\n\n\nSolución ejercicio 1\nPara modificar el contador para que no pueda ser menor que cero, podemos modificar la función decrement de la siguiente forma:\nconst decrement = () =&gt; {\n  if (count &gt; 0) {\n    setCount(count - 1);\n  }\n};\n\n\nSolución ejercicio 2\nPara crear un nuevo componente que muestre un mensaje si el contador es mayor que cero, podemos crear un nuevo componente llamado Message.js con el siguiente contenido:\nimport React from 'react';\n\nconst Message = ({ count }) =&gt; {\n  return count &gt; 0 ? &lt;h2&gt;El contador es mayor que cero&lt;/h2&gt; : null;\n};\n\nexport default Message;\nLuego podemos importar y utilizar este componente en el componente Home:\nimport React from 'react';\nimport Counter from '../components/Counter';\nimport Message from '../components/Message';\n\nconst Home = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Counter App&lt;/h1&gt;\n      &lt;Counter /&gt;\n      &lt;Message /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Home;",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-la-aplicación",
+    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-la-aplicación",
     "title": "Fetch con React para obtener el listado de productos",
     "section": "Crear la aplicación",
     "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-el-componente",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#crear-el-componente",
+    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-el-componente",
+    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-el-componente",
     "title": "Fetch con React para obtener el listado de productos",
     "section": "Crear el componente",
     "text": "Crear el componente\nVamos a crear el directorio components y dentro de él el archivo Products.jsx.\nimport React, { useState, useEffect } from 'react';\n\nconst Products = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    fetch('https://fakestoreapi.com/products')\n      .then((response) =&gt; response.json())\n      .then((data) =&gt; setProducts(data));\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map((product) =&gt; (\n          &lt;li key={product.id}&gt;{product.title}&lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Products;\nEn este componente estamos utilizando el hook useState para guardar el listado de productos y el hook useEffect para hacer el fetch a la API.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#importar-el-componente",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#importar-el-componente",
+    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#importar-el-componente",
+    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#importar-el-componente",
     "title": "Fetch con React para obtener el listado de productos",
     "section": "Importar el componente",
     "text": "Importar el componente\nVamos a importar el componente Products en App.jsx.\nimport React from 'react';\n\nimport Products from './components/Products';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;Products /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;\nEn el código anterior estamos importando el componente Products y lo estamos renderizando en App.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
+    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
+    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
     "title": "Fetch con React para obtener el listado de productos",
     "section": "Ejecutar la aplicación",
     "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a correr el siguiente comando.\nnpm run dev\nAhora vamos a abrir el navegador en la dirección http://localhost:3000 y vamos a ver el listado de productos.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_fetch_con_react_tiempo.html#conclusiones",
-    "href": "unidades/unidad6/8_fetch_con_react_tiempo.html#conclusiones",
+    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#conclusiones",
+    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#conclusiones",
     "title": "Fetch con React para obtener el listado de productos",
     "section": "Conclusiones",
     "text": "Conclusiones\nEn esta sección hemos visto cómo podemos hacer un fetch con React para obtener un listado de productos desde una API.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
-    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-el-proyecto",
+    "href": "unidades/unidad6/10_crud_react.html#crear-el-proyecto",
     "title": "Crud Básico con React y Axios",
     "section": "Crear el proyecto",
     "text": "Crear el proyecto",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#crear-la-api",
-    "href": "unidades/unidad6/9_crud_react.html#crear-la-api",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-la-api",
+    "href": "unidades/unidad6/10_crud_react.html#crear-la-api",
     "title": "Crud Básico con React y Axios",
     "section": "Crear la API",
     "text": "Crear la API\nCreamos un directorio llamado backend y dentro de él, creamos un archivo llamado package.json con el siguiente contenido:\nnpm init -y\nLuego, instalamos express y cors:\nVamos a crear una API muy sencilla con express. Para instalarlo, ejecuta el siguiente comando:\nnpm install express cors\nLuego, crea un archivo llamado server.js en la raíz del proyecto con el siguiente contenido:\nconst express = require('express');\nconst cors = require('cors');\nconst app = express();\n\napp.use(cors());\napp.use(express.json());\n\nlet tasks = [\n  { id: 1, title: 'Task 1' },\n  { id: 2, title: 'Task 2' },\n  { id: 3, title: 'Task 3' },\n];\n\napp.get('/tasks', (req, res) =&gt; {\n  res.json(tasks);\n});\n\napp.post('/tasks', (req, res) =&gt; {\n  const task = { id: tasks.length + 1, title: req.body.title };\n  tasks.push(task);\n  res.json(task);\n});\n\napp.put('/tasks/:id', (req, res) =&gt; {\n  const task = tasks.find(task =&gt; task.id === parseInt(req.params.id));\n  task.title = req.body.title;\n  res.json(task);\n});\n\napp.delete('/tasks/:id', (req, res) =&gt; {\n  tasks = tasks.filter(task =&gt; task.id !== parseInt(req.params.id));\n  res.json({ message: 'Task deleted' });\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Server running on port 3000');\n});\nEn el código anterior estamos creando una API con las siguientes rutas:\n\nGET /tasks: Obtiene la lista de tareas.\nPOST /tasks: Agrega una tarea.\nPUT /tasks/:id: Edita una tarea.\nDELETE /tasks/:id: Elimina una tarea.\n\nPara ejecutar la API, ejecuta el siguiente comando:\nnode server.js",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
-    "href": "unidades/unidad6/9_crud_react.html#crear-el-proyecto-de-react",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-el-proyecto-de-react",
+    "href": "unidades/unidad6/10_crud_react.html#crear-el-proyecto-de-react",
     "title": "Crud Básico con React y Axios",
     "section": "Crear el proyecto de React",
     "text": "Crear el proyecto de React\nPara ello nos dirijimos al directorio frontend.\nPara crear el proyecto vamos a usar vite. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:\nnpm create vite@latest .\nLuego, vamos a instalar axios para hacer las peticiones a la API:\nnpm install axios",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
-    "href": "unidades/unidad6/9_crud_react.html#crear-la-lista-de-tareas",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-la-lista-de-tareas",
+    "href": "unidades/unidad6/10_crud_react.html#crear-la-lista-de-tareas",
     "title": "Crud Básico con React y Axios",
     "section": "Crear la lista de tareas",
     "text": "Crear la lista de tareas\nCreamos el directorio src/components y dentro de él, creamos un archivo llamado TaskList.js con el siguiente contenido:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst TaskList = () =&gt; {\n  const [tasks, setTasks] = useState([]);\n  const [title, setTitle] = useState('');\n\n  useEffect(() =&gt; {\n    axios.get('http://localhost:3000/tasks')\n      .then(response =&gt; setTasks(response.data));\n  }, []);\n\n  const addTask = () =&gt; {\n    axios.post('http://localhost:3000/tasks', { title })\n      .then(response =&gt; setTasks([...tasks, response.data]));\n  };\n\n  const editTask = (id, title) =&gt; {\n    axios.put(`http://localhost:3000/tasks/${id}`, { title })\n      .then(response =&gt; {\n        const newTasks = tasks.map(task =&gt; {\n          if (task.id === id) {\n            task.title = title;\n          }\n          return task;\n        });\n        setTasks(newTasks);\n      });\n  };\n\n  const deleteTask = id =&gt; {\n    axios.delete(`http://localhost:3000/tasks/${id}`)\n      .then(() =&gt; setTasks(tasks.filter(task =&gt; task.id !== id)));\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={title} onChange={e =&gt; setTitle(e.target.value)} /&gt;\n      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;\n      &lt;ul&gt;\n        {tasks.map(task =&gt; (\n          &lt;li key={task.id}&gt;\n            &lt;input type=\"text\" value={task.title} onChange={e =&gt; editTask(task.id, e.target.value)} /&gt;\n            &lt;button onClick={() =&gt; deleteTask(task.id)}&gt;Delete&lt;/button&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default TaskList;\nEn el código anterior estamos creando un componente llamado TaskList que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el useEffect hacemos una petición a la API para obtener la lista de tareas. En el método addTask agregamos una tarea a la lista. En el método editTask editamos una tarea de la lista. En el método deleteTask eliminamos una tarea de la lista.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#mostrar-la-lista-de-tareas",
-    "href": "unidades/unidad6/9_crud_react.html#mostrar-la-lista-de-tareas",
+    "objectID": "unidades/unidad6/10_crud_react.html#mostrar-la-lista-de-tareas",
+    "href": "unidades/unidad6/10_crud_react.html#mostrar-la-lista-de-tareas",
     "title": "Crud Básico con React y Axios",
     "section": "Mostrar la lista de tareas",
     "text": "Mostrar la lista de tareas\nVamos a importar el componente TaskList en el archivo App.js y mostrarlo en la aplicación:\nimport React from 'react';\nimport TaskList from './components/TaskList';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Task List&lt;/h1&gt;\n      &lt;TaskList /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#probar-la-aplicación",
-    "href": "unidades/unidad6/9_crud_react.html#probar-la-aplicación",
+    "objectID": "unidades/unidad6/10_crud_react.html#probar-la-aplicación",
+    "href": "unidades/unidad6/10_crud_react.html#probar-la-aplicación",
     "title": "Crud Básico con React y Axios",
     "section": "Probar la aplicación",
     "text": "Probar la aplicación\n\n\n\nPara probar la aplicación, ejecuta el siguiente comando:\nnpm run dev\nAbre tu navegador en la dirección http://localhost:3000 y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/9_crud_react.html#conclusiones",
-    "href": "unidades/unidad6/9_crud_react.html#conclusiones",
+    "objectID": "unidades/unidad6/10_crud_react.html#conclusiones",
+    "href": "unidades/unidad6/10_crud_react.html#conclusiones",
     "title": "Crud Básico con React y Axios",
     "section": "Conclusiones",
     "text": "Conclusiones\nEn esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con axios y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
     ]
   },
   {
@@ -3479,7 +3523,7 @@
     "text": "1. Configuración Inicial del Proyecto",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3490,7 +3534,7 @@
     "text": "1.1. Crear un Proyecto Django\nAbre tu terminal y ejecuta los siguientes comandos para crear un nuevo proyecto Django:\npython -m venv env\nsource env/bin/activate\npip install django==4.2\ndjango-admin startproject ecommerce_project .\ncd ecommerce_project\n\n\n1.2 Crear una Aplicación Django\nDentro del directorio del proyecto, crea una aplicación para manejar el e-commerce:\npython manage.py startapp products\n\n\n1.3 Instalar Django Rest Framework\nInstala DRF usando pip:\npip install djangorestframework\n\n\n1.4 Configurar el Proyecto\nAñade ‘rest_framework’ y tu nueva aplicación ‘products’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nINSTALLED_APPS = [\n    # ... otras apps\n    'rest_framework',\n    'products',\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3501,7 +3545,7 @@
     "text": "2. Definir el Modelo de Datos\n\n2.1 Crear Modelos en products/models.py\nDefine los modelos para el e-commerce, como Product, Category, y Order:\nfrom django.db import models\n\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n\n    def __str__(self):\n        return self.name\n\nclass Product(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)\n    stock = models.PositiveIntegerField()\n\n    def __str__(self):\n        return self.name\n\nclass Order(models.Model):\n    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    total_price = models.DecimalField(max_digits=10, decimal_places=2)\n    order_date = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f\"Order {self.id} - {self.product.name}\"\n\n\n2.2 Crear y Aplicar Migraciones\nGenera y aplica las migraciones para los modelos:\npython manage.py makemigrations\npython manage.py migrate",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3512,7 +3556,7 @@
     "text": "3. Crear Serializers\n\n3.1 Definir Serializers en products/serializers.py\nLos serializers se encargan de transformar los modelos en formatos JSON y viceversa:\nfrom rest_framework import serializers\nfrom .models import Category, Product, Order\n\nclass CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = '__all__'\n\nclass ProductSerializer(serializers.ModelSerializer):\n    category = CategorySerializer()\n\n    class Meta:\n        model = Product\n        fields = '__all__'\n\nclass OrderSerializer(serializers.ModelSerializer):\n    product = ProductSerializer()\n\n    class Meta:\n        model = Order\n        fields = '__all__'",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3523,7 +3567,7 @@
     "text": "4. Crear Vistas y Rutas\n\n4.1 Definir Vistas en products/views.py\nUtiliza las vistas basadas en clases de DRF para crear y manejar las operaciones CRUD:\nfrom rest_framework import generics\nfrom .models import Category, Product, Order\nfrom .serializers import CategorySerializer, ProductSerializer, OrderSerializer\n\nclass CategoryListCreate(generics.ListCreateAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass CategoryDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass ProductListCreate(generics.ListCreateAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass ProductDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass OrderListCreate(generics.ListCreateAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer\n\nclass OrderDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3534,7 +3578,7 @@
     "text": "4.2 Configurar Rutas en products/urls.py\nDefine las rutas para acceder a las vistas:\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('categories/', views.CategoryListCreate.as_view(), name='category-list-create'),\n    path('categories/&lt;int:pk&gt;/', views.CategoryDetail.as_view(), name='category-detail'),\n    path('products/', views.ProductListCreate.as_view(), name='product-list-create'),\n    path('products/&lt;int:pk&gt;/', views.ProductDetail.as_view(), name='product-detail'),\n    path('orders/', views.OrderListCreate.as_view(), name='order-list-create'),\n    path('orders/&lt;int:pk&gt;/', views.OrderDetail.as_view(), name='order-detail'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3545,7 +3589,7 @@
     "text": "4.3 Incluir las URLs en ecommerce_project/urls.py\nAñade las URLs de la aplicación al archivo principal de URLs del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3556,7 +3600,7 @@
     "text": "5. Probar la API\n\n5.1 Ejecutar el Servidor de Desarrollo\nInicia el servidor de desarrollo de Django:\npython manage.py runserver",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3567,7 +3611,7 @@
     "text": "5.2 Probar los Endpoints\nUtiliza herramientas como Postman o cURL para probar los endpoints:\n\nListar categorías: GET /api/categories/\nCrear categoría: POST /api/categories/\nObtener categoría específica: GET /api/categories/{id}/\nActualizar categoría: PUT /api/categories/{id}/\nEliminar categoría: DELETE /api/categories/{id}/\n\nY lo mismo para productos y pedidos.\n\nListar productos: GET /api/products/\nCrear producto: POST /api/products/\nObtener producto específico: GET /api/products/{id}/\nActualizar producto: PUT /api/products/{id}/\nEliminar producto: DELETE /api/products/{id}/",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3578,7 +3622,7 @@
     "text": "1. Instalar Django Rest Swagger\nInstala Django Rest Swagger usando pip:\npip install drf-yasg",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3589,7 +3633,7 @@
     "text": "2. Configurar Django Rest Swagger\nAñade ‘rest_framework_swagger’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import permissions\nfrom drf_yasg.views import get_schema_view\nfrom drf_yasg import openapi\n\nschema_view = get_schema_view(\n    openapi.Info(\n        title=\"E-commerce API\",\n        default_version='v1',\n        description=\"API documentation for the E-commerce project\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"contact@ecommerce.local\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,\n    permission_classes=(permissions.AllowAny,),\n)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3600,7 +3644,7 @@
     "text": "3. Configurar las URLs\nAñade las URLs de Swagger al archivo principal de URLs del proyecto:\n´´´\nfrom rest_framework_swagger.views import get_swagger_view\n\nschema_view = get_swagger_view(title='E-Commerce API')\n\nurlpatterns = [\n    ´´´\n    path('docs/', schema_view),\n]\n\n\n\n\n\n\nTip\n\n\n\nPara evitar un error común es necesario instalr setuptools con el siguiente comando:\npip install setuptools\n\n\nFinalmente es necesario agregar el siguiente código al final del archivo settings.py\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'drf_yasg',\n    'rest_framework',\n    'products',\n]\n\n´´´\nREST_FRAMEWORK = {\n    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'\n}\n\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://127.0.0.1:8000\",\n    # Añade otros orígenes permitidos aquí\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3611,7 +3655,7 @@
     "text": "4. Probar la Documentación",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3622,7 +3666,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -3633,7 +3677,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3644,7 +3688,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3655,7 +3699,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3666,7 +3710,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3677,7 +3721,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3688,7 +3732,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3699,7 +3743,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3710,7 +3754,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3721,7 +3765,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3732,7 +3776,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3743,7 +3787,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3754,7 +3798,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3765,7 +3809,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3776,7 +3820,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3787,7 +3831,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3798,7 +3842,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3809,7 +3853,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3820,7 +3864,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3831,7 +3875,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3842,7 +3886,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3853,7 +3897,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3864,7 +3908,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3875,7 +3919,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3886,7 +3930,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
