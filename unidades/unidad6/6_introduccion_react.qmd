@@ -1,138 +1,1093 @@
+::: {.justify}
 # Introducción a React
 
-::: {.center}
-![React](/images/react-logo.png){.center width=200px}
+:::{.center}
+![React Logo](../../images/react-logo.png){.center width="200px"}
 :::
 
-::: {.justify}
-Antes de conocer React, es importante entender que es una librería de JavaScript que se utiliza para construir interfaces de usuario. React fue desarrollado por Facebook y lanzado en 2013. React es una librería de código abierto y se utiliza para construir interfaces de usuario en aplicaciones web. React es una de las librerías de JavaScript más populares y se utiliza en aplicaciones web de todo tipo.
+# 1. ¿Qué es React?
 
-La forma clásica de instalar React es a través de npm, el gestor de paquetes de Node.js. Para instalar React, primero debes instalar Node.js en tu sistema. Luego, puedes instalar React utilizando el siguiente comando:
+React es una biblioteca de JavaScript desarrollada por Facebook para construir interfaces de usuario. Se enfoca en la creación de componentes reutilizables y eficientes que permiten el desarrollo de aplicaciones web rápidas y escalables.
+
+## Características clave de React:
+
+-   **Componentes:** React basa su arquitectura en componentes. Cada componente es una pieza reutilizable de código que puede manejar su propio estado y lógica.
+
+-   **Virtual DOM:** React utiliza un DOM virtual para actualizar solo las partes que cambian, lo que mejora significativamente el rendimiento.
+
+-   **Unidirectional Data Flow (Flujo de Datos Unidireccional):** En React, los datos fluyen en una sola dirección, desde el componente padre hacia los componentes hijos.
+
+-   **JSX:** Un lenguaje similar a HTML que permite combinar la estructura del componente con lógica JavaScript.
+
+# 2. Evolución de React: De create-react-app a Vite
+
+## React con create-react-app (Antes).
+
+:::{.center}
+![](images/paste-55.png)
 :::
+
+Antes de la aparición de herramientas como Vite, React se inicializaba principalmente usando create-react-app (CRA). CRA es un generador de proyectos que proporciona una configuración completa para desarrollar aplicaciones React sin necesidad de configuraciones manuales con Webpack o Babel.
+
+:::{.center}
+![](images/paste-53.png)
+:::
+
 ``` bash
-npm install react
+npx create-react-app my-app
+cd my-app
+npm start
 ```
-::: {.justify}
-Sin embargo en la actualidad no se recomienda hacerlo de esta forma, es mejor utilizar Vite, un entorno de desarrollo que permite trabajar con React de forma más sencilla.
+
+Con estos comandos, podías crear un proyecto React con CRA y ejecutarlo en un servidor de desarrollo. Sin embargo, CRA tiene algunas desventajas que han llevado a la adopción de herramientas más modernas como Vite.
+
+:::{.center}
+![](images/paste-54.png)
 :::
 
-## ¿Qué es Vite?
+## Desventajas de create-react-app:
 
-::: {.center}
-![Vite + React](/images/viteAndReact.png){.center}
+**Lentitud:** A medida que las aplicaciones crecen, CRA puede volverse lento durante el tiempo de compilación y recarga en caliente.
+
+**Sobrecarga de configuración:** Aunque CRA oculta la configuración compleja, esta puede ser difícil de personalizar cuando el proyecto lo requiere.
+
+## React con Vite (Ahora)
+
+Vite es una herramienta de desarrollo moderna que mejora significativamente los tiempos de desarrollo y la experiencia del programador, superando a CRA en términos de velocidad y simplicidad.
+
+### Ventajas de Vite:
+
+-   **Velocidad:** Vite es extremadamente rápido, incluso en proyectos grandes, debido a su compilación basada en ES Modules (módulos de ECMAScript).
+
+-   **Recarga en caliente instantánea:** Vite ofrece Hot Module Replacement (HMR), que recarga solo los módulos que cambian, proporcionando un entorno de desarrollo mucho más ágil.
+
+-   **Configuración ligera:** La configuración es mínima y fácil de personalizar cuando es necesario.
+
+## Crear un proyecto React con Vite:
+
+:::{.center}
+![](images/paste-57.png)
 :::
 
-::: {.justify}
-Vite es un entorno de desarrollo que permite trabajar con React de forma más sencilla. Vite es un entorno de desarrollo que se basa en la tecnología de ES Modules, que es una forma de importar y exportar módulos en JavaScript. Vite utiliza ES Modules para cargar los módulos de JavaScript de forma rápida y eficiente. Vite también utiliza un servidor de desarrollo que permite trabajar con React de forma más sencilla.
-
-La documentación oficial de Vite se encuentra en el siguiente enlace: <https://vitejs.dev/>
-:::
-
-## Crear un proyecto con Vite
-::: {.justify}
-Para crear un proyecto con Vite, puedes utilizar el siguiente comando:
-:::
+Hoy en día, los desarrolladores de React utilizan Vite para crear proyectos mucho más rápido. Aquí te mostramos cómo hacerlo.
 
 ``` bash
-npm create vite@latest
+npm create vite@latest .
 ```
-::: {.justify}
-Este comando crea un proyecto con Vite y te guía a través de la configuración del proyecto. Puedes elegir el nombre del proyecto, el tipo de proyecto (React, Vue, Vanilla), y otras opciones de configuración.
+
+Con esta sencilla línea de comandos, puedes crear un proyecto React con Vite y comenzar a desarrollar aplicaciones web modernas de forma rápida y eficiente.
+
+:::{.center}
+![](images/paste-56.png)
+:::
+
+::: callout-tip
+**Nota:** Al ejecutar el comando anterior en tu terminal, se abrirá un asistente para configurar tu proyecto con Vite. Puedes elegir entre diferentes plantillas, incluyendo React, Vue, Preact y más. De la misma forma la forma en la que puedes programar ya que es posible utilizar javascrit o typescript.
 :::
 
 ``` bash
 npm install
+npm run dev
 ```
 
-## Entendiendo React
+Con los comandos anteriores, puedes instalar las dependencias y ejecutar el servidor de desarrollo de Vite para comenzar a trabajar en tu proyecto React.
 
-### src/App.jsx
-::: {.justify}
-Antes de correr un servidor de pruebas podemos entender la estructura de React, en el archivo App.jsx ubicado en la ruta **src/App.jsx** se encuentra el código principal de la aplicación, en este archivo se importa React y ReactDOM, se crea un componente de React llamado **App** y se renderiza en el DOM utilizando **ReactDOM.render**.
+# 3. Conceptos Básicos de React
+
+Antes de iniciar con React es necesario conocer un poco la estructura básica de un proyecto en React, los componentes, JSX, props, estado y hooks.
+
+Por ahora lo más importante es mantener un orden que quizás al principio no se entienda pero con el tiempo se irá aclarando.
+
+Para ello vamos a crear una directorio llamado **components** y dentro del directorio **src** vamos a crear un archivo llamado **Gretting.jsx**.
+
+::: callout-tip
+**JSX:** Es una extensión de JavaScript que permite escribir HTML en archivos JavaScript.
 :::
 
-### src/main.jsx
+``` javascript
+function Greeting() {
+  return <h1>¡Hola, mundo!</h1>;
+}
 
-::: {.justify}
-En el archivo **src/main.jsx** se importa el componente **App** y se renderiza en el elemento con el id **root** en el DOM.
+export default Greeting;
+```
 
-Por ahora no serán necesarios los archivo **App.css** y **index.css**. Asi que puedes eliminarlos. Para correr la aplicación puedes utilizar el siguiente comando:
+## 3.1. Componentes en React
+
+:::{.center}
+![](images/paste-59.png)
+:::
+
+Los componentes son bloques reutilizables que contienen lógica, estructura y estilo. En React, un componente puede ser:
+
+**Funcional:** Es el enfoque moderno en React. Son componentes escritos como funciones de JavaScript.
+
+**De clase:** Son el enfoque anterior, basados en la programación orientada a objetos. Aún se usan en proyectos más antiguos.
+
+En la sección anterior, creamos un componente funcional llamado Greeting. Ahora, vamos a importar y usar este componente en el archivo **App.js**.
+
+``` javascript
+import Greeting from './components/Greeting';
+
+function App() {
+  return (
+    <div>
+      <Greeting />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Para correr el proyecto ejecutamos el comando:
+
+:::{.center}
+![](images/paste-58.png)
 :::
 
 ``` bash
 npm run dev
 ```
 
-## Hello World con React
+## 3.2. JSX: JavaScript + HTML
 
-::: {.justify}
-Para crear un Hello World con React, puedes utilizar el siguiente código en el archivo **src/App.jsx**:
+:::{.center}
+![](images/paste-60.png)
 :::
 
-``` jsx
-function App() {
-  return (<h1>Hello World in React</h1>)
-}
+JSX es una extensión de JavaScript que permite escribir HTML dentro de archivos JavaScript. Esto facilita la creación de componentes y mejora la legibilidad del código.
 
-export default App
+:::{.center}
+![](images/paste-61.png)
+:::
+
+``` html
+<h1>¡Hola, mundo!</h1>
 ```
-::: {.justify}
-Este código crea un componente de React llamado **App** que renderiza el texto "Hello World" en la pantalla.
 
-Para crear el hello world tambien vamos a modificar el archivo **src/main.jsx** para que renderice el componente **App** en el elemento con el id **root** en el DOM.
-:::
+JSX se compila a llamadas de funciones de React que crean elementos de React.
 
-``` jsx
-function App() {
-  return (<h1>Hello World in React</h1>)
-}
+Por ejemplo, el código JSX anterior se compila a:
 
-export default App
+``` javascript
+React.createElement('h1', null, '¡Hola, mundo!');
 ```
-::: {.justify}
-Este código crea un componente de React llamado **App** que renderiza el texto "Hello World" en la pantalla.
 
-Para ejecutar la aplicación, puedes utilizar el siguiente comando:
+Sin embargo no es necesario preocuparse por esto ya que React se encarga de hacerlo por nosotros.
+
+::: callout-tip
+**Nota:** Los elementos JSX deben tener un solo contenedor raíz. Si necesitas devolver varios elementos, puedes envolverlos en un contenedor div o usar Fragment.
 :::
+
+Ejemplo de Fragment:
+
+:::{.center}
+![](images/paste-62.png)
+:::
+
+``` javascript
+function App() {
+  return (
+    <>
+      <h1>¡Hola, mundo!</h1>
+      <p>Bienvenido a mi aplicación.</p>
+    </>
+  );
+}
+```
+
+En el ejemplo anterior, usamos Fragment para envolver múltiples elementos sin necesidad de un contenedor adicional.
+
+:::{.center}
+![](images/paste-63.png)
+:::
+
+Para poder probar este ejemplo es necesario modificar el archivo **App.js**. y correr el servidor de desarrollo.
 
 ``` bash
 npm run dev
 ```
-::: {.justify}
-Este comando inicia el servidor de desarrollo de Vite y abre la aplicación en tu navegador. Verás el texto "Hello World" en la pantalla.
+
+## 3.3. Props y Estado
+
+:::{.center}
+![](images/paste-65.png)
 :::
 
-::: {.center}
-![Django Framework](/images/react_hello_world.png){.center}
+**Props:** Son los "argumentos" que los componentes reciben para configurar su contenido o comportamiento.
+
+Para entender mejor cómo funcionan las props, vamos a modificar el componente Greeting para que reciba un prop llamado name.
+
+En el directorio **components**, modificamos el archivo llamado **Greeting.jsx** con el siguiente contenido:
+
+:::{.center}
+![](images/paste-66.png)
 :::
 
-## Conclusiones
+``` javascript
+export default function Greeting(props) {
+  return <h1>¡Hola, {props.name}!</h1>;
+}
+```
 
-::: {.justify}
-En este capítulo aprendimos a crear un proyecto con Vite y React, entendimos la estructura de un proyecto de React y creamos un Hello World con React. En el próximo capítulo aprenderemos a crear componentes en React.
+Muy bien ahora vamos a modificar el archivo **App.js** para que el componente Greeting reciba el prop name.
+
+``` javascript
+import Greeting from './components/Greeting';
+
+function App() {
+  return (
+    <>
+      <Greeting name="Diego" />
+    </>
+  );
+}
+
+export default App;
+```
+
+En el ejemplo anterior, pasamos el prop name con el valor "Diego" al componente Greeting. Esto permite personalizar el saludo que se muestra en la pantalla.
+
+## 3.4. Hooks
+
+:::{.center}
+![](images/paste-67.png)
 :::
 
-## Ejericios
+Los hooks fueron introducidos en **React 16.8** y son funciones que permiten a los componentes funcionales gestionar el estado y otros efectos del ciclo de vida, funcionalidades que anteriormente solo estaban disponibles en los componentes de clase.
 
-1. Crea un nuevo proyecto con Vite y React.
-2. Crea un componente de React que renderice un texto en la pantalla.
+**useState:** Gestiona el estado dentro de un componente funcional.
+
+**useEffect:** Maneja efectos secundarios, como llamadas a APIs o actualizaciones del DOM.
+
+## Ejemplo con useState y useEffect:
+
+:::{.center}
+![](images/paste-68.png)
+:::
+
+``` javascript
+import { useState, useEffect } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Has hecho clic ${count} veces`;
+  }, [count]); // Se ejecuta cada vez que 'count' cambia
+
+  return (
+    <div>
+      <p>Has hecho clic {count} veces</p>
+      <button onClick={() => setCount(count + 1)}>Haz clic</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+En el código anterior, usamos **useState** para **inicializar** el **estado count** en **0** y **setCount** para **actualizarlo**. También usamos **useEffect** para **actualizar** el **título de la página** cada vez que count cambia.
+
+Para entender mejor este concepto vamo a crear un nuevo componente llamado Clasificador de Edades.
+
+:::{.center}
+![](images/paste-69.png)
+:::
+
+En el directorio **components**, creamos un archivo llamado **AgeClassifier.jsx** con el siguiente contenido:
+
+``` javascript
+import { useState } from 'react';
+
+export default function AgeClassifier() {
+  const [age, setAge] = useState(0);
+  const [classification, setClassification] = useState('');
+
+  function classifyAge() {
+    if (age < 18) {
+      setClassification('Menor de edad');
+    } else {
+      setClassification('Mayor de edad');
+    }
+  }
+
+  return (
+    <div>
+      <input
+        type="number"
+        value={age}
+        onChange={(e) => setAge(parseInt(e.target.value))}
+      />
+      <button onClick={classifyAge}>Clasificar Edad</button>
+      <p>{classification}</p>
+    </div>
+  );
+}
+```
+
+En el código anterior, usamos **useState** para inicializar el estado **age** en **0** y **classification** en una cadena vacía. Luego, definimos una función **classifyAge** que clasifica la edad en "Menor de edad" o "Mayor de edad" según el valor de age. Finalmente, mostramos un campo de entrada para la edad, un botón para clasificarla y un mensaje con la clasificación.
+
+Para probar este componente, vamos a importarlo y usarlo en el archivo **App.js**.
+
+:::{.center}
+![](images/paste-70.png)
+:::
+
+``` javascript
+import AgeClassifier from './components/AgeClassifier';
+
+function App() {
+  return (
+    <>
+      <AgeClassifier />
+    </>
+  );
+}
+
+export default App;
+```
+
+Ahora, al correr el servidor de desarrollo, podrás ver el componente AgeClassifier en acción.
+
+``` bash
+npm run dev
+```
+
+Con este ejercicio hemos aprendido a usar los **hooks useState** y **useEffect** en un **componente funcional de React**. Estos **hooks** son **fundamentales** para **gestionar el estado** y los **efectos secundarios** en aplicaciones React modernas.
+
+## 4. Diferencias entre el Uso Antiguo y el Actual de React
+
+**Antes:** Componentes de Clase
+
+En versiones anteriores, los desarrolladores usaban componentes de clase para manejar el estado y el ciclo de vida de los componentes.
+
+``` javascript
+class Greeting extends React.Component {
+  render() {
+    return <h1>¡Hola, {this.props.name}!</h1>;
+  }
+}
+```
+
+**Ahora:** Componentes Funcionales con Hooks
+
+Hoy en día, la norma es usar componentes funcionales con hooks, ya que son más concisos y fáciles de trabajar.
+
+``` javascript
+function Greeting({ name }) {
+  return <h1>¡Hola, {name}!</h1>;
+}
+```
+
+## Ventajas del enfoque moderno con Hooks:
+
+**Menos código:** Los componentes funcionales con hooks son más cortos y claros.
+
+**Manejo de estado más simple:** useState y otros hooks ofrecen una forma directa y sencilla de gestionar el estado y el ciclo de vida.
+
+**Mejor rendimiento:** React puede optimizar mejor los componentes funcionales.
+
+# Microproyecto con React
+
+:::{.center}
+![](images/paste-71.png)
+:::
+
+Para finalizar este módulo vamos a crear un microproyecto con React y Vite. En este proyecto vamos a crear una aplicación de lista de tareas (To-Do List) que permita agregar, eliminar y marcar tareas como completadas.
+
+## 1. Crear un Proyecto con Vite
+
+Para comenzar, vamos a crear un nuevo proyecto React con Vite. Abre tu terminal y ejecuta el siguiente comando:
+
+``` bash
+npm create vite@latest todo-list
+cd todo-list
+npm install
+```
+
+Este comando creará un nuevo proyecto React con Vite llamado todo-list y lo instalará en tu directorio actual.
+
+## 2. Crear Componentes
+
+:::{.center}
+![](images/paste-72.png)
+:::
+
+En el directorio **src/components**, crea un nuevo archivo llamado **TodoList.jsx** con el siguiente contenido:
+
+``` javascript
+import { useState } from 'react';
+
+export default function TodoList() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  function addTask() {
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, { id: tasks.length + 1, text: newTask, completed: false }]);
+      setNewTask('');
+    }
+  }
+
+  function deleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
+
+  function toggleTask(id) {
+    setTasks(tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    }));
+  }
+
+  return (
+    <div>
+      <h1>Lista de Tareas</h1>
+      <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Nueva tarea"
+      />
+      <button onClick={addTask}>Agregar Tarea</button>
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleTask(task.id)}
+            />
+            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+              {task.text}
+            </span>
+            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+En el código anterior, creamos un componente funcional TodoList que gestiona una lista de tareas. Usamos el hook useState para mantener el estado de las tareas y la nueva tarea que se está escribiendo. También definimos funciones para agregar, eliminar y marcar tareas como completadas.
+
+## 3. Usar el Componente TodoList
+
+En el archivo **src/App.js**, importa y usa el componente TodoList que acabamos de crear:
+
+``` javascript
+import TodoList from './components/TodoList';
+
+function App() {
+  return (
+    <div>
+      <TodoList />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## 4. Ejecutar el Proyecto
+
+Finalmente, ejecuta el servidor de desarrollo para ver tu aplicación de lista de tareas en acción:
+
+``` bash
+npm run dev
+```
+
+Con estos pasos, has creado una aplicación de lista de tareas funcional con React y Vite. Puedes agregar, eliminar y marcar tareas como completadas, demostrando cómo los componentes, el estado y los hooks de React trabajan juntos para crear aplicaciones web interactivas y dinámicas.
+
+# Reto
+
+:::{.center}
+![](images/paste-73.png)
+:::
+
+Mejorar la aplicación de lista de tareas agregando las siguientes funcionalidades:
+
+-   **Editar Tareas:** Permite editar el texto de una tarea existente.
+
+-   **Filtrar Tareas:** Agrega botones para filtrar las tareas por estado (completadas, pendientes, todas).
+
+-   **Guardar Tareas:** Implementa la capacidad de guardar las tareas en el almacenamiento local del navegador para que persistan entre sesiones.
+
+-   **Estilos Personalizados:** Añade estilos CSS personalizados para mejorar la apariencia de la aplicación.
 
 <details>
-  <summary>Ver respuesta</summary>
 
-Solución ejercicio 1:
+<summary>🔍 Solución</summary>
 
-``` bash
-npm create vite@latest
+Para implementar estas funcionalidades, puedes seguir los siguientes pasos:
+
+1.  **Editar Tareas:** Agrega un botón de edición a cada tarea que permita cambiar su texto.
+
+``` javascript
+function editTask(id, text) {
+  const updatedText = prompt('Editar tarea:', text);
+  if (updatedText !== null) {
+    setTasks(tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, text: updatedText };
+      }
+      return task;
+    }));
+  }
+}
 ```
 
-Solución ejercicio 2:
+2.  **Filtrar Tareas:** Agrega botones para filtrar las tareas por estado.
 
-``` jsx
-function App() {
-  return (<h1>Este es un componente de React</h1>)
+``` javascript
+function filterTasks(status) {
+  switch (status) {
+    case 'completed':
+      return tasks.filter((task) => task.completed);
+    case 'pending':
+      return tasks.filter((task) => !task.completed);
+    default:
+      return tasks;
+  }
+}
+```
+
+3.  **Guardar Tareas:** Utiliza el almacenamiento local del navegador para guardar las tareas.
+
+``` javascript
+useEffect(() => {
+  const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+  if (savedTasks) {
+    setTasks(savedTasks);
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}, [tasks]);
+```
+
+El archivo **TodoList.jsx** completo con estas mejoras se vería así:
+
+``` javascript
+import { useState, useEffect } from 'react';
+
+export default function TodoList() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (savedTasks) {
+      setTasks(savedTasks);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  function addTask() {
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, { id: tasks.length + 1, text: newTask, completed: false }]);
+      setNewTask('');
+    }
+  }
+
+  function deleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
+
+  function toggleTask(id) {
+    setTasks(tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    }));
+  }
+
+  function editTask(id, text) {
+    const updatedText = prompt('Editar tarea:', text);
+    if (updatedText !== null) {
+      setTasks(tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, text: updatedText };
+        }
+        return task;
+      }));
+    }
+  }
+
+  function filterTasks(status) {
+    switch (status) {
+      case 'completed':
+        return tasks.filter((task) => task.completed);
+      case 'pending':
+        return tasks.filter((task) => !task.completed);
+      default:
+        return tasks;
+    }
+  }
+
+  return (
+    <div>
+      <h1>Lista de Tareas</h1>
+      <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Nueva tarea"
+      />
+      <button onClick={addTask}>Agregar Tarea</button>
+      <ul>
+        {filterTasks('all').map((task) => (
+          <li key={task.id}>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleTask(task.id)}
+            />
+            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+              {task.text}
+            </span>
+            <button onClick={() => editTask(task.id, task.text)}>
+              Editar
+            </button>
+            <button onClick={() => deleteTask(task.id)}>
+              Eliminar
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div>
+        <button onClick={() => setTasks(filterTasks('all'))}>
+          Todas
+        </button>
+        <button onClick={() => setTasks(filterTasks('completed'))}>
+          Completadas
+        </button>
+        <button onClick={() => setTasks(filterTasks('pending'))}>
+          Pendientes
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+4.  **Estilos Personalizados:** Crea un archivo CSS en el directorio **src** y agrega estilos personalizados.
+
+``` css
+body {
+  font-family: Arial, sans-serif;
 }
 
-export default App
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+span {
+  flex: 1;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+button:active {
+  background-color: #b71c1c;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+button.add {
+  background-color: #4caf50;
+}
+
+button.add:hover {
+  background-color: #388e3c;
+}
+
+button.add:active {
+  background-color: #2e7d32;
+}
+
+button.edit {
+  background-color: #2196f3;
+}
+
+button.edit:hover {
+  background-color: #1e88e5;
+}
+
+button.edit:active {
+  background-color: #1976d2;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.delete:hover {
+  background-color: #d32f2f;
+}
+
+button.delete:active {
+  background-color: #b71c1c;
+}
+
+button.filter {
+  background-color: #9e9e9e;
+}
+
+button.filter:hover {
+  background-color: #757575;
+}
+
+button.filter:active {
+  background-color: #424242;
+}
+
+button.clear {
+  background-color: #f44336;
+}
+
+button.clear:hover {
+  background-color: #d32f2f;
+}
+
+button.clear:active {
+  background-color: #b71c1c;
+}
+
+button.save {
+  background-color: #4caf50;
+}
+
+button.save:hover {
+  background-color: #388e3c;
+}
+
+button.save:active {
+  background-color: #2e7d32;
+}
+
+button.cancel {
+  background-color: #f44336;
+}
+
+button.cancel:hover {
+  background-color: #d32f2f;
+}
+
+button.cancel:active {
+  background-color: #b71c1c;
+}
+
+button.toggle {
+  background-color: #4caf50;
+}
+
+button.toggle:hover {
+  background-color: #388e3c;
+}
+
+button.toggle:active {
+  background-color: #2e7d32;
+}
+
+button.toggle-all {
+  background-color: #9e9e9e;
+}
+
+button.toggle-all:hover {
+  background-color: #757575;
+}
+
+button.toggle-all:active {
+  background-color: #424242;
+}
+
+button.clear-completed {
+  background-color: #f44336;
+}
+
+button.clear-completed:hover {
+  background-color: #d32f2f;
+}
+
+button.clear-completed:active {
+  background-color: #b71c1c;
+}
+
+button.clear-all {
+  background-color: #f44336;
+}
+
+button.clear-all:hover {
+  background-color: #d32f2f;
+}
+
+button.clear-all:active {
+  background-color: #b71c1c;
+}
+
+button.save-all {
+  background-color: #4caf50;
+}
+
+button.save-all:hover {
+  background-color: #388e3c;
+}
+
+button.save-all:active {
+  background-color: #2e7d32;
+}
+
+button.cancel-all {
+  background-color: #f44336;
+}
+
+button.cancel-all:hover {
+  background-color: #d32f2f;
+}
+
+button.cancel-all:active {
+  background-color: #b71c1c;
+}
+
+button.filter-all {
+  background-color: #9e9e9e;
+}
+
+button.filter-all:hover {
+  background-color: #757575;
+}
+
+button.filter-all:active {
+  background-color: #424242;
+}
+
+button.filter-completed {
+  background-color: #9e9e9e;
+}
+
+button.filter-completed:hover {
+  background-color: #757575;
+}
+
+button.filter-completed:active {
+  background-color: #424242;
+}
+
+button.filter-pending {
+  background-color: #9e9e9e;
+}
+
+button.filter-pending:hover {
+  background-color: #757575;
+}
+
+button.filter-pending:active {
+  background-color: #424242;
+}
+
+button.filter-clear {
+  background-color: #f44336;
+}
+
+button.filter-clear:hover {
+  background-color: #d32f2f;
+}
+
+button.filter-clear:active {
+  background-color: #b71c1c;
+}
+
+button.filter-save {
+  background-color: #4caf50;
+}
+
+button.filter-save:hover {
+  background-color: #388e3c;
+}
+
+button.filter-save:active {
+  background-color: #2e7d32;
+}
+
+button.filter-cancel {
+  background-color: #f44336;
+}
+
+button.filter-cancel:hover {
+  background-color: #d32f2f;
+}
+
+button.filter-cancel:active {
+  background-color: #b71c1c;
+}
+
+button.filter-toggle {
+  background-color: #4caf50;
+}
+
+button.filter-toggle:hover {
+  background-color: #388e3c;
+}
+
+button.filter-toggle:active {
+  background-color: #2e7d32;
+}
+
+button.filter-toggle-all {
+  background-color: #9e9e9e;
+}
+
+button.filter-toggle-all:hover {
+  background-color: #757575;
+}
+
+button.filter-toggle-all:active {
+  background-color: #424242;
+}
+
+button.filter-clear-completed {
+  background-color: #f44336;
+}
+
+button.filter-clear-completed:hover {
+  background-color: #d32f2f;
+}
+
+button.filter-clear-completed:active {
+  background-color: #b71c1c;
+}
+
+button.filter-clear-all {
+  background-color: #f44336;
+}
+
+button.filter-clear-all:hover {
+  background-color: #d32f2f;
+}
+
+button.filter-clear-all:active {
+  background-color: #b71c1c;
+}
+
+button.filter-save-all {
+  background-color: #4caf50;
+}
+
+button.filter-save-all:hover {
+  background-color: #388e3c;
+}
+
+button.filter-save-all:active {
+  background-color: #2e7d32;
+}
+
+button.filter-cancel-all {
+  background-color: #f44336;
+}
+
+button.filter-cancel-all:hover {
+  background-color: #d32f2f;
+}
+
+button.filter-cancel-all:active {
+  background-color: #b71c1c;
+}
+
+button.filter-all-all {
+  background-color: #9e9e9e;
+}
+
+button.filter-all-all:hover {
+  background-color: #757575;
+}
+
+button.filter-all-all:active {
+  background-color: #424242;
+}
+
+button.filter-completed-completed {
+  background-color: #9e9e9e;
+}
+
+button.filter-completed-completed:hover {
+  background-color: #757575;
+}
+
+button.filter-completed-completed:active {
+  background-color: #424242;
+}
+
+button.filter-pending-pending {
+  background-color: #9e9e9e;
+}
+
+button.filter-pending-pending:hover {
+  background-color: #757575;
+}
+
+button.filter-pending-pending:active {
+  background-color: #424242;
+}
+
+button.filter-clear-clear {
+  background-color: #f44336;
+}
 ```
+
+Con estas mejoras, tu aplicación de lista de tareas será más interactiva, funcional y atractiva visualmente. ¡Sigue experimentando y mejorando tus habilidades con React!
+
 </details>
+
+# Conclusión: React Antes y Ahora con Vite
+
+React ha evolucionado significativamente desde sus inicios, pasando de componentes de clase y callbacks a componentes funcionales y hooks. La introducción de Vite ha mejorado aún más la experiencia de desarrollo al proporcionar una configuración ligera y un rendimiento excepcional.
+
+:::
