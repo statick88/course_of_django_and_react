@@ -3142,22 +3142,132 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/6_introduccion_react.html",
-    "href": "unidades/unidad6/6_introduccion_react.html",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#características-clave-de-react",
+    "href": "unidades/unidad6/6_introduccion_react.html#características-clave-de-react",
     "title": "Introducción a React",
-    "section": "",
-    "text": "¿Qué es Vite?",
+    "section": "Características clave de React:",
+    "text": "Características clave de React:\n\nComponentes: React basa su arquitectura en componentes. Cada componente es una pieza reutilizable de código que puede manejar su propio estado y lógica.\nVirtual DOM: React utiliza un DOM virtual para actualizar solo las partes que cambian, lo que mejora significativamente el rendimiento.\nUnidirectional Data Flow (Flujo de Datos Unidireccional): En React, los datos fluyen en una sola dirección, desde el componente padre hacia los componentes hijos.\nJSX: Un lenguaje similar a HTML que permite combinar la estructura del componente con lógica JavaScript.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/6_introduccion_react.html#qué-es-vite",
-    "href": "unidades/unidad6/6_introduccion_react.html#qué-es-vite",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#react-con-create-react-app-antes.",
+    "href": "unidades/unidad6/6_introduccion_react.html#react-con-create-react-app-antes.",
     "title": "Introducción a React",
-    "section": "",
-    "text": "Vite + React\n\n\n\n\nVite es un entorno de desarrollo que permite trabajar con React de forma más sencilla. Vite es un entorno de desarrollo que se basa en la tecnología de ES Modules, que es una forma de importar y exportar módulos en JavaScript. Vite utiliza ES Modules para cargar los módulos de JavaScript de forma rápida y eficiente. Vite también utiliza un servidor de desarrollo que permite trabajar con React de forma más sencilla.\nLa documentación oficial de Vite se encuentra en el siguiente enlace: https://vitejs.dev/",
+    "section": "React con create-react-app (Antes).",
+    "text": "React con create-react-app (Antes).\n\n\n\nAntes de la aparición de herramientas como Vite, React se inicializaba principalmente usando create-react-app (CRA). CRA es un generador de proyectos que proporciona una configuración completa para desarrollar aplicaciones React sin necesidad de configuraciones manuales con Webpack o Babel.\n\n\n\nnpx create-react-app my-app\ncd my-app\nnpm start\nCon estos comandos, podías crear un proyecto React con CRA y ejecutarlo en un servidor de desarrollo. Sin embargo, CRA tiene algunas desventajas que han llevado a la adopción de herramientas más modernas como Vite.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#desventajas-de-create-react-app",
+    "href": "unidades/unidad6/6_introduccion_react.html#desventajas-de-create-react-app",
+    "title": "Introducción a React",
+    "section": "Desventajas de create-react-app:",
+    "text": "Desventajas de create-react-app:\nLentitud: A medida que las aplicaciones crecen, CRA puede volverse lento durante el tiempo de compilación y recarga en caliente.\nSobrecarga de configuración: Aunque CRA oculta la configuración compleja, esta puede ser difícil de personalizar cuando el proyecto lo requiere.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#react-con-vite-ahora",
+    "href": "unidades/unidad6/6_introduccion_react.html#react-con-vite-ahora",
+    "title": "Introducción a React",
+    "section": "React con Vite (Ahora)",
+    "text": "React con Vite (Ahora)\nVite es una herramienta de desarrollo moderna que mejora significativamente los tiempos de desarrollo y la experiencia del programador, superando a CRA en términos de velocidad y simplicidad.\n\nVentajas de Vite:\n\nVelocidad: Vite es extremadamente rápido, incluso en proyectos grandes, debido a su compilación basada en ES Modules (módulos de ECMAScript).\nRecarga en caliente instantánea: Vite ofrece Hot Module Replacement (HMR), que recarga solo los módulos que cambian, proporcionando un entorno de desarrollo mucho más ágil.\nConfiguración ligera: La configuración es mínima y fácil de personalizar cuando es necesario.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-react-con-vite",
+    "href": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-react-con-vite",
+    "title": "Introducción a React",
+    "section": "Crear un proyecto React con Vite:",
+    "text": "Crear un proyecto React con Vite:\n\n\n\nHoy en día, los desarrolladores de React utilizan Vite para crear proyectos mucho más rápido. Aquí te mostramos cómo hacerlo.\nnpm create vite@latest .\nCon esta sencilla línea de comandos, puedes crear un proyecto React con Vite y comenzar a desarrollar aplicaciones web modernas de forma rápida y eficiente.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNota: Al ejecutar el comando anterior en tu terminal, se abrirá un asistente para configurar tu proyecto con Vite. Puedes elegir entre diferentes plantillas, incluyendo React, Vue, Preact y más. De la misma forma la forma en la que puedes programar ya que es posible utilizar javascrit o typescript.\n\n\nnpm install\nnpm run dev\nCon los comandos anteriores, puedes instalar las dependencias y ejecutar el servidor de desarrollo de Vite para comenzar a trabajar en tu proyecto React.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#componentes-en-react",
+    "href": "unidades/unidad6/6_introduccion_react.html#componentes-en-react",
+    "title": "Introducción a React",
+    "section": "3.1. Componentes en React",
+    "text": "3.1. Componentes en React\n\n\n\nLos componentes son bloques reutilizables que contienen lógica, estructura y estilo. En React, un componente puede ser:\nFuncional: Es el enfoque moderno en React. Son componentes escritos como funciones de JavaScript.\nDe clase: Son el enfoque anterior, basados en la programación orientada a objetos. Aún se usan en proyectos más antiguos.\nEn la sección anterior, creamos un componente funcional llamado Greeting. Ahora, vamos a importar y usar este componente en el archivo App.js.\nimport Greeting from './components/Greeting';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;Greeting /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;\nPara correr el proyecto ejecutamos el comando:\n\n\n\nnpm run dev",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#jsx-javascript-html",
+    "href": "unidades/unidad6/6_introduccion_react.html#jsx-javascript-html",
+    "title": "Introducción a React",
+    "section": "3.2. JSX: JavaScript + HTML",
+    "text": "3.2. JSX: JavaScript + HTML\n\n\n\nJSX es una extensión de JavaScript que permite escribir HTML dentro de archivos JavaScript. Esto facilita la creación de componentes y mejora la legibilidad del código.\n\n\n\n&lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;\nJSX se compila a llamadas de funciones de React que crean elementos de React.\nPor ejemplo, el código JSX anterior se compila a:\nReact.createElement('h1', null, '¡Hola, mundo!');\nSin embargo no es necesario preocuparse por esto ya que React se encarga de hacerlo por nosotros.\n\n\n\n\n\n\nTip\n\n\n\nNota: Los elementos JSX deben tener un solo contenedor raíz. Si necesitas devolver varios elementos, puedes envolverlos en un contenedor div o usar Fragment.\n\n\nEjemplo de Fragment:\n\n\n\nfunction App() {\n  return (\n    &lt;&gt;\n      &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;\n      &lt;p&gt;Bienvenido a mi aplicación.&lt;/p&gt;\n    &lt;/&gt;\n  );\n}\nEn el ejemplo anterior, usamos Fragment para envolver múltiples elementos sin necesidad de un contenedor adicional.\n\n\n\nPara poder probar este ejemplo es necesario modificar el archivo App.js. y correr el servidor de desarrollo.\nnpm run dev",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#props-y-estado",
+    "href": "unidades/unidad6/6_introduccion_react.html#props-y-estado",
+    "title": "Introducción a React",
+    "section": "3.3. Props y Estado",
+    "text": "3.3. Props y Estado\n\n\n\nProps: Son los “argumentos” que los componentes reciben para configurar su contenido o comportamiento.\nPara entender mejor cómo funcionan las props, vamos a modificar el componente Greeting para que reciba un prop llamado name.\nEn el directorio components, modificamos el archivo llamado Greeting.jsx con el siguiente contenido:\n\n\n\nexport default function Greeting(props) {\n  return &lt;h1&gt;¡Hola, {props.name}!&lt;/h1&gt;;\n}\nMuy bien ahora vamos a modificar el archivo App.js para que el componente Greeting reciba el prop name.\nimport Greeting from './components/Greeting';\n\nfunction App() {\n  return (\n    &lt;&gt;\n      &lt;Greeting name=\"Diego\" /&gt;\n    &lt;/&gt;\n  );\n}\n\nexport default App;\nEn el ejemplo anterior, pasamos el prop name con el valor “Diego” al componente Greeting. Esto permite personalizar el saludo que se muestra en la pantalla.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#hooks",
+    "href": "unidades/unidad6/6_introduccion_react.html#hooks",
+    "title": "Introducción a React",
+    "section": "3.4. Hooks",
+    "text": "3.4. Hooks\n\n\n\nLos hooks fueron introducidos en React 16.8 y son funciones que permiten a los componentes funcionales gestionar el estado y otros efectos del ciclo de vida, funcionalidades que anteriormente solo estaban disponibles en los componentes de clase.\nuseState: Gestiona el estado dentro de un componente funcional.\nuseEffect: Maneja efectos secundarios, como llamadas a APIs o actualizaciones del DOM.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#ejemplo-con-usestate-y-useeffect",
+    "href": "unidades/unidad6/6_introduccion_react.html#ejemplo-con-usestate-y-useeffect",
+    "title": "Introducción a React",
+    "section": "Ejemplo con useState y useEffect:",
+    "text": "Ejemplo con useState y useEffect:\n\n\n\nimport { useState, useEffect } from 'react';\n\nfunction App() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() =&gt; {\n    document.title = `Has hecho clic ${count} veces`;\n  }, [count]); // Se ejecuta cada vez que 'count' cambia\n\n  return (\n    &lt;div&gt;\n      &lt;p&gt;Has hecho clic {count} veces&lt;/p&gt;\n      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Haz clic&lt;/button&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;\nEn el código anterior, usamos useState para inicializar el estado count en 0 y setCount para actualizarlo. También usamos useEffect para actualizar el título de la página cada vez que count cambia.\nPara entender mejor este concepto vamo a crear un nuevo componente llamado Clasificador de Edades.\n\n\n\nEn el directorio components, creamos un archivo llamado AgeClassifier.jsx con el siguiente contenido:\nimport { useState } from 'react';\n\nexport default function AgeClassifier() {\n  const [age, setAge] = useState(0);\n  const [classification, setClassification] = useState('');\n\n  function classifyAge() {\n    if (age &lt; 18) {\n      setClassification('Menor de edad');\n    } else {\n      setClassification('Mayor de edad');\n    }\n  }\n\n  return (\n    &lt;div&gt;\n      &lt;input\n        type=\"number\"\n        value={age}\n        onChange={(e) =&gt; setAge(parseInt(e.target.value))}\n      /&gt;\n      &lt;button onClick={classifyAge}&gt;Clasificar Edad&lt;/button&gt;\n      &lt;p&gt;{classification}&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\nEn el código anterior, usamos useState para inicializar el estado age en 0 y classification en una cadena vacía. Luego, definimos una función classifyAge que clasifica la edad en “Menor de edad” o “Mayor de edad” según el valor de age. Finalmente, mostramos un campo de entrada para la edad, un botón para clasificarla y un mensaje con la clasificación.\nPara probar este componente, vamos a importarlo y usarlo en el archivo App.js.\n\n\n\nimport AgeClassifier from './components/AgeClassifier';\n\nfunction App() {\n  return (\n    &lt;&gt;\n      &lt;AgeClassifier /&gt;\n    &lt;/&gt;\n  );\n}\n\nexport default App;\nAhora, al correr el servidor de desarrollo, podrás ver el componente AgeClassifier en acción.\nnpm run dev\nCon este ejercicio hemos aprendido a usar los hooks useState y useEffect en un componente funcional de React. Estos hooks son fundamentales para gestionar el estado y los efectos secundarios en aplicaciones React modernas.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#diferencias-entre-el-uso-antiguo-y-el-actual-de-react",
+    "href": "unidades/unidad6/6_introduccion_react.html#diferencias-entre-el-uso-antiguo-y-el-actual-de-react",
+    "title": "Introducción a React",
+    "section": "4. Diferencias entre el Uso Antiguo y el Actual de React",
+    "text": "4. Diferencias entre el Uso Antiguo y el Actual de React\nAntes: Componentes de Clase\nEn versiones anteriores, los desarrolladores usaban componentes de clase para manejar el estado y el ciclo de vida de los componentes.\nclass Greeting extends React.Component {\n  render() {\n    return &lt;h1&gt;¡Hola, {this.props.name}!&lt;/h1&gt;;\n  }\n}\nAhora: Componentes Funcionales con Hooks\nHoy en día, la norma es usar componentes funcionales con hooks, ya que son más concisos y fáciles de trabajar.\nfunction Greeting({ name }) {\n  return &lt;h1&gt;¡Hola, {name}!&lt;/h1&gt;;\n}",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/6_introduccion_react.html#ventajas-del-enfoque-moderno-con-hooks",
+    "href": "unidades/unidad6/6_introduccion_react.html#ventajas-del-enfoque-moderno-con-hooks",
+    "title": "Introducción a React",
+    "section": "Ventajas del enfoque moderno con Hooks:",
+    "text": "Ventajas del enfoque moderno con Hooks:\nMenos código: Los componentes funcionales con hooks son más cortos y claros.\nManejo de estado más simple: useState y otros hooks ofrecen una forma directa y sencilla de gestionar el estado y el ciclo de vida.\nMejor rendimiento: React puede optimizar mejor los componentes funcionales.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
@@ -3167,52 +3277,41 @@
     "objectID": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-con-vite",
     "href": "unidades/unidad6/6_introduccion_react.html#crear-un-proyecto-con-vite",
     "title": "Introducción a React",
-    "section": "Crear un proyecto con Vite",
-    "text": "Crear un proyecto con Vite\n\nPara crear un proyecto con Vite, puedes utilizar el siguiente comando:\n\nnpm create vite@latest\n\nEste comando crea un proyecto con Vite y te guía a través de la configuración del proyecto. Puedes elegir el nombre del proyecto, el tipo de proyecto (React, Vue, Vanilla), y otras opciones de configuración.\n\nnpm install",
+    "section": "1. Crear un Proyecto con Vite",
+    "text": "1. Crear un Proyecto con Vite\nPara comenzar, vamos a crear un nuevo proyecto React con Vite. Abre tu terminal y ejecuta el siguiente comando:\nnpm create vite@latest todo-list\ncd todo-list\nnpm install\nEste comando creará un nuevo proyecto React con Vite llamado todo-list y lo instalará en tu directorio actual.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/6_introduccion_react.html#entendiendo-react",
-    "href": "unidades/unidad6/6_introduccion_react.html#entendiendo-react",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#crear-componentes",
+    "href": "unidades/unidad6/6_introduccion_react.html#crear-componentes",
     "title": "Introducción a React",
-    "section": "Entendiendo React",
-    "text": "Entendiendo React\n\nsrc/App.jsx\n\nAntes de correr un servidor de pruebas podemos entender la estructura de React, en el archivo App.jsx ubicado en la ruta src/App.jsx se encuentra el código principal de la aplicación, en este archivo se importa React y ReactDOM, se crea un componente de React llamado App y se renderiza en el DOM utilizando ReactDOM.render.\n\n\n\nsrc/main.jsx\n\nEn el archivo src/main.jsx se importa el componente App y se renderiza en el elemento con el id root en el DOM.\nPor ahora no serán necesarios los archivo App.css y index.css. Asi que puedes eliminarlos. Para correr la aplicación puedes utilizar el siguiente comando:\n\nnpm run dev",
+    "section": "2. Crear Componentes",
+    "text": "2. Crear Componentes\n\n\n\nEn el directorio src/components, crea un nuevo archivo llamado TodoList.jsx con el siguiente contenido:\nimport { useState } from 'react';\n\nexport default function TodoList() {\n  const [tasks, setTasks] = useState([]);\n  const [newTask, setNewTask] = useState('');\n\n  function addTask() {\n    if (newTask.trim() !== '') {\n      setTasks([...tasks, { id: tasks.length + 1, text: newTask, completed: false }]);\n      setNewTask('');\n    }\n  }\n\n  function deleteTask(id) {\n    setTasks(tasks.filter((task) =&gt; task.id !== id));\n  }\n\n  function toggleTask(id) {\n    setTasks(tasks.map((task) =&gt; {\n      if (task.id === id) {\n        return { ...task, completed: !task.completed };\n      }\n      return task;\n    }));\n  }\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Lista de Tareas&lt;/h1&gt;\n      &lt;input\n        type=\"text\"\n        value={newTask}\n        onChange={(e) =&gt; setNewTask(e.target.value)}\n        placeholder=\"Nueva tarea\"\n      /&gt;\n      &lt;button onClick={addTask}&gt;Agregar Tarea&lt;/button&gt;\n      &lt;ul&gt;\n        {tasks.map((task) =&gt; (\n          &lt;li key={task.id}&gt;\n            &lt;input\n              type=\"checkbox\"\n              checked={task.completed}\n              onChange={() =&gt; toggleTask(task.id)}\n            /&gt;\n            &lt;span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}&gt;\n              {task.text}\n            &lt;/span&gt;\n            &lt;button onClick={() =&gt; deleteTask(task.id)}&gt;Eliminar&lt;/button&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n}\nEn el código anterior, creamos un componente funcional TodoList que gestiona una lista de tareas. Usamos el hook useState para mantener el estado de las tareas y la nueva tarea que se está escribiendo. También definimos funciones para agregar, eliminar y marcar tareas como completadas.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/6_introduccion_react.html#hello-world-con-react",
-    "href": "unidades/unidad6/6_introduccion_react.html#hello-world-con-react",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#usar-el-componente-todolist",
+    "href": "unidades/unidad6/6_introduccion_react.html#usar-el-componente-todolist",
     "title": "Introducción a React",
-    "section": "Hello World con React",
-    "text": "Hello World con React\n\nPara crear un Hello World con React, puedes utilizar el siguiente código en el archivo src/App.jsx:\n\nfunction App() {\n  return (&lt;h1&gt;Hello World in React&lt;/h1&gt;)\n}\n\nexport default App\n\nEste código crea un componente de React llamado App que renderiza el texto “Hello World” en la pantalla.\nPara crear el hello world tambien vamos a modificar el archivo src/main.jsx para que renderice el componente App en el elemento con el id root en el DOM.\n\nfunction App() {\n  return (&lt;h1&gt;Hello World in React&lt;/h1&gt;)\n}\n\nexport default App\n\nEste código crea un componente de React llamado App que renderiza el texto “Hello World” en la pantalla.\nPara ejecutar la aplicación, puedes utilizar el siguiente comando:\n\nnpm run dev\n\nEste comando inicia el servidor de desarrollo de Vite y abre la aplicación en tu navegador. Verás el texto “Hello World” en la pantalla.\n\n\n\n\n\nDjango Framework",
+    "section": "3. Usar el Componente TodoList",
+    "text": "3. Usar el Componente TodoList\nEn el archivo src/App.js, importa y usa el componente TodoList que acabamos de crear:\nimport TodoList from './components/TodoList';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;TodoList /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/6_introduccion_react.html#conclusiones",
-    "href": "unidades/unidad6/6_introduccion_react.html#conclusiones",
+    "objectID": "unidades/unidad6/6_introduccion_react.html#ejecutar-el-proyecto",
+    "href": "unidades/unidad6/6_introduccion_react.html#ejecutar-el-proyecto",
     "title": "Introducción a React",
-    "section": "Conclusiones",
-    "text": "Conclusiones\n\nEn este capítulo aprendimos a crear un proyecto con Vite y React, entendimos la estructura de un proyecto de React y creamos un Hello World con React. En el próximo capítulo aprenderemos a crear componentes en React.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/6_introduccion_react.html#ejericios",
-    "href": "unidades/unidad6/6_introduccion_react.html#ejericios",
-    "title": "Introducción a React",
-    "section": "Ejericios",
-    "text": "Ejericios\n\nCrea un nuevo proyecto con Vite y React.\nCrea un componente de React que renderice un texto en la pantalla.\n\n\n\nVer respuesta\n\nSolución ejercicio 1:\nnpm create vite@latest\nSolución ejercicio 2:\nfunction App() {\n  return (&lt;h1&gt;Este es un componente de React&lt;/h1&gt;)\n}\n\nexport default App",
+    "section": "4. Ejecutar el Proyecto",
+    "text": "4. Ejecutar el Proyecto\nFinalmente, ejecuta el servidor de desarrollo para ver tu aplicación de lista de tareas en acción:\nnpm run dev\nCon estos pasos, has creado una aplicación de lista de tareas funcional con React y Vite. Puedes agregar, eliminar y marcar tareas como completadas, demostrando cómo los componentes, el estado y los hooks de React trabajan juntos para crear aplicaciones web interactivas y dinámicas.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Introducción a React</span>"
