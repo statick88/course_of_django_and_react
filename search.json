@@ -3109,11 +3109,22 @@
     ]
   },
   {
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#resumen",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#resumen",
+    "title": "Tutorial de Fetch",
+    "section": "Resumen",
+    "text": "Resumen\nEn este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
     "href": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
     "title": "Tutorial de Fetch",
     "section": "Conclusión",
-    "text": "Conclusión\nFelicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a APIs de terceros.",
+    "text": "Conclusión\nEn este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
@@ -3124,7 +3135,7 @@
     "href": "unidades/unidad6/5_tutorial_fetch.html#referencias",
     "title": "Tutorial de Fetch",
     "section": "Referencias",
-    "text": "Referencias\n\nFetch API\nPokeAPI\nDocumentación de PokeAPI\nGithub Pages\nVercel\nNetlify\nCSS\nHTML\nJavaScript\nVisual Studio Code\nLive Server",
+    "text": "Referencias\n\nFetch API\nPokéAPI\nFake Store API\nRick and Morty API\nJokeAPI\nThe Dog API\nThe Cat API\nThe Weather API\nThe News API\nThe Movie API\nThe Music API\nThe Recipe API\nThe Book API\nGithub Pages\nVercel\nNetlify\nLive Server\nVisual Studio Code\nHTML\nCSS\nJavaScript\nAPI\nJSON\nDOM\nNode.js\nNPM\nAsync/Await\nPromesas",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
