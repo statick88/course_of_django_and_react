@@ -402,7 +402,7 @@ En clases posteriores veremos cómo funciona este tipo de mecanismo y explicarem
 
 ## Quiz
 
-::::::::::::::::::::::::::::::::::::::::::::{.question}
+:::{.question}
 **¿Cuál es el resultado de 24 \> 12?**
 
 :::{.choices}
@@ -1719,7 +1719,7 @@ Si el usuario pulsa "Aceptar", la variable **respuesta** valdrá **true** y el b
 ## Quiz
 
 :::{.question}
-¿Cuántas veces como mínimo se ejecutará el código dentro de un bucle do{ ... } while?
+**¿Cuántas veces como mínimo se ejecutará el código dentro de un bucle do{ ... } while?**
 
 :::{.choices}
 :::{.choice}
@@ -1802,7 +1802,7 @@ while (let i = 0) { // ❌ SyntaxError
 # Quiz
 
 :::{.question}
-¿Qué son las declaraciones en JavaScript y para qué se utilizan?
+**¿Qué son las declaraciones en JavaScript y para qué se utilizan?**
 
 :::{.choices}
 ::: {.choice .correct-choice}
@@ -1820,7 +1820,7 @@ Las declaraciones en JavaScript son sentencias que se utilizan para realizar ope
 :::
 
 :::{.question}
-¿Qué son las expresiones en JavaScript y para qué se utilizan?
+**¿Qué son las expresiones en JavaScript y para qué se utilizan?**
 
 :::{.choices}
 :::{.choice}
@@ -1956,7 +1956,7 @@ for (let i = 1; i <= 10; i++) {
 # Quiz
 
 :::{.question}
-¿Cuál es la sintaxis correcta para crear un bucle for en JavaScript?
+**¿Cuál es la sintaxis correcta para crear un bucle for en JavaScript?**
 
 :::{.choices}
 :::{.choice}
@@ -1970,7 +1970,7 @@ for (let i = 1; i <= 10; i++) {
 :::
 
 :::{.question}
-¿Cuántas veces veremos el mensaje "Hola" en consola?
+**¿Cuántas veces veremos el mensaje "Hola" en consola?**
 
 ``` javascript
 for (let i = 0; i < 10 && i !== 3; i++) {
@@ -2174,7 +2174,7 @@ Es un patrón algo más avanzado y es una alternativa a usar **if** y **else if*
 # Quiz
 
 :::{.question}
-¿Cuál es la función de la palabra reservada default en una declaración switch en JavaScript?
+**¿Cuál es la función de la palabra reservada default en una declaración switch en JavaScript?**
 
 :::{.choices}
 ::: {.choice .correct-choice}
@@ -2192,7 +2192,7 @@ Es un caso opcional que se puede utilizar para realizar acciones adicionales
 :::
 
 :::{.question}
-¿Qué problema tiene este código?
+**¿Qué problema tiene este código?**
 
 ``` javascript
 switch (day) {
@@ -2223,7 +2223,7 @@ Falta usar break en cada caso
 :::
 
 :::{.question}
-¿Se puede hacer esto con switch?
+**¿Se puede hacer esto con switch?**
 
 ``` javascript
 
@@ -2361,9 +2361,10 @@ En la función hemos utilizado varias variables para ir guardando los resultados
 # Quiz
 
 :::{.question}
-¿Qué es una función en JavaScript?
+**¿Qué es una función en JavaScript?**
 
 :::{.choices}
+
 :::{.choice}
 Algo que se puede hacer con JavaScript de base
 :::
@@ -2375,13 +2376,15 @@ Un bloque de código que realiza una tarea específica cuando se llama
 :::{.choice}
 Una variable que almacena información
 :::
+
 :::
 :::
 
 :::{.question}
-¿Cuál es la sintaxis básica de una función en JavaScript?
+**¿Cuál es la sintaxis básica de una función en JavaScript?**
 
 :::{.choices}
+
 ::: {.choice .correct-choice}
 function nombreFuncion() { ... }
 :::
@@ -2393,24 +2396,27 @@ const function() { ... }
 :::{.choice}
 fn nombreFuncion() { ... }
 :::
+
 :::
 :::
 
 :::{.question}
-¿Qué devuelve una función declarada con function si no tiene una declaración de retorno explícita?
+**¿Qué devuelve una función declarada con function si no tiene una declaración de retorno explícita?**
 
 :::{.choices}
+
 :::{.choice}
 null
 :::
 
-::: correct-choice
+::: {.choice .correct-choice}
 undefined
 :::
 
 :::{.choice}
 0
 :::
+
 :::
 :::
 
@@ -2519,10 +2525,11 @@ Más adelante veremos una forma en la que podemos evitar este tipo de errores.
 # Quiz
 
 :::{.question}
-¿Qué son los parámetros de una función en JavaScript?
+**¿Qué son los parámetros de una función en JavaScript?**
 
 :::{.choices}
-::: correct-choice
+
+:::{.choice .correct-choice} 
 Valores que espera recibir una función al llamarla para usarlos dentro de ella
 :::
 
@@ -2533,32 +2540,36 @@ Valores que devuelve una función
 :::{.choice}
 Valores que se declaran dentro de una función
 :::
+
 :::
 :::
 
 :::{.question}
-¿Qué son los argumentos de una función en JavaScript?
+**¿Qué son los argumentos de una función en JavaScript?**
 
 :::{.choices}
+
 :::{.choice}
 Valores que espera recibir una función
 :::
 
-::: correct-choice
+::: {.choice .correct-choice}
 Valores que se pasan a una función al llamarla
 :::
 
 :::{.choice}
 Lo mismo que los parámetros
 :::
+
 :::
 :::
 
 ::: question
-¿Qué pasa si cambiamos el orden de los parámetros al llamar una función?
+**¿Qué pasa si cambiamos el orden de los parámetros al llamar una función?**
 :::
 
 :::{.choices}
+
 :::{.choice}
 La función se detiene y no devuelve nada
 :::
@@ -2567,11 +2578,12 @@ La función se detiene y no devuelve nada
 La función devuelve undefined
 :::
 
-::: correct-choice
+::: {.choice .correct-choice}
 Podemos tener comportamientos inesperados o errores
 :::
 :::
-::::::::::::::::::::::::::::::::::::::::::::
+
+:::
 
 # Function Expression
 
@@ -2583,10 +2595,12 @@ Sin embargo, existen dos formas más de declarar funciones en JavaScript: functi
 
 Una **function expression** es una función que se asigna a una variable. Por ejemplo:
 
-\`\`\` javascript// esto es una function expression const sum = function (a, b) { return a + b }
+``` javascript
+// esto es una function expression 
+const sum = function (a, b) { return a + b }
 
-// esto es una declaración de función function sum(a, b) { return a + b }
-
+// esto es una declaración de función 
+function sum(a, b) { return a + b }
 ```         
 
 :::{.callout-tip}
@@ -2634,9 +2648,10 @@ const sum = function (a, b) {
 # Quiz
 
 :::{.question}
-¿Qué es una function expression en JavaScript?
+**¿Qué es una function expression en JavaScript?**
 
 :::{.choices}
+
 :::{.choice}
 Una función que se define dentro de otra función
 :::
@@ -2645,16 +2660,18 @@ Una función que se define dentro de otra función
 Una función que se declara con la palabra clave "function"
 :::
 
-::: correct-choice
+:::{.choice .correct-choice}
 Una función que se asigna a una variable
 :::
+
 :::
 :::
 
 :::{.question}
-¿Qué diferencia hay entre una declaración de función y una función de expresión en JavaScript?
+**¿Qué diferencia hay entre una declaración de función y una función de expresión en JavaScript?**
 
 :::{.choices}
+
 :::{.choice}
 Sólo la forma en que se declaran
 :::
@@ -2670,9 +2687,10 @@ El comportamiento al llamarlas
 :::
 
 :::{.question}
-¿Se aplica el hoisting a las funciones de expresión en JavaScript?
+**¿Se aplica el hoisting a las funciones de expresión en JavaScript?**
 
 :::{.choices}
+
 :::{.choice}
 Sí
 :::
@@ -2680,6 +2698,7 @@ Sí
 ::: {.choice .correct-choice}
 No
 :::
+
 :::
 :::
 
@@ -2747,7 +2766,7 @@ Como podemos ver, la función flecha con return implícito es mucho más corta y
 # Quiz
 
 :::{.question}
-¿Qué son las funciones flecha en JavaScript?
+**¿Qué son las funciones flecha en JavaScript?**
 
 :::{.choices}
 ::: correct-choice
@@ -2765,7 +2784,7 @@ Una técnica para evitar el uso de funciones en JavaScript
 :::
 
 :::{.question}
-¿Cuál es una de las ventajas de las funciones flecha?
+**¿Cuál es una de las ventajas de las funciones flecha?**
 
 :::{.choices}
 ::: {.choice .correct-choice}
@@ -2783,7 +2802,7 @@ Funciones anónimas
 :::
 
 :::{.question}
-¿Qué devuelve la siguiente función flecha?
+**¿Qué devuelve la siguiente función flecha?**
 
 ``` javascript
 const sum = (a, b) => { a + b }
@@ -2894,9 +2913,10 @@ Escribe una función que calcule la sucesión de Fibonacci de forma recursiva. L
 # Quiz
 
 :::{.question}
-¿Qué es la recursividad en programación?
+**¿Qué es la recursividad en programación?**
 
 :::{.choices}
+
 ::: {.choice .correct-choice}
 Una técnica de programación que consiste en que una función se llame a sí misma
 :::
@@ -2908,13 +2928,15 @@ Un tipo de condición que permite evitar que una función se llame infinitamente
 :::{.choice}
 Un error que ocurre cuando una función se llama a sí misma
 :::
+
 :::
 :::
 
 :::{.question}
-¿Qué es la condición base en la recursividad?
+**¿Qué es la condición base en la recursividad?**
 
 :::{.choices}
+
 ::: {.choice .correct-choice}
 Una condición que permite evitar que una función se llame infinitamente
 :::
@@ -2926,13 +2948,15 @@ Una condición que permite que una función se llame infinitamente
 :::{.choice}
 Una condición que permite que una función se llame infinitamente
 :::
+
 :::
 :::
 
 :::{.question}
-¿Qué sucede si no se define una condición base en una función recursiva?
+**¿Qué sucede si no se define una condición base en una función recursiva?**
 
 :::{.choices}
+
 ::: {.choice .correct-choice}
 La función se puede llamar infinitamente y el programa se bloquea
 :::
@@ -2944,11 +2968,12 @@ La función deja de llamarse después de un cierto número de iteraciones
 :::{.choice}
 La función devuelve un valor incorrecto
 :::
+
 :::
 :::
 
 :::{.question}
-¿Cuál es la salida de este código al pasar como argumento el número 3?
+**¿Cuál es la salida de este código al pasar como argumento el número 3?**
 
 ``` javascript
 function recursive(n) {
@@ -2961,6 +2986,7 @@ function recursive(n) {
 ```
 
 :::{.choices}
+
 :::{.choice}
 0
 :::
@@ -2972,6 +2998,7 @@ function recursive(n) {
 :::{.choice}
 4
 :::
+
 :::
 :::
 
@@ -3060,7 +3087,7 @@ console.log(numbers) // [10, 2, 30, 4, 5]
 # Quiz
 
 :::{.question}
-¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+**¿Qué se imprimirá en la consola al ejecutar el siguiente código:**
 
 ``` javascript
 const numbers = [1, 2, 3, 4, 5]
@@ -3483,10 +3510,12 @@ Al igual que **some**, el método **every** deja de iterar sobre el **Array** en
 
 El método **find** te permite encontrar el primer elemento que cumple con una condición. Lo interesante es que este método te devuelve el elemento en sí, no un valor **booleano** como **some** y **every**. Aunque el funcionamiento es igual: hay que pasarle una función como argumento que retorne un valor **booleano**.
 
-\`\`\` javascriptconst numbers = \[13, 27, 44, -10, 81\] // encuentra el primer número negativo const firstNegativeNumber = numbers.find(number =\> number \< 0)
+``` javascript
+const numbers = \[13, 27, 44, -10, 81\] 
+// encuentra el primer número negativo 
+const firstNegativeNumber = numbers.find(number =\> number \< 0)
 
 console.log(firstNegativeNumber) // -\> -10
-
 ```         
 
 Si no encuentra ningún elemento que cumpla con la condición, el método **find** retorna **undefined**.
@@ -4262,7 +4291,7 @@ persona[method]() // -> Estoy caminando
 ```
 
 ::: {.callout-tip}
-**persona[method]()** parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. **persona** es el objeto. Accedemos a la propiedad **method** del objeto persona con **persona\[method\]**. Y, finalmente, ejecutamos la función con **persona[method]()**. Es decir, estamos ejecutando **persona.walk()**.
+**persona\[method\]()** parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. **persona** es el objeto. Accedemos a la propiedad **method** del objeto persona con **persona\[method\]**. Y, finalmente, ejecutamos la función con **persona\[method\]()**. Es decir, estamos ejecutando **persona.walk()**.
 :::
 
 # Añadir y modificar propiedades de un objeto
@@ -4492,7 +4521,7 @@ Lo que estamos haciendo es: del objeto **spiderman** extrae la propiedad **partn
 # Quiz
 
 :::{.question}
-¿Cómo se llama el atajo que nos permite recuperar el valor de una propiedad de un objeto?
+**¿Cómo se llama el atajo que nos permite recuperar el valor de una propiedad de un objeto?**
 
 :::{.choices}
 :::{.choice}
@@ -4510,7 +4539,7 @@ extracting o extracción
 :::
 
 :::{.question}
-¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+**¿Qué se imprimirá en la consola al ejecutar el siguiente código?**
 
 ``` javascript
 const person = {
@@ -4539,7 +4568,7 @@ undefined
 :::
 
 :::{.question}
-¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+**¿Qué se imprimirá en la consola al ejecutar el siguiente código?**
 
 ``` javascript
 const person = {
@@ -5153,13 +5182,9 @@ doubleNumber(5)
 # Quiz
 
 :::{.question}
-¿Qué es una promesa en JavaScript?
+**¿Qué es una promesa en JavaScript?**
 
 :::{.choices}
-
-:::{.choice}
-Un objeto que representa la eventual finalización (o falla) de una operación asíncrona, y su resultado.
-:::
 
 :::{.choice}
 Un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.
@@ -5177,16 +5202,16 @@ Un objeto que representa la eventual finalización (o falla) de una operación a
 :::
 
 :::{.question}
-¿Qué hace el operador **await** en una función asíncrona?
+**¿Qué hace el operador await en una función asíncrona?**
 
 :::{.choices}
 
 :::{.choice}
-Espera a que una promesa se resuelva antes de continuar con la ejecución de la función.
+Detiene la ejecución de la función hasta que se resuelva una promesa.
 :::
 
 :::{.choice}
-Detiene la ejecución de la función hasta que se resuelva una promesa.
+Continúa la ejecución de la función sin esperar a que se resuelva una promesa.
 :::
 
 :::{.choice .correct-choice}
@@ -5197,7 +5222,7 @@ Espera a que una promesa se resuelva antes de continuar con la ejecución de la 
 :::
 
 :::{.question}
-¿Qué hace el operador **async** en una función?
+**¿Qué hace el operador async en una función?**
 
 :::{.choices}
 
@@ -5396,7 +5421,7 @@ console.log(doubleNumber(5)) // -> 10
 # Quiz
 
 :::{.question}
-¿Qué es un módulo en JavaScript?
+**¿Qué es un módulo en JavaScript?**
 
 :::{.choices}
 
@@ -5413,6 +5438,4 @@ Un archivo que contiene código JavaScript que se puede exportar e importar en o
 :::
 
 :::
-:::
-
 :::
