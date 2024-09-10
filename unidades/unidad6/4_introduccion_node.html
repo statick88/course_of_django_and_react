@@ -458,8 +458,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#características-de-nodejs" id="toc-características-de-nodejs" class="nav-link active" data-scroll-target="#características-de-nodejs">Características de Nodejs</a></li>
-  <li><a href="#utilizando-nodejs" id="toc-utilizando-nodejs" class="nav-link" data-scroll-target="#utilizando-nodejs">Utilizando nodejs</a></li>
+  <li><a href="#introducción-a-node.js" id="toc-introducción-a-node.js" class="nav-link active" data-scroll-target="#introducción-a-node.js">1. Introducción a Node.js</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-es-node.js" id="toc-por-qué-es-node.js" class="nav-link" data-scroll-target="#por-qué-es-node.js">¿Por qué es Node.js?</a></li>
+  <li><a href="#historia-y-evolución-de-node.js" id="toc-historia-y-evolución-de-node.js" class="nav-link" data-scroll-target="#historia-y-evolución-de-node.js">Historia y Evolución de Node.js</a></li>
+  <li><a href="#características-de-node.js" id="toc-características-de-node.js" class="nav-link" data-scroll-target="#características-de-node.js">Características de Node.js</a></li>
+  </ul></li>
+  <li><a href="#manejadores-de-paquetes-en-node.js" id="toc-manejadores-de-paquetes-en-node.js" class="nav-link" data-scroll-target="#manejadores-de-paquetes-en-node.js">2. Manejadores de Paquetes en Node.js</a>
+  <ul class="collapse">
+  <li><a href="#npm-node-package-manager" id="toc-npm-node-package-manager" class="nav-link" data-scroll-target="#npm-node-package-manager">npm (Node Package Manager)</a></li>
+  <li><a href="#yarn" id="toc-yarn" class="nav-link" data-scroll-target="#yarn">yarn</a></li>
+  <li><a href="#pnpm" id="toc-pnpm" class="nav-link" data-scroll-target="#pnpm">pnpm</a></li>
+  </ul></li>
+  <li><a href="#manejadores-de-versiones-de-node.js" id="toc-manejadores-de-versiones-de-node.js" class="nav-link" data-scroll-target="#manejadores-de-versiones-de-node.js">3. Manejadores de Versiones de Node.js</a>
+  <ul class="collapse">
+  <li><a href="#nvm-node-version-manager" id="toc-nvm-node-version-manager" class="nav-link" data-scroll-target="#nvm-node-version-manager">nvm (Node Version Manager)</a></li>
+  <li><a href="#fnm-fast-node-manager" id="toc-fnm-fast-node-manager" class="nav-link" data-scroll-target="#fnm-fast-node-manager">fnm (Fast Node Manager)</a></li>
+  </ul></li>
+  <li><a href="#entornos-de-ejecución-de-javascript" id="toc-entornos-de-ejecución-de-javascript" class="nav-link" data-scroll-target="#entornos-de-ejecución-de-javascript">4. Entornos de Ejecución de JavaScript</a></li>
+  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">Node.js</a>
+  <ul class="collapse">
+  <li><a href="#deno" id="toc-deno" class="nav-link" data-scroll-target="#deno">Deno</a></li>
+  <li><a href="#bun" id="toc-bun" class="nav-link" data-scroll-target="#bun">Bun</a></li>
+  </ul></li>
+  <li><a href="#fundamentos-del-asincronismo-en-node.js" id="toc-fundamentos-del-asincronismo-en-node.js" class="nav-link" data-scroll-target="#fundamentos-del-asincronismo-en-node.js">5. Fundamentos del Asincronismo en Node.js</a></li>
+  <li><a href="#callbacks" id="toc-callbacks" class="nav-link" data-scroll-target="#callbacks">6. Callbacks</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-de-callback" id="toc-ejemplo-de-callback" class="nav-link" data-scroll-target="#ejemplo-de-callback">Ejemplo de Callback:</a></li>
+  </ul></li>
+  <li><a href="#promesas" id="toc-promesas" class="nav-link" data-scroll-target="#promesas">7. Promesas</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-de-promesa" id="toc-ejemplo-de-promesa" class="nav-link" data-scroll-target="#ejemplo-de-promesa">Ejemplo de Promesa:</a></li>
+  </ul></li>
+  <li><a href="#asyncawait" id="toc-asyncawait" class="nav-link" data-scroll-target="#asyncawait">8. Async/Await</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-de-asyncawait" id="toc-ejemplo-de-asyncawait" class="nav-link" data-scroll-target="#ejemplo-de-asyncawait">Ejemplo de async/await:</a></li>
+  </ul></li>
+  <li><a href="#introducción-a-node.js-en-la-práctica" id="toc-introducción-a-node.js-en-la-práctica" class="nav-link" data-scroll-target="#introducción-a-node.js-en-la-práctica">9. Introducción a Node.js en la práctica</a>
+  <ul class="collapse">
+  <li><a href="#crear-un-servidor-http-asíncrono" id="toc-crear-un-servidor-http-asíncrono" class="nav-link" data-scroll-target="#crear-un-servidor-http-asíncrono">Crear un Servidor HTTP Asíncrono</a></li>
+  </ul></li>
+  <li><a href="#gestión-de-paquetes-con-npm" id="toc-gestión-de-paquetes-con-npm" class="nav-link" data-scroll-target="#gestión-de-paquetes-con-npm">10. Gestión de Paquetes con NPM</a>
+  <ul class="collapse">
+  <li><a href="#comandos-básicos-de-npm" id="toc-comandos-básicos-de-npm" class="nav-link" data-scroll-target="#comandos-básicos-de-npm">Comandos básicos de NPM:</a></li>
+  <li><a href="#instalar-create-react-app" id="toc-instalar-create-react-app" class="nav-link" data-scroll-target="#instalar-create-react-app">Instalar create-react-app:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -493,407 +536,230 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="justify">
-<p>Nodejs es muy importante para el desarrollo de aplicaciones web, ya que es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.</p>
-<p>En esta sección analizaremos las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web para posteriormente adentrarnos en Reactjs.</p>
-</div>
-<section id="características-de-nodejs" class="level2">
-<h2 class="anchored" data-anchor-id="características-de-nodejs">Características de Nodejs</h2>
-<div class="justify">
-<p>Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.</p>
-<p>Algunas de las características de Nodejs son:</p>
+<section id="introducción-a-node.js" class="level1">
+<h1>1. Introducción a Node.js</h1>
+<p>Node.js es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el lado del servidor. Fue creado por Ryan Dahl en 2009 y está basado en el motor V8 de Google Chrome. Node.js es una herramienta muy poderosa para el desarrollo de aplicaciones web y APIs RESTful, ya que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.</p>
+<section id="por-qué-es-node.js" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-es-node.js">¿Por qué es Node.js?</h2>
+<p>Node.js permite manejar múltiples solicitudes simultáneamente sin bloquear el hilo principal, lo que lo hace muy eficiente para aplicaciones en tiempo real y de alta concurrencia.</p>
+</section>
+<section id="historia-y-evolución-de-node.js" class="level2">
+<h2 class="anchored" data-anchor-id="historia-y-evolución-de-node.js">Historia y Evolución de Node.js</h2>
 <ul>
-<li><p><strong>JavaScript en el servidor</strong>: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.</p></li>
-<li><p><strong>Event-driven</strong>: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.</p></li>
-<li><p><strong>I/O no bloqueante</strong>: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.</p></li>
-<li><p><strong>Módulos</strong>: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.</p></li>
-<li><p><strong>NPM</strong>: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.</p></li>
-<li><p><strong>APIs</strong>: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.</p></li>
-<li><p><strong>Escalabilidad</strong>: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.</p></li>
-<li><p><strong>Comunidad</strong>: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.</p></li>
-</ul>
-<section id="instalación-de-nodejs" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-nodejs">Instalación de Nodejs</h2>
-<p>Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: <a href="https://nodejs.org/">https://nodejs.org/</a>.</p>
-<p>Una vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.</p>
-</section>
-</div>
-</section>
-<section id="utilizando-nodejs" class="level2">
-<h2 class="anchored" data-anchor-id="utilizando-nodejs">Utilizando nodejs</h2>
-<div class="justify">
-<p>Una vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando <strong>node</strong> para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo <strong>hola-mundo.js</strong> con el siguiente código:</p>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Hola mundo!'</span>)<span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">info</span>(<span class="st">'Información'</span>)<span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">warn</span>(<span class="st">'Advertencia'</span>)<span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Error'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Para ejecutar el archivo <strong>hola-mundo.js</strong>, puedes utilizar el siguiente comando:</p>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> hola-mundo.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Al ejecutar el comando, verás el mensaje de “Hola mundo!” en la consola del sistema operativo.</p>
-<section id="lógica-de-la-programación-con-nodejs" class="level1">
-<h1>Lógica de la programación con nodejs</h1>
-<p>Para realizar operaciones más complejas con Nodejs, puedes utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación. Por ejemplo, puedes crear un módulo <strong>operaciones.js</strong> con las siguientes funciones:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sumar</span>(a<span class="op">,</span> b) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">restar</span>(a<span class="op">,</span> b) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">-</span> b<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiplicar</span>(a<span class="op">,</span> b) {</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span> b<span class="op">;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dividir</span>(a<span class="op">,</span> b) {</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">/</span> b<span class="op">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> {</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  sumar<span class="op">,</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  restar<span class="op">,</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  multiplicar<span class="op">,</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  dividir</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Para utilizar el módulo <strong>operaciones.js</strong> en otro archivo, puedes utilizar la función <strong>require</strong> de Nodejs. Por ejemplo, puedes crear un archivo <strong>index.js</strong> con el siguiente código:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> operaciones <span class="op">=</span> <span class="pp">require</span>(<span class="st">'./operaciones'</span>)<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Suma:'</span><span class="op">,</span> operaciones<span class="op">.</span><span class="fu">sumar</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Resta:'</span><span class="op">,</span> operaciones<span class="op">.</span><span class="fu">restar</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Multiplicación:'</span><span class="op">,</span> operaciones<span class="op">.</span><span class="fu">multiplicar</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'División:'</span><span class="op">,</span> operaciones<span class="op">.</span><span class="fu">dividir</span>(<span class="dv">6</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Para ejecutar el archivo <strong>index.js</strong>, puedes utilizar el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> index.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Al ejecutar el comando, verás los resultados de las operaciones matemáticas en la consola del sistema operativo.</p>
-<section id="globalthis" class="level2">
-<h2 class="anchored" data-anchor-id="globalthis">GlobalThis</h2>
-<div class="justify">
-<p>Nodejs cuenta con un objeto global llamado <strong>globalThis</strong> que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto <strong>globalThis</strong> para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.</p>
-<p>Por ejemplo, puedes utilizar el objeto <strong>globalThis</strong> para acceder a la variable <strong>process</strong> que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:</p>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(globalThis<span class="op">.</span><span class="at">process</span><span class="op">.</span><span class="at">version</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Al ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.</p>
-</section>
-<section id="conclusiones" class="level2">
-<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
-<p>Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.</p>
-<p>En esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.</p>
-</section>
-<section id="creación-de-una-aplicación-web-con-nodejs" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-una-aplicación-web-con-nodejs">Creación de una aplicación web con Nodejs</h2>
-<div class="justify">
-<p>Para crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:</p>
-<ol type="1">
-<li>Crea un directorio para tu aplicación web:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> mi-aplicacion-web</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> mi-aplicacion-web</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="2" type="1">
-<li>Inicializa un proyecto de Nodejs:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="3" type="1">
-<li>Instala el paquete <strong>express</strong> para crear un servidor web:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install express</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="4" type="1">
-<li>Crea un archivo <strong>index.js</strong> con el siguiente código:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> express <span class="op">=</span> <span class="pp">require</span>(<span class="st">'express'</span>)<span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> <span class="fu">express</span>()<span class="op">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">get</span>(<span class="st">'/'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">send</span>(<span class="st">'Hola mundo!'</span>)<span class="op">;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">listen</span>(<span class="dv">3000</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Servidor web iniciado en el puerto 3000'</span>)<span class="op">;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="5" type="1">
-<li>Inicia el servidor web:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> index.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="6" type="1">
-<li>Abre tu navegador y accede a la dirección <a href="http://localhost:3000/">http://localhost:3000/</a>.</li>
-</ol>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/app_express.png" class="center img-fluid figure-img"></p>
-<figcaption>App Express</figcaption>
-</figure>
-</div>
-</div>
-<p>Con estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.</p>
-</div>
-</section>
-<section id="conclusiones-1" class="level2">
-<h2 class="anchored" data-anchor-id="conclusiones-1">Conclusiones</h2>
-<div class="justify">
-<p>Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.</p>
-<p>En esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.</p>
-</div>
-</section>
-</section>
-<section id="alternativas-a-nodejs" class="level1">
-<h1>Alternativas a Nodejs</h1>
-<div class="justify">
-<p>En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección analizaremos algunas de las alternativas a Nodejs y sus características.</p>
-<section id="deno" class="level2">
-<h2 class="anchored" data-anchor-id="deno">Deno</h2>
-<p>Deno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:</p>
-<ul>
-<li><p><strong>Seguridad</strong>: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.</p></li>
-<li><p><strong>TypeScript</strong>: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.</p></li>
-<li><p><strong>Módulos ESM</strong>: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.</p></li>
-<li><p><strong>APIs</strong>: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.</p></li>
-<li><p><strong>Gestor de paquetes</strong>: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.</p></li>
+<li><strong>2009:</strong> Creación de Node.js por Ryan Dahl.</li>
+<li><strong>2010:</strong> Lanzamiento de la primera versión estable.</li>
+<li><strong>2011:</strong> Lanzamiento de npm (Node Package Manager).</li>
+<li><strong>2012-2021:</strong> Mejora continua con nuevas versiones y características.</li>
 </ul>
 </section>
-<section id="creación-de-una-aplicación-web-con-deno" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-una-aplicación-web-con-deno">Creación de una aplicación web con Deno</h2>
-<p>Para crear una aplicación web con Deno, puedes seguir los siguientes pasos:</p>
-<ol type="1">
-<li>Crea un archivo <strong>app.ts</strong> con el siguiente código:</li>
-</ol>
-</section>
-</div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Application<span class="op">,</span> Router } <span class="im">from</span> <span class="st">'https://deno.land/x/oak/mod.ts'</span><span class="op">;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> <span class="kw">new</span> <span class="fu">Application</span>()<span class="op">;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> router <span class="op">=</span> <span class="kw">new</span> <span class="fu">Router</span>()<span class="op">;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>router<span class="op">.</span><span class="fu">get</span>(<span class="st">'/'</span><span class="op">,</span> (ctx) <span class="kw">=&gt;</span> {</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  ctx<span class="op">.</span><span class="at">response</span><span class="op">.</span><span class="at">body</span> <span class="op">=</span> <span class="st">'Hola mundo!'</span><span class="op">;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">use</span>(router<span class="op">.</span><span class="fu">routes</span>())<span class="op">;</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">use</span>(router<span class="op">.</span><span class="fu">allowedMethods</span>())<span class="op">;</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Servidor web iniciado en el puerto 3000'</span>)<span class="op">;</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> app<span class="op">.</span><span class="fu">listen</span>({ port<span class="op">:</span> <span class="dv">3000</span> })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="2" type="1">
-<li>Inicia el servidor web:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">deno</span> run <span class="at">--allow-net</span> app.ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="3" type="1">
-<li>Abre tu navegador y accede a la dirección <a href="http://localhost:3000/">http://localhost:3000/</a>.</li>
-</ol>
-<p>Con estos pasos has creado una aplicación web con Deno que muestra un mensaje de “Hola mundo!” en el navegador.</p>
-<section id="bun" class="level2">
-<h2 class="anchored" data-anchor-id="bun">Bun</h2>
-<p>Bun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:</p>
+<section id="características-de-node.js" class="level2">
+<h2 class="anchored" data-anchor-id="características-de-node.js">Características de Node.js</h2>
 <ul>
-<li><p><strong>Velocidad</strong>: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.</p></li>
-<li><p><strong>Módulos</strong>: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.</p></li>
-<li><p><strong>APIs</strong>: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.</p></li>
-<li><p><strong>Gestor de paquetes</strong>: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.</p></li>
+<li>Asíncrono y no bloqueante</li>
+<li>Eventos y callbacks</li>
+<li>Módulos y paquetes</li>
+<li>NPM (Node Package Manager)</li>
+<li>Rendimiento y escalabilidad</li>
+<li>Comunidad activa</li>
 </ul>
 </section>
-<section id="creación-de-una-aplicación-web-con-bun" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-una-aplicación-web-con-bun">Creación de una aplicación web con Bun</h2>
-<p>Para crear una aplicación web con Bun, puedes seguir los siguientes pasos:</p>
-<ol type="1">
-<li>Crea un archivo <strong>app.js</strong> con el siguiente código:</li>
-</ol>
 </section>
-</div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> http <span class="op">=</span> <span class="pp">require</span>(<span class="st">'http'</span>)<span class="op">;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> server <span class="op">=</span> http<span class="op">.</span><span class="fu">createServer</span>((req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">writeHead</span>(<span class="dv">200</span><span class="op">,</span> { <span class="st">'Content-Type'</span><span class="op">:</span> <span class="st">'text/plain'</span> })<span class="op">;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">end</span>(<span class="st">'Hola mundo!</span><span class="sc">\n</span><span class="st">'</span>)<span class="op">;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>server<span class="op">.</span><span class="fu">listen</span>(<span class="dv">3000</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Servidor web iniciado en el puerto 3000'</span>)<span class="op">;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="2" type="1">
-<li>Inicia el servidor web:</li>
-</ol>
-</div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> app.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<ol start="3" type="1">
-<li>Abre tu navegador y accede a la dirección <a href="http://localhost:3000/">http://localhost:3000/</a>.</li>
-</ol>
-<p>Con estos pasos has creado una aplicación web con Bun que muestra un mensaje de “Hola mundo!” en el navegador.</p>
-<section id="conclusiones-2" class="level2">
-<h2 class="anchored" data-anchor-id="conclusiones-2">Conclusiones</h2>
-<p>En el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.</p>
-<p>En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.</p>
-</section>
-</div>
-</section>
-<section id="npm-yarn-y-pnpm" class="level1">
-<h1>Npm, Yarn y Pnpm</h1>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/npm-vs-yarn-vs-pnpm-1.png" class="center img-fluid figure-img"></p>
-<figcaption>Npm, Yarn y Pnpm</figcaption>
-</figure>
-</div>
-</div>
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<div class="justify">
-<p>En el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.</p>
-<p>En esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.</p>
-</div>
-</section>
-<section id="npm" class="level2">
-<h2 class="anchored" data-anchor-id="npm">Npm</h2>
-<div class="justify">
-<p>Npm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.</p>
-<p>Algunas de las características de Npm son:</p>
+<section id="manejadores-de-paquetes-en-node.js" class="level1">
+<h1>2. Manejadores de Paquetes en Node.js</h1>
+<p>Los manejadores de paquetes son herramientas esenciales para la gestión de dependencias en proyectos Node.js.</p>
+<section id="npm-node-package-manager" class="level2">
+<h2 class="anchored" data-anchor-id="npm-node-package-manager">npm (Node Package Manager)</h2>
 <ul>
-<li><p><strong>Instalación de paquetes</strong>: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.</p></li>
-<li><p><strong>Gestión de dependencias</strong>: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.</p></li>
-<li><p><strong>Scripts</strong>: Npm permite ejecutar scripts de forma sencilla a través del archivo <strong>package.json</strong>.</p></li>
-<li><p><strong>Repositorio de paquetes</strong>: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.</p></li>
-<li><p><strong>Versionado semántico</strong>: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.</p></li>
+<li><strong>Descripción:</strong> El manejador de paquetes por defecto para Node.js.</li>
+<li><strong>Uso Básico:</strong></li>
 </ul>
-<section id="instalación-de-paquetes-con-npm" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-paquetes-con-npm">Instalación de paquetes con Npm</h2>
-<p>Para instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install nombre-del-paquete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En la sección anterior aprendimos a crear un proyecto con <strong>NPM</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">--save-dev</span> <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete para desarrollo.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> update: Actualiza paquetes instalados.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="yarn" class="level2">
-<h2 class="anchored" data-anchor-id="yarn">Yarn</h2>
-<div class="justify">
-<p>Yarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.</p>
-<p>Algunas de las características de Yarn son:</p>
+<h2 class="anchored" data-anchor-id="yarn">yarn</h2>
 <ul>
-<li><p><strong>Instalación de paquetes</strong>: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.</p></li>
-<li><p><strong>Gestión de dependencias</strong>: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.</p></li>
-<li><p><strong>Scripts</strong>: Yarn permite ejecutar scripts de forma sencilla a través del archivo <strong>package.json</strong>.</p></li>
-<li><p><strong>Repositorio de paquetes</strong>: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.</p></li>
-<li><p><strong>Velocidad</strong>: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.</p></li>
+<li><strong>Descripción:</strong> Alternativa a npm creada por Facebook, ofrece una instalación más rápida y una mejor gestión de dependencias.</li>
+<li><strong>Uso Básico:</strong></li>
 </ul>
-<section id="instalación-de-paquetes-con-yarn" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-paquetes-con-yarn">Instalación de paquetes con Yarn</h2>
-<p>Para instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> add <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> add <span class="at">--dev</span> <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete para desarrollo.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> upgrade: Actualiza paquetes instalados.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> add nombre-del-paquete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="crear-un-proyecto-con-yarn" class="level2 justify">
-<h2 class="anchored" data-anchor-id="crear-un-proyecto-con-yarn">Crear un proyecto con Yarn</h2>
-<p>Para crear un proyecto con Yarn, puedes utilizar el siguiente comando:</p>
-</section>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
 <section id="pnpm" class="level2">
-<h2 class="anchored" data-anchor-id="pnpm">Pnpm</h2>
-<p>Pnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.</p>
-<p>Algunas de las características de Pnpm son:</p>
+<h2 class="anchored" data-anchor-id="pnpm">pnpm</h2>
 <ul>
-<li><p><strong>Instalación de paquetes</strong>: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.</p></li>
-<li><p><strong>Gestión de dependencias</strong>: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.</p></li>
-<li><p><strong>Scripts</strong>: Pnpm permite ejecutar scripts de forma sencilla a través del archivo <strong>package.json</strong>.</p></li>
-<li><p><strong>Repositorio de paquetes</strong>: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.</p></li>
-<li><p><strong>Espacio en disco</strong>: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.</p></li>
+<li><strong>Descripción:</strong> Un manejador de paquetes más rápido y eficiente que almacena un único conjunto de paquetes en lugar de duplicar dependencias.</li>
+<li><strong>Uso Básico:</strong></li>
 </ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> install <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> install <span class="at">--save-dev</span> <span class="op">&lt;</span>paquete<span class="op">&gt;</span>: Instala un paquete para desarrollo.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> update: Actualiza paquetes instalados.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalación-de-paquetes-con-pnpm" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-paquetes-con-pnpm">Instalación de paquetes con Pnpm</h2>
-<p>Para instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:</p>
 </section>
-</div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> add nombre-del-paquete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="crear-un-proyecto-con-pnpm" class="level2 justify">
-<h2 class="anchored" data-anchor-id="crear-un-proyecto-con-pnpm">Crear un proyecto con Pnpm</h2>
-<p>Para crear un proyecto con Pnpm, puedes utilizar el siguiente comando:</p>
-</section>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="conclusiones-3" class="level2 justify">
-<h2 class="anchored" data-anchor-id="conclusiones-3">Conclusiones</h2>
-<p>En el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.</p>
-<p>En esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.</p>
-</section>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/npm-vs-yarn-vs-pnpm-1.png" class="center img-fluid figure-img"></p>
-<figcaption>Npm, Yarn y Pnpm</figcaption>
-</figure>
-</div>
-</div>
-<section id="fnm" class="level2">
-<h2 class="anchored" data-anchor-id="fnm">FNM</h2>
-<div class="justify">
-<p>FNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.</p>
-<p>Algunas de las características de FNM son:</p>
+<section id="manejadores-de-versiones-de-node.js" class="level1">
+<h1>3. Manejadores de Versiones de Node.js</h1>
+<p>Los manejadores de versiones permiten gestionar múltiples versiones de Node.js en un solo sistema.</p>
+<section id="nvm-node-version-manager" class="level2">
+<h2 class="anchored" data-anchor-id="nvm-node-version-manager">nvm (Node Version Manager)</h2>
 <ul>
-<li><p><strong>Instalación de versiones</strong>: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.</p></li>
-<li><p><strong>Cambio de versión</strong>: FNM permite cambiar de versión de Nodejs de forma sencilla.</p></li>
-<li><p><strong>Gestión de versiones</strong>: FNM permite gestionar las versiones de Nodejs de forma sencilla.</p></li>
-<li><p><strong>Integración con Npm, Yarn y Pnpm</strong>: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.</p></li>
+<li><strong>Descripción:</strong> Herramienta para instalar y gestionar múltiples versiones de Node.js.</li>
+<li><strong>Uso Básico:</strong></li>
 </ul>
-<section id="instalación-de-fnm" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-fnm">Instalación de FNM</h2>
-<p>Para instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install <span class="op">&lt;</span>version<span class="op">&gt;</span>: Instala una versión específica de Node.js.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> use <span class="op">&lt;</span>version<span class="op">&gt;</span>: Cambia a una versión específica.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> ls: Lista las versiones instaladas.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://fnm.vercel.app/install <span class="kw">|</span> <span class="fu">bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Una vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:</p>
+<section id="fnm-fast-node-manager" class="level2">
+<h2 class="anchored" data-anchor-id="fnm-fast-node-manager">fnm (Fast Node Manager)</h2>
 <ul>
-<li><p><strong>fnm install</strong>: Instala una versión de Nodejs.</p></li>
-<li><p><strong>fnm use</strong>: Cambia de versión de Nodejs.</p></li>
-<li><p><strong>fnm ls</strong>: Lista las versiones de Nodejs instaladas.</p></li>
-<li><p><strong>fnm default</strong>: Establece la versión de Nodejs por defecto.</p></li>
+<li><strong>Descripción:</strong> Alternativa más rápida a nvm, también permite gestionar versiones de Node.js.</li>
+<li><strong>Uso Básico:</strong></li>
 </ul>
-<section id="ejemplo-de-uso-de-fnm" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-de-uso-de-fnm">Ejemplo de uso de FNM</h2>
-<p>Para instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> install <span class="op">&lt;</span>version<span class="op">&gt;</span>: Instala una versión específica de Node.js.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> use <span class="op">&lt;</span>version<span class="op">&gt;</span>: Cambia a una versión específica.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> ls: Lista las versiones instaladas.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> install 14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Para cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:</p>
-</div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> use 14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Para listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:</p>
-</div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="justify">
-<p>Para establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:</p>
-</div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> default 14</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="conclusiones-4" class="level2 justify">
-<h2 class="anchored" data-anchor-id="conclusiones-4">Conclusiones</h2>
-<p>FNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.</p>
-<p>En esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.</p>
+<section id="entornos-de-ejecución-de-javascript" class="level1">
+<h1>4. Entornos de Ejecución de JavaScript</h1>
+<p>Node.js no es el único entorno de ejecución para JavaScript. Aquí se presentan otras opciones que están ganando popularidad.</p>
 </section>
+<section id="node.js" class="level1">
+<h1>Node.js</h1>
+<ul>
+<li><strong>Descripción:</strong> Entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome, diseñado para ejecutar código JavaScript en el lado del servidor.</li>
+<li><strong>Características:</strong> Asíncrono, no bloqueante, amplio ecosistema de paquetes.</li>
+</ul>
+<section id="deno" class="level2">
+<h2 class="anchored" data-anchor-id="deno">Deno</h2>
+<ul>
+<li><p><strong>Descripción:</strong> Entorno de ejecución para JavaScript y TypeScript creado por Ryan Dahl (creador de Node.js) como una alternativa moderna a Node.js.</p></li>
+<li><p><strong>Características:</strong></p></li>
+</ul>
+<pre><code>*   Soporte nativo para TypeScript.
+*   Seguridad mejorada con permisos explícitos.
+*   No utiliza npm, usa deno.land/x para paquetes.</code></pre>
+</section>
+<section id="bun" class="level2">
+<h2 class="anchored" data-anchor-id="bun">Bun</h2>
+<ul>
+<li><strong>Descripción:</strong> Un entorno de ejecución de JavaScript relativamente nuevo que se enfoca en el rendimiento y la simplicidad.</li>
+<li><strong>Características:</strong></li>
+</ul>
+<pre><code>*   Enfocado en la velocidad y la compatibilidad.
+*   Incluye un empaquetador, un administrador de paquetes y un motor de ejecución en un solo binario.
+*   Compatible con Node.js en muchos aspectos, pero aún en desarrollo y evolución.</code></pre>
+</section>
+</section>
+<section id="fundamentos-del-asincronismo-en-node.js" class="level1">
+<h1>5. Fundamentos del Asincronismo en Node.js</h1>
+<p>Node.js es conocido por su modelo de programación asíncrona no bloqueante. Esto permite manejar múltiples solicitudes de entrada/salida (I/O) simultáneamente sin bloquear el hilo principal, haciendo que Node.js sea muy eficiente en operaciones que requieren acceder a archivos, bases de datos o servicios externos.</p>
+<ul>
+<li><strong>Sincronía vs Asincronía</strong></li>
+</ul>
+<pre><code>*   **Sincronía:** Las operaciones se ejecutan secuencialmente.
+*   **Asincronía:** Las operaciones no bloquean el hilo principal, utilizando callbacks, promesas y async/await.</code></pre>
+</section>
+<section id="callbacks" class="level1">
+<h1>6. Callbacks</h1>
+<p>Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que la operación asíncrona ha finalizado.</p>
+<section id="ejemplo-de-callback" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-de-callback">Ejemplo de Callback:</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'fs'</span>)<span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Leer un archivo de manera asíncrona usando un callback</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>fs<span class="op">.</span><span class="fu">readFile</span>(<span class="st">'archivo.txt'</span><span class="op">,</span> <span class="st">'utf8'</span><span class="op">,</span> (err<span class="op">,</span> data) <span class="kw">=&gt;</span> {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (err) {</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error leyendo el archivo:"</span><span class="op">,</span> err)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Contenido del archivo:"</span><span class="op">,</span> data)<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Problema:</strong> Callback Hell A medida que anidamos callbacks, el código se vuelve difícil de leer y mantener.</p>
+</section>
+</section>
+<section id="promesas" class="level1">
+<h1>7. Promesas</h1>
+<p>Las promesas son una forma más clara y manejable de trabajar con operaciones asíncronas.</p>
+<section id="ejemplo-de-promesa" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-de-promesa">Ejemplo de Promesa:</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'fs'</span>)<span class="op">.</span><span class="at">promises</span><span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fs<span class="op">.</span><span class="fu">readFile</span>(<span class="st">'archivo.txt'</span><span class="op">,</span> <span class="st">'utf8'</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Contenido del archivo:"</span><span class="op">,</span> data)<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> {</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error leyendo el archivo:"</span><span class="op">,</span> err)<span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="asyncawait" class="level1">
+<h1>8. Async/Await</h1>
+<p>Async/Await es una sintaxis moderna para trabajar con promesas que permite escribir código asíncrono de manera más legible.</p>
+<section id="ejemplo-de-asyncawait" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-de-asyncawait">Ejemplo de async/await:</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'fs'</span>)<span class="op">.</span><span class="at">promises</span><span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">leerArchivo</span>() {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span> {</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> fs<span class="op">.</span><span class="fu">readFile</span>(<span class="st">'archivo.txt'</span><span class="op">,</span> <span class="st">'utf8'</span>)<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Contenido del archivo:"</span><span class="op">,</span> data)<span class="op">;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">catch</span> (err) {</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error leyendo el archivo:"</span><span class="op">,</span> err)<span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">leerArchivo</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="introducción-a-node.js-en-la-práctica" class="level1">
+<h1>9. Introducción a Node.js en la práctica</h1>
+<p>Vamos a crear una pequeña aplicación que lea archivos de manera asíncrona y envíe una respuesta utilizando un servidor básico de Node.js.</p>
+<section id="crear-un-servidor-http-asíncrono" class="level2">
+<h2 class="anchored" data-anchor-id="crear-un-servidor-http-asíncrono">Crear un Servidor HTTP Asíncrono</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> http <span class="op">=</span> <span class="pp">require</span>(<span class="st">'http'</span>)<span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'fs'</span>)<span class="op">.</span><span class="at">promises</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> server <span class="op">=</span> http<span class="op">.</span><span class="fu">createServer</span>(<span class="kw">async</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span> {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> fs<span class="op">.</span><span class="fu">readFile</span>(<span class="st">'archivo.txt'</span><span class="op">,</span> <span class="st">'utf8'</span>)<span class="op">;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    res<span class="op">.</span><span class="fu">writeHead</span>(<span class="dv">200</span><span class="op">,</span> { <span class="st">'Content-Type'</span><span class="op">:</span> <span class="st">'text/plain'</span> })<span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    res<span class="op">.</span><span class="fu">end</span>(data)<span class="op">;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">catch</span> (err) {</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    res<span class="op">.</span><span class="fu">writeHead</span>(<span class="dv">500</span><span class="op">,</span> { <span class="st">'Content-Type'</span><span class="op">:</span> <span class="st">'text/plain'</span> })<span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    res<span class="op">.</span><span class="fu">end</span>(<span class="st">"Error leyendo el archivo"</span>)<span class="op">;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>server<span class="op">.</span><span class="fu">listen</span>(<span class="dv">3000</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Servidor escuchando en el puerto 3000'</span>)<span class="op">;</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="gestión-de-paquetes-con-npm" class="level1">
+<h1>10. Gestión de Paquetes con NPM</h1>
+<p>Node.js utiliza NPM (Node Package Manager) para instalar y gestionar dependencias.</p>
+<section id="comandos-básicos-de-npm" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-básicos-de-npm">Comandos básicos de NPM:</h2>
+<ul>
+<li><strong>npm init</strong>: Inicia un nuevo proyecto y crea un archivo package.json.</li>
+<li><strong>npm install &lt;paquete&gt;</strong>: Instala un paquete.</li>
+<li><strong>npm install –save-dev &lt;paquete&gt;</strong>: Instala un paquete para desarrollo.</li>
+<li><strong>npm update</strong>: Actualiza paquetes instalados.</li>
+</ul>
+<ol start="11" type="1">
+<li>Preparando el Entorno para React</li>
+</ol>
+<p>Para conectar lo aprendido en Node.js con React en la próxima clase, es fundamental instalar y configurar herramientas adicionales.</p>
+</section>
+<section id="instalar-create-react-app" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-create-react-app">Instalar create-react-app:</h2>
 
 
-</div>
 </section>
-</section>
-</div>
 </section>
 
 </main> <!-- /main -->
