@@ -2757,6 +2757,149 @@
     ]
   },
   {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
+    "title": "JavaScript",
+    "section": "Sintaxis del operador de propagación",
+    "text": "Sintaxis del operador de propagación\nEl operador de propagación se representa con tres puntos suspensivos … seguidos de un nombre de variable. Por convención, se suele usar el nombre rest.\nfunction sum(...rest) {\n  console.log(rest)\n}\n\nsum(1, 2, 3, 4, 5) // -&gt; [1, 2, 3, 4, 5]\n\nsum('a', 'b', 'c') // -&gt; ['a', 'b', 'c']\n\nsum() // -&gt; []\nEn este ejemplo, la función sum recibe un número indefinido de argumentos y los guarda en un array llamado rest. Luego, simplemente imprimimos el array rest por consola.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
+    "title": "JavaScript",
+    "section": "Usos comunes del operador de propagación",
+    "text": "Usos comunes del operador de propagación\nEl operador de propagación es muy versátil y se puede utilizar en muchas situaciones diferentes. Algunos de los usos más comunes son:\n\nCapturar argumentos de una función: como hemos visto en el ejemplo anterior, el operador de propagación nos permite capturar un número indefinido de argumentos en una función.\nConcatenar arrays: podemos usar el operador de propagación para concatenar dos o más arrays en uno solo.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [4, 5, 6]\nconst arr3 = [...arr1, ...arr2]\n\nconsole.log(arr3) // -&gt; [1, 2, 3, 4, 5, 6]\n\nCopiar arrays: también podemos usar el operador de propagación para copiar un array.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [...arr1]\n\nconsole.log(arr2) // -&gt; [1, 2, 3]\n\nCrear objetos: podemos usar el operador de propagación para crear un nuevo objeto a partir de uno existente.\n\nconst obj1 = { a: 1, b: 2 }\nconst obj2 = { ...obj1, c: 3 }\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2, c: 3 }\n\nEliminar propiedades de un objeto: también podemos usar el operador de propagación para eliminar propiedades de un objeto.\n\nconst obj1 = { a: 1, b: 2, c: 3 }\nconst { c, ...obj2 } = obj1\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2 }",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
+    "title": "JavaScript",
+    "section": "Rest Operator vs Spread Operator",
+    "text": "Rest Operator vs Spread Operator\nEs importante tener en cuenta que el operador de propagación o rest operator es diferente del operador de propagación o spread operator. Aunque ambos utilizan la misma sintaxis de tres puntos suspensivos …, tienen diferentes propósitos y se utilizan en diferentes contextos.\n\nRest Operator: se utiliza para capturar un número indefinido de argumentos en una función o para desestructurar un objeto o array en variables.\nSpread Operator: se utiliza para expandir un objeto o array en otro objeto o array, para concatenar arrays o para copiar un objeto o array.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
+    "title": "JavaScript",
+    "section": "Crear una promesa",
+    "text": "Crear una promesa\nPara crear una promesa, usamos la clase Promise y pasamos una función con dos parámetros: resolve y reject.\n\nresolve: se llama cuando la promesa se resuelve satisfactoriamente y se le pasa el valor resultante.\nreject: se llama cuando la promesa falla y se le pasa el motivo del fallo.\n\nconst promise = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise.then((result) =&gt; {\n  console.log(result) // -&gt; ¡La promesa se ha resuelto!\n})\n\n// -&gt; ¡La promesa se ha resuelto!\nEn este ejemplo, creamos una promesa que se resuelve después de 2 segundos y luego imprimimos el resultado por consola.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
+    "title": "JavaScript",
+    "section": "Encadenar promesas",
+    "text": "Encadenar promesas\nUna de las características más poderosas de las promesas es que podemos encadenarlas para ejecutar tareas en secuencia.\nconst promise1 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La primera promesa se ha resuelto!')\n  }, 2000)\n})\n\nconst promise2 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La segunda promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise1\n  .then((result) =&gt; {\n    console\n    console.log(result) // -&gt; ¡La primera promesa se ha resuelto!\n    return promise2\n  })\n  .then((result) =&gt; {\n    console.log(result) // -&gt; ¡La segunda promesa se ha resuelto!\n  })\n\n// -&gt; ¡La primera promesa se ha resuelto!\n// -&gt; ¡La segunda promesa se ha resuelto!\nEn este ejemplo, creamos dos promesas y las encadenamos para que se ejecuten en secuencia. Primero se resuelve la promise1 y luego la promise2.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
+    "title": "JavaScript",
+    "section": "async/await",
+    "text": "async/await\nEl operador async se utiliza para declarar una función asíncrona, es decir, una función que devuelve una promesa. El operador await se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución de la función.\nasync function fetchData() {\n  const response = await fetch('https://api.example.com/data')\n  const data = await response.json()\n  return data\n}\n\nfetchData()\n  .then((data) =&gt; {\n    console.log(data)\n  })\n  .catch((error) =&gt; {\n    console.error(error)\n  })\n\n// -&gt; { key: 'value' }\nEn este ejemplo, creamos una función fetchData que utiliza el operador await para esperar a que la promesa devuelta por fetch se resuelva antes de continuar con la ejecución de la función.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
+    "title": "JavaScript",
+    "section": "Beneficios de async/await",
+    "text": "Beneficios de async/await\nEl uso de async/await tiene varios beneficios:\n\nCódigo más legible: el uso de async/await hace que el código sea más fácil de leer y entender, ya que se parece más a la forma en que escribimos código síncrono.\nManejo de errores: podemos usar try/catch para manejar los errores de forma más sencilla y clara.\nEncadenamiento de promesas: podemos encadenar promesas de forma más sencilla y legible.\nMejor manejo de la lógica asíncrona: async/await nos permite escribir código asíncrono de forma más natural y estructurada.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
+    "title": "JavaScript",
+    "section": "Exportar e importar",
+    "text": "Exportar e importar\nPara exportar una función, variable o clase de un módulo, usamos la palabra clave export seguida del nombre de la función, variable o clase que queremos exportar.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
+    "title": "JavaScript",
+    "section": "Exportar e importar por defecto",
+    "text": "Exportar e importar por defecto\nTambién podemos exportar e importar por defecto una función, variable o clase de un módulo. Para exportar por defecto, usamos la palabra clave export default seguida del nombre de la función, variable o clase que queremos exportar por defecto.\n// math.js\nexport default function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar por defecto una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport sum, { PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
+    "title": "JavaScript",
+    "section": "Exportar e importar todo",
+    "text": "Exportar e importar todo\nTambién podemos exportar e importar todo un módulo. Para exportar todo, usamos la palabra clave export *.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar todo un módulo, usamos la palabra clave import *.\n// app.js\nimport * as math from './math.js'\n\nconsole.log(math.sum(1, 2)) // -&gt; 3\nconsole.log(math.PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
+    "title": "JavaScript",
+    "section": "Módulos en el navegador",
+    "text": "Módulos en el navegador\nLos módulos también se pueden utilizar en el navegador. Para importar un módulo en un archivo HTML, usamos la etiqueta script con el atributo type=“module” y la ruta del archivo que queremos importar en el atributo src.\n&lt;!-- index.html --&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;script type=\"module\" src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn el archivo app.js, podemos importar un módulo de la misma forma que en Node.js.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
+    "title": "JavaScript",
+    "section": "Módulos en Node.js",
+    "text": "Módulos en Node.js\nEn Node.js, los módulos se pueden utilizar de la misma forma que en el navegador. Para exportar e importar un módulo, usamos la palabra clave export y import.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
+    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
+    "title": "JavaScript",
+    "section": "Módulos en CommonJS",
+    "text": "Módulos en CommonJS\nEn CommonJS, los módulos se pueden utilizar de la misma forma que en Node.js. Para exportar e importar un módulo, usamos la palabra clave module.exports y require.\n// math.js\nfunction sum(a, b) {\n  return a + b\n}\n\nconst PI = 3.14159\n\nmodule.exports = { sum, PI }\n// app.js\nconst { sum, PI } = require('./math.js')\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad6/4_introduccion_node.html",
     "href": "unidades/unidad6/4_introduccion_node.html",
     "title": "Nodejs",
@@ -2768,165 +2911,44 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#características-de-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#por-qué-es-node.js",
+    "href": "unidades/unidad6/4_introduccion_node.html#por-qué-es-node.js",
     "title": "Nodejs",
-    "section": "Instalación de Nodejs",
-    "text": "Nodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nAlgunas de las características de Nodejs son:\n\nJavaScript en el servidor: Nodejs permite ejecutar código JavaScript en el servidor, lo que facilita la creación de aplicaciones web.\nEvent-driven: Nodejs es un entorno de ejecución event-driven, lo que significa que las operaciones se realizan de forma asíncrona y no bloqueante.\nI/O no bloqueante: Nodejs utiliza un modelo de I/O no bloqueante, lo que permite realizar operaciones de entrada/salida de forma asíncrona y no bloqueante.\nMódulos: Nodejs permite utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nNPM: Nodejs cuenta con un gestor de paquetes llamado NPM que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\nAPIs: Nodejs cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nEscalabilidad: Nodejs es muy escalable y permite manejar un gran número de conexiones simultáneas de forma eficiente.\nComunidad: Nodejs cuenta con una gran comunidad de desarrolladores que contribuyen con la creación de paquetes y herramientas para el desarrollo de aplicaciones web.\n\n\nInstalación de Nodejs\nPara instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
+    "section": "¿Por qué es Node.js?",
+    "text": "¿Por qué es Node.js?\nNode.js permite manejar múltiples solicitudes simultáneamente sin bloquear el hilo principal, lo que lo hace muy eficiente para aplicaciones en tiempo real y de alta concurrencia.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#historia-y-evolución-de-node.js",
+    "href": "unidades/unidad6/4_introduccion_node.html#historia-y-evolución-de-node.js",
     "title": "Nodejs",
-    "section": "",
-    "text": "Para instalar Nodejs en tu sistema operativo, puedes descargar el instalador desde la página oficial de Nodejs: https://nodejs.org/.\nUna vez descargado el instalador, puedes seguir las instrucciones de instalación para instalar Nodejs en tu sistema operativo.",
+    "section": "Historia y Evolución de Node.js",
+    "text": "Historia y Evolución de Node.js\n\n2009: Creación de Node.js por Ryan Dahl.\n2010: Lanzamiento de la primera versión estable.\n2011: Lanzamiento de npm (Node Package Manager).\n2012-2021: Mejora continua con nuevas versiones y características.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#utilizando-nodejs",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-node.js",
+    "href": "unidades/unidad6/4_introduccion_node.html#características-de-node.js",
     "title": "Nodejs",
-    "section": "Utilizando nodejs",
-    "text": "Utilizando nodejs\n\nUna vez instalado Nodejs en tu sistema operativo, puedes utilizar el comando node para ejecutar código JavaScript en el servidor. Por ejemplo, puedes crear un archivo hola-mundo.js con el siguiente código:\n\nconsole.log('Hola mundo!');\nconsole.info('Información');\nconsole.warn('Advertencia');\nconsole.error('Error');\n\nPara ejecutar el archivo hola-mundo.js, puedes utilizar el siguiente comando:\n\nnode hola-mundo.js\n\nAl ejecutar el comando, verás el mensaje de “Hola mundo!” en la consola del sistema operativo.\n\nLógica de la programación con nodejs\nPara realizar operaciones más complejas con Nodejs, puedes utilizar módulos para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación. Por ejemplo, puedes crear un módulo operaciones.js con las siguientes funciones:\nfunction sumar(a, b) {\n  return a + b;\n}\n\nfunction restar(a, b) {\n  return a - b;\n}\n\nfunction multiplicar(a, b) {\n  return a * b;\n}\n\nfunction dividir(a, b) {\n  return a / b;\n}\n\nmodule.exports = {\n  sumar,\n  restar,\n  multiplicar,\n  dividir\n};\nPara utilizar el módulo operaciones.js en otro archivo, puedes utilizar la función require de Nodejs. Por ejemplo, puedes crear un archivo index.js con el siguiente código:\nconst operaciones = require('./operaciones');\n\nconsole.log('Suma:', operaciones.sumar(2, 3));\nconsole.log('Resta:', operaciones.restar(5, 3));\nconsole.log('Multiplicación:', operaciones.multiplicar(2, 3));\nconsole.log('División:', operaciones.dividir(6, 3));\nPara ejecutar el archivo index.js, puedes utilizar el siguiente comando:\nnode index.js\nAl ejecutar el comando, verás los resultados de las operaciones matemáticas en la consola del sistema operativo.\n\nGlobalThis\n\nNodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\n\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.\n\n\nConclusiones\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.\n\n\nCreación de una aplicación web con Nodejs\n\nPara crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:\n\nCrea un directorio para tu aplicación web:\n\n\nmkdir mi-aplicacion-web\ncd mi-aplicacion-web\n\n\nInicializa un proyecto de Nodejs:\n\n\nnpm init -y\n\n\nInstala el paquete express para crear un servidor web:\n\n\nnpm install express\n\n\nCrea un archivo index.js con el siguiente código:\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hola mundo!');\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode index.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\n\n\n\n\nApp Express\n\n\n\nCon estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.\n\n\n\nConclusiones\n\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.\n\n\n\n\nAlternativas a Nodejs\n\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección analizaremos algunas de las alternativas a Nodejs y sus características.\n\nDeno\nDeno es un entorno de ejecución de JavaScript y TypeScript que permite ejecutar código JavaScript en el servidor. Deno es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nSeguridad: Deno utiliza un modelo de seguridad basado en permisos que permite controlar el acceso a los recursos del sistema.\nTypeScript: Deno es compatible con TypeScript de forma nativa, lo que permite utilizar TypeScript en el desarrollo de aplicaciones web.\nMódulos ESM: Deno utiliza módulos ESM (ECMAScript Modules) de forma nativa, lo que facilita la importación de módulos en el código JavaScript.\nAPIs: Deno cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Deno cuenta con un gestor de paquetes llamado Deno que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\n\n\n\nCreación de una aplicación web con Deno\nPara crear una aplicación web con Deno, puedes seguir los siguientes pasos:\n\nCrea un archivo app.ts con el siguiente código:\n\n\n\nimport { Application, Router } from 'https://deno.land/x/oak/mod.ts';\n\nconst app = new Application();\nconst router = new Router();\n\nrouter.get('/', (ctx) =&gt; {\n  ctx.response.body = 'Hola mundo!';\n});\n\napp.use(router.routes());\napp.use(router.allowedMethods());\n\nconsole.log('Servidor web iniciado en el puerto 3000');\nawait app.listen({ port: 3000 });\n\n\nInicia el servidor web:\n\n\ndeno run --allow-net app.ts\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\nCon estos pasos has creado una aplicación web con Deno que muestra un mensaje de “Hola mundo!” en el navegador.\n\nBun\nBun es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Bun es una alternativa a Nodejs que cuenta con algunas características interesantes como:\n\nVelocidad: Bun es más rápido que Nodejs en la ejecución de código JavaScript en el servidor.\nMódulos: Bun utiliza módulos de CommonJS para organizar el código en diferentes archivos y reutilizarlo en diferentes partes de la aplicación.\nAPIs: Bun cuenta con un conjunto de APIs que permiten interactuar con el sistema operativo, el sistema de archivos, la red, etc.\nGestor de paquetes: Bun cuenta con un gestor de paquetes llamado Bun que permite instalar y gestionar paquetes de código JavaScript de forma sencilla.\n\n\n\nCreación de una aplicación web con Bun\nPara crear una aplicación web con Bun, puedes seguir los siguientes pasos:\n\nCrea un archivo app.js con el siguiente código:\n\n\n\nconst http = require('http');\n\nconst server = http.createServer((req, res) =&gt; {\n  res.writeHead(200, { 'Content-Type': 'text/plain' });\n  res.end('Hola mundo!\\n');\n});\n\nserver.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode app.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\nCon estos pasos has creado una aplicación web con Bun que muestra un mensaje de “Hola mundo!” en el navegador.\n\nConclusiones\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.\nEn la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.\n\n\n\n\nNpm, Yarn y Pnpm\n\n\n\n\nNpm, Yarn y Pnpm\n\n\n\n\nIntroducción\n\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.\n\n\n\nNpm\n\nNpm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Npm son:\n\nInstalación de paquetes: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Npm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVersionado semántico: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.\n\n\nInstalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM\n\n\nYarn\n\nYarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Yarn son:\n\nInstalación de paquetes: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Yarn permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVelocidad: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.\n\n\nInstalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:\n\n\nyarn add nombre-del-paquete\n\n\nCrear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:\n\nyarn init\n\n\nPnpm\nPnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Pnpm son:\n\nInstalación de paquetes: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Pnpm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nEspacio en disco: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.\n\n\n\nInstalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:\n\n\npnpm add nombre-del-paquete\n\nCrear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:\n\npnpm init\n\nConclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.\n\n\n\n\n\nNpm, Yarn y Pnpm\n\n\n\n\nFNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14\n\n\nConclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "section": "Características de Node.js",
+    "text": "Características de Node.js\n\nAsíncrono y no bloqueante\nEventos y callbacks\nMódulos y paquetes\nNPM (Node Package Manager)\nRendimiento y escalabilidad\nComunidad activa",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#globalthis",
-    "href": "unidades/unidad6/4_introduccion_node.html#globalthis",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#npm-node-package-manager",
+    "href": "unidades/unidad6/4_introduccion_node.html#npm-node-package-manager",
     "title": "Nodejs",
-    "section": "GlobalThis",
-    "text": "GlobalThis\n\nNodejs cuenta con un objeto global llamado globalThis que permite acceder a las variables y funciones globales en el entorno de ejecución de Nodejs. Por ejemplo, puedes utilizar el objeto globalThis para acceder a las variables y funciones globales en el entorno de ejecución de Nodejs.\nPor ejemplo, puedes utilizar el objeto globalThis para acceder a la variable process que contiene información sobre el proceso de Nodejs. Por ejemplo, puedes acceder a la versión de Nodejs con la siguiente instrucción:\n\nconsole.log(globalThis.process.version);\nAl ejecutar la instrucción, verás la versión de Nodejs en la consola del sistema operativo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-nodejs",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Nodejs",
-    "text": "Creación de una aplicación web con Nodejs\n\nPara crear una aplicación web con Nodejs, puedes seguir los siguientes pasos:\n\nCrea un directorio para tu aplicación web:\n\n\nmkdir mi-aplicacion-web\ncd mi-aplicacion-web\n\n\nInicializa un proyecto de Nodejs:\n\n\nnpm init -y\n\n\nInstala el paquete express para crear un servidor web:\n\n\nnpm install express\n\n\nCrea un archivo index.js con el siguiente código:\n\n\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hola mundo!');\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Servidor web iniciado en el puerto 3000');\n});\n\n\nInicia el servidor web:\n\n\nnode index.js\n\n\nAbre tu navegador y accede a la dirección http://localhost:3000/.\n\n\n\n\n\nApp Express\n\n\n\nCon estos pasos has creado una aplicación web con Nodejs que muestra un mensaje de “Hola mundo!” en el navegador.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-1",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\n\nNodejs es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript en el servidor. Nodejs es muy popular en el desarrollo de aplicaciones web, ya que permite crear aplicaciones web de forma rápida y sencilla.\nEn esta sección hemos analizado las características de Nodejs y cómo podemos utilizarlo para desarrollar aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#deno",
-    "href": "unidades/unidad6/4_introduccion_node.html#deno",
-    "title": "Nodejs",
-    "section": "Deno",
-    "text": "Deno\n\nDescripción: Entorno de ejecución para JavaScript y TypeScript creado por Ryan Dahl (creador de Node.js) como una alternativa moderna a Node.js.\nCaracterísticas:\n\n*   Soporte nativo para TypeScript.\n*   Seguridad mejorada con permisos explícitos.\n*   No utiliza npm, usa deno.land/x para paquetes.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-deno",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Deno",
-    "text": "Creación de una aplicación web con Deno\nPara crear una aplicación web con Deno, puedes seguir los siguientes pasos:\n\nCrea un archivo app.ts con el siguiente código:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#bun",
-    "href": "unidades/unidad6/4_introduccion_node.html#bun",
-    "title": "Nodejs",
-    "section": "Bun",
-    "text": "Bun\n\nDescripción: Un entorno de ejecución de JavaScript relativamente nuevo que se enfoca en el rendimiento y la simplicidad.\nCaracterísticas:\n\n*   Enfocado en la velocidad y la compatibilidad.\n*   Incluye un empaquetador, un administrador de paquetes y un motor de ejecución en un solo binario.\n*   Compatible con Node.js en muchos aspectos, pero aún en desarrollo y evolución.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-aplicación-web-con-bun",
-    "title": "Nodejs",
-    "section": "Creación de una aplicación web con Bun",
-    "text": "Creación de una aplicación web con Bun\nPara crear una aplicación web con Bun, puedes seguir los siguientes pasos:\n\nCrea un archivo app.js con el siguiente código:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-2",
-    "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn el desarrollo de aplicaciones web existen diferentes alternativas a Nodejs que permiten ejecutar código JavaScript en el servidor. En esta sección hemos analizado algunas de las alternativas a Nodejs como Deno y Bun y sus características.\nEn la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción",
-    "title": "Nodejs",
-    "section": "Introducción",
-    "text": "Introducción\n\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección analizaremos las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#npm",
-    "title": "Nodejs",
-    "section": "Npm",
-    "text": "Npm\n\nNpm (Node Package Manager) es el gestor de paquetes de Nodejs que permite instalar y gestionar paquetes de código JavaScript de terceros. Npm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Npm son:\n\nInstalación de paquetes: Npm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Npm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Npm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Npm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVersionado semántico: Npm utiliza el versionado semántico para gestionar las versiones de los paquetes de código JavaScript.\n\n\nInstalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM\n\n\nYarn\n\nYarn es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Yarn es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Yarn son:\n\nInstalación de paquetes: Yarn permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Yarn permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Yarn permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Yarn cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nVelocidad: Yarn es más rápido que Npm en la instalación de paquetes de código JavaScript.\n\n\nInstalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:\n\n\nyarn add nombre-del-paquete\n\n\nCrear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:\n\nyarn init\n\n\nPnpm\nPnpm es otro gestor de paquetes de código JavaScript que permite instalar y gestionar paquetes de código JavaScript de terceros. Pnpm es muy popular en el desarrollo de aplicaciones web, ya que cuenta con un amplio repositorio de paquetes de código JavaScript.\nAlgunas de las características de Pnpm son:\n\nInstalación de paquetes: Pnpm permite instalar paquetes de código JavaScript de terceros de forma sencilla.\nGestión de dependencias: Pnpm permite gestionar las dependencias de un proyecto y asegurar que las versiones de los paquetes sean compatibles.\nScripts: Pnpm permite ejecutar scripts de forma sencilla a través del archivo package.json.\nRepositorio de paquetes: Pnpm cuenta con un amplio repositorio de paquetes de código JavaScript que pueden ser utilizados en el desarrollo de aplicaciones web.\nEspacio en disco: Pnpm utiliza un espacio en disco más eficiente que Npm y Yarn.\n\n\n\nInstalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:\n\n\npnpm add nombre-del-paquete\n\nCrear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:\n\npnpm init\n\nConclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.\n\n\n\n\n\nNpm, Yarn y Pnpm\n\n\n\n\nFNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14\n\n\nConclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-npm",
-    "title": "Nodejs",
-    "section": "Instalación de paquetes con Npm",
-    "text": "Instalación de paquetes con Npm\nPara instalar un paquete de código JavaScript con Npm, puedes utilizar el siguiente comando:\nnpm install nombre-del-paquete\nEn la sección anterior aprendimos a crear un proyecto con NPM",
+    "section": "npm (Node Package Manager)",
+    "text": "npm (Node Package Manager)\n\nDescripción: El manejador de paquetes por defecto para Node.js.\nUso Básico:\n\nnpm install &lt;paquete&gt;: Instala un paquete.\nnpm install --save-dev &lt;paquete&gt;: Instala un paquete para desarrollo.\nnpm update: Actualiza paquetes instalados.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
@@ -2944,28 +2966,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-yarn",
-    "title": "Nodejs",
-    "section": "Instalación de paquetes con Yarn",
-    "text": "Instalación de paquetes con Yarn\nPara instalar un paquete de código JavaScript con Yarn, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
-    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-yarn",
-    "title": "Nodejs",
-    "section": "Crear un proyecto con Yarn",
-    "text": "Crear un proyecto con Yarn\nPara crear un proyecto con Yarn, puedes utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad6/4_introduccion_node.html#pnpm",
     "href": "unidades/unidad6/4_introduccion_node.html#pnpm",
     "title": "Nodejs",
@@ -2977,77 +2977,110 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-paquetes-con-pnpm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#nvm-node-version-manager",
+    "href": "unidades/unidad6/4_introduccion_node.html#nvm-node-version-manager",
     "title": "Nodejs",
-    "section": "Instalación de paquetes con Pnpm",
-    "text": "Instalación de paquetes con Pnpm\nPara instalar un paquete de código JavaScript con Pnpm, puedes utilizar el siguiente comando:",
+    "section": "nvm (Node Version Manager)",
+    "text": "nvm (Node Version Manager)\n\nDescripción: Herramienta para instalar y gestionar múltiples versiones de Node.js.\nUso Básico:\n\nnvm install &lt;version&gt;: Instala una versión específica de Node.js.\nnvm use &lt;version&gt;: Cambia a una versión específica.\nnvm ls: Lista las versiones instaladas.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
-    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-proyecto-con-pnpm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm-fast-node-manager",
+    "href": "unidades/unidad6/4_introduccion_node.html#fnm-fast-node-manager",
     "title": "Nodejs",
-    "section": "Crear un proyecto con Pnpm",
-    "text": "Crear un proyecto con Pnpm\nPara crear un proyecto con Pnpm, puedes utilizar el siguiente comando:",
+    "section": "fnm (Fast Node Manager)",
+    "text": "fnm (Fast Node Manager)\n\nDescripción: Alternativa más rápida a nvm, también permite gestionar versiones de Node.js.\nUso Básico:\n\nfnm install &lt;version&gt;: Instala una versión específica de Node.js.\nfnm use &lt;version&gt;: Cambia a una versión específica.\nfnm ls: Lista las versiones instaladas.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-3",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#deno",
+    "href": "unidades/unidad6/4_introduccion_node.html#deno",
     "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn el desarrollo de aplicaciones web es muy común utilizar paquetes de código JavaScript de terceros para añadir funcionalidades a nuestras aplicaciones. Para gestionar estos paquetes de código JavaScript, existen diferentes gestores de paquetes como Npm, Yarn y Pnpm.\nEn esta sección hemos analizado las características de Npm, Yarn y Pnpm y cómo podemos utilizarlos en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "section": "Deno",
+    "text": "Deno\n\nDescripción: Entorno de ejecución para JavaScript y TypeScript creado por Ryan Dahl (creador de Node.js) como una alternativa moderna a Node.js.\nCaracterísticas:\n\n*   Soporte nativo para TypeScript.\n*   Seguridad mejorada con permisos explícitos.\n*   No utiliza npm, usa deno.land/x para paquetes.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#fnm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#bun",
+    "href": "unidades/unidad6/4_introduccion_node.html#bun",
     "title": "Nodejs",
-    "section": "FNM",
-    "text": "FNM\n\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nAlgunas de las características de FNM son:\n\nInstalación de versiones: FNM permite instalar diferentes versiones de Nodejs de forma sencilla.\nCambio de versión: FNM permite cambiar de versión de Nodejs de forma sencilla.\nGestión de versiones: FNM permite gestionar las versiones de Nodejs de forma sencilla.\nIntegración con Npm, Yarn y Pnpm: FNM es compatible con los gestores de paquetes Npm, Yarn y Pnpm.\n\n\nInstalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:\n\n\ncurl -fsSL https://fnm.vercel.app/install | bash\n\nUna vez instalado FNM, puedes utilizar los siguientes comandos para gestionar las versiones de Nodejs:\n\nfnm install: Instala una versión de Nodejs.\nfnm use: Cambia de versión de Nodejs.\nfnm ls: Lista las versiones de Nodejs instaladas.\nfnm default: Establece la versión de Nodejs por defecto.\n\n\nEjemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\n\nfnm install 14\n\nPara cambiar de versión de Nodejs con FNM, puedes utilizar el siguiente comando:\n\nfnm use 14\n\nPara listar las versiones de Nodejs instaladas con FNM, puedes utilizar el siguiente comando:\n\nfnm ls\n\nPara establecer la versión de Nodejs por defecto con FNM, puedes utilizar el siguiente comando:\n\nfnm default 14",
+    "section": "Bun",
+    "text": "Bun\n\nDescripción: Un entorno de ejecución de JavaScript relativamente nuevo que se enfoca en el rendimiento y la simplicidad.\nCaracterísticas:\n\n*   Enfocado en la velocidad y la compatibilidad.\n*   Incluye un empaquetador, un administrador de paquetes y un motor de ejecución en un solo binario.\n*   Compatible con Node.js en muchos aspectos, pero aún en desarrollo y evolución.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-fnm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-callback",
+    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-callback",
     "title": "Nodejs",
-    "section": "Instalación de FNM",
-    "text": "Instalación de FNM\nPara instalar FNM en tu sistema operativo, puedes utilizar el siguiente comando:",
+    "section": "Ejemplo de Callback:",
+    "text": "Ejemplo de Callback:\nconst fs = require('fs');\n\n// Leer un archivo de manera asíncrona usando un callback\nfs.readFile('archivo.txt', 'utf8', (err, data) =&gt; {\n  if (err) {\n    console.error(\"Error leyendo el archivo:\", err);\n    return;\n  }\n  console.log(\"Contenido del archivo:\", data);\n});\nProblema: Callback Hell A medida que anidamos callbacks, el código se vuelve difícil de leer y mantener.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-uso-de-fnm",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-promesa",
+    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-promesa",
     "title": "Nodejs",
-    "section": "Ejemplo de uso de FNM",
-    "text": "Ejemplo de uso de FNM\nPara instalar una versión de Nodejs con FNM, puedes utilizar el siguiente comando:",
+    "section": "Ejemplo de Promesa:",
+    "text": "Ejemplo de Promesa:\nconst fs = require('fs').promises;\n\nfs.readFile('archivo.txt', 'utf8')\n  .then(data =&gt; {\n    console.log(\"Contenido del archivo:\", data);\n  })\n  .catch(err =&gt; {\n    console.error(\"Error leyendo el archivo:\", err);\n  });",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
-    "href": "unidades/unidad6/4_introduccion_node.html#conclusiones-4",
+    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-asyncawait",
+    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-asyncawait",
     "title": "Nodejs",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nFNM es un gestor de versiones de Nodejs que permite cambiar de versión de Nodejs de forma sencilla. FNM es muy útil en el desarrollo de aplicaciones web, ya que permite utilizar diferentes versiones de Nodejs en un mismo sistema.\nEn esta sección hemos analizado las características de FNM y cómo podemos utilizarlo en el desarrollo de aplicaciones web. En la siguiente sección nos adentraremos en Reactjs y veremos cómo podemos utilizarlo en el desarrollo de aplicaciones web con Nodejs.",
+    "section": "Ejemplo de async/await:",
+    "text": "Ejemplo de async/await:\nconst fs = require('fs').promises;\n\nasync function leerArchivo() {\n  try {\n    const data = await fs.readFile('archivo.txt', 'utf8');\n    console.log(\"Contenido del archivo:\", data);\n  } catch (err) {\n    console.error(\"Error leyendo el archivo:\", err);\n  }\n}\n\nleerArchivo();",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-servidor-http-asíncrono",
+    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-servidor-http-asíncrono",
+    "title": "Nodejs",
+    "section": "Crear un Servidor HTTP Asíncrono",
+    "text": "Crear un Servidor HTTP Asíncrono\nconst http = require('http');\nconst fs = require('fs').promises;\n\nconst server = http.createServer(async (req, res) =&gt; {\n  try {\n    const data = await fs.readFile('archivo.txt', 'utf8');\n    res.writeHead(200, { 'Content-Type': 'text/plain' });\n    res.end(data);\n  } catch (err) {\n    res.writeHead(500, { 'Content-Type': 'text/plain' });\n    res.end(\"Error leyendo el archivo\");\n  }\n});\n\nserver.listen(3000, () =&gt; {\n  console.log('Servidor escuchando en el puerto 3000');\n});",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#comandos-básicos-de-npm",
+    "href": "unidades/unidad6/4_introduccion_node.html#comandos-básicos-de-npm",
+    "title": "Nodejs",
+    "section": "Comandos básicos de NPM:",
+    "text": "Comandos básicos de NPM:\n\nnpm init: Inicia un nuevo proyecto y crea un archivo package.json.\nnpm install &lt;paquete&gt;: Instala un paquete.\nnpm install –save-dev &lt;paquete&gt;: Instala un paquete para desarrollo.\nnpm update: Actualiza paquetes instalados.\n\n\nPreparando el Entorno para React\n\nPara conectar lo aprendido en Node.js con React en la próxima clase, es fundamental instalar y configurar herramientas adicionales.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_introduccion_node.html#instalar-create-react-app",
+    "href": "unidades/unidad6/4_introduccion_node.html#instalar-create-react-app",
+    "title": "Nodejs",
+    "section": "Instalar create-react-app:",
+    "text": "Instalar create-react-app:",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
@@ -3080,7 +3113,7 @@
     "href": "unidades/unidad6/5_tutorial_fetch.html#conclusión",
     "title": "Tutorial de Fetch",
     "section": "Conclusión",
-    "text": "Conclusión\nFelicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a APIs de terceros.",
+    "text": "Conclusión\nEn este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
@@ -3091,7 +3124,7 @@
     "href": "unidades/unidad6/5_tutorial_fetch.html#referencias",
     "title": "Tutorial de Fetch",
     "section": "Referencias",
-    "text": "Referencias\n\nFetch API\nPokeAPI\nDocumentación de PokeAPI\nGithub Pages\nVercel\nNetlify\nCSS\nHTML\nJavaScript\nVisual Studio Code\nLive Server",
+    "text": "Referencias\n\nFetch API\nPokéAPI\nFake Store API\nRick and Morty API\nJokeAPI\nThe Dog API\nThe Cat API\nThe Weather API\nThe News API\nThe Movie API\nThe Music API\nThe Recipe API\nThe Book API\nGithub Pages\nVercel\nNetlify\nLive Server\nVisual Studio Code\nHTML\nCSS\nJavaScript\nAPI\nJSON\nDOM\nNode.js\nNPM\nAsync/Await\nPromesas",
     "crumbs": [
       "Unidad 6: Frontend",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
@@ -3969,1378 +4002,25 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#sintaxis-del-operador-de-propagación",
-    "title": "JavaScript",
-    "section": "Sintaxis del operador de propagación",
-    "text": "Sintaxis del operador de propagación\nEl operador de propagación se representa con tres puntos suspensivos … seguidos de un nombre de variable. Por convención, se suele usar el nombre rest.\nfunction sum(...rest) {\n  console.log(rest)\n}\n\nsum(1, 2, 3, 4, 5) // -&gt; [1, 2, 3, 4, 5]\n\nsum('a', 'b', 'c') // -&gt; ['a', 'b', 'c']\n\nsum() // -&gt; []\nEn este ejemplo, la función sum recibe un número indefinido de argumentos y los guarda en un array llamado rest. Luego, simplemente imprimimos el array rest por consola.",
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html",
+    "href": "unidades/unidad6/5_tutorial_fetch.html",
+    "title": "Tutorial de Fetch",
+    "section": "",
+    "text": "Reto\nAhora es necesario mejorar la aplicación. Se sugiere agregar las siguientes funcionalidades:",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#usos-comunes-del-operador-de-propagación",
-    "title": "JavaScript",
-    "section": "Usos comunes del operador de propagación",
-    "text": "Usos comunes del operador de propagación\nEl operador de propagación es muy versátil y se puede utilizar en muchas situaciones diferentes. Algunos de los usos más comunes son:\n\nCapturar argumentos de una función: como hemos visto en el ejemplo anterior, el operador de propagación nos permite capturar un número indefinido de argumentos en una función.\nConcatenar arrays: podemos usar el operador de propagación para concatenar dos o más arrays en uno solo.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [4, 5, 6]\nconst arr3 = [...arr1, ...arr2]\n\nconsole.log(arr3) // -&gt; [1, 2, 3, 4, 5, 6]\n\nCopiar arrays: también podemos usar el operador de propagación para copiar un array.\n\nconst arr1 = [1, 2, 3]\nconst arr2 = [...arr1]\n\nconsole.log(arr2) // -&gt; [1, 2, 3]\n\nCrear objetos: podemos usar el operador de propagación para crear un nuevo objeto a partir de uno existente.\n\nconst obj1 = { a: 1, b: 2 }\nconst obj2 = { ...obj1, c: 3 }\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2, c: 3 }\n\nEliminar propiedades de un objeto: también podemos usar el operador de propagación para eliminar propiedades de un objeto.\n\nconst obj1 = { a: 1, b: 2, c: 3 }\nconst { c, ...obj2 } = obj1\n\nconsole.log(obj2) // -&gt; { a: 1, b: 2 }",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#rest-operator-vs-spread-operator",
-    "title": "JavaScript",
-    "section": "Rest Operator vs Spread Operator",
-    "text": "Rest Operator vs Spread Operator\nEs importante tener en cuenta que el operador de propagación o rest operator es diferente del operador de propagación o spread operator. Aunque ambos utilizan la misma sintaxis de tres puntos suspensivos …, tienen diferentes propósitos y se utilizan en diferentes contextos.\n\nRest Operator: se utiliza para capturar un número indefinido de argumentos en una función o para desestructurar un objeto o array en variables.\nSpread Operator: se utiliza para expandir un objeto o array en otro objeto o array, para concatenar arrays o para copiar un objeto o array.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#crear-una-promesa",
-    "title": "JavaScript",
-    "section": "Crear una promesa",
-    "text": "Crear una promesa\nPara crear una promesa, usamos la clase Promise y pasamos una función con dos parámetros: resolve y reject.\n\nresolve: se llama cuando la promesa se resuelve satisfactoriamente y se le pasa el valor resultante.\nreject: se llama cuando la promesa falla y se le pasa el motivo del fallo.\n\nconst promise = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise.then((result) =&gt; {\n  console.log(result) // -&gt; ¡La promesa se ha resuelto!\n})\n\n// -&gt; ¡La promesa se ha resuelto!\nEn este ejemplo, creamos una promesa que se resuelve después de 2 segundos y luego imprimimos el resultado por consola.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#encadenar-promesas",
-    "title": "JavaScript",
-    "section": "Encadenar promesas",
-    "text": "Encadenar promesas\nUna de las características más poderosas de las promesas es que podemos encadenarlas para ejecutar tareas en secuencia.\nconst promise1 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La primera promesa se ha resuelto!')\n  }, 2000)\n})\n\nconst promise2 = new Promise((resolve, reject) =&gt; {\n  setTimeout(() =&gt; {\n    resolve('¡La segunda promesa se ha resuelto!')\n  }, 2000)\n})\n\npromise1\n  .then((result) =&gt; {\n    console\n    console.log(result) // -&gt; ¡La primera promesa se ha resuelto!\n    return promise2\n  })\n  .then((result) =&gt; {\n    console.log(result) // -&gt; ¡La segunda promesa se ha resuelto!\n  })\n\n// -&gt; ¡La primera promesa se ha resuelto!\n// -&gt; ¡La segunda promesa se ha resuelto!\nEn este ejemplo, creamos dos promesas y las encadenamos para que se ejecuten en secuencia. Primero se resuelve la promise1 y luego la promise2.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#asyncawait",
-    "title": "JavaScript",
-    "section": "async/await",
-    "text": "async/await\nEl operador async se utiliza para declarar una función asíncrona, es decir, una función que devuelve una promesa. El operador await se utiliza para esperar a que una promesa se resuelva antes de continuar con la ejecución de la función.\nasync function fetchData() {\n  const response = await fetch('https://api.example.com/data')\n  const data = await response.json()\n  return data\n}\n\nfetchData()\n  .then((data) =&gt; {\n    console.log(data)\n  })\n  .catch((error) =&gt; {\n    console.error(error)\n  })\n\n// -&gt; { key: 'value' }\nEn este ejemplo, creamos una función fetchData que utiliza el operador await para esperar a que la promesa devuelta por fetch se resuelva antes de continuar con la ejecución de la función.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#beneficios-de-asyncawait",
-    "title": "JavaScript",
-    "section": "Beneficios de async/await",
-    "text": "Beneficios de async/await\nEl uso de async/await tiene varios beneficios:\n\nCódigo más legible: el uso de async/await hace que el código sea más fácil de leer y entender, ya que se parece más a la forma en que escribimos código síncrono.\nManejo de errores: podemos usar try/catch para manejar los errores de forma más sencilla y clara.\nEncadenamiento de promesas: podemos encadenar promesas de forma más sencilla y legible.\nMejor manejo de la lógica asíncrona: async/await nos permite escribir código asíncrono de forma más natural y estructurada.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar",
-    "title": "JavaScript",
-    "section": "Exportar e importar",
-    "text": "Exportar e importar\nPara exportar una función, variable o clase de un módulo, usamos la palabra clave export seguida del nombre de la función, variable o clase que queremos exportar.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-por-defecto",
-    "title": "JavaScript",
-    "section": "Exportar e importar por defecto",
-    "text": "Exportar e importar por defecto\nTambién podemos exportar e importar por defecto una función, variable o clase de un módulo. Para exportar por defecto, usamos la palabra clave export default seguida del nombre de la función, variable o clase que queremos exportar por defecto.\n// math.js\nexport default function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar por defecto una función, variable o clase de un módulo, usamos la palabra clave import seguida del nombre de la función, variable o clase que queremos importar y el nombre del módulo entre llaves.\n// app.js\nimport sum, { PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#exportar-e-importar-todo",
-    "title": "JavaScript",
-    "section": "Exportar e importar todo",
-    "text": "Exportar e importar todo\nTambién podemos exportar e importar todo un módulo. Para exportar todo, usamos la palabra clave export *.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\nPara importar todo un módulo, usamos la palabra clave import *.\n// app.js\nimport * as math from './math.js'\n\nconsole.log(math.sum(1, 2)) // -&gt; 3\nconsole.log(math.PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-el-navegador",
-    "title": "JavaScript",
-    "section": "Módulos en el navegador",
-    "text": "Módulos en el navegador\nLos módulos también se pueden utilizar en el navegador. Para importar un módulo en un archivo HTML, usamos la etiqueta script con el atributo type=“module” y la ruta del archivo que queremos importar en el atributo src.\n&lt;!-- index.html --&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;script type=\"module\" src=\"app.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn el archivo app.js, podemos importar un módulo de la misma forma que en Node.js.\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-node.js",
-    "title": "JavaScript",
-    "section": "Módulos en Node.js",
-    "text": "Módulos en Node.js\nEn Node.js, los módulos se pueden utilizar de la misma forma que en el navegador. Para exportar e importar un módulo, usamos la palabra clave export y import.\n// math.js\nexport function sum(a, b) {\n  return a + b\n}\n\nexport const PI = 3.14159\n// app.js\nimport { sum, PI } from './math.js'\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#módulos-en-commonjs",
-    "title": "JavaScript",
-    "section": "Módulos en CommonJS",
-    "text": "Módulos en CommonJS\nEn CommonJS, los módulos se pueden utilizar de la misma forma que en Node.js. Para exportar e importar un módulo, usamos la palabra clave module.exports y require.\n// math.js\nfunction sum(a, b) {\n  return a + b\n}\n\nconst PI = 3.14159\n\nmodule.exports = { sum, PI }\n// app.js\nconst { sum, PI } = require('./math.js')\n\nconsole.log(sum(1, 2)) // -&gt; 3\nconsole.log(PI) // -&gt; 3.14159",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>JavaScript</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#historia-y-evolución-de-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#historia-y-evolución-de-node.js",
-    "title": "Nodejs",
-    "section": "Historia y Evolución de Node.js",
-    "text": "Historia y Evolución de Node.js\n\n2009: Creación de Node.js por Ryan Dahl.\n2010: Lanzamiento de la primera versión estable.\n2011: Lanzamiento de npm (Node Package Manager).\n2012-2021: Mejora continua con nuevas versiones y características.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#características-de-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#características-de-node.js",
-    "title": "Nodejs",
-    "section": "Características de Node.js",
-    "text": "Características de Node.js\n\nAsíncrono y no bloqueante\nEventos y callbacks\nMódulos y paquetes\nNPM (Node Package Manager)\nRendimiento y escalabilidad\nComunidad activa",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-de-node.js-y-npm-node-package-manager",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-de-node.js-y-npm-node-package-manager",
-    "title": "Nodejs",
-    "section": "Instalación de Node.js y NPM (Node Package Manager)",
-    "text": "Instalación de Node.js y NPM (Node Package Manager)\nPara instalar Node.js y NPM en tu sistema, sigue los siguientes pasos:\n\nDescarga e instala Node.js desde la página oficial de Node.js: https://nodejs.org/\nVerifica que Node.js y NPM se hayan instalado correctamente ejecutando los siguientes comandos en la terminal:\n\nnode --version\nnpm --version\n\nCrea un nuevo proyecto de Node.js ejecutando el siguiente comando en la terminal:\nInstala los paquetes necesarios para tu proyecto ejecutando el siguiente comando en la terminal:\n\nnpm install nombre-del-paquete\n\nCrea un archivo JavaScript con el código de tu aplicación y ejecútalo con Node.js ejecutando el siguiente comando en la terminal:\n\nnode nombre-del-archivo.js",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#primer-script-en-node.js-hello-world",
-    "href": "unidades/unidad6/4_introduccion_node.html#primer-script-en-node.js-hello-world",
-    "title": "Nodejs",
-    "section": "Primer script en Node.js: “Hello World”",
-    "text": "Primer script en Node.js: “Hello World”\nPara crear tu primer script en Node.js, sigue los siguientes pasos:\n\nCrea un nuevo archivo JavaScript llamado “hello.js” con el siguiente código:\n\nconsole.log(\"Hello, World!\");\n\nEjecuta el script con Node.js ejecutando el siguiente comando en la terminal:\n\nnode hello.js\n\nDeberías ver el mensaje “Hello, World!” impreso en la consola.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#módulos-internos-vs-externos",
-    "href": "unidades/unidad6/4_introduccion_node.html#módulos-internos-vs-externos",
-    "title": "Nodejs",
-    "section": "Módulos internos vs externos",
-    "text": "Módulos internos vs externos\nEn Node.js existen dos tipos de módulos: módulos internos y módulos externos.\n\nMódulos internos: Son módulos que vienen incluidos en Node.js y se pueden utilizar sin necesidad de instalar nada adicional. Algunos ejemplos de módulos internos son fs (File System), http (HTTP), path (Path), events (EventEmitter), etc.\nMódulos externos: Son módulos que no vienen incluidos en Node.js y se deben instalar a través de npm (Node Package Manager). Algunos ejemplos de módulos externos son express (Express), mongoose (Mongoose), axios (Axios), etc.\n\nEjemplo:\n// Módulo interno\nconst fs = require('fs');\n\n// Módulo externo\nconst express = require('express');\n\n// Uso de módulos internos y externos",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#importación-y-exportación-de-módulos-commonjs",
-    "href": "unidades/unidad6/4_introduccion_node.html#importación-y-exportación-de-módulos-commonjs",
-    "title": "Nodejs",
-    "section": "Importación y exportación de módulos (CommonJS)",
-    "text": "Importación y exportación de módulos (CommonJS)\nEn Node.js, los módulos se importan y exportan utilizando el sistema CommonJS. Para importar un módulo en Node.js, se utiliza la función require() y para exportar un módulo se utiliza el objeto module.exports.\nEjemplo:\n// Módulo interno\nconst fs = require('fs');\n\n// Módulo externo\nconst express = require('express');\n\n// Exportar una función\nmodule.exports = function() {\n    console.log(\"Hello, World!\");\n};\n\n// Importar una función\nconst hello = require('./hello');\nhello();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#require-y-module.exports",
-    "href": "unidades/unidad6/4_introduccion_node.html#require-y-module.exports",
-    "title": "Nodejs",
-    "section": "require() y module.exports",
-    "text": "require() y module.exports\nLa función require() se utiliza para importar módulos en Node.js y el objeto module.exports se utiliza para exportar módulos en Node.js.\nEjemplo:\n// Exportar una función\nmodule.exports = function() {\n    console.log(\"Hello, World!\");\n};\n\n// Importar una función\nconst hello = require('./hello');\nhello();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-del-sistema-de-módulos-con-import-y-export-es6",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-del-sistema-de-módulos-con-import-y-export-es6",
-    "title": "Nodejs",
-    "section": "Uso del sistema de módulos con import y export (ES6+)",
-    "text": "Uso del sistema de módulos con import y export (ES6+)\nLos módulos en Node.js también se pueden importar y exportar utilizando la sintaxis de import y export de ECMAScript 6 (ES6+). Para utilizar esta sintaxis, es necesario utilizar un transpilador como Babel.\nEjemplo:\n// Exportar una función\nexport default function() {\n    console.log(\"Hello, World!\");\n};\n\n// Importar una función\nimport hello from './hello';\nhello();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#operaciones-básicas-con-el-módulo-fs",
-    "href": "unidades/unidad6/4_introduccion_node.html#operaciones-básicas-con-el-módulo-fs",
-    "title": "Nodejs",
-    "section": "Operaciones básicas con el módulo fs",
-    "text": "Operaciones básicas con el módulo fs\nEl módulo fs proporciona una serie de métodos para realizar operaciones básicas con el sistema de archivos, como leer y escribir archivos, crear y eliminar directorios, y más.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#leer-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#leer-archivos",
-    "title": "Nodejs",
-    "section": "Leer archivos",
-    "text": "Leer archivos\nPara leer un archivo en Node.js, puedes utilizar el método fs.readFile() que acepta la ruta del archivo y una función de callback que se ejecuta cuando se completa la lectura del archivo.\nEjemplo:\nconst fs = require('fs');\n\nfs.readFile('archivo.txt', 'utf8', (error, data) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log(data);\n    }\n});\nEn el ejemplo anterior, se lee el archivo ‘archivo.txt’ en formato UTF-8 y se imprime su contenido en la consola.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#escribir-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#escribir-archivos",
-    "title": "Nodejs",
-    "section": "Escribir archivos",
-    "text": "Escribir archivos\nPara escribir un archivo en Node.js, puedes utilizar el método fs.writeFile() que acepta la ruta del archivo, los datos a escribir y una función de callback que se ejecuta cuando se completa la escritura del archivo.\nEjemplo:\nconst fs = require('fs');\n\nfs.writeFile('archivo.txt', 'Hola, Mundo!', (error) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log('El archivo se ha escrito correctamente.');\n    }\n});\nEn el ejemplo anterior, se escribe el texto ‘Hola, Mundo!’ en el archivo ‘archivo.txt’ y se imprime un mensaje en la consola si la operación se completa correctamente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#renombrar-y-eliminar-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#renombrar-y-eliminar-archivos",
-    "title": "Nodejs",
-    "section": "Renombrar y eliminar archivos",
-    "text": "Renombrar y eliminar archivos\nPara renombrar un archivo en Node.js, puedes utilizar el método fs.rename() que acepta la ruta del archivo original y la nueva ruta del archivo.\nEjemplo:\nconst fs = require('fs');\n\nfs.rename('archivo.txt', 'nuevo-archivo.txt', (error) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log('El archivo se ha renombrado correctamente.');\n    }\n});\nPara eliminar un archivo en Node.js, puedes utilizar el método fs.unlink() que acepta la ruta del archivo a eliminar.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#trabajando-con-directorios",
-    "href": "unidades/unidad6/4_introduccion_node.html#trabajando-con-directorios",
-    "title": "Nodejs",
-    "section": "Trabajando con directorios",
-    "text": "Trabajando con directorios\nEl módulo fs también proporciona métodos para trabajar con directorios, como crear y eliminar directorios, listar los archivos de un directorio, y más.\nEjemplo:\nconst fs = require('fs');\n\n// Crear un directorio\nfs.mkdir('directorio', (error) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log('El directorio se ha creado correctamente.');\n    }\n});\n\n// Eliminar un directorio\n\nfs.rmdir('directorio', (error) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log('El directorio se ha eliminado correctamente.');\n    }\n});\n\n// Listar los archivos de un directorio\n\nfs.readdir('directorio', (error, files) =&gt; {\n    if (error) {\n        console.error(error);\n    } else {\n        console.log(files);\n    }\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#el-patrón-eventemitter",
-    "href": "unidades/unidad6/4_introduccion_node.html#el-patrón-eventemitter",
-    "title": "Nodejs",
-    "section": "El patrón EventEmitter",
-    "text": "El patrón EventEmitter\nEl patrón EventEmitter permite que un objeto emita eventos que otros objetos pueden escuchar y manejar. En Node.js, la clase EventEmitter se encuentra en el módulo events. Crear una instancia de EventEmitter\nPrimero, necesitas importar la clase EventEmitter desde el módulo events y crear una instancia de esta clase.\nconst EventEmitter = require('events');\nconst myEmitter = new EventEmitter();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#emisión-de-eventos",
-    "href": "unidades/unidad6/4_introduccion_node.html#emisión-de-eventos",
-    "title": "Nodejs",
-    "section": "Emisión de eventos",
-    "text": "Emisión de eventos\nPara emitir un evento, se utiliza el método emit(). Puedes pasar argumentos al método emit() que serán recibidos por los escuchadores del evento.\nmyEmitter.emit('eventoPersonalizado', 'Mensaje del evento');",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#escucha-de-eventos",
-    "href": "unidades/unidad6/4_introduccion_node.html#escucha-de-eventos",
-    "title": "Nodejs",
-    "section": "Escucha de eventos",
-    "text": "Escucha de eventos\nPara escuchar eventos, se utiliza el método on(). Este método toma el nombre del evento y una función de callback que se ejecutará cuando el evento sea emitido.\nmyEmitter.on('eventoPersonalizado', (mensaje) =&gt; {\n    console.log(`Evento recibido: ${mensaje}`);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-completo",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-completo",
-    "title": "Nodejs",
-    "section": "Ejemplo completo",
-    "text": "Ejemplo completo\nAquí tienes un ejemplo completo de cómo emitir y escuchar eventos usando EventEmitter.\nconst EventEmitter = require('events');\nconst myEmitter = new EventEmitter();\n\n// Escuchar el evento\nmyEmitter.on('eventoPersonalizado', (mensaje) =&gt; {\n    console.log(`Evento recibido: ${mensaje}`);\n});\n\n// Emitir el evento\nmyEmitter.emit('eventoPersonalizado', 'Mensaje del evento');",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#eventos-y-callbacks",
-    "href": "unidades/unidad6/4_introduccion_node.html#eventos-y-callbacks",
-    "title": "Nodejs",
-    "section": "Eventos y callbacks",
-    "text": "Eventos y callbacks\nEn Node.js, los eventos y los callbacks se usan ampliamente para manejar operaciones asíncronas, como leer archivos, hacer solicitudes HTTP, o manejar eventos de usuarios. Utilizar el patrón de eventos permite escribir código más limpio y modular.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejar-solicitudes-y-respuestas",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejar-solicitudes-y-respuestas",
-    "title": "Nodejs",
-    "section": "Manejar solicitudes y respuestas",
-    "text": "Manejar solicitudes y respuestas\nEl objeto req (solicitud) contiene información sobre la solicitud HTTP realizada, como los encabezados, el método HTTP (GET, POST, etc.) y la URL solicitada. El objeto res (respuesta) se usa para enviar la respuesta al cliente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#obtener-la-url-solicitada",
-    "href": "unidades/unidad6/4_introduccion_node.html#obtener-la-url-solicitada",
-    "title": "Nodejs",
-    "section": "Obtener la URL solicitada",
-    "text": "Obtener la URL solicitada\nPuedes obtener la URL solicitada de la siguiente manera:\nconst http = require('http');\n\nconst server = http.createServer((req, res) =&gt; {\n    console.log('URL solicitada:', req.url);\n    res.statusCode = 200;\n    res.setHeader('Content-Type', 'text/plain');\n    res.end('Hello, World!\\n');\n});\n\nserver.listen(3000, '127.0.0.1', () =&gt; {\n    console.log('Servidor escuchando en http://127.0.0.1:3000/');\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejar-diferentes-rutas",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejar-diferentes-rutas",
-    "title": "Nodejs",
-    "section": "Manejar diferentes rutas",
-    "text": "Manejar diferentes rutas\nPuedes manejar diferentes rutas en función de la URL solicitada:\nconst http = require('http');\n\nconst server = http.createServer((req, res) =&gt; {\n    if (req.url === '/') {\n        res.statusCode = 200;\n        res.setHeader('Content-Type', 'text/plain');\n        res.end('Página de inicio\\n');\n    } else if (req.url === '/about') {\n        res.statusCode = 200;\n        res.setHeader('Content-Type', 'text/plain');\n        res.end('Página de acerca de\\n');\n    } else {\n        res.statusCode = 404;\n        res.setHeader('Content-Type', 'text/plain');\n        res.end('Página no encontrada\\n');\n    }\n});\n\nserver.listen(3000, '127.0.0.1', () =&gt; {\n    console.log('Servidor escuchando en http://127.0.0.1:3000/');\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-rutas-básicas",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-rutas-básicas",
-    "title": "Nodejs",
-    "section": "Manejo de rutas básicas",
-    "text": "Manejo de rutas básicas\nPara manejar rutas básicas, puedes utilizar condicionales basados en req.url y req.method. Para rutas más complejas, considera usar un framework como Express, que simplifica la gestión de rutas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manipulación-de-rutas-y-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#manipulación-de-rutas-y-archivos",
-    "title": "Nodejs",
-    "section": "Manipulación de rutas y archivos",
-    "text": "Manipulación de rutas y archivos\nEl módulo path ofrece una serie de métodos para manipular rutas de archivos y directorios. A continuación se describen algunos de los métodos más comunes:\n\npath.join()\nUne varios segmentos de una ruta en una sola. Es útil para construir rutas de manera segura, teniendo en cuenta las diferencias de sistema operativo.\nconst path = require('path');\n\nconst ruta = path.join('/usuarios', 'juan', 'documentos', 'archivo.txt');\nconsole.log(ruta); // '/usuarios/juan/documentos/archivo.txt' en sistemas UNIX y 'C:\\usuarios\\juan\\documentos\\archivo.txt' en Windows\n\n\npath.resolve()\nResuelve una ruta absoluta. Combina los segmentos proporcionados con la ruta actual de trabajo y resuelve la ruta final.\nconst path = require('path');\n\nconst ruta = path.resolve('documentos', 'archivo.txt');\nconsole.log(ruta); // '/ruta/completa/documentos/archivo.txt'\n\npath.basename()\nObtiene el nombre del archivo o directorio de una ruta. Opcionalmente, se puede pasar una extensión para eliminarla del resultado.\nconst path = require('path');\n\nconst ruta = '/usuarios/juan/documentos/archivo.txt';\nconsole.log(path.basename(ruta)); // 'archivo.txt'\nconsole.log(path.basename(ruta, '.txt')); // 'archivo'\n\n\npath.dirname()\nObtiene el directorio de una ruta. Devuelve la ruta sin el nombre del archivo o directorio final.\nconst path = require('path');\n\nconst ruta = '/usuarios/juan/documentos/archivo.txt';\nconsole.log(path.dirname(ruta)); // '/usuarios/juan/documentos'\n\n\npath.extname()\nObtiene la extensión del archivo en una ruta.\nconst path = require('path');\n\nconst ruta = '/usuarios/juan/documentos/archivo.txt';\nconsole.log(path.extname(ruta)); // '.txt'\n\n\npath.parse()\nParses una ruta en un objeto con propiedades root, dir, base, ext y name.\nconst path = require('path');\n\nconst ruta = '/usuarios/juan/documentos/archivo.txt';\nconst parsed = path.parse(ruta);\nconsole.log(parsed);\n// { root: '/', dir: '/usuarios/juan/documentos', base: 'archivo.txt', ext: '.txt', name: 'archivo' }\n\n\npath.format()\nConvierte un objeto de ruta en una ruta de cadena.\nconst path = require('path');\n\nconst objetoRuta = {\n    root: '/',\n    dir: '/usuarios/juan/documentos',\n    base: 'archivo.txt',\n    ext: '.txt',\n    name: 'archivo'\n};\nconst ruta = path.format(objetoRuta);\nconsole.log(ruta); // '/usuarios/juan/documentos/archivo.txt'",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-path.join-path.resolve-y-más",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-path.join-path.resolve-y-más",
-    "title": "Nodejs",
-    "section": "Uso de path.join(), path.resolve(), y más",
-    "text": "Uso de path.join(), path.resolve(), y más\nAl usar path.join() y path.resolve(), asegúrate de que las rutas se construyan correctamente y sean portables entre diferentes sistemas operativos. Estas funciones ayudan a evitar errores relacionados con las diferencias en las convenciones de rutas entre Windows y UNIX.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#callbacks",
-    "href": "unidades/unidad6/4_introduccion_node.html#callbacks",
-    "title": "Nodejs",
-    "section": "Callbacks",
-    "text": "Callbacks\n\nConcepto\nLos callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan cuando se completa una operación asincrónica. Son una forma básica de manejar operaciones asincrónicas en JavaScript.\n\n\nEjemplo básico\nconst fs = require('fs');\n\n// Función asincrónica que lee un archivo\nfs.readFile('archivo.txt', 'utf8', (err, data) =&gt; {\n    if (err) {\n        console.error('Error al leer el archivo:', err);\n        return;\n    }\n    console.log('Contenido del archivo:', data);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#problemas-con-callbacks",
-    "href": "unidades/unidad6/4_introduccion_node.html#problemas-con-callbacks",
-    "title": "Nodejs",
-    "section": "Problemas con Callbacks",
-    "text": "Problemas con Callbacks\n\nCallback Hell: Cuando se tienen múltiples operaciones asincrónicas anidadas, el código puede volverse difícil de leer y mantener.\nManejo de errores: Los errores deben ser manejados en cada callback, lo que puede llevar a código repetitivo.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#promesas",
-    "href": "unidades/unidad6/4_introduccion_node.html#promesas",
-    "title": "Nodejs",
-    "section": "Promesas",
-    "text": "Promesas\n\nConcepto\nLas promesas representan el valor eventual de una operación asincrónica y permiten encadenar operaciones de manera más legible que los callbacks. Una promesa puede estar en uno de tres estados: pendiente, cumplida o rechazada.\n\n\nEjemplo básico\nconst fs = require('fs').promises;\n\n// Leer un archivo usando promesas\nfs.readFile('archivo.txt', 'utf8')\n    .then(data =&gt; {\n        console.log('Contenido del archivo:', data);\n    })\n    .catch(err =&gt; {\n        console.error('Error al leer el archivo:', err);\n    });",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#encadenamiento",
-    "href": "unidades/unidad6/4_introduccion_node.html#encadenamiento",
-    "title": "Nodejs",
-    "section": "Encadenamiento",
-    "text": "Encadenamiento\nLas promesas permiten encadenar múltiples operaciones asincrónicas:\nfs.readFile('archivo.txt', 'utf8')\n    .then(data =&gt; {\n        console.log('Contenido del archivo:', data);\n        return fs.readFile('otroArchivo.txt', 'utf8');\n    })\n    .then(otroDato =&gt; {\n        console.log('Contenido del otro archivo:', otroDato);\n    })\n    .catch(err =&gt; {\n        console.error('Error:', err);\n    });",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#asyncawait",
-    "href": "unidades/unidad6/4_introduccion_node.html#asyncawait",
-    "title": "Nodejs",
-    "section": "Async/Await",
-    "text": "Async/Await\n\nConcepto\nasync y await son una forma de escribir código asincrónico que se parece al código síncrono. async define una función que siempre devuelve una promesa, y await se usa para esperar el resultado de una promesa.\n\n\nEjemplo básico\nconst fs = require('fs').promises;\n\nasync function leerArchivo() {\n    try {\n        const data = await fs.readFile('archivo.txt', 'utf8');\n        console.log('Contenido del archivo:', data);\n    } catch (err) {\n        console.error('Error al leer el archivo:', err);\n    }\n}\n\nleerArchivo();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ventajas",
-    "href": "unidades/unidad6/4_introduccion_node.html#ventajas",
-    "title": "Nodejs",
-    "section": "Ventajas",
-    "text": "Ventajas\n\nLegibilidad: El código se parece al código síncrono, lo que facilita su comprensión.\nManejo de errores: Los errores se pueden manejar con try/catch, simplificando el manejo de excepciones.\n\n\nEjemplo con múltiples operaciones\nasync function leerArchivos() {\n    try {\n        const data1 = await fs.readFile('archivo1.txt', 'utf8');\n        console.log('Contenido del archivo 1:', data1);\n        \n        const data2 = await fs.readFile('archivo2.txt', 'utf8');\n        console.log('Contenido del archivo 2:', data2);\n    } catch (err) {\n        console.error('Error:', err);\n    }\n}\n\nleerArchivos();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-flujo-completo",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-flujo-completo",
-    "title": "Nodejs",
-    "section": "Ejemplo de flujo completo",
-    "text": "Ejemplo de flujo completo\nAquí hay un ejemplo de cómo podrías usar async/await para realizar múltiples operaciones asincrónicas:\nconst fs = require('fs').promises;\n\nasync function procesarArchivos() {\n    try {\n        const contenido1 = await fs.readFile('archivo1.txt', 'utf8');\n        console.log('Archivo 1:', contenido1);\n        \n        const contenido2 = await fs.readFile('archivo2.txt', 'utf8');\n        console.log('Archivo 2:', contenido2);\n        \n        // Realizar otra operación asincrónica\n        const resultado = await otraFuncionAsincrona();\n        console.log('Resultado:', resultado);\n    } catch (error) {\n        console.error('Error:', error);\n    }\n}\n\nasync function otraFuncionAsincrona() {\n    // Simulación de una operación asincrónica\n    return new Promise((resolve) =&gt; setTimeout(() =&gt; resolve('Resultado de otra función'), 1000));\n}\n\nprocesarArchivos();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-a-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-a-npm",
-    "title": "Nodejs",
-    "section": "Introducción a NPM",
-    "text": "Introducción a NPM\nNPM es el gestor de paquetes por defecto para Node.js y viene instalado con Node.js. Permite instalar, actualizar, configurar y gestionar paquetes de software que se utilizan en proyectos de Node.js.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conceptos-clave",
-    "href": "unidades/unidad6/4_introduccion_node.html#conceptos-clave",
-    "title": "Nodejs",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\nPaquete: Un archivo comprimido que contiene código y metadatos necesarios para usar en proyectos Node.js.\nRepositorio: Un lugar en línea (como el registro de NPM) donde se almacenan y distribuyen paquetes.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalar-paquetes-locales-y-globales",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalar-paquetes-locales-y-globales",
-    "title": "Nodejs",
-    "section": "Instalar paquetes (locales y globales)",
-    "text": "Instalar paquetes (locales y globales)\n\nPaquetes Locales\nLos paquetes locales se instalan en el directorio del proyecto y se guardan en la carpeta node_modules. Estos paquetes solo están disponibles para el proyecto específico en el que se instalan.\n\n\nComando para instalar un paquete local\nnpm install &lt;nombre-del-paquete&gt;\n\n\nEjemplo\nPara instalar express en un proyecto local:\nnpm install express\n\n\nPaquetes Globales\nLos paquetes globales se instalan en un directorio compartido y están disponibles en cualquier lugar del sistema. Estos paquetes suelen ser herramientas de línea de comandos.\n\n\nComando para instalar un paquete global\nnpm install -g &lt;nombre-del-paquete&gt;\n\n\nEjemplo\nPara instalar el generador de proyectos npx globalmente:\nnpm install -g npx",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-package.json-y-package-lock.json",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-package.json-y-package-lock.json",
-    "title": "Nodejs",
-    "section": "Uso de package.json y package-lock.json",
-    "text": "Uso de package.json y package-lock.json\n\npackage.json\nEl archivo package.json es el corazón de un proyecto Node.js. Contiene metadatos del proyecto y la configuración para las dependencias, scripts y versiones.\n\n\nEstructura básica\n{\n  \"name\": \"mi-proyecto\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Descripción de mi proyecto\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"Autor\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"express\": \"^4.17.1\"\n  }\n}\n\n\nCampos importantes\n\nname: Nombre del proyecto.\nversion: Versión del proyecto.\ndependencies: Dependencias del proyecto.\nscripts: Scripts personalizados que puedes ejecutar con npm run &lt;nombre-del-script&gt;.\n\n\n\npackage-lock.json\nEl archivo package-lock.json asegura que las dependencias se instalen de manera consistente. Contiene información detallada sobre las versiones exactas de cada paquete y sus dependencias.\n\n\nPropósito\n\nConsistencia: Garantiza que todos los desarrolladores e instalaciones tengan las mismas versiones de paquetes.\nRendimiento: Mejora la velocidad de instalación al guardar una lista detallada de las dependencias.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalación-y-configuración-básica-de-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalación-y-configuración-básica-de-express",
-    "title": "Nodejs",
-    "section": "Instalación y Configuración Básica de Express",
-    "text": "Instalación y Configuración Básica de Express\n\nInstalación\nPara instalar Express en tu proyecto Node.js, usa el siguiente comando en la raíz de tu proyecto:\nnpm install express\n\n\nConfiguración Básica\nUna vez instalado, puedes configurar un servidor básico con Express. Crea un archivo llamado app.js (o el nombre que prefieras) y agrega el siguiente código:\nconst express = require('express');\nconst app = express();\nconst port = 3000;\n\n// Middleware para manejar solicitudes\napp.use(express.json());\n\n// Ruta raíz\napp.get('/', (req, res) =&gt; {\n  res.send('¡Hola Mundo!');\n});\n\n// Iniciar el servidor\napp.listen(port, () =&gt; {\n  console.log(`Servidor escuchando en http://localhost:${port}`);\n});\nEn este ejemplo:\n\nexpress() crea una instancia de la aplicación Express.\napp.use(express.json()) es un middleware que analiza las solicitudes con contenido JSON.\napp.get(‘/’, …) define una ruta para manejar solicitudes GET en la raíz del servidor.\napp.listen(port, …) inicia el servidor en el puerto especificado.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-rutas-y-middlewares",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-rutas-y-middlewares",
-    "title": "Nodejs",
-    "section": "Creación de Rutas y Middlewares",
-    "text": "Creación de Rutas y Middlewares\n\nRutas\nLas rutas definen cómo el servidor responde a las solicitudes de los clientes. Puedes definir rutas para diferentes métodos HTTP (GET, POST, PUT, DELETE, etc.).\n\n\nEjemplo de rutas\n// Ruta GET para '/usuarios'\napp.get('/usuarios', (req, res) =&gt; {\n  res.send('Lista de usuarios');\n});\n\n// Ruta POST para '/usuarios'\napp.post('/usuarios', (req, res) =&gt; {\n  const nuevoUsuario = req.body;\n  res.status(201).send(`Usuario creado: ${JSON.stringify(nuevoUsuario)}`);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#servir-archivos-estáticos",
-    "href": "unidades/unidad6/4_introduccion_node.html#servir-archivos-estáticos",
-    "title": "Nodejs",
-    "section": "Servir Archivos Estáticos",
-    "text": "Servir Archivos Estáticos\nExpress facilita la entrega de archivos estáticos como HTML, CSS y JavaScript. Utiliza el middleware express.static para servir archivos desde un directorio específico.\n\nEjemplo\nSupongamos que tienes un directorio public con archivos estáticos. Puedes servir estos archivos de la siguiente manera:\napp.use(express.static('public'));\nSi tienes un archivo index.html en el directorio public, estará disponible en la raíz del servidor:\n\nhttp://localhost:3000/index.html",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#gestión-de-errores",
-    "href": "unidades/unidad6/4_introduccion_node.html#gestión-de-errores",
-    "title": "Nodejs",
-    "section": "Gestión de Errores",
-    "text": "Gestión de Errores\nLa gestión de errores en Express se realiza mediante un middleware especial que se coloca al final de la pila de middleware.\n\nEjemplo de Middleware de Manejo de Errores\n// Middleware de manejo de errores\napp.use((err, req, res, next) =&gt; {\n  console.error(err.stack);\n  res.status(500).send('Algo salió mal!');\n});\nEn este ejemplo:\n\nerr es el objeto de error que se pasa al middleware.\nreq y res son el objeto de solicitud y respuesta, respectivamente.\nnext se usa para pasar el control al siguiente middleware (en este caso, no se usa).\n\nEste middleware captura cualquier error que ocurra en la aplicación y responde con un mensaje de error.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-a-las-apis-rest",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-a-las-apis-rest",
-    "title": "Nodejs",
-    "section": "Introducción a las APIs REST",
-    "text": "Introducción a las APIs REST\nREST es un estilo arquitectónico para diseñar servicios de red. En REST, los recursos (datos o servicios) son identificados por URLs y manipulados a través de métodos HTTP.\nLos principios fundamentales de REST incluyen:\n\nStateless: Cada solicitud del cliente al servidor debe contener toda la información necesaria para entender y procesar la solicitud.\nCacheable: Las respuestas deben ser explícitamente etiquetadas como cacheables o no cacheables.\nUniform Interface: La interfaz entre el cliente y el servidor debe ser uniforme para simplificar la interacción.\nLayered System: La arquitectura debe permitir una estructura de capas para la modularidad y escalabilidad.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#métodos-http-get-post-put-delete",
-    "href": "unidades/unidad6/4_introduccion_node.html#métodos-http-get-post-put-delete",
-    "title": "Nodejs",
-    "section": "Métodos HTTP (GET, POST, PUT, DELETE)",
-    "text": "Métodos HTTP (GET, POST, PUT, DELETE)\nLos métodos HTTP determinan la acción que se debe realizar sobre el recurso en el servidor:\n\nGET: Recupera datos del servidor.\nPOST: Envía datos al servidor para crear un nuevo recurso.\nPUT: Actualiza un recurso existente en el servidor.\nDELETE: Elimina un recurso del servidor.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-una-api-restful",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-una-api-restful",
-    "title": "Nodejs",
-    "section": "Creación de una API RESTful",
-    "text": "Creación de una API RESTful\nPara crear una API RESTful, sigue estos pasos básicos:\n\nDefinir Recursos: Identifica los recursos que tu API debe manejar (por ejemplo, usuarios, productos).\n**Definir Rutas y Métodos:** Establece las rutas y métodos HTTP necesarios para manipular esos recursos.\nImplementar Controladores: Crea funciones que manejen las solicitudes para cada ruta.\nConfigurar Middleware: Agrega middleware para manejar tareas como la validación de datos y el manejo de errores.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-json-en-las-respuestas",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-json-en-las-respuestas",
-    "title": "Nodejs",
-    "section": "Uso de JSON en las respuestas",
-    "text": "Uso de JSON en las respuestas",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-a-bases-de-datos-con-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-a-bases-de-datos-con-node.js",
-    "title": "Nodejs",
-    "section": "Introducción a bases de datos con Node.js",
-    "text": "Introducción a bases de datos con Node.js\nNode.js permite a los desarrolladores conectar y manipular bases de datos utilizando diversos paquetes y bibliotecas. Puedes usar bases de datos SQL, como MySQL o PostgreSQL, o bases de datos NoSQL, como MongoDB. La elección de la base de datos depende de los requisitos específicos de la aplicación.\n\nTipos de bases de datos\n\nBases de datos relacionales: Organizan datos en tablas y son ideales para aplicaciones que requieren relaciones complejas entre datos. Ejemplo: MySQL, PostgreSQL.\n**Bases de datos NoSQL:** Almacenan datos en documentos, pares clave-valor, o grafos, lo que permite una mayor flexibilidad en la estructura de datos. Ejemplo: MongoDB.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conexión-con-mongodb-usando-mongoose",
-    "href": "unidades/unidad6/4_introduccion_node.html#conexión-con-mongodb-usando-mongoose",
-    "title": "Nodejs",
-    "section": "Conexión con MongoDB usando Mongoose",
-    "text": "Conexión con MongoDB usando Mongoose\nMongoose es una biblioteca de Node.js que proporciona una solución elegante para modelar datos de MongoDB. Facilita la creación de esquemas, la validación de datos y las operaciones CRUD.\n\nInstalación\nPara usar Mongoose, primero debes instalarlo en tu proyecto:\nnpm install mongoose",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-mysql-con-el-paquete-mysql2",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-mysql-con-el-paquete-mysql2",
-    "title": "Nodejs",
-    "section": "Uso de MySQL con el paquete mysql2",
-    "text": "Uso de MySQL con el paquete mysql2\nEl paquete mysql2 proporciona una forma sencilla de interactuar con bases de datos MySQL desde Node.js. Permite realizar consultas y administrar la conexión con la base de datos.\n\nInstalación\nPara instalar mysql2, ejecuta el siguiente comando:\nnpm install mysql2\n\n\nConexión a MySQL\nAquí hay un ejemplo de cómo conectarte a una base de datos MySQL:\nconst mysql = require('mysql2');\n\nconst connection = mysql.createConnection({\n  host: 'localhost',\n  user: 'tu_usuario', // Cambia por tu usuario de MySQL\n  password: 'tu_contraseña', // Cambia por tu contraseña de MySQL\n  database: 'midatabase' // Cambia por el nombre de tu base de datos\n});\n\nconnection.connect((err) =&gt; {\n  if (err) {\n    console.error('Error al conectar a MySQL:', err);\n    return;\n  }\n  console.log('Conectado a MySQL');\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#realización-de-consultas-y-operaciones-crud",
-    "href": "unidades/unidad6/4_introduccion_node.html#realización-de-consultas-y-operaciones-crud",
-    "title": "Nodejs",
-    "section": "Realización de consultas y operaciones CRUD",
-    "text": "Realización de consultas y operaciones CRUD\n\nConsultas en MongoDB\nCon Mongoose, puedes realizar operaciones CRUD de manera sencilla. Aquí hay ejemplos:\n\nCrear un nuevo usuario:\n\nconst nuevoUsuario = new Usuario({\n  nombre: 'Alice',\n  edad: 30,\n  email: 'alice@example.com'\n});\n\nnuevoUsuario.save()\n  .then(() =&gt; console.log('Usuario creado'))\n  .catch(err =&gt; console.error('Error al crear usuario', err));\n\nLeer usuarios:\n\nUsuario.find()\n  .then(usuarios =&gt; console.log(usuarios))\n  .catch(err =&gt; console.error('Error al leer usuarios', err));\n\nActualizar un usuario:\n\nUsuario.updateOne({ email: 'alice@example.com' }, { edad: 31 })\n  .then(() =&gt; console.log('Usuario actualizado'))\n  .catch(err =&gt; console.error('Error al actualizar usuario', err));\n\nEliminar un usuario:\n\nUsuario.deleteOne({ email: 'alice@example.com' })\n  .then(() =&gt; console.log('Usuario eliminado'))\n  .catch(err =&gt; console.error('Error al eliminar usuario', err));",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#captura-de-errores-con-trycatch",
-    "href": "unidades/unidad6/4_introduccion_node.html#captura-de-errores-con-trycatch",
-    "title": "Nodejs",
-    "section": "Captura de errores con try/catch",
-    "text": "Captura de errores con try/catch\nEn Node.js, puedes usar bloques try/catch para manejar errores sin que estos interrumpan el flujo normal de tu aplicación. Este enfoque es útil para manejar errores sincrónicos, como los que pueden ocurrir al acceder a archivos o realizar operaciones matemáticas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#propagación-de-errores-en-aplicaciones",
-    "href": "unidades/unidad6/4_introduccion_node.html#propagación-de-errores-en-aplicaciones",
-    "title": "Nodejs",
-    "section": "Propagación de errores en aplicaciones",
-    "text": "Propagación de errores en aplicaciones\nEn aplicaciones más grandes, es común propagar errores a través de funciones y manejar errores en un nivel superior. Esto ayuda a centralizar el manejo de errores y mantener el código más limpio.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-del-objeto-error",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-del-objeto-error",
-    "title": "Nodejs",
-    "section": "Uso del objeto Error",
-    "text": "Uso del objeto Error\nNode.js proporciona un objeto Error que puedes usar para crear errores personalizados. El objeto Error tiene propiedades útiles como message, name y stack, que te permiten obtener información sobre el error.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#procesar-datos-enviados-por-formularios-html",
-    "href": "unidades/unidad6/4_introduccion_node.html#procesar-datos-enviados-por-formularios-html",
-    "title": "Nodejs",
-    "section": "Procesar datos enviados por formularios HTML",
-    "text": "Procesar datos enviados por formularios HTML\nPara procesar datos enviados a través de formularios HTML, necesitas capturar y manipular los datos que los usuarios envían. En una aplicación Express, puedes hacer esto utilizando el middleware adecuado para interpretar los datos del cuerpo de la solicitud.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#parseo-de-datos-con-body-parser",
-    "href": "unidades/unidad6/4_introduccion_node.html#parseo-de-datos-con-body-parser",
-    "title": "Nodejs",
-    "section": "Parseo de datos con body-parser",
-    "text": "Parseo de datos con body-parser\nEl middleware body-parser ayuda a analizar los datos enviados en las solicitudes HTTP. En versiones más recientes de Express, body-parser está integrado directamente en Express, y puedes usar express.json() y express.urlencoded() para procesar los datos del cuerpo. Instalación de body-parser\nSi estás usando una versión antigua de Express, puedes instalar body-parser como un paquete independiente:\nnpm install body-parser",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#envío-y-recepción-de-json",
-    "href": "unidades/unidad6/4_introduccion_node.html#envío-y-recepción-de-json",
-    "title": "Nodejs",
-    "section": "Envío y recepción de JSON",
-    "text": "Envío y recepción de JSON\nLas aplicaciones modernas a menudo usan JSON para enviar y recibir datos entre el cliente y el servidor. Express facilita la manipulación de JSON.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#implementación-de-autenticación-básica-y-con-tokens",
-    "href": "unidades/unidad6/4_introduccion_node.html#implementación-de-autenticación-básica-y-con-tokens",
-    "title": "Nodejs",
-    "section": "Implementación de autenticación básica y con tokens",
-    "text": "Implementación de autenticación básica y con tokens",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-jwt-json-web-tokens",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-jwt-json-web-tokens",
-    "title": "Nodejs",
-    "section": "Uso de JWT (JSON Web Tokens)",
-    "text": "Uso de JWT (JSON Web Tokens)",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#encriptación-de-contraseñas-con-bcrypt",
-    "href": "unidades/unidad6/4_introduccion_node.html#encriptación-de-contraseñas-con-bcrypt",
-    "title": "Nodejs",
-    "section": "Encriptación de contraseñas con bcrypt",
-    "text": "Encriptación de contraseñas con bcrypt",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#protección-de-rutas-en-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#protección-de-rutas-en-express",
-    "title": "Nodejs",
-    "section": "Protección de rutas en Express",
-    "text": "Protección de rutas en Express",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-a-las-sesiones-en-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-a-las-sesiones-en-express",
-    "title": "Nodejs",
-    "section": "Introducción a las sesiones en Express",
-    "text": "Introducción a las sesiones en Express",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-cookies-y-tokens-de-sesión",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-cookies-y-tokens-de-sesión",
-    "title": "Nodejs",
-    "section": "Uso de cookies y tokens de sesión",
-    "text": "Uso de cookies y tokens de sesión",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#almacenamiento-de-sesiones-en-bases-de-datos",
-    "href": "unidades/unidad6/4_introduccion_node.html#almacenamiento-de-sesiones-en-bases-de-datos",
-    "title": "Nodejs",
-    "section": "Almacenamiento de sesiones en bases de datos",
-    "text": "Almacenamiento de sesiones en bases de datos",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-archivos-en-formularios",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-archivos-en-formularios",
-    "title": "Nodejs",
-    "section": "Manejo de archivos en formularios",
-    "text": "Manejo de archivos en formularios",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-multer-para-cargar-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-multer-para-cargar-archivos",
-    "title": "Nodejs",
-    "section": "Uso de multer para cargar archivos",
-    "text": "Uso de multer para cargar archivos",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#validación-y-almacenamiento-de-archivos",
-    "href": "unidades/unidad6/4_introduccion_node.html#validación-y-almacenamiento-de-archivos",
-    "title": "Nodejs",
-    "section": "Validación y almacenamiento de archivos",
-    "text": "Validación y almacenamiento de archivos",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-a-websockets",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-a-websockets",
-    "title": "Nodejs",
-    "section": "Introducción a WebSockets",
-    "text": "Introducción a WebSockets",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#configuración-de-websockets-con-socket.io",
-    "href": "unidades/unidad6/4_introduccion_node.html#configuración-de-websockets-con-socket.io",
-    "title": "Nodejs",
-    "section": "Configuración de WebSockets con socket.io",
-    "text": "Configuración de WebSockets con socket.io",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#implementación-de-un-chat-en-tiempo-real",
-    "href": "unidades/unidad6/4_introduccion_node.html#implementación-de-un-chat-en-tiempo-real",
-    "title": "Nodejs",
-    "section": "Implementación de un chat en tiempo real",
-    "text": "Implementación de un chat en tiempo real",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#introducción-al-testing",
-    "href": "unidades/unidad6/4_introduccion_node.html#introducción-al-testing",
-    "title": "Nodejs",
-    "section": "Introducción al testing",
-    "text": "Introducción al testing",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#configuración-de-mocha-y-chai-para-pruebas",
-    "href": "unidades/unidad6/4_introduccion_node.html#configuración-de-mocha-y-chai-para-pruebas",
-    "title": "Nodejs",
-    "section": "Configuración de Mocha y Chai para pruebas",
-    "text": "Configuración de Mocha y Chai para pruebas",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#testing-de-rutas-y-controladores",
-    "href": "unidades/unidad6/4_introduccion_node.html#testing-de-rutas-y-controladores",
-    "title": "Nodejs",
-    "section": "Testing de rutas y controladores",
-    "text": "Testing de rutas y controladores",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#mocking-y-pruebas-de-integración",
-    "href": "unidades/unidad6/4_introduccion_node.html#mocking-y-pruebas-de-integración",
-    "title": "Nodejs",
-    "section": "Mocking y pruebas de integración",
-    "text": "Mocking y pruebas de integración",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#preparación-de-una-aplicación-para-producción",
-    "href": "unidades/unidad6/4_introduccion_node.html#preparación-de-una-aplicación-para-producción",
-    "title": "Nodejs",
-    "section": "Preparación de una aplicación para producción",
-    "text": "Preparación de una aplicación para producción",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#despliegue-en-heroku",
-    "href": "unidades/unidad6/4_introduccion_node.html#despliegue-en-heroku",
-    "title": "Nodejs",
-    "section": "Despliegue en Heroku",
-    "text": "Despliegue en Heroku",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#despliegue-en-servicios-en-la-nube-aws-digitalocean",
-    "href": "unidades/unidad6/4_introduccion_node.html#despliegue-en-servicios-en-la-nube-aws-digitalocean",
-    "title": "Nodejs",
-    "section": "Despliegue en servicios en la nube (AWS, DigitalOcean)",
-    "text": "Despliegue en servicios en la nube (AWS, DigitalOcean)",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-herramientas-como-pm2-para-gestionar-aplicaciones-en-producción",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-herramientas-como-pm2-para-gestionar-aplicaciones-en-producción",
-    "title": "Nodejs",
-    "section": "Uso de herramientas como PM2 para gestionar aplicaciones en producción",
-    "text": "Uso de herramientas como PM2 para gestionar aplicaciones en producción",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#mejorar-el-rendimiento-de-una-aplicación-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#mejorar-el-rendimiento-de-una-aplicación-node.js",
-    "title": "Nodejs",
-    "section": "Mejorar el rendimiento de una aplicación Node.js",
-    "text": "Mejorar el rendimiento de una aplicación Node.js",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#uso-de-middlewares-eficientes-en-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#uso-de-middlewares-eficientes-en-express",
-    "title": "Nodejs",
-    "section": "Uso de middlewares eficientes en Express",
-    "text": "Uso de middlewares eficientes en Express",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#buenas-prácticas-de-manejo-de-errores-y-logging",
-    "href": "unidades/unidad6/4_introduccion_node.html#buenas-prácticas-de-manejo-de-errores-y-logging",
-    "title": "Nodejs",
-    "section": "Buenas prácticas de manejo de errores y logging",
-    "text": "Buenas prácticas de manejo de errores y logging",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#escalabilidad-y-clustering-en-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#escalabilidad-y-clustering-en-node.js",
-    "title": "Nodejs",
-    "section": "Escalabilidad y clustering en Node.js",
-    "text": "Escalabilidad y clustering en Node.js",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#scripts-de-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#scripts-de-npm",
-    "title": "Nodejs",
-    "section": "Scripts de NPM",
-    "text": "Scripts de NPM\nNPM permite definir y ejecutar scripts personalizados que automatizan tareas comunes en el desarrollo. Definir Scripts\nLos scripts se definen en el campo scripts del package.json. Puedes definir scripts para tareas como pruebas, compilación y más.\n\nEjemplo de definición de scripts\n\"scripts\": {\n  \"start\": \"node index.js\",\n  \"test\": \"mocha test/\",\n  \"build\": \"webpack\"\n}\n\n\nEjecutar Scripts\nPara ejecutar un script, usa el comando npm run &lt;nombre-del-script&gt;. No es necesario incluir el prefijo run para los scripts start y test.\n\n\nEjemplo de ejecución\nPara iniciar el servidor:\nnpm start\nPara ejecutar las pruebas:\nnpm test\n\n\nEjemplo completo\nImagina que tienes un proyecto con un package.json como el siguiente:\n{\n  \"name\": \"mi-app\",\n  \"version\": \"1.0.0\",\n  \"scripts\": {\n    \"start\": \"node app.js\",\n    \"build\": \"webpack --config webpack.config.js\",\n    \"test\": \"mocha\"\n  },\n  \"dependencies\": {\n    \"express\": \"^4.17.1\"\n  }\n}\nPuedes iniciar tu aplicación con:\nnpm start\nPuedes construir tu proyecto con:\nnpm run build\nY puedes ejecutar tus pruebas con:\nnpm test",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#middlewares",
-    "href": "unidades/unidad6/4_introduccion_node.html#middlewares",
-    "title": "Nodejs",
-    "section": "Middlewares",
-    "text": "Middlewares\nLos middlewares son funciones que se ejecutan durante el ciclo de vida de una solicitud. Puedes usarlos para realizar tareas como análisis de solicitudes, autenticación, etc.\n\nEjemplo de middleware\n// Middleware de logging\napp.use((req, res, next) =&gt; {\n  console.log(`${req.method} ${req.url}`);\n  next(); // Pasa el control al siguiente middleware\n});\nEn este ejemplo, el middleware de logging registra el método HTTP y la URL de cada solicitud.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-completo-2",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-completo-2",
-    "title": "Nodejs",
-    "section": "Ejemplo Completo",
-    "text": "Ejemplo Completo\nAquí tienes un ejemplo completo que incluye rutas, middlewares y manejo de errores:\nconst express = require('express');\nconst app = express();\nconst port = 3000;\n\n// Middleware para manejar solicitudes\napp.use(express.json());\napp.use(express.static('public'));\n\n// Middleware de logging\napp.use((req, res, next) =&gt; {\n  console.log(`${req.method} ${req.url}`);\n  next();\n});\n\n// Ruta GET para '/'\napp.get('/', (req, res) =&gt; {\n  res.send('¡Hola Mundo!');\n});\n\n// Ruta GET para '/usuarios'\napp.get('/usuarios', (req, res) =&gt; {\n  res.send('Lista de usuarios');\n});\n\n// Ruta POST para '/usuarios'\napp.post('/usuarios', (req, res) =&gt; {\n  const nuevoUsuario = req.body;\n  res.status(201).send(`Usuario creado: ${JSON.stringify(nuevoUsuario)}`);\n});\n\n// Middleware de manejo de errores\napp.use((err, req, res, next) =&gt; {\n  console.error(err.stack);\n  res.status(500).send('Algo salió mal!');\n});\n\n// Iniciar el servidor\napp.listen(port, () =&gt; {\n  console.log(`Servidor escuchando en http://localhost:${port}`);\n});\nEste código proporciona una base sólida para una aplicación Express, incluyendo manejo de rutas, middleware y gestión de errores.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplos-de-métodos-http-en-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplos-de-métodos-http-en-express",
-    "title": "Nodejs",
-    "section": "Ejemplos de Métodos HTTP en Express",
-    "text": "Ejemplos de Métodos HTTP en Express\nAquí hay ejemplos de cómo usar estos métodos en una API REST con Express:\nconst express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.use(express.json());\n\n// Datos de ejemplo\nlet usuarios = [\n  { id: 1, nombre: 'Alice' },\n  { id: 2, nombre: 'Bob' }\n];\n\n// GET: Obtener todos los usuarios\napp.get('/usuarios', (req, res) =&gt; {\n  res.json(usuarios);\n});\n\n// GET: Obtener un usuario por ID\napp.get('/usuarios/:id', (req, res) =&gt; {\n  const usuario = usuarios.find(u =&gt; u.id === parseInt(req.params.id));\n  if (!usuario) return res.status(404).send('Usuario no encontrado');\n  res.json(usuario);\n});\n\n// POST: Crear un nuevo usuario\napp.post('/usuarios', (req, res) =&gt; {\n  const nuevoUsuario = {\n    id: usuarios.length + 1,\n    nombre: req.body.nombre\n  };\n  usuarios.push(nuevoUsuario);\n  res.status(201).json(nuevoUsuario);\n});\n\n// PUT: Actualizar un usuario existente\napp.put('/usuarios/:id', (req, res) =&gt; {\n  const usuario = usuarios.find(u =&gt; u.id === parseInt(req.params.id));\n  if (!usuario) return res.status(404).send('Usuario no encontrado');\n\n  usuario.nombre = req.body.nombre;\n  res.json(usuario);\n});\n\n// DELETE: Eliminar un usuario\napp.delete('/usuarios/:id', (req, res) =&gt; {\n  const usuarioIndex = usuarios.findIndex(u =&gt; u.id === parseInt(req.params.id));\n  if (usuarioIndex === -1) return res.status(404).send('Usuario no encontrado');\n\n  usuarios.splice(usuarioIndex, 1);\n  res.status(204).send(); // No content\n});\n\n// Iniciar el servidor\napp.listen(port, () =&gt; {\n  console.log(`Servidor escuchando en http://localhost:${port}`);\n});\nEn este ejemplo:\n\nGET/usuarios devuelve la lista de todos los usuarios.\nGET/usuarios/ devuelve un usuario específico por ID.\nPOST/usuarios crea un nuevo usuario y lo agrega a la lista.\nPUT/usuarios/ actualiza el nombre de un usuario existente.\nDELETE/usuarios/ elimina un usuario específico.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-estructura-de-proyecto",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-estructura-de-proyecto",
-    "title": "Nodejs",
-    "section": "Ejemplo de Estructura de Proyecto",
-    "text": "Ejemplo de Estructura de Proyecto\nUna estructura típica para una API RESTful en Express puede ser la siguiente:\nmyapi/\n├── routes/\n│   └── usuarios.js\n├── controllers/\n│   └── usuariosController.js\n├── models/\n│   └── usuario.js\n├── app.js\n└── package.json\nEn esta estructura:\n\nroutes/usuarios.js define las rutas relacionadas con los usuarios.\ncontrollers/usuariosController.js contiene la lógica de negocio para manejar las solicitudes.\nmodels/usuario.js define el esquema de datos (si se usa una base de datos).\napp.js configura la aplicación Express y las rutas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-en-json",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-en-json",
-    "title": "Nodejs",
-    "section": "Manejo de Errores en JSON",
-    "text": "Manejo de Errores en JSON\nTambién es útil enviar errores en formato JSON para una mayor claridad y consistencia.\napp.use((err, req, res, next) =&gt; {\n  res.status(500).json({\n    error: 'Algo salió mal',\n    detalles: err.message\n  });\n});\nEn este caso, si ocurre un error en el servidor, la respuesta será un JSON con el mensaje de error y detalles adicionales.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conexión-a-mongodb",
-    "href": "unidades/unidad6/4_introduccion_node.html#conexión-a-mongodb",
-    "title": "Nodejs",
-    "section": "Conexión a MongoDB",
-    "text": "Conexión a MongoDB\nA continuación, se muestra cómo conectarse a una base de datos MongoDB usando Mongoose:\nconst mongoose = require('mongoose');\n\nconst uri = 'mongodb://localhost:27017/midatabase'; // Cambia 'midatabase' por el nombre de tu base de datos\n\nmongoose.connect(uri, {\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n}).then(() =&gt; {\n  console.log('Conectado a MongoDB');\n}).catch(err =&gt; {\n  console.error('Error al conectar a MongoDB', err);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#definición-de-un-esquema",
-    "href": "unidades/unidad6/4_introduccion_node.html#definición-de-un-esquema",
-    "title": "Nodejs",
-    "section": "Definición de un Esquema",
-    "text": "Definición de un Esquema\nDespués de conectarte a MongoDB, puedes definir un esquema para tus datos:\nconst usuarioSchema = new mongoose.Schema({\n  nombre: { type: String, required: true },\n  edad: { type: Number, required: true },\n  email: { type: String, required: true, unique: true }\n});\n\nconst Usuario = mongoose.model('Usuario', usuarioSchema);",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#consultas-en-mysql",
-    "href": "unidades/unidad6/4_introduccion_node.html#consultas-en-mysql",
-    "title": "Nodejs",
-    "section": "Consultas en MySQL",
-    "text": "Consultas en MySQL\nAquí hay ejemplos de cómo realizar operaciones CRUD en MySQL usando el paquete mysql2:\n\nCrear un nuevo usuario:\n\nconst nuevoUsuario = { nombre: 'Alice', edad: 30, email: 'alice@example.com' };\nconnection.query('INSERT INTO usuarios SET ?', nuevoUsuario, (err, results) =&gt; {\n  if (err) {\n    console.error('Error al crear usuario', err);\n    return;\n  }\n  console.log('Usuario creado con ID:', results.insertId);\n});\n\nLeer usuarios:\n\nconnection.query('SELECT * FROM usuarios', (err, results) =&gt; {\n  if (err) {\n    console.error('Error al leer usuarios', err);\n    return;\n  }\n  console.log(results);\n});\n\nActualizar un usuario:\n\nconst usuarioActualizado = { edad: 31 };\nconnection.query('UPDATE usuarios SET ? WHERE email = ?', [usuarioActualizado, 'alice@example.com'], (err, results) =&gt; {\n  if (err) {\n    console.error('Error al actualizar usuario', err);\n    return;\n  }\n  console.log('Usuario actualizado:', results.affectedRows);\n});\n\nEliminar un usuario:\n\nconnection.query('DELETE FROM usuarios WHERE email = ?', ['alice@example.com'], (err, results) =&gt; {\n  if (err) {\n    console.error('Error al eliminar usuario', err);\n    return;\n  }\n  console.log('Usuario eliminado:', results.affectedRows);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#levantar-el-contenedor-con-docker-compose",
-    "href": "unidades/unidad6/4_introduccion_node.html#levantar-el-contenedor-con-docker-compose",
-    "title": "Nodejs",
-    "section": "Levantar el contenedor con Docker Compose",
-    "text": "Levantar el contenedor con Docker Compose\nPara utilizar bases de datos en tu aplicación Node.js, puedes usar Docker para crear un entorno de desarrollo consistente. Aquí te muestro cómo levantar un contenedor para MongoDB y MySQL utilizando Docker Compose.\n\nEjemplo de docker-compose.yml\nCrea un archivo llamado docker-compose.yml con el siguiente contenido:\nservices:\n  mongodb:\n    image: mongo:latest\n    container_name: mongodb\n    ports:\n      - \"27017:27017\"\n    volumes:\n      - mongodb_data:/data/db\n\n  mysql:\n    image: mysql:latest\n    container_name: mysql\n    environment:\n      MYSQL_ROOT_PASSWORD: root\n      MYSQL_DATABASE: midatabase\n      MYSQL_USER: tu_usuario\n      MYSQL_PASSWORD: tu_contraseña\n    ports:\n      - \"3306:3306\"\n    volumes:\n      - mysql_data:/var/lib/mysql\n\nvolumes:\n  mongodb_data:\n  mysql_data:\nLevantar los Contenedores\nUna vez que tengas el archivo docker-compose.yml, puedes levantar los contenedores con el siguiente comando:\ndocker compose up -d\nEsto iniciará los contenedores de MongoDB y MySQL en segundo plano. Puedes verificar que están funcionando correctamente ejecutando:\ndocker compose ps",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#conectarse-a-las-bases-de-datos",
-    "href": "unidades/unidad6/4_introduccion_node.html#conectarse-a-las-bases-de-datos",
-    "title": "Nodejs",
-    "section": "Conectarse a las Bases de Datos",
-    "text": "Conectarse a las Bases de Datos\nUna vez que los contenedores estén en funcionamiento, podrás conectarte a ellos utilizando los ejemplos de conexión proporcionados anteriormente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-básico-de-trycatch",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-básico-de-trycatch",
-    "title": "Nodejs",
-    "section": "Ejemplo básico de try/catch",
-    "text": "Ejemplo básico de try/catch\ntry {\n  // Código que puede lanzar un error\n  const resultado = JSON.parse('{\"nombre\": \"Alice\"}'); // Esto no lanzará un error\n  console.log(resultado);\n  \n  const fallo = JSON.parse('{\"nombre\": \"Alice\"'); // Esto lanzará un error de sintaxis\n} catch (error) {\n  // Manejo del error\n  console.error('Se produjo un error:', error.message);\n}\nEn este ejemplo, el primer JSON.parse no lanza un error, pero el segundo lo hace. El bloque catch captura el error y muestra un mensaje adecuado.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-propagación-de-errores",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-propagación-de-errores",
-    "title": "Nodejs",
-    "section": "Ejemplo de propagación de errores",
-    "text": "Ejemplo de propagación de errores\n// Función que puede lanzar un error\nfunction divide(a, b) {\n  if (b === 0) {\n    throw new Error('No se puede dividir por cero');\n  }\n  return a / b;\n}\n\n// Función que maneja el error\nfunction realizarOperacion() {\n  try {\n    const resultado = divide(10, 0);\n    console.log(resultado);\n  } catch (error) {\n    console.error('Error en realizarOperacion:', error.message);\n  }\n}\n\nrealizarOperacion();\nEn este ejemplo, la función divide lanza un error si se intenta dividir por cero, y realizarOperacion maneja este error.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#creación-de-errores-personalizados",
-    "href": "unidades/unidad6/4_introduccion_node.html#creación-de-errores-personalizados",
-    "title": "Nodejs",
-    "section": "Creación de errores personalizados",
-    "text": "Creación de errores personalizados\nPuedes extender el objeto Error para crear tipos de errores personalizados:\nclass MiErrorPersonalizado extends Error {\n  constructor(mensaje) {\n    super(mensaje);\n    this.name = 'MiErrorPersonalizado';\n  }\n}\n\nfunction lanzarError() {\n  throw new MiErrorPersonalizado('Este es un error personalizado');\n}\n\ntry {\n  lanzarError();\n} catch (error) {\n  console.error(`${error.name}: ${error.message}`);\n  console.error('Pila de llamadas:', error.stack);\n}\nEn este ejemplo, MiErrorPersonalizado es una clase que extiende el objeto Error. Cuando se lanza este error, puedes capturar y mostrar información detallada sobre él.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-en-aplicaciones-asincrónicas",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-en-aplicaciones-asincrónicas",
-    "title": "Nodejs",
-    "section": "Manejo de errores en aplicaciones asincrónicas",
-    "text": "Manejo de errores en aplicaciones asincrónicas\nEn aplicaciones asincrónicas, como las que usan promesas o async/await, el manejo de errores es un poco diferente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-con-promesas",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-con-promesas",
-    "title": "Nodejs",
-    "section": "Manejo de errores con promesas",
-    "text": "Manejo de errores con promesas\nfunction asyncOperation() {\n  return new Promise((resolve, reject) =&gt; {\n    setTimeout(() =&gt; {\n      reject(new Error('Algo salió mal en la operación asincrónica'));\n    }, 1000);\n  });\n}\n\nasyncOperation()\n  .then(result =&gt; console.log(result))\n  .catch(error =&gt; console.error('Error en operación asincrónica:', error.message));",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-con-asyncawait",
-    "href": "unidades/unidad6/4_introduccion_node.html#manejo-de-errores-con-asyncawait",
-    "title": "Nodejs",
-    "section": "Manejo de errores con async/await",
-    "text": "Manejo de errores con async/await\nasync function realizarOperacionAsincrona() {\n  try {\n    const resultado = await asyncOperation();\n    console.log(resultado);\n  } catch (error) {\n    console.error('Error en operación asincrónica:', error.message);\n  }\n}\n\nrealizarOperacionAsincrona();\nEn estos ejemplos, asyncOperation devuelve una promesa que se rechaza con un error. Puedes manejar estos errores usando catch en promesas o un bloque try/catch con async/await.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#resumen",
-    "href": "unidades/unidad6/4_introduccion_node.html#resumen",
-    "title": "Nodejs",
+    "objectID": "unidades/unidad6/5_tutorial_fetch.html#resumen",
+    "href": "unidades/unidad6/5_tutorial_fetch.html#resumen",
+    "title": "Tutorial de Fetch",
     "section": "Resumen",
-    "text": "Resumen\n\nCaptura de errores: Usa try/catch para manejar errores sincrónicos.\nPropagación de errores: Propaga errores a través de funciones y maneja errores en niveles superiores.\nUso del objeto Error: Crea errores personalizados extendiendo el objeto Error.\nErrores asincrónicos: Maneja errores en promesas y async/await de manera adecuada.",
+    "text": "Resumen\nEn este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-formulario-html",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-formulario-html",
-    "title": "Nodejs",
-    "section": "Ejemplo de formulario HTML",
-    "text": "Ejemplo de formulario HTML\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;title&gt;Formulario de Ejemplo&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;form action=\"/submit\" method=\"POST\"&gt;\n        &lt;label for=\"name\"&gt;Nombre:&lt;/label&gt;\n        &lt;input type=\"text\" id=\"name\" name=\"name\" required&gt;\n        \n        &lt;label for=\"email\"&gt;Correo electrónico:&lt;/label&gt;\n        &lt;input type=\"email\" id=\"email\" name=\"email\" required&gt;\n        \n        &lt;button type=\"submit\"&gt;Enviar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#configuración-de-express-para-procesar-datos-de-formularios",
-    "href": "unidades/unidad6/4_introduccion_node.html#configuración-de-express-para-procesar-datos-de-formularios",
-    "title": "Nodejs",
-    "section": "Configuración de Express para procesar datos de formularios",
-    "text": "Configuración de Express para procesar datos de formularios\nPara capturar los datos enviados por el formulario, debes usar middleware que pueda interpretar los datos del cuerpo de la solicitud. Express no lo hace por defecto, pero puedes usar body-parser para este propósito.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#configuración-en-express",
-    "href": "unidades/unidad6/4_introduccion_node.html#configuración-en-express",
-    "title": "Nodejs",
-    "section": "Configuración en Express",
-    "text": "Configuración en Express\nUsando body-parser (para versiones antiguas de Express)\nconst express = require('express');\nconst bodyParser = require('body-parser');\n\nconst app = express();\nconst port = 3000;\n\n// Middleware para analizar datos de formularios\napp.use(bodyParser.urlencoded({ extended: true }));\napp.use(bodyParser.json());\n\napp.post('/submit', (req, res) =&gt; {\n  const { name, email } = req.body;\n  res.send(`Nombre: ${name}, Correo electrónico: ${email}`);\n});\n\napp.listen(port, () =&gt; {\n  console.log(`Servidor escuchando en http://localhost:${port}`);\n});\nUsando express.json() y express.urlencoded() (para versiones recientes de Express)\nconst express = require('express');\n\nconst app = express();\nconst port = 3000;\n\n// Middleware para analizar datos de formularios\napp.use(express.urlencoded({ extended: true }));\napp.use(express.json());\n\napp.post('/submit', (req, res) =&gt; {\n  const { name, email } = req.body;\n  res.send(`Nombre: ${name}, Correo electrónico: ${email}`);\n});\n\napp.listen(port, () =&gt; {\n  console.log(`Servidor escuchando en http://localhost:${port}`);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#envío-de-json-desde-el-servidor",
-    "href": "unidades/unidad6/4_introduccion_node.html#envío-de-json-desde-el-servidor",
-    "title": "Nodejs",
-    "section": "Envío de JSON desde el servidor",
-    "text": "Envío de JSON desde el servidor\nPuedes enviar respuestas en formato JSON desde el servidor usando el método res.json().\n\napp.get('/data', (req, res) =&gt; {\n  const data = {\n    mensaje: 'Este es un mensaje en JSON',\n    status: 'exitoso'\n  };\n  res.json(data);\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#recepción-de-json-en-el-servidor",
-    "href": "unidades/unidad6/4_introduccion_node.html#recepción-de-json-en-el-servidor",
-    "title": "Nodejs",
-    "section": "Recepción de JSON en el servidor",
-    "text": "Recepción de JSON en el servidor\nPara recibir datos en formato JSON, asegúrate de usar el middleware express.json() y luego accede a los datos a través de req.body.\napp.post('/json', (req, res) =&gt; {\n  const { nombre, edad } = req.body;\n  res.json({ mensaje: `Recibido nombre: ${nombre} y edad: ${edad}` });\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#envío-de-json-desde-el-cliente",
-    "href": "unidades/unidad6/4_introduccion_node.html#envío-de-json-desde-el-cliente",
-    "title": "Nodejs",
-    "section": "Envío de JSON desde el cliente",
-    "text": "Envío de JSON desde el cliente\nPuedes usar JavaScript en el navegador para enviar datos JSON al servidor usando fetch o bibliotecas como axios.\n\nUsando fetch\nfetch('/json', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({ nombre: 'Juan', edad: 30 })\n})\n  .then(response =&gt; response.json())\n  .then(data =&gt; console.log(data));\n\n\nUsando axios\nPrimero, instala axios:\nnpm install axios\nLuego, usa axios para enviar datos JSON:\nconst axios = require('axios');\n\naxios.post('/json', { nombre: 'Juan', edad: 30 })\n  .then(response =&gt; console.log(response.data))\n  .catch(error =&gt; console.error('Error:', error));\nResumen\n\nProcesar formularios HTML: Usa middleware para interpretar datos del cuerpo de la solicitud (express.urlencoded()).\nParseo de datos: Utiliza express.json() para manejar datos JSON en las solicitudes.\nEnvío y recepción de JSON: Usa res.json() para enviar respuestas en JSON y req.body para acceder a los datos enviados en formato JSON.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#por-qué-es-node.js",
-    "href": "unidades/unidad6/4_introduccion_node.html#por-qué-es-node.js",
-    "title": "Nodejs",
-    "section": "¿Por qué es Node.js?",
-    "text": "¿Por qué es Node.js?\nNode.js permite manejar múltiples solicitudes simultáneamente sin bloquear el hilo principal, lo que lo hace muy eficiente para aplicaciones en tiempo real y de alta concurrencia.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#npm-node-package-manager",
-    "href": "unidades/unidad6/4_introduccion_node.html#npm-node-package-manager",
-    "title": "Nodejs",
-    "section": "npm (Node Package Manager)",
-    "text": "npm (Node Package Manager)\n\nDescripción: El manejador de paquetes por defecto para Node.js.\nUso Básico:\n\nnpm install &lt;paquete&gt;: Instala un paquete.\nnpm install --save-dev &lt;paquete&gt;: Instala un paquete para desarrollo.\nnpm update: Actualiza paquetes instalados.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#fnm-fast-node-manager",
-    "href": "unidades/unidad6/4_introduccion_node.html#fnm-fast-node-manager",
-    "title": "Nodejs",
-    "section": "fnm (Fast Node Manager)",
-    "text": "fnm (Fast Node Manager)\n\nDescripción: Alternativa más rápida a nvm, también permite gestionar versiones de Node.js.\nUso Básico:\n\nfnm install &lt;version&gt;: Instala una versión específica de Node.js.\nfnm use &lt;version&gt;: Cambia a una versión específica.\nfnm ls: Lista las versiones instaladas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#nvm-node-version-manager",
-    "href": "unidades/unidad6/4_introduccion_node.html#nvm-node-version-manager",
-    "title": "Nodejs",
-    "section": "nvm (Node Version Manager)",
-    "text": "nvm (Node Version Manager)\n\nDescripción: Herramienta para instalar y gestionar múltiples versiones de Node.js.\nUso Básico:\n\nnvm install &lt;version&gt;: Instala una versión específica de Node.js.\nnvm use &lt;version&gt;: Cambia a una versión específica.\nnvm ls: Lista las versiones instaladas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-callback",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-callback",
-    "title": "Nodejs",
-    "section": "Ejemplo de Callback:",
-    "text": "Ejemplo de Callback:\nconst fs = require('fs');\n\n// Leer un archivo de manera asíncrona usando un callback\nfs.readFile('archivo.txt', 'utf8', (err, data) =&gt; {\n  if (err) {\n    console.error(\"Error leyendo el archivo:\", err);\n    return;\n  }\n  console.log(\"Contenido del archivo:\", data);\n});\nProblema: Callback Hell A medida que anidamos callbacks, el código se vuelve difícil de leer y mantener.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-promesa",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-promesa",
-    "title": "Nodejs",
-    "section": "Ejemplo de Promesa:",
-    "text": "Ejemplo de Promesa:\nconst fs = require('fs').promises;\n\nfs.readFile('archivo.txt', 'utf8')\n  .then(data =&gt; {\n    console.log(\"Contenido del archivo:\", data);\n  })\n  .catch(err =&gt; {\n    console.error(\"Error leyendo el archivo:\", err);\n  });",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-asyncawait",
-    "href": "unidades/unidad6/4_introduccion_node.html#ejemplo-de-asyncawait",
-    "title": "Nodejs",
-    "section": "Ejemplo de async/await:",
-    "text": "Ejemplo de async/await:\nconst fs = require('fs').promises;\n\nasync function leerArchivo() {\n  try {\n    const data = await fs.readFile('archivo.txt', 'utf8');\n    console.log(\"Contenido del archivo:\", data);\n  } catch (err) {\n    console.error(\"Error leyendo el archivo:\", err);\n  }\n}\n\nleerArchivo();",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#crear-un-servidor-http-asíncrono",
-    "href": "unidades/unidad6/4_introduccion_node.html#crear-un-servidor-http-asíncrono",
-    "title": "Nodejs",
-    "section": "Crear un Servidor HTTP Asíncrono",
-    "text": "Crear un Servidor HTTP Asíncrono\nconst http = require('http');\nconst fs = require('fs').promises;\n\nconst server = http.createServer(async (req, res) =&gt; {\n  try {\n    const data = await fs.readFile('archivo.txt', 'utf8');\n    res.writeHead(200, { 'Content-Type': 'text/plain' });\n    res.end(data);\n  } catch (err) {\n    res.writeHead(500, { 'Content-Type': 'text/plain' });\n    res.end(\"Error leyendo el archivo\");\n  }\n});\n\nserver.listen(3000, () =&gt; {\n  console.log('Servidor escuchando en el puerto 3000');\n});",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#comandos-básicos-de-npm",
-    "href": "unidades/unidad6/4_introduccion_node.html#comandos-básicos-de-npm",
-    "title": "Nodejs",
-    "section": "Comandos básicos de NPM:",
-    "text": "Comandos básicos de NPM:\n\nnpm init: Inicia un nuevo proyecto y crea un archivo package.json.\nnpm install &lt;paquete&gt;: Instala un paquete.\nnpm install –save-dev &lt;paquete&gt;: Instala un paquete para desarrollo.\nnpm update: Actualiza paquetes instalados.\n\n\nPreparando el Entorno para React\n\nPara conectar lo aprendido en Node.js con React en la próxima clase, es fundamental instalar y configurar herramientas adicionales.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/4_introduccion_node.html#instalar-create-react-app",
-    "href": "unidades/unidad6/4_introduccion_node.html#instalar-create-react-app",
-    "title": "Nodejs",
-    "section": "Instalar create-react-app:",
-    "text": "Instalar create-react-app:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Nodejs</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Tutorial de Fetch</span>"
     ]
   }
 ]

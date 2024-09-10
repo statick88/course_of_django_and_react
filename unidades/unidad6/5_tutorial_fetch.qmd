@@ -1,7 +1,7 @@
-::: justify
+:::{.justify}
 # Tutorial de Fetch
 
-:::{.center}
+::: {.center}
 ![](images/paste-46.png)
 :::
 
@@ -140,7 +140,7 @@ En esta sección hemos agregado el archivo **styles.css** al archivo **index.htm
 
 8.  Mediante el plugin de **Live Server**, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
 
-:::{.center}
+::: {.center}
 ![](images/paste-47.png)
 :::
 
@@ -162,21 +162,450 @@ Ahora es necesario mejorar la aplicación. Se sugiere agregar las siguientes fun
 8.  Agregar un botón para buscar un pokemon por tipo.
 9.  Agregar un botón para buscar un pokemon por habilidad.
 
+# Fetch con Fake Store API
+
+::: {.center}
+![](images/paste-49.png)
+:::
+
+Para crear una aplicación que muestre productos de una tienda, se puede utilizar la [Fake Store API](https://fakestoreapi.com/).
+
+1.  Crear un archivo **index.html** y agregar el siguiente código:
+
+``` html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Productos</h1>
+    <div id="products"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+2.  Crear un archivo **app.js** y agregar el siguiente código:
+
+``` javascript
+fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(data => {
+        const products = document.getElementById('products');
+        data.forEach(product => {
+            products.innerHTML += `
+                <div class="product">
+                    <img src="${product.image}" alt="${product.title}">
+                    <h2>${product.title}</h2>
+                    <p>${product.description}</p>
+                    <p>${product.price}</p>
+                </div>
+            `;
+        });
+    })
+    .catch(error => {
+        console.error(error);
+    });
+```
+
+3.  Crear un archivo **styles.css** y agregar el siguiente código:
+
+``` css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem 0;
+}
+
+h2 {
+    margin: 0.5rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+```
+
+4.  Mediante el plugin de Live Server, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
+
+5.  Se puede mejorar la aplicación agregando más funcionalidades, como un buscador, un filtro por categoría, un ordenamiento por precio, etc.
+
+# Reto
+
+Ahora es necesario mejorar la aplicación. Se sugiere agregar las siguientes funcionalidades:
+
+1.  Agregar un mensaje de error si la petición falla.
+
+2.  Agregar un spinner mientras se hace la petición.
+
+3.  Agregar un botón para limpiar el div **products**.
+
+4.  Agregar un botón para buscar un producto por id.
+
+5.  Agregar un botón para buscar un producto por título.
+
+6.  Agregar un botón para buscar un producto por categoría.
+
+7.  Agregar un botón para buscar un producto por precio.
+
+8.  Agregar un botón para buscar un producto por rating.
+
+9.  Agregar un botón para buscar un producto por cantidad.
+
+10. Agregar un botón para buscar un producto por descripción.
+
+# Fetch con Rick and Morty API.
+
+::: {.center}
+![](images/paste-50.png)
+:::
+
+Para crear una aplicación que muestre personajes de la serie Rick and Morty, se puede utilizar la [Rick and Morty API](https://rickandmortyapi.com/).
+
+1.  Crear un archivo **index.html** y agregar el siguiente código:
+
+``` html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Personajes</h1>
+    <div id="characters"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+2.  Crear un archivo **app.js** y agregar el siguiente código:
+
+``` javascript
+fetch('https://rickandmortyapi.com/api/character')
+    .then(response => response.json())
+    .then(data => {
+        const characters = document.getElementById('characters');
+        data.results.forEach(character => {
+            characters.innerHTML += `
+                <div class="character">
+                    <img src="${character.image}" alt="${character.name}">
+                    <h2>${character.name}</h2>
+                    <p>${character.species}</p>
+                    <p>${character.status}</p>
+                </div>
+            `;
+        });
+    })
+    .catch(error => {
+        console.error(error);
+    });
+```
+
+3.  Crear un archivo **styles.css** y agregar el siguiente código:
+
+``` css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+#characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.character {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem 0;
+}
+
+h2 {
+    margin: 0.5rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+```
+
+4.  Mediante el plugin de Live Server, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
+
+5.  Se puede mejorar la aplicación agregando más funcionalidades, como un buscador, un filtro por especie, un ordenamiento por nombre, etc.
+
+# Reto
+
+Ahora es necesario mejorar la aplicación. Se sugiere agregar las siguientes funcionalidades:
+
+1.  Agregar un mensaje de error si la petición falla.
+
+2.  Agregar un spinner mientras se hace la petición.
+
+3.  Agregar un botón para limpiar el div **characters**.
+
+4.  Agregar un botón para buscar un personaje por id.
+
+5.  Agregar un botón para buscar un personaje por nombre.
+
+6.  Agregar un botón para buscar un personaje por especie.
+
+7.  Agregar un botón para buscar un personaje por estado.
+
+8.  Agregar un botón para buscar un personaje por género.
+
+9.  Agregar un botón para buscar un personaje por origen.
+
+10. Agregar un botón para buscar un personaje por ubicación.
+
+# Fetch con otras APIs
+
+::: {.center}
+![](images/paste-51.png)
+:::
+
+Para crear aplicaciones con Fetch, se pueden utilizar otras APIs como:
+
+-   [The Dog API](https://thedogapi.com/)
+
+-   [The Cat API](https://thecatapi.com/)
+
+-   [The Joke API](https://jokeapi.dev/)
+
+-   [The Weather API](https://www.weatherapi.com/)
+
+-   [The News API](https://newsapi.org/)
+
+-   [The Movie API](https://www.themoviedb.org/)
+
+-   [The Music API](https://developer.spotify.com/)
+
+-   [The Recipe API](https://developer.edamam.com/)
+
+-   [The Book API](https://openlibrary.org/developers/api)
+
+Solo para tener un ejemplo crearemos una aplicación que muestre chistes de la [JokeAPI](https://jokeapi.dev/).
+
+1.  Crear un archivo **index.html** y agregar el siguiente código:
+
+``` html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chistes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Chistes</h1>
+    <div id="jokes"></div>
+    <button id="joke-button">Nuevo chiste</button>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+2.  Crear un archivo **app.js** y agregar el siguiente código:
+
+``` javascript
+document.getElementById('joke-button').addEventListener('click', () => {
+    fetch('https://v2.jokeapi.dev/joke/Any')
+        .then(response => response.json())
+        .then(data => {
+            const jokes = document.getElementById('jokes');
+            jokes.innerHTML = `
+                <h2>${data.setup}</h2>
+                <p>${data.delivery}</p>
+            `;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
+```
+
+3.  Crear un archivo **styles.css** y agregar el siguiente código:
+
+``` css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+#jokes {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+button {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 0.5rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+```
+
+4.  Mediante el plugin de Live Server, abrimos el archivo **index.html** en el navegador y probamos la aplicación.
+
+5.  Se puede mejorar la aplicación agregando más funcionalidades, como un buscador, un filtro por categoría, un ordenamiento por fecha, etc.
+
+# Reto
+
+Ahora es necesario mejorar la aplicación. Se sugiere agregar las siguientes funcionalidades:
+
+1.  Agregar un mensaje de error si la petición falla.
+
+2.  Agregar un spinner mientras se hace la petición.
+
+3.  Agregar un botón para limpiar el div **jokes**.
+
+4.  Agregar un botón para buscar un chiste por categoría.
+
+5.  Agregar un botón para buscar un chiste por tipo.
+
+6.  Agregar un botón para buscar un chiste por bandera.
+
+7.  Agregar un botón para buscar un chiste por idioma.
+
+8.  Agregar un botón para buscar un chiste por cantidad.
+
+9.  Agregar un botón para buscar un chiste por filtro.
+
+10. Agregar un botón para buscar un chiste por blacklist.
+
+## Resumen
+
+En este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.
+
 ## Conclusión
 
-Felicidades, has completado el tutorial de Fetch. Has aprendido a hacer peticiones con JavaScript puro. Ahora puedes hacer aplicaciones web que hagan peticiones a **APIs de terceros**.
+En este tutorial hemos aprendido a hacer peticiones Fetch con JavaScript puro. Hemos creado una aplicación que nos permite buscar pokemon y ver sus detalles. También hemos aprendido a mejorar la presentación de nuestro proyecto agregando estilos CSS. Además, hemos aprendido a hacer peticiones Fetch con la Fake Store API y la Rick and Morty API. Se sugiere seguir practicando y experimentando con Fetch para mejorar nuestras habilidades de programación.
 
 ## Referencias
 
--   [Fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
--   [PokeAPI](https://pokeapi.co/)
--   [Documentación de PokeAPI](https://pokeapi.co/docs/v2)
+-   [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+-   [PokéAPI](https://pokeapi.co/)
+
+-   [Fake Store API](https://fakestoreapi.com/)
+
+-   [Rick and Morty API](https://rickandmortyapi.com/)
+
+-   [JokeAPI](https://jokeapi.dev/)
+
+-   [The Dog API](https://thedogapi.com/)
+
+-   [The Cat API](https://thecatapi.com/)
+
+-   [The Weather API](https://www.weatherapi.com/)
+
+-   [The News API](https://newsapi.org/)
+
+-   [The Movie API](https://www.themoviedb.org/)
+
+-   [The Music API](https://developer.spotify.com/)
+
+-   [The Recipe API](https://developer.edamam.com/)
+
+-   [The Book API](https://openlibrary.org/developers/api)
+
 -   [Github Pages](https://pages.github.com/)
+
 -   [Vercel](https://vercel.com/)
+
 -   [Netlify](https://www.netlify.com/)
--   [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
--   [HTML](https://developer.mozilla.org/es/docs/Web/HTML)
--   [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
--   [Visual Studio Code](https://code.visualstudio.com/)
+
 -   [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-:::
+
+-   [Visual Studio Code](https://code.visualstudio.com/)
+
+-   [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+-   [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+-   [API](https://developer.mozilla.org/en-US/docs/Glossary/API)
+
+-   [JSON](https://developer.mozilla.org/en-US/docs/Glossary/JSON)
+
+-   [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+-   [Node.js](https://nodejs.org/)
+
+-   [NPM](https://www.npmjs.com/)
+
+-   [Async/Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
+-   [Promesas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+:::::::
