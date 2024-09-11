@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Axios con React – Django y React 2024</title>
+<title>Consumir una API con React – Django y React 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad6/8_primeros_pasos_con_react.html" rel="next">
+<link href="../../unidades/unidad6/9_axios_con_react.html" rel="next">
 <link href="../../unidades/unidad6/6_introduccion_react.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/7_fetch_con_react.html"><span class="chapter-title">Axios con React</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/7_fetch_con_react.html"><span class="chapter-title">Consumir una API con React</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -387,17 +387,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/7_fetch_con_react.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Axios con React</span></a>
+  <a href="../../unidades/unidad6/7_fetch_con_react.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Consumir una API con React</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/8_primeros_pasos_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primeros pasos con React</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/9_fetch_con_react_tiempo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fetch con React para obtener el listado de productos</span></a>
+  <a href="../../unidades/unidad6/9_axios_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9_axios_con_react.html</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -459,9 +454,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/7_fetch_con_react.html"><span class="chapter-title">Axios con React</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/7_fetch_con_react.html"><span class="chapter-title">Consumir una API con React</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Axios con React</span></h1>
+<h1 class="title"><span class="chapter-title">Consumir una API con React</span></h1>
 </div>
 
 
@@ -479,79 +474,294 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="justify">
-<p>En esta sección vamos a aprender a crear el método Axios con React, para ello vamos a crear una aplicación que nos permita buscar imágenes en la API de Pokemon.</p>
-<section id="crear-la-aplicación" class="level2">
-<h2 class="anchored" data-anchor-id="crear-la-aplicación">Crear la aplicación</h2>
-<p>Para crear la aplicación vamos a utilizar el siguiente comando:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego vamos a instalar las dependencias necesarias para la aplicación:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install axios</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/paste-74.png" class="img-fluid"></p>
+<p><img src="images/paste-75.png" class="img-fluid"></p>
+<section id="crear-un-proyecto-react-con-vite-y-tailwind-css" class="level2">
+<h2 class="anchored" data-anchor-id="crear-un-proyecto-react-con-vite-y-tailwind-css">1. Crear un Proyecto React con Vite y Tailwind CSS</h2>
+<p>Vamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado.</p>
+<section id="pasos" class="level3">
+<h3 class="anchored" data-anchor-id="pasos">Pasos:</h3>
+<section id="crear-un-nuevo-proyecto-con-vite" class="level4">
+<h4 class="anchored" data-anchor-id="crear-un-nuevo-proyecto-con-vite">Crear un nuevo proyecto con Vite:</h4>
+<p>Abre tu terminal y ejecuta:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my-fake-store</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-fake-store</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="crear-el-componente" class="level2">
-<h2 class="anchored" data-anchor-id="crear-el-componente">Crear el componente</h2>
-<p>Vamos a crear un componente llamado <strong>Pokemon</strong> dentro de un directorio llamado <strong>src/components</strong> que nos permita buscar imágenes de Pokemon en la API de Pokemon.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axios <span class="im">from</span> <span class="st">'axios'</span><span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Pokemon <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [pokemon<span class="op">,</span> setPokemon] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [image<span class="op">,</span> setImage] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [loading<span class="op">,</span> setLoading] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [error<span class="op">,</span> setError] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> getPokemon <span class="op">=</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setLoading</span>(<span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setError</span>(<span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> {</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> axios<span class="op">.</span><span class="fu">get</span>(<span class="vs">`https://pokeapi.co/api/v2/pokemon/</span><span class="sc">${</span>pokemon<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setImage</span>(response<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">sprites</span><span class="op">.</span><span class="at">front_default</span>)<span class="op">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">catch</span> (err) {</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setError</span>(<span class="st">'Pokemon not found'</span>)<span class="op">;</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setLoading</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;input</span> <span class="ot">type</span><span class="op">=</span><span class="st">"text"</span> <span class="ot">value</span><span class="op">=</span><span class="va">{</span>pokemon<span class="va">}</span> <span class="ot">onChange</span><span class="op">=</span><span class="va">{</span>(e) <span class="kw">=&gt;</span> <span class="fu">setPokemon</span>(e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="va">}</span> <span class="kw">/&gt;</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;button</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>getPokemon<span class="va">}</span><span class="kw">&gt;</span>Buscar<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="va">{</span>loading <span class="op">&amp;&amp; </span><span class="kw">&lt;p&gt;</span>Loading...<span class="kw">&lt;/p&gt;</span><span class="va">}</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="va">{</span>error <span class="op">&amp;&amp; </span><span class="kw">&lt;p&gt;</span><span class="va">{</span>error<span class="va">}</span><span class="kw">&lt;/p&gt;</span><span class="va">}</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="va">{</span>image <span class="op">&amp;&amp; </span><span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>image<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="va">{</span>pokemon<span class="va">}</span> <span class="kw">/&gt;</span><span class="va">}</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Pokemon<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="instalar-las-dependencias" class="level4">
+<h4 class="anchored" data-anchor-id="instalar-las-dependencias">Instalar las dependencias:</h4>
+<p>Instala las dependencias necesarias para el proyecto:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="importar-el-componente" class="level2">
-<h2 class="anchored" data-anchor-id="importar-el-componente">Importar el componente</h2>
-<p>Vamos a importar el componente en el archivo <strong>App.js</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Pokemon <span class="im">from</span> <span class="st">'./components/Pokemon'</span><span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./App.css'</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h1&gt;</span>Pokemon<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;Pokemon</span> <span class="fu">/&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="instalar-tailwind-css" class="level4">
+<h4 class="anchored" data-anchor-id="instalar-tailwind-css">Instalar Tailwind CSS:</h4>
+<p>Ejecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-D</span> tailwindcss postcss autoprefixer</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> tailwindcss init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ejecutar-la-aplicación" class="level2">
-<h2 class="anchored" data-anchor-id="ejecutar-la-aplicación">Ejecutar la aplicación</h2>
-<p>Para ejecutar la aplicación vamos a utilizar el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="center">
-<p><img src="images/paste-1.png" class="img-fluid" style="width:70.0%"></p>
+<section id="configurar-tailwind-css" class="level4">
+<h4 class="anchored" data-anchor-id="configurar-tailwind-css">Configurar Tailwind CSS:</h4>
+<p>Agrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">/** </span><span class="an">@type</span><span class="co"> {import('tailwindcss').Config} */</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">content</span><span class="op">:</span> [</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'./index.html'</span><span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'./src/**/*.{js,ts,jsx,tsx}'</span><span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">theme</span><span class="op">:</span> {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">extend</span><span class="op">:</span> {}<span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">plugins</span><span class="op">:</span> []<span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="añadir-directivas-de-tailwind-css" class="level4">
+<h4 class="anchored" data-anchor-id="añadir-directivas-de-tailwind-css">Añadir directivas de Tailwind CSS:</h4>
+<p>Crea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">@tailwind</span> base<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">@tailwind</span> components<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">@tailwind</span> utilities<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="iniciar-el-servidor-de-desarrollo" class="level4">
+<h4 class="anchored" data-anchor-id="iniciar-el-servidor-de-desarrollo">Iniciar el servidor de desarrollo:</h4>
+<p>Ejecuta el siguiente comando para iniciar el servidor de desarrollo:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Abre tu navegador en <a href="http://localhost:5173" class="uri">http://localhost:5173</a> para ver la aplicación en funcionamiento.</p>
+</section>
+</section>
+</section>
+<section id="estructura-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-del-proyecto">2. Estructura del Proyecto</h2>
+<p>Separaremos la lógica de la aplicación en componentes más pequeños:</p>
+<ul>
+<li><strong>ProductCard:</strong> Componente que mostrará cada producto individual.</li>
+<li><strong>ProductList:</strong> Componente que gestionará la lista de productos.</li>
+</ul>
+<p>La estructura de directorios será:</p>
+<pre class="plaintext"><code>src/
+│
+├── components/
+│   ├── ProductCard.jsx
+│   └── ProductList.jsx
+└── App.jsx</code></pre>
+</section>
+<section id="creación-de-los-componentes" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-los-componentes">3. Creación de los Componentes</h2>
+<section id="productcard.jsx" class="level3">
+<h3 class="anchored" data-anchor-id="productcard.jsx">ProductCard.jsx</h3>
+<p>Este componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ProductCard</span>({ product }) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300"</span><span class="kw">&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;img</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="ot">className</span><span class="op">=</span><span class="st">"w-32 h-32 object-contain mx-auto"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="ot">src</span><span class="op">=</span><span class="va">{</span>product<span class="op">.</span><span class="at">image</span><span class="va">}</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="ot">alt</span><span class="op">=</span><span class="va">{</span>product<span class="op">.</span><span class="at">title</span><span class="va">}</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h3</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-lg font-semibold mt-4"</span><span class="kw">&gt;</span><span class="va">{</span>product<span class="op">.</span><span class="at">title</span><span class="va">}</span><span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-gray-500 mt-2"</span><span class="kw">&gt;</span><span class="va">{</span>product<span class="op">.</span><span class="at">category</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-green-600 font-bold mt-2"</span><span class="kw">&gt;</span><span class="va">{</span>product<span class="op">.</span><span class="at">price</span><span class="va">}</span> USD<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductCard<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="productlist.jsx" class="level3">
+<h3 class="anchored" data-anchor-id="productlist.jsx">ProductList.jsx</h3>
+<p>Este componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React<span class="op">,</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductCard <span class="im">from</span> <span class="st">'./ProductCard'</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ProductList</span>() {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [products<span class="op">,</span> setProducts] <span class="op">=</span> <span class="fu">useState</span>([])<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [loading<span class="op">,</span> setLoading] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [error<span class="op">,</span> setError] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> fetchProducts <span class="op">=</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> {</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'https://fakestoreapi.com/products'</span>)<span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="op">!</span>response<span class="op">.</span><span class="at">ok</span>) {</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(<span class="st">'Algo salió mal al obtener los productos'</span>)<span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setProducts</span>(data)<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setLoading</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">catch</span> (error) {</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setError</span>(error<span class="op">.</span><span class="at">message</span>)<span class="op">;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setLoading</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetchProducts</span>()<span class="op">;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [])<span class="op">;</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (loading) <span class="cf">return </span><span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-center text-gray-500"</span><span class="kw">&gt;</span>Cargando productos...<span class="kw">&lt;/p&gt;</span><span class="op">;</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (error) <span class="cf">return </span><span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-center text-red-500"</span><span class="kw">&gt;</span>Error: <span class="va">{</span>error<span class="va">}</span><span class="kw">&lt;/p&gt;</span><span class="op">;</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"</span><span class="kw">&gt;</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>      <span class="va">{</span>products<span class="op">.</span><span class="fu">map</span>((product) <span class="kw">=&gt;</span> (</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;ProductCard</span> <span class="ot">key</span><span class="op">=</span><span class="va">{</span>product<span class="op">.</span><span class="at">id</span><span class="va">}</span> <span class="ot">product</span><span class="op">=</span><span class="va">{</span>product<span class="va">}</span> <span class="fu">/&gt;</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>      ))<span class="va">}</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductList<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="integración-en-app.jsx" class="level2">
+<h2 class="anchored" data-anchor-id="integración-en-app.jsx">4. Integración en App.jsx</h2>
+<p>Finalmente, integra el componente ProductList dentro de tu archivo App.jsx.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductList <span class="im">from</span> <span class="st">'./components/ProductList'</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"container mx-auto px-4 py-8"</span><span class="kw">&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h1</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-3xl font-bold text-center mb-8"</span><span class="kw">&gt;</span>Productos de Fake Store<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;ProductList</span> <span class="fu">/&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="estilizado-con-tailwind-css" class="level2">
+<h2 class="anchored" data-anchor-id="estilizado-con-tailwind-css">5. Estilizado con Tailwind CSS</h2>
+<p>Tailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:</p>
+<ul>
+<li><strong>grid-cols-1 sm:grid-cols-2 lg:grid-cols-4:</strong> Define la cuadrícula con 1 columna por defecto, 2 columnas en pantallas medianas, y 4 columnas en pantallas grandes.</li>
+<li><strong>border, rounded-lg, shadow-sm:</strong> Añaden bordes, esquinas redondeadas y sombras suaves.</li>
+<li><strong>transition, hover:shadow-lg:</strong> Crea un efecto de transición en el hover.</li>
+</ul>
+</section>
+<section id="ejecución-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="ejecución-del-proyecto">6. Ejecución del Proyecto</h2>
+<p>Con todo el código en su lugar, puedes ejecutar tu aplicación:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Visita <a href="http://localhost:5173" class="uri">http://localhost:5173</a> en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS.</p>
+</section>
+<section id="extra" class="level1">
+<h1>Extra</h1>
+<section id="agregar-el-cambio-de-tema-de-oscuro-a-claro" class="level2">
+<h2 class="anchored" data-anchor-id="agregar-el-cambio-de-tema-de-oscuro-a-claro">Agregar el Cambio de Tema de Oscuro a Claro</h2>
+<p>Para implementar la funcionalidad de cambio de tema entre oscuro y claro, sigue estos pasos:</p>
+<section id="actualiza-app.jsx" class="level3">
+<h3 class="anchored" data-anchor-id="actualiza-app.jsx">Actualiza App.jsx:</h3>
+<p>Utiliza el siguiente código en tu archivo App.jsx para manejar el cambio de tema y aplicar estilos condicionales:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React<span class="op">,</span> { useState } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductList <span class="im">from</span> <span class="st">'./components/ProductList'</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [darkMode<span class="op">,</span> setDarkMode] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="va">{</span><span class="vs">`min-h-screen </span><span class="sc">${</span>darkMode <span class="op">?</span> <span class="st">'dark'</span> <span class="op">:</span> <span class="st">''</span><span class="sc">}</span><span class="vs">`</span><span class="va">}</span><span class="kw">&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"container mx-auto px-4 py-8"</span><span class="kw">&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"flex justify-end mb-4"</span><span class="kw">&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>          <span class="kw">&lt;button</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>            <span class="ot">className</span><span class="op">=</span><span class="st">"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200"</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>            <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>() <span class="kw">=&gt;</span> <span class="fu">setDarkMode</span>(<span class="op">!</span>darkMode)<span class="va">}</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>          <span class="kw">&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">{</span>darkMode <span class="op">?</span> <span class="st">'Modo Claro'</span> <span class="op">:</span> <span class="st">'Modo Oscuro'</span><span class="va">}</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>          <span class="kw">&lt;/button&gt;</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100"</span><span class="kw">&gt;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>          Productos de Fake Store</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;ProductList</span> <span class="fu">/&gt;</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cambios-importantes" class="level3">
+<h3 class="anchored" data-anchor-id="cambios-importantes">Cambios importantes:</h3>
+<ul>
+<li>Se añadió <strong>min-h-screen</strong> para asegurar que el contenedor principal ocupe toda la altura de la pantalla.</li>
+<li>Se <strong>actualizaron</strong> las <strong>clases</strong> del <strong>botón</strong> y del <strong>encabezado</strong> para manejar el cambio de estilo en modo oscuro.</li>
+</ul>
+</section>
+<section id="asegúrate-de-configurar-tailwind-para-el-modo-oscuro" class="level3">
+<h3 class="anchored" data-anchor-id="asegúrate-de-configurar-tailwind-para-el-modo-oscuro">Asegúrate de Configurar Tailwind para el Modo Oscuro:</h3>
+<p>Verifica que tu archivo tailwind.config.cjs esté configurado correctamente para soportar el modo oscuro:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">/** </span><span class="an">@type</span><span class="co"> {import('tailwindcss').Config} */</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">darkMode</span><span class="op">:</span> <span class="st">'class'</span><span class="op">,</span> <span class="co">// Habilita el modo oscuro utilizando la clase 'dark'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">content</span><span class="op">:</span> [</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'./index.html'</span><span class="op">,</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'./src/**/*.{js,ts,jsx,tsx}'</span><span class="op">,</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">theme</span><span class="op">:</span> {</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">extend</span><span class="op">:</span> {}<span class="op">,</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">plugins</span><span class="op">:</span> []<span class="op">,</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esta configuración permite que el modo oscuro se active añadiendo la clase dark al contenedor principal.</p>
+</section>
+<section id="actualiza-los-estilos-en-los-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="actualiza-los-estilos-en-los-componentes">Actualiza los Estilos en los Componentes:</h3>
+<p>Asegúrate de que todos los componentes respondan al modo oscuro. Por ejemplo, en ProductCard.jsx:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">ProductCard</span>({ product }) {</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800"</span><span class="kw">&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;img</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="ot">className</span><span class="op">=</span><span class="st">"w-32 h-32 object-contain mx-auto"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="ot">src</span><span class="op">=</span><span class="va">{</span>product<span class="op">.</span><span class="at">image</span><span class="va">}</span> </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="ot">alt</span><span class="op">=</span><span class="va">{</span>product<span class="op">.</span><span class="at">title</span><span class="va">}</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h3</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100"</span><span class="kw">&gt;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">{</span>product<span class="op">.</span><span class="at">title</span><span class="va">}</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-gray-500 mt-2 dark:text-gray-400"</span><span class="kw">&gt;</span><span class="va">{</span>product<span class="op">.</span><span class="at">category</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"text-green-600 font-bold mt-2"</span><span class="kw">&gt;</span><span class="va">{</span>product<span class="op">.</span><span class="at">price</span><span class="va">}</span> USD<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductCard<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cambios-importantes-1" class="level3">
+<h3 class="anchored" data-anchor-id="cambios-importantes-1">Cambios importantes:</h3>
+<ul>
+<li>Se actualizaron las clases para manejar el estilo en modo oscuro.</li>
+</ul>
+</section>
+</section>
+<section id="crear-un-build-de-producción" class="level2">
+<h2 class="anchored" data-anchor-id="crear-un-build-de-producción">Crear un Build de Producción</h2>
+<p>Para crear un build optimizado para producción, ejecuta el siguiente comando:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este comando generará una carpeta dist con los archivos optimizados para producción.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para probar el build de producción, puedes usar npx para ejecutar el servidor de pruebas sin necesidad de instalación global.</p>
+<p>Ejecuta el siguiente comando:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> serve <span class="at">-s</span> dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego, abre tu navegador en <a href="http://localhost:5000" class="uri">http://localhost:5000</a> para ver la aplicación en funcionamiento.</p>
+</div>
 </div>
 </section>
-<section id="conclusión" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
-<p>Hemos aprendido a crear el método fetch con React, para ello hemos creado una aplicación que nos permite buscar imágenes de Pokemon en la API de Pokemon.</p>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>En este tutorial, aprendiste a consumir una API con React y a estilizar la aplicación con Tailwind CSS. También implementaste la funcionalidad de cambio de tema entre oscuro y claro. Ahora puedes aplicar estos conceptos en tus propios proyectos para crear aplicaciones web modernas y atractivas.</p>
 </section>
 </div>
 
@@ -1136,8 +1346,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad6/8_primeros_pasos_con_react.html" class="pagination-link" aria-label="Primeros pasos con React">
-        <span class="nav-page-text"><span class="chapter-title">Primeros pasos con React</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad6/9_axios_con_react.html" class="pagination-link" aria-label="9_axios_con_react.html">
+        <span class="nav-page-text"><span class="chapter-title">9_axios_con_react.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
