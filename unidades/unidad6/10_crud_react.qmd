@@ -1,3 +1,4 @@
+:::{.justify}
 # CRUD en React con API REST
 
 ## Requisitos previos:
@@ -295,4 +296,5 @@ En este tutorial, aprendiste a crear una aplicación CRUD en React que interact�
 
 :::{.callout-tip}
 Si deseas profundizar en el tema, te recomendamos explorar otras funcionalidades como paginación, autenticación, validación de formularios, entre otros.
+:::
 :::

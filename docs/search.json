@@ -3483,80 +3483,25 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-el-proyecto",
-    "href": "unidades/unidad6/10_crud_react.html#crear-el-proyecto",
-    "title": "Crud Básico con React y Axios",
-    "section": "Crear el proyecto",
-    "text": "Crear el proyecto",
+    "objectID": "unidades/unidad6/10_crud_react.html",
+    "href": "unidades/unidad6/10_crud_react.html",
+    "title": "CRUD en React con API REST",
+    "section": "",
+    "text": "Requisitos previos:\nPrimero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:\nSigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:\nAxios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:\nAhora, edita el archivo api.js:\nEste archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.\nPara manejar las rutas de la aplicación, instala react-router-dom:\nModifica tu archivo src/App.jsx para agregar rutas:\nAquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.\nEste componente mostrará una lista de productos obtenidos de la API:\nAhora, edita ProductList.jsx para obtener y mostrar la lista de productos:\nUtilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.\nEste componente mostrará los detalles de un producto específico y permitirá eliminarlo:\nEdita ProductDetail.jsx:\nAquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.\nEste componente servirá tanto para crear un nuevo producto como para editar uno existente:\nEdita ProductForm.jsx:\nEste formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.\nFinalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:\nAbre tu navegador y navega a http://localhost:5173 (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-la-api",
-    "href": "unidades/unidad6/10_crud_react.html#crear-la-api",
-    "title": "Crud Básico con React y Axios",
-    "section": "Crear la API",
-    "text": "Crear la API\nCreamos un directorio llamado backend y dentro de él, creamos un archivo llamado package.json con el siguiente contenido:\nnpm init -y\nLuego, instalamos express y cors:\nVamos a crear una API muy sencilla con express. Para instalarlo, ejecuta el siguiente comando:\nnpm install express cors\nLuego, crea un archivo llamado server.js en la raíz del proyecto con el siguiente contenido:\nconst express = require('express');\nconst cors = require('cors');\nconst app = express();\n\napp.use(cors());\napp.use(express.json());\n\nlet tasks = [\n  { id: 1, title: 'Task 1' },\n  { id: 2, title: 'Task 2' },\n  { id: 3, title: 'Task 3' },\n];\n\napp.get('/tasks', (req, res) =&gt; {\n  res.json(tasks);\n});\n\napp.post('/tasks', (req, res) =&gt; {\n  const task = { id: tasks.length + 1, title: req.body.title };\n  tasks.push(task);\n  res.json(task);\n});\n\napp.put('/tasks/:id', (req, res) =&gt; {\n  const task = tasks.find(task =&gt; task.id === parseInt(req.params.id));\n  task.title = req.body.title;\n  res.json(task);\n});\n\napp.delete('/tasks/:id', (req, res) =&gt; {\n  tasks = tasks.filter(task =&gt; task.id !== parseInt(req.params.id));\n  res.json({ message: 'Task deleted' });\n});\n\napp.listen(3000, () =&gt; {\n  console.log('Server running on port 3000');\n});\nEn el código anterior estamos creando una API con las siguientes rutas:\n\nGET /tasks: Obtiene la lista de tareas.\nPOST /tasks: Agrega una tarea.\nPUT /tasks/:id: Edita una tarea.\nDELETE /tasks/:id: Elimina una tarea.\n\nPara ejecutar la API, ejecuta el siguiente comando:\nnode server.js",
+    "objectID": "unidades/unidad6/10_crud_react.html#requisitos-previos",
+    "href": "unidades/unidad6/10_crud_react.html#requisitos-previos",
+    "title": "CRUD en React con API REST",
+    "section": "",
+    "text": "Node.js y npm (o yarn, o pnpm) instalados en tu sistema.\nConocimientos básicos de React y JavaScript.\nBackend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.\n\n\nInicializa el proyecto de React\n\n\nnpm create vite@latest nombre-del-proyecto\n\ncd nombre-del-proyecto\nnpm install\n\nConfigura Axios para las solicitudes a la API\n\n\nmkdir -p src/utils\ntouch src/utils/api.js\n\nimport axios from 'axios';\n\nconst api = axios.create({\n  baseURL: 'https://tu-api-backend.com/api', // Reemplaza esta URL con la URL de tu API\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\nexport default api;\n\n\nConfigura las rutas y el sistema de navegación con react-router-dom\n\n\nnpm install react-router-dom\n\nimport { BrowserRouter as Router, Route, Routes } from 'react-router-dom';\nimport ProductList from './components/ProductList';\nimport ProductDetail from './components/ProductDetail';\nimport ProductForm from './components/ProductForm';\n\nconst App = () =&gt; {\n  return (\n    &lt;Router&gt;\n      &lt;Routes&gt;\n        &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt;\n        &lt;Route path=\"/products\" element={&lt;ProductList /&gt;} /&gt;\n        &lt;Route path=\"/products/new\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/edit/:id\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/:id\" element={&lt;ProductDetail /&gt;} /&gt;\n      &lt;/Routes&gt;\n    &lt;/Router&gt;\n  );\n};\n\nconst Home = () =&gt; (\n  &lt;div&gt;\n    &lt;h1&gt;CRUD en React con API REST&lt;/h1&gt;\n    &lt;p&gt;Esta es una aplicación de ejemplo para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST con React.&lt;/p&gt;\n    &lt;p&gt;Dirígete a &lt;Link to=\"/products\"&gt;Productos&lt;/Link&gt; para comenzar.&lt;/p&gt;\n  &lt;/div&gt;\n);\n\nexport default App;\n\n\nCrea el componente ProductList (Leer)\n\n\nmkdir -p src/components\ntouch src/components/ProductList.jsx\n\nimport { useState, useEffect } from 'react';\nimport api from '../utils/api';\nimport { Link } from 'react-router-dom';\n\nconst ProductList = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    // Obtener todos los productos\n    api.get('/products')\n      .then(response =&gt; {\n        setProducts(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener los productos: \", error);\n      });\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Lista de Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map(product =&gt; (\n          &lt;li key={product.id}&gt;\n            &lt;Link to={`/products/${product.id}`}&gt;{product.name}&lt;/Link&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n      &lt;Link to=\"/products/new\"&gt;Crear Nuevo Producto&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductList;\n\n\nCrea el componente ProductDetail (Leer uno y eliminar)\n\n\ntouch src/components/ProductDetail.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useParams, useNavigate, Link } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductDetail = () =&gt; {\n  const { id } = useParams();\n  const [product, setProduct] = useState(null);\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    // Obtener los detalles de un producto\n    api.get(`/products/${id}`)\n      .then(response =&gt; {\n        setProduct(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener el producto: \", error);\n      });\n  }, [id]);\n\n  const handleDelete = () =&gt; {\n    // Eliminar producto\n    api.delete(`/products/${id}`)\n      .then(() =&gt; {\n        navigate('/products');\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al eliminar el producto: \", error);\n      });\n  };\n\n  if (!product) return &lt;div&gt;Cargando...&lt;/div&gt;;\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{product.name}&lt;/h1&gt;\n      &lt;p&gt;{product.description}&lt;/p&gt;\n      &lt;button onClick={handleDelete}&gt;Eliminar&lt;/button&gt;\n      &lt;Link to={`/products/edit/${product.id}`}&gt;Editar&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductDetail;\n\n\nCrea el componente ProductForm (Crear y Actualizar)\n\n\ntouch src/components/ProductForm.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useNavigate, useParams } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductForm = () =&gt; {\n  const [name, setName] = useState('');\n  const [description, setDescription] = useState('');\n  const { id } = useParams();\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    if (id) {\n      // Si hay un `id`, estamos editando un producto\n      api.get(`/products/${id}`)\n        .then(response =&gt; {\n          const product = response.data;\n          setName(product.name);\n          setDescription(product.description);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al obtener los detalles del producto: \", error);\n        });\n    }\n  }, [id]);\n\n  const handleSubmit = (e) =&gt; {\n    e.preventDefault();\n    const product = { name, description };\n\n    if (id) {\n      // Actualizar producto\n      api.put(`/products/${id}`, product)\n        .then(() =&gt; {\n          navigate(`/products/${id}`);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al actualizar el producto: \", error);\n        });\n    } else {\n      // Crear nuevo producto\n      api.post('/products', product)\n        .then(() =&gt; {\n          navigate('/products');\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al crear el producto: \", error);\n        });\n    }\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{id ? 'Editar Producto' : 'Crear Producto'}&lt;/h1&gt;\n      &lt;form onSubmit={handleSubmit}&gt;\n        &lt;div&gt;\n          &lt;label&gt;Nombre&lt;/label&gt;\n          &lt;input\n            type=\"text\"\n            value={name}\n            onChange={(e) =&gt; setName(e.target.value)}\n            required\n          /&gt;\n        &lt;/div&gt;\n        &lt;div&gt;\n          &lt;label&gt;Descripción&lt;/label&gt;\n          &lt;textarea\n            value={description}\n            onChange={(e) =&gt; setDescription(e.target.value)}\n            required\n          &gt;&lt;/textarea&gt;\n        &lt;/div&gt;\n        &lt;button type=\"submit\"&gt;{id ? 'Actualizar' : 'Crear'}&lt;/button&gt;\n      &lt;/form&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductForm;\n\n\nEjecuta y prueba la aplicación\n\n\nnpm run dev",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-el-proyecto-de-react",
-    "href": "unidades/unidad6/10_crud_react.html#crear-el-proyecto-de-react",
-    "title": "Crud Básico con React y Axios",
-    "section": "Crear el proyecto de React",
-    "text": "Crear el proyecto de React\nPara ello nos dirijimos al directorio frontend.\nPara crear el proyecto vamos a usar vite. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:\nnpm create vite@latest .\nLuego, vamos a instalar axios para hacer las peticiones a la API:\nnpm install axios",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-la-lista-de-tareas",
-    "href": "unidades/unidad6/10_crud_react.html#crear-la-lista-de-tareas",
-    "title": "Crud Básico con React y Axios",
-    "section": "Crear la lista de tareas",
-    "text": "Crear la lista de tareas\nCreamos el directorio src/components y dentro de él, creamos un archivo llamado TaskList.js con el siguiente contenido:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst TaskList = () =&gt; {\n  const [tasks, setTasks] = useState([]);\n  const [title, setTitle] = useState('');\n\n  useEffect(() =&gt; {\n    axios.get('http://localhost:3000/tasks')\n      .then(response =&gt; setTasks(response.data));\n  }, []);\n\n  const addTask = () =&gt; {\n    axios.post('http://localhost:3000/tasks', { title })\n      .then(response =&gt; setTasks([...tasks, response.data]));\n  };\n\n  const editTask = (id, title) =&gt; {\n    axios.put(`http://localhost:3000/tasks/${id}`, { title })\n      .then(response =&gt; {\n        const newTasks = tasks.map(task =&gt; {\n          if (task.id === id) {\n            task.title = title;\n          }\n          return task;\n        });\n        setTasks(newTasks);\n      });\n  };\n\n  const deleteTask = id =&gt; {\n    axios.delete(`http://localhost:3000/tasks/${id}`)\n      .then(() =&gt; setTasks(tasks.filter(task =&gt; task.id !== id)));\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={title} onChange={e =&gt; setTitle(e.target.value)} /&gt;\n      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;\n      &lt;ul&gt;\n        {tasks.map(task =&gt; (\n          &lt;li key={task.id}&gt;\n            &lt;input type=\"text\" value={task.title} onChange={e =&gt; editTask(task.id, e.target.value)} /&gt;\n            &lt;button onClick={() =&gt; deleteTask(task.id)}&gt;Delete&lt;/button&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default TaskList;\nEn el código anterior estamos creando un componente llamado TaskList que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el useEffect hacemos una petición a la API para obtener la lista de tareas. En el método addTask agregamos una tarea a la lista. En el método editTask editamos una tarea de la lista. En el método deleteTask eliminamos una tarea de la lista.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#mostrar-la-lista-de-tareas",
-    "href": "unidades/unidad6/10_crud_react.html#mostrar-la-lista-de-tareas",
-    "title": "Crud Básico con React y Axios",
-    "section": "Mostrar la lista de tareas",
-    "text": "Mostrar la lista de tareas\nVamos a importar el componente TaskList en el archivo App.js y mostrarlo en la aplicación:\nimport React from 'react';\nimport TaskList from './components/TaskList';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Task List&lt;/h1&gt;\n      &lt;TaskList /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#probar-la-aplicación",
-    "href": "unidades/unidad6/10_crud_react.html#probar-la-aplicación",
-    "title": "Crud Básico con React y Axios",
-    "section": "Probar la aplicación",
-    "text": "Probar la aplicación\n\n\n\nPara probar la aplicación, ejecuta el siguiente comando:\nnpm run dev\nAbre tu navegador en la dirección http://localhost:3000 y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#conclusiones",
-    "href": "unidades/unidad6/10_crud_react.html#conclusiones",
-    "title": "Crud Básico con React y Axios",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con axios y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crud Básico con React y Axios</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
     ]
   },
   {
@@ -4011,170 +3956,5 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html",
-    "href": "unidades/unidad6/10_crud_react.html",
-    "title": "CRUD en React con API REST",
-    "section": "",
-    "text": "Requisitos previos:\nPrimero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:\nSigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:\nAxios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:\nAhora, edita el archivo api.js:\nEste archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.\nPara manejar las rutas de la aplicación, instala react-router-dom:\nModifica tu archivo src/App.jsx para agregar rutas:\nAquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.\nEste componente mostrará una lista de productos obtenidos de la API:\nAhora, edita ProductList.jsx para obtener y mostrar la lista de productos:\nUtilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.\nEste componente mostrará los detalles de un producto específico y permitirá eliminarlo:\nEdita ProductDetail.jsx:\nAquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.\nEste componente servirá tanto para crear un nuevo producto como para editar uno existente:\nEdita ProductForm.jsx:\nEste formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.\nFinalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:\nAbre tu navegador y navega a http://localhost:5173 (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite",
-    "href": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "",
-    "text": "mkdir my-django-api-client\ncd my-django-api-client\nnpm create vite@latest .",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#instalar-dependencias",
-    "href": "unidades/unidad6/10_crud_react.html#instalar-dependencias",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "2. Instalar Dependencias",
-    "text": "2. Instalar Dependencias\nInstala Axios y Tailwind CSS para manejar las solicitudes HTTP y el estilizado, respectivamente.\nnpm install axios\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#configuración-de-tailwind-css",
-    "href": "unidades/unidad6/10_crud_react.html#configuración-de-tailwind-css",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "3. Configuración de Tailwind CSS",
-    "text": "3. Configuración de Tailwind CSS\nConfigura Tailwind CSS añadiendo las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class',\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nCrea y configura el archivo postcss.config.cjs en la raíz del proyecto:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\nAgrega las directivas de Tailwind CSS en src/index.css:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-componentes-de-react",
-    "href": "unidades/unidad6/10_crud_react.html#crear-componentes-de-react",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "4. Crear Componentes de React",
-    "text": "4. Crear Componentes de React\nVamos a crear dos componentes principales: ProductCard y ProductList.\n\nProductCard.jsx\nEste componente muestra la información de cada producto. Crea un archivo src/components/ProductCard.jsx:\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente se encarga de hacer las solicitudes a la API y mostrar los productos. Crea un archivo src/components/ProductList.jsx:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() =&gt; {\n    const fetchProducts = async () =&gt; {\n      try {\n        const response = await axios.get('http://127.0.0.1:8000/api/productos/');\n        setProducts(response.data);\n        setLoading(false);\n      } catch (error) {\n        setError(error.message);\n        setLoading(false);\n      }\n    };\n\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#integrar-en-app.jsx",
-    "href": "unidades/unidad6/10_crud_react.html#integrar-en-app.jsx",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "5. Integrar en App.jsx",
-    "text": "5. Integrar en App.jsx\nEn src/App.jsx, integra el componente ProductList y añade la funcionalidad para cambiar entre modo claro y oscuro:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de la API de Django\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#ejecutar-el-proyecto",
-    "href": "unidades/unidad6/10_crud_react.html#ejecutar-el-proyecto",
-    "title": "Consumir una API REST con React y Axios",
-    "section": "6. Ejecutar el Proyecto",
-    "text": "6. Ejecutar el Proyecto\nPara iniciar el servidor de desarrollo, ejecuta el siguiente comando:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-build-de-producción",
-    "href": "unidades/unidad6/10_crud_react.html#crear-un-build-de-producción",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "5. Crear un Build de Producción",
-    "text": "5. Crear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nPara probar el build de producción, puedes usar npx para ejecutar un servidor de pruebas:\nnpx serve -s dist\nAbre tu navegador en http://localhost:5000 para ver la aplicación en modo de producción.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "href": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "1. Crear un Proyecto React con Vite y Tailwind CSS",
-    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nPrimero, crea un nuevo proyecto React y configúralo con Tailwind CSS:\nmkdir my-react-app\ncd my-react-app\nnpm create vite@latest .\nnpm install\nnpm install tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\nConfiguración de Tailwind CSS\nEdita tailwind.config.js para habilitar el modo oscuro y definir las rutas para los archivos de tu proyecto:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nCrea el archivo postcss.config.cjs en la raíz de tu proyecto:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\nAñade las directivas de Tailwind CSS a src/index.css:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#instalar-axios",
-    "href": "unidades/unidad6/10_crud_react.html#instalar-axios",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "2. Instalar Axios",
-    "text": "2. Instalar Axios\nInstala axios para manejar las solicitudes HTTP:\nnpm install axios",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#crear-los-componentes-de-react",
-    "href": "unidades/unidad6/10_crud_react.html#crear-los-componentes-de-react",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "3. Crear los Componentes de React",
-    "text": "3. Crear los Componentes de React\n\nProductCard.jsx\nEste componente mostrará la información de cada producto.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#productlist.jsx",
-    "href": "unidades/unidad6/10_crud_react.html#productlist.jsx",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "ProductList.jsx",
-    "text": "ProductList.jsx\nEste componente manejará la lógica para obtener los productos de la API y renderizará los productos utilizando ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() =&gt; {\n    const fetchProducts = async () =&gt; {\n      try {\n        const response = await axios.get('http://127.0.0.1:8000/api/productos/');\n        setProducts(response.data);\n      } catch (error) {\n        setError('Error al obtener los productos');\n      } finally {\n        setLoading(false);\n      }\n    };\n\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#app.jsx",
-    "href": "unidades/unidad6/10_crud_react.html#app.jsx",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "App.jsx",
-    "text": "App.jsx\nIntegra ProductList en tu archivo App.jsx y añade la funcionalidad para cambiar entre modo oscuro y claro.\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de la API\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#ejecutar-la-aplicación",
-    "href": "unidades/unidad6/10_crud_react.html#ejecutar-la-aplicación",
-    "title": "Crear una Aplicación en React para Consumir la API con Axios",
-    "section": "4. Ejecutar la Aplicación",
-    "text": "4. Ejecutar la Aplicación\nInicia el servidor de desarrollo de React:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/10_crud_react.html#requisitos-previos",
-    "href": "unidades/unidad6/10_crud_react.html#requisitos-previos",
-    "title": "CRUD en React con API REST",
-    "section": "",
-    "text": "Node.js y npm (o yarn, o pnpm) instalados en tu sistema.\nConocimientos básicos de React y JavaScript.\nBackend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.\n\n\nInicializa el proyecto de React\n\n\nnpm create vite@latest nombre-del-proyecto\n\ncd nombre-del-proyecto\nnpm install\n\nConfigura Axios para las solicitudes a la API\n\n\nmkdir -p src/utils\ntouch src/utils/api.js\n\nimport axios from 'axios';\n\nconst api = axios.create({\n  baseURL: 'https://tu-api-backend.com/api', // Reemplaza esta URL con la URL de tu API\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\nexport default api;\n\n\nConfigura las rutas y el sistema de navegación con react-router-dom\n\n\nnpm install react-router-dom\n\nimport { BrowserRouter as Router, Route, Routes } from 'react-router-dom';\nimport ProductList from './components/ProductList';\nimport ProductDetail from './components/ProductDetail';\nimport ProductForm from './components/ProductForm';\n\nconst App = () =&gt; {\n  return (\n    &lt;Router&gt;\n      &lt;Routes&gt;\n        &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt;\n        &lt;Route path=\"/products\" element={&lt;ProductList /&gt;} /&gt;\n        &lt;Route path=\"/products/new\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/edit/:id\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/:id\" element={&lt;ProductDetail /&gt;} /&gt;\n      &lt;/Routes&gt;\n    &lt;/Router&gt;\n  );\n};\n\nconst Home = () =&gt; (\n  &lt;div&gt;\n    &lt;h1&gt;CRUD en React con API REST&lt;/h1&gt;\n    &lt;p&gt;Esta es una aplicación de ejemplo para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST con React.&lt;/p&gt;\n    &lt;p&gt;Dirígete a &lt;Link to=\"/products\"&gt;Productos&lt;/Link&gt; para comenzar.&lt;/p&gt;\n  &lt;/div&gt;\n);\n\nexport default App;\n\n\nCrea el componente ProductList (Leer)\n\n\nmkdir -p src/components\ntouch src/components/ProductList.jsx\n\nimport { useState, useEffect } from 'react';\nimport api from '../utils/api';\nimport { Link } from 'react-router-dom';\n\nconst ProductList = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    // Obtener todos los productos\n    api.get('/products')\n      .then(response =&gt; {\n        setProducts(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener los productos: \", error);\n      });\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Lista de Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map(product =&gt; (\n          &lt;li key={product.id}&gt;\n            &lt;Link to={`/products/${product.id}`}&gt;{product.name}&lt;/Link&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n      &lt;Link to=\"/products/new\"&gt;Crear Nuevo Producto&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductList;\n\n\nCrea el componente ProductDetail (Leer uno y eliminar)\n\n\ntouch src/components/ProductDetail.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useParams, useNavigate, Link } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductDetail = () =&gt; {\n  const { id } = useParams();\n  const [product, setProduct] = useState(null);\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    // Obtener los detalles de un producto\n    api.get(`/products/${id}`)\n      .then(response =&gt; {\n        setProduct(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener el producto: \", error);\n      });\n  }, [id]);\n\n  const handleDelete = () =&gt; {\n    // Eliminar producto\n    api.delete(`/products/${id}`)\n      .then(() =&gt; {\n        navigate('/products');\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al eliminar el producto: \", error);\n      });\n  };\n\n  if (!product) return &lt;div&gt;Cargando...&lt;/div&gt;;\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{product.name}&lt;/h1&gt;\n      &lt;p&gt;{product.description}&lt;/p&gt;\n      &lt;button onClick={handleDelete}&gt;Eliminar&lt;/button&gt;\n      &lt;Link to={`/products/edit/${product.id}`}&gt;Editar&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductDetail;\n\n\nCrea el componente ProductForm (Crear y Actualizar)\n\n\ntouch src/components/ProductForm.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useNavigate, useParams } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductForm = () =&gt; {\n  const [name, setName] = useState('');\n  const [description, setDescription] = useState('');\n  const { id } = useParams();\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    if (id) {\n      // Si hay un `id`, estamos editando un producto\n      api.get(`/products/${id}`)\n        .then(response =&gt; {\n          const product = response.data;\n          setName(product.name);\n          setDescription(product.description);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al obtener los detalles del producto: \", error);\n        });\n    }\n  }, [id]);\n\n  const handleSubmit = (e) =&gt; {\n    e.preventDefault();\n    const product = { name, description };\n\n    if (id) {\n      // Actualizar producto\n      api.put(`/products/${id}`, product)\n        .then(() =&gt; {\n          navigate(`/products/${id}`);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al actualizar el producto: \", error);\n        });\n    } else {\n      // Crear nuevo producto\n      api.post('/products', product)\n        .then(() =&gt; {\n          navigate('/products');\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al crear el producto: \", error);\n        });\n    }\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{id ? 'Editar Producto' : 'Crear Producto'}&lt;/h1&gt;\n      &lt;form onSubmit={handleSubmit}&gt;\n        &lt;div&gt;\n          &lt;label&gt;Nombre&lt;/label&gt;\n          &lt;input\n            type=\"text\"\n            value={name}\n            onChange={(e) =&gt; setName(e.target.value)}\n            required\n          /&gt;\n        &lt;/div&gt;\n        &lt;div&gt;\n          &lt;label&gt;Descripción&lt;/label&gt;\n          &lt;textarea\n            value={description}\n            onChange={(e) =&gt; setDescription(e.target.value)}\n            required\n          &gt;&lt;/textarea&gt;\n        &lt;/div&gt;\n        &lt;button type=\"submit\"&gt;{id ? 'Actualizar' : 'Crear'}&lt;/button&gt;\n      &lt;/form&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductForm;\n\n\nEjecuta y prueba la aplicación\n\n\nnpm run dev",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
-    ]
   }
 ]
