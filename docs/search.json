@@ -3318,267 +3318,168 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
-    "href": "unidades/unidad6/7_fetch_con_react.html#crear-la-aplicación",
-    "title": "Axios con React",
-    "section": "Crear la aplicación",
-    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .\nLuego vamos a instalar las dependencias necesarias para la aplicación:\nnpm install axios",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "href": "unidades/unidad6/7_fetch_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "1. Crear un Proyecto React con Vite y Tailwind CSS",
+    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nVamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado.\n\nPasos:\n\nCrear un nuevo proyecto con Vite:\nAbre tu terminal y ejecuta:\nmkdir my-fake-store\ncd my-fake-store\nnpm create vite@latest .\n\n\nInstalar las dependencias:\nInstala las dependencias necesarias para el proyecto:\nnpm install\n\n\nInstalar Tailwind CSS:\nEjecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\n\nConfigurar Tailwind CSS:\nAgrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\n\n\nAñadir directivas de Tailwind CSS:\nCrea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n\nIniciar el servidor de desarrollo:\nEjecuta el siguiente comando para iniciar el servidor de desarrollo:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Axios con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
-    "href": "unidades/unidad6/7_fetch_con_react.html#crear-el-componente",
-    "title": "Axios con React",
-    "section": "Crear el componente",
-    "text": "Crear el componente\nVamos a crear un componente llamado Pokemon dentro de un directorio llamado src/components que nos permita buscar imágenes de Pokemon en la API de Pokemon.\nimport { useState } from 'react';\nimport axios from 'axios';\n\nconst Pokemon = () =&gt; {\n  const [pokemon, setPokemon] = useState('');\n  const [image, setImage] = useState('');\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState('');\n\n  const getPokemon = async () =&gt; {\n    setLoading(true);\n    setError('');\n    try {\n      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);\n      setImage(response.data.sprites.front_default);\n    } catch (err) {\n      setError('Pokemon not found');\n    }\n    setLoading(false);\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;input type=\"text\" value={pokemon} onChange={(e) =&gt; setPokemon(e.target.value)} /&gt;\n      &lt;button onClick={getPokemon}&gt;Buscar&lt;/button&gt;\n      {loading && &lt;p&gt;Loading...&lt;/p&gt;}\n      {error && &lt;p&gt;{error}&lt;/p&gt;}\n      {image && &lt;img src={image} alt={pokemon} /&gt;}\n    &lt;/div&gt;\n  );\n};\n\nexport default Pokemon;",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#estructura-del-proyecto",
+    "href": "unidades/unidad6/7_fetch_con_react.html#estructura-del-proyecto",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "2. Estructura del Proyecto",
+    "text": "2. Estructura del Proyecto\nSepararemos la lógica de la aplicación en componentes más pequeños:\n\nProductCard: Componente que mostrará cada producto individual.\nProductList: Componente que gestionará la lista de productos.\n\nLa estructura de directorios será:\nsrc/\n│\n├── components/\n│   ├── ProductCard.jsx\n│   └── ProductList.jsx\n└── App.jsx",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Axios con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
-    "href": "unidades/unidad6/7_fetch_con_react.html#importar-el-componente",
-    "title": "Axios con React",
-    "section": "Importar el componente",
-    "text": "Importar el componente\nVamos a importar el componente en el archivo App.js.\nimport Pokemon from './components/Pokemon';\nimport './App.css';\n\nfunction App() {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Pokemon&lt;/h1&gt;\n      &lt;Pokemon /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#creación-de-los-componentes",
+    "href": "unidades/unidad6/7_fetch_con_react.html#creación-de-los-componentes",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "3. Creación de los Componentes",
+    "text": "3. Creación de los Componentes\n\nProductCard.jsx\nEste componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4\"&gt;{product.title}&lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchProducts = async () =&gt; {\n    try {\n      const response = await fetch('https://fakestoreapi.com/products');\n      if (!response.ok) {\n        throw new Error('Algo salió mal al obtener los productos');\n      }\n      const data = await response.json();\n      setProducts(data);\n      setLoading(false);\n    } catch (error) {\n      setError(error.message);\n      setLoading(false);\n    }\n  };\n\n  useEffect(() =&gt; {\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Axios con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
-    "href": "unidades/unidad6/7_fetch_con_react.html#ejecutar-la-aplicación",
-    "title": "Axios con React",
-    "section": "Ejecutar la aplicación",
-    "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a utilizar el siguiente comando:\nnpm run dev",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#integración-en-app.jsx",
+    "href": "unidades/unidad6/7_fetch_con_react.html#integración-en-app.jsx",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "4. Integración en App.jsx",
+    "text": "4. Integración en App.jsx\nFinalmente, integra el componente ProductList dentro de tu archivo App.jsx.\nimport React from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  return (\n    &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n      &lt;h1 className=\"text-3xl font-bold text-center mb-8\"&gt;Productos de Fake Store&lt;/h1&gt;\n      &lt;ProductList /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Axios con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#conclusión",
-    "href": "unidades/unidad6/7_fetch_con_react.html#conclusión",
-    "title": "Axios con React",
-    "section": "Conclusión",
-    "text": "Conclusión\nHemos aprendido a crear el método fetch con React, para ello hemos creado una aplicación que nos permite buscar imágenes de Pokemon en la API de Pokemon.",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#estilizado-con-tailwind-css",
+    "href": "unidades/unidad6/7_fetch_con_react.html#estilizado-con-tailwind-css",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "5. Estilizado con Tailwind CSS",
+    "text": "5. Estilizado con Tailwind CSS\nTailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:\n\ngrid-cols-1 sm:grid-cols-2 lg:grid-cols-4: Define la cuadrícula con 1 columna por defecto, 2 columnas en pantallas medianas, y 4 columnas en pantallas grandes.\nborder, rounded-lg, shadow-sm: Añaden bordes, esquinas redondeadas y sombras suaves.\ntransition, hover:shadow-lg: Crea un efecto de transición en el hover.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Axios con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html",
-    "title": "Primeros pasos con React",
-    "section": "",
-    "text": "Crear el componente principal",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#ejecución-del-proyecto",
+    "href": "unidades/unidad6/7_fetch_con_react.html#ejecución-del-proyecto",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "6. Ejecución del Proyecto",
+    "text": "6. Ejecución del Proyecto\nCon todo el código en su lugar, puedes ejecutar tu aplicación:\nnpm run dev\nVisita http://localhost:5173 en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#qué-es-react",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#qué-es-react",
-    "title": "Primeros pasos con React",
-    "section": "¿Qué es React?",
-    "text": "¿Qué es React?\nReact es una librería de JavaScript para construir interfaces de usuario. Fue desarrollada por Facebook y lanzada en 2013. React es una de las librerías más populares para construir interfaces de usuario en la actualidad.",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
+    "href": "unidades/unidad6/7_fetch_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "Agregar el Cambio de Tema de Oscuro a Claro",
+    "text": "Agregar el Cambio de Tema de Oscuro a Claro\nPara implementar la funcionalidad de cambio de tema entre oscuro y claro, sigue estos pasos:\n\nActualiza App.jsx:\nUtiliza el siguiente código en tu archivo App.jsx para manejar el cambio de tema y aplicar estilos condicionales:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de Fake Store\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;\n\n\nCambios importantes:\n\nSe añadió min-h-screen para asegurar que el contenedor principal ocupe toda la altura de la pantalla.\nSe actualizaron las clases del botón y del encabezado para manejar el cambio de estilo en modo oscuro.\n\n\n\nAsegúrate de Configurar Tailwind para el Modo Oscuro:\nVerifica que tu archivo tailwind.config.cjs esté configurado correctamente para soportar el modo oscuro:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nEsta configuración permite que el modo oscuro se active añadiendo la clase dark al contenedor principal.\n\n\nActualiza los Estilos en los Componentes:\nAsegúrate de que todos los componentes respondan al modo oscuro. Por ejemplo, en ProductCard.jsx:\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nCambios importantes:\n\nSe actualizaron las clases para manejar el estilo en modo oscuro.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#componentes",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#componentes",
-    "title": "Primeros pasos con React",
-    "section": "Componentes",
-    "text": "Componentes\nEn React, todo es un componente. Un componente es una pieza de la interfaz de usuario que puede ser reutilizada en diferentes partes de la aplicación. Los componentes pueden ser simples o complejos, y pueden contener otros componentes.",
+    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-un-build-de-producción",
+    "href": "unidades/unidad6/7_fetch_con_react.html#crear-un-build-de-producción",
+    "title": "Consumir una API con React con Fetch.",
+    "section": "Crear un Build de Producción",
+    "text": "Crear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, puedes usar npx para ejecutar el servidor de pruebas sin necesidad de instalación global.\nEjecuta el siguiente comando:\nnpx serve -s dist\nLuego, abre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React con Fetch.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#jsx",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#jsx",
-    "title": "Primeros pasos con React",
-    "section": "JSX",
-    "text": "JSX\nJSX es una extensión de JavaScript que permite escribir código HTML dentro de JavaScript. JSX es una de las características más importantes de React, ya que permite escribir componentes de una forma más sencilla y legible.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "href": "unidades/unidad6/9_axios_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "title": "Consumir una API con React con Axios.",
+    "section": "1. Crear un Proyecto React con Vite y Tailwind CSS",
+    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nVamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#props",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#props",
-    "title": "Primeros pasos con React",
-    "section": "Props",
-    "text": "Props\nLas props son los argumentos que se pasan a un componente. Las props son inmutables, lo que significa que no pueden ser modificadas por el componente que las recibe.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#pasos",
+    "href": "unidades/unidad6/9_axios_con_react.html#pasos",
+    "title": "Consumir una API con React con Axios.",
+    "section": "Pasos:",
+    "text": "Pasos:\n\nCrear un nuevo proyecto con Vite:\n\nAbre tu terminal y ejecuta:\nmkdir my-fake-store-axios\ncd my-fake-store-axios\nnpm create vite@latest .\n\nInstalar las dependencias:\n\nInstala las dependencias necesarias para el proyecto:\nnpm install\n\nInstalar Tailwind CSS:\n\nEjecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\nConfigurar Tailwind CSS:\n\nAgrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\n\nCrear y configurar postcss.config.cjs:\n\nCrea un archivo postcss.config.cjs en la raíz de tu proyecto y añade el siguiente contenido:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\n\nAñadir directivas de Tailwind CSS:\n\nCrea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nIniciar el servidor de desarrollo:\n\nEjecuta el siguiente comando para iniciar el servidor de desarrollo:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#state",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#state",
-    "title": "Primeros pasos con React",
-    "section": "State",
-    "text": "State\nEl state es un objeto que contiene los datos de un componente. El state es mutable, lo que significa que puede ser modificado por el componente que lo contiene.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#estructura-del-proyecto",
+    "href": "unidades/unidad6/9_axios_con_react.html#estructura-del-proyecto",
+    "title": "Consumir una API con React con Axios.",
+    "section": "2. Estructura del Proyecto",
+    "text": "2. Estructura del Proyecto\nSepararemos la lógica de la aplicación en componentes más pequeños:\n\nProductCard: Componente que mostrará cada producto individual.\nProductList: Componente que gestionará la lista de productos.\n\nLa estructura de directorios será:\nsrc/\n│\n├── components/\n│   ├── ProductCard.jsx\n│   └── ProductList.jsx\n└── App.jsx",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#ciclo-de-vida",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#ciclo-de-vida",
-    "title": "Primeros pasos con React",
-    "section": "Ciclo de vida",
-    "text": "Ciclo de vida\nLos componentes de React tienen un ciclo de vida que consta de diferentes fases. Algunas de las fases más importantes son:\n\ncomponentDidMount: Se ejecuta después de que el componente ha sido montado en el DOM.\ncomponentDidUpdate: Se ejecuta después de que el componente ha sido actualizado.\ncomponentWillUnmount: Se ejecuta antes de que el componente sea desmontado del DOM.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#creación-de-los-componentes",
+    "href": "unidades/unidad6/9_axios_con_react.html#creación-de-los-componentes",
+    "title": "Consumir una API con React con Axios.",
+    "section": "3. Creación de los Componentes",
+    "text": "3. Creación de los Componentes\n\nProductCard.jsx\nEste componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchProducts = async () =&gt; {\n    try {\n      const response = await fetch('https://fakestoreapi.com/products');\n      if (!response.ok) {\n        throw new Error('Algo salió mal al obtener los productos');\n      }\n      const data = await response.json();\n      setProducts(data);\n      setLoading(false);\n    } catch (error) {\n      setError(error.message);\n      setLoading(false);\n    }\n  };\n\n  useEffect(() =&gt; {\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#hooks",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#hooks",
-    "title": "Primeros pasos con React",
-    "section": "Hooks",
-    "text": "Hooks\nLos hooks son una característica de React que permite añadir estado y otras características a los componentes funcionales. Algunos de los hooks más comunes son:\n\nuseState: Permite añadir estado a los componentes funcionales.\nuseEffect: Permite añadir efectos secundarios a los componentes funcionales.\nuseContext: Permite acceder al contexto de un componente.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#integración-en-app.jsx",
+    "href": "unidades/unidad6/9_axios_con_react.html#integración-en-app.jsx",
+    "title": "Consumir una API con React con Axios.",
+    "section": "4. Integración en App.jsx",
+    "text": "4. Integración en App.jsx\nFinalmente, integra el componente ProductList dentro de tu archivo App.jsx y añade la funcionalidad de cambio de tema entre oscuro y claro.\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de Fake Store\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#context",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#context",
-    "title": "Primeros pasos con React",
-    "section": "Context",
-    "text": "Context\nEl contexto es una característica de React que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#estilizado-con-tailwind-css",
+    "href": "unidades/unidad6/9_axios_con_react.html#estilizado-con-tailwind-css",
+    "title": "Consumir una API con React con Axios.",
+    "section": "5. Estilizado con Tailwind CSS",
+    "text": "5. Estilizado con Tailwind CSS\nTailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:\n\nmin-h-screen: Asegura que el contenedor principal ocupe toda la altura de la pantalla.\ndark: Clase utilizada para activar el modo oscuro.\nborder, rounded-lg, shadow-sm: Añaden bordes, esquinas redondeadas y sombras suaves.\ntransition, hover:shadow-lg: Crea un efecto de transición en el hover.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#router",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#router",
-    "title": "Primeros pasos con React",
-    "section": "Router",
-    "text": "Router\nEl router es una característica de React que permite gestionar la navegación entre diferentes páginas de la aplicación.",
+    "objectID": "unidades/unidad6/9_axios_con_react.html#ejecución-del-proyecto",
+    "href": "unidades/unidad6/9_axios_con_react.html#ejecución-del-proyecto",
+    "title": "Consumir una API con React con Axios.",
+    "section": "6. Ejecución del Proyecto",
+    "text": "6. Ejecución del Proyecto\nCon todo el código en su lugar, puedes ejecutar tu aplicación:\nnpm run dev\nVisita http://localhost:5173 en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS.\n\nCrear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, puedes usar npx para ejecutar el servidor de pruebas sin necesidad de instalación global.\nEjecuta el siguiente comando:\nnpx serve -s dist\nLuego, abre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#redux",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#redux",
-    "title": "Primeros pasos con React",
-    "section": "Redux",
-    "text": "Redux\nRedux es una librería de JavaScript para gestionar el estado de la aplicación de una forma predecible y escalable. Redux se basa en tres principios fundamentales: un único origen de verdad, solo lectura y cambios mediante acciones.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#práctica",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#práctica",
-    "title": "Primeros pasos con React",
-    "section": "Práctica",
-    "text": "Práctica\nAhora que hemos repasado los conceptos básicos de React, vamos a crear una aplicación sencilla para poner en práctica lo aprendido. En esta aplicación vamos a crear un contador que permita incrementar y decrementar un número.\nPara crear la aplicación vamos a utilizar como aprendimos en la sección anterior Vite + React.\n\nCrear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#conclusiones",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#conclusiones",
-    "title": "Primeros pasos con React",
-    "section": "Conclusiones",
-    "text": "Conclusiones\n\nEn este capítulo aprendimos los conceptos básicos de React y cómo crear una aplicación sencilla utilizando Vite + React. En el próximo capítulo vamos a aprender cómo trabajar con componentes en React y cómo organizar el código de una aplicación de forma eficiente.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/8_primeros_pasos_con_react.html#ejercicios",
-    "href": "unidades/unidad6/8_primeros_pasos_con_react.html#ejercicios",
-    "title": "Primeros pasos con React",
-    "section": "Ejercicios",
-    "text": "Ejercicios\n\n\nModificar el contador para que no pueda ser menor que cero.\nCrear un nuevo componente que muestre un mensaje si el contador es mayor que cero.\n\n\n\n\nVer solución\n\n\nSolución ejercicio 1\nPara modificar el contador para que no pueda ser menor que cero, podemos modificar la función decrement de la siguiente forma:\nconst decrement = () =&gt; {\n  if (count &gt; 0) {\n    setCount(count - 1);\n  }\n};\n\n\nSolución ejercicio 2\nPara crear un nuevo componente que muestre un mensaje si el contador es mayor que cero, podemos crear un nuevo componente llamado Message.js con el siguiente contenido:\nimport React from 'react';\n\nconst Message = ({ count }) =&gt; {\n  return count &gt; 0 ? &lt;h2&gt;El contador es mayor que cero&lt;/h2&gt; : null;\n};\n\nexport default Message;\nLuego podemos importar y utilizar este componente en el componente Home:\nimport React from 'react';\nimport Counter from '../components/Counter';\nimport Message from '../components/Message';\n\nconst Home = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Counter App&lt;/h1&gt;\n      &lt;Counter /&gt;\n      &lt;Message /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Home;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Primeros pasos con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-la-aplicación",
-    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-la-aplicación",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "Crear la aplicación",
-    "text": "Crear la aplicación\nPara crear la aplicación vamos a utilizar el siguiente comando:\nnpm create vite@latest .",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-el-componente",
-    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#crear-el-componente",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "Crear el componente",
-    "text": "Crear el componente\nVamos a crear el directorio components y dentro de él el archivo Products.jsx.\nimport React, { useState, useEffect } from 'react';\n\nconst Products = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    fetch('https://fakestoreapi.com/products')\n      .then((response) =&gt; response.json())\n      .then((data) =&gt; setProducts(data));\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map((product) =&gt; (\n          &lt;li key={product.id}&gt;{product.title}&lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default Products;\nEn este componente estamos utilizando el hook useState para guardar el listado de productos y el hook useEffect para hacer el fetch a la API.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#importar-el-componente",
-    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#importar-el-componente",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "Importar el componente",
-    "text": "Importar el componente\nVamos a importar el componente Products en App.jsx.\nimport React from 'react';\n\nimport Products from './components/Products';\n\nconst App = () =&gt; {\n  return (\n    &lt;div&gt;\n      &lt;Products /&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default App;\nEn el código anterior estamos importando el componente Products y lo estamos renderizando en App.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
-    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#ejecutar-la-aplicación",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "Ejecutar la aplicación",
-    "text": "Ejecutar la aplicación\nPara ejecutar la aplicación vamos a correr el siguiente comando.\nnpm run dev\nAhora vamos a abrir el navegador en la dirección http://localhost:3000 y vamos a ver el listado de productos.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_fetch_con_react_tiempo.html#conclusiones",
-    "href": "unidades/unidad6/9_fetch_con_react_tiempo.html#conclusiones",
-    "title": "Fetch con React para obtener el listado de productos",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn esta sección hemos visto cómo podemos hacer un fetch con React para obtener un listado de productos desde una API.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Fetch con React para obtener el listado de productos</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
     ]
   },
   {
@@ -3666,7 +3567,7 @@
     "text": "1. Configuración Inicial del Proyecto",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3677,7 +3578,7 @@
     "text": "1.1. Crear un Proyecto Django\nAbre tu terminal y ejecuta los siguientes comandos para crear un nuevo proyecto Django:\npython -m venv env\nsource env/bin/activate\npip install django==4.2\ndjango-admin startproject ecommerce_project .\ncd ecommerce_project\n\n\n1.2 Crear una Aplicación Django\nDentro del directorio del proyecto, crea una aplicación para manejar el e-commerce:\npython manage.py startapp products\n\n\n1.3 Instalar Django Rest Framework\nInstala DRF usando pip:\npip install djangorestframework\n\n\n1.4 Configurar el Proyecto\nAñade ‘rest_framework’ y tu nueva aplicación ‘products’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nINSTALLED_APPS = [\n    # ... otras apps\n    'rest_framework',\n    'products',\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3688,7 +3589,7 @@
     "text": "2. Definir el Modelo de Datos\n\n2.1 Crear Modelos en products/models.py\nDefine los modelos para el e-commerce, como Product, Category, y Order:\nfrom django.db import models\n\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n\n    def __str__(self):\n        return self.name\n\nclass Product(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)\n    stock = models.PositiveIntegerField()\n\n    def __str__(self):\n        return self.name\n\nclass Order(models.Model):\n    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    total_price = models.DecimalField(max_digits=10, decimal_places=2)\n    order_date = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f\"Order {self.id} - {self.product.name}\"\n\n\n2.2 Crear y Aplicar Migraciones\nGenera y aplica las migraciones para los modelos:\npython manage.py makemigrations\npython manage.py migrate",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3699,7 +3600,7 @@
     "text": "3. Crear Serializers\n\n3.1 Definir Serializers en products/serializers.py\nLos serializers se encargan de transformar los modelos en formatos JSON y viceversa:\nfrom rest_framework import serializers\nfrom .models import Category, Product, Order\n\nclass CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = '__all__'\n\nclass ProductSerializer(serializers.ModelSerializer):\n    category = CategorySerializer()\n\n    class Meta:\n        model = Product\n        fields = '__all__'\n\nclass OrderSerializer(serializers.ModelSerializer):\n    product = ProductSerializer()\n\n    class Meta:\n        model = Order\n        fields = '__all__'",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3710,7 +3611,7 @@
     "text": "4. Crear Vistas y Rutas\n\n4.1 Definir Vistas en products/views.py\nUtiliza las vistas basadas en clases de DRF para crear y manejar las operaciones CRUD:\nfrom rest_framework import generics\nfrom .models import Category, Product, Order\nfrom .serializers import CategorySerializer, ProductSerializer, OrderSerializer\n\nclass CategoryListCreate(generics.ListCreateAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass CategoryDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass ProductListCreate(generics.ListCreateAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass ProductDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass OrderListCreate(generics.ListCreateAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer\n\nclass OrderDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3721,7 +3622,7 @@
     "text": "4.2 Configurar Rutas en products/urls.py\nDefine las rutas para acceder a las vistas:\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('categories/', views.CategoryListCreate.as_view(), name='category-list-create'),\n    path('categories/&lt;int:pk&gt;/', views.CategoryDetail.as_view(), name='category-detail'),\n    path('products/', views.ProductListCreate.as_view(), name='product-list-create'),\n    path('products/&lt;int:pk&gt;/', views.ProductDetail.as_view(), name='product-detail'),\n    path('orders/', views.OrderListCreate.as_view(), name='order-list-create'),\n    path('orders/&lt;int:pk&gt;/', views.OrderDetail.as_view(), name='order-detail'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3732,7 +3633,7 @@
     "text": "4.3 Incluir las URLs en ecommerce_project/urls.py\nAñade las URLs de la aplicación al archivo principal de URLs del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3743,7 +3644,7 @@
     "text": "5. Probar la API\n\n5.1 Ejecutar el Servidor de Desarrollo\nInicia el servidor de desarrollo de Django:\npython manage.py runserver",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3754,7 +3655,7 @@
     "text": "5.2 Probar los Endpoints\nUtiliza herramientas como Postman o cURL para probar los endpoints:\n\nListar categorías: GET /api/categories/\nCrear categoría: POST /api/categories/\nObtener categoría específica: GET /api/categories/{id}/\nActualizar categoría: PUT /api/categories/{id}/\nEliminar categoría: DELETE /api/categories/{id}/\n\nY lo mismo para productos y pedidos.\n\nListar productos: GET /api/products/\nCrear producto: POST /api/products/\nObtener producto específico: GET /api/products/{id}/\nActualizar producto: PUT /api/products/{id}/\nEliminar producto: DELETE /api/products/{id}/",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3765,7 +3666,7 @@
     "text": "1. Instalar Django Rest Swagger\nInstala Django Rest Swagger usando pip:\npip install drf-yasg",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3776,7 +3677,7 @@
     "text": "2. Configurar Django Rest Swagger\nAñade ‘rest_framework_swagger’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import permissions\nfrom drf_yasg.views import get_schema_view\nfrom drf_yasg import openapi\n\nschema_view = get_schema_view(\n    openapi.Info(\n        title=\"E-commerce API\",\n        default_version='v1',\n        description=\"API documentation for the E-commerce project\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"contact@ecommerce.local\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,\n    permission_classes=(permissions.AllowAny,),\n)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3787,7 +3688,7 @@
     "text": "3. Configurar las URLs\nAñade las URLs de Swagger al archivo principal de URLs del proyecto:\n´´´\nfrom rest_framework_swagger.views import get_swagger_view\n\nschema_view = get_swagger_view(title='E-Commerce API')\n\nurlpatterns = [\n    ´´´\n    path('docs/', schema_view),\n]\n\n\n\n\n\n\nTip\n\n\n\nPara evitar un error común es necesario instalr setuptools con el siguiente comando:\npip install setuptools\n\n\nFinalmente es necesario agregar el siguiente código al final del archivo settings.py\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'drf_yasg',\n    'rest_framework',\n    'products',\n]\n\n´´´\nREST_FRAMEWORK = {\n    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'\n}\n\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://127.0.0.1:8000\",\n    # Añade otros orígenes permitidos aquí\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3798,7 +3699,7 @@
     "text": "4. Probar la Documentación",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3809,7 +3710,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -3820,7 +3721,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3831,7 +3732,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3842,7 +3743,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3853,7 +3754,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3864,7 +3765,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3875,7 +3776,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3886,7 +3787,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3897,7 +3798,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3908,7 +3809,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3919,7 +3820,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3930,7 +3831,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3941,7 +3842,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3952,7 +3853,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3963,7 +3864,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3974,7 +3875,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3985,7 +3886,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3996,7 +3897,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -4007,7 +3908,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -4018,7 +3919,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4029,7 +3930,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4040,7 +3941,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4051,7 +3952,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4062,7 +3963,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4073,7 +3974,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -4112,355 +4013,168 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html",
-    "href": "unidades/unidad6/7_fetch_con_react.html",
-    "title": "Consumir una API con React",
+    "objectID": "unidades/unidad6/10_crud_react.html",
+    "href": "unidades/unidad6/10_crud_react.html",
+    "title": "CRUD en React con API REST",
     "section": "",
-    "text": "7. Resumen\nEn este tutorial, aprendiste a crear un proyecto React con Vite, consumir la Fake Store API, separar la lógica en componentes, y estilizar la aplicación con Tailwind CSS. Este enfoque modular te ayudará a mantener el código limpio y manejable. :::",
+    "text": "Requisitos previos:\nPrimero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:\nSigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:\nAxios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:\nAhora, edita el archivo api.js:\nEste archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.\nPara manejar las rutas de la aplicación, instala react-router-dom:\nModifica tu archivo src/App.jsx para agregar rutas:\nAquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.\nEste componente mostrará una lista de productos obtenidos de la API:\nAhora, edita ProductList.jsx para obtener y mostrar la lista de productos:\nUtilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.\nEste componente mostrará los detalles de un producto específico y permitirá eliminarlo:\nEdita ProductDetail.jsx:\nAquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.\nEste componente servirá tanto para crear un nuevo producto como para editar uno existente:\nEdita ProductForm.jsx:\nEste formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.\nFinalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:\nAbre tu navegador y navega a http://localhost:5173 (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#pasos",
-    "href": "unidades/unidad6/7_fetch_con_react.html#pasos",
-    "title": "Consumir Fake Store API con React",
-    "section": "Pasos:",
-    "text": "Pasos:\nEjecuta los siguientes comandos en tu terminal para crear un nuevo proyecto React con Vite:\nmkdir my-fake-store\ncd my-fake-store\nnpm create vite@latest .\nnpm install\nInicia el servidor de desarrollo:\nnpm run dev\nTu aplicación debería estar corriendo en http://localhost:5173.",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite",
+    "href": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "",
+    "text": "mkdir my-django-api-client\ncd my-django-api-client\nnpm create vite@latest .",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#usestate-y-useeffect",
-    "href": "unidades/unidad6/7_fetch_con_react.html#usestate-y-useeffect",
-    "title": "Consumir Fake Store API con React",
-    "section": "4.1. useState y useEffect",
-    "text": "4.1. useState y useEffect\nuseState se usa para crear variables de estado que almacenarán los productos obtenidos de la API, así como el estado de carga y posibles errores.\nconst [products, setProducts] = useState([]);\nconst [loading, setLoading] = useState(true);\nconst [error, setError] = useState(null);\nuseEffect se utiliza para ejecutar la función fetchProducts al cargar el componente. Esta función hace la petición GET a la API y actualiza los estados dependiendo de los resultados.\n    useEffect(() =&gt; {\n      fetchProducts();\n    }, []);",
+    "objectID": "unidades/unidad6/10_crud_react.html#instalar-dependencias",
+    "href": "unidades/unidad6/10_crud_react.html#instalar-dependencias",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "2. Instalar Dependencias",
+    "text": "2. Instalar Dependencias\nInstala Axios y Tailwind CSS para manejar las solicitudes HTTP y el estilizado, respectivamente.\nnpm install axios\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#fetching-de-la-api",
-    "href": "unidades/unidad6/7_fetch_con_react.html#fetching-de-la-api",
-    "title": "Consumir Fake Store API con React",
-    "section": "4.2. Fetching de la API",
-    "text": "4.2. Fetching de la API\nLa función fetchProducts usa fetch para hacer una solicitud HTTP a la Fake Store API.\nconst response = await fetch('https://fakestoreapi.com/products');\nSi la respuesta es exitosa, convierte los datos a JSON y los guarda en el estado products. Si ocurre un error, actualiza el estado error con el mensaje de error.",
+    "objectID": "unidades/unidad6/10_crud_react.html#configuración-de-tailwind-css",
+    "href": "unidades/unidad6/10_crud_react.html#configuración-de-tailwind-css",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "3. Configuración de Tailwind CSS",
+    "text": "3. Configuración de Tailwind CSS\nConfigura Tailwind CSS añadiendo las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class',\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nCrea y configura el archivo postcss.config.cjs en la raíz del proyecto:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\nAgrega las directivas de Tailwind CSS en src/index.css:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#manejo-del-loading-y-errores",
-    "href": "unidades/unidad6/7_fetch_con_react.html#manejo-del-loading-y-errores",
-    "title": "Consumir Fake Store API con React",
-    "section": "4.3. Manejo del Loading y Errores",
-    "text": "4.3. Manejo del Loading y Errores\nMientras los datos se están cargando, mostramos un mensaje “Cargando productos…”.\nSi hay un error en la petición, se muestra un mensaje de error.\n    if (loading) return &lt;p&gt;Cargando productos...&lt;/p&gt;;\n    if (error) return &lt;p&gt;Error: {error}&lt;/p&gt;;",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-componentes-de-react",
+    "href": "unidades/unidad6/10_crud_react.html#crear-componentes-de-react",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "4. Crear Componentes de React",
+    "text": "4. Crear Componentes de React\nVamos a crear dos componentes principales: ProductCard y ProductList.\n\nProductCard.jsx\nEste componente muestra la información de cada producto. Crea un archivo src/components/ProductCard.jsx:\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente se encarga de hacer las solicitudes a la API y mostrar los productos. Crea un archivo src/components/ProductList.jsx:\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() =&gt; {\n    const fetchProducts = async () =&gt; {\n      try {\n        const response = await axios.get('http://127.0.0.1:8000/api/productos/');\n        setProducts(response.data);\n        setLoading(false);\n      } catch (error) {\n        setError(error.message);\n        setLoading(false);\n      }\n    };\n\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#renderizar-los-productos",
-    "href": "unidades/unidad6/7_fetch_con_react.html#renderizar-los-productos",
-    "title": "Consumir Fake Store API con React",
-    "section": "4.4. Renderizar los Productos",
-    "text": "4.4. Renderizar los Productos\nUna vez que los productos están disponibles, los renderizamos utilizando el método map, creando una cuadrícula simple donde mostramos el título, imagen, precio y categoría de cada producto.\n    {products.map((product) =&gt; (\n      &lt;div key={product.id}&gt;\n        &lt;h3&gt;{product.title}&lt;/h3&gt;\n        &lt;img src={product.image} alt={product.title} /&gt;\n        &lt;p&gt;{product.price} USD&lt;/p&gt;\n        &lt;p&gt;{product.category}&lt;/p&gt;\n      &lt;/div&gt;\n    ))}",
+    "objectID": "unidades/unidad6/10_crud_react.html#integrar-en-app.jsx",
+    "href": "unidades/unidad6/10_crud_react.html#integrar-en-app.jsx",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "5. Integrar en App.jsx",
+    "text": "5. Integrar en App.jsx\nEn src/App.jsx, integra el componente ProductList y añade la funcionalidad para cambiar entre modo claro y oscuro:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de la API de Django\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "href": "unidades/unidad6/7_fetch_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "title": "Consumir una API con React",
+    "objectID": "unidades/unidad6/10_crud_react.html#ejecutar-el-proyecto",
+    "href": "unidades/unidad6/10_crud_react.html#ejecutar-el-proyecto",
+    "title": "Consumir una API REST con React y Axios",
+    "section": "6. Ejecutar el Proyecto",
+    "text": "6. Ejecutar el Proyecto\nPara iniciar el servidor de desarrollo, ejecuta el siguiente comando:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-build-de-producción",
+    "href": "unidades/unidad6/10_crud_react.html#crear-un-build-de-producción",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
+    "section": "5. Crear un Build de Producción",
+    "text": "5. Crear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nPara probar el build de producción, puedes usar npx para ejecutar un servidor de pruebas:\nnpx serve -s dist\nAbre tu navegador en http://localhost:5000 para ver la aplicación en modo de producción.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "href": "unidades/unidad6/10_crud_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
     "section": "1. Crear un Proyecto React con Vite y Tailwind CSS",
-    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nVamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado.\n\nPasos:\n\nCrear un nuevo proyecto con Vite:\nAbre tu terminal y ejecuta:\nmkdir my-fake-store\ncd my-fake-store\nnpm create vite@latest .\n\n\nInstalar las dependencias:\nInstala las dependencias necesarias para el proyecto:\nnpm install\n\n\nInstalar Tailwind CSS:\nEjecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\n\nConfigurar Tailwind CSS:\nAgrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\n\n\nAñadir directivas de Tailwind CSS:\nCrea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n\nIniciar el servidor de desarrollo:\nEjecuta el siguiente comando para iniciar el servidor de desarrollo:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
+    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nPrimero, crea un nuevo proyecto React y configúralo con Tailwind CSS:\nmkdir my-react-app\ncd my-react-app\nnpm create vite@latest .\nnpm install\nnpm install tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\nConfiguración de Tailwind CSS\nEdita tailwind.config.js para habilitar el modo oscuro y definir las rutas para los archivos de tu proyecto:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nCrea el archivo postcss.config.cjs en la raíz de tu proyecto:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\nAñade las directivas de Tailwind CSS a src/index.css:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#productcard.jsx",
-    "href": "unidades/unidad6/7_fetch_con_react.html#productcard.jsx",
-    "title": "Consumir una API con React",
-    "section": "ProductCard.jsx",
-    "text": "ProductCard.jsx\nEste componente recibirá la información de cada producto y la mostrará de manera estilizada con Tailwind CSS.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300\"&gt;\n      &lt;img \n        className=\"w-24 h-24 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4\"&gt;{product.title}&lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;",
+    "objectID": "unidades/unidad6/10_crud_react.html#instalar-axios",
+    "href": "unidades/unidad6/10_crud_react.html#instalar-axios",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
+    "section": "2. Instalar Axios",
+    "text": "2. Instalar Axios\nInstala axios para manejar las solicitudes HTTP:\nnpm install axios",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#productlist.jsx",
-    "href": "unidades/unidad6/7_fetch_con_react.html#productlist.jsx",
-    "title": "Consumir una API con React",
+    "objectID": "unidades/unidad6/10_crud_react.html#crear-los-componentes-de-react",
+    "href": "unidades/unidad6/10_crud_react.html#crear-los-componentes-de-react",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
+    "section": "3. Crear los Componentes de React",
+    "text": "3. Crear los Componentes de React\n\nProductCard.jsx\nEste componente mostrará la información de cada producto.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/10_crud_react.html#productlist.jsx",
+    "href": "unidades/unidad6/10_crud_react.html#productlist.jsx",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
     "section": "ProductList.jsx",
-    "text": "ProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  // Función para obtener los productos de la API\n  const fetchProducts = async () =&gt; {\n    try {\n      const response = await fetch('https://fakestoreapi.com/products');\n      if (!response.ok) {\n        throw new Error('Algo salió mal al obtener los productos');\n      }\n      const data = await response.json();\n      setProducts(data);\n      setLoading(false);\n    } catch (error) {\n      setError(error.message);\n      setLoading(false);\n    }\n  };\n\n  useEffect(() =&gt; {\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
+    "text": "ProductList.jsx\nEste componente manejará la lógica para obtener los productos de la API y renderizará los productos utilizando ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() =&gt; {\n    const fetchProducts = async () =&gt; {\n      try {\n        const response = await axios.get('http://127.0.0.1:8000/api/productos/');\n        setProducts(response.data);\n      } catch (error) {\n        setError('Error al obtener los productos');\n      } finally {\n        setLoading(false);\n      }\n    };\n\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#estructura-del-proyecto",
-    "href": "unidades/unidad6/7_fetch_con_react.html#estructura-del-proyecto",
-    "title": "Consumir una API con React",
-    "section": "2. Estructura del Proyecto",
-    "text": "2. Estructura del Proyecto\nSepararemos la lógica de la aplicación en componentes más pequeños:\n\nProductCard: Componente que mostrará cada producto individual.\nProductList: Componente que gestionará la lista de productos.\n\nLa estructura de directorios será:\nsrc/\n│\n├── components/\n│   ├── ProductCard.jsx\n│   └── ProductList.jsx\n└── App.jsx",
+    "objectID": "unidades/unidad6/10_crud_react.html#app.jsx",
+    "href": "unidades/unidad6/10_crud_react.html#app.jsx",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
+    "section": "App.jsx",
+    "text": "App.jsx\nIntegra ProductList en tu archivo App.jsx y añade la funcionalidad para cambiar entre modo oscuro y claro.\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de la API\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#creación-de-los-componentes",
-    "href": "unidades/unidad6/7_fetch_con_react.html#creación-de-los-componentes",
-    "title": "Consumir una API con React",
-    "section": "3. Creación de los Componentes",
-    "text": "3. Creación de los Componentes\n\nProductCard.jsx\nEste componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4\"&gt;{product.title}&lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchProducts = async () =&gt; {\n    try {\n      const response = await fetch('https://fakestoreapi.com/products');\n      if (!response.ok) {\n        throw new Error('Algo salió mal al obtener los productos');\n      }\n      const data = await response.json();\n      setProducts(data);\n      setLoading(false);\n    } catch (error) {\n      setError(error.message);\n      setLoading(false);\n    }\n  };\n\n  useEffect(() =&gt; {\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
+    "objectID": "unidades/unidad6/10_crud_react.html#ejecutar-la-aplicación",
+    "href": "unidades/unidad6/10_crud_react.html#ejecutar-la-aplicación",
+    "title": "Crear una Aplicación en React para Consumir la API con Axios",
+    "section": "4. Ejecutar la Aplicación",
+    "text": "4. Ejecutar la Aplicación\nInicia el servidor de desarrollo de React:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Crear una Aplicación en React para Consumir la API con Axios</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#integración-en-app.jsx",
-    "href": "unidades/unidad6/7_fetch_con_react.html#integración-en-app.jsx",
-    "title": "Consumir una API con React",
-    "section": "4. Integración en App.jsx",
-    "text": "4. Integración en App.jsx\nFinalmente, integra el componente ProductList dentro de tu archivo App.jsx.\nimport React from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  return (\n    &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n      &lt;h1 className=\"text-3xl font-bold text-center mb-8\"&gt;Productos de Fake Store&lt;/h1&gt;\n      &lt;ProductList /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#estilizado-con-tailwind-css",
-    "href": "unidades/unidad6/7_fetch_con_react.html#estilizado-con-tailwind-css",
-    "title": "Consumir una API con React",
-    "section": "5. Estilizado con Tailwind CSS",
-    "text": "5. Estilizado con Tailwind CSS\nTailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:\n\ngrid-cols-1 sm:grid-cols-2 lg:grid-cols-4: Define la cuadrícula con 1 columna por defecto, 2 columnas en pantallas medianas, y 4 columnas en pantallas grandes.\nborder, rounded-lg, shadow-sm: Añaden bordes, esquinas redondeadas y sombras suaves.\ntransition, hover:shadow-lg: Crea un efecto de transición en el hover.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#ejecución-del-proyecto",
-    "href": "unidades/unidad6/7_fetch_con_react.html#ejecución-del-proyecto",
-    "title": "Consumir una API con React",
-    "section": "6. Ejecución del Proyecto",
-    "text": "6. Ejecución del Proyecto\nCon todo el código en su lugar, puedes ejecutar tu aplicación:\nnpm run dev\nVisita http://localhost:5173 en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#resumen",
-    "href": "unidades/unidad6/7_fetch_con_react.html#resumen",
-    "title": "Consumir una API con React",
-    "section": "7. Resumen",
-    "text": "7. Resumen\nEn este tutorial, aprendiste a crear un proyecto React con Vite, consumir la Fake Store API, separar la lógica en componentes, y estilizar la aplicación con Tailwind CSS. Este enfoque modular te ayudará a mantener el código limpio y manejable.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#extra",
-    "href": "unidades/unidad6/7_fetch_con_react.html#extra",
-    "title": "Consumir una API con React",
-    "section": "Extra",
-    "text": "Extra\n\nAgregar el cambio de tema de oscuro a claro\nPara agregar un cambio de tema de oscuro a claro, puedes utilizar el siguiente código, en el archivo App.jsx:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`container mx-auto px-4 py-8 ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"flex justify-end mb-4\"&gt;\n        &lt;button\n          className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg\"\n          onClick={() =&gt; setDarkMode(!darkMode)}\n        &gt;\n          {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n        &lt;/button&gt;\n      &lt;/div&gt;\n      &lt;h1 className=\"text-3xl font-bold text-center mb-8\"&gt;Productos de Fake Store&lt;/h1&gt;\n      &lt;ProductList /&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;\n\n\nCrear un Build de Producción\nPara crear un build de producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, ejecuta el siguiente comando:\nnpm run serve\nAbre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#extra---crear-un-build-de-producción",
-    "href": "unidades/unidad6/7_fetch_con_react.html#extra---crear-un-build-de-producción",
-    "title": "Consumir una API con React",
-    "section": "Extra - Crear un Build de Producción",
-    "text": "Extra - Crear un Build de Producción\nPara crear un build de producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, ejecuta el siguiente comando:\nnpm run serve\nAbre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#section",
-    "href": "unidades/unidad6/7_fetch_con_react.html#section",
-    "title": "Consumir una API con React",
+    "objectID": "unidades/unidad6/10_crud_react.html#requisitos-previos",
+    "href": "unidades/unidad6/10_crud_react.html#requisitos-previos",
+    "title": "CRUD en React con API REST",
     "section": "",
-    "text": "###Crear un Build de Producción\nPara crear un build de producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, ejecuta el siguiente comando:\nnpm run serve\nAbre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
+    "text": "Node.js y npm (o yarn, o pnpm) instalados en tu sistema.\nConocimientos básicos de React y JavaScript.\nBackend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.\n\n\nInicializa el proyecto de React\n\n\nnpm create vite@latest nombre-del-proyecto\n\ncd nombre-del-proyecto\nnpm install\n\nConfigura Axios para las solicitudes a la API\n\n\nmkdir -p src/utils\ntouch src/utils/api.js\n\nimport axios from 'axios';\n\nconst api = axios.create({\n  baseURL: 'https://tu-api-backend.com/api', // Reemplaza esta URL con la URL de tu API\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\nexport default api;\n\n\nConfigura las rutas y el sistema de navegación con react-router-dom\n\n\nnpm install react-router-dom\n\nimport { BrowserRouter as Router, Route, Routes } from 'react-router-dom';\nimport ProductList from './components/ProductList';\nimport ProductDetail from './components/ProductDetail';\nimport ProductForm from './components/ProductForm';\n\nconst App = () =&gt; {\n  return (\n    &lt;Router&gt;\n      &lt;Routes&gt;\n        &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt;\n        &lt;Route path=\"/products\" element={&lt;ProductList /&gt;} /&gt;\n        &lt;Route path=\"/products/new\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/edit/:id\" element={&lt;ProductForm /&gt;} /&gt;\n        &lt;Route path=\"/products/:id\" element={&lt;ProductDetail /&gt;} /&gt;\n      &lt;/Routes&gt;\n    &lt;/Router&gt;\n  );\n};\n\nconst Home = () =&gt; (\n  &lt;div&gt;\n    &lt;h1&gt;CRUD en React con API REST&lt;/h1&gt;\n    &lt;p&gt;Esta es una aplicación de ejemplo para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST con React.&lt;/p&gt;\n    &lt;p&gt;Dirígete a &lt;Link to=\"/products\"&gt;Productos&lt;/Link&gt; para comenzar.&lt;/p&gt;\n  &lt;/div&gt;\n);\n\nexport default App;\n\n\nCrea el componente ProductList (Leer)\n\n\nmkdir -p src/components\ntouch src/components/ProductList.jsx\n\nimport { useState, useEffect } from 'react';\nimport api from '../utils/api';\nimport { Link } from 'react-router-dom';\n\nconst ProductList = () =&gt; {\n  const [products, setProducts] = useState([]);\n\n  useEffect(() =&gt; {\n    // Obtener todos los productos\n    api.get('/products')\n      .then(response =&gt; {\n        setProducts(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener los productos: \", error);\n      });\n  }, []);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Lista de Productos&lt;/h1&gt;\n      &lt;ul&gt;\n        {products.map(product =&gt; (\n          &lt;li key={product.id}&gt;\n            &lt;Link to={`/products/${product.id}`}&gt;{product.name}&lt;/Link&gt;\n          &lt;/li&gt;\n        ))}\n      &lt;/ul&gt;\n      &lt;Link to=\"/products/new\"&gt;Crear Nuevo Producto&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductList;\n\n\nCrea el componente ProductDetail (Leer uno y eliminar)\n\n\ntouch src/components/ProductDetail.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useParams, useNavigate, Link } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductDetail = () =&gt; {\n  const { id } = useParams();\n  const [product, setProduct] = useState(null);\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    // Obtener los detalles de un producto\n    api.get(`/products/${id}`)\n      .then(response =&gt; {\n        setProduct(response.data);\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al obtener el producto: \", error);\n      });\n  }, [id]);\n\n  const handleDelete = () =&gt; {\n    // Eliminar producto\n    api.delete(`/products/${id}`)\n      .then(() =&gt; {\n        navigate('/products');\n      })\n      .catch(error =&gt; {\n        console.error(\"Error al eliminar el producto: \", error);\n      });\n  };\n\n  if (!product) return &lt;div&gt;Cargando...&lt;/div&gt;;\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{product.name}&lt;/h1&gt;\n      &lt;p&gt;{product.description}&lt;/p&gt;\n      &lt;button onClick={handleDelete}&gt;Eliminar&lt;/button&gt;\n      &lt;Link to={`/products/edit/${product.id}`}&gt;Editar&lt;/Link&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductDetail;\n\n\nCrea el componente ProductForm (Crear y Actualizar)\n\n\ntouch src/components/ProductForm.jsx\n\nimport { useState, useEffect } from 'react';\nimport { useNavigate, useParams } from 'react-router-dom';\nimport api from '../utils/api';\n\nconst ProductForm = () =&gt; {\n  const [name, setName] = useState('');\n  const [description, setDescription] = useState('');\n  const { id } = useParams();\n  const navigate = useNavigate();\n\n  useEffect(() =&gt; {\n    if (id) {\n      // Si hay un `id`, estamos editando un producto\n      api.get(`/products/${id}`)\n        .then(response =&gt; {\n          const product = response.data;\n          setName(product.name);\n          setDescription(product.description);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al obtener los detalles del producto: \", error);\n        });\n    }\n  }, [id]);\n\n  const handleSubmit = (e) =&gt; {\n    e.preventDefault();\n    const product = { name, description };\n\n    if (id) {\n      // Actualizar producto\n      api.put(`/products/${id}`, product)\n        .then(() =&gt; {\n          navigate(`/products/${id}`);\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al actualizar el producto: \", error);\n        });\n    } else {\n      // Crear nuevo producto\n      api.post('/products', product)\n        .then(() =&gt; {\n          navigate('/products');\n        })\n        .catch(error =&gt; {\n          console.error(\"Error al crear el producto: \", error);\n        });\n    }\n  };\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;{id ? 'Editar Producto' : 'Crear Producto'}&lt;/h1&gt;\n      &lt;form onSubmit={handleSubmit}&gt;\n        &lt;div&gt;\n          &lt;label&gt;Nombre&lt;/label&gt;\n          &lt;input\n            type=\"text\"\n            value={name}\n            onChange={(e) =&gt; setName(e.target.value)}\n            required\n          /&gt;\n        &lt;/div&gt;\n        &lt;div&gt;\n          &lt;label&gt;Descripción&lt;/label&gt;\n          &lt;textarea\n            value={description}\n            onChange={(e) =&gt; setDescription(e.target.value)}\n            required\n          &gt;&lt;/textarea&gt;\n        &lt;/div&gt;\n        &lt;button type=\"submit\"&gt;{id ? 'Actualizar' : 'Crear'}&lt;/button&gt;\n      &lt;/form&gt;\n    &lt;/div&gt;\n  );\n};\n\nexport default ProductForm;\n\n\nEjecuta y prueba la aplicación\n\n\nnpm run dev",
     "crumbs": [
       "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
-    "href": "unidades/unidad6/7_fetch_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
-    "title": "Consumir una API con React",
-    "section": "Agregar el Cambio de Tema de Oscuro a Claro",
-    "text": "Agregar el Cambio de Tema de Oscuro a Claro\nPara implementar la funcionalidad de cambio de tema entre oscuro y claro, sigue estos pasos:\n\nActualiza App.jsx:\nUtiliza el siguiente código en tu archivo App.jsx para manejar el cambio de tema y aplicar estilos condicionales:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de Fake Store\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;\n\n\nCambios importantes:\n\nSe añadió min-h-screen para asegurar que el contenedor principal ocupe toda la altura de la pantalla.\nSe actualizaron las clases del botón y del encabezado para manejar el cambio de estilo en modo oscuro.\n\n\n\nAsegúrate de Configurar Tailwind para el Modo Oscuro:\nVerifica que tu archivo tailwind.config.cjs esté configurado correctamente para soportar el modo oscuro:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nEsta configuración permite que el modo oscuro se active añadiendo la clase dark al contenedor principal.\n\n\nActualiza los Estilos en los Componentes:\nAsegúrate de que todos los componentes respondan al modo oscuro. Por ejemplo, en ProductCard.jsx:\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nCambios importantes:\n\nSe actualizaron las clases para manejar el estilo en modo oscuro.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/7_fetch_con_react.html#crear-un-build-de-producción",
-    "href": "unidades/unidad6/7_fetch_con_react.html#crear-un-build-de-producción",
-    "title": "Consumir una API con React",
-    "section": "Crear un Build de Producción",
-    "text": "Crear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, puedes usar npx para ejecutar el servidor de pruebas sin necesidad de instalación global.\nEjecuta el siguiente comando:\nnpx serve -s dist\nLuego, abre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html",
-    "href": "unidades/unidad6/9_axios_con_react.html",
-    "title": "Django y React 2024",
-    "section": "",
-    "text": "Consumir una API con React\n\nCrear un Proyecto React con Vite y Tailwind CSS\n\nVamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado. Pasos: Crear un nuevo proyecto con Vite:\nAbre tu terminal y ejecuta:\nbash\nmkdir my-fake-store cd my-fake-store npm create vite@latest .\nInstalar las dependencias:\nInstala las dependencias necesarias para el proyecto:\nbash\nnpm install\nInstalar Tailwind CSS:\nEjecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:\nbash\nnpm install -D tailwindcss postcss autoprefixer npx tailwindcss init\nConfigurar Tailwind CSS:\nAgrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\njavascript\n/** (type?) {import(‘tailwindcss’).Config} */ module.exports = { content: [ ‘./index.html’, ’./src/**/*.{js,ts,jsx,tsx}’, ], theme: { extend: {}, }, plugins: [], }\nCrear el archivo de configuración de PostCSS:\nCrea un archivo postcss.config.cjs en la raíz de tu proyecto con el siguiente contenido:\njavascript\nmodule.exports = { plugins: { tailwindcss: {}, autoprefixer: {}, }, }\nAñadir directivas de Tailwind CSS:\nCrea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:\ncss\n(tailwind?) base; (tailwind?) components; (tailwind?) utilities;\nIniciar el servidor de desarrollo:\nEjecuta el siguiente comando para iniciar el servidor de desarrollo:\nbash\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento. 2. Estructura del Proyecto\nSepararemos la lógica de la aplicación en componentes más pequeños:\nProductCard: Componente que mostrará cada producto individual.\nProductList: Componente que gestionará la lista de productos.\nLa estructura de directorios será:\nplaintext\nsrc/ │ ├── components/ │ ├── ProductCard.jsx │ └── ProductList.jsx └── App.jsx\n\nCreación de los Componentes ProductCard.jsx\n\nEste componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.\njsx\nimport React from ‘react’;\nfunction ProductCard({ product }) { return (\n\n  &lt;img \n    className=\"w-32 h-32 object-contain mx-auto\"\n    src={product.image} \n    alt={product.title} \n  /&gt;\n  &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n    {product.title}\n  &lt;/h3&gt;\n  &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n  &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n&lt;/div&gt;\n); }\nexport default ProductCard;\nProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\njsx\nimport React, { useState, useEffect } from ‘react’; import ProductCard from ‘./ProductCard’; import axios from ‘axios’;\nfunction ProductList() { const [products, setProducts] = useState([]); const [loading, setLoading] = useState(true); const [error, setError] = useState(null);\nconst fetchProducts = async () =&gt; { try { const response = await axios.get(‘https://fakestoreapi.com/products’); setProducts(response.data); setLoading(false); } catch (error) { setError(‘Algo salió mal al obtener los productos’); setLoading(false); } };\nuseEffect(() =&gt; { fetchProducts(); }, []);\nif (loading) return\n\nCargando productos…\n\n; if (error) return\n\nError: {error}\n\n;\nreturn (\n\n  {products.map((product) =&gt; (\n    &lt;ProductCard key={product.id} product={product} /&gt;\n  ))}\n&lt;/div&gt;\n); }\nexport default ProductList;\n\nIntegración en App.jsx\n\nFinalmente, integra el componente ProductList dentro de tu archivo App.jsx.\njsx\nimport React, { useState } from ‘react’; import ProductList from ‘./components/ProductList’;\nfunction App() { const [darkMode, setDarkMode] = useState(false);\nreturn ( &lt;div className={min-h-screen ${darkMode ? 'dark' : ''}}&gt;\n\n    &lt;div className=\"flex justify-end mb-4\"&gt;\n      &lt;button\n        className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n        onClick={() =&gt; setDarkMode(!darkMode)}\n      &gt;\n        {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n      &lt;/button&gt;\n    &lt;/div&gt;\n    &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n      Productos de Fake Store\n    &lt;/h1&gt;\n    &lt;ProductList /&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n); }\nexport default App;\n\nEstilizado con Tailwind CSS\n\nTailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:\ngrid-cols-1 sm\nlg:grid-cols-4: Define la cuadrícula con 1 columna por defecto, 2 columnas en pantallas medianas, y 4 columnas en pantallas grandes.\nborder, rounded-lg, shadow-sm: Añaden bordes, esquinas redondeadas y sombras suaves.\ntransition, hover:shadow-lg: Crea un efecto de transición en el hover.\n\nEjecución del Proyecto\n\nCon todo el código en su lugar, puedes ejecutar tu aplicación:\nbash\nnpm run dev\nVisita http://localhost:5173 en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS. Extra Agregar el Cambio de Tema de Oscuro a Claro\nPara implementar la funcionalidad de cambio de tema entre oscuro y claro, sigue estos pasos: Actualiza App.jsx:\nUtiliza el siguiente código en tu archivo App.jsx para manejar el cambio de tema y aplicar estilos condicionales:\njsx\nimport React, { useState } from ‘react’; import ProductList from ‘./components/ProductList’;\nfunction App() { const [darkMode, setDarkMode] = useState(false);\nreturn ( &lt;div className={min-h-screen ${darkMode ? 'dark' : ''}}&gt;\n\n    &lt;div className=\"flex justify-end mb-4\"&gt;\n      &lt;button\n        className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n        onClick={() =&gt; setDarkMode(!darkMode)}\n      &gt;\n        {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n      &lt;/button&gt;\n    &lt;/div&gt;\n    &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n      Productos de Fake Store\n    &lt;/h1&gt;\n    &lt;ProductList /&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n); }\nexport default App;\nCambios importantes:\nSe añadió min-h-screen para asegurar que el contenedor principal ocupe toda la altura de la pantalla.\nSe actualizaron las clases del botón y del encabezado para manejar el cambio de estilo en modo oscuro.\nAsegúrate de Configurar Tailwind para el Modo Oscuro:\nVerifica que tu archivo tailwind.config.cjs esté configurado correctamente para soportar el modo oscuro:\njavascript\n/** (type?) {import(‘tailwindcss’).Config} */ module.exports = { darkMode: ‘class’, // Habilita el modo oscuro utilizando la clase ‘dark’ content: [ ‘./index.html’, ’./src/**/*.{js,ts,jsx,tsx}’, ], theme: { extend: {}, }, plugins: [], }\nEsta configuración permite que el modo oscuro se active añadiendo la clase dark al contenedor principal. Actualiza los Estilos en los Componentes:\nAsegúrate de que todos los componentes respondan al modo oscuro. Por ejemplo, en ProductCard.jsx:\njsx\nimport React from ‘react’;\nfunction ProductCard({ product }) { return (\n\n  &lt;img \n    className=\"w-32 h-32 object-contain mx-auto\"\n    src={product.image} \n    alt={product.title} \n  /&gt;\n  &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n    {product.title}\n  &lt;/h3&gt;\n  &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n  &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n&lt;/div&gt;\n); }\nexport default ProductCard;\nCon estas configuraciones y componentes, deberías tener una aplicación React completa que consuma una API y esté estilizada con Tailwind CSS, con soporte para modo oscuro y claro. ¡Buena suerte con tu proyecto! :::",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>9_axios_con_react.html</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "href": "unidades/unidad6/9_axios_con_react.html#crear-un-proyecto-react-con-vite-y-tailwind-css",
-    "title": "Consumir una API con React con Axios.",
-    "section": "1. Crear un Proyecto React con Vite y Tailwind CSS",
-    "text": "1. Crear un Proyecto React con Vite y Tailwind CSS\nVamos a crear un proyecto React utilizando Vite y configuraremos Tailwind CSS para el estilizado.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#estructura-del-proyecto",
-    "href": "unidades/unidad6/9_axios_con_react.html#estructura-del-proyecto",
-    "title": "Consumir una API con React con Axios.",
-    "section": "2. Estructura del Proyecto",
-    "text": "2. Estructura del Proyecto\nSepararemos la lógica de la aplicación en componentes más pequeños:\n\nProductCard: Componente que mostrará cada producto individual.\nProductList: Componente que gestionará la lista de productos.\n\nLa estructura de directorios será:\nsrc/\n│\n├── components/\n│   ├── ProductCard.jsx\n│   └── ProductList.jsx\n└── App.jsx",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#creación-de-los-componentes",
-    "href": "unidades/unidad6/9_axios_con_react.html#creación-de-los-componentes",
-    "title": "Consumir una API con React con Axios.",
-    "section": "3. Creación de los Componentes",
-    "text": "3. Creación de los Componentes\n\nProductCard.jsx\nEste componente mostrará la información de cada producto de manera estilizada con Tailwind CSS.\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\n\n\nProductList.jsx\nEste componente gestionará la lógica de la API y renderizará los productos usando el componente ProductCard.\nimport React, { useState, useEffect } from 'react';\nimport ProductCard from './ProductCard';\n\nfunction ProductList() {\n  const [products, setProducts] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  const fetchProducts = async () =&gt; {\n    try {\n      const response = await fetch('https://fakestoreapi.com/products');\n      if (!response.ok) {\n        throw new Error('Algo salió mal al obtener los productos');\n      }\n      const data = await response.json();\n      setProducts(data);\n      setLoading(false);\n    } catch (error) {\n      setError(error.message);\n      setLoading(false);\n    }\n  };\n\n  useEffect(() =&gt; {\n    fetchProducts();\n  }, []);\n\n  if (loading) return &lt;p className=\"text-center text-gray-500\"&gt;Cargando productos...&lt;/p&gt;;\n  if (error) return &lt;p className=\"text-center text-red-500\"&gt;Error: {error}&lt;/p&gt;;\n\n  return (\n    &lt;div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\"&gt;\n      {products.map((product) =&gt; (\n        &lt;ProductCard key={product.id} product={product} /&gt;\n      ))}\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductList;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#integración-en-app.jsx",
-    "href": "unidades/unidad6/9_axios_con_react.html#integración-en-app.jsx",
-    "title": "Consumir una API con React con Axios.",
-    "section": "4. Integración en App.jsx",
-    "text": "4. Integración en App.jsx\nFinalmente, integra el componente ProductList dentro de tu archivo App.jsx y añade la funcionalidad de cambio de tema entre oscuro y claro.\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de Fake Store\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#estilizado-con-tailwind-css",
-    "href": "unidades/unidad6/9_axios_con_react.html#estilizado-con-tailwind-css",
-    "title": "Consumir una API con React con Axios.",
-    "section": "5. Estilizado con Tailwind CSS",
-    "text": "5. Estilizado con Tailwind CSS\nTailwind CSS te permite estilizar la aplicación de manera eficiente. Aquí hay un desglose de algunas clases utilizadas:\n\nmin-h-screen: Asegura que el contenedor principal ocupe toda la altura de la pantalla.\ndark: Clase utilizada para activar el modo oscuro.\nborder, rounded-lg, shadow-sm: Añaden bordes, esquinas redondeadas y sombras suaves.\ntransition, hover:shadow-lg: Crea un efecto de transición en el hover.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#ejecución-del-proyecto",
-    "href": "unidades/unidad6/9_axios_con_react.html#ejecución-del-proyecto",
-    "title": "Consumir una API con React con Axios.",
-    "section": "6. Ejecución del Proyecto",
-    "text": "6. Ejecución del Proyecto\nCon todo el código en su lugar, puedes ejecutar tu aplicación:\nnpm run dev\nVisita http://localhost:5173 en tu navegador para ver la lista de productos de la Fake Store API estilizados con Tailwind CSS.\n\nCrear un Build de Producción\nPara crear un build optimizado para producción, ejecuta el siguiente comando:\nnpm run build\nEste comando generará una carpeta dist con los archivos optimizados para producción.\n\n\n\n\n\n\nTip\n\n\n\nPara probar el build de producción, puedes usar npx para ejecutar el servidor de pruebas sin necesidad de instalación global.\nEjecuta el siguiente comando:\nnpx serve -s dist\nLuego, abre tu navegador en http://localhost:5000 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
-    "href": "unidades/unidad6/9_axios_con_react.html#agregar-el-cambio-de-tema-de-oscuro-a-claro",
-    "title": "Consumir una API con React",
-    "section": "Agregar el Cambio de Tema de Oscuro a Claro",
-    "text": "Agregar el Cambio de Tema de Oscuro a Claro\nPara implementar la funcionalidad de cambio de tema entre oscuro y claro, sigue estos pasos: Actualiza App.jsx:\nUtiliza el siguiente código en tu archivo App.jsx para manejar el cambio de tema y aplicar estilos condicionales:\nimport React, { useState } from 'react';\nimport ProductList from './components/ProductList';\n\nfunction App() {\n  const [darkMode, setDarkMode] = useState(false);\n\n  return (\n    &lt;div className={`min-h-screen ${darkMode ? 'dark' : ''}`}&gt;\n      &lt;div className=\"container mx-auto px-4 py-8\"&gt;\n        &lt;div className=\"flex justify-end mb-4\"&gt;\n          &lt;button\n            className=\"px-4 py-2 bg-gray-200 text-gray-800 rounded-lg dark:bg-gray-800 dark:text-gray-200\"\n            onClick={() =&gt; setDarkMode(!darkMode)}\n          &gt;\n            {darkMode ? 'Modo Claro' : 'Modo Oscuro'}\n          &lt;/button&gt;\n        &lt;/div&gt;\n        &lt;h1 className=\"text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100\"&gt;\n          Productos de Fake Store\n        &lt;/h1&gt;\n        &lt;ProductList /&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#cambios-importantes",
-    "href": "unidades/unidad6/9_axios_con_react.html#cambios-importantes",
-    "title": "Consumir una API con React",
-    "section": "Cambios importantes:",
-    "text": "Cambios importantes:\n\nSe añadió min-h-screen para asegurar que el contenedor principal ocupe toda la altura de la pantalla.\nSe actualizaron las clases del botón y del encabezado para manejar el cambio de estilo en modo oscuro.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#asegúrate-de-configurar-tailwind-para-el-modo-oscuro",
-    "href": "unidades/unidad6/9_axios_con_react.html#asegúrate-de-configurar-tailwind-para-el-modo-oscuro",
-    "title": "Consumir una API con React",
-    "section": "Asegúrate de Configurar Tailwind para el Modo Oscuro:",
-    "text": "Asegúrate de Configurar Tailwind para el Modo Oscuro:\nVerifica que tu archivo tailwind.config.cjs esté configurado correctamente para soportar el modo oscuro:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\nEsta configuración permite que el modo oscuro se active añadiendo la clase dark al contenedor principal.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#actualiza-los-estilos-en-los-componentes",
-    "href": "unidades/unidad6/9_axios_con_react.html#actualiza-los-estilos-en-los-componentes",
-    "title": "Consumir una API con React",
-    "section": "Actualiza los Estilos en los Componentes:",
-    "text": "Actualiza los Estilos en los Componentes:\nAsegúrate de que todos los componentes respondan al modo oscuro. Por ejemplo, en ProductCard.jsx:\nimport React from 'react';\n\nfunction ProductCard({ product }) {\n  return (\n    &lt;div className=\"border border-gray-200 dark:border-gray-700 p-4 rounded-lg shadow-sm hover:shadow-lg transition duration-300 dark:bg-gray-800\"&gt;\n      &lt;img \n        className=\"w-32 h-32 object-contain mx-auto\"\n        src={product.image} \n        alt={product.title} \n      /&gt;\n      &lt;h3 className=\"text-lg font-semibold mt-4 text-gray-900 dark:text-gray-100\"&gt;\n        {product.title}\n      &lt;/h3&gt;\n      &lt;p className=\"text-gray-500 mt-2 dark:text-gray-400\"&gt;{product.category}&lt;/p&gt;\n      &lt;p className=\"text-green-600 font-bold mt-2\"&gt;{product.price} USD&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default ProductCard;\nCon estas configuraciones y componentes, deberías tener una aplicación React completa que consuma una API y esté estilizada con Tailwind CSS, con soporte para modo oscuro y claro.\n¡Buena suerte con tu proyecto!",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/9_axios_con_react.html#pasos",
-    "href": "unidades/unidad6/9_axios_con_react.html#pasos",
-    "title": "Consumir una API con React con Axios.",
-    "section": "Pasos:",
-    "text": "Pasos:\n\nCrear un nuevo proyecto con Vite:\n\nAbre tu terminal y ejecuta:\nmkdir my-fake-store-axios\ncd my-fake-store-axios\nnpm create vite@latest .\n\nInstalar las dependencias:\n\nInstala las dependencias necesarias para el proyecto:\nnpm install\n\nInstalar Tailwind CSS:\n\nEjecuta los siguientes comandos para instalar Tailwind CSS y sus dependencias:\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init\n\nConfigurar Tailwind CSS:\n\nAgrega las rutas a los archivos de tu proyecto en el archivo tailwind.config.cjs:\n/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class', // Habilita el modo oscuro utilizando la clase 'dark'\n  content: [\n    './index.html',\n    './src/**/*.{js,ts,jsx,tsx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\n\nCrear y configurar postcss.config.cjs:\n\nCrea un archivo postcss.config.cjs en la raíz de tu proyecto y añade el siguiente contenido:\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}\n\nAñadir directivas de Tailwind CSS:\n\nCrea un archivo src/index.css (si no existe) y añade las directivas de Tailwind CSS:\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nIniciar el servidor de desarrollo:\n\nEjecuta el siguiente comando para iniciar el servidor de desarrollo:\nnpm run dev\nAbre tu navegador en http://localhost:5173 para ver la aplicación en funcionamiento.",
-    "crumbs": [
-      "Unidad 6: Frontend",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Consumir una API con React con Axios.</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>CRUD en React con API REST</span>"
     ]
   }
 ]

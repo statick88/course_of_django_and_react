@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.1">
+<meta name="generator" content="quarto-1.6.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>Crud Básico con React y Axios – Django y React 2024</title>
+<title>CRUD en React con API REST – Django y React 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,11 +73,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-37bb72f48501692975d9c066fdeb097b.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c1a1c0e844438c8fcd262c97a2c9cf23.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/10_crud_react.html"><span class="chapter-title">Crud Básico con React y Axios</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/10_crud_react.html"><span class="chapter-title">CRUD en React con API REST</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -387,17 +387,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/7_fetch_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Consumir una API con React</span></a>
+  <a href="../../unidades/unidad6/7_fetch_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Consumir una API con React con Fetch.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/9_axios_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Consumir una API con React con Axios</span></a>
+  <a href="../../unidades/unidad6/9_axios_con_react.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Consumir una API con React con Axios.</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/10_crud_react.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Crud Básico con React y Axios</span></a>
+  <a href="../../unidades/unidad6/10_crud_react.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">CRUD en React con API REST</span></a>
   </div>
 </li>
       </ul>
@@ -448,15 +448,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#requisitos-previos" id="toc-requisitos-previos" class="nav-link active" data-scroll-target="#requisitos-previos">Requisitos previos:</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/10_crud_react.html"><span class="chapter-title">Crud Básico con React y Axios</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/10_crud_react.html"><span class="chapter-title">CRUD en React con API REST</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Crud Básico con React y Axios</span></h1>
+<h1 class="title"><span class="chapter-title">CRUD en React con API REST</span></h1>
 </div>
 
 
@@ -473,164 +480,278 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="{justify}">
-<p>En esta sección vamos a crear un CRUD básico con React y Axios. Vamos a crear una lista de tareas que se podrán agregar, editar y eliminar.</p>
-<section id="crear-el-proyecto" class="level2">
-<h2 class="anchored" data-anchor-id="crear-el-proyecto">Crear el proyecto</h2>
-</section>
-<section id="crear-la-api" class="level2">
-<h2 class="anchored" data-anchor-id="crear-la-api">Crear la API</h2>
-<p>Creamos un directorio llamado <strong>backend</strong> y dentro de él, creamos un archivo llamado <strong>package.json</strong> con el siguiente contenido:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego, instalamos <strong>express</strong> y <strong>cors</strong>:</p>
-<p>Vamos a crear una API muy sencilla con <strong>express</strong>. Para instalarlo, ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install express cors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego, crea un archivo llamado <strong>server.js</strong> en la raíz del proyecto con el siguiente contenido:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> express <span class="op">=</span> <span class="pp">require</span>(<span class="st">'express'</span>)<span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> cors <span class="op">=</span> <span class="pp">require</span>(<span class="st">'cors'</span>)<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> <span class="fu">express</span>()<span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">use</span>(<span class="fu">cors</span>())<span class="op">;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">use</span>(express<span class="op">.</span><span class="fu">json</span>())<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> tasks <span class="op">=</span> [</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">id</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">'Task 1'</span> }<span class="op">,</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">id</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">'Task 2'</span> }<span class="op">,</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">id</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">'Task 3'</span> }<span class="op">,</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">get</span>(<span class="st">'/tasks'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">json</span>(tasks)<span class="op">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">post</span>(<span class="st">'/tasks'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> task <span class="op">=</span> { <span class="dt">id</span><span class="op">:</span> tasks<span class="op">.</span><span class="at">length</span> <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">title</span> }<span class="op">;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  tasks<span class="op">.</span><span class="fu">push</span>(task)<span class="op">;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">json</span>(task)<span class="op">;</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">put</span>(<span class="st">'/tasks/:id'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> task <span class="op">=</span> tasks<span class="op">.</span><span class="fu">find</span>(task <span class="kw">=&gt;</span> task<span class="op">.</span><span class="at">id</span> <span class="op">===</span> <span class="pp">parseInt</span>(req<span class="op">.</span><span class="at">params</span><span class="op">.</span><span class="at">id</span>))<span class="op">;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  task<span class="op">.</span><span class="at">title</span> <span class="op">=</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">title</span><span class="op">;</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">json</span>(task)<span class="op">;</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">delete</span>(<span class="st">'/tasks/:id'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  tasks <span class="op">=</span> tasks<span class="op">.</span><span class="fu">filter</span>(task <span class="kw">=&gt;</span> task<span class="op">.</span><span class="at">id</span> <span class="op">!==</span> <span class="pp">parseInt</span>(req<span class="op">.</span><span class="at">params</span><span class="op">.</span><span class="at">id</span>))<span class="op">;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">json</span>({ <span class="dt">message</span><span class="op">:</span> <span class="st">'Task deleted'</span> })<span class="op">;</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">listen</span>(<span class="dv">3000</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Server running on port 3000'</span>)<span class="op">;</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior estamos creando una API con las siguientes rutas:</p>
+<section id="requisitos-previos" class="level2">
+<h2 class="anchored" data-anchor-id="requisitos-previos">Requisitos previos:</h2>
 <ul>
-<li><strong>GET /tasks</strong>: Obtiene la lista de tareas.</li>
-<li><strong>POST /tasks</strong>: Agrega una tarea.</li>
-<li><strong>PUT /tasks/:id</strong>: Edita una tarea.</li>
-<li><strong>DELETE /tasks/:id</strong>: Elimina una tarea.</li>
+<li>Node.js y npm (o yarn, o pnpm) instalados en tu sistema.</li>
+<li>Conocimientos básicos de React y JavaScript.</li>
+<li>Backend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.</li>
 </ul>
-<p>Para ejecutar la API, ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> server.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Inicializa el proyecto de React</li>
+</ol>
+<p>Primero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest nombre-del-proyecto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> nombre-del-proyecto</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Configura Axios para las solicitudes a la API</li>
+</ol>
+<p>Axios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> src/utils</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> src/utils/api.js</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora, edita el archivo api.js:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axios <span class="im">from</span> <span class="st">'axios'</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> api <span class="op">=</span> axios<span class="op">.</span><span class="fu">create</span>({</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">baseURL</span><span class="op">:</span> <span class="st">'https://tu-api-backend.com/api'</span><span class="op">,</span> <span class="co">// Reemplaza esta URL con la URL de tu API</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">headers</span><span class="op">:</span> {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Content-Type'</span><span class="op">:</span> <span class="st">'application/json'</span><span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> api<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.</p>
+<ol start="3" type="1">
+<li>Configura las rutas y el sistema de navegación con react-router-dom</li>
+</ol>
+<p>Para manejar las rutas de la aplicación, instala react-router-dom:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install react-router-dom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Modifica tu archivo src/App.jsx para agregar rutas:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { BrowserRouter <span class="im">as</span> Router<span class="op">,</span> Route<span class="op">,</span> Routes } <span class="im">from</span> <span class="st">'react-router-dom'</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductList <span class="im">from</span> <span class="st">'./components/ProductList'</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductDetail <span class="im">from</span> <span class="st">'./components/ProductDetail'</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ProductForm <span class="im">from</span> <span class="st">'./components/ProductForm'</span><span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> App <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>Router<span class="op">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>Routes<span class="op">&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">"/"</span> element<span class="op">=</span>{<span class="op">&lt;</span>Home <span class="op">/&gt;</span>} <span class="op">/&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">"/products"</span> element<span class="op">=</span>{<span class="op">&lt;</span>ProductList <span class="op">/&gt;</span>} <span class="op">/&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">"/products/new"</span> element<span class="op">=</span>{<span class="op">&lt;</span>ProductForm <span class="op">/&gt;</span>} <span class="op">/&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">"/products/edit/:id"</span> element<span class="op">=</span>{<span class="op">&lt;</span>ProductForm <span class="op">/&gt;</span>} <span class="op">/&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">"/products/:id"</span> element<span class="op">=</span>{<span class="op">&lt;</span>ProductDetail <span class="op">/&gt;</span>} <span class="op">/&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;/</span>Routes<span class="op">&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>Router<span class="op">&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Home <span class="op">=</span> () <span class="kw">=&gt;</span> (</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>h1<span class="op">&gt;</span>CRUD en React con API REST<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>p<span class="op">&gt;</span>Esta es una aplicación de ejemplo para realizar operaciones <span class="fu">CRUD</span> (Crear<span class="op">,</span> Leer<span class="op">,</span> Actualizar<span class="op">,</span> Eliminar) en una API REST con React<span class="op">.&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>p<span class="op">&gt;</span>Dirígete a <span class="op">&lt;</span>Link to<span class="op">=</span><span class="st">"/products"</span><span class="op">&gt;</span>Productos<span class="op">&lt;/</span>Link<span class="op">&gt;</span> para comenzar<span class="op">.&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.</p>
+<ol start="4" type="1">
+<li>Crea el componente ProductList (Leer)</li>
+</ol>
+<p>Este componente mostrará una lista de productos obtenidos de la API:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> src/components</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> src/components/ProductList.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora, edita ProductList.jsx para obtener y mostrar la lista de productos:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api <span class="im">from</span> <span class="st">'../utils/api'</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Link } <span class="im">from</span> <span class="st">'react-router-dom'</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ProductList <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [products<span class="op">,</span> setProducts] <span class="op">=</span> <span class="fu">useState</span>([])<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Obtener todos los productos</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    api<span class="op">.</span><span class="fu">get</span>(<span class="st">'/products'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> {</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">setProducts</span>(response<span class="op">.</span><span class="at">data</span>)<span class="op">;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      })</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al obtener los productos: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [])<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span>Lista de Productos<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>ul<span class="op">&gt;</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        {products<span class="op">.</span><span class="fu">map</span>(product <span class="kw">=&gt;</span> (</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>li key<span class="op">=</span>{product<span class="op">.</span><span class="at">id</span>}<span class="op">&gt;</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;</span>Link to<span class="op">=</span>{<span class="vs">`/products/</span><span class="sc">${</span>product<span class="op">.</span><span class="at">id</span><span class="sc">}</span><span class="vs">`</span>}<span class="op">&gt;</span>{product<span class="op">.</span><span class="at">name</span>}<span class="op">&lt;/</span>Link<span class="op">&gt;</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;/</span>li<span class="op">&gt;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        ))}</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;/</span>ul<span class="op">&gt;</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>Link to<span class="op">=</span><span class="st">"/products/new"</span><span class="op">&gt;</span>Crear Nuevo Producto<span class="op">&lt;/</span>Link<span class="op">&gt;</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductList<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Utilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.</p>
+<ol start="5" type="1">
+<li>Crea el componente ProductDetail (Leer uno y eliminar)</li>
+</ol>
+<p>Este componente mostrará los detalles de un producto específico y permitirá eliminarlo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> src/components/ProductDetail.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Edita ProductDetail.jsx:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useParams<span class="op">,</span> useNavigate<span class="op">,</span> Link } <span class="im">from</span> <span class="st">'react-router-dom'</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api <span class="im">from</span> <span class="st">'../utils/api'</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ProductDetail <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> { id } <span class="op">=</span> <span class="fu">useParams</span>()<span class="op">;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [product<span class="op">,</span> setProduct] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> navigate <span class="op">=</span> <span class="fu">useNavigate</span>()<span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Obtener los detalles de un producto</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    api<span class="op">.</span><span class="fu">get</span>(<span class="vs">`/products/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> {</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">setProduct</span>(response<span class="op">.</span><span class="at">data</span>)<span class="op">;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>      })</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al obtener el producto: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [id])<span class="op">;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handleDelete <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Eliminar producto</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    api<span class="op">.</span><span class="fu">delete</span>(<span class="vs">`/products/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">navigate</span>(<span class="st">'/products'</span>)<span class="op">;</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>      })</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al eliminar el producto: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>product) <span class="cf">return</span> <span class="op">&lt;</span>div<span class="op">&gt;</span>Cargando<span class="op">...&lt;/</span>div<span class="op">&gt;;</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span>{product<span class="op">.</span><span class="at">name</span>}<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>p<span class="op">&gt;</span>{product<span class="op">.</span><span class="at">description</span>}<span class="op">&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>button onClick<span class="op">=</span>{handleDelete}<span class="op">&gt;</span>Eliminar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>Link to<span class="op">=</span>{<span class="vs">`/products/edit/</span><span class="sc">${</span>product<span class="op">.</span><span class="at">id</span><span class="sc">}</span><span class="vs">`</span>}<span class="op">&gt;</span>Editar<span class="op">&lt;/</span>Link<span class="op">&gt;</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductDetail<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.</p>
+<ol start="6" type="1">
+<li>Crea el componente ProductForm (Crear y Actualizar)</li>
+</ol>
+<p>Este componente servirá tanto para crear un nuevo producto como para editar uno existente:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> src/components/ProductForm.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Edita ProductForm.jsx:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useNavigate<span class="op">,</span> useParams } <span class="im">from</span> <span class="st">'react-router-dom'</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> api <span class="im">from</span> <span class="st">'../utils/api'</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ProductForm <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [name<span class="op">,</span> setName] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [description<span class="op">,</span> setDescription] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> { id } <span class="op">=</span> <span class="fu">useParams</span>()<span class="op">;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> navigate <span class="op">=</span> <span class="fu">useNavigate</span>()<span class="op">;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (id) {</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Si hay un `id`, estamos editando un producto</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      api<span class="op">.</span><span class="fu">get</span>(<span class="vs">`/products/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> {</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> product <span class="op">=</span> response<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">setName</span>(product<span class="op">.</span><span class="at">name</span>)<span class="op">;</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>          <span class="fu">setDescription</span>(product<span class="op">.</span><span class="at">description</span>)<span class="op">;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al obtener los detalles del producto: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [id])<span class="op">;</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handleSubmit <span class="op">=</span> (e) <span class="kw">=&gt;</span> {</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> product <span class="op">=</span> { name<span class="op">,</span> description }<span class="op">;</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (id) {</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Actualizar producto</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>      api<span class="op">.</span><span class="fu">put</span>(<span class="vs">`/products/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> product)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>          <span class="fu">navigate</span>(<span class="vs">`/products/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al actualizar el producto: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Crear nuevo producto</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>      api<span class="op">.</span><span class="fu">post</span>(<span class="st">'/products'</span><span class="op">,</span> product)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>          <span class="fu">navigate</span>(<span class="st">'/products'</span>)<span class="op">;</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"Error al crear el producto: "</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span>{id <span class="op">?</span> <span class="st">'Editar Producto'</span> <span class="op">:</span> <span class="st">'Crear Producto'</span>}<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>form onSubmit<span class="op">=</span>{handleSubmit}<span class="op">&gt;</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>label<span class="op">&gt;</span>Nombre<span class="op">&lt;/</span>label<span class="op">&gt;</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>input</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>            type<span class="op">=</span><span class="st">"text"</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>            value<span class="op">=</span>{name}</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>            onChange<span class="op">=</span>{(e) <span class="kw">=&gt;</span> <span class="fu">setName</span>(e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)}</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>            required</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>          <span class="op">/&gt;</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>label<span class="op">&gt;</span>Descripción<span class="op">&lt;/</span>label<span class="op">&gt;</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>textarea</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>            value<span class="op">=</span>{description}</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>            onChange<span class="op">=</span>{(e) <span class="kw">=&gt;</span> <span class="fu">setDescription</span>(e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)}</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>            required</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>          <span class="op">&gt;&lt;/</span>textarea<span class="op">&gt;</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>button type<span class="op">=</span><span class="st">"submit"</span><span class="op">&gt;</span>{id <span class="op">?</span> <span class="st">'Actualizar'</span> <span class="op">:</span> <span class="st">'Crear'</span>}<span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;/</span>form<span class="op">&gt;</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ProductForm<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.</p>
+<ol start="7" type="1">
+<li>Ejecuta y prueba la aplicación</li>
+</ol>
+<p>Finalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Abre tu navegador y navega a <a href="http://localhost:5173" class="uri">http://localhost:5173</a> (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.</p>
 </section>
-<section id="crear-el-proyecto-de-react" class="level2">
-<h2 class="anchored" data-anchor-id="crear-el-proyecto-de-react">Crear el proyecto de React</h2>
-<p>Para ello nos dirijimos al directorio frontend.</p>
-<p>Para crear el proyecto vamos a usar <strong>vite</strong>. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Luego, vamos a instalar <strong>axios</strong> para hacer las peticiones a la API:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install axios</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="crear-la-lista-de-tareas" class="level2">
-<h2 class="anchored" data-anchor-id="crear-la-lista-de-tareas">Crear la lista de tareas</h2>
-<p>Creamos el directorio <strong>src/components</strong> y dentro de él, creamos un archivo llamado <strong>TaskList.js</strong> con el siguiente contenido:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React<span class="op">,</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axios <span class="im">from</span> <span class="st">'axios'</span><span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> TaskList <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [tasks<span class="op">,</span> setTasks] <span class="op">=</span> <span class="fu">useState</span>([])<span class="op">;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [title<span class="op">,</span> setTitle] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    axios<span class="op">.</span><span class="fu">get</span>(<span class="st">'http://localhost:3000/tasks'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> <span class="fu">setTasks</span>(response<span class="op">.</span><span class="at">data</span>))<span class="op">;</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [])<span class="op">;</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> addTask <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    axios<span class="op">.</span><span class="fu">post</span>(<span class="st">'http://localhost:3000/tasks'</span><span class="op">,</span> { title })</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> <span class="fu">setTasks</span>([<span class="op">...</span>tasks<span class="op">,</span> response<span class="op">.</span><span class="at">data</span>]))<span class="op">;</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> editTask <span class="op">=</span> (id<span class="op">,</span> title) <span class="kw">=&gt;</span> {</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    axios<span class="op">.</span><span class="fu">put</span>(<span class="vs">`http://localhost:3000/tasks/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> { title })</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> {</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> newTasks <span class="op">=</span> tasks<span class="op">.</span><span class="fu">map</span>(task <span class="kw">=&gt;</span> {</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (task<span class="op">.</span><span class="at">id</span> <span class="op">===</span> id) {</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            task<span class="op">.</span><span class="at">title</span> <span class="op">=</span> title<span class="op">;</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>          }</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>          <span class="cf">return</span> task<span class="op">;</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">setTasks</span>(newTasks)<span class="op">;</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> deleteTask <span class="op">=</span> id <span class="kw">=&gt;</span> {</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    axios<span class="op">.</span><span class="fu">delete</span>(<span class="vs">`http://localhost:3000/tasks/</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> <span class="fu">setTasks</span>(tasks<span class="op">.</span><span class="fu">filter</span>(task <span class="kw">=&gt;</span> task<span class="op">.</span><span class="at">id</span> <span class="op">!==</span> id)))<span class="op">;</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">"text"</span> value<span class="op">=</span>{title} onChange<span class="op">=</span>{e <span class="kw">=&gt;</span> <span class="fu">setTitle</span>(e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)} <span class="op">/&gt;</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>button onClick<span class="op">=</span>{addTask}<span class="op">&gt;</span>Add Task<span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>ul<span class="op">&gt;</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>        {tasks<span class="op">.</span><span class="fu">map</span>(task <span class="kw">=&gt;</span> (</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;</span>li key<span class="op">=</span>{task<span class="op">.</span><span class="at">id</span>}<span class="op">&gt;</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">"text"</span> value<span class="op">=</span>{task<span class="op">.</span><span class="at">title</span>} onChange<span class="op">=</span>{e <span class="kw">=&gt;</span> <span class="fu">editTask</span>(task<span class="op">.</span><span class="at">id</span><span class="op">,</span> e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)} <span class="op">/&gt;</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>            <span class="op">&lt;</span>button onClick<span class="op">=</span>{() <span class="kw">=&gt;</span> <span class="fu">deleteTask</span>(task<span class="op">.</span><span class="at">id</span>)}<span class="op">&gt;</span>Delete<span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;/</span>li<span class="op">&gt;</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>        ))}</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;/</span>ul<span class="op">&gt;</span></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> TaskList<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior estamos creando un componente llamado <strong>TaskList</strong> que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el <strong>useEffect</strong> hacemos una petición a la API para obtener la lista de tareas. En el método <strong>addTask</strong> agregamos una tarea a la lista. En el método <strong>editTask</strong> editamos una tarea de la lista. En el método <strong>deleteTask</strong> eliminamos una tarea de la lista.</p>
-</section>
-<section id="mostrar-la-lista-de-tareas" class="level2">
-<h2 class="anchored" data-anchor-id="mostrar-la-lista-de-tareas">Mostrar la lista de tareas</h2>
-<p>Vamos a importar el componente <strong>TaskList</strong> en el archivo <strong>App.js</strong> y mostrarlo en la aplicación:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> TaskList <span class="im">from</span> <span class="st">'./components/TaskList'</span><span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> App <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span>Task List<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>TaskList <span class="op">/&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="probar-la-aplicación" class="level2">
-<h2 class="anchored" data-anchor-id="probar-la-aplicación">Probar la aplicación</h2>
-<div class="center">
-<p><img src="images/paste-3.png" class="img-fluid" style="width:70.0%"></p>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>En este tutorial, aprendiste a crear una aplicación CRUD en React que interactúa con una API REST. Implementamos las operaciones de Crear, Leer, Actualizar y Eliminar productos utilizando Axios para las solicitudes HTTP y react-router-dom para la navegación. Este es un ejemplo básico que puedes ampliar y personalizar según tus necesidades. ¡Esperamos que te haya sido útil!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Para probar la aplicación, ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Abre tu navegador en la dirección <strong>http://localhost:3000</strong> y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.</p>
-</section>
-<section id="conclusiones" class="level2">
-<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
-<p>En esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con <strong>axios</strong> y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.</p>
-</section>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si deseas profundizar en el tema, te recomendamos explorar otras funcionalidades como paginación, autenticación, validación de formularios, entre otros.</p>
+</div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1206,8 +1327,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/unidad6/9_axios_con_react.html" class="pagination-link" aria-label="Consumir una API con React con Axios">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Consumir una API con React con Axios</span></span>
+      <a href="../../unidades/unidad6/9_axios_con_react.html" class="pagination-link" aria-label="Consumir una API con React con Axios.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Consumir una API con React con Axios.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,193 +1,298 @@
-:::{justify}
-# Crud Básico con React y Axios
+# CRUD en React con API REST
 
-En esta sección vamos a crear un CRUD básico con React y Axios. Vamos a crear una lista de tareas que se podrán agregar, editar y eliminar.
+## Requisitos previos:
 
-## Crear el proyecto
+*    Node.js y npm (o yarn, o pnpm) instalados en tu sistema.
+*    Conocimientos básicos de React y JavaScript.
+*    Backend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.
 
-## Crear la API
+1. Inicializa el proyecto de React
 
-Creamos un directorio llamado **backend** y dentro de él, creamos un archivo llamado **package.json** con el siguiente contenido:
+Primero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:
 
-``` bash
-npm init -y
+```bash
+npm create vite@latest nombre-del-proyecto
 ```
+Sigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:
 
-Luego, instalamos **express** y **cors**:
-
-Vamos a crear una API muy sencilla con **express**. Para instalarlo, ejecuta el siguiente comando:
-
-``` bash
-npm install express cors
+```bash
+cd nombre-del-proyecto
+npm install
 ```
+2. Configura Axios para las solicitudes a la API
 
-Luego, crea un archivo llamado **server.js** en la raíz del proyecto con el siguiente contenido:
+Axios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:
 
-``` javascript
-const express = require('express');
-const cors = require('cors');
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-let tasks = [
-  { id: 1, title: 'Task 1' },
-  { id: 2, title: 'Task 2' },
-  { id: 3, title: 'Task 3' },
-];
-
-app.get('/tasks', (req, res) => {
-  res.json(tasks);
-});
-
-app.post('/tasks', (req, res) => {
-  const task = { id: tasks.length + 1, title: req.body.title };
-  tasks.push(task);
-  res.json(task);
-});
-
-app.put('/tasks/:id', (req, res) => {
-  const task = tasks.find(task => task.id === parseInt(req.params.id));
-  task.title = req.body.title;
-  res.json(task);
-});
-
-app.delete('/tasks/:id', (req, res) => {
-  tasks = tasks.filter(task => task.id !== parseInt(req.params.id));
-  res.json({ message: 'Task deleted' });
-});
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+```bash
+mkdir -p src/utils
+touch src/utils/api.js
 ```
+Ahora, edita el archivo api.js:
 
-En el código anterior estamos creando una API con las siguientes rutas:
-
--   **GET /tasks**: Obtiene la lista de tareas.
--   **POST /tasks**: Agrega una tarea.
--   **PUT /tasks/:id**: Edita una tarea.
--   **DELETE /tasks/:id**: Elimina una tarea.
-
-Para ejecutar la API, ejecuta el siguiente comando:
-
-``` bash
-node server.js
-```
-
-## Crear el proyecto de React
-
-Para ello nos dirijimos al directorio frontend.
-
-Para crear el proyecto vamos a usar **vite**. Si no lo tienes instalado, puedes instalarlo con el siguiente comando:
-
-``` bash
-npm create vite@latest .
-```
-
-Luego, vamos a instalar **axios** para hacer las peticiones a la API:
-
-``` bash
-npm install axios
-```
-
-## Crear la lista de tareas
-
-Creamos el directorio **src/components** y dentro de él, creamos un archivo llamado **TaskList.js** con el siguiente contenido:
-
-``` javascript
-import React, { useState, useEffect } from 'react';
+```javascript
 import axios from 'axios';
 
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [title, setTitle] = useState('');
+const api = axios.create({
+  baseURL: 'https://tu-api-backend.com/api', // Reemplaza esta URL con la URL de tu API
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/tasks')
-      .then(response => setTasks(response.data));
-  }, []);
-
-  const addTask = () => {
-    axios.post('http://localhost:3000/tasks', { title })
-      .then(response => setTasks([...tasks, response.data]));
-  };
-
-  const editTask = (id, title) => {
-    axios.put(`http://localhost:3000/tasks/${id}`, { title })
-      .then(response => {
-        const newTasks = tasks.map(task => {
-          if (task.id === id) {
-            task.title = title;
-          }
-          return task;
-        });
-        setTasks(newTasks);
-      });
-  };
-
-  const deleteTask = id => {
-    axios.delete(`http://localhost:3000/tasks/${id}`)
-      .then(() => setTasks(tasks.filter(task => task.id !== id)));
-  };
-
-  return (
-    <div>
-      <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
-      <button onClick={addTask}>Add Task</button>
-      <ul>
-        {tasks.map(task => (
-          <li key={task.id}>
-            <input type="text" value={task.title} onChange={e => editTask(task.id, e.target.value)} />
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default TaskList;
+export default api;
 ```
+Este archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.
 
-En el código anterior estamos creando un componente llamado **TaskList** que muestra una lista de tareas. En el estado del componente tenemos un array de tareas y un string para el título de la tarea. En el **useEffect** hacemos una petición a la API para obtener la lista de tareas. En el método **addTask** agregamos una tarea a la lista. En el método **editTask** editamos una tarea de la lista. En el método **deleteTask** eliminamos una tarea de la lista.
+3. Configura las rutas y el sistema de navegación con react-router-dom
 
-## Mostrar la lista de tareas
+Para manejar las rutas de la aplicación, instala react-router-dom:
 
-Vamos a importar el componente **TaskList** en el archivo **App.js** y mostrarlo en la aplicación:
+```bash
+npm install react-router-dom
+```
+Modifica tu archivo src/App.jsx para agregar rutas:
 
-``` javascript
-import React from 'react';
-import TaskList from './components/TaskList';
+```javascript
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductList from './components/ProductList';
+import ProductDetail from './components/ProductDetail';
+import ProductForm from './components/ProductForm';
 
 const App = () => {
   return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/new" element={<ProductForm />} />
+        <Route path="/products/edit/:id" element={<ProductForm />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+      </Routes>
+    </Router>
+  );
+};
+
+const Home = () => (
+  <div>
+    <h1>CRUD en React con API REST</h1>
+    <p>Esta es una aplicación de ejemplo para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST con React.</p>
+    <p>Dirígete a <Link to="/products">Productos</Link> para comenzar.</p>
+  </div>
+);
+
+export default App;
+```
+Aquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.
+
+4. Crea el componente ProductList (Leer)
+
+Este componente mostrará una lista de productos obtenidos de la API:
+
+```bash
+mkdir -p src/components
+touch src/components/ProductList.jsx
+```
+Ahora, edita ProductList.jsx para obtener y mostrar la lista de productos:
+
+```javascript
+import { useState, useEffect } from 'react';
+import api from '../utils/api';
+import { Link } from 'react-router-dom';
+
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Obtener todos los productos
+    api.get('/products')
+      .then(response => {
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error("Error al obtener los productos: ", error);
+      });
+  }, []);
+
+  return (
     <div>
-      <h1>Task List</h1>
-      <TaskList />
+      <h1>Lista de Productos</h1>
+      <ul>
+        {products.map(product => (
+          <li key={product.id}>
+            <Link to={`/products/${product.id}`}>{product.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <Link to="/products/new">Crear Nuevo Producto</Link>
     </div>
   );
 };
 
-export default App;
+export default ProductList;
 ```
+Utilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.
 
-## Probar la aplicación
+5. Crea el componente ProductDetail (Leer uno y eliminar)
 
-:::{.center}
-![](images/paste-3.png){width=70%}
-:::
+Este componente mostrará los detalles de un producto específico y permitirá eliminarlo:
 
-Para probar la aplicación, ejecuta el siguiente comando:
+```bash
+touch src/components/ProductDetail.jsx
+```
+Edita ProductDetail.jsx:
 
-``` bash
+```javascript
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import api from '../utils/api';
+
+const ProductDetail = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Obtener los detalles de un producto
+    api.get(`/products/${id}`)
+      .then(response => {
+        setProduct(response.data);
+      })
+      .catch(error => {
+        console.error("Error al obtener el producto: ", error);
+      });
+  }, [id]);
+
+  const handleDelete = () => {
+    // Eliminar producto
+    api.delete(`/products/${id}`)
+      .then(() => {
+        navigate('/products');
+      })
+      .catch(error => {
+        console.error("Error al eliminar el producto: ", error);
+      });
+  };
+
+  if (!product) return <div>Cargando...</div>;
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <button onClick={handleDelete}>Eliminar</button>
+      <Link to={`/products/edit/${product.id}`}>Editar</Link>
+    </div>
+  );
+};
+
+export default ProductDetail;
+```
+Aquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.
+
+6. Crea el componente ProductForm (Crear y Actualizar)
+
+Este componente servirá tanto para crear un nuevo producto como para editar uno existente:
+
+```bash
+touch src/components/ProductForm.jsx
+```
+Edita ProductForm.jsx:
+
+```javascript
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import api from '../utils/api';
+
+const ProductForm = () => {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (id) {
+      // Si hay un `id`, estamos editando un producto
+      api.get(`/products/${id}`)
+        .then(response => {
+          const product = response.data;
+          setName(product.name);
+          setDescription(product.description);
+        })
+        .catch(error => {
+          console.error("Error al obtener los detalles del producto: ", error);
+        });
+    }
+  }, [id]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const product = { name, description };
+
+    if (id) {
+      // Actualizar producto
+      api.put(`/products/${id}`, product)
+        .then(() => {
+          navigate(`/products/${id}`);
+        })
+        .catch(error => {
+          console.error("Error al actualizar el producto: ", error);
+        });
+    } else {
+      // Crear nuevo producto
+      api.post('/products', product)
+        .then(() => {
+          navigate('/products');
+        })
+        .catch(error => {
+          console.error("Error al crear el producto: ", error);
+        });
+    }
+  };
+
+  return (
+    <div>
+      <h1>{id ? 'Editar Producto' : 'Crear Producto'}</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nombre</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Descripción</label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <button type="submit">{id ? 'Actualizar' : 'Crear'}</button>
+      </form>
+    </div>
+  );
+};
+
+export default ProductForm;
+```
+Este formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.
+
+7. Ejecuta y prueba la aplicación
+
+Finalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:
+
+```bash
 npm run dev
 ```
+Abre tu navegador y navega a <http://localhost:5173> (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.
 
-Abre tu navegador en la dirección **http://localhost:3000** y deberías ver la lista de tareas. Puedes agregar, editar y eliminar tareas.
+# Conclusiones
 
-## Conclusiones
+En este tutorial, aprendiste a crear una aplicación CRUD en React que interactúa con una API REST. Implementamos las operaciones de Crear, Leer, Actualizar y Eliminar productos utilizando Axios para las solicitudes HTTP y react-router-dom para la navegación. Este es un ejemplo básico que puedes ampliar y personalizar según tus necesidades. ¡Esperamos que te haya sido útil!
 
-En esta sección aprendimos a crear un CRUD básico con React y Axios. Aprendimos a hacer peticiones a una API con **axios** y a mostrar los datos en la aplicación. También aprendimos a agregar, editar y eliminar datos de la API.
+:::{.callout-tip}
+Si deseas profundizar en el tema, te recomendamos explorar otras funcionalidades como paginación, autenticación, validación de formularios, entre otros.
 :::
