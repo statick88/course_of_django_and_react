@@ -1,60 +1,64 @@
-:::{.justify}
+:::: justify
 # CRUD en React con API REST
 
-## Requisitos previos:
+![](images/paste-78.png)
 
-*    Node.js y npm (o yarn, o pnpm) instalados en tu sistema.
-*    Conocimientos básicos de React y JavaScript.
-*    Backend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.
+## Requisitos previos
 
-1. Inicializa el proyecto de React
+-   Node.js y npm (o yarn, o pnpm) instalados en tu sistema.
+-   Conocimientos básicos de React y JavaScript.
+-   Backend (API) funcionando, por ejemplo, usando Django REST API u otra API compatible.
 
-Primero, necesitas crear un proyecto de React. Vamos a usar npm create vite@latest para hacerlo de forma rápida:
+1.  Inicializa el proyecto de React
 
-```bash
+Primero, necesitas crear un proyecto de React. Vamos a usar npm create vite\@latest para hacerlo de forma rápida:
+
+``` bash
 npm create vite@latest nombre-del-proyecto
 ```
+
 Sigue las indicaciones y selecciona react como plantilla. Luego navega al directorio del proyecto e instala las dependencias necesarias:
 
-```bash
+``` bash
 cd nombre-del-proyecto
 npm install
 ```
-2. Configura Axios para las solicitudes a la API
+
+2.  Configura Axios para las solicitudes a la API
 
 Axios es una librería que facilita las solicitudes HTTP. Crea un archivo api.js en la carpeta src/utils para configurar Axios con la URL base de tu API:
 
-```bash
+``` bash
 mkdir -p src/utils
 touch src/utils/api.js
 ```
+
 Ahora, edita el archivo api.js:
 
-```javascript
+``` javascript
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://tu-api-backend.com/api', // Reemplaza esta URL con la URL de tu API
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: 'http://localhost:8000/api',
 });
 
 export default api;
 ```
+
 Este archivo configura Axios con la base de la URL de tu API, facilitando la reutilización de este cliente HTTP en toda tu aplicación.
 
-3. Configura las rutas y el sistema de navegación con react-router-dom
+3.  Configura las rutas y el sistema de navegación con react-router-dom
 
 Para manejar las rutas de la aplicación, instala react-router-dom:
 
-```bash
+``` bash
 npm install react-router-dom
 ```
-Modifica tu archivo src/App.jsx para agregar rutas:
 
-```javascript
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+Modifica tu archivo **src/App.jsx** para agregar rutas:
+
+``` javascript
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 import ProductForm from './components/ProductForm';
@@ -62,6 +66,13 @@ import ProductForm from './components/ProductForm';
 const App = () => {
   return (
     <Router>
+      <nav>
+        <ul>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/products">Lista de Productos</Link></li>
+          <li><Link to="/products/new">Agregar Producto</Link></li>
+        </ul>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductList />} />
@@ -83,195 +94,245 @@ const Home = () => (
 
 export default App;
 ```
+
 Aquí estamos usando react-router-dom para definir nuestras rutas. Tenemos rutas para listar los productos, crear uno nuevo, editar un producto existente y ver los detalles de un producto específico. También hemos agregado una ruta para una página de inicio con instrucciones.
 
-4. Crea el componente ProductList (Leer)
+4.  Crea el componente ProductList (Leer)
 
 Este componente mostrará una lista de productos obtenidos de la API:
 
-```bash
+``` bash
 mkdir -p src/components
 touch src/components/ProductList.jsx
 ```
-Ahora, edita ProductList.jsx para obtener y mostrar la lista de productos:
 
-```javascript
-import { useState, useEffect } from 'react';
-import api from '../utils/api';
+Ahora, edita **ProductList.jsx** para obtener y mostrar la lista de productos:
+
+``` javascript
+// src/components/ProductList.js
+import { useEffect, useState } from 'react';
+import axiosInstance from './utils/api';
 import { Link } from 'react-router-dom';
+import './ProductList.css'; // Importa el CSS para ProductList
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Obtener todos los productos
-    api.get('/products')
+    axiosInstance.get('/productos/')
       .then(response => {
         setProducts(response.data);
       })
       .catch(error => {
-        console.error("Error al obtener los productos: ", error);
+        console.error('Error al obtener los productos:', error);
       });
   }, []);
 
+  const handleDelete = (id) => {
+    if (window.confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+      axiosInstance.delete(`/productos/${id}/`)
+        .then(() => {
+          setProducts(products.filter(product => product.id !== id));
+        })
+        .catch(error => {
+          console.error("Error al eliminar el producto: ", error.response ? error.response.data : error.message);
+        });
+    }
+  };
+
   return (
-    <div>
+    <div className="container">
       <h1>Lista de Productos</h1>
       <ul>
         {products.map(product => (
           <li key={product.id}>
-            <Link to={`/products/${product.id}`}>{product.name}</Link>
+            <Link to={`/products/${product.id}`}>{product.nombre}</Link>
+            <Link to={`/products/edit/${product.id}`} className="edit">Editar</Link>
+            <button onClick={() => handleDelete(product.id)} className="delete">
+              Eliminar
+            </button>
           </li>
         ))}
       </ul>
-      <Link to="/products/new">Crear Nuevo Producto</Link>
     </div>
   );
 };
 
 export default ProductList;
 ```
+
 Utilizamos useEffect para hacer la solicitud GET a la API cuando el componente se monta. Los productos obtenidos se almacenan en el estado products y se muestran en una lista con enlaces a los detalles de cada producto.
 
-5. Crea el componente ProductDetail (Leer uno y eliminar)
+5.  Crea el componente ProductDetail (Leer uno y eliminar)
 
 Este componente mostrará los detalles de un producto específico y permitirá eliminarlo:
 
-```bash
+``` bash
 touch src/components/ProductDetail.jsx
 ```
+
 Edita ProductDetail.jsx:
 
-```javascript
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import api from '../utils/api';
+``` javascript
+import { useEffect, useState } from 'react';
+import axiosInstance from './utils/api'; // Asegúrate de que esta ruta sea correcta
+import { useParams } from 'react-router-dom'; // Para obtener el id del producto
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Extrae el id desde la URL
   const [product, setProduct] = useState(null);
-  const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Obtener los detalles de un producto
-    api.get(`/products/${id}`)
+    axiosInstance.get(`/productos/${id}/`) // Petición para obtener detalles del producto
       .then(response => {
-        setProduct(response.data);
+        setProduct(response.data); // Guarda el producto en el estado
       })
       .catch(error => {
-        console.error("Error al obtener el producto: ", error);
+        console.error('Error al obtener los detalles del producto:', error);
+        setError('Error al obtener los detalles del producto.');
       });
   }, [id]);
 
-  const handleDelete = () => {
-    // Eliminar producto
-    api.delete(`/products/${id}`)
-      .then(() => {
-        navigate('/products');
-      })
-      .catch(error => {
-        console.error("Error al eliminar el producto: ", error);
-      });
-  };
-
+  if (error) return <div style={{ color: 'red' }}>{error}</div>;
   if (!product) return <div>Cargando...</div>;
 
   return (
     <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <button onClick={handleDelete}>Eliminar</button>
-      <Link to={`/products/edit/${product.id}`}>Editar</Link>
+      <h1>{product.nombre}</h1>
+      <p>Precio: {product.precio}</p>
+      <p>Cantidad: {product.cantidad}</p>
     </div>
   );
 };
 
 export default ProductDetail;
 ```
+
 Aquí usamos useParams para obtener el ID del producto de la URL. Hacemos una solicitud GET para obtener los detalles del producto y mostramos su nombre y descripción. También tenemos una función handleDelete que elimina el producto y redirige a la lista de productos.
 
-6. Crea el componente ProductForm (Crear y Actualizar)
+6.  Crea el componente ProductForm (Crear y Actualizar)
 
 Este componente servirá tanto para crear un nuevo producto como para editar uno existente:
 
-```bash
+``` bash
 touch src/components/ProductForm.jsx
 ```
+
 Edita ProductForm.jsx:
 
-```javascript
+``` javascript
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import api from '../utils/api';
+import axiosInstance from './utils/api';  // Asegúrate de que la ruta de importación sea correcta
+import './ProductForm.css';
 
 const ProductForm = () => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [cantidad, setCantidad] = useState(1);  // Campo cantidad predeterminado
+  const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
-      // Si hay un `id`, estamos editando un producto
-      api.get(`/products/${id}`)
+      axiosInstance.get(`/productos/${id}/`)
         .then(response => {
           const product = response.data;
-          setName(product.name);
-          setDescription(product.description);
+          setNombre(product.nombre);
+          setPrecio(product.precio);
+          setCantidad(product.cantidad);
         })
         .catch(error => {
           console.error("Error al obtener los detalles del producto: ", error);
+          setError('Error al obtener los detalles del producto.');
         });
     }
   }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const product = { name, description };
+    
+    // Validación de campos (especialmente precios)
+    if (isNaN(precio) || isNaN(cantidad) || parseFloat(precio) <= 0 || parseInt(cantidad) <= 0) {
+      setError('Por favor, ingrese valores válidos para el precio y la cantidad.');
+      return;
+    }
+
+    const product = { nombre, precio: parseFloat(precio), cantidad: parseInt(cantidad) };
 
     if (id) {
-      // Actualizar producto
-      api.put(`/products/${id}`, product)
+      axiosInstance.put(`/productos/${id}/`, product)
         .then(() => {
           navigate(`/products/${id}`);
         })
         .catch(error => {
-          console.error("Error al actualizar el producto: ", error);
+          console.error("Error al actualizar el producto: ", error.response ? error.response.data : error.message);
+          setError(`Error al actualizar el producto: ${error.response ? error.response.data : error.message}`);
         });
     } else {
-      // Crear nuevo producto
-      api.post('/products', product)
+      axiosInstance.post('/productos/', product)
         .then(() => {
           navigate('/products');
         })
         .catch(error => {
-          console.error("Error al crear el producto: ", error);
+          console.error("Error al crear el producto: ", error.response ? error.response.data : error.message);
+          setError(`Error al crear el producto: ${error.response ? error.response.data : error.message}`);
+        });
+    }
+  };
+
+  const handleDelete = () => {
+    if (id) {
+      axiosInstance.delete(`/productos/${id}/`)
+        .then(() => {
+          navigate('/products');
+        })
+        .catch(error => {
+          console.error("Error al eliminar el producto: ", error.response ? error.response.data : error.message);
+          setError(`Error al eliminar el producto: ${error.response ? error.response.data : error.message}`);
         });
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>{id ? 'Editar Producto' : 'Crear Producto'}</h1>
+      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nombre</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             required
           />
         </div>
         <div>
-          <label>Descripción</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+          <label>Precio</label>
+          <input
+            type="number"
+            step="0.01"
+            value={precio}
+            onChange={(e) => setPrecio(e.target.value)}
             required
-          ></textarea>
+          />
         </div>
-        <button type="submit">{id ? 'Actualizar' : 'Crear'}</button>
+        <div>
+          <label>Cantidad</label>
+          <input
+            type="number"
+            value={cantidad}
+            onChange={(e) => setCantidad(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className={id ? 'edit' : ''}>{id ? 'Actualizar' : 'Crear'}</button>
+        {id && (
+          <button type="button" className="delete" onClick={handleDelete}>Eliminar</button>
+        )}
       </form>
     </div>
   );
@@ -279,22 +340,201 @@ const ProductForm = () => {
 
 export default ProductForm;
 ```
-Este formulario maneja tanto la creación como la edición de productos. Si se pasa un ID a través de la URL, el formulario se rellenará con los datos del producto y permitirá la edición. Si no hay ID, se considera una creación de nuevo producto.
 
-7. Ejecuta y prueba la aplicación
+En este componente, si hay un id en la URL, cargamos los datos del producto para editarlo. Si no hay un id, el formulario se usa para crear un nuevo producto. La función handleSubmit envía una solicitud POST (para crear) o PUT (para actualizar) a la API según el caso. También tenemos un botón para eliminar el producto si estamos editando uno existente.
 
-Finalmente, inicia el servidor de desarrollo y verifica que todo funcione correctamente:
+7.  Estilos opcionales
 
-```bash
-npm run dev
+Para que la interfaz sea más atractiva, puedes agregar algunos estilos CSS personalizados. Crea un archivo **src/components/ProductForm.css** para agregar estilos específicos para el formulario.
+
+``` css
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.delete {
+  background-color: #dc3545;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+.edit {
+  background-color: #007bff;
+}
+
+.edit:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 10px;
+}
 ```
-Abre tu navegador y navega a <http://localhost:5173> (o la URL que indique el servidor de desarrollo) para probar tu aplicación CRUD.
 
-# Conclusiones
+Ahora creamos el archivo CSS para ProductList:
 
-En este tutorial, aprendiste a crear una aplicación CRUD en React que interactúa con una API REST. Implementamos las operaciones de Crear, Leer, Actualizar y Eliminar productos utilizando Axios para las solicitudes HTTP y react-router-dom para la navegación. Este es un ejemplo básico que puedes ampliar y personalizar según tus necesidades. ¡Esperamos que te haya sido útil!
+``` bash
+touch src/components/ProductList.css
+```
 
-:::{.callout-tip}
-Si deseas profundizar en el tema, te recomendamos explorar otras funcionalidades como paginación, autenticación, validación de formularios, entre otros.
+Edita **src/components/ProductList.css**:
+
+``` css
+/* src/components/ProductList.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button.edit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.edit:hover {
+    background-color: #0056b3;
+  }
+  
+  button.delete:hover {
+    background-color: #c82333;
+  }
+  ```
+
+8.  Integra los componentes en App.jsx
+
+Finalmente, integra los componentes ProductList, ProductDetail y ProductForm en tu archivo App.jsx y añade la funcionalidad de cambio de tema entre oscuro y claro.
+
+``` jsx
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ProductList from './components/ProductList';
+import ProductDetail from './components/ProductDetail';
+import ProductForm from './components/ProductForm';
+
+const App = () => {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/products">Lista de Productos</Link></li>
+          <li><Link to="/products/new">Agregar Producto</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/new" element={<ProductForm />} />
+        <Route path="/products/edit/:id" element={<ProductForm />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+      </Routes>
+    </Router>
+  );
+};
+
+const Home = () => (
+  <div>
+    <h1>CRUD en React con API REST</h1>
+    <p>Esta es una aplicación de ejemplo para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API REST con React.</p>
+    <p>Dirígete a <Link to="/products">Productos</Link> para comenzar.</p>
+  </div>
+);
+
+export default App;
+```
+# Conclusión
+
+¡Eso es todo! Ahora deberías tener una aplicación React funcional que realiza operaciones CRUD con una API REST. Puedes seguir ajustando y expandiendo esta aplicación según tus necesidades.
+
+::: center
+¡Buena suerte con tu proyecto!
 :::
-:::
+::::
