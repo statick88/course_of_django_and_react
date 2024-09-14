@@ -1151,10 +1151,10 @@
     ]
   },
   {
-    "objectID": "unidades/unidad5/5_drf.html",
-    "href": "unidades/unidad5/5_drf.html",
+    "objectID": "unidades/unidad5/5_drf.html#qué-es-una-api-rest",
+    "href": "unidades/unidad5/5_drf.html#qué-es-una-api-rest",
     "title": "Django Rest Framework",
-    "section": "",
+    "section": "¿Qué es una API REST?",
     "text": "¿Qué es una API REST?\nUna API REST (Representational State Transfer) es una interfaz de programación de aplicaciones que utiliza los métodos HTTP para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos.",
     "crumbs": [
       "Unidad 5: Django",

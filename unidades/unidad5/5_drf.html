@@ -448,28 +448,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#qué-es-una-api-rest" id="toc-qué-es-una-api-rest" class="nav-link active" data-scroll-target="#qué-es-una-api-rest">¿Qué es una API REST?</a></li>
-  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
-  <li><a href="#actualizar-el-archivo-requirements.txt" id="toc-actualizar-el-archivo-requirements.txt" class="nav-link" data-scroll-target="#actualizar-el-archivo-requirements.txt">Actualizar el archivo requirements.txt</a></li>
-  <li><a href="#serializers" id="toc-serializers" class="nav-link" data-scroll-target="#serializers">Serializers</a></li>
-  <li><a href="#views" id="toc-views" class="nav-link" data-scroll-target="#views">Views</a></li>
-  <li><a href="#urls-de-la-aplicación" id="toc-urls-de-la-aplicación" class="nav-link" data-scroll-target="#urls-de-la-aplicación">URLs de la Aplicación</a></li>
-  <li><a href="#configuración-urls-del-proyecto" id="toc-configuración-urls-del-proyecto" class="nav-link" data-scroll-target="#configuración-urls-del-proyecto">Configuración URLs del Proyecto</a></li>
-  <li><a href="#migraciones" id="toc-migraciones" class="nav-link" data-scroll-target="#migraciones">Migraciones</a></li>
-  <li><a href="#instalación-de-setuptools" id="toc-instalación-de-setuptools" class="nav-link" data-scroll-target="#instalación-de-setuptools">Instalación de setuptools</a></li>
-  <li><a href="#ejecución" id="toc-ejecución" class="nav-link" data-scroll-target="#ejecución">Ejecución</a></li>
-  <li><a href="#documentación-de-la-api-con-drf-yasg" id="toc-documentación-de-la-api-con-drf-yasg" class="nav-link" data-scroll-target="#documentación-de-la-api-con-drf-yasg">Documentación de la API con drf-yasg</a></li>
-  <li><a href="#documentación-de-la-api-con-coreapi" id="toc-documentación-de-la-api-con-coreapi" class="nav-link" data-scroll-target="#documentación-de-la-api-con-coreapi">Documentación de la API con CoreAPI</a>
-  <ul class="collapse">
-  <li><a href="#primero-instalamos-coreapi" id="toc-primero-instalamos-coreapi" class="nav-link" data-scroll-target="#primero-instalamos-coreapi">Primero instalamos CoreAPI:</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -493,6 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="justify">
 <p><strong>Django Rest Framework</strong> más que una <strong>librearía</strong> es un <strong>framework</strong> que nos permite crear <strong>APIs REST</strong> de forma rápida y sencilla.</p>
 <section id="qué-es-una-api-rest" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-una-api-rest">¿Qué es una API REST?</h2>
@@ -698,10 +679,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ahora podemos ejecutar el servidor de desarrollo y acceder a la documentación generada por CoreAPI en la ruta ‘/docs/’:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Con estos pasos, hemos integrado Django Rest Framework, documentado nuestra API con drf-yasg y CoreAPI.</p>
-
-
 </section>
 </section>
+<section id="corsheaders" class="level1">
+<h1>Corsheaders</h1>
+<p>Para permitir que nuestra API REST sea accesible desde un dominio diferente al de la aplicación, necesitamos instalar el paquete <strong>django-cors-headers</strong>.</p>
+<p>Primero instalamos el paquete:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install django-cors-headers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Luego, añadimos ‘corsheaders’ a la lista de aplicaciones instaladas en el archivo settings.py:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'corsheaders'</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Añadimos el middleware de corsheaders en el archivo settings.py:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>MIDDLEWARE <span class="op">=</span> [</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'corsheaders.middleware.CorsMiddleware'</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'django.middleware.common.CommonMiddleware'</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Configuramos las opciones de corsheaders en el archivo settings.py:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>CORS_ALLOW_ALL_ORIGINS <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>CORS_ALLOWED_ORIGINS <span class="op">=</span> [</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'http://localhost:5173'</span>,  <span class="co"># Origen del frontend</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con estas configuraciones, nuestra API REST estará disponible para ser consumida desde el origen especificado.</p>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>Django Rest Framework es una herramienta poderosa para crear APIs REST en Django de forma rápida y sencilla. Con la documentación de la API, podemos facilitar el uso y la comprensión de nuestra API por parte de los desarrolladores. La integración de CoreAPI y drf-yasg nos permite generar documentación automáticamente y visualizarla en un navegador de forma interactiva. Con corsheaders, podemos permitir que nuestra API sea accesible desde un dominio diferente al de la aplicación. En resumen, Django Rest Framework nos proporciona las herramientas necesarias para crear APIs REST robustas y bien documentadas en Django.</p>
+</section>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
+<ul>
+<li><a href="https://www.django-rest-framework.org/">Django Rest Framework</a></li>
+<li><a href="https://www.django-rest-framework.org/topics/documenting-your-api/">Django Rest Framework - Documentación</a></li>
+<li><a href="https://drf-yasg.readthedocs.io/en/stable/">drf-yasg</a></li>
+<li><a href="https://www.coreapi.org/">CoreAPI</a></li>
+</ul>
+</section>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
