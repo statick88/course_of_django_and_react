@@ -1,3 +1,4 @@
+:::{.justify}
 # Django Rest Framework
 
 **Django Rest Framework** más que una **librearía** es un **framework** que nos permite crear **APIs REST** de forma rápida y sencilla. 
@@ -222,3 +223,59 @@ Ahora podemos ejecutar el servidor de desarrollo y acceder a la documentación g
 python manage.py runserver
 ```
 Con estos pasos, hemos integrado Django Rest Framework, documentado nuestra API con drf-yasg y CoreAPI.
+
+# Corsheaders
+
+Para permitir que nuestra API REST sea accesible desde un dominio diferente al de la aplicación, necesitamos instalar el paquete **django-cors-headers**.
+
+Primero instalamos el paquete:
+
+```bash
+pip install django-cors-headers
+```
+
+Luego, añadimos 'corsheaders' a la lista de aplicaciones instaladas en el archivo settings.py:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+]
+```
+
+Añadimos el middleware de corsheaders en el archivo settings.py:
+
+```python
+MIDDLEWARE = [
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+```
+
+Configuramos las opciones de corsheaders en el archivo settings.py:
+
+```python
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # Origen del frontend
+]
+```
+
+Con estas configuraciones, nuestra API REST estará disponible para ser consumida desde el origen especificado.
+
+# Conclusiones
+
+Django Rest Framework es una herramienta poderosa para crear APIs REST en Django de forma rápida y sencilla. Con la documentación de la API, podemos facilitar el uso y la comprensión de nuestra API por parte de los desarrolladores. La integración de CoreAPI y drf-yasg nos permite generar documentación automáticamente y visualizarla en un navegador de forma interactiva. Con corsheaders, podemos permitir que nuestra API sea accesible desde un dominio diferente al de la aplicación. En resumen, Django Rest Framework nos proporciona las herramientas necesarias para crear APIs REST robustas y bien documentadas en Django.
+
+# Referencias
+
+- [Django Rest Framework](https://www.django-rest-framework.org/)
+- [Django Rest Framework - Documentación](https://www.django-rest-framework.org/topics/documenting-your-api/)
+- [drf-yasg](https://drf-yasg.readthedocs.io/en/stable/)
+- [CoreAPI](https://www.coreapi.org/)
+
+:::
+
