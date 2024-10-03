@@ -40,11 +40,11 @@
     ]
   },
   {
-    "objectID": "unidades/unidad1/1_git_y_github.html",
-    "href": "unidades/unidad1/1_git_y_github.html",
+    "objectID": "unidades/unidad1/1_git_y_github.html#qué-es-git-y-github",
+    "href": "unidades/unidad1/1_git_y_github.html#qué-es-git-y-github",
     "title": "Git y GitHub 🕹️",
-    "section": "",
-    "text": "¿Qué es Git y GitHub? 🕹️\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
+    "section": "¿Qué es Git y GitHub? 🕹️",
+    "text": "¿Qué es Git y GitHub? 🕹️\n\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\n\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
     "crumbs": [
       "Unidad 1: Introducción a Python",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
