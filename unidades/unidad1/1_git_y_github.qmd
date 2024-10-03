@@ -1,16 +1,17 @@
+:::{.justify}
 # Git y GitHub 🕹️
 
 ::: center
-![Git and Github](../../images/git_and_github.png){fig-align="center" width="600"}
+![Git and Github](../../images/git_and_github.png){fig-align="center" width="400"}
 :::
 
 ## ¿Qué es Git y GitHub? 🕹️
 
-Git y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos. 
+- Git y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos. 
 
-Git es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.
+- Git es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.
 
-GitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.
+- GitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.
 
 En este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.
 
@@ -272,4 +273,5 @@ pytest test_hello.py
 ```
 ::: {.text-center}
 ¡Mucha suerte!
+:::
 :::
