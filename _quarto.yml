@@ -79,6 +79,10 @@ book:
         - unidades/unidad6/9_axios_con_react.qmd
         - unidades/unidad6/10_crud_react.qmd
 
+    - part: "Proyectos"
+      chapters:
+        - /unidades/Proyectos/inventario.qmd
+
     - part: "Ejercicios"
       chapters: 
         - unidades/ejercicios/lab1.qmd

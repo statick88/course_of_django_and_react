@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.13">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>JavaScript – Django y React 2024</title>
+<title>Django y React 2024 - JavaScript</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,11 +73,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-129d2ab5d050af173d4a168f218dbfe9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -118,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/3_introduccion_javascript.html"><span class="chapter-title">JavaScript</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -142,34 +142,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="../../">Django y React 2024</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../../curso_django_and_react_2024.pdf">
-              <i class="bi bi-file-pdf pe-1"></i>
+              <i class="bi bi-bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../../curso_django_and_react_2024.epub">
-              <i class="bi bi-journal pe-1"></i>
+              <i class="bi bi-bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-twitter pe-1"></i>
+              <i class="bi bi-bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-linkedin pe-1"></i>
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -193,9 +193,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Unidad 1: Introducción a Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,9 +219,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Unidad 2: Python Básico</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,9 +240,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Unidad 3: Python Intermedio</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -261,9 +261,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Unidad 4: Python Avanzado</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -297,9 +297,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Unidad 5: Django</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -348,9 +348,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Unidad 6: Frontend</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -404,13 +404,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">Ejercicios</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Proyectos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//unidades/Proyectos/inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Inventario</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Ejercicios</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/ejercicios/lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desarrollo del Backend para un E-Commerce con Django Rest Framework</span></a>
@@ -448,8 +464,170 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#qué-es-javascript" id="toc-qué-es-javascript" class="nav-link active" data-scroll-target="#qué-es-javascript">¿Qué es JavaScript?</a></li>
+  <li><a href="#qué-es-programar" id="toc-qué-es-programar" class="nav-link" data-scroll-target="#qué-es-programar">¿Qué es programar?</a></li>
+  <li><a href="#por-qué-aprender-javascript" id="toc-por-qué-aprender-javascript" class="nav-link" data-scroll-target="#por-qué-aprender-javascript">¿Por qué aprender JavaScript?</a></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#la-consola-del-navegador" id="toc-la-consola-del-navegador" class="nav-link" data-scroll-target="#la-consola-del-navegador">La consola del navegador</a>
+  <ul class="collapse">
+  <li><a href="#cómo-abrir-la-consola" id="toc-cómo-abrir-la-consola" class="nav-link" data-scroll-target="#cómo-abrir-la-consola">Cómo abrir la consola</a></li>
+  <li><a href="#quiz-1" id="toc-quiz-1" class="nav-link" data-scroll-target="#quiz-1">Quiz</a></li>
+  </ul></li>
+  <li><a href="#editores-y-entornos-de-desarrollo" id="toc-editores-y-entornos-de-desarrollo" class="nav-link" data-scroll-target="#editores-y-entornos-de-desarrollo">Editores y entornos de desarrollo</a></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de Datos</a>
+  <ul class="collapse">
+  <li><a href="#tipos-primitivos." id="toc-tipos-primitivos." class="nav-link" data-scroll-target="#tipos-primitivos.">Tipos Primitivos.</a></li>
+  <li><a href="#números" id="toc-números" class="nav-link" data-scroll-target="#números">Números</a></li>
+  <li><a href="#operadores-aritméticos" id="toc-operadores-aritméticos" class="nav-link" data-scroll-target="#operadores-aritméticos">Operadores aritméticos</a></li>
+  <li><a href="#qué-significa-el-que-ves-en-los-ejemplos" id="toc-qué-significa-el-que-ves-en-los-ejemplos" class="nav-link" data-scroll-target="#qué-significa-el-que-ves-en-los-ejemplos">¿Qué significa el // que ves en los ejemplos?</a></li>
+  <li><a href="#cadenas-de-texto" id="toc-cadenas-de-texto" class="nav-link" data-scroll-target="#cadenas-de-texto">Cadenas de texto</a></li>
+  <li><a href="#concatenación" id="toc-concatenación" class="nav-link" data-scroll-target="#concatenación">Concatenación</a></li>
+  <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos">Booleanos</a></li>
+  <li><a href="#quiz-2" id="toc-quiz-2" class="nav-link" data-scroll-target="#quiz-2">Quiz</a></li>
+  </ul></li>
+  <li><a href="#los-operadores-de-comparación" id="toc-los-operadores-de-comparación" class="nav-link" data-scroll-target="#los-operadores-de-comparación">Los operadores de comparación</a>
+  <ul class="collapse">
+  <li><a href="#actividad" id="toc-actividad" class="nav-link" data-scroll-target="#actividad">Actividad</a></li>
+  <li><a href="#comparando-cadenas-de-texto" id="toc-comparando-cadenas-de-texto" class="nav-link" data-scroll-target="#comparando-cadenas-de-texto">Comparando cadenas de texto</a></li>
+  <li><a href="#y-si-usamos-el-operador-con-cadenas-de-texto" id="toc-y-si-usamos-el-operador-con-cadenas-de-texto" class="nav-link" data-scroll-target="#y-si-usamos-el-operador-con-cadenas-de-texto">¿Y si usamos el operador &gt; con cadenas de texto?</a></li>
+  <li><a href="#comparando-booleanos" id="toc-comparando-booleanos" class="nav-link" data-scroll-target="#comparando-booleanos">Comparando booleanos</a></li>
+  <li><a href="#comparando-valores-de-diferentes-tipos" id="toc-comparando-valores-de-diferentes-tipos" class="nav-link" data-scroll-target="#comparando-valores-de-diferentes-tipos">Comparando valores de diferentes tipos</a></li>
+  <li><a href="#quiz-3" id="toc-quiz-3" class="nav-link" data-scroll-target="#quiz-3">Quiz</a></li>
+  </ul></li>
+  <li><a href="#function-expression" id="toc-function-expression" class="nav-link" data-scroll-target="#function-expression">Function Expression</a></li>
+  <li><a href="#qué-es-una-function-expression" id="toc-qué-es-una-function-expression" class="nav-link" data-scroll-target="#qué-es-una-function-expression">¿Qué es una function expression?</a></li>
+  <li><a href="#hoisting" id="toc-hoisting" class="nav-link" data-scroll-target="#hoisting">Hoisting</a></li>
+  <li><a href="#y-qué-pasa-con-las-function-expression" id="toc-y-qué-pasa-con-las-function-expression" class="nav-link" data-scroll-target="#y-qué-pasa-con-las-function-expression">¿Y qué pasa con las function expression?</a></li>
+  <li><a href="#quiz-18" id="toc-quiz-18" class="nav-link" data-scroll-target="#quiz-18">Quiz</a></li>
+  <li><a href="#funciones-flecha" id="toc-funciones-flecha" class="nav-link" data-scroll-target="#funciones-flecha">Funciones flecha</a></li>
+  <li><a href="#ventajas-de-las-funciones-flecha" id="toc-ventajas-de-las-funciones-flecha" class="nav-link" data-scroll-target="#ventajas-de-las-funciones-flecha">Ventajas de las funciones flecha</a></li>
+  <li><a href="#return-implícito" id="toc-return-implícito" class="nav-link" data-scroll-target="#return-implícito">Return implícito</a></li>
+  <li><a href="#quiz-19" id="toc-quiz-19" class="nav-link" data-scroll-target="#quiz-19">Quiz</a></li>
+  <li><a href="#recursividad" id="toc-recursividad" class="nav-link" data-scroll-target="#recursividad">Recursividad</a></li>
+  <li><a href="#ejemplo-de-recursividad" id="toc-ejemplo-de-recursividad" class="nav-link" data-scroll-target="#ejemplo-de-recursividad">Ejemplo de recursividad</a></li>
+  <li><a href="#usando-recursividad-y-devolviendo-un-valor" id="toc-usando-recursividad-y-devolviendo-un-valor" class="nav-link" data-scroll-target="#usando-recursividad-y-devolviendo-un-valor">Usando recursividad y devolviendo un valor</a></li>
+  <li><a href="#quiz-20" id="toc-quiz-20" class="nav-link" data-scroll-target="#quiz-20">Quiz</a></li>
+  <li><a href="#arrays-colecciones-de-elementos" id="toc-arrays-colecciones-de-elementos" class="nav-link" data-scroll-target="#arrays-colecciones-de-elementos">Arrays: colecciones de elementos</a></li>
+  <li><a href="#declaración-y-asignación-de-arrays" id="toc-declaración-y-asignación-de-arrays" class="nav-link" data-scroll-target="#declaración-y-asignación-de-arrays">Declaración y asignación de arrays</a></li>
+  <li><a href="#acceso-a-los-elementos-de-un-array" id="toc-acceso-a-los-elementos-de-un-array" class="nav-link" data-scroll-target="#acceso-a-los-elementos-de-un-array">Acceso a los elementos de un array</a></li>
+  <li><a href="#modificar-elementos-de-un-array" id="toc-modificar-elementos-de-un-array" class="nav-link" data-scroll-target="#modificar-elementos-de-un-array">Modificar elementos de un array</a></li>
+  <li><a href="#quiz-21" id="toc-quiz-21" class="nav-link" data-scroll-target="#quiz-21">Quiz</a></li>
+  <li><a href="#métodos-y-propiedades-de-array" id="toc-métodos-y-propiedades-de-array" class="nav-link" data-scroll-target="#métodos-y-propiedades-de-array">Métodos y propiedades de Array</a></li>
+  <li><a href="#la-longitud-de-un-array" id="toc-la-longitud-de-un-array" class="nav-link" data-scroll-target="#la-longitud-de-un-array">La longitud de un array</a></li>
+  <li><a href="#métodos-de-arrays" id="toc-métodos-de-arrays" class="nav-link" data-scroll-target="#métodos-de-arrays">Métodos de arrays</a></li>
+  <li><a href="#push" id="toc-push" class="nav-link" data-scroll-target="#push">.push()</a></li>
+  <li><a href="#pop" id="toc-pop" class="nav-link" data-scroll-target="#pop">.pop()</a></li>
+  <li><a href="#shift" id="toc-shift" class="nav-link" data-scroll-target="#shift">.shift()</a></li>
+  <li><a href="#unshift" id="toc-unshift" class="nav-link" data-scroll-target="#unshift">.unshift()</a></li>
+  <li><a href="#concatenar-arrays" id="toc-concatenar-arrays" class="nav-link" data-scroll-target="#concatenar-arrays">Concatenar arrays</a></li>
+  <li><a href="#actividad-práctica" id="toc-actividad-práctica" class="nav-link" data-scroll-target="#actividad-práctica">Actividad Práctica</a></li>
+  <li><a href="#iteración-de-arrays-en-javascript" id="toc-iteración-de-arrays-en-javascript" class="nav-link" data-scroll-target="#iteración-de-arrays-en-javascript">Iteración de Arrays en JavaScript</a></li>
+  <li><a href="#bucle-while" id="toc-bucle-while" class="nav-link" data-scroll-target="#bucle-while">Bucle while</a></li>
+  <li><a href="#bucle-for" id="toc-bucle-for" class="nav-link" data-scroll-target="#bucle-for">Bucle for</a></li>
+  <li><a href="#bucle-forof" id="toc-bucle-forof" class="nav-link" data-scroll-target="#bucle-forof">Bucle for…of</a></li>
+  <li><a href="#el-método-array.foreach" id="toc-el-método-array.foreach" class="nav-link" data-scroll-target="#el-método-array.foreach">El método array.forEach()</a></li>
+  <li><a href="#actividad-práctica-1" id="toc-actividad-práctica-1" class="nav-link" data-scroll-target="#actividad-práctica-1">Actividad Práctica</a></li>
+  <li><a href="#búsqueda-en-arrays-con-sus-métodos" id="toc-búsqueda-en-arrays-con-sus-métodos" class="nav-link" data-scroll-target="#búsqueda-en-arrays-con-sus-métodos">Búsqueda en Arrays con sus métodos</a></li>
+  <li><a href="#indexof-en-qué-posición-está-el-elemento" id="toc-indexof-en-qué-posición-está-el-elemento" class="nav-link" data-scroll-target="#indexof-en-qué-posición-está-el-elemento">indexOf: ¿En qué posición está el elemento?</a></li>
+  <li><a href="#includes-el-elemento-existe-en-el-array" id="toc-includes-el-elemento-existe-en-el-array" class="nav-link" data-scroll-target="#includes-el-elemento-existe-en-el-array">includes: ¿El elemento existe en el Array?</a></li>
+  <li><a href="#some-alguno-de-los-elementos-cumple-con-la-condición" id="toc-some-alguno-de-los-elementos-cumple-con-la-condición" class="nav-link" data-scroll-target="#some-alguno-de-los-elementos-cumple-con-la-condición">some: ¿Alguno de los elementos cumple con la condición?</a></li>
+  <li><a href="#every-todos-los-elementos-cumplen-con-la-condición" id="toc-every-todos-los-elementos-cumplen-con-la-condición" class="nav-link" data-scroll-target="#every-todos-los-elementos-cumplen-con-la-condición">every: ¿Todos los elementos cumplen con la condición?</a></li>
+  <li><a href="#find-devuelve-el-primer-elemento-que-cumple-con-la-condición" id="toc-find-devuelve-el-primer-elemento-que-cumple-con-la-condición" class="nav-link" data-scroll-target="#find-devuelve-el-primer-elemento-que-cumple-con-la-condición">find: Devuelve el primer elemento que cumple con la condición</a></li>
+  <li><a href="#findindex-devuelve-el-índice-del-primer-elemento-que-cumple-con-la-condición" id="toc-findindex-devuelve-el-índice-del-primer-elemento-que-cumple-con-la-condición" class="nav-link" data-scroll-target="#findindex-devuelve-el-índice-del-primer-elemento-que-cumple-con-la-condición">findIndex: Devuelve el índice del primer elemento que cumple con la condición</a></li>
+  <li><a href="#actividad-práctica-2" id="toc-actividad-práctica-2" class="nav-link" data-scroll-target="#actividad-práctica-2">Actividad Práctica</a></li>
+  <li><a href="#ordenamiento-de-arrays-en-javascript" id="toc-ordenamiento-de-arrays-en-javascript" class="nav-link" data-scroll-target="#ordenamiento-de-arrays-en-javascript">Ordenamiento de Arrays en JavaScript</a></li>
+  <li><a href="#ordenamiento-básico-con-sort" id="toc-ordenamiento-básico-con-sort" class="nav-link" data-scroll-target="#ordenamiento-básico-con-sort">Ordenamiento básico con sort()</a></li>
+  <li><a href="#ordenamiento-personalizado-con-sort" id="toc-ordenamiento-personalizado-con-sort" class="nav-link" data-scroll-target="#ordenamiento-personalizado-con-sort">Ordenamiento personalizado con sort()</a></li>
+  <li><a href="#sort-y-tosorted" id="toc-sort-y-tosorted" class="nav-link" data-scroll-target="#sort-y-tosorted">sort() y toSorted()</a></li>
+  <li><a href="#actividad-práctica-3" id="toc-actividad-práctica-3" class="nav-link" data-scroll-target="#actividad-práctica-3">Actividad Práctica</a></li>
+  <li><a href="#transformación-de-arrays-en-javascript" id="toc-transformación-de-arrays-en-javascript" class="nav-link" data-scroll-target="#transformación-de-arrays-en-javascript">Transformación de Arrays en JavaScript</a></li>
+  <li><a href="#filter-un-nuevo-array-con-los-elementos-que-cumplan-una-condición" id="toc-filter-un-nuevo-array-con-los-elementos-que-cumplan-una-condición" class="nav-link" data-scroll-target="#filter-un-nuevo-array-con-los-elementos-que-cumplan-una-condición">filter: Un nuevo Array con los elementos que cumplan una condición</a></li>
+  <li><a href="#map-un-nuevo-array-con-los-elementos-transformados" id="toc-map-un-nuevo-array-con-los-elementos-transformados" class="nav-link" data-scroll-target="#map-un-nuevo-array-con-los-elementos-transformados">map: Un nuevo Array con los elementos transformados</a></li>
+  <li><a href="#map-filter-un-nuevo-array-con-los-elementos-transformados-y-filtrados" id="toc-map-filter-un-nuevo-array-con-los-elementos-transformados-y-filtrados" class="nav-link" data-scroll-target="#map-filter-un-nuevo-array-con-los-elementos-transformados-y-filtrados">map + filter: Un nuevo Array con los elementos transformados y filtrados</a></li>
+  <li><a href="#reduce-un-único-valor-a-partir-de-un-array" id="toc-reduce-un-único-valor-a-partir-de-un-array" class="nav-link" data-scroll-target="#reduce-un-único-valor-a-partir-de-un-array">reduce: Un único valor a partir de un array</a></li>
+  <li><a href="#actividad-práctica-4" id="toc-actividad-práctica-4" class="nav-link" data-scroll-target="#actividad-práctica-4">Actividad Práctica</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a>
+  <ul class="collapse">
+  <li><a href="#creación-de-matrices" id="toc-creación-de-matrices" class="nav-link" data-scroll-target="#creación-de-matrices">Creación de Matrices</a></li>
+  </ul></li>
+  <li><a href="#acceso-a-los-elementos-de-una-matriz" id="toc-acceso-a-los-elementos-de-una-matriz" class="nav-link" data-scroll-target="#acceso-a-los-elementos-de-una-matriz">Acceso a los Elementos de una Matriz</a></li>
+  <li><a href="#iteración-sobre-matrices" id="toc-iteración-sobre-matrices" class="nav-link" data-scroll-target="#iteración-sobre-matrices">Iteración sobre Matrices</a></li>
+  <li><a href="#ejemplo-práctico-de-matrices" id="toc-ejemplo-práctico-de-matrices" class="nav-link" data-scroll-target="#ejemplo-práctico-de-matrices">Ejemplo práctico de Matrices</a></li>
+  <li><a href="#actividad-práctica-5" id="toc-actividad-práctica-5" class="nav-link" data-scroll-target="#actividad-práctica-5">Actividad Práctica</a></li>
+  <li><a href="#algoritmos-con-arrays" id="toc-algoritmos-con-arrays" class="nav-link" data-scroll-target="#algoritmos-con-arrays">Algoritmos con Arrays</a></li>
+  <li><a href="#algoritmo-para-encontrar-el-número-mayor" id="toc-algoritmo-para-encontrar-el-número-mayor" class="nav-link" data-scroll-target="#algoritmo-para-encontrar-el-número-mayor">Algoritmo para encontrar el número mayor</a></li>
+  <li><a href="#complejidad-algorítmica" id="toc-complejidad-algorítmica" class="nav-link" data-scroll-target="#complejidad-algorítmica">Complejidad algorítmica</a></li>
+  <li><a href="#búsqueda-binaria" id="toc-búsqueda-binaria" class="nav-link" data-scroll-target="#búsqueda-binaria">Búsqueda binaria</a></li>
+  <li><a href="#implementación-de-la-búsqueda-binaria" id="toc-implementación-de-la-búsqueda-binaria" class="nav-link" data-scroll-target="#implementación-de-la-búsqueda-binaria">Implementación de la búsqueda binaria</a></li>
+  <li><a href="#actividad-práctica-6" id="toc-actividad-práctica-6" class="nav-link" data-scroll-target="#actividad-práctica-6">Actividad Práctica</a></li>
+  <li><a href="#objetos" id="toc-objetos" class="nav-link" data-scroll-target="#objetos">Objetos</a></li>
+  <li><a href="#declaración-y-asignación-de-objetos" id="toc-declaración-y-asignación-de-objetos" class="nav-link" data-scroll-target="#declaración-y-asignación-de-objetos">Declaración y asignación de objetos</a></li>
+  <li><a href="#acceder-a-propiedades-y-métodos-de-un-objeto" id="toc-acceder-a-propiedades-y-métodos-de-un-objeto" class="nav-link" data-scroll-target="#acceder-a-propiedades-y-métodos-de-un-objeto">Acceder a propiedades y métodos de un objeto</a></li>
+  <li><a href="#añadir-y-modificar-propiedades-de-un-objeto" id="toc-añadir-y-modificar-propiedades-de-un-objeto" class="nav-link" data-scroll-target="#añadir-y-modificar-propiedades-de-un-objeto">Añadir y modificar propiedades de un objeto</a></li>
+  <li><a href="#eliminar-propiedades-de-un-objeto" id="toc-eliminar-propiedades-de-un-objeto" class="nav-link" data-scroll-target="#eliminar-propiedades-de-un-objeto">Eliminar propiedades de un objeto</a></li>
+  <li><a href="#actividad-práctica-7" id="toc-actividad-práctica-7" class="nav-link" data-scroll-target="#actividad-práctica-7">Actividad Práctica</a></li>
+  <li><a href="#atajos-para-trabajar-con-objetos" id="toc-atajos-para-trabajar-con-objetos" class="nav-link" data-scroll-target="#atajos-para-trabajar-con-objetos">Atajos para trabajar con objetos</a>
+  <ul class="collapse">
+  <li><a href="#atajo-al-crear-un-objeto" id="toc-atajo-al-crear-un-objeto" class="nav-link" data-scroll-target="#atajo-al-crear-un-objeto">Atajo al crear un objeto</a></li>
+  </ul></li>
+  <li><a href="#destructuración-el-atajo-al-recuperar-propiedades" id="toc-destructuración-el-atajo-al-recuperar-propiedades" class="nav-link" data-scroll-target="#destructuración-el-atajo-al-recuperar-propiedades">Destructuración: el atajo al recuperar propiedades</a></li>
+  <li><a href="#renombrar-variables-y-valores-por-defecto" id="toc-renombrar-variables-y-valores-por-defecto" class="nav-link" data-scroll-target="#renombrar-variables-y-valores-por-defecto">Renombrar variables y valores por defecto</a></li>
+  <li><a href="#objetos-anidados-y-atajo" id="toc-objetos-anidados-y-atajo" class="nav-link" data-scroll-target="#objetos-anidados-y-atajo">Objetos anidados y atajo</a></li>
+  <li><a href="#quiz-22" id="toc-quiz-22" class="nav-link" data-scroll-target="#quiz-22">Quiz</a></li>
+  <li><a href="#iterando-objetos-en-javascript" id="toc-iterando-objetos-en-javascript" class="nav-link" data-scroll-target="#iterando-objetos-en-javascript">Iterando Objetos en JavaScript</a>
+  <ul class="collapse">
+  <li><a href="#iterando-con-forin" id="toc-iterando-con-forin" class="nav-link" data-scroll-target="#iterando-con-forin">Iterando con for…in</a></li>
+  </ul></li>
+  <li><a href="#transformar-un-objeto-en-un-array" id="toc-transformar-un-objeto-en-un-array" class="nav-link" data-scroll-target="#transformar-un-objeto-en-un-array">Transformar un objeto en un array</a>
+  <ul class="collapse">
+  <li><a href="#iterar-con-object.keys" id="toc-iterar-con-object.keys" class="nav-link" data-scroll-target="#iterar-con-object.keys">Iterar con Object.keys()</a></li>
+  <li><a href="#iterando-con-object.values" id="toc-iterando-con-object.values" class="nav-link" data-scroll-target="#iterando-con-object.values">Iterando con Object.values()</a></li>
+  <li><a href="#iterando-con-object.entries" id="toc-iterando-con-object.entries" class="nav-link" data-scroll-target="#iterando-con-object.entries">Iterando con Object.entries()</a></li>
+  </ul></li>
+  <li><a href="#actividad-práctica-8" id="toc-actividad-práctica-8" class="nav-link" data-scroll-target="#actividad-práctica-8">Actividad Práctica</a></li>
+  <li><a href="#operador-de-encadenamiento-opcional" id="toc-operador-de-encadenamiento-opcional" class="nav-link" data-scroll-target="#operador-de-encadenamiento-opcional">Operador de Encadenamiento Opcional</a></li>
+  <li><a href="#el-error-fatal-de-intentar-leer-una-propiedad-de-undefined" id="toc-el-error-fatal-de-intentar-leer-una-propiedad-de-undefined" class="nav-link" data-scroll-target="#el-error-fatal-de-intentar-leer-una-propiedad-de-undefined"><strong>El error fatal de intentar leer una propiedad de</strong> undefined</a></li>
+  <li><a href="#evitar-el-error-con-if" id="toc-evitar-el-error-con-if" class="nav-link" data-scroll-target="#evitar-el-error-con-if">Evitar el error con if</a>
+  <ul class="collapse">
+  <li><a href="#el-operador-in-para-comprobar-si-una-propiedad-existe" id="toc-el-operador-in-para-comprobar-si-una-propiedad-existe" class="nav-link" data-scroll-target="#el-operador-in-para-comprobar-si-una-propiedad-existe">El operador in para comprobar si una propiedad existe</a></li>
+  <li><a href="#el-operador-de-encadenamiento-opcional-." id="toc-el-operador-de-encadenamiento-opcional-." class="nav-link" data-scroll-target="#el-operador-de-encadenamiento-opcional-.">El operador de Encadenamiento Opcional, ?.</a></li>
+  <li><a href="#beneficios-del-operador-de-encadenamiento-opcional" id="toc-beneficios-del-operador-de-encadenamiento-opcional" class="nav-link" data-scroll-target="#beneficios-del-operador-de-encadenamiento-opcional">Beneficios del Operador de Encadenamiento Opcional</a></li>
+  </ul></li>
+  <li><a href="#actividad-práctica-9" id="toc-actividad-práctica-9" class="nav-link" data-scroll-target="#actividad-práctica-9">Actividad Práctica</a></li>
+  <li><a href="#rest-operator" id="toc-rest-operator" class="nav-link" data-scroll-target="#rest-operator">Rest Operator</a>
+  <ul class="collapse">
+  <li><a href="#sintaxis-del-operador-de-propagación" id="toc-sintaxis-del-operador-de-propagación" class="nav-link" data-scroll-target="#sintaxis-del-operador-de-propagación">Sintaxis del operador de propagación</a></li>
+  <li><a href="#usos-comunes-del-operador-de-propagación" id="toc-usos-comunes-del-operador-de-propagación" class="nav-link" data-scroll-target="#usos-comunes-del-operador-de-propagación">Usos comunes del operador de propagación</a></li>
+  <li><a href="#rest-operator-vs-spread-operator" id="toc-rest-operator-vs-spread-operator" class="nav-link" data-scroll-target="#rest-operator-vs-spread-operator">Rest Operator vs Spread Operator</a></li>
+  </ul></li>
+  <li><a href="#actividad-práctica-10" id="toc-actividad-práctica-10" class="nav-link" data-scroll-target="#actividad-práctica-10">Actividad Práctica</a></li>
+  <li><a href="#promesas-y-asyncawait" id="toc-promesas-y-asyncawait" class="nav-link" data-scroll-target="#promesas-y-asyncawait">Promesas y async/await</a>
+  <ul class="collapse">
+  <li><a href="#crear-una-promesa" id="toc-crear-una-promesa" class="nav-link" data-scroll-target="#crear-una-promesa">Crear una promesa</a></li>
+  <li><a href="#encadenar-promesas" id="toc-encadenar-promesas" class="nav-link" data-scroll-target="#encadenar-promesas">Encadenar promesas</a></li>
+  <li><a href="#asyncawait" id="toc-asyncawait" class="nav-link" data-scroll-target="#asyncawait">async/await</a></li>
+  <li><a href="#beneficios-de-asyncawait" id="toc-beneficios-de-asyncawait" class="nav-link" data-scroll-target="#beneficios-de-asyncawait">Beneficios de async/await</a></li>
+  </ul></li>
+  <li><a href="#actividad-práctica-11" id="toc-actividad-práctica-11" class="nav-link" data-scroll-target="#actividad-práctica-11">Actividad Práctica</a></li>
+  <li><a href="#quiz-23" id="toc-quiz-23" class="nav-link" data-scroll-target="#quiz-23">Quiz</a></li>
+  <li><a href="#módulos" id="toc-módulos" class="nav-link" data-scroll-target="#módulos">Módulos</a>
+  <ul class="collapse">
+  <li><a href="#exportar-e-importar" id="toc-exportar-e-importar" class="nav-link" data-scroll-target="#exportar-e-importar">Exportar e importar</a></li>
+  <li><a href="#exportar-e-importar-por-defecto" id="toc-exportar-e-importar-por-defecto" class="nav-link" data-scroll-target="#exportar-e-importar-por-defecto">Exportar e importar por defecto</a></li>
+  <li><a href="#exportar-e-importar-todo" id="toc-exportar-e-importar-todo" class="nav-link" data-scroll-target="#exportar-e-importar-todo">Exportar e importar todo</a></li>
+  <li><a href="#módulos-en-el-navegador" id="toc-módulos-en-el-navegador" class="nav-link" data-scroll-target="#módulos-en-el-navegador">Módulos en el navegador</a></li>
+  <li><a href="#módulos-en-node.js" id="toc-módulos-en-node.js" class="nav-link" data-scroll-target="#módulos-en-node.js">Módulos en Node.js</a></li>
+  <li><a href="#módulos-en-commonjs" id="toc-módulos-en-commonjs" class="nav-link" data-scroll-target="#módulos-en-commonjs">Módulos en CommonJS</a></li>
+  </ul></li>
+  <li><a href="#actividad-práctica-12" id="toc-actividad-práctica-12" class="nav-link" data-scroll-target="#actividad-práctica-12">Actividad Práctica</a></li>
+  <li><a href="#quiz-24" id="toc-quiz-24" class="nav-link" data-scroll-target="#quiz-24">Quiz</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -473,7 +651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="justify">
+<p>::: {.justify}</p>
 <div class="center">
 <p><img src="../../images/javascript.png" class="img-fluid" width="200"></p>
 </div>
@@ -3424,7 +3602,7 @@ Tip
 </div>
 <p><strong>¿Cuál usar? Depende…</strong></p>
 <div class="table">
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -5227,7 +5405,6 @@ Ver solución
 
 
 </section>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -5409,7 +5586,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -5441,29 +5629,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -5471,7 +5637,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
