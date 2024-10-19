@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.13">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Curso de Django y React 2024">
 
-<title>HTML – Django y React 2024</title>
+<title>Django y React 2024 - HTML</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,11 +73,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-129d2ab5d050af173d4a168f218dbfe9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -118,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html">Unidad 6: Frontend</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/1_introduccion_frontend.html"><span class="chapter-title">HTML</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -142,34 +142,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="../../">Django y React 2024</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../../curso_django_and_react_2024.pdf">
-              <i class="bi bi-file-pdf pe-1"></i>
+              <i class="bi bi-bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../../curso_django_and_react_2024.epub">
-              <i class="bi bi-journal pe-1"></i>
+              <i class="bi bi-bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-twitter pe-1"></i>
+              <i class="bi bi-bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-linkedin pe-1"></i>
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -193,9 +193,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Unidad 1: Introducción a Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,9 +219,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Unidad 2: Python Básico</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,9 +240,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Unidad 3: Python Intermedio</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -261,9 +261,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Unidad 4: Python Avanzado</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -297,9 +297,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Unidad 5: Django</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -348,9 +348,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Unidad 6: Frontend</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -404,13 +404,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">Ejercicios</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Proyectos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="//unidades/Proyectos/inventario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Inventario en Consola - Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Ejercicios</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/ejercicios/lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Desarrollo del Backend para un E-Commerce con Django Rest Framework</span></a>
@@ -448,8 +464,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a>
+  <ul class="collapse">
+  <li><a href="#visión-general-de-html" id="toc-visión-general-de-html" class="nav-link" data-scroll-target="#visión-general-de-html">Visión general de HTML</a></li>
+  <li><a href="#una-breve-introducción-a-los-conceptos-clave-en-html." id="toc-una-breve-introducción-a-los-conceptos-clave-en-html." class="nav-link" data-scroll-target="#una-breve-introducción-a-los-conceptos-clave-en-html.">Una breve introducción a los conceptos clave en HTML.</a>
+  <ul class="collapse">
+  <li><a href="#encabezado-de-un-documento-html" id="toc-encabezado-de-un-documento-html" class="nav-link" data-scroll-target="#encabezado-de-un-documento-html">Encabezado de un documento HTML</a></li>
+  <li><a href="#párrafo" id="toc-párrafo" class="nav-link" data-scroll-target="#párrafo">Párrafo</a></li>
+  <li><a href="#tabla" id="toc-tabla" class="nav-link" data-scroll-target="#tabla">Tabla</a></li>
+  </ul></li>
+  <li><a href="#estructura-del-documento" id="toc-estructura-del-documento" class="nav-link" data-scroll-target="#estructura-del-documento">Estructura del documento</a>
+  <ul class="collapse">
+  <li><a href="#aprende-cómo-estructurar-tus-documentos-html-con-una-base-sólida." id="toc-aprende-cómo-estructurar-tus-documentos-html-con-una-base-sólida." class="nav-link" data-scroll-target="#aprende-cómo-estructurar-tus-documentos-html-con-una-base-sólida.">Aprende cómo estructurar tus documentos HTML con una base sólida.</a></li>
+  </ul></li>
+  <li><a href="#metadatos" id="toc-metadatos" class="nav-link" data-scroll-target="#metadatos">Metadatos</a>
+  <ul class="collapse">
+  <li><a href="#cómo-utilizar-etiquetas-meta-para-proporcionar-información-sobre-tus-documentos." id="toc-cómo-utilizar-etiquetas-meta-para-proporcionar-información-sobre-tus-documentos." class="nav-link" data-scroll-target="#cómo-utilizar-etiquetas-meta-para-proporcionar-información-sobre-tus-documentos.">Cómo utilizar etiquetas meta para proporcionar información sobre tus documentos.</a></li>
+  </ul></li>
+  <li><a href="#html-semántico" id="toc-html-semántico" class="nav-link" data-scroll-target="#html-semántico">HTML semántico</a>
+  <ul class="collapse">
+  <li><a href="#usar-los-elementos-html-correctos-para-describir-el-contenido-de-tu-documento." id="toc-usar-los-elementos-html-correctos-para-describir-el-contenido-de-tu-documento." class="nav-link" data-scroll-target="#usar-los-elementos-html-correctos-para-describir-el-contenido-de-tu-documento.">Usar los elementos HTML correctos para describir el contenido de tu documento.</a></li>
+  </ul></li>
+  <li><a href="#encabezados-y-secciones" id="toc-encabezados-y-secciones" class="nav-link" data-scroll-target="#encabezados-y-secciones">Encabezados y secciones</a>
+  <ul class="collapse">
+  <li><a href="#cómo-utilizar-correctamente-los-elementos-de-sección-para-darle-significado-a-tu-contenido." id="toc-cómo-utilizar-correctamente-los-elementos-de-sección-para-darle-significado-a-tu-contenido." class="nav-link" data-scroll-target="#cómo-utilizar-correctamente-los-elementos-de-sección-para-darle-significado-a-tu-contenido.">Cómo utilizar correctamente los elementos de sección para darle significado a tu contenido.</a></li>
+  </ul></li>
+  <li><a href="#atributos" id="toc-atributos" class="nav-link" data-scroll-target="#atributos">Atributos</a>
+  <ul class="collapse">
+  <li><a href="#aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares." id="toc-aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares." class="nav-link" data-scroll-target="#aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares.">Aprende sobre los diferentes atributos globales junto con los atributos específicos de elementos HTML particulares.</a></li>
+  </ul></li>
+  <li><a href="#html-particulares." id="toc-html-particulares." class="nav-link" data-scroll-target="#html-particulares.">HTML particulares.</a>
+  <ul class="collapse">
+  <li><a href="#aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares.-1" id="toc-aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares.-1" class="nav-link" data-scroll-target="#aprende-sobre-los-diferentes-atributos-globales-junto-con-los-atributos-específicos-de-elementos-html-particulares.-1">Aprende sobre los diferentes atributos globales junto con los atributos específicos de elementos HTML particulares.</a></li>
+  </ul></li>
+  <li><a href="#conceptos-básicos-de-texto" id="toc-conceptos-básicos-de-texto" class="nav-link" data-scroll-target="#conceptos-básicos-de-texto">Conceptos básicos de texto</a>
+  <ul class="collapse">
+  <li><a href="#cómo-formatear-texto-utilizando-html." id="toc-cómo-formatear-texto-utilizando-html." class="nav-link" data-scroll-target="#cómo-formatear-texto-utilizando-html.">Cómo formatear texto utilizando HTML.</a></li>
+  </ul></li>
+  <li><a href="#enlaces" id="toc-enlaces" class="nav-link" data-scroll-target="#enlaces">Enlaces</a>
+  <ul class="collapse">
+  <li><a href="#todo-lo-que-necesitas-saber-sobre-enlaces." id="toc-todo-lo-que-necesitas-saber-sobre-enlaces." class="nav-link" data-scroll-target="#todo-lo-que-necesitas-saber-sobre-enlaces.">Todo lo que necesitas saber sobre enlaces.</a></li>
+  </ul></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a>
+  <ul class="collapse">
+  <li><a href="#cómo-crear-listas-en-html." id="toc-cómo-crear-listas-en-html." class="nav-link" data-scroll-target="#cómo-crear-listas-en-html.">Cómo crear listas en HTML.</a></li>
+  </ul></li>
+  <li><a href="#navegación" id="toc-navegación" class="nav-link" data-scroll-target="#navegación">Navegación</a>
+  <ul class="collapse">
+  <li><a href="#la-navegación-es-un-elemento-clave-de-cualquier-sitio-o-aplicación-y-comienza-con-html." id="toc-la-navegación-es-un-elemento-clave-de-cualquier-sitio-o-aplicación-y-comienza-con-html." class="nav-link" data-scroll-target="#la-navegación-es-un-elemento-clave-de-cualquier-sitio-o-aplicación-y-comienza-con-html.">La navegación es un elemento clave de cualquier sitio o aplicación, y comienza con HTML.</a></li>
+  </ul></li>
+  <li><a href="#tablas" id="toc-tablas" class="nav-link" data-scroll-target="#tablas">Tablas</a>
+  <ul class="collapse">
+  <li><a href="#comprender-cómo-utilizar-tablas-para-marcar-datos-tabulares." id="toc-comprender-cómo-utilizar-tablas-para-marcar-datos-tabulares." class="nav-link" data-scroll-target="#comprender-cómo-utilizar-tablas-para-marcar-datos-tabulares.">Comprender cómo utilizar tablas para marcar datos tabulares.</a></li>
+  </ul></li>
+  <li><a href="#formularios" id="toc-formularios" class="nav-link" data-scroll-target="#formularios">Formularios</a>
+  <ul class="collapse">
+  <li><a href="#una-visión-general-de-los-formularios-en-html." id="toc-una-visión-general-de-los-formularios-en-html." class="nav-link" data-scroll-target="#una-visión-general-de-los-formularios-en-html.">Una visión general de los formularios en HTML.</a></li>
+  </ul></li>
+  <li><a href="#imágenes" id="toc-imágenes" class="nav-link" data-scroll-target="#imágenes">Imágenes</a>
+  <ul class="collapse">
+  <li><a href="#una-visión-general-de-las-imágenes-en-html." id="toc-una-visión-general-de-las-imágenes-en-html." class="nav-link" data-scroll-target="#una-visión-general-de-las-imágenes-en-html.">Una visión general de las imágenes en HTML.</a></li>
+  </ul></li>
+  <li><a href="#audio-y-video" id="toc-audio-y-video" class="nav-link" data-scroll-target="#audio-y-video">Audio y video</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-trabajar-con-medios-html-como-audio-y-video." id="toc-descubre-cómo-trabajar-con-medios-html-como-audio-y-video." class="nav-link" data-scroll-target="#descubre-cómo-trabajar-con-medios-html-como-audio-y-video.">Descubre cómo trabajar con medios HTML como audio y video.</a></li>
+  </ul></li>
+  <li><a href="#plantilla-ranura-y-sombra" id="toc-plantilla-ranura-y-sombra" class="nav-link" data-scroll-target="#plantilla-ranura-y-sombra">Plantilla, ranura y sombra</a>
+  <ul class="collapse">
+  <li><a href="#una-explicación-de-plantilla-ranura-y-sombra." id="toc-una-explicación-de-plantilla-ranura-y-sombra." class="nav-link" data-scroll-target="#una-explicación-de-plantilla-ranura-y-sombra.">Una explicación de plantilla, ranura y sombra.</a></li>
+  </ul></li>
+  <li><a href="#apis-de-html" id="toc-apis-de-html" class="nav-link" data-scroll-target="#apis-de-html">APIs de HTML</a>
+  <ul class="collapse">
+  <li><a href="#aprende-cómo-se-puede-exponer-y-manipular-información-html-utilizando-javascript." id="toc-aprende-cómo-se-puede-exponer-y-manipular-información-html-utilizando-javascript." class="nav-link" data-scroll-target="#aprende-cómo-se-puede-exponer-y-manipular-información-html-utilizando-javascript.">Aprende cómo se puede exponer y manipular información HTML utilizando JavaScript.</a></li>
+  </ul></li>
+  <li><a href="#enfoque" id="toc-enfoque" class="nav-link" data-scroll-target="#enfoque">Enfoque</a>
+  <ul class="collapse">
+  <li><a href="#cómo-gestionar-el-orden-de-enfoque-en-tus-documentos-html." id="toc-cómo-gestionar-el-orden-de-enfoque-en-tus-documentos-html." class="nav-link" data-scroll-target="#cómo-gestionar-el-orden-de-enfoque-en-tus-documentos-html.">Cómo gestionar el orden de enfoque en tus documentos HTML.</a></li>
+  </ul></li>
+  <li><a href="#otros-elementos-de-texto-en-línea" id="toc-otros-elementos-de-texto-en-línea" class="nav-link" data-scroll-target="#otros-elementos-de-texto-en-línea">Otros elementos de texto en línea</a>
+  <ul class="collapse">
+  <li><a href="#una-introducción-a-la-variedad-de-elementos-utilizados-para-marcar-texto." id="toc-una-introducción-a-la-variedad-de-elementos-utilizados-para-marcar-texto." class="nav-link" data-scroll-target="#una-introducción-a-la-variedad-de-elementos-utilizados-para-marcar-texto.">Una introducción a la variedad de elementos utilizados para marcar texto.</a></li>
+  </ul></li>
+  <li><a href="#detalles-y-resumen" id="toc-detalles-y-resumen" class="nav-link" data-scroll-target="#detalles-y-resumen">Detalles y resumen</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-funcionan-los-elementos-de-detalles-y-resumen-muy-útiles-y-dónde-usarlos." id="toc-descubre-cómo-funcionan-los-elementos-de-detalles-y-resumen-muy-útiles-y-dónde-usarlos." class="nav-link" data-scroll-target="#descubre-cómo-funcionan-los-elementos-de-detalles-y-resumen-muy-útiles-y-dónde-usarlos.">Descubre cómo funcionan los elementos de detalles y resumen, muy útiles, y dónde usarlos.</a></li>
+  </ul></li>
+  <li><a href="#diálogo" id="toc-diálogo" class="nav-link" data-scroll-target="#diálogo">Diálogo</a>
+  <ul class="collapse">
+  <li><a href="#el-elemento-es-un-elemento-útil-para-representar-cualquier-tipo-de-diálogo-en-html-descubre-cómo-funciona." id="toc-el-elemento-es-un-elemento-útil-para-representar-cualquier-tipo-de-diálogo-en-html-descubre-cómo-funciona." class="nav-link" data-scroll-target="#el-elemento-es-un-elemento-útil-para-representar-cualquier-tipo-de-diálogo-en-html-descubre-cómo-funciona.">El elemento <dialog> es un elemento útil para representar cualquier tipo de diálogo en HTML, descubre cómo funciona.</dialog></a></li>
+  </ul></li>
+  <li><a href="#elementos-de-agrupación" id="toc-elementos-de-agrupación" class="nav-link" data-scroll-target="#elementos-de-agrupación">Elementos de agrupación</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-utilizar-los-elementos-de-agrupación-en-html." id="toc-descubre-cómo-utilizar-los-elementos-de-agrupación-en-html." class="nav-link" data-scroll-target="#descubre-cómo-utilizar-los-elementos-de-agrupación-en-html.">Descubre cómo utilizar los elementos de agrupación en HTML.</a></li>
+  </ul></li>
+  <li><a href="#elementos-de-contenido-incrustado" id="toc-elementos-de-contenido-incrustado" class="nav-link" data-scroll-target="#elementos-de-contenido-incrustado">Elementos de contenido incrustado</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-incrustar-contenido-en-tu-documento-html." id="toc-descubre-cómo-incrustar-contenido-en-tu-documento-html." class="nav-link" data-scroll-target="#descubre-cómo-incrustar-contenido-en-tu-documento-html.">Descubre cómo incrustar contenido en tu documento HTML.</a></li>
+  </ul></li>
+  <li><a href="#elementos-de-formulario" id="toc-elementos-de-formulario" class="nav-link" data-scroll-target="#elementos-de-formulario">Elementos de formulario</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-utilizar-los-elementos-de-formulario-en-html." id="toc-descubre-cómo-utilizar-los-elementos-de-formulario-en-html." class="nav-link" data-scroll-target="#descubre-cómo-utilizar-los-elementos-de-formulario-en-html.">Descubre cómo utilizar los elementos de formulario en HTML.</a></li>
+  </ul></li>
+  <li><a href="#elementos-de-marco" id="toc-elementos-de-marco" class="nav-link" data-scroll-target="#elementos-de-marco">Elementos de marco</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-utilizar-los-elementos-de-marco-en-html." id="toc-descubre-cómo-utilizar-los-elementos-de-marco-en-html." class="nav-link" data-scroll-target="#descubre-cómo-utilizar-los-elementos-de-marco-en-html.">Descubre cómo utilizar los elementos de marco en HTML.</a></li>
+  </ul></li>
+  <li><a href="#elementos-de-interacción" id="toc-elementos-de-interacción" class="nav-link" data-scroll-target="#elementos-de-interacción">Elementos de interacción</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-utilizar-los-elementos-de-interacción-en-html." id="toc-descubre-cómo-utilizar-los-elementos-de-interacción-en-html." class="nav-link" data-scroll-target="#descubre-cómo-utilizar-los-elementos-de-interacción-en-html.">Descubre cómo utilizar los elementos de interacción en HTML.</a></li>
+  </ul></li>
+  <li><a href="#elementos-de-lista" id="toc-elementos-de-lista" class="nav-link" data-scroll-target="#elementos-de-lista">Elementos de lista</a>
+  <ul class="collapse">
+  <li><a href="#descubre-cómo-utilizar-los-elementos-de-lista-en-html." id="toc-descubre-cómo-utilizar-los-elementos-de-lista-en-html." class="nav-link" data-scroll-target="#descubre-cómo-utilizar-los-elementos-de-lista-en-html.">Descubre cómo utilizar los elementos de lista en HTML.</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#reto" id="toc-reto" class="nav-link" data-scroll-target="#reto">Reto</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -473,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="justify">
+<p>:::{.justify}</p>
 <p>Este capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML.</p>
 <p>Bienvenido a HTML!</p>
 <p><strong>HyperText Markup Language</strong>, o HTML, es la columna vertebral de la web, proporcionando el contenido, así como la estructura de ese contenido, que se muestra en tu navegador web.</p>
@@ -1184,12 +1321,10 @@ Ver solución
 </section>
 <section id="conclusiones" class="level1">
 <h1>Conclusiones</h1>
-<p>HTML es un lenguaje de marcado que define la estructura de tu contenido. Los elementos HTML son los bloques de construcción de las páginas HTML. HTML proporciona una serie de elementos para crear contenido estructurado, como encabezados, párrafos, listas, tablas, formularios, imágenes, audio y video. HTML también proporciona elementos para formatear texto, crear enlaces, navegar por el contenido, agrupar elementos y crear contenido incrustado. HTML es un lenguaje poderoso que te permite crear páginas web interactivas y atractivas.</p>
-<p>:::</p>
+<p>HTML es un lenguaje de marcado que define la estructura de tu contenido. Los elementos HTML son los bloques de construcción de las páginas HTML. HTML proporciona una serie de elementos para crear contenido estructurado, como encabezados, párrafos, listas, tablas, formularios, imágenes, audio y video. HTML también proporciona elementos para formatear texto, crear enlaces, navegar por el contenido, agrupar elementos y crear contenido incrustado. HTML es un lenguaje poderoso que te permite crear páginas web interactivas y atractivas. :::</p>
 
 
 </section>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1371,7 +1506,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1403,29 +1549,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1433,7 +1557,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -561,7 +561,7 @@
     "href": "unidades/unidad3/4_conjuntos_diccionarios.html#criterios-de-evaluación",
     "title": "Diccionarios",
     "section": "Criterios de Evaluación",
-    "text": "Criterios de Evaluación\n\nEl diccionario frutas en ejercicio.py tiene las parejas clave-valor correctas.\nEl test unitario test_frutas en test_ejercicio.py se ejecuta sin errores.\n\n\n\n\n\n\n\nTip\n\n\n\nSe sugiere revisar la sección de Ejercicios Python - Nivel 4 para poder reforzar los conocimientos necesarios para completar esta sección.",
+    "text": "Criterios de Evaluación\n\nEl diccionario frutas en ejercicio.py tiene las parejas clave-valor correctas.\nEl test unitario test_frutas en test_ejercicio.py se ejecuta sin errores.\n\n:::{.callout-tip} Se sugiere revisar la sección de Ejercicios Python - Nivel 4 para poder reforzar los conocimientos necesarios para completar esta sección.",
     "crumbs": [
       "Unidad 3: Python Intermedio",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Diccionarios</span>"
@@ -1393,6 +1393,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad6/1_introduccion_frontend.html",
+    "href": "unidades/unidad6/1_introduccion_frontend.html",
+    "title": "HTML",
+    "section": "",
+    "text": "Resumen\nEste capítulo de HTML para desarrolladores web proporciona una sólida visión general para desarrolladores, desde principiantes hasta expertos en HTML. Si eres completamente nuevo en HTML, aprenderás cómo construir contenido estructuralmente sólido. Si has estado construyendo sitios web durante años, este curso puede llenar lagunas de conocimiento que ni siquiera sabías que tenías.\nA lo largo de este viaje, estaremos construyendo la estructura para MachineLearningWorkshop.com. Ninguna máquina resultó dañada en la creación de esta serie.\nEsto no es una referencia completa. Cada sección presenta el tema de la sección con explicaciones breves y ejemplos, brindándote la oportunidad de explorar más a fondo. Habrá enlaces a referencias de temas, como las especificaciones de MDN y WHATWG, y otros artículos de web.dev. Si bien este no es un curso de accesibilidad, cada sección incluirá las mejores prácticas de accesibilidad y problemas específicos, con enlaces a investigaciones más profundas sobre el tema. Cada sección tendrá una breve evaluación para ayudar a las personas a confirmar su comprensión.",
+    "crumbs": [
+      "Unidad 6: Frontend",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>HTML</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad6/1_introduccion_frontend.html#visión-general-de-html",
     "href": "unidades/unidad6/1_introduccion_frontend.html#visión-general-de-html",
     "title": "HTML",
@@ -1965,10 +1976,10 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
-    "href": "unidades/unidad6/3_introduccion_javascript.html#qué-es-javascript",
+    "objectID": "unidades/unidad6/3_introduccion_javascript.html",
+    "href": "unidades/unidad6/3_introduccion_javascript.html",
     "title": "JavaScript",
-    "section": "¿Qué es JavaScript?",
+    "section": "",
     "text": "¿Qué es JavaScript?\nJavaScript es uno de los lenguajes de programación más usados y populares del mundo. Nació en 1995 para darle interactividad a las páginas web y desde entonces ha evolucionado hasta convertirse en un lenguaje de programación de propósito general. Dicho de otra forma: se puede usar casi para cualquier cosa.",
     "crumbs": [
       "Unidad 6: Frontend",
@@ -3494,6 +3505,76 @@
     ]
   },
   {
+    "objectID": "unidades/Proyectos/inventario.html",
+    "href": "unidades/Proyectos/inventario.html",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "",
+    "text": "Paso 1: Clonar el repositorio\nPrimero, clona el repositorio en tu máquina local. Abre una terminal y ejecuta el siguiente comando:"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-1-clonar-el-repositorio",
+    "href": "unidades/Proyectos/inventario.html#paso-1-clonar-el-repositorio",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "",
+    "text": "git clone &lt;URL_DEL_REPOSITORIO&gt;\ncd &lt;NOMBRE_DEL_REPOSITORIO&gt;"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-2-crear-y-activar-un-entorno-virtual",
+    "href": "unidades/Proyectos/inventario.html#paso-2-crear-y-activar-un-entorno-virtual",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 2: Crear y activar un entorno virtual",
+    "text": "Paso 2: Crear y activar un entorno virtual\nEs recomendable usar un entorno virtual para gestionar las dependencias del proyecto. Para crear y activar un entorno virtual, ejecuta los siguientes comandos:\npython3 -m venv env\nsource env/bin/activate  # En Windows usa `env\\Scripts\\activate`"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-3-instalar-dependencias",
+    "href": "unidades/Proyectos/inventario.html#paso-3-instalar-dependencias",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 3: Instalar dependencias",
+    "text": "Paso 3: Instalar dependencias\nInstala las dependencias necesarias que están listadas en el archivo requirements.txt:\npip install -r requirements.txt"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-4-configurar-la-base-de-datos",
+    "href": "unidades/Proyectos/inventario.html#paso-4-configurar-la-base-de-datos",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 4: Configurar la base de datos",
+    "text": "Paso 4: Configurar la base de datos\nAsegúrate de que la base de datos esté configurada correctamente. Puedes encontrar la configuración en el archivo db/database.py.\nAquí está el código para ese archivo:\nimport sqlite3\n\ndef create_connection():\n    conn = sqlite3.connect(\"inventory.db\")\n    return conn\n\ndef create_table():\n    conn = create_connection()\n    cursor = conn.cursor()\n    cursor.execute('''CREATE TABLE IF NOT EXISTS products (\n                        id INTEGER PRIMARY KEY AUTOINCREMENT,\n                        name TEXT NOT NULL,\n                        quantity INTEGER NOT NULL)''')\n    conn.commit()\n    conn.close()"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-5-ejecutar-la-aplicación",
+    "href": "unidades/Proyectos/inventario.html#paso-5-ejecutar-la-aplicación",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 5: Ejecutar la aplicación",
+    "text": "Paso 5: Ejecutar la aplicación\nPara ejecutar la aplicación, simplemente ejecuta el archivo main.py:\npython main.py"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-6-entender-la-estructura-del-proyecto",
+    "href": "unidades/Proyectos/inventario.html#paso-6-entender-la-estructura-del-proyecto",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 6: Entender la estructura del proyecto",
+    "text": "Paso 6: Entender la estructura del proyecto\nFamiliarízate con la estructura del proyecto:\n\ndb/: Contiene la configuración y scripts relacionados con la base de datos.\nenv/: Contiene el entorno virtual.\ninventory/: Contiene los módulos principales de la aplicación, como actions.py y product.py.\nmain.py: Punto de entrada de la aplicación.\nrequirements.txt: Lista de dependencias del proyecto. ## Paso 7: Añadir un producto\n\nPara añadir un producto, puedes modificar el archivo inventory/product.py. Aquí tienes un ejemplo de cómo se define la clase Product:\nclass Product:\n    def __init__(self, name, quantity):\n        self.name = name\n        self.quantity = quantity"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-8-ejecutar-pruebas",
+    "href": "unidades/Proyectos/inventario.html#paso-8-ejecutar-pruebas",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 8: Ejecutar pruebas",
+    "text": "Paso 8: Ejecutar pruebas\nSi tienes pruebas unitarias configuradas, puedes ejecutarlas para asegurarte de que todo funcione correctamente. Por ejemplo, si usas pytest, puedes ejecutar:\npytest"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-9-crear-una-imagen-docker-opcional",
+    "href": "unidades/Proyectos/inventario.html#paso-9-crear-una-imagen-docker-opcional",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 9: Crear una imagen Docker (Opcional)",
+    "text": "Paso 9: Crear una imagen Docker (Opcional)\nSi deseas crear una imagen Docker para tu aplicación, puedes usar el Dockerfile incluido. Ejecuta los siguientes comandos:\ndocker build -t nombre_de_tu_imagen .\ndocker run -p 8000:8000 nombre_de_tu_imagen"
+  },
+  {
+    "objectID": "unidades/Proyectos/inventario.html#paso-10-desactivar-el-entorno-virtual",
+    "href": "unidades/Proyectos/inventario.html#paso-10-desactivar-el-entorno-virtual",
+    "title": "Sistema de Inventario en Consola - Python",
+    "section": "Paso 10: Desactivar el entorno virtual",
+    "text": "Paso 10: Desactivar el entorno virtual\nCuando termines de trabajar, puedes desactivar el entorno virtual con el siguiente comando:\ndeactivate"
+  },
+  {
     "objectID": "unidades/ejercicios/lab1.html",
     "href": "unidades/ejercicios/lab1.html",
     "title": "Desarrollo del Backend para un E-Commerce con Django Rest Framework",
@@ -3501,7 +3582,7 @@
     "text": "1. Configuración Inicial del Proyecto",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3512,7 +3593,7 @@
     "text": "1.1. Crear un Proyecto Django\nAbre tu terminal y ejecuta los siguientes comandos para crear un nuevo proyecto Django:\npython -m venv env\nsource env/bin/activate\npip install django==4.2\ndjango-admin startproject ecommerce_project .\ncd ecommerce_project\n\n\n1.2 Crear una Aplicación Django\nDentro del directorio del proyecto, crea una aplicación para manejar el e-commerce:\npython manage.py startapp products\n\n\n1.3 Instalar Django Rest Framework\nInstala DRF usando pip:\npip install djangorestframework\n\n\n1.4 Configurar el Proyecto\nAñade ‘rest_framework’ y tu nueva aplicación ‘products’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nINSTALLED_APPS = [\n    # ... otras apps\n    'rest_framework',\n    'products',\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3523,7 +3604,7 @@
     "text": "2. Definir el Modelo de Datos\n\n2.1 Crear Modelos en products/models.py\nDefine los modelos para el e-commerce, como Product, Category, y Order:\nfrom django.db import models\n\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n\n    def __str__(self):\n        return self.name\n\nclass Product(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)\n    stock = models.PositiveIntegerField()\n\n    def __str__(self):\n        return self.name\n\nclass Order(models.Model):\n    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    total_price = models.DecimalField(max_digits=10, decimal_places=2)\n    order_date = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f\"Order {self.id} - {self.product.name}\"\n\n\n2.2 Crear y Aplicar Migraciones\nGenera y aplica las migraciones para los modelos:\npython manage.py makemigrations\npython manage.py migrate",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3534,7 +3615,7 @@
     "text": "3. Crear Serializers\n\n3.1 Definir Serializers en products/serializers.py\nLos serializers se encargan de transformar los modelos en formatos JSON y viceversa:\nfrom rest_framework import serializers\nfrom .models import Category, Product, Order\n\nclass CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = '__all__'\n\nclass ProductSerializer(serializers.ModelSerializer):\n    category = CategorySerializer()\n\n    class Meta:\n        model = Product\n        fields = '__all__'\n\nclass OrderSerializer(serializers.ModelSerializer):\n    product = ProductSerializer()\n\n    class Meta:\n        model = Order\n        fields = '__all__'",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3545,7 +3626,7 @@
     "text": "4. Crear Vistas y Rutas\n\n4.1 Definir Vistas en products/views.py\nUtiliza las vistas basadas en clases de DRF para crear y manejar las operaciones CRUD:\nfrom rest_framework import generics\nfrom .models import Category, Product, Order\nfrom .serializers import CategorySerializer, ProductSerializer, OrderSerializer\n\nclass CategoryListCreate(generics.ListCreateAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass CategoryDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass ProductListCreate(generics.ListCreateAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass ProductDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass OrderListCreate(generics.ListCreateAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer\n\nclass OrderDetail(generics.RetrieveUpdateDestroyAPIView):\n    queryset = Order.objects.all()\n    serializer_class = OrderSerializer",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3556,7 +3637,7 @@
     "text": "4.2 Configurar Rutas en products/urls.py\nDefine las rutas para acceder a las vistas:\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('categories/', views.CategoryListCreate.as_view(), name='category-list-create'),\n    path('categories/&lt;int:pk&gt;/', views.CategoryDetail.as_view(), name='category-detail'),\n    path('products/', views.ProductListCreate.as_view(), name='product-list-create'),\n    path('products/&lt;int:pk&gt;/', views.ProductDetail.as_view(), name='product-detail'),\n    path('orders/', views.OrderListCreate.as_view(), name='order-list-create'),\n    path('orders/&lt;int:pk&gt;/', views.OrderDetail.as_view(), name='order-detail'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3567,7 +3648,7 @@
     "text": "4.3 Incluir las URLs en ecommerce_project/urls.py\nAñade las URLs de la aplicación al archivo principal de URLs del proyecto:\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3578,7 +3659,7 @@
     "text": "5. Probar la API\n\n5.1 Ejecutar el Servidor de Desarrollo\nInicia el servidor de desarrollo de Django:\npython manage.py runserver",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3589,7 +3670,7 @@
     "text": "5.2 Probar los Endpoints\nUtiliza herramientas como Postman o cURL para probar los endpoints:\n\nListar categorías: GET /api/categories/\nCrear categoría: POST /api/categories/\nObtener categoría específica: GET /api/categories/{id}/\nActualizar categoría: PUT /api/categories/{id}/\nEliminar categoría: DELETE /api/categories/{id}/\n\nY lo mismo para productos y pedidos.\n\nListar productos: GET /api/products/\nCrear producto: POST /api/products/\nObtener producto específico: GET /api/products/{id}/\nActualizar producto: PUT /api/products/{id}/\nEliminar producto: DELETE /api/products/{id}/",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3600,7 +3681,7 @@
     "text": "1. Instalar Django Rest Swagger\nInstala Django Rest Swagger usando pip:\npip install drf-yasg",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3611,7 +3692,7 @@
     "text": "2. Configurar Django Rest Swagger\nAñade ‘rest_framework_swagger’ a la lista INSTALLED_APPS en ecommerce_project/settings.py:\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom rest_framework import permissions\nfrom drf_yasg.views import get_schema_view\nfrom drf_yasg import openapi\n\nschema_view = get_schema_view(\n    openapi.Info(\n        title=\"E-commerce API\",\n        default_version='v1',\n        description=\"API documentation for the E-commerce project\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"contact@ecommerce.local\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,\n    permission_classes=(permissions.AllowAny,),\n)\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('products.urls')),\n    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3622,7 +3703,7 @@
     "text": "3. Configurar las URLs\nAñade las URLs de Swagger al archivo principal de URLs del proyecto:\n´´´\nfrom rest_framework_swagger.views import get_swagger_view\n\nschema_view = get_swagger_view(title='E-Commerce API')\n\nurlpatterns = [\n    ´´´\n    path('docs/', schema_view),\n]\n\n\n\n\n\n\nTip\n\n\n\nPara evitar un error común es necesario instalr setuptools con el siguiente comando:\npip install setuptools\n\n\nFinalmente es necesario agregar el siguiente código al final del archivo settings.py\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'drf_yasg',\n    'rest_framework',\n    'products',\n]\n\n´´´\nREST_FRAMEWORK = {\n    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'\n}\n\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://127.0.0.1:8000\",\n    # Añade otros orígenes permitidos aquí\n]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3633,7 +3714,7 @@
     "text": "4. Probar la Documentación",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Desarrollo del Backend para un E-Commerce con Django Rest Framework</span>"
     ]
   },
   {
@@ -3644,7 +3725,7 @@
     "text": "Ejercicio 1\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de texto con tu nombre y subirlo al repositorio\nHacer un commit con el mensaje “Agrego mi nombre”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"Mi nombre es: [Tu nombre]\" &gt; nombre.txt\ngit add nombre.txt\ngit commit -m \"Agrego mi nombre\"\ngit push origin master\n\n\n\nEjercicio 2\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima tu nombre\nHacer un commit con el mensaje “Agrego archivo de python”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Mi nombre es: [Tu nombre]')\" &gt; nombre.py\ngit add nombre.py\ngit commit -m \"Agrego archivo de python\"\ngit push origin master\n\n\n\nEjercicio 3\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida\nHacer un commit con el mensaje “Agrego saludo de bienvenida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\ngit add saludo.py\ngit commit -m \"Agrego saludo de bienvenida\"\ngit push origin master\n\n\n\nEjercicio 4\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add despedida.py\ngit commit -m \"Agrego saludo de despedida\"\ngit push origin master\n\n\n\nEjercicio 5\n\nCrear un repositorio en Github\nClonar el repositorio en tu computadora\nCrear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida\nHacer un commit con el mensaje “Agrego saludo de bienvenida y despedida”\nHacer un push al repositorio\n\n\n\nRespuesta:\n\ngit clone [url del repositorio]\ncd [nombre del repositorio]\necho \"print('Hola, bienvenido')\" &gt; saludo.py\necho \"print('Adios, hasta luego')\" &gt; despedida.py\ngit add saludo.py despedida.py\ngit commit -m \"Agrego saludo de bienvenida y despedida\"\ngit push origin master",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios de Git y Github</span>"
     ]
   },
   {
@@ -3655,7 +3736,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3666,7 +3747,7 @@
     "text": "Crear un programa que muestre por pantalla la cadena “Hola Mundo!”.\n\n\n\nSolución\n\nprint(\"Hola Mundo!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3677,7 +3758,7 @@
     "text": "Ejercicio 2\n\nCrear un programa que muestre por pantalla tu nombre.\n\n\n\nSolución\n\nprint(\"Tu nombre\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3688,7 +3769,7 @@
     "text": "Ejercicio 3\n\nCrear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena “Hola”, seguido del nombre y un signo de exclamación.\n\n\n\nSolución\n\nnombre = input(\"Introduce tu nombre: \")\nprint(\"Hola\", nombre, \"!\")\nOtra forma de hacerlo:\nnombre = input(\"Introduce tu nombre: \")\nprint(f\"Hola {nombre}!\")",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3699,7 +3780,7 @@
     "text": "Ejercicio 4\n\nCrear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.\n\n\n\nSolución\n\nhoras = float(input(\"Introduce tus horas de trabajo: \"))\ncoste = float(input(\"Introduce lo que cobras por hora: \"))\npaga = horas * coste\nprint(\"Tu paga es de\", paga)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3710,7 +3791,7 @@
     "text": "Ejercicio 5\n\nCrear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.\nFormula del interés compuesto: Cn = C * (1 + x/100) ^ n\n\n\n\nSolución\n\ncantidad = float(input(\"¿Cantidad a invertir? \"))\ninteres = float(input(\"¿Interés porcentual anual? \"))\naños = int(input(\"¿Años?\"))\nprint(\"Capital final: \", round(cantidad * (interes / 100 + 1) ** años, 2))",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 1</span>"
     ]
   },
   {
@@ -3721,7 +3802,7 @@
     "text": "Ejercicio 1",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3732,7 +3813,7 @@
     "text": "Crear una función que reciba una lista de números y devuelva su media aritmética.\nEjemplo: media_aritmetica([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef media_aritmetica(lista):\n    return sum(lista) / len(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3743,7 +3824,7 @@
     "text": "Ejercicio 2\n\nCrear una función que reciba una lista de números y devuelva su mediana.\nEjemplo: mediana([1, 2, 3, 4, 5]) -&gt; 3.0\n\n\n\nPosible solución\n\ndef mediana(lista):\n    lista_ordenada = sorted(lista)\n    n = len(lista_ordenada)\n    if n % 2 == 0:\n        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2\n    else:\n        return lista_ordenada[n // 2]",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3754,7 +3835,7 @@
     "text": "Ejercicio 3\n\nCrear una función que reciba una lista de números y devuelva su moda.\nSi hay más de una moda, devolver una lista con todas las modas.\nSi no hay moda, devolver una lista vacía.\nLa moda es el número que más veces se repite en una lista.\nSi todos los números se repiten el mismo número de veces, no hay moda.\nEjemplo: moda([1, 2, 3, 2, 3, 4]) -&gt; [2, 3]\n\n\n\nPosible solución\n\ndef moda(lista):\n    frecuencias = {}\n    for numero in lista:\n        if numero in frecuencias:\n            frecuencias[numero] += 1\n        else:\n            frecuencias[numero] = 1\n    max_frecuencia = max(frecuencias.values())\n    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]\n    return modas if len(modas) &gt; 1 else modas[0] if modas else []",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3765,7 +3846,7 @@
     "text": "Ejercicio 4\n\nCrear una función que reciba una lista de números y devuelva su desviación típica.\nLa desviación típica es la raíz cuadrada de la varianza.\nLa varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.\nEjemplo: desviacion_tipica([1, 2, 3, 4, 5]) -&gt; 1.4142135623730951\n\n\n\nPosible solución\n\ndef desviacion_tipica(lista):\n    media = sum(lista) / len(lista)\n    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)\n    return varianza ** 0.5",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3776,7 +3857,7 @@
     "text": "Ejercicio 5\n\nCrear una función que reciba una lista de números y devuelva su coeficiente de variación.\nEl coeficiente de variación es la desviación típica dividida por la media aritmética.\nEjemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -&gt; 0.4472135954999579\n\n\n\nPosible solución\n\ndef coeficiente_variacion(lista):\n    media = sum(lista) / len(lista)\n    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5\n    return desviacion_tipica / media",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 2</span>"
     ]
   },
   {
@@ -3787,7 +3868,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3798,7 +3879,7 @@
     "text": "Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nlista = []\nwhile True:\n    elemento = input(\"Ingrese un elemento: \")\n    if elemento == \"fin\":\n        break\n    lista.append(elemento)\nprint(lista)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3809,7 +3890,7 @@
     "text": "Ejercicio 2:\n\nCrear una lista con los números del 1 al 10 y mostrar los números pares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 == 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3820,7 +3901,7 @@
     "text": "Ejercicio 3:\n\nCrear una lista con los números del 1 al 10 y mostrar los números impares.\n\n\n\nPosible solución\n\nlista = list(range(1, 11))\nfor numero in lista:\n    if numero % 2 != 0:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3831,7 +3912,7 @@
     "text": "Ejercicio 4:\n\nCrear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra “A”.\n\n\n\nPosible solución\n\nnombres = [\"Ana\", \"Juan\", \"Pedro\", \"Andrea\", \"Lucía\", \"Antonio\"]\nfor nombre in nombres:\n    if nombre[0].lower() == \"a\":\n        print(nombre)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3842,7 +3923,7 @@
     "text": "Ejercicio 5:\n\nCrear una lista de números y mostrar aquellos que sean mayores a 100.\n\n\n\nPosible solución\n\nnumeros = [10, 20, 150, 200, 300, 400, 500]\nfor numero in numeros:\n    if numero &gt; 100:\n        print(numero)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 3</span>"
     ]
   },
   {
@@ -3853,7 +3934,7 @@
     "text": "Ejercicio 1:",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3864,7 +3945,7 @@
     "text": "Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\n\n\n\nPosible solución\n\nconjunto = set()\nwhile True:\n    elemento = input(\"Ingrese un elemento o 'fin' para terminar: \")\n    if elemento == \"fin\":\n        break\n    conjunto.add(elemento)\nprint(conjunto)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3875,7 +3956,7 @@
     "text": "Ejercicio 2:\n\nCrear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese “fin”.\nCada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.\nSi el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.\n\n\n\nPosible solución\n\ndiccionario = dict()\nwhile True:\n    clave = input(\"Ingrese una clave o 'fin' para terminar: \")\n    if clave == \"fin\":\n        break\n    if clave in diccionario:\n        print(\"La clave ya existe\")\n        continue\n    valor = input(\"Ingrese un valor: \")\n    diccionario[clave] = valor\nprint(diccionario)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3886,7 +3967,7 @@
     "text": "Ejercicio 3:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.\nMostrar los meses que tienen 31 días.\nMostrar los meses que tienen 30 días.\nMostrar los meses que tienen 28 días.\n\n\n\nPosible solución\n\nmeses = {\n    \"enero\": 31,\n    \"febrero\": 28,\n    \"marzo\": 31,\n    \"abril\": 30,\n    \"mayo\": 31,\n    \"junio\": 30,\n    \"julio\": 31,\n    \"agosto\": 31,\n    \"septiembre\": 30,\n    \"octubre\": 31,\n    \"noviembre\": 30,\n    \"diciembre\": 31\n}\n\nmeses_31 = [mes for mes, dias in meses.items() if dias == 31]\nmeses_30 = [mes for mes, dias in meses.items() if dias == 30]\nmeses_28 = [mes for mes, dias in meses.items() if dias == 28]\n\nprint(\"Meses con 31 días:\", meses_31)\nprint(\"Meses con 30 días:\", meses_30)\nprint(\"Meses con 28 días:\", meses_28)",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3897,7 +3978,7 @@
     "text": "Ejercicio 4:\n\nCrear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.\nMostrar la capital de Argentina.\nMostrar la capital de Brasil.\nMostrar la capital de Ecuador.\n\n\n\nPosible solución\n\npaises = {\n    \"Argentina\": \"Buenos Aires\",\n    \"Bolivia\": \"La Paz\",\n    \"Brasil\": \"Brasilia\",\n    \"Chile\": \"Santiago\",\n    \"Colombia\": \"Bogotá\",\n    \"Ecuador\": \"Quito\",\n    \"Guyana\": \"Georgetown\",\n    \"Paraguay\": \"Asunción\",\n    \"Perú\": \"Lima\",\n    \"Surinam\": \"Paramaribo\",\n    \"Uruguay\": \"Montevideo\",\n    \"Venezuela\": \"Caracas\"\n}\n\nprint(\"La capital de Argentina es\", paises[\"Argentina\"])\nprint(\"La capital de Brasil es\", paises[\"Brasil\"])\nprint(\"La capital de Ecuador es\", paises[\"Ecuador\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
@@ -3908,7 +3989,7 @@
     "text": "Ejercicio 5:\n\nCrear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.\nMostrar la fecha en la que asumió el presidente Eloy Alfaro.\nMostrar la fecha en la que asumió el presidente Garcia Moreno.\n\n\n\nPosible solución\n\npresidentes = {\n\n    \"Gustavo Noboa\": \"23 de noviembre de 2023\",\n    \"Guillermo Lasso\": \"24 de mayo de 2021\",\n    \"Lenín Moreno\": \"24 de mayo de 2017\",\n    \"Rafael Correa\": \"15 de enero de 2007\",\n    \"Jamil Mahuad\": \"10 de agosto de 1998\",\n    \"Abdalá Bucaram\": \"10 de agosto de 1996\",\n    \"Sixto Durán Ballén\": \"10 de agosto de 1992\",\n    \"Rodrigo Borja\": \"10 de agosto de 1988\",\n    \"León Febres Cordero\": \"10 de agosto de 1984\",\n    \"Osvaldo Hurtado\": \"10 de agosto de 1981\",\n    \"Jaime Roldós\": \"10 de agosto de 1979\",\n    \"Guillermo Rodríguez\": \"24 de mayo de 1972\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1968\",\n    \"Otto Arosemena\": \"16 de febrero de 1966\",\n    \"Carlos Julio Arosemena\": \"1 de septiembre de 1961\",\n    \"Camilo Ponce Enríquez\": \"1 de septiembre de 1956\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1952\",\n    \"Galalza Castro\": \"1 de septiembre de 1947\",\n    \"Carlos Arroyo del Río\": \"1 de septiembre de 1940\",\n    \"Andrés Córdova\": \"1 de septiembre de 1938\",\n    \"Alberto Enríquez Gallo\": \"1 de septiembre de 1937\",\n    \"Federico Páez\": \"1 de septiembre de 1935\",\n    \"José María Velasco Ibarra\": \"1 de septiembre de 1934\",\n    \"Abelardo Montalvo\": \"1 de septiembre de 1933\",\n    \"Neptalí Bonifaz\": \"1 de septiembre de 1931\",\n    \"Isidro Ayora\": \"1 de septiembre de 1926\",\n    \"Gonzalo Córdova\": \"1 de septiembre de 1924\",\n    \"José Luis Tamayo\": \"1 de septiembre de 1920\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1912\",\n    \"Emilio Estrada\": \"1 de septiembre de 1911\",\n    \"Carlos Freile Zaldumbide\": \"1 de septiembre de 1907\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1906\",\n    \"Leónidas Plaza\": \"1 de septiembre de 1901\",\n    \"Eloy Alfaro\": \"1 de septiembre de 1897\",\n    \"Antonio Flores Jijón\": \"1 de septiembre de 1888\",\n    \"José Plácido Caamaño\": \"1 de septiembre de 1883\",\n    \"Pedro José de Arteta\": \"1 de septiembre de 1882\",\n    \"Francisco Xavier León\": \"1 de septiembre de 1878\",\n    \"Antonio Borrero\": \"1 de septiembre de 1875\",\n    \"Gabriel García Moreno\": \"1 de septiembre de 1861\",\n    \"Francisco Robles\": \"1 de septiembre de 1856\",\n    \"Diego Noboa\": \"1 de septiembre de 1850\",\n    \"José Joaquín de Olmedo\": \"1 de septiembre de 1845\",\n    \"Juan José Flores\": \"1 de septiembre de 1830\",\n}\n\nprint(\"Eloy Alfaro asumió el\", presidentes[\"Eloy Alfaro\"])\nprint(\"García Moreno asumió el\", presidentes[\"Gabriel García Moreno\"])",
     "crumbs": [
       "Ejercicios",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Ejercicios Python - Nivel 4</span>"
     ]
   },
   {
